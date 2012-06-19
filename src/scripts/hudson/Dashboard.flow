@@ -1,0 +1,7 @@
+parallel (
+    { build("Dashboard-clang") },
+    { build( "Dashboard-UnitTests" ) }
+)
+
+build( "Dashboard-Testflight" )
+build( "Dashboard-Simulator" )
