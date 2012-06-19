@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="SMs-P7-vbw">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Hqz-C2-sE0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKh-eb-BOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="SMs-P7-vbw" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3B9-c6-pIg">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="Zsv-I5-8OW">
+                                <rect key="frame" x="365" y="484" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="A3o-cD-VPL" kind="modal" identifier="test" id="QCO-h5-D4O"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-2794" y="-2338"/>
+        </scene>
+        <!--Tab Bar Controller - tabBar-->
+        <scene sceneID="PRR-ZV-PHv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpe-pb-Hz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController title="tabBar" definesPresentationContext="YES" id="A3o-cD-VPL" customClass="TabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="jMQ-oh-BKc">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1817" y="-2338"/>
+        </scene>
+        <!--I Pad Details View Controller-->
+        <scene sceneID="Qci-ac-qyB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0x-Ir-qFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="y8u-Ab-PII" customClass="iPadDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQM-Nv-VG1">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="1Fm-AP-0Gg" customClass="SCWebBrowser">
+                                <rect key="frame" x="0.0" y="44" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bJn-Xo-QSc">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pvR-VV-PBl"/>
+                    <connections>
+                        <outlet property="toolBar" destination="bJn-Xo-QSc" id="9Rw-9u-AoQ"/>
+                        <outlet property="webBrowser" destination="1Fm-AP-0Gg" id="O2O-F2-Ofy"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="102" y="-3934"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kPs-pd-wq2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKK-Ji-fvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="x4u-TJ-tP6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mEz-hQ-khJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2rP-9O-ZyC" kind="relationship" relationship="rootViewController" id="08I-cs-Y3G"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="90" y="-2744"/>
+        </scene>
+        <!--I Pad Products View Controller-->
+        <scene sceneID="UUW-cR-t87">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJS-FI-Kt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="2rP-9O-ZyC" customClass="iPadProductsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6pq-mu-6jZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="UNQ-1e-akt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2rP-9O-ZyC" id="HqO-7s-OXr"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="KVM-oS-G7J">
+                                <rect key="frame" x="0.0" y="44" width="320" height="740"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SCLoadingCell" id="8DE-GH-iFA">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Wait please" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="4wU-nd-P73">
+                                                    <rect key="frame" x="102" y="24" width="116" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" id="Nr6-GQ-O30">
+                                                    <rect key="frame" x="249" y="24" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SCProductCell" id="LTu-wz-481" customClass="ProductCell">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="cY9-Qe-u2e" customClass="SCImageView">
+                                                    <rect key="frame" x="9" y="4" width="61" height="61"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="NaZ-fo-Q0l">
+                                                    <rect key="frame" x="78" y="4" width="232" height="61"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="cY9-Qe-u2e" id="hCO-Em-OTh"/>
+                                            <outlet property="title" destination="NaZ-fo-Q0l" id="fmT-5h-QHe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2rP-9O-ZyC" id="spe-SF-sEG"/>
+                                    <outlet property="delegate" destination="2rP-9O-ZyC" id="QXF-Zj-KHZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lRm-av-qo6"/>
+                    <connections>
+                        <outlet property="searchBar" destination="UNQ-1e-akt" id="wag-IH-4X6"/>
+                        <outlet property="tableView" destination="KVM-oS-G7J" id="lGB-a0-B3M"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="618" y="-2736"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="mel-EX-xb4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6x-gC-biB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <splitViewController storyboardIdentifier="ProductsSplitViewController" id="w9A-ry-7ll" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="y8u-Ab-PII" kind="relationship" relationship="detailViewController" id="rq1-rG-IFb"/>
+                        <segue destination="x4u-TJ-tP6" kind="relationship" relationship="masterViewController" id="q9n-RX-BAw"/>
+                    </connections>
+                </splitViewController>
+            </objects>
+            <point key="canvasLocation" x="-918" y="-3282"/>
+        </scene>
+        <!--Code View Controller - QR Code-->
+        <scene sceneID="MoU-2A-1QB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y97-WK-z8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="QrCodeViewController" title="QR Code" id="gSx-QJ-lLo" customClass="QRCodeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z51-gQ-hue">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <view contentMode="center" id="6ls-uY-Nyi" customClass="SCQRCodeReaderView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gSx-QJ-lLo" id="hj0-Eo-OTn"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="QR Code" id="bwp-jx-MJ8"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="qrcodeView" destination="6ls-uY-Nyi" id="jxV-dn-oUR"/>
+                        <segue destination="tOA-IK-sjO" kind="push" identifier="qrcode" id="XHM-FD-UtF"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="160" y="-1606"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="tO9-I2-uVb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIe-7D-EA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="tOA-IK-sjO" customClass="ProductDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M14-Rp-nbA" customClass="SCWebBrowser">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sPJ-Wy-iAB"/>
+                    <connections>
+                        <outlet property="webBrowser" destination="M14-Rp-nbA" id="9eV-ln-rSP"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1094" y="-1606"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="SXA-u2-FvR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZi-vD-Dnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="QRCodeNavigationController" id="snu-HT-aXt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="PjS-F1-Dtc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xEn-Up-ei1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gSx-QJ-lLo" kind="relationship" relationship="rootViewController" id="qcE-8v-ehy"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-790" y="-1598"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="DnU-4B-Msl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPJ-Og-fGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MapController" id="5uy-cL-YYe" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KlH-xV-XaG">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="QdT-y3-MoO" customClass="SCMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="mapView" destination="QdT-y3-MoO" id="Iww-22-bJh"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-790" y="-373"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="SCMapView"/>
+            </relationships>
+        </class>
+        <class className="ProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="SCImageView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ProductDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webBrowser" candidateClass="SCWebBrowser"/>
+            </relationships>
+        </class>
+        <class className="QRCodeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QRCodeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="qrcodeView" candidateClass="SCQRCodeReaderView"/>
+            </relationships>
+        </class>
+        <class className="SCImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCImageView.h"/>
+        </class>
+        <class className="SCMapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCMapView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="SCQRCodeReaderView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCQRCodeReaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="SCWebBrowser" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCWebBrowser.h"/>
+        </class>
+        <class className="TabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showTabBarController:"/>
+                <relationship kind="outlet" name="tabController" candidateClass="UITabBarController"/>
+                <relationship kind="outlet" name="window" candidateClass="UIWindow"/>
+            </relationships>
+        </class>
+        <class className="iPadDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/iPadDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webBrowser" candidateClass="SCWebBrowser"/>
+            </relationships>
+        </class>
+        <class className="iPadProductsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/iPadProductsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="secondViewController" candidateClass="iPadDetailsViewController"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,7 @@
+1. rebuild Mobile SDK Server Package dll for 3.5
+2. upload all components
+3. Change web api version
+4. Upload Mobile SDK Framework
+5. commit all docs
+7. commit all sources
+8. create description for whole project
