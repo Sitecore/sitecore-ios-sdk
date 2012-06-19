@@ -1,0 +1,174 @@
+Оптимизируем работу SQLite с календарем
+
+В предыдущей статье (<!!!ССЫЛКА!!!>) мы решили проблему некорректного использования SQLite week based calendar, написав свое расширение для этой СУБД.
+
+Наш расчет сошелся, однако скорость его работы оставляла желать лучшего. Обработка таблицы, содержащей всего лишь 2500 записей занимала около 6 секунд. В то время как запросы, использующие strftime() исполнялись за десятые доли секунды.
+
+Так чего же мы не учли?
+===========================
+
+Прежде чем начать, хочу отметить что здесь и далее для упрощения изложения опущена обработка ошибок и выделение некоторых классов. Прежде чем обсуждать приведенный код в комментариях, не поленитесь заглянуть на страницу проекта dodikk/ESLocale.
+
+В первом приближении наша функция выглядела так : 
+void ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_, int argc_, sqlite3_value** argv_ )
+{
+    assert( ctx_ ); // на всякий случай 
+    
+    @autoreleasepool // гарантируем возврат ObjC ресурсов.
+    {
+        // тут могли быть ваши проверки корректности argc_, argv_
+        const unsigned char* rawFormat_ = sqlite3_value_text( argv_[0] );
+        const unsigned char* rawDate_   = sqlite3_value_text( argv_[1] );
+        const unsigned char* rawLocaleIdentifier_ = sqlite3_value_text( argv_[2] );
+
+        //эта проверка необходима, дабы избежать  crash при переводе строк в NSString
+        if ( NULL == rawFormat_ || NULL == rawDate_ || NULL == rawLocaleIdentifier_ )
+        {
+            sqlite3_result_error( ctx_, "ObjcFormatAnsiDate - NULL argument passed", 3 );
+            return;        
+        }
+        
+
+        // Оборачиваем параметры в NSString
+        NSString* strDate_ = [ [ NSString alloc ] initWithBytesNoCopy: (void*)rawDate_
+                                                               length: strlen( (const char*)rawDate_ )
+                                                             encoding: NSUTF8StringEncoding
+                                                         freeWhenDone: NO ];
+
+        NSString* format_ = [ [ NSString alloc ] initWithBytesNoCopy: (void*)rawFormat_
+                                                              length: strlen( (const char*)rawFormat_ )
+                                                            encoding: NSUTF8StringEncoding
+                                                        freeWhenDone: NO ];
+
+        NSString* localeIdentifier_ = [ [ NSString alloc ] initWithBytesNoCopy: (void*)rawLocaleIdentifier_
+                                                            length: strlen( (const char*)rawLocaleIdentifier_ )
+                                                          encoding: NSUTF8StringEncoding
+                                                      freeWhenDone: NO ];
+
+
+       
+        // для входных данных. Имеет локаль en_US_POSIX и формат даты yyyy-MM-dd
+        NSDateFormatter* ansiFormatter_ = [ ESLocaleFactory ansiDateFormatter ];
+       
+       
+        // Для форматирования результата. Имеет локаль и формат, переданный извне
+        NSLocale* locale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: localeIdentifier_ ];
+        NSDateFormatter* targetFormatter_ = [ ESLocaleFactory gregorianDateFormatterWithLocale: locale_ ];
+        targetFormatter_.dateFormat = format_;
+       
+        // собственно, преобразование дат
+        NSDate* date_ = [ ansiFormatter_ dateFromString: strDate_ ];
+        NSString* result_ = [ targetFormatter_ stringFromDate: date_ ];
+
+       
+       
+        // возврат результата
+        if ( nil == result_ || [ result_ isEqualToString: @"" ] )
+        {    
+            sqlite3_result_null( ctx_ );
+        }
+        else 
+        {
+            sqlite3_result_text
+            ( 
+                ctx_, 
+                (const char*)[ result_ cStringUsingEncoding      : NSUTF8StringEncoding ], 
+                (int        )[ result_ lengthOfBytesUsingEncoding: NSUTF8StringEncoding ], 
+                SQLITE_TRANSIENT  // просим SQLite сделать копию строки-результата
+            );
+        }
+    }
+}
+
+
+
+Прогнав через profiler, мы увидели что большую часть времени занимало не форматирование текста, но создание экземпляров NSDateFormatter (line 39..45).
+
+Модель использования данной функции предполагает смену локали и формата только между запросами. В рамках одного запроса эти параметры скорее всего меняться не будут. Это наводит нас на простую идею оптимизации.
+
+
+Ресурсозатратные NSDateFormatter мы поместим в некий Singletone объект. Тогда блок форматирования будет иметь следующий вид :
+        SqlitePersistentDateFormatter* fmt_ = [ SqlitePersistentDateFormatter instance ]; // создаем singletone
+        NSString* result_ = nil;
+        @synchronized( fmt_ ) // форматирование должно быть атомарным и потокобезопасным
+        {
+        	// обновляем формат и локаль при необходимости
+            [ fmt_ setFormat: format_
+                      locale: localeIdentifier_ ];
+
+			// форматируем результат
+            result_ = [ fmt_ getFormattedDate: strDate_ ];
+        }
+
+
+
+А теперь пришло время заглянуть под капот. Реализацию потокобезопасного singletone опустим как классическую задачу. В остатке получим следующее : 
+
+@implementation SqlitePersistentDateFormatter
+{
+@private // наши тяжелые объекты
+    NSDateFormatter* ansiFormatter  ;
+    NSDateFormatter* targetFormatter;
+}
+
+// ansiFormatter не меняется, поскольку он стандартный
+// потому создадим его внутри init.
+-(id)init
+{
+    self = [ super init ];
+    if ( nil == self )
+    {
+        return nil;
+    }
+    
+    self->ansiFormatter = [ ESLocaleFactory ansiDateFormatter ];
+    
+    return self;
+}
+
+
+// самое интересное тут
+-(BOOL)setFormat:( NSString* )dateFormat_
+          locale:( NSString* )locale_
+{
+    NSParameterAssert( nil != locale_ );
+    
+    BOOL isNoFormatter_ = ( nil == self->targetFormatter );
+    BOOL isOtherLocale_ = ![ self->targetFormatter.locale.localeIdentifier isEqualToString: locale_ ];
+    
+    
+    // создаем новый NSDateFormatter только если локаль поменялась
+    if ( isNoFormatter_ || isOtherLocale_ )
+    {
+        NSCalendar* cal_ = [ ESLocaleFactory gregorianCalendarWithLocaleId: locale_ ];       
+        
+        self->targetFormatter = [ NSDateFormatter new ];
+        [ ESLocaleFactory setCalendar: cal_ 
+                     forDateFormatter: self->targetFormatter ];  
+    }
+
+	// выставляем дату     
+    self->targetFormatter.dateFormat = dateFormat_;
+
+    return YES;
+}
+
+
+// основную работу уже сделали. 
+// Осталось лишь применить заготовленные NSDateFormatter
+-(NSString*)getFormattedDate:( NSString* )strDate_;
+{
+    NSDate*   date_   = [ self->ansiFormatter   dateFromString: strDate_ ];
+    NSString* result_ = [ self->targetFormatter stringFromDate: date_    ];
+
+    return result_;
+}
+
+
+
+Итак, мы получили потокобезопасную, почти чистую в терминах ФП функцию ( pure function ), которая работает за время, сравнимое с strftime.
+
+
+Полную версию кода вы сможете найти на github. 
+https://github.com/dodikk/ESLocale
+

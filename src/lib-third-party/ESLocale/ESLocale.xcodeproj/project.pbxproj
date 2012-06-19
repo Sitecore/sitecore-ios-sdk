@@ -1,0 +1,941 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B09BCC1156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */; };
+		1B09BCC6156D0875001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */; };
+		1B09BCC9156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */; };
+		1B09BCCC156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */; };
+		1B09BCD5156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */; };
+		1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */; };
+		1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */; };
+		1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */; };
+		1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB041156CF3EF004D3377 /* testDateUtils.m */; };
+		1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */; };
+		1B3DB048156CF523004D3377 /* MonthDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */; };
+		1B3DB04B156CF578004D3377 /* QuarterDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */; };
+		1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */; };
+		1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */; };
+		1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */; };
+		1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */; };
+		1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */; };
+		1BCCA001156B74CB00961B74 /* HalfYearDateAlignmentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */; };
+		1BF2E16F1573674600632D67 /* HalfYearAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */; };
+		1BF2E173157369E100632D67 /* QuarterAndFullYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */; };
+		1BF2E17715736B3100632D67 /* FullYearAndHalfYearTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */; };
+		7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0CD1A715667A8F00743383 /* libstdc++.dylib */; };
+		7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */; };
+		7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */; };
+		7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */; };
+		7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */; };
+		7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE511560FB360088E369 /* SqliteFunctions.h */; };
+		7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE521560FB360088E369 /* SqliteFunctions.m */; };
+		7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */; };
+		7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */; };
+		7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
+		7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5B156107770088E369 /* SqlFormatterTest.m */; };
+		7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
+		7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */; };
+		7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7E92BE6B15611E9D0088E369 /* 2.sqlite */; };
+		7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */; };
+		7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */; };
+		7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
+		7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */; };
+		7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
+		7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */; };
+		7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
+		7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA955C156A57AC00A071F2 /* QuarterTest.m */; };
+		7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
+		7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */; };
+		7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */; };
+		7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */; };
+		7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
+		7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */; };
+		7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */; };
+		7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */; };
+		7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
+		7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D587156023F70014BE2D /* DayOfWeekTest.m */; };
+		7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */; };
+		7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
+		7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
+		7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
+		7ED3E58F15400C1E008268CF /* libESLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57715400C1E008268CF /* libESLocale.a */; };
+		7ED3E59515400C1E008268CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED3E59315400C1E008268CF /* InfoPlist.strings */; };
+		7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E59715400C1E008268CF /* ESLocaleTests.m */; };
+		7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E59715400C1E008268CF /* ESLocaleTests.m */; };
+		7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E58815400C1E008268CF /* SenTestingKit.framework */; };
+		7ED3E5AC15400C8E008268CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57A15400C1E008268CF /* Foundation.framework */; };
+		7ED3E5AD15400C8E008268CF /* libESLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED3E57715400C1E008268CF /* libESLocale.a */; };
+		7ED3E5AF15400C8E008268CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED3E59315400C1E008268CF /* InfoPlist.strings */; };
+		7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */; };
+		7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */; };
+		7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED61716155BBDA200DE6328 /* libc++.dylib */; };
+		7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED61716155BBDA200DE6328 /* libc++.dylib */; };
+		7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */; };
+		7EF6836415652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7ED3E58D15400C1E008268CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED3E56E15400C1E008268CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED3E57615400C1E008268CF;
+			remoteInfo = ESLocale;
+		};
+		7ED3E5A615400C8E008268CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED3E56E15400C1E008268CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED3E57615400C1E008268CF;
+			remoteInfo = ESLocale;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithYearResolution.m; sourceTree = "<group>"; };
+		1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithHalfYearResolution.m; sourceTree = "<group>"; };
+		1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithQuarterResolution.m; sourceTree = "<group>"; };
+		1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithMonthResolution.m; sourceTree = "<group>"; };
+		1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignDateRangeTestWithWeekResolution.m; sourceTree = "<group>"; };
+		1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDateResolutionType.h; sourceTree = "<group>"; };
+		1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+DateAlignment.h"; sourceTree = "<group>"; };
+		1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+DateAlignment.m"; sourceTree = "<group>"; };
+		1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB040156CF3EF004D3377 /* testDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDateUtils.h; sourceTree = "<group>"; };
+		1B3DB041156CF3EF004D3377 /* testDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testDateUtils.m; sourceTree = "<group>"; };
+		1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterDateAlignmentTest.m; sourceTree = "<group>"; };
+		1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+AddingTimeIntervals.h"; sourceTree = "<group>"; };
+		1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+AddingTimeIntervals.m"; sourceTree = "<group>"; };
+		1B75967C156E742E0078A99F /* CalendarAlignmentConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarAlignmentConstants.h; sourceTree = "<group>"; };
+		1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CalendarAlignmentConstants.c; sourceTree = "<group>"; };
+		1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+DateAlignment.h"; sourceTree = "<group>"; };
+		1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSCalendar+DateAlignment.mm"; sourceTree = "<group>"; };
+		1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearDateAlignmentTest.m; sourceTree = "<group>"; };
+		1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearAndFullYearTest.m; sourceTree = "<group>"; };
+		1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterAndFullYearTest.m; sourceTree = "<group>"; };
+		1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullYearAndHalfYearTest.m; sourceTree = "<group>"; };
+		7E0CD1A715667A8F00743383 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MultiThreading.h"; sourceTree = "<group>"; };
+		7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+MultiThreading.m"; sourceTree = "<group>"; };
+		7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlitePersistentDateFormatter.h; sourceTree = "<group>"; };
+		7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SqlitePersistentDateFormatter.mm; sourceTree = "<group>"; };
+		7E92BE511560FB360088E369 /* SqliteFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteFunctions.h; sourceTree = "<group>"; };
+		7E92BE521560FB360088E369 /* SqliteFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteFunctions.m; sourceTree = "<group>"; };
+		7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLocalizedDateFormatter.h; sourceTree = "<group>"; };
+		7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLocalizedDateFormatter.m; sourceTree = "<group>"; };
+		7E92BE5B156107770088E369 /* SqlFormatterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlFormatterTest.m; sourceTree = "<group>"; };
+		7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest.m; sourceTree = "<group>"; };
+		7E92BE6B15611E9D0088E369 /* 2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.sqlite; sourceTree = "<group>"; };
+		7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+Constants.h"; sourceTree = "<group>"; };
+		7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+Constants.m"; sourceTree = "<group>"; };
+		7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearNumberTest.m; sourceTree = "<group>"; };
+		7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfYearQueryTest.m; sourceTree = "<group>"; };
+		7EAA955C156A57AC00A071F2 /* QuarterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterTest.m; sourceTree = "<group>"; };
+		7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterQueryTest.m; sourceTree = "<group>"; };
+		7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDatesCalculator.h; sourceTree = "<group>"; };
+		7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ESDatesCalculator.mm; sourceTree = "<group>"; };
+		7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDatesCalculatorTest.m; sourceTree = "<group>"; };
+		7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsFactory.h; sourceTree = "<group>"; };
+		7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsFactory.m; sourceTree = "<group>"; };
+		7ED0D587156023F70014BE2D /* DayOfWeekTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekTest.m; sourceTree = "<group>"; };
+		7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7ED3E57715400C1E008268CF /* libESLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libESLocale.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED3E57A15400C1E008268CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7ED3E57E15400C1E008268CF /* ESLocale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESLocale-Prefix.pch"; sourceTree = "<group>"; };
+		7ED3E57F15400C1E008268CF /* ESLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESLocale.h; sourceTree = "<group>"; };
+		7ED3E58715400C1E008268CF /* ESLocaleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESLocaleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED3E58815400C1E008268CF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7ED3E59215400C1E008268CF /* ESLocaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ESLocaleTests-Info.plist"; sourceTree = "<group>"; };
+		7ED3E59415400C1E008268CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ED3E59715400C1E008268CF /* ESLocaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESLocaleTests.m; sourceTree = "<group>"; };
+		7ED3E5B515400C8E008268CF /* ESLocaleTests copy.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ESLocaleTests copy.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED3E5B615400C8F008268CF /* ESLocaleTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ESLocaleTests copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/lib-third-party/ESLocale/ESLocaleTests copy-Info.plist"; sourceTree = "<absolute>"; };
+		7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLocaleFactory.h; sourceTree = "<group>"; };
+		7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLocaleFactory.m; sourceTree = "<group>"; };
+		7ED61716155BBDA200DE6328 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarQueryTest_V2.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7ED3E57415400C1E008268CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E57B15400C1E008268CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED3E58315400C1E008268CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E0CD1A915667A9700743383 /* libstdc++.dylib in Frameworks */,
+				7ED0D58C1560253E0014BE2D /* libsqlite3.dylib in Frameworks */,
+				7ED61718155BBDA800DE6328 /* libc++.dylib in Frameworks */,
+				7ED3E58915400C1E008268CF /* SenTestingKit.framework in Frameworks */,
+				7ED3E58C15400C1E008268CF /* Foundation.framework in Frameworks */,
+				7ED3E58F15400C1E008268CF /* libESLocale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED3E5A915400C8E008268CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E0CD1A815667A8F00743383 /* libstdc++.dylib in Frameworks */,
+				7ED0D58D156025440014BE2D /* libsqlite3.dylib in Frameworks */,
+				7ED61717155BBDA200DE6328 /* libc++.dylib in Frameworks */,
+				7ED3E5AA15400C8E008268CF /* SenTestingKit.framework in Frameworks */,
+				7ED3E5AC15400C8E008268CF /* Foundation.framework in Frameworks */,
+				7ED3E5AD15400C8E008268CF /* libESLocale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B228576156B9A57006A529B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1B228578156B9A9A006A529B /* NSDateComponents+DateAlignment.h */,
+				1B228579156B9A9A006A529B /* NSDateComponents+DateAlignment.m */,
+				1B759677156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h */,
+				1B759678156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m */,
+				1B75967C156E742E0078A99F /* CalendarAlignmentConstants.h */,
+				1B75967D156E74390078A99F /* CalendarAlignmentConstants.c */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1B3DB03F156CF3DB004D3377 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1B3DB040156CF3EF004D3377 /* testDateUtils.h */,
+				1B3DB041156CF3EF004D3377 /* testDateUtils.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1BCC9FF9156B687500961B74 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1B228576156B9A57006A529B /* Details */,
+				1B09BD57156D0EFC001F86B5 /* ESDateResolutionType.h */,
+				1BCC9FFB156B68AA00961B74 /* NSCalendar+DateAlignment.h */,
+				1BCC9FFC156B68AA00961B74 /* NSCalendar+DateAlignment.mm */,
+				7EA08AE1156E450C00763675 /* NSDateComponents+Constants.h */,
+				7EA08AE2156E450C00763675 /* NSDateComponents+Constants.m */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		7E6CF29E1577A8B6009D3E20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E6CF2A01577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h */,
+				7E6CF2A11577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E92BE501560FB360088E369 /* SqliteDateFormat */ = {
+			isa = PBXGroup;
+			children = (
+				7E92BE511560FB360088E369 /* SqliteFunctions.h */,
+				7E92BE521560FB360088E369 /* SqliteFunctions.m */,
+				7E92BE561560FC120088E369 /* SqlLocalizedDateFormatter.h */,
+				7E92BE571560FC120088E369 /* SqlLocalizedDateFormatter.m */,
+				7E86A5DF15651F1200C2240D /* SqlitePersistentDateFormatter.h */,
+				7E86A5E015651F1200C2240D /* SqlitePersistentDateFormatter.mm */,
+			);
+			path = SqliteDateFormat;
+			sourceTree = "<group>";
+		};
+		7E92BE6A15611E9D0088E369 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				7E92BE6B15611E9D0088E369 /* 2.sqlite */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		7EB7DB0D1559713C005BF339 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7EB7DB0F15597154005BF339 /* NSDateComponentsFactory.h */,
+				7EB7DB1015597154005BF339 /* NSDateComponentsFactory.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7ED3E56C15400C1E008268CF = {
+			isa = PBXGroup;
+			children = (
+				7ED3E57C15400C1E008268CF /* ESLocale */,
+				7ED3E59015400C1E008268CF /* ESLocaleTests */,
+				7E92BE6A15611E9D0088E369 /* TestData */,
+				7ED3E57915400C1E008268CF /* Frameworks */,
+				7ED3E57815400C1E008268CF /* Products */,
+				7ED3E5B615400C8F008268CF /* ESLocaleTests copy-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		7ED3E57815400C1E008268CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ED3E57715400C1E008268CF /* libESLocale.a */,
+				7ED3E58715400C1E008268CF /* ESLocaleTests.octest */,
+				7ED3E5B515400C8E008268CF /* ESLocaleTests copy.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED3E57915400C1E008268CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E0CD1A715667A8F00743383 /* libstdc++.dylib */,
+				7ED0D58B1560253E0014BE2D /* libsqlite3.dylib */,
+				7ED61716155BBDA200DE6328 /* libc++.dylib */,
+				7ED3E57A15400C1E008268CF /* Foundation.framework */,
+				7ED3E58815400C1E008268CF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7ED3E57C15400C1E008268CF /* ESLocale */ = {
+			isa = PBXGroup;
+			children = (
+				7ED3E57D15400C1E008268CF /* Supporting Files */,
+				1BCC9FF9156B687500961B74 /* Calendar */,
+				7EB7DB0D1559713C005BF339 /* Detail */,
+				7E6CF29E1577A8B6009D3E20 /* Extensions */,
+				7E92BE501560FB360088E369 /* SqliteDateFormat */,
+				7ED3E57F15400C1E008268CF /* ESLocale.h */,
+				7ED3E5B715400CD9008268CF /* ESLocaleFactory.h */,
+				7ED3E5B815400CD9008268CF /* ESLocaleFactory.m */,
+				7EB7DADB155946E0005BF339 /* ESDatesCalculator.h */,
+				7EB7DADC155946E0005BF339 /* ESDatesCalculator.mm */,
+			);
+			path = ESLocale;
+			sourceTree = "<group>";
+		};
+		7ED3E57D15400C1E008268CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED3E57E15400C1E008268CF /* ESLocale-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED3E59015400C1E008268CF /* ESLocaleTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B3DB03F156CF3DB004D3377 /* Details */,
+				7ED3E59115400C1E008268CF /* Supporting Files */,
+				7ED3E59715400C1E008268CF /* ESLocaleTests.m */,
+				7EB7DAE61559476D005BF339 /* ESDatesCalculatorTest.m */,
+				7ED0D587156023F70014BE2D /* DayOfWeekTest.m */,
+				7E92BE5B156107770088E369 /* SqlFormatterTest.m */,
+				7E92BE5F15610C020088E369 /* WeekCalendarQueryTest.m */,
+				7EF6836215652A4A00151779 /* WeekCalendarQueryTest_V2.m */,
+				7EAA9553156A441000A071F2 /* HalfYearNumberTest.m */,
+				7EAA9558156A531800A071F2 /* HalfYearQueryTest.m */,
+				7EAA955C156A57AC00A071F2 /* QuarterTest.m */,
+				1BF2E16E1573674600632D67 /* HalfYearAndFullYearTest.m */,
+				1BF2E172157369E100632D67 /* QuarterAndFullYearTest.m */,
+				1BF2E17615736B3100632D67 /* FullYearAndHalfYearTest.m */,
+				7EAA9560156A60E700A071F2 /* QuarterQueryTest.m */,
+				1B3DB03C156CF393004D3377 /* YearDateAlignmentTest.m */,
+				1BCCA000156B74CB00961B74 /* HalfYearDateAlignmentTest.m */,
+				1B3DB04A156CF578004D3377 /* QuarterDateAlignmentTest.m */,
+				1B3DB047156CF523004D3377 /* MonthDateAlignmentTest.m */,
+				1B3DB044156CF4C3004D3377 /* WeakDateAlignmentTest.m */,
+				1B09BCC0156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m */,
+				1B09BCC4156D0807001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m */,
+				1B09BCC8156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m */,
+				1B09BCCB156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m */,
+				1B09BCD4156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m */,
+			);
+			path = ESLocaleTests;
+			sourceTree = "<group>";
+		};
+		7ED3E59115400C1E008268CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED3E59215400C1E008268CF /* ESLocaleTests-Info.plist */,
+				7ED3E59315400C1E008268CF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7ED3E57515400C1E008268CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E5B915400CD9008268CF /* ESLocaleFactory.h in Headers */,
+				7EB7DADD155946E0005BF339 /* ESDatesCalculator.h in Headers */,
+				7EB7DB1115597154005BF339 /* NSDateComponentsFactory.h in Headers */,
+				7E92BE531560FB360088E369 /* SqliteFunctions.h in Headers */,
+				7E92BE581560FC120088E369 /* SqlLocalizedDateFormatter.h in Headers */,
+				7E86A5E115651F1200C2240D /* SqlitePersistentDateFormatter.h in Headers */,
+				1BCC9FFD156B68AA00961B74 /* NSCalendar+DateAlignment.h in Headers */,
+				1B22857A156B9A9A006A529B /* NSDateComponents+DateAlignment.h in Headers */,
+				7EA08AE3156E450C00763675 /* NSDateComponents+Constants.h in Headers */,
+				1B759679156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.h in Headers */,
+				7E6CF2A21577A8E6009D3E20 /* NSDateFormatter+MultiThreading.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7ED3E57615400C1E008268CF /* ESLocale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED3E59B15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocale" */;
+			buildPhases = (
+				7ED3E57315400C1E008268CF /* Sources */,
+				7ED3E57415400C1E008268CF /* Frameworks */,
+				7ED3E57515400C1E008268CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESLocale;
+			productName = ESLocale;
+			productReference = 7ED3E57715400C1E008268CF /* libESLocale.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7ED3E58615400C1E008268CF /* ESLocaleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED3E59E15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests" */;
+			buildPhases = (
+				7ED3E58215400C1E008268CF /* Sources */,
+				7ED3E58315400C1E008268CF /* Frameworks */,
+				7ED3E58415400C1E008268CF /* Resources */,
+				7ED3E58515400C1E008268CF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED3E58E15400C1E008268CF /* PBXTargetDependency */,
+			);
+			name = ESLocaleTests;
+			productName = ESLocaleTests;
+			productReference = 7ED3E58715400C1E008268CF /* ESLocaleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		7ED3E5A415400C8E008268CF /* ESLocaleTests-CI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED3E5B115400C8E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests-CI" */;
+			buildPhases = (
+				7ED3E5A715400C8E008268CF /* Sources */,
+				7ED3E5A915400C8E008268CF /* Frameworks */,
+				7ED3E5AE15400C8E008268CF /* Resources */,
+				7ED3E5B015400C8E008268CF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED3E5A515400C8E008268CF /* PBXTargetDependency */,
+			);
+			name = "ESLocaleTests-CI";
+			productName = ESLocaleTests;
+			productReference = 7ED3E5B515400C8E008268CF /* ESLocaleTests copy.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7ED3E56E15400C1E008268CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Sitecore;
+			};
+			buildConfigurationList = 7ED3E57115400C1E008268CF /* Build configuration list for PBXProject "ESLocale" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7ED3E56C15400C1E008268CF;
+			productRefGroup = 7ED3E57815400C1E008268CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7ED3E57615400C1E008268CF /* ESLocale */,
+				7ED3E58615400C1E008268CF /* ESLocaleTests */,
+				7ED3E5A415400C8E008268CF /* ESLocaleTests-CI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7ED3E58415400C1E008268CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E59515400C1E008268CF /* InfoPlist.strings in Resources */,
+				7E92BE6C15611E9D0088E369 /* 2.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED3E5AE15400C8E008268CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E5AF15400C8E008268CF /* InfoPlist.strings in Resources */,
+				7E92BE6D15611E9D0088E369 /* 2.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7ED3E58515400C1E008268CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		7ED3E5B015400C8E008268CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7ED3E57315400C1E008268CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E5BA15400CD9008268CF /* ESLocaleFactory.m in Sources */,
+				7EB7DADE155946E0005BF339 /* ESDatesCalculator.mm in Sources */,
+				7EB7DB1215597154005BF339 /* NSDateComponentsFactory.m in Sources */,
+				7E92BE541560FB360088E369 /* SqliteFunctions.m in Sources */,
+				7E92BE591560FC120088E369 /* SqlLocalizedDateFormatter.m in Sources */,
+				7E86A5E215651F1200C2240D /* SqlitePersistentDateFormatter.mm in Sources */,
+				1BCC9FFE156B68AA00961B74 /* NSCalendar+DateAlignment.mm in Sources */,
+				1B22857B156B9A9A006A529B /* NSDateComponents+DateAlignment.m in Sources */,
+				7EA08AE4156E450C00763675 /* NSDateComponents+Constants.m in Sources */,
+				1B75967A156E72EA0078A99F /* NSDateComponents+AddingTimeIntervals.m in Sources */,
+				1B75967E156E74390078A99F /* CalendarAlignmentConstants.c in Sources */,
+				7E6CF2A31577A8E6009D3E20 /* NSDateFormatter+MultiThreading.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED3E58215400C1E008268CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E59815400C1E008268CF /* ESLocaleTests.m in Sources */,
+				7EB7DAE71559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
+				7ED0D588156023F70014BE2D /* DayOfWeekTest.m in Sources */,
+				7E92BE5C156107770088E369 /* SqlFormatterTest.m in Sources */,
+				7E92BE6015610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
+				7EF6836315652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
+				7EAA9554156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
+				7EAA9559156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955D156A57AC00A071F2 /* QuarterTest.m in Sources */,
+				7EAA9561156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
+				1BCCA001156B74CB00961B74 /* HalfYearDateAlignmentTest.m in Sources */,
+				1B3DB03D156CF393004D3377 /* YearDateAlignmentTest.m in Sources */,
+				1B3DB042156CF3EF004D3377 /* testDateUtils.m in Sources */,
+				1B3DB045156CF4C3004D3377 /* WeakDateAlignmentTest.m in Sources */,
+				1B3DB048156CF523004D3377 /* MonthDateAlignmentTest.m in Sources */,
+				1B3DB04B156CF578004D3377 /* QuarterDateAlignmentTest.m in Sources */,
+				1B09BCC1156CFD6F001F86B5 /* AlignDateRangeTestWithYearResolution.m in Sources */,
+				1B09BCC6156D0875001F86B5 /* AlignDateRangeTestWithHalfYearResolution.m in Sources */,
+				1B09BCC9156D0ADE001F86B5 /* AlignDateRangeTestWithQuarterResolution.m in Sources */,
+				1B09BCCC156D0B9E001F86B5 /* AlignDateRangeTestWithMonthResolution.m in Sources */,
+				1B09BCD5156D0CC7001F86B5 /* AlignDateRangeTestWithWeekResolution.m in Sources */,
+				1BF2E16F1573674600632D67 /* HalfYearAndFullYearTest.m in Sources */,
+				1BF2E173157369E100632D67 /* QuarterAndFullYearTest.m in Sources */,
+				1BF2E17715736B3100632D67 /* FullYearAndHalfYearTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED3E5A715400C8E008268CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED3E5A815400C8E008268CF /* ESLocaleTests.m in Sources */,
+				7EB7DAE81559476D005BF339 /* ESDatesCalculatorTest.m in Sources */,
+				7ED0D589156023F70014BE2D /* DayOfWeekTest.m in Sources */,
+				7E92BE5D156107770088E369 /* SqlFormatterTest.m in Sources */,
+				7E92BE6115610C020088E369 /* WeekCalendarQueryTest.m in Sources */,
+				7EF6836415652A4A00151779 /* WeekCalendarQueryTest_V2.m in Sources */,
+				7EAA9555156A441000A071F2 /* HalfYearNumberTest.m in Sources */,
+				7EAA955A156A531800A071F2 /* HalfYearQueryTest.m in Sources */,
+				7EAA955E156A57AC00A071F2 /* QuarterTest.m in Sources */,
+				7EAA9562156A60E700A071F2 /* QuarterQueryTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7ED3E58E15400C1E008268CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7ED3E57615400C1E008268CF /* ESLocale */;
+			targetProxy = 7ED3E58D15400C1E008268CF /* PBXContainerItemProxy */;
+		};
+		7ED3E5A515400C8E008268CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7ED3E57615400C1E008268CF /* ESLocale */;
+			targetProxy = 7ED3E5A615400C8E008268CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7ED3E59315400C1E008268CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED3E59415400C1E008268CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7ED3E59915400C1E008268CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					..,
+					.,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-all_load";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7ED3E59A15400C1E008268CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					..,
+					.,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-all_load";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7ED3E59C15400C1E008268CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/ESLocale.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7ED3E59D15400C1E008268CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/ESLocale.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7ED3E59F15400C1E008268CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7ED3E5A015400C1E008268CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		7ED3E5A115400C2A008268CF /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					..,
+					.,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-L../",
+					"-lCoverageFopenFix",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Coverage;
+		};
+		7ED3E5A215400C2A008268CF /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/ESLocale.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Coverage;
+		};
+		7ED3E5A315400C2A008268CF /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests/ESLocaleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-L../",
+					"-lCoverageFopenFix",
+					"-v",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Coverage;
+		};
+		7ED3E5B215400C8E008268CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests copy-Info.plist";
+				PRODUCT_NAME = "ESLocaleTests copy";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7ED3E5B315400C8E008268CF /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests copy-Info.plist";
+				PRODUCT_NAME = "ESLocaleTests copy";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Coverage;
+		};
+		7ED3E5B415400C8E008268CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESLocale/ESLocale-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = "ESLocaleTests copy-Info.plist";
+				PRODUCT_NAME = "ESLocaleTests copy";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7ED3E57115400C1E008268CF /* Build configuration list for PBXProject "ESLocale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED3E59915400C1E008268CF /* Debug */,
+				7ED3E5A115400C2A008268CF /* Coverage */,
+				7ED3E59A15400C1E008268CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED3E59B15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED3E59C15400C1E008268CF /* Debug */,
+				7ED3E5A215400C2A008268CF /* Coverage */,
+				7ED3E59D15400C1E008268CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED3E59E15400C1E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED3E59F15400C1E008268CF /* Debug */,
+				7ED3E5A315400C2A008268CF /* Coverage */,
+				7ED3E5A015400C1E008268CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED3E5B115400C8E008268CF /* Build configuration list for PBXNativeTarget "ESLocaleTests-CI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED3E5B215400C8E008268CF /* Debug */,
+				7ED3E5B315400C8E008268CF /* Coverage */,
+				7ED3E5B415400C8E008268CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7ED3E56E15400C1E008268CF /* Project object */;
+}

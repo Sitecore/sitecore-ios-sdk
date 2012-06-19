@@ -1,0 +1,147 @@
+<h1>Учим  SQLite работать с локализированным календарем</h1>
+
+
+<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/sqlite_editor_logo.png"/>  <img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/hero_ical.jpg"/>
+
+Недавно мне довелось портировать (точнее, переписывать) под iOS приложение для анализа посещаемости сайта. Поскольку данные подходили под реляционную модель, мы решили использовать SQLite. Насколько я знаю, других реляционных СУБД под iOS просто нет.
+
+Долго ли, коротко ли… Пришло время подсчитать понедельный КПД для определенного диапазона дат.
+<habracut text="Что же произошло дальше?" />
+Итак, имеем таблицу, которая содержит значения полезной и затраченной работы, а также даты исполнения оной работы. Структура таблица описывается на языке SQL следующим образом : 
+<blockquote><code><font size="2" face="Courier New" color="black"><font color="#0000ff">CREATE</font> <font color="#0000ff">TABLE</font> [<font color="#0000ff">Usage</font>] 
+( 
+&nbsp; [FacetId] <font color="#0000ff">VARCHAR</font>, <font color="#008000">-- "исполнитель"</font>
+&nbsp; [<font color="#0000ff">Value</font>&nbsp;] <font color="#0000ff">INTEGER</font>, <font color="#008000">-- полезная "работа"</font>
+&nbsp; [Visits ] <font color="#0000ff">INTEGER</font>, <font color="#008000">-- затраченная "работа"</font>
+&nbsp; [<font color="#0000ff">Date</font>&nbsp; ] DATETIME <font color="#008000">-- дата&nbsp;</font>
+);</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+Необходимо для некоторого диапазона дат посчитать КПД для каждой недели. Ладно, написали запрос 
+
+<blockquote><code><font size="2" face="Courier New" color="black"><font color="#0000ff">SELECT</font> <font color="#0000ff">SUM</font>( <font color="#0000ff">Value</font> ) / <font color="#0000ff">SUM</font>( Visits ),
+&nbsp;&nbsp;&nbsp; strftime( <font color="#A31515">'%Y-%W'</font>, <font color="#0000ff">Date</font> ) <font color="#0000ff">AS</font> week
+<font color="#0000ff">FROM</font>&nbsp;<font color="#0000ff">Usage</font>
+<font color="#0000ff">WHERE</font> <font color="#0000ff">Date</font> <font color="#0000ff">BETWEEN</font> @startDate <font color="#0000ff">AND</font> @endDate
+<font color="#0000ff">GROUP</font> <font color="#0000ff">BY</font> week
+<font color="#0000ff">ORDER</font> <font color="#0000ff">BY</font> week;</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+
+Однако результаты почему-то не сошлись с эталонной реализацией. Выяснилось следующее. SQLite полагает что неделя начинается с понедельника. В то время как эталонная реализация считает началом недели воскресенье как это принято в США.
+<blockquote><code><font size="2" face="Courier New" color="black">sqlite&#62; <font color="#0000ff">SELECT</font> strftime( <font color="#A31515">'%Y-%W'</font>, <font color="#A31515">'2011-01-02'</font> );
+2011-01 ## для США ожидаем получить 2011-02
+sqlite&#62; <font color="#0000ff">SELECT</font> strftime( <font color="#A31515">'%Y-%W'</font>, <font color="#A31515">'2011-01-01'</font> );
+2011-01</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+Способа принудительно указать СУБД локаль я не нашел. Разбивать красивый запрос на несколько очень не хотелось. К тому же, я обнаружил возможность добавлять функции в SQLite с помощью sqlite3_create_function. 
+Да, я решил написать свой вариант форматирования дат с преферансом и куртизанками. От strftime он будет отличаться умением учитывать переданную из запроса локаль. 
+
+
+Выгоды такого решения очевидны :
+<ul>
+<li> мы остаемся в рамках SQL </li>
+<li> не нужно писать лишние циклы на Objective-C</li>
+<li> мы получим потенциально более быстрое исполнение запросов</li>
+<li> И самое главное - это решение рассчитано на повторное использование</li>
+</ul>
+
+Итак, приступим. Упростим постановку задачи, ограничившись пределами григорианского календаря.
+
+Функция-расширение SQLite имеет сигнатуру, подобную функции main(). 
+
+<blockquote><code><font size="2" face="Courier New" color="black"><font color="#0000ff">void</font> ObjcFormatAnsiDateUsingLocale( sqlite3_context* ctx_,<font color="#0000ff">int</font> argc_,sqlite3_value** argv_ );</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+
+Отличие состоит в том, что она не имеет флага фозврата. Вместо этого в нее передается контекст базы данных, из которой она была вызвана. Этот контекст используется для возврата результата либо ошибки.
+
+
+В SQL запросе функция будет принимать формат даты в стиле Objective-C, собственно, дату и локаль. Этот запрос верно отнесет субботу 2011-01-02 ко второй неделе 2011го года  как и положено в американских краях.
+
+<blockquote><code><font size="2" face="Courier New" color="black">sqlite&#62; <font color="#0000ff">SELECT</font> ObjcFormatAnsiDateUsingLocale( <font color="#A31515">'YYYY-ww'</font>, <font color="#A31515">'2011-01-02'</font>, <font color="#A31515">'en_US'</font> );
+2011-02</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+
+
+
+Таким образом, нам необходимо сделать 4 вещи :
+<ol>
+<li> Зарегистрировать функцию в SQLite дабы ее можно было использовать в запросах. </li>
+<li> Преобразовать параметры из argv_ в Foundation типы. В нашем случае это будут [ NSString, NSDate, NSString ] соответственно. </li>
+<li> Провести форматирование даты с помощью NSDateFormatter </li>
+<li> Вернуть результат  </li>
+</ol>
+==============
+
+
+<h2>0. Регистрируем SQLite функцию</h2>
+
+Это делается с помощью sqlite3_create_function. http://www.sqlite.org/c3ref/create_function.html
+
+<blockquote><code><font size="2" face="Courier New" color="black">sqlite3_create_function
+( 
+db_, <font color="#008000">// HANDLE базы данных, полученный из sqlite3_open</font>
+<font color="#A31515">"ObjcFormatAnsiDateUsingLocale"</font>, <font color="#008000">// имя функции для запроса</font>
+3, <font color="#008000">// количество параметров. SQLite сам проверит их соответствие</font>
+SQLITE_UTF8, <font color="#008000">//для iOS этой кодировки достаточно</font>
+NULL,
+&#38;ObjcFormatAnsiDateUsingLocale, <font color="#008000">// реализация функции</font>
+NULL, NULL <font color="#008000">// Так нужно. Функция не аггрегатная.</font>
+);</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+--------------
+
+
+<h2>1. Преобразование параметров </h2>
+SQLite самостоятельно проверяет соответствие количества параметров. Однако я рекомендую на всякий случай оставлять проверки на argc.
+
+Поскольку SQLite сам освободит ресурсы параметров, лучше использовать конструктор NSString->initWithBytesNoCopy:length:encoding:freeWhenDone:
+--------------
+
+
+<h2>2. Форматирование даты</h2>
+
+На первый взгляд, тут все просто.
+
+ <blockquote><code><font size="2" face="Courier New" color="black">&nbsp; inputFormatter_.dateFormat = <font color="#A31515">@"yyyy-MM-dd"</font>;
+&nbsp;&nbsp;NSDate* date_ = [ inputFormatter_ dateFromString: strDate_ ];
+&nbsp;&nbsp;targetFormatter_.dateFormat = format_;&nbsp;&nbsp;
+&nbsp;&nbsp;<font color="#0000ff">return</font> [ targetFormatter_ stringFromDate: date_ ];</font>
+
+<font size="1" color="gray">* This source code was highlighted with <a href="http://virtser.net/blog/post/source-code-highlighter.aspx"><font size="1" color="gray">Source Code Highlighter</font></a>.</font></code></blockquote>
+
+Однако есть некоторые нюансы. 
+<ul>
+<li> Как известно, экземпляр класса NSLocale содержится как в объекте NSCalendar, так и в NSDateFormatter.
+Очень важно чтобы выполнялось условие "NSDateFormatter.calendar.locale == NSDateFormatter.locale".
+
+<img title="" border="0" alt="" src="http://dl.dropbox.com/u/32947027/articles/1-SqliteCalendar/NSDateFormatter.png"/> </li>
+
+<li> inputFormatter_ должен иметь локаль "en_US_POSIX" </li>
+<li> SQLite хранит даты в ANSI формате @"yyyy-MM-dd". Его и необходимо выставить для inputFormatter_ </li>
+<li> Создание NSDateFormatter - весьма затратная операция. Старайтесь лишний раз ее не вызывать </li>
+</ul>
+--------------
+
+
+<h2> 3. Возврат результата </h2>
+
+Для этих целей используется функция sqlite3_result_text. Важно использовать опцию SQLITE_TRANSIENT чтобы SQLite сделал копию ресурсов, выделенных в Foundation Framework
+==============
+
+
+Вот, собственно, и все. Расчет сошелся.
+С исходным кодом можно ознакомиться на странице проекта  <a title="" href="https://github.com/dodikk/ESLocale"> github - dodikk/ESLocale </a> 
+Code review и Pull request приветствуются. 
+
+Надеюсь, моя функция кому-нибудь пригодится.
+Засим откланяюсь.

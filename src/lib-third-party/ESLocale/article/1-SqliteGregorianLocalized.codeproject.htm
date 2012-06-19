@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--------------------------------------------------------------------------->  
+<!--                           INTRODUCTION                                
+
+ RootAdmin article submission template (HTML version)
+
+Using this template will help us post your article sooner. To use, just 
+follow the 3 easy steps below:
+ 
+     1. Fill in the article description details
+     2. Add links to your images and downloads
+     3. Include the main article text
+
+That's all there is to it! All formatting will be done by our submission
+scripts and style sheets. 
+
+-->  
+<!--------------------------------------------------------------------------->  
+<!--                        IGNORE THIS SECTION                            -->
+<html>
+<head>
+<title>RootAdmin</title>
+<Style>
+BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+H2,H3,H4,H5 { color: #535102; font-weight: bold; }
+H2 { font-size: 13pt; }
+H3 { font-size: 12pt; }
+H4 { font-size: 10pt; color: black; }
+PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: "Courier New", Courier, mono; WHITE-SPACE: pre; }
+CODE { COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono; }
+</style>
+<link rel="stylesheet" type="text/css" href="/App_Themes/rootadmin/CSS/CodeProject.min.css?dt=2.5.120409.1">
+</head>
+<body bgcolor="#FFFFFF" color=#000000>
+<!--------------------------------------------------------------------------->  
+
+
+<!-------------------------------     STEP 1      --------------------------->
+<!--  Fill in the details (RootAdmin will reformat this section for you) -->
+
+<pre>
+Title:       Performing localized week based calendar computations with SQLite.
+Author:      Oleksandr Dodatko
+Email:       dodikk88.reg@gmail.com
+Platform:    iOS, Mac OS X
+Technology:  SQLite, CocoaTouch
+Level:       Intermediate
+Description: This tutorial shows how to create and use an SQLite custom function that performs locale aware week based calendar computations.
+Section      Mobile development
+SubSection   iPhone
+License:     BSD
+</pre>
+
+<!-------------------------------     STEP 2      --------------------------->
+<!--  Include download and sample image information.                       --> 
+
+<ul class=download>
+<li><a href="https://github.com/dodikk/ESLocale/zipball/master">Download demo project</a></li>
+<li><a href="https://github.com/dodikk/ESLocale">Download source</a></li>
+</ul>
+
+<!--<p><img src="Article.gif" alt="Sample Image - maximum width is 600 pixels" width=400 height=200></p>-->
+
+
+<!-------------------------------     STEP 3      --------------------------->
+
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+
+<h2>Introduction</h2>
+
+<p>Recently I was involved in analytics application iOS port development. Since our model was relational we decided to use SQLite. As far as I know this is the only relational DBMS for iOS.</p>
+
+<p>One of our tasks was weekly "Value per visit" report computation. Suppose, we have a table described as: </p>
+<pre lang="SQL">
+CREATE TABLE [Usage]
+(
+  [FacetId] VARCHAR, -- "Visit kind"
+  [Value  ] INTEGER, -- useful "work amount"
+  [Visits ] INTEGER, -- spent "work amount"
+  [Date   ] DATETIME -- date
+);
+</pre>
+
+
+
+<p>In order to compute the report, I've composed a query below:</p>
+<pre lang="SQL">
+SELECT SUM( Value ) / SUM( Visits ),
+    strftime( '%Y-%W', Date ) AS week
+FROM Usage
+WHERE Date BETWEEN @startDate AND @endDate
+GROUP BY week
+ORDER BY week;
+</pre>
+
+
+<p>For some reason, query output did not match the reference implementation. The reason turned out to be simple. For SQLite the week starts on Monday. For reference implementation week starts on Sunday as it used US locale.</p>
+
+<pre lang="SQL">
+sqlite> SELECT strftime( '%Y-%W', '2011-01-02' );
+2011-01 ## expecting to receive 2011-02 for US locale
+sqlite> SELECT strftime( '%Y-%W', '2011-01-01' );
+2011-01 
+</pre>
+
+<p>The article below will explain how to overcome this problem</p>
+
+
+
+
+
+<h2>Background</h2>
+
+<p>You should have basic knowledge of SQL and ObjectiveC. You should also be familiar with week based calendar concepts.</p>
+
+
+
+
+<h2>The Solution</h2>
+
+
+<p>Unfortunately, I have not found a way to force set the SQLite locale. Performing aggregation in ObjectiveC code isn't a good solution either. Luckily, SQLite has sqlite3_create_function API that serves for adding custom DBMS extensions. So I've decided to implement a custom function that will perform date formatting with the respect to the locale. It would use NSCalendar and NSDateFormatter API under the hood.</p>
+
+
+<p>You'll benefit in :</p>
+<ol>
+<li>We can still use SQL to perform aggregation</li>
+<li>No need to write loops and aggregation in Objective-C. Hence, you'll have less code and bugs.</li>
+<li>You'll get better performance as you'll iterate the dataset only once.</li>
+<li>This solution is easier to reuse.</li>
+</ol>
+
+
+<p>Suppose, we'll operate only with Gregorian calendars to simplify the code.</p>
+
+
+<p>SQLite extension function has a signature similar to С++ main().<p>
+
+<pre lang="C++">void ObjcFormatAnsiDateUsingLocale (sqlite3_context * ctx_, int argc_, sqlite3_value ** argv_);</pre>
+
+<p>It has no return value. Instead it receives sqlite3_context* handle which is used to return the result or an error.</p>
+
+
+<p>Its SQL interface will take three arguments: </p>
+<ol>
+<li>NSDateFormatter compatible date format</li>
+<li>Date string in ANSI format</li>
+<li>NSLocale compatible locale identifier</li>
+</ol>
+
+
+<p>This report will correctly detect that Sunday 2011-01-02 belongs to the second week of year 2011.</p>
+<pre lang="SQL">
+sqlite> SELECT ObjcFormatAnsiDateUsingLocale ('YYYY-ww', '2011-01-02 ',' en_US ');
+2011-02
+</pre>
+
+
+<p>Thus, we need to do four things:</p>
+<ol>
+<li>Register the SQLite custom function so that it can be used in queries.</li>
+<li>Convert argv_ parameters to Foundation.framework compatible types. In our case it will be [NSString, NSDate, NSString], respectively.</li>
+<li>Conduct date formatting using NSDateFormatter</li>
+<li>Return the result</li>
+</ol>
+
+
+
+<h3>0. Register the SQLite function</h3>
+
+<p>This is done with <a href="www.sqlite.org/c3ref/create_function.html"> <code>sqlite3_create_function()</code> </a> <p>
+
+
+<pre lang="C++">
+sqlite3_create_function
+(
+db_, / / ​​database HANDLE received from sqlite3_open
+"ObjcFormatAnsiDateUsingLocale", / / ​​name of the function to be used in queries
+3, / / ​​number of parameters. SQLite will ensure that their count matches
+SQLITE_UTF8, / / ​​the encoding for iOS enough
+NULL,
+&ObjcFormatAnsiDateUsingLocale, / / ​​function implementation
+NULL, NULL / / It's required as the function does not perform aggregation.
+);
+</pre>
+
+
+<h3>1. Input parameters processing.</h3>
+
+<p>SQLite ensures that your function receives correct amount of arguments. However, I recommend to check them anyway just in case. Since SQLite will take care of allocated resources, I suggest using <code>@selector(initWithBytesNoCopy:length:encoding:freeWhenDone:)</code> to initialise <code>NSString</code>. You must pass "NO" to "freeWhenDone" parameter.</p>
+
+
+
+<h3>2. Date formatting.</h3>
+
+<p>With Foundation framework the implementation is pretty straightforward.</p>
+
+
+<pre lang="C++">
+NSDateFormatter* inputFormatter_  = nil;
+NSDateFormatter* targetFormatter_ = nil;
+
+//... initialize date formatters
+
+inputFormatter_.dateFormat = @"yyyy-MM-dd";
+targetFormatter_.dateFormat = format_;
+
+NSDate * date_ = [inputFormatter_ dateFromString: strDate_];
+return [targetFormatter_ stringFromDate: date_];
+</pre>
+
+
+<p>However, there are some nuances:</p>
+<ol>
+<li>Both NSCalendar and NSDateFormatter objects contain NSLocale instance.
+It's very important to ensure that [ NSDateFormatter.locale isEqual: NSDateFormatter.calendar.locale ];
+Otherwise you'll experience some undefined behaviour and bugs.
+
+<p><img src="NSDateFormatter.png" alt="NSCalendar diagram" width=425 height=200></p>
+
+</li>
+
+<li>Input formatter must have @"en_US_POSIX" locale and @"yyyy-MM-dd" format as SQLite stores dates in ANSI format.</li>
+
+<li>Creating a properly initialized NSDateFormatter too often may result in poor performance. Don't call it too often.</li>
+</ol>
+
+
+<h3>3. Returning the result.</h3>
+
+<p>You must use <code>sqlite3_result_text()</code> to accomplish this. It's important to use <code>SQLITE_TRANSIENT</code> to make SQLite obtain a copy of the result string. If you use <code>SQITE_STATIC</code> you'll get a crash after Foundation framework disposes resources.</p>
+
+
+
+<p>That's it. </p>
+<p>You can obtain the source code and text of this article at <a href="https://github.com/dodikk/ESLocale">github</p>
+
+
+
+
+<h2>History</h2>
+
+<!-------------------------------    That's it!   --------------------------->
+</body>
+
+</html>
