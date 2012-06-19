@@ -1,0 +1,240 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		652874E4153F5BA200B01681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652874E3153F5BA200B01681 /* Foundation.framework */; };
+		652874EA153F5BA200B01681 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 652874E9153F5BA200B01681 /* HTMLParser.m */; };
+		6528750E153F5C8B00B01681 /* HTMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6528750C153F5C8B00B01681 /* HTMLNode.h */; };
+		6528750F153F5C8B00B01681 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6528750D153F5C8B00B01681 /* HTMLNode.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		652874E0153F5BA200B01681 /* libHTMLParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHTMLParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		652874E3153F5BA200B01681 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		652874E7153F5BA200B01681 /* HTMLParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTMLParser-Prefix.pch"; sourceTree = "<group>"; };
+		652874E8153F5BA200B01681 /* HTMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		652874E9153F5BA200B01681 /* HTMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		6528750C153F5C8B00B01681 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		6528750D153F5C8B00B01681 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		652874DD153F5BA200B01681 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652874E4153F5BA200B01681 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		652874D5153F5BA200B01681 = {
+			isa = PBXGroup;
+			children = (
+				652874E5153F5BA200B01681 /* HTMLParser */,
+				652874E2153F5BA200B01681 /* Frameworks */,
+				652874E1153F5BA200B01681 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		652874E1153F5BA200B01681 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				652874E0153F5BA200B01681 /* libHTMLParser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		652874E2153F5BA200B01681 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				652874E3153F5BA200B01681 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		652874E5153F5BA200B01681 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				6528750C153F5C8B00B01681 /* HTMLNode.h */,
+				6528750D153F5C8B00B01681 /* HTMLNode.m */,
+				652874E8153F5BA200B01681 /* HTMLParser.h */,
+				652874E9153F5BA200B01681 /* HTMLParser.m */,
+				652874E6153F5BA200B01681 /* Supporting Files */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		652874E6153F5BA200B01681 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				652874E7153F5BA200B01681 /* HTMLParser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		652874DE153F5BA200B01681 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6528750E153F5C8B00B01681 /* HTMLNode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		652874DF153F5BA200B01681 /* HTMLParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652874ED153F5BA200B01681 /* Build configuration list for PBXNativeTarget "HTMLParser" */;
+			buildPhases = (
+				652874DC153F5BA200B01681 /* Sources */,
+				652874DD153F5BA200B01681 /* Frameworks */,
+				652874DE153F5BA200B01681 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTMLParser;
+			productName = HTMLParser;
+			productReference = 652874E0153F5BA200B01681 /* libHTMLParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		652874D7153F5BA200B01681 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 652874DA153F5BA200B01681 /* Build configuration list for PBXProject "HTMLParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 652874D5153F5BA200B01681;
+			productRefGroup = 652874E1153F5BA200B01681 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				652874DF153F5BA200B01681 /* HTMLParser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		652874DC153F5BA200B01681 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652874EA153F5BA200B01681 /* HTMLParser.m in Sources */,
+				6528750F153F5C8B00B01681 /* HTMLNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		652874EB153F5BA200B01681 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		652874EC153F5BA200B01681 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		652874EE153F5BA200B01681 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HTMLParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTMLParser/HTMLParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		652874EF153F5BA200B01681 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HTMLParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTMLParser/HTMLParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		652874DA153F5BA200B01681 /* Build configuration list for PBXProject "HTMLParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652874EB153F5BA200B01681 /* Debug */,
+				652874EC153F5BA200B01681 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652874ED153F5BA200B01681 /* Build configuration list for PBXNativeTarget "HTMLParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652874EE153F5BA200B01681 /* Debug */,
+				652874EF153F5BA200B01681 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 652874D7153F5BA200B01681 /* Project object */;
+}

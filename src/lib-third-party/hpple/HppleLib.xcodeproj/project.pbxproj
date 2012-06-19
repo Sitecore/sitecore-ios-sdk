@@ -1,0 +1,262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B5BD721143341CF0004C6D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5BD720143341CF0004C6D0 /* Foundation.framework */; };
+		1B5BD7321433422F0004C6D0 /* Hpple_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1B5BD7311433422F0004C6D0 /* Hpple_Prefix.pch */; };
+		1B5BD7391433426F0004C6D0 /* TFHpple.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B5BD7331433426F0004C6D0 /* TFHpple.h */; };
+		1B5BD73A1433426F0004C6D0 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BD7341433426F0004C6D0 /* TFHpple.m */; };
+		1B5BD73B1433426F0004C6D0 /* TFHppleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B5BD7351433426F0004C6D0 /* TFHppleElement.h */; };
+		1B5BD73C1433426F0004C6D0 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BD7361433426F0004C6D0 /* TFHppleElement.m */; };
+		1B5BD73D1433426F0004C6D0 /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B5BD7371433426F0004C6D0 /* XPathQuery.h */; };
+		1B5BD73E1433426F0004C6D0 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BD7381433426F0004C6D0 /* XPathQuery.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B5BD71D143341CF0004C6D0 /* libHppleLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHppleLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B5BD720143341CF0004C6D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B5BD7311433422F0004C6D0 /* Hpple_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hpple_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		1B5BD7331433426F0004C6D0 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = SOURCE_ROOT; };
+		1B5BD7341433426F0004C6D0 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = SOURCE_ROOT; };
+		1B5BD7351433426F0004C6D0 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = SOURCE_ROOT; };
+		1B5BD7361433426F0004C6D0 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = SOURCE_ROOT; };
+		1B5BD7371433426F0004C6D0 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = SOURCE_ROOT; };
+		1B5BD7381433426F0004C6D0 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B5BD71A143341CF0004C6D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B5BD721143341CF0004C6D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B5BD712143341CF0004C6D0 = {
+			isa = PBXGroup;
+			children = (
+				1B5BD722143341CF0004C6D0 /* HppleLib */,
+				1B5BD71F143341CF0004C6D0 /* Frameworks */,
+				1B5BD71E143341CF0004C6D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B5BD71E143341CF0004C6D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BD71D143341CF0004C6D0 /* libHppleLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B5BD71F143341CF0004C6D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BD720143341CF0004C6D0 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B5BD722143341CF0004C6D0 /* HppleLib */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BD7331433426F0004C6D0 /* TFHpple.h */,
+				1B5BD7341433426F0004C6D0 /* TFHpple.m */,
+				1B5BD7351433426F0004C6D0 /* TFHppleElement.h */,
+				1B5BD7361433426F0004C6D0 /* TFHppleElement.m */,
+				1B5BD7371433426F0004C6D0 /* XPathQuery.h */,
+				1B5BD7381433426F0004C6D0 /* XPathQuery.m */,
+				1B5BD723143341CF0004C6D0 /* Supporting Files */,
+			);
+			path = HppleLib;
+			sourceTree = "<group>";
+		};
+		1B5BD723143341CF0004C6D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BD7311433422F0004C6D0 /* Hpple_Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B5BD71B143341CF0004C6D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B5BD7321433422F0004C6D0 /* Hpple_Prefix.pch in Headers */,
+				1B5BD7391433426F0004C6D0 /* TFHpple.h in Headers */,
+				1B5BD73B1433426F0004C6D0 /* TFHppleElement.h in Headers */,
+				1B5BD73D1433426F0004C6D0 /* XPathQuery.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B5BD71C143341CF0004C6D0 /* HppleLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B5BD72A143341CF0004C6D0 /* Build configuration list for PBXNativeTarget "HppleLib" */;
+			buildPhases = (
+				1B5BD719143341CF0004C6D0 /* Sources */,
+				1B5BD71A143341CF0004C6D0 /* Frameworks */,
+				1B5BD71B143341CF0004C6D0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HppleLib;
+			productName = HppleLib;
+			productReference = 1B5BD71D143341CF0004C6D0 /* libHppleLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B5BD714143341CF0004C6D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B5BD717143341CF0004C6D0 /* Build configuration list for PBXProject "HppleLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B5BD712143341CF0004C6D0;
+			productRefGroup = 1B5BD71E143341CF0004C6D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B5BD71C143341CF0004C6D0 /* HppleLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B5BD719143341CF0004C6D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B5BD73A1433426F0004C6D0 /* TFHpple.m in Sources */,
+				1B5BD73C1433426F0004C6D0 /* TFHppleElement.m in Sources */,
+				1B5BD73E1433426F0004C6D0 /* XPathQuery.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1B5BD728143341CF0004C6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					.,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B5BD729143341CF0004C6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					.,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B5BD72B143341CF0004C6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HppleLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Hpple_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1B5BD72C143341CF0004C6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HppleLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Hpple_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B5BD717143341CF0004C6D0 /* Build configuration list for PBXProject "HppleLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B5BD728143341CF0004C6D0 /* Debug */,
+				1B5BD729143341CF0004C6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B5BD72A143341CF0004C6D0 /* Build configuration list for PBXNativeTarget "HppleLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B5BD72B143341CF0004C6D0 /* Debug */,
+				1B5BD72C143341CF0004C6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B5BD714143341CF0004C6D0 /* Project object */;
+}
