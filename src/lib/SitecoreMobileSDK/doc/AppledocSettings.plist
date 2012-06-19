@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>--project-name</key>
+	<string>SitecoreMobileSDK</string>
+	<key>--project-company</key>
+	<string>Sitecore</string>
+	<key>--input</key>
+	<array>
+		<string>../../SCApi/SitecoreMobileSDK</string>
+		<string>../../SCUI/SitecoreMobileSDK</string>
+	</array>
+	<key>--output</key>
+	<string>../../../doc/API</string>
+	<key>--no-create-docset</key>
+	<true/>
+</dict>
+</plist>

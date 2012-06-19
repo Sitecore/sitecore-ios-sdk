@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0E58AC14E52B3B008EE5F9 /* SCColorPickerField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0E58AB14E52B3B008EE5F9 /* SCColorPickerField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B0E592D14E543DA008EE5F9 /* SCTreelistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0E592C14E543DA008EE5F9 /* SCTreelistField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B1399441446E84F0015C191 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B1399421446E84F0015C191 /* InfoPlist.strings */; };
+		1B1399931446E92C0015C191 /* EmptyFileForJustToAvoidError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */; };
+		1B2457DB1524625B00FBB6C2 /* SCCreateItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B2457D91524625B00FBB6C2 /* SCCreateItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B2457DC1524625B00FBB6C2 /* SCEditItemsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B2457DA1524625B00FBB6C2 /* SCEditItemsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B28D6B414FF756200673110 /* SCDroplinkField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B28D6B114FF756200673110 /* SCDroplinkField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B28D6B514FF756200673110 /* SCFieldLinkData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B28D6B214FF756200673110 /* SCFieldLinkData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B28D6B614FF756200673110 /* SCGeneralLinkField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B28D6B314FF756200673110 /* SCGeneralLinkField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B28D6C114FF761800673110 /* SCDroptreeField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B28D6C014FF761800673110 /* SCDroptreeField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3EDBA514863A8600BA6680 /* NSArray+SCBlocksAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA214863A8600BA6680 /* NSArray+SCBlocksAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA414863A8600BA6680 /* SCUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B586040151B77D300A06A9B /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B58603F151B77D300A06A9B /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B5144C67AF005CC74B /* SCApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B6144C67AF005CC74B /* SCItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4C4144C67C2005CC74B /* SCUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B74CFA914A8965E004D8B39 /* SCPagedItems.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB030B81546C51B00439B66 /* SCCreateMediaItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB030B51546C51B00439B66 /* SCCreateMediaItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932314B7354800244765 /* SCCheckboxField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932A14B7354800244765 /* SCChecklistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932414B7354800244765 /* SCChecklistField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932B14B7354800244765 /* SCDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932514B7354800244765 /* SCDateField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932614B7354800244765 /* SCDateTimeField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932D14B7354800244765 /* SCImageField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932714B7354800244765 /* SCImageField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932814B7354800244765 /* SCMultilistField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9B91510C45000199B37 /* SCWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C41510C53100199B37 /* SCWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB014A1E38D00DD0960 /* SCApiContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAA14A1E38D00DD0960 /* SCApiContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAB14A1E38D00DD0960 /* SCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB214A1E38D00DD0960 /* SCItemReaderRequestFlags.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAC14A1E38D00DD0960 /* SCItemReaderRequestFlags.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB314A1E38D00DD0960 /* SCItemReaderRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAD14A1E38D00DD0960 /* SCItemReaderRequestType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB414A1E38D00DD0960 /* SCItemReaderScopeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAE14A1E38D00DD0960 /* SCItemReaderScopeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC48BB514A1E38D00DD0960 /* SCItemsReaderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAF14A1E38D00DD0960 /* SCItemsReaderRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */; };
+		1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BED0568144ED9C500B8DC2A /* SCField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0567144ED9C500B8DC2A /* SCField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0569144ED9E400B8DC2A /* SCImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BD6AA6C1518CAE200D2FC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+		1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B0E58AB14E52B3B008EE5F9 /* SCColorPickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCColorPickerField.h; path = ../../SCApi/SitecoreMobileSDK/SCColorPickerField.h; sourceTree = "<group>"; };
+		1B0E592C14E543DA008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCTreelistField.h; path = ../../SCApi/SitecoreMobileSDK/SCTreelistField.h; sourceTree = "<group>"; };
+		1B13993D1446E84F0015C191 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SitecoreMobileSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B1399411446E84F0015C191 /* SitecoreMobileSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileSDK-Info.plist"; sourceTree = "<group>"; };
+		1B1399431446E84F0015C191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B1399451446E84F0015C191 /* SitecoreMobileSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SitecoreMobileSDK-Prefix.pch"; sourceTree = "<group>"; };
+		1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFileForJustToAvoidError.m; sourceTree = "<group>"; };
+		1B2457D91524625B00FBB6C2 /* SCCreateItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCreateItemRequest.h; sourceTree = "<group>"; };
+		1B2457DA1524625B00FBB6C2 /* SCEditItemsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditItemsRequest.h; sourceTree = "<group>"; };
+		1B28D6B114FF756200673110 /* SCDroplinkField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDroplinkField.h; path = ../../SCApi/SitecoreMobileSDK/SCDroplinkField.h; sourceTree = "<group>"; };
+		1B28D6B214FF756200673110 /* SCFieldLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCFieldLinkData.h; path = ../../SCApi/SitecoreMobileSDK/SCFieldLinkData.h; sourceTree = "<group>"; };
+		1B28D6B314FF756200673110 /* SCGeneralLinkField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGeneralLinkField.h; path = ../../SCApi/SitecoreMobileSDK/SCGeneralLinkField.h; sourceTree = "<group>"; };
+		1B28D6C014FF761800673110 /* SCDroptreeField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDroptreeField.h; path = ../../SCApi/SitecoreMobileSDK/SCDroptreeField.h; sourceTree = "<group>"; };
+		1B3EDB9F14863A7900BA6680 /* SCArrayHelperBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCArrayHelperBlocks.h; sourceTree = "<group>"; };
+		1B3EDBA214863A8600BA6680 /* NSArray+SCBlocksAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SCBlocksAdditions.h"; sourceTree = "<group>"; };
+		1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCArrayHelperBlocks.h; sourceTree = "<group>"; };
+		1B3EDBA414863A8600BA6680 /* SCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUtils.h; sourceTree = "<group>"; };
+		1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpDefinitions.h; sourceTree = "<group>"; };
+		1B58603F151B77D300A06A9B /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapView.h; sourceTree = "<group>"; };
+		1B68C4B5144C67AF005CC74B /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCApi.h; path = ../../SCApi/SitecoreMobileSDK/SCApi.h; sourceTree = "<group>"; };
+		1B68C4B6144C67AF005CC74B /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItem.h; path = ../../SCApi/SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; };
+		1B68C4C4144C67C2005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUI.h; path = ../../SCUI/SitecoreMobileSDK/SCUI.h; sourceTree = "<group>"; };
+		1B74CFA914A8965E004D8B39 /* SCPagedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCPagedItems.h; path = ../../SCApi/SitecoreMobileSDK/SCPagedItems.h; sourceTree = "<group>"; };
+		1B74D1BD14A9EEA0004D8B39 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		1BB030B51546C51B00439B66 /* SCCreateMediaItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCreateMediaItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCCreateMediaItemRequest.h; sourceTree = "<group>"; };
+		1BB2932314B7354800244765 /* SCCheckboxField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCheckboxField.h; path = ../../SCApi/SitecoreMobileSDK/SCCheckboxField.h; sourceTree = "<group>"; };
+		1BB2932414B7354800244765 /* SCChecklistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCChecklistField.h; path = ../../SCApi/SitecoreMobileSDK/SCChecklistField.h; sourceTree = "<group>"; };
+		1BB2932514B7354800244765 /* SCDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDateField.h; path = ../../SCApi/SitecoreMobileSDK/SCDateField.h; sourceTree = "<group>"; };
+		1BB2932614B7354800244765 /* SCDateTimeField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDateTimeField.h; path = ../../SCApi/SitecoreMobileSDK/SCDateTimeField.h; sourceTree = "<group>"; };
+		1BB2932714B7354800244765 /* SCImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageField.h; path = ../../SCApi/SitecoreMobileSDK/SCImageField.h; sourceTree = "<group>"; };
+		1BB2932814B7354800244765 /* SCMultilistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMultilistField.h; path = ../../SCApi/SitecoreMobileSDK/SCMultilistField.h; sourceTree = "<group>"; };
+		1BBCA9B91510C45000199B37 /* SCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebView.h; sourceTree = "<group>"; };
+		1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewDelegate.h; sourceTree = "<group>"; };
+		1BBCA9C41510C53100199B37 /* SCWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebBrowser.h; sourceTree = "<group>"; };
+		1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebBrowserDelegate.h; sourceTree = "<group>"; };
+		1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebBrowserToolbar.h; sourceTree = "<group>"; };
+		1BC48BAA14A1E38D00DD0960 /* SCApiContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCApiContext.h; path = ../../SCApi/SitecoreMobileSDK/SCApiContext.h; sourceTree = "<group>"; };
+		1BC48BAB14A1E38D00DD0960 /* SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCError.h; path = ../../SCApi/SitecoreMobileSDK/SCError.h; sourceTree = "<group>"; };
+		1BC48BAC14A1E38D00DD0960 /* SCItemReaderRequestFlags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItemReaderRequestFlags.h; path = ../../SCApi/SitecoreMobileSDK/SCItemReaderRequestFlags.h; sourceTree = "<group>"; };
+		1BC48BAD14A1E38D00DD0960 /* SCItemReaderRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItemReaderRequestType.h; path = ../../SCApi/SitecoreMobileSDK/SCItemReaderRequestType.h; sourceTree = "<group>"; };
+		1BC48BAE14A1E38D00DD0960 /* SCItemReaderScopeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItemReaderScopeType.h; path = ../../SCApi/SitecoreMobileSDK/SCItemReaderScopeType.h; sourceTree = "<group>"; };
+		1BC48BAF14A1E38D00DD0960 /* SCItemsReaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItemsReaderRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCItemsReaderRequest.h; sourceTree = "<group>"; };
+		1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCAllMobileSDKLibs.xcodeproj; path = ../SCAllMobileSDKLibs/SCAllMobileSDKLibs.xcodeproj; sourceTree = "<group>"; };
+		1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReader.h; sourceTree = "<group>"; };
+		1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderView.h; sourceTree = "<group>"; };
+		1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderViewDelegate.h; sourceTree = "<group>"; };
+		1BED0567144ED9C500B8DC2A /* SCField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCField.h; path = ../../SCApi/SitecoreMobileSDK/SCField.h; sourceTree = "<group>"; };
+		1BED0569144ED9E400B8DC2A /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../../SCUI/SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
+		1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileSDK.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B1399381446E84F0015C191 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B13992F1446E84E0015C191 = {
+			isa = PBXGroup;
+			children = (
+				1B13993F1446E84F0015C191 /* SitecoreMobileSDK */,
+				1B13994B1446E8640015C191 /* Dependencies */,
+				1B13993E1446E84F0015C191 /* Products */,
+				1B74D1BC14A9EE87004D8B39 /* doc */,
+			);
+			sourceTree = "<group>";
+		};
+		1B13993E1446E84F0015C191 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B13993D1446E84F0015C191 /* SitecoreMobileSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B13993F1446E84F0015C191 /* SitecoreMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */,
+				1B58603E151B77D300A06A9B /* Map */,
+				1BBCA9B81510C45000199B37 /* WebView */,
+				1BE4D049150F65F7007259C2 /* QRCodeReader */,
+				1B3EDBA114863A8600BA6680 /* Utils */,
+				1B68C4CC144C67C5005CC74B /* UI */,
+				1B68C4C1144C67B4005CC74B /* Api */,
+				1B1399401446E84F0015C191 /* Supporting Files */,
+				1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */,
+			);
+			path = SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1B1399401446E84F0015C191 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B1399411446E84F0015C191 /* SitecoreMobileSDK-Info.plist */,
+				1B1399421446E84F0015C191 /* InfoPlist.strings */,
+				1B1399451446E84F0015C191 /* SitecoreMobileSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B13994B1446E8640015C191 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		1B3EDBA114863A8600BA6680 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDB9F14863A7900BA6680 /* SCArrayHelperBlocks.h */,
+				1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */,
+				1B3EDBA214863A8600BA6680 /* NSArray+SCBlocksAdditions.h */,
+				1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */,
+				1B3EDBA414863A8600BA6680 /* SCUtils.h */,
+			);
+			name = Utils;
+			path = ../../SCUtils/SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1B58603E151B77D300A06A9B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1B58603F151B77D300A06A9B /* SCMapView.h */,
+			);
+			name = Map;
+			path = ../../SCMap/SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1B68C4C1144C67B4005CC74B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				1BB030B51546C51B00439B66 /* SCCreateMediaItemRequest.h */,
+				1B0E58AB14E52B3B008EE5F9 /* SCColorPickerField.h */,
+				1B74CFA914A8965E004D8B39 /* SCPagedItems.h */,
+				1BC48BAA14A1E38D00DD0960 /* SCApiContext.h */,
+				1BC48BAB14A1E38D00DD0960 /* SCError.h */,
+				1BC48BAC14A1E38D00DD0960 /* SCItemReaderRequestFlags.h */,
+				1BC48BAD14A1E38D00DD0960 /* SCItemReaderRequestType.h */,
+				1BC48BAE14A1E38D00DD0960 /* SCItemReaderScopeType.h */,
+				1BC48BAF14A1E38D00DD0960 /* SCItemsReaderRequest.h */,
+				1B2457D91524625B00FBB6C2 /* SCCreateItemRequest.h */,
+				1B2457DA1524625B00FBB6C2 /* SCEditItemsRequest.h */,
+				1B68C4B5144C67AF005CC74B /* SCApi.h */,
+				1BED0567144ED9C500B8DC2A /* SCField.h */,
+				1BB2932314B7354800244765 /* SCCheckboxField.h */,
+				1BB2932414B7354800244765 /* SCChecklistField.h */,
+				1BB2932514B7354800244765 /* SCDateField.h */,
+				1BB2932614B7354800244765 /* SCDateTimeField.h */,
+				1BB2932714B7354800244765 /* SCImageField.h */,
+				1B0E592C14E543DA008EE5F9 /* SCTreelistField.h */,
+				1BB2932814B7354800244765 /* SCMultilistField.h */,
+				1B28D6B114FF756200673110 /* SCDroplinkField.h */,
+				1B28D6B214FF756200673110 /* SCFieldLinkData.h */,
+				1B28D6B314FF756200673110 /* SCGeneralLinkField.h */,
+				1B28D6C014FF761800673110 /* SCDroptreeField.h */,
+				1B68C4B6144C67AF005CC74B /* SCItem.h */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		1B68C4CC144C67C5005CC74B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1BED0569144ED9E400B8DC2A /* SCImageView.h */,
+				1B68C4C4144C67C2005CC74B /* SCUI.h */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1B74D1BC14A9EE87004D8B39 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				1B74D1BD14A9EEA0004D8B39 /* AppledocSettings.plist */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		1BBCA9B81510C45000199B37 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				1BBCA9C41510C53100199B37 /* SCWebBrowser.h */,
+				1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */,
+				1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */,
+				1BBCA9B91510C45000199B37 /* SCWebView.h */,
+				1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */,
+			);
+			name = WebView;
+			path = ../../SCWebView/SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1BD6AA291518CAE100D2FC84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BE4D049150F65F7007259C2 /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */,
+				1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */,
+				1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */,
+			);
+			name = QRCodeReader;
+			path = ../../SCQRCodeReader/SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B1399391446E84F0015C191 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */,
+				1B586040151B77D300A06A9B /* SCMapView.h in Headers */,
+				1BED0568144ED9C500B8DC2A /* SCField.h in Headers */,
+				1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */,
+				1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */,
+				1B0E58AC14E52B3B008EE5F9 /* SCColorPickerField.h in Headers */,
+				1B2457DB1524625B00FBB6C2 /* SCCreateItemRequest.h in Headers */,
+				1B2457DC1524625B00FBB6C2 /* SCEditItemsRequest.h in Headers */,
+				1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */,
+				1BB2932A14B7354800244765 /* SCChecklistField.h in Headers */,
+				1BB2932B14B7354800244765 /* SCDateField.h in Headers */,
+				1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */,
+				1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */,
+				1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */,
+				1B28D6B414FF756200673110 /* SCDroplinkField.h in Headers */,
+				1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */,
+				1B0E592D14E543DA008EE5F9 /* SCTreelistField.h in Headers */,
+				1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */,
+				1BB2932D14B7354800244765 /* SCImageField.h in Headers */,
+				1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */,
+				1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */,
+				1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */,
+				1BC48BB214A1E38D00DD0960 /* SCItemReaderRequestFlags.h in Headers */,
+				1B28D6B514FF756200673110 /* SCFieldLinkData.h in Headers */,
+				1B28D6B614FF756200673110 /* SCGeneralLinkField.h in Headers */,
+				1BC48BB414A1E38D00DD0960 /* SCItemReaderScopeType.h in Headers */,
+				1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */,
+				1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */,
+				1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */,
+				1BB030B81546C51B00439B66 /* SCCreateMediaItemRequest.h in Headers */,
+				1BC48BB514A1E38D00DD0960 /* SCItemsReaderRequest.h in Headers */,
+				1BC48BB314A1E38D00DD0960 /* SCItemReaderRequestType.h in Headers */,
+				1BC48BB014A1E38D00DD0960 /* SCApiContext.h in Headers */,
+				1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */,
+				1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */,
+				1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */,
+				1B3EDBA514863A8600BA6680 /* NSArray+SCBlocksAdditions.h in Headers */,
+				1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */,
+				1B28D6C114FF761800673110 /* SCDroptreeField.h in Headers */,
+				1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */,
+				1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B13993C1446E84F0015C191 /* SitecoreMobileSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B1399481446E84F0015C191 /* Build configuration list for PBXNativeTarget "SitecoreMobileSDK" */;
+			buildPhases = (
+				1B1399361446E84F0015C191 /* ShellScript */,
+				1B1399371446E84F0015C191 /* Sources */,
+				1B1399381446E84F0015C191 /* Frameworks */,
+				1B1399391446E84F0015C191 /* Headers */,
+				1B13993A1446E84F0015C191 /* Resources */,
+				1B13993B1446E84F0015C191 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */,
+			);
+			name = SitecoreMobileSDK;
+			productName = SitecoreMobileSDK;
+			productReference = 1B13993D1446E84F0015C191 /* SitecoreMobileSDK.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B1399311446E84E0015C191 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B1399341446E84E0015C191 /* Build configuration list for PBXProject "SitecoreMobileSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B13992F1446E84E0015C191;
+			productRefGroup = 1B13993E1446E84F0015C191 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1BD6AA291518CAE100D2FC84 /* Products */;
+					ProjectRef = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1B13993C1446E84F0015C191 /* SitecoreMobileSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCAllMobileSDKLibs.a;
+			remoteRef = 1BD6AA6C1518CAE200D2FC84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B13993A1446E84F0015C191 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1399441446E84F0015C191 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B1399361446E84F0015C191 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		1B13993B1446E84F0015C191 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sf \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n# copy frameworks to deployment folder\nrm -rf \"../../deployment/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"../../deployment/${PRODUCT_NAME}.framework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" ../../deployment\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" ../../deployment\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B1399371446E84F0015C191 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1399931446E92C0015C191 /* EmptyFileForJustToAvoidError.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCAllMobileSDKLibs;
+			targetProxy = 1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B1399421446E84F0015C191 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B1399431446E84F0015C191 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B1399461446E84F0015C191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B1399471446E84F0015C191 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B1399491446E84F0015C191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileSDK/SitecoreMobileSDK-Prefix.pch";
+				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1B13994A1446E84F0015C191 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileSDK/SitecoreMobileSDK-Prefix.pch";
+				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B1399341446E84E0015C191 /* Build configuration list for PBXProject "SitecoreMobileSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B1399461446E84F0015C191 /* Debug */,
+				1B1399471446E84F0015C191 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B1399481446E84F0015C191 /* Build configuration list for PBXNativeTarget "SitecoreMobileSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B1399491446E84F0015C191 /* Debug */,
+				1B13994A1446E84F0015C191 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B1399311446E84E0015C191 /* Project object */;
+}
