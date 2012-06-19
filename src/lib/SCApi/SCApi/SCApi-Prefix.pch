@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'SCApi' target in the 'SCApi' project
+//
+
+#ifdef __OBJC__
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <JFFAsyncOperations/JFFAsyncOperations.h>
+    #import <JFFUtils/JFFUtils.h>
+    #import <JFFRestKit/JFFRestKit.h>
+    #import <SCUtils/SCAsyncOpUtils.h>
+
+    #import <TouchXmlHelper/TouchXmlHelper.h>
+    #import <TouchXML/TouchXML.h>
+
+    #import <Foundation/Foundation.h>
+#endif

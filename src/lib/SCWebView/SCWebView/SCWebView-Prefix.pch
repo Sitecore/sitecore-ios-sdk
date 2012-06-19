@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'SCWebView' target in the 'SCWebView' project
+//
+
+#ifdef __OBJC__
+    #import <SCWebPlugins/SCWebPlugins.h>
+    #import <JFFUI/JFFUI.h>
+    #import <JFFUtils/JFFUtils.h>
+
+    #import <Foundation/Foundation.h>
+#endif

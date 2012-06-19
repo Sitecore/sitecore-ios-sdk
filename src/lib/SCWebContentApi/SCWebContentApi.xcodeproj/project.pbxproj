@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B363F42153D556800E46215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363F41153D556800E46215 /* Foundation.framework */; };
+		1B363F50153D556800E46215 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363F4F153D556800E46215 /* SenTestingKit.framework */; };
+		1B363F52153D556800E46215 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363F51153D556800E46215 /* UIKit.framework */; };
+		1B363F53153D556800E46215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363F41153D556800E46215 /* Foundation.framework */; };
+		1B363F56153D556800E46215 /* libSCWebContentApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363F3E153D556800E46215 /* libSCWebContentApi.a */; };
+		1B363F5C153D556800E46215 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B363F5A153D556800E46215 /* InfoPlist.strings */; };
+		1B363F5F153D556800E46215 /* SCWebContentApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B363F5E153D556800E46215 /* SCWebContentApiTests.m */; };
+		1B363FDA153D569500E46215 /* SCContentApiCreateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B363FD8153D569500E46215 /* SCContentApiCreateItem.h */; };
+		1B363FDB153D569500E46215 /* SCContentApiCreateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B363FD9153D569500E46215 /* SCContentApiCreateItem.m */; };
+		1B364048153D5B4700E46215 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B364047153D5B4700E46215 /* Cocoa.framework */; };
+		1B36405F153D5DA500E46215 /* createMediaItem.js.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B36405E153D5DA500E46215 /* createMediaItem.js.h */; };
+		1B36426B153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B364269153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h */; };
+		1B36426C153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B36426A153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m */; };
+		1B3CDFE6156126A500949EA6 /* NSArray+scItemsToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3CDFE4156126A500949EA6 /* NSArray+scItemsToJSON.h */; };
+		1B3CDFE7156126A500949EA6 /* NSArray+scItemsToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDFE5156126A500949EA6 /* NSArray+scItemsToJSON.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B363F54153D556800E46215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363F35153D556700E46215 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B363F3D153D556800E46215;
+			remoteInfo = SCWebContentApi;
+		};
+		1B364057153D5B5F00E46215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363F35153D556700E46215 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B364045153D5B4700E46215;
+			remoteInfo = BuildJS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B363F3E153D556800E46215 /* libSCWebContentApi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCWebContentApi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B363F41153D556800E46215 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B363F45153D556800E46215 /* SCWebContentApi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCWebContentApi-Prefix.pch"; sourceTree = "<group>"; };
+		1B363F4E153D556800E46215 /* SCWebContentApiTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCWebContentApiTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B363F4F153D556800E46215 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1B363F51153D556800E46215 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1B363F59153D556800E46215 /* SCWebContentApiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCWebContentApiTests-Info.plist"; sourceTree = "<group>"; };
+		1B363F5B153D556800E46215 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B363F5D153D556800E46215 /* SCWebContentApiTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCWebContentApiTests.h; sourceTree = "<group>"; };
+		1B363F5E153D556800E46215 /* SCWebContentApiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCWebContentApiTests.m; sourceTree = "<group>"; };
+		1B363FD8153D569500E46215 /* SCContentApiCreateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContentApiCreateItem.h; sourceTree = "<group>"; };
+		1B363FD9153D569500E46215 /* SCContentApiCreateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContentApiCreateItem.m; sourceTree = "<group>"; };
+		1B364046153D5B4700E46215 /* BuildJS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildJS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B364047153D5B4700E46215 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		1B36404A153D5B4700E46215 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1B36404B153D5B4700E46215 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1B36404C153D5B4700E46215 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B36405A153D5BBF00E46215 /* createMediaItem.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = createMediaItem.js; sourceTree = "<group>"; };
+		1B36405E153D5DA500E46215 /* createMediaItem.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createMediaItem.js.h; sourceTree = "<group>"; };
+		1B364269153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCItemFieldsWithURLParam.h"; sourceTree = "<group>"; };
+		1B36426A153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCItemFieldsWithURLParam.m"; sourceTree = "<group>"; };
+		1B3CDFE4156126A500949EA6 /* NSArray+scItemsToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+scItemsToJSON.h"; sourceTree = "<group>"; };
+		1B3CDFE5156126A500949EA6 /* NSArray+scItemsToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+scItemsToJSON.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B363F3B153D556800E46215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363F42153D556800E46215 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B363F4A153D556800E46215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363F50153D556800E46215 /* SenTestingKit.framework in Frameworks */,
+				1B363F52153D556800E46215 /* UIKit.framework in Frameworks */,
+				1B363F53153D556800E46215 /* Foundation.framework in Frameworks */,
+				1B363F56153D556800E46215 /* libSCWebContentApi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B364043153D5B4700E46215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B364048153D5B4700E46215 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B363F33153D556700E46215 = {
+			isa = PBXGroup;
+			children = (
+				1B363F43153D556800E46215 /* SCWebContentApi */,
+				1B363F57153D556800E46215 /* SCWebContentApiTests */,
+				1B363F40153D556800E46215 /* Frameworks */,
+				1B363F3F153D556800E46215 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B363F3F153D556800E46215 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B363F3E153D556800E46215 /* libSCWebContentApi.a */,
+				1B363F4E153D556800E46215 /* SCWebContentApiTests.octest */,
+				1B364046153D5B4700E46215 /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B363F40153D556800E46215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B363F41153D556800E46215 /* Foundation.framework */,
+				1B363F4F153D556800E46215 /* SenTestingKit.framework */,
+				1B363F51153D556800E46215 /* UIKit.framework */,
+				1B364047153D5B4700E46215 /* Cocoa.framework */,
+				1B364049153D5B4700E46215 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B363F43153D556800E46215 /* SCWebContentApi */ = {
+			isa = PBXGroup;
+			children = (
+				1B364262153D7D0D00E46215 /* Details */,
+				1B36405A153D5BBF00E46215 /* createMediaItem.js */,
+				1B36405E153D5DA500E46215 /* createMediaItem.js.h */,
+				1B363FD8153D569500E46215 /* SCContentApiCreateItem.h */,
+				1B363FD9153D569500E46215 /* SCContentApiCreateItem.m */,
+				1B363F44153D556800E46215 /* Supporting Files */,
+			);
+			path = SCWebContentApi;
+			sourceTree = "<group>";
+		};
+		1B363F44153D556800E46215 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B363F45153D556800E46215 /* SCWebContentApi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B363F57153D556800E46215 /* SCWebContentApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B363F5D153D556800E46215 /* SCWebContentApiTests.h */,
+				1B363F5E153D556800E46215 /* SCWebContentApiTests.m */,
+				1B363F58153D556800E46215 /* Supporting Files */,
+			);
+			path = SCWebContentApiTests;
+			sourceTree = "<group>";
+		};
+		1B363F58153D556800E46215 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B363F59153D556800E46215 /* SCWebContentApiTests-Info.plist */,
+				1B363F5A153D556800E46215 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B364049153D5B4700E46215 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B36404A153D5B4700E46215 /* AppKit.framework */,
+				1B36404B153D5B4700E46215 /* CoreData.framework */,
+				1B36404C153D5B4700E46215 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1B364262153D7D0D00E46215 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1B364269153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h */,
+				1B36426A153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m */,
+				1B3CDFE4156126A500949EA6 /* NSArray+scItemsToJSON.h */,
+				1B3CDFE5156126A500949EA6 /* NSArray+scItemsToJSON.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B363F3C153D556800E46215 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363FDA153D569500E46215 /* SCContentApiCreateItem.h in Headers */,
+				1B36405F153D5DA500E46215 /* createMediaItem.js.h in Headers */,
+				1B36426B153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h in Headers */,
+				1B3CDFE6156126A500949EA6 /* NSArray+scItemsToJSON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B363F3D153D556800E46215 /* SCWebContentApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B363F62153D556800E46215 /* Build configuration list for PBXNativeTarget "SCWebContentApi" */;
+			buildPhases = (
+				1B363F3A153D556800E46215 /* Sources */,
+				1B363F3B153D556800E46215 /* Frameworks */,
+				1B363F3C153D556800E46215 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B364058153D5B5F00E46215 /* PBXTargetDependency */,
+			);
+			name = SCWebContentApi;
+			productName = SCWebContentApi;
+			productReference = 1B363F3E153D556800E46215 /* libSCWebContentApi.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1B363F4D153D556800E46215 /* SCWebContentApiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B363F65153D556800E46215 /* Build configuration list for PBXNativeTarget "SCWebContentApiTests" */;
+			buildPhases = (
+				1B363F49153D556800E46215 /* Sources */,
+				1B363F4A153D556800E46215 /* Frameworks */,
+				1B363F4B153D556800E46215 /* Resources */,
+				1B363F4C153D556800E46215 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B363F55153D556800E46215 /* PBXTargetDependency */,
+			);
+			name = SCWebContentApiTests;
+			productName = SCWebContentApiTests;
+			productReference = 1B363F4E153D556800E46215 /* SCWebContentApiTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1B364045153D5B4700E46215 /* BuildJS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B364054153D5B4700E46215 /* Build configuration list for PBXNativeTarget "BuildJS" */;
+			buildPhases = (
+				1B364042153D5B4700E46215 /* Sources */,
+				1B364043153D5B4700E46215 /* Frameworks */,
+				1B364044153D5B4700E46215 /* Resources */,
+				1B36405D153D5D3400E46215 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuildJS;
+			productName = BuildJS;
+			productReference = 1B364046153D5B4700E46215 /* BuildJS.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B363F35153D556700E46215 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B363F38153D556700E46215 /* Build configuration list for PBXProject "SCWebContentApi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B363F33153D556700E46215;
+			productRefGroup = 1B363F3F153D556800E46215 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B363F3D153D556800E46215 /* SCWebContentApi */,
+				1B363F4D153D556800E46215 /* SCWebContentApiTests */,
+				1B364045153D5B4700E46215 /* BuildJS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B363F4B153D556800E46215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363F5C153D556800E46215 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B364044153D5B4700E46215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B363F4C153D556800E46215 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		1B36405D153D5D3400E46215 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#/bin/sh\n#SCWebContentApi\ntouch ./SCWebContentApi/SCContentApiCreateItem.m\nxxd -i ./SCWebContentApi/createMediaItem.js > ./SCWebContentApi/createMediaItem.js.h\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B363F3A153D556800E46215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363FDB153D569500E46215 /* SCContentApiCreateItem.m in Sources */,
+				1B36426C153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m in Sources */,
+				1B3CDFE7156126A500949EA6 /* NSArray+scItemsToJSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B363F49153D556800E46215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B363F5F153D556800E46215 /* SCWebContentApiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B364042153D5B4700E46215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B363F55153D556800E46215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B363F3D153D556800E46215 /* SCWebContentApi */;
+			targetProxy = 1B363F54153D556800E46215 /* PBXContainerItemProxy */;
+		};
+		1B364058153D5B5F00E46215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B364045153D5B4700E46215 /* BuildJS */;
+			targetProxy = 1B364057153D5B5F00E46215 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B363F5A153D556800E46215 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B363F5B153D556800E46215 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B363F60153D556800E46215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCApi,
+					../SCWebPlugins,
+					../SCUtils,
+					"../../lib-third-party/JFFLibrary/lib",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B363F61153D556800E46215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCApi,
+					../SCWebPlugins,
+					../SCUtils,
+					"../../lib-third-party/JFFLibrary/lib",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B363F63153D556800E46215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCWebContentApi.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebContentApi/SCWebContentApi-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1B363F64153D556800E46215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCWebContentApi.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebContentApi/SCWebContentApi-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1B363F66153D556800E46215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebContentApi/SCWebContentApi-Prefix.pch";
+				INFOPLIST_FILE = "SCWebContentApiTests/SCWebContentApiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1B363F67153D556800E46215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebContentApi/SCWebContentApi-Prefix.pch";
+				INFOPLIST_FILE = "SCWebContentApiTests/SCWebContentApiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		1B364055153D5B4700E46215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1B364056153D5B4700E46215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B363F38153D556700E46215 /* Build configuration list for PBXProject "SCWebContentApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B363F60153D556800E46215 /* Debug */,
+				1B363F61153D556800E46215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B363F62153D556800E46215 /* Build configuration list for PBXNativeTarget "SCWebContentApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B363F63153D556800E46215 /* Debug */,
+				1B363F64153D556800E46215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B363F65153D556800E46215 /* Build configuration list for PBXNativeTarget "SCWebContentApiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B363F66153D556800E46215 /* Debug */,
+				1B363F67153D556800E46215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B364054153D5B4700E46215 /* Build configuration list for PBXNativeTarget "BuildJS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B364055153D5B4700E46215 /* Debug */,
+				1B364056153D5B4700E46215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B363F35153D556700E46215 /* Project object */;
+}

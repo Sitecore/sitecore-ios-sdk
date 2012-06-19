@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0DD67B146D4F9B00E5DC1C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0DD67A146D4F9B00E5DC1C /* AddressBook.framework */; };
+		1B0ED9EA1473D02800EE2BD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0ED9E91473D02800EE2BD0 /* CoreLocation.framework */; };
+		1B1854021469685100572BB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1854011469685100572BB3 /* CoreMotion.framework */; };
+		1B68C478144C65DB005CC74B /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C477144C65DB005CC74B /* SCUI.h */; };
+		1B68C47A144C6613005CC74B /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C479144C6613005CC74B /* SCImageView.h */; };
+		1B68C47E144C66DC005CC74B /* SCWebViewURLPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */; };
+		1B835A88142C9EA900FC004C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B835A87142C9EA900FC004C /* Foundation.framework */; };
+		1B835B2F142CA3F900FC004C /* SCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B835B2D142CA3F900FC004C /* SCImageView.m */; };
+		1BA676B1144C22A600B14D49 /* SCCacheURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA676AF144C22A600B14D49 /* SCCacheURLProtocol.m */; };
+		1BA676C4144C427000B14D49 /* SCWebViewURLPreloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */; };
+		1BEF7BC114582D1700445F3B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEF7BC014582D1700445F3B /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BEF7BCD14582D6C00445F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B835A7B142C9EA900FC004C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BEF7BBE14582D1600445F3B;
+			remoteInfo = BuildJS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		068E372A150E56900077CD63 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		068E372C150E56BE0077CD63 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		068E372D150E56BE0077CD63 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1B0DD67A146D4F9B00E5DC1C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		1B0ED9E91473D02800EE2BD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1B1854011469685100572BB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		1B68C477144C65DB005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUI.h; sourceTree = "<group>"; };
+		1B68C479144C6613005CC74B /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
+		1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebViewURLPreloader.h; path = ../SitecoreMobileSDK/SCWebViewURLPreloader.h; sourceTree = "<group>"; };
+		1B835A84142C9EA900FC004C /* libSCUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B835A87142C9EA900FC004C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B835A8B142C9EA900FC004C /* SCUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCUI-Prefix.pch"; sourceTree = "<group>"; };
+		1B835B2D142CA3F900FC004C /* SCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageView.m; sourceTree = "<group>"; };
+		1BA676AF144C22A600B14D49 /* SCCacheURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCacheURLProtocol.m; sourceTree = "<group>"; };
+		1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewURLPreloader.m; sourceTree = "<group>"; };
+		1BEF7BBF14582D1700445F3B /* BuildJS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildJS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BEF7BC014582D1700445F3B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B835A81142C9EA900FC004C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0DD67B146D4F9B00E5DC1C /* AddressBook.framework in Frameworks */,
+				1B1854021469685100572BB3 /* CoreMotion.framework in Frameworks */,
+				1B835A88142C9EA900FC004C /* Foundation.framework in Frameworks */,
+				1B0ED9EA1473D02800EE2BD0 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BEF7BBC14582D1600445F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BEF7BC114582D1700445F3B /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B68C468144C6430005CC74B /* SitecoreMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1B68C477144C65DB005CC74B /* SCUI.h */,
+			);
+			path = SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1B835A79142C9EA900FC004C = {
+			isa = PBXGroup;
+			children = (
+				1B835A89142C9EA900FC004C /* SCUI */,
+				1B68C468144C6430005CC74B /* SitecoreMobileSDK */,
+				1B835A86142C9EA900FC004C /* Frameworks */,
+				1B835A85142C9EA900FC004C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B835A85142C9EA900FC004C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B835A84142C9EA900FC004C /* libSCUI.a */,
+				1BEF7BBF14582D1700445F3B /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B835A86142C9EA900FC004C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				068E372C150E56BE0077CD63 /* CoreMedia.framework */,
+				068E372D150E56BE0077CD63 /* CoreVideo.framework */,
+				068E372A150E56900077CD63 /* AVFoundation.framework */,
+				1B0ED9E91473D02800EE2BD0 /* CoreLocation.framework */,
+				1B0DD67A146D4F9B00E5DC1C /* AddressBook.framework */,
+				1B1854011469685100572BB3 /* CoreMotion.framework */,
+				1B835A87142C9EA900FC004C /* Foundation.framework */,
+				1BEF7BC014582D1700445F3B /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B835A89142C9EA900FC004C /* SCUI */ = {
+			isa = PBXGroup;
+			children = (
+				1BA676AB144C218900B14D49 /* Private */,
+				1B68C479144C6613005CC74B /* SCImageView.h */,
+				1B835B2D142CA3F900FC004C /* SCImageView.m */,
+				1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */,
+				1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */,
+				1B835A8A142C9EA900FC004C /* Supporting Files */,
+			);
+			path = SCUI;
+			sourceTree = "<group>";
+		};
+		1B835A8A142C9EA900FC004C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B835A8B142C9EA900FC004C /* SCUI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BA676AB144C218900B14D49 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1BA676AF144C22A600B14D49 /* SCCacheURLProtocol.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B835A82142C9EA900FC004C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B68C478144C65DB005CC74B /* SCUI.h in Headers */,
+				1B68C47A144C6613005CC74B /* SCImageView.h in Headers */,
+				1B68C47E144C66DC005CC74B /* SCWebViewURLPreloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B835A83142C9EA900FC004C /* SCUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B835A91142C9EA900FC004C /* Build configuration list for PBXNativeTarget "SCUI" */;
+			buildPhases = (
+				1B835A80142C9EA900FC004C /* Sources */,
+				1B835A81142C9EA900FC004C /* Frameworks */,
+				1B835A82142C9EA900FC004C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BEF7BCE14582D6C00445F3B /* PBXTargetDependency */,
+			);
+			name = SCUI;
+			productName = SCUI;
+			productReference = 1B835A84142C9EA900FC004C /* libSCUI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1BEF7BBE14582D1600445F3B /* BuildJS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BEF7BC914582D1800445F3B /* Build configuration list for PBXNativeTarget "BuildJS" */;
+			buildPhases = (
+				1BEF7BBB14582D1600445F3B /* Sources */,
+				1BEF7BBC14582D1600445F3B /* Frameworks */,
+				1BEF7BBD14582D1600445F3B /* Resources */,
+				1BEF7BCC14582D2A00445F3B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuildJS;
+			productName = BuildJS;
+			productReference = 1BEF7BBF14582D1700445F3B /* BuildJS.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B835A7B142C9EA900FC004C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B835A7E142C9EA900FC004C /* Build configuration list for PBXProject "SCUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B835A79142C9EA900FC004C;
+			productRefGroup = 1B835A85142C9EA900FC004C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B835A83142C9EA900FC004C /* SCUI */,
+				1BEF7BBE14582D1600445F3B /* BuildJS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BEF7BBD14582D1600445F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BEF7BCC14582D2A00445F3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#/bin/sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B835A80142C9EA900FC004C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B835B2F142CA3F900FC004C /* SCImageView.m in Sources */,
+				1BA676B1144C22A600B14D49 /* SCCacheURLProtocol.m in Sources */,
+				1BA676C4144C427000B14D49 /* SCWebViewURLPreloader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BEF7BBB14582D1600445F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BEF7BCE14582D6C00445F3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BEF7BBE14582D1600445F3B /* BuildJS */;
+			targetProxy = 1BEF7BCD14582D6C00445F3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B835A8F142C9EA900FC004C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				REZ_SEARCH_PATHS = (
+					../SCUtils,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B835A90142C9EA900FC004C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				REZ_SEARCH_PATHS = (
+					../SCUtils,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B835A92142C9EA900FC004C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/SCUI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCUI/SCUI-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../SCUtils,
+					../SCWebPlugins,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ". ../SCUtils ../SCWebPlugins ../SCMonad ../../lib-third-party/JFFLibrary/lib ../SCApi";
+			};
+			name = Debug;
+		};
+		1B835A93142C9EA900FC004C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/SCUI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCUI/SCUI-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../SCUtils,
+					../SCWebPlugins,
+					../SCMonad,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ". ../SCUtils ../SCWebPlugins ../SCMonad ../../lib-third-party/JFFLibrary/lib ../SCApi";
+			};
+			name = Release;
+		};
+		1BEF7BCA14582D1800445F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1BEF7BCB14582D1800445F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B835A7E142C9EA900FC004C /* Build configuration list for PBXProject "SCUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B835A8F142C9EA900FC004C /* Debug */,
+				1B835A90142C9EA900FC004C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B835A91142C9EA900FC004C /* Build configuration list for PBXNativeTarget "SCUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B835A92142C9EA900FC004C /* Debug */,
+				1B835A93142C9EA900FC004C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BEF7BC914582D1800445F3B /* Build configuration list for PBXNativeTarget "BuildJS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BEF7BCA14582D1800445F3B /* Debug */,
+				1BEF7BCB14582D1800445F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B835A7B142C9EA900FC004C /* Project object */;
+}

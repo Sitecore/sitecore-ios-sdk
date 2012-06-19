@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B030D8D14A07C98004CE872 /* SCItemReaderRequestFlags.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B030D8C14A07C98004CE872 /* SCItemReaderRequestFlags.h */; };
+		1B054DF11521CD41008E4B9E /* SCEditItemsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B054DEF1521CD41008E4B9E /* SCEditItemsRequest.m */; };
+		1B054DF51521CD5D008E4B9E /* SCCreateItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B054DF31521CD5D008E4B9E /* SCCreateItemRequest.m */; };
+		1B054DF91521CDA9008E4B9E /* SCItemsReaderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B054DF71521CDA9008E4B9E /* SCItemsReaderRequest.m */; };
+		1B0E58E814E5420D008EE5F9 /* SCTreelistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0E58E614E5420D008EE5F9 /* SCTreelistField.h */; };
+		1B0E58E914E5420D008EE5F9 /* SCTreelistField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E58E714E5420D008EE5F9 /* SCTreelistField.m */; };
+		1B0E58F314E542BA008EE5F9 /* SCTreelistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0E58F214E542BA008EE5F9 /* SCTreelistField.h */; };
+		1B155F9A14C852CF004A4C99 /* SCItemIdPathAndLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B155F9814C852CF004A4C99 /* SCItemIdPathAndLanguage.h */; };
+		1B155F9B14C852CF004A4C99 /* SCItemIdPathAndLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B155F9914C852CF004A4C99 /* SCItemIdPathAndLanguage.m */; };
+		1B195B6F152490B700E80FFB /* NSString+MultipartFormDataBoundary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B195B6D152490B700E80FFB /* NSString+MultipartFormDataBoundary.h */; };
+		1B195B70152490B700E80FFB /* NSString+MultipartFormDataBoundary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B195B6E152490B700E80FFB /* NSString+MultipartFormDataBoundary.m */; };
+		1B1C0B8C152D8F3900ECF555 /* SCSrvResponseCaches.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1C0B8A152D8F3900ECF555 /* SCSrvResponseCaches.h */; };
+		1B1C0B8D152D8F3900ECF555 /* SCSrvResponseCaches.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C0B8B152D8F3900ECF555 /* SCSrvResponseCaches.m */; };
+		1B1FF3D014FE528D000BB3F1 /* SCDroplinkField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FF3CE14FE528D000BB3F1 /* SCDroplinkField.m */; };
+		1B24238D152ED2E200147927 /* SCFieldRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B24238B152ED2E200147927 /* SCFieldRecord.h */; };
+		1B24238E152ED2E200147927 /* SCFieldRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B24238C152ED2E200147927 /* SCFieldRecord.m */; };
+		1B24574415245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B24574215245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h */; };
+		1B24574515245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B24574315245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m */; };
+		1B245873152472E600FBB6C2 /* SCWebApiParsers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B245871152472E600FBB6C2 /* SCWebApiParsers.h */; };
+		1B245874152472E600FBB6C2 /* SCWebApiParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B245872152472E600FBB6C2 /* SCWebApiParsers.m */; };
+		1B2458C115247F2800FBB6C2 /* SCCreateMediaItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2458BF15247F2800FBB6C2 /* SCCreateMediaItemRequest.m */; };
+		1B363FD6152AE0B9006FBE6E /* SCApiAnalizers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B363FD4152AE0B9006FBE6E /* SCApiAnalizers.h */; };
+		1B363FD7152AE0B9006FBE6E /* SCApiAnalizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */; };
+		1B363FDE152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B363FDC152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.h */; };
+		1B363FDF152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B363FDD152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.m */; };
+		1B459569147BF8A2003E3479 /* NSString+ItemPathLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B459567147BF8A2003E3479 /* NSString+ItemPathLogic.h */; };
+		1B45956A147BF8A2003E3479 /* NSString+ItemPathLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B459568147BF8A2003E3479 /* NSString+ItemPathLogic.m */; };
+		1B4AD5D315234FBC00DCBEC7 /* SCItemsReaderRequest+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4AD5D115234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.h */; };
+		1B4AD5D415234FBC00DCBEC7 /* SCItemsReaderRequest+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AD5D215234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.m */; };
+		1B576FF7147E4B6C0064903A /* SCField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B576FF5147E4B6C0064903A /* SCField.m */; };
+		1B576FFA147E4B810064903A /* SCField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B576FF9147E4B810064903A /* SCField.h */; };
+		1B577106147E7DA60064903A /* SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B577104147E7DA60064903A /* SCError.m */; };
+		1B577108147E7E310064903A /* SCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B577107147E7E310064903A /* SCError.h */; };
+		1B597D9314FE5E7C00B10F1E /* SCDroptreeField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B597D9114FE5E7C00B10F1E /* SCDroptreeField.m */; };
+		1B597D9F14FE6B0900B10F1E /* SCFieldLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B597D9D14FE6B0900B10F1E /* SCFieldLinkData.m */; };
+		1B597DA314FE6CF900B10F1E /* SCGeneralLinkField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B597DA114FE6CF900B10F1E /* SCGeneralLinkField.m */; };
+		1B597DA714FE73C900B10F1E /* SCFieldLinkData+XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B597DA514FE73C900B10F1E /* SCFieldLinkData+XMLParser.h */; };
+		1B597DA814FE73C900B10F1E /* SCFieldLinkData+XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B597DA614FE73C900B10F1E /* SCFieldLinkData+XMLParser.m */; };
+		1B6B4283152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B4281152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.h */; };
+		1B6B4284152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B4282152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.m */; };
+		1B6FEADC1504D67400BA61A6 /* NSString+IsSitecoreItemID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6FEADA1504D67400BA61A6 /* NSString+IsSitecoreItemID.h */; };
+		1B6FEADD1504D67400BA61A6 /* NSString+IsSitecoreItemID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6FEADB1504D67400BA61A6 /* NSString+IsSitecoreItemID.m */; };
+		1B7A101214BF113000F37C95 /* SCHostLoginAndPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7A101014BF113000F37C95 /* SCHostLoginAndPassword.h */; };
+		1B7A101314BF113000F37C95 /* SCHostLoginAndPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7A101114BF113000F37C95 /* SCHostLoginAndPassword.m */; };
+		1B7AC480148FC60200DDD31D /* SCItemReaderScopeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7AC47F148FC60200DDD31D /* SCItemReaderScopeType.h */; };
+		1B7AC48C1490C7FF00DDD31D /* SCItemReaderRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7AC48B1490C7FF00DDD31D /* SCItemReaderRequestType.h */; };
+		1B81697A14A360F9008BCDE2 /* SCItemsCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B81697814A360F9008BCDE2 /* SCItemsCache.h */; };
+		1B81697B14A360F9008BCDE2 /* SCItemsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B81697914A360F9008BCDE2 /* SCItemsCache.m */; };
+		1B81697E14A36816008BCDE2 /* SCItemRecord+Ownerships.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B81697C14A36816008BCDE2 /* SCItemRecord+Ownerships.h */; };
+		1B81697F14A36816008BCDE2 /* SCItemRecord+Ownerships.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B81697D14A36816008BCDE2 /* SCItemRecord+Ownerships.m */; };
+		1B8169C514A4775C008BCDE2 /* SCPagedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8169C314A4775C008BCDE2 /* SCPagedItems.m */; };
+		1B8169F214A4A72B008BCDE2 /* NSURL+URLWithItemsReaderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B8169F014A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.h */; };
+		1B8169F314A4A72B008BCDE2 /* NSURL+URLWithItemsReaderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8169F114A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.m */; };
+		1B8169FA14A4C635008BCDE2 /* SCPagedItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B8169F914A4C635008BCDE2 /* SCPagedItems.h */; };
+		1B816ACB14A872B5008BCDE2 /* SCItemsPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B816AC914A872B4008BCDE2 /* SCItemsPage.h */; };
+		1B816ACC14A872B5008BCDE2 /* SCItemsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B816ACA14A872B4008BCDE2 /* SCItemsPage.m */; };
+		1B816AD314A872E5008BCDE2 /* SCItemRecordsPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B816AD114A872E5008BCDE2 /* SCItemRecordsPage.h */; };
+		1B816AD414A872E5008BCDE2 /* SCItemRecordsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B816AD214A872E5008BCDE2 /* SCItemRecordsPage.m */; };
+		1B816AD714A87400008BCDE2 /* SCItemRecordsPage+JsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B816AD514A87400008BCDE2 /* SCItemRecordsPage+JsonParser.h */; };
+		1B816AD814A87400008BCDE2 /* SCItemRecordsPage+JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B816AD614A87400008BCDE2 /* SCItemRecordsPage+JsonParser.m */; };
+		1B8B6C5114C80B84002DA26E /* SCItemInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B8B6C4F14C80B84002DA26E /* SCItemInfo.h */; };
+		1B8B6C5214C80B84002DA26E /* SCItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B6C5014C80B84002DA26E /* SCItemInfo.m */; };
+		1B8B6C5514C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B8B6C5314C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.h */; };
+		1B8B6C5614C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B6C5414C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.m */; };
+		1B8D3F0C1523638A00CAF9C3 /* NSString+IsSCPathValid.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B8D3F0A1523638A00CAF9C3 /* NSString+IsSCPathValid.h */; };
+		1B8D3F0D1523638A00CAF9C3 /* NSString+IsSCPathValid.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D3F0B1523638A00CAF9C3 /* NSString+IsSCPathValid.m */; };
+		1BAB6F29149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BAB6F25149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.h */; };
+		1BAB6F2A149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB6F26149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.m */; };
+		1BB2928214B5F6DE00244765 /* SCDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2928014B5F6DE00244765 /* SCDateField.m */; };
+		1BB2928E14B5F74100244765 /* SCDateTimeField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2928C14B5F74000244765 /* SCDateTimeField.m */; };
+		1BB2929014B5F77000244765 /* SCDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2928F14B5F77000244765 /* SCDateField.h */; };
+		1BB2929214B5F77A00244765 /* SCDateTimeField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2929114B5F77A00244765 /* SCDateTimeField.h */; };
+		1BB292A414B5F8AC00244765 /* SCCheckboxField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB292A214B5F8AC00244765 /* SCCheckboxField.m */; };
+		1BB292A614B5F92B00244765 /* SCCheckboxField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB292A514B5F92B00244765 /* SCCheckboxField.h */; };
+		1BB2B858149F50C600A9D332 /* SCApiContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2B856149F50C600A9D332 /* SCApiContext.m */; };
+		1BB5D9A4152EEC7F00075752 /* SCFieldRecord+Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB5D9A2152EEC7F00075752 /* SCFieldRecord+Parser.h */; };
+		1BB5D9A5152EEC7F00075752 /* SCFieldRecord+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB5D9A3152EEC7F00075752 /* SCFieldRecord+Parser.m */; };
+		1BBD97DB1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBD97D91524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h */; };
+		1BBD97DC1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD97DA1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.m */; };
+		1BBE2EC7154546AB004B683B /* SCItemsCache+UnregisterItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBE2EC5154546AB004B683B /* SCItemsCache+UnregisterItems.h */; };
+		1BBE2EC8154546AB004B683B /* SCItemsCache+UnregisterItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE2EC6154546AB004B683B /* SCItemsCache+UnregisterItems.m */; };
+		1BC086FB147BBDD60066CFB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC086FA147BBDD60066CFB3 /* Foundation.framework */; };
+		1BC08791147BC6860066CFB3 /* SCApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC08790147BC6860066CFB3 /* SCApi.h */; };
+		1BC0879F147BC8070066CFB3 /* SCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0879D147BC8070066CFB3 /* SCItem.m */; };
+		1BC087A1147BC81B0066CFB3 /* SCItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC087A0147BC81A0066CFB3 /* SCItem.h */; };
+		1BC087DC147BCB6C0066CFB3 /* SCItemRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */; };
+		1BC087DD147BCB6C0066CFB3 /* SCItemRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */; };
+		1BC087FA147BD2CF0066CFB3 /* SCRemoteApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC087F8147BD2CF0066CFB3 /* SCRemoteApi.h */; };
+		1BC087FB147BD2CF0066CFB3 /* SCRemoteApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC087F9147BD2CF0066CFB3 /* SCRemoteApi.m */; };
+		1BC08800147BE1FB0066CFB3 /* SCItemRecord+Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC087FE147BE1FB0066CFB3 /* SCItemRecord+Parser.h */; };
+		1BC08801147BE1FB0066CFB3 /* SCItemRecord+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC087FF147BE1FB0066CFB3 /* SCItemRecord+Parser.m */; };
+		1BC48A1E14A0B7A600DD0960 /* SCApiContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48A1D14A0B7A600DD0960 /* SCApiContext.h */; };
+		1BC48A2214A0C32500DD0960 /* SCApiUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48A2014A0C32500DD0960 /* SCApiUtils.h */; };
+		1BC48A2314A0C32500DD0960 /* SCApiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC48A2114A0C32500DD0960 /* SCApiUtils.m */; };
+		1BCE2727152B3AE600F05F90 /* SCSmartDataLoaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BCE2725152B3AE600F05F90 /* SCSmartDataLoaders.h */; };
+		1BCE2728152B3AE600F05F90 /* SCSmartDataLoaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2726152B3AE600F05F90 /* SCSmartDataLoaders.m */; };
+		1BE2ABE314E522F9003097D3 /* SCColorPickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2ABE114E522F9003097D3 /* SCColorPickerField.m */; };
+		1BE2ABF314E52A60003097D3 /* SCColorPickerField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE2ABF214E52A60003097D3 /* SCColorPickerField.h */; };
+		1BF7F5F9152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF7F5F7152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h */; };
+		1BF7F5FA152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7F5F8152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m */; };
+		1BF90C0F14B5E159000D0CF2 /* SCChecklistField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF90C0D14B5E159000D0CF2 /* SCChecklistField.m */; };
+		1BF90C1114B5E24B000D0CF2 /* SCChecklistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF90C1014B5E24B000D0CF2 /* SCChecklistField.h */; };
+		1BF90C1514B5E27C000D0CF2 /* SCImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF90C1314B5E27C000D0CF2 /* SCImageField.m */; };
+		1BF90C1714B5E28A000D0CF2 /* SCImageField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF90C1614B5E28A000D0CF2 /* SCImageField.h */; };
+		1BF90C1B14B5E3E2000D0CF2 /* SCMultilistField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */; };
+		1BF90C1D14B5E41D000D0CF2 /* SCMultilistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B030D8C14A07C98004CE872 /* SCItemReaderRequestFlags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemReaderRequestFlags.h; sourceTree = "<group>"; };
+		1B054DEF1521CD41008E4B9E /* SCEditItemsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditItemsRequest.m; sourceTree = "<group>"; };
+		1B054DF31521CD5D008E4B9E /* SCCreateItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCreateItemRequest.m; sourceTree = "<group>"; };
+		1B054DF71521CDA9008E4B9E /* SCItemsReaderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsReaderRequest.m; sourceTree = "<group>"; };
+		1B054DFA1521CDE8008E4B9E /* SCItemsReaderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCItemsReaderRequest.h; path = ../../../SitecoreMobileSDK/SCItemsReaderRequest.h; sourceTree = "<group>"; };
+		1B054DFB1521CDFE008E4B9E /* SCEditItemsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCEditItemsRequest.h; path = ../../../SitecoreMobileSDK/SCEditItemsRequest.h; sourceTree = "<group>"; };
+		1B054DFC1521CE17008E4B9E /* SCCreateItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCCreateItemRequest.h; path = ../../../SitecoreMobileSDK/SCCreateItemRequest.h; sourceTree = "<group>"; };
+		1B0E58E614E5420D008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTreelistField.h; sourceTree = "<group>"; };
+		1B0E58E714E5420D008EE5F9 /* SCTreelistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTreelistField.m; sourceTree = "<group>"; };
+		1B0E58F214E542BA008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTreelistField.h; sourceTree = "<group>"; };
+		1B155F9814C852CF004A4C99 /* SCItemIdPathAndLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemIdPathAndLanguage.h; sourceTree = "<group>"; };
+		1B155F9914C852CF004A4C99 /* SCItemIdPathAndLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemIdPathAndLanguage.m; sourceTree = "<group>"; };
+		1B195B6B15248DF700E80FFB /* SCCreateMediaItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCCreateMediaItemRequest.h; path = ../../../SitecoreMobileSDK/SCCreateMediaItemRequest.h; sourceTree = "<group>"; };
+		1B195B6D152490B700E80FFB /* NSString+MultipartFormDataBoundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MultipartFormDataBoundary.h"; sourceTree = "<group>"; };
+		1B195B6E152490B700E80FFB /* NSString+MultipartFormDataBoundary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MultipartFormDataBoundary.m"; sourceTree = "<group>"; };
+		1B1C0B8A152D8F3900ECF555 /* SCSrvResponseCaches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSrvResponseCaches.h; sourceTree = "<group>"; };
+		1B1C0B8B152D8F3900ECF555 /* SCSrvResponseCaches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSrvResponseCaches.m; sourceTree = "<group>"; };
+		1B1FF3CE14FE528D000BB3F1 /* SCDroplinkField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDroplinkField.m; sourceTree = "<group>"; };
+		1B1FF41214FE5B3E000BB3F1 /* SCDroplinkField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDroplinkField.h; path = ../../../SitecoreMobileSDK/SCDroplinkField.h; sourceTree = "<group>"; };
+		1B24238B152ED2E200147927 /* SCFieldRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFieldRecord.h; sourceTree = "<group>"; };
+		1B24238C152ED2E200147927 /* SCFieldRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFieldRecord.m; sourceTree = "<group>"; };
+		1B24574215245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FieldsRawFaluesByName.h"; sourceTree = "<group>"; };
+		1B24574315245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FieldsRawFaluesByName.m"; sourceTree = "<group>"; };
+		1B245871152472E600FBB6C2 /* SCWebApiParsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebApiParsers.h; sourceTree = "<group>"; };
+		1B245872152472E600FBB6C2 /* SCWebApiParsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebApiParsers.m; sourceTree = "<group>"; };
+		1B2458BF15247F2800FBB6C2 /* SCCreateMediaItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCreateMediaItemRequest.m; sourceTree = "<group>"; };
+		1B28D66F14FF662400673110 /* SCFieldLinkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCFieldLinkData.h; path = ../../../SitecoreMobileSDK/SCFieldLinkData.h; sourceTree = "<group>"; };
+		1B28D67814FF665B00673110 /* SCGeneralLinkField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCGeneralLinkField.h; path = ../../../SitecoreMobileSDK/SCGeneralLinkField.h; sourceTree = "<group>"; };
+		1B28D6B714FF75D700673110 /* SCDroptreeField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDroptreeField.h; path = ../../../SitecoreMobileSDK/SCDroptreeField.h; sourceTree = "<group>"; };
+		1B363FD4152AE0B9006FBE6E /* SCApiAnalizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApiAnalizers.h; sourceTree = "<group>"; };
+		1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApiAnalizers.m; sourceTree = "<group>"; };
+		1B363FDC152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsReaderRequest+SystemLanguages.h"; sourceTree = "<group>"; };
+		1B363FDD152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemsReaderRequest+SystemLanguages.m"; sourceTree = "<group>"; };
+		1B459567147BF8A2003E3479 /* NSString+ItemPathLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ItemPathLogic.h"; sourceTree = "<group>"; };
+		1B459568147BF8A2003E3479 /* NSString+ItemPathLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ItemPathLogic.m"; sourceTree = "<group>"; };
+		1B4AD5D115234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsReaderRequest+Factory.h"; sourceTree = "<group>"; };
+		1B4AD5D215234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemsReaderRequest+Factory.m"; sourceTree = "<group>"; };
+		1B576FF5147E4B6C0064903A /* SCField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCField.m; sourceTree = "<group>"; };
+		1B576FF9147E4B810064903A /* SCField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCField.h; path = ../../SitecoreMobileSDK/SCField.h; sourceTree = "<group>"; };
+		1B577104147E7DA60064903A /* SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCError.m; sourceTree = "<group>"; };
+		1B577107147E7E310064903A /* SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCError.h; path = ../SitecoreMobileSDK/SCError.h; sourceTree = "<group>"; };
+		1B597D9114FE5E7C00B10F1E /* SCDroptreeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDroptreeField.m; sourceTree = "<group>"; };
+		1B597D9D14FE6B0900B10F1E /* SCFieldLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFieldLinkData.m; sourceTree = "<group>"; };
+		1B597DA114FE6CF900B10F1E /* SCGeneralLinkField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGeneralLinkField.m; sourceTree = "<group>"; };
+		1B597DA514FE73C900B10F1E /* SCFieldLinkData+XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCFieldLinkData+XMLParser.h"; sourceTree = "<group>"; };
+		1B597DA614FE73C900B10F1E /* SCFieldLinkData+XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCFieldLinkData+XMLParser.m"; sourceTree = "<group>"; };
+		1B6B4281152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCCreateMediaItemRequest+ToItemsReadRequest.h"; sourceTree = "<group>"; };
+		1B6B4282152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCCreateMediaItemRequest+ToItemsReadRequest.m"; sourceTree = "<group>"; };
+		1B6FEADA1504D67400BA61A6 /* NSString+IsSitecoreItemID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsSitecoreItemID.h"; sourceTree = "<group>"; };
+		1B6FEADB1504D67400BA61A6 /* NSString+IsSitecoreItemID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsSitecoreItemID.m"; sourceTree = "<group>"; };
+		1B7A101014BF113000F37C95 /* SCHostLoginAndPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHostLoginAndPassword.h; sourceTree = "<group>"; };
+		1B7A101114BF113000F37C95 /* SCHostLoginAndPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHostLoginAndPassword.m; sourceTree = "<group>"; };
+		1B7AC47F148FC60200DDD31D /* SCItemReaderScopeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemReaderScopeType.h; sourceTree = "<group>"; };
+		1B7AC48B1490C7FF00DDD31D /* SCItemReaderRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemReaderRequestType.h; sourceTree = "<group>"; };
+		1B81697814A360F9008BCDE2 /* SCItemsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsCache.h; sourceTree = "<group>"; };
+		1B81697914A360F9008BCDE2 /* SCItemsCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsCache.m; sourceTree = "<group>"; };
+		1B81697C14A36816008BCDE2 /* SCItemRecord+Ownerships.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemRecord+Ownerships.h"; sourceTree = "<group>"; };
+		1B81697D14A36816008BCDE2 /* SCItemRecord+Ownerships.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemRecord+Ownerships.m"; sourceTree = "<group>"; };
+		1B8169C314A4775C008BCDE2 /* SCPagedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPagedItems.m; sourceTree = "<group>"; };
+		1B8169F014A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLWithItemsReaderRequest.h"; sourceTree = "<group>"; };
+		1B8169F114A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLWithItemsReaderRequest.m"; sourceTree = "<group>"; };
+		1B8169F914A4C635008BCDE2 /* SCPagedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCPagedItems.h; path = ../../SitecoreMobileSDK/SCPagedItems.h; sourceTree = "<group>"; };
+		1B816AC914A872B4008BCDE2 /* SCItemsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsPage.h; sourceTree = "<group>"; };
+		1B816ACA14A872B4008BCDE2 /* SCItemsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsPage.m; sourceTree = "<group>"; };
+		1B816AD114A872E5008BCDE2 /* SCItemRecordsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemRecordsPage.h; sourceTree = "<group>"; };
+		1B816AD214A872E5008BCDE2 /* SCItemRecordsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemRecordsPage.m; sourceTree = "<group>"; };
+		1B816AD514A87400008BCDE2 /* SCItemRecordsPage+JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemRecordsPage+JsonParser.h"; sourceTree = "<group>"; };
+		1B816AD614A87400008BCDE2 /* SCItemRecordsPage+JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemRecordsPage+JsonParser.m"; sourceTree = "<group>"; };
+		1B8B6C4F14C80B84002DA26E /* SCItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemInfo.h; sourceTree = "<group>"; };
+		1B8B6C5014C80B84002DA26E /* SCItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemInfo.m; sourceTree = "<group>"; };
+		1B8B6C5314C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DefaultSitecoreLanguage.h"; sourceTree = "<group>"; };
+		1B8B6C5414C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DefaultSitecoreLanguage.m"; sourceTree = "<group>"; };
+		1B8D3F0A1523638A00CAF9C3 /* NSString+IsSCPathValid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsSCPathValid.h"; sourceTree = "<group>"; };
+		1B8D3F0B1523638A00CAF9C3 /* NSString+IsSCPathValid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsSCPathValid.m"; sourceTree = "<group>"; };
+		1B9F7F09152B1CE300B68ED4 /* JSBlocksDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBlocksDefinitions.h; sourceTree = "<group>"; };
+		1BAB6F25149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsReaderRequest+SCApiContext.h"; sourceTree = "<group>"; };
+		1BAB6F26149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemsReaderRequest+SCApiContext.m"; sourceTree = "<group>"; };
+		1BB2928014B5F6DE00244765 /* SCDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDateField.m; sourceTree = "<group>"; };
+		1BB2928C14B5F74000244765 /* SCDateTimeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDateTimeField.m; sourceTree = "<group>"; };
+		1BB2928F14B5F77000244765 /* SCDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDateField.h; path = ../../../SitecoreMobileSDK/SCDateField.h; sourceTree = "<group>"; };
+		1BB2929114B5F77A00244765 /* SCDateTimeField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDateTimeField.h; path = ../../../SitecoreMobileSDK/SCDateTimeField.h; sourceTree = "<group>"; };
+		1BB292A214B5F8AC00244765 /* SCCheckboxField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCheckboxField.m; sourceTree = "<group>"; };
+		1BB292A514B5F92B00244765 /* SCCheckboxField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCheckboxField.h; path = ../../../SitecoreMobileSDK/SCCheckboxField.h; sourceTree = "<group>"; };
+		1BB2B856149F50C600A9D332 /* SCApiContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApiContext.m; sourceTree = "<group>"; };
+		1BB5D9A2152EEC7F00075752 /* SCFieldRecord+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCFieldRecord+Parser.h"; sourceTree = "<group>"; };
+		1BB5D9A3152EEC7F00075752 /* SCFieldRecord+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCFieldRecord+Parser.m"; sourceTree = "<group>"; };
+		1BBD97D91524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MultipartFormDataWithBoundary.h"; sourceTree = "<group>"; };
+		1BBD97DA1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MultipartFormDataWithBoundary.m"; sourceTree = "<group>"; };
+		1BBE2EC5154546AB004B683B /* SCItemsCache+UnregisterItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsCache+UnregisterItems.h"; sourceTree = "<group>"; };
+		1BBE2EC6154546AB004B683B /* SCItemsCache+UnregisterItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemsCache+UnregisterItems.m"; sourceTree = "<group>"; };
+		1BC086F7147BBDD60066CFB3 /* libSCApi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCApi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC086FA147BBDD60066CFB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1BC086FE147BBDD60066CFB3 /* SCApi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCApi-Prefix.pch"; sourceTree = "<group>"; };
+		1BC08790147BC6860066CFB3 /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApi.h; sourceTree = "<group>"; };
+		1BC0879D147BC8070066CFB3 /* SCItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItem.m; sourceTree = "<group>"; };
+		1BC087A0147BC81A0066CFB3 /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItem.h; path = ../../SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; };
+		1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemRecord.h; sourceTree = "<group>"; };
+		1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemRecord.m; sourceTree = "<group>"; };
+		1BC087F8147BD2CF0066CFB3 /* SCRemoteApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRemoteApi.h; sourceTree = "<group>"; };
+		1BC087F9147BD2CF0066CFB3 /* SCRemoteApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRemoteApi.m; sourceTree = "<group>"; };
+		1BC087FE147BE1FB0066CFB3 /* SCItemRecord+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemRecord+Parser.h"; sourceTree = "<group>"; };
+		1BC087FF147BE1FB0066CFB3 /* SCItemRecord+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItemRecord+Parser.m"; sourceTree = "<group>"; };
+		1BC48A1D14A0B7A600DD0960 /* SCApiContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCApiContext.h; path = ../SitecoreMobileSDK/SCApiContext.h; sourceTree = "<group>"; };
+		1BC48A2014A0C32500DD0960 /* SCApiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApiUtils.h; sourceTree = "<group>"; };
+		1BC48A2114A0C32500DD0960 /* SCApiUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApiUtils.m; sourceTree = "<group>"; };
+		1BCE2725152B3AE600F05F90 /* SCSmartDataLoaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSmartDataLoaders.h; sourceTree = "<group>"; };
+		1BCE2726152B3AE600F05F90 /* SCSmartDataLoaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSmartDataLoaders.m; sourceTree = "<group>"; };
+		1BCE2729152B3B6E00F05F90 /* SCDataCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDataCache.h; sourceTree = "<group>"; };
+		1BE2ABE114E522F9003097D3 /* SCColorPickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCColorPickerField.m; sourceTree = "<group>"; };
+		1BE2ABF214E52A60003097D3 /* SCColorPickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCColorPickerField.h; path = ../../../SitecoreMobileSDK/SCColorPickerField.h; sourceTree = "<group>"; };
+		1BF7F5F7152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+EditFieldsBodyWithFieldsDict.h"; sourceTree = "<group>"; };
+		1BF7F5F8152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+EditFieldsBodyWithFieldsDict.m"; sourceTree = "<group>"; };
+		1BF90C0D14B5E159000D0CF2 /* SCChecklistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCChecklistField.m; sourceTree = "<group>"; };
+		1BF90C1014B5E24B000D0CF2 /* SCChecklistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCChecklistField.h; path = ../../../SitecoreMobileSDK/SCChecklistField.h; sourceTree = "<group>"; };
+		1BF90C1314B5E27C000D0CF2 /* SCImageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageField.m; sourceTree = "<group>"; };
+		1BF90C1614B5E28A000D0CF2 /* SCImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageField.h; path = ../../../SitecoreMobileSDK/SCImageField.h; sourceTree = "<group>"; };
+		1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMultilistField.m; sourceTree = "<group>"; };
+		1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMultilistField.h; path = ../../../SitecoreMobileSDK/SCMultilistField.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BC086F4147BBDD60066CFB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC086FB147BBDD60066CFB3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B054DED1521CD15008E4B9E /* ApiRequests */ = {
+			isa = PBXGroup;
+			children = (
+				1B195B6B15248DF700E80FFB /* SCCreateMediaItemRequest.h */,
+				1B2458BF15247F2800FBB6C2 /* SCCreateMediaItemRequest.m */,
+				1B054DFC1521CE17008E4B9E /* SCCreateItemRequest.h */,
+				1B054DF31521CD5D008E4B9E /* SCCreateItemRequest.m */,
+				1B054DFB1521CDFE008E4B9E /* SCEditItemsRequest.h */,
+				1B054DEF1521CD41008E4B9E /* SCEditItemsRequest.m */,
+				1B054DFA1521CDE8008E4B9E /* SCItemsReaderRequest.h */,
+				1B054DF71521CDA9008E4B9E /* SCItemsReaderRequest.m */,
+				1B6B4281152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.h */,
+				1B6B4282152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.m */,
+			);
+			path = ApiRequests;
+			sourceTree = "<group>";
+		};
+		1B24586F152472CD00FBB6C2 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				1B245871152472E600FBB6C2 /* SCWebApiParsers.h */,
+				1B245872152472E600FBB6C2 /* SCWebApiParsers.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		1B81697714A360ED008BCDE2 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				1B81697814A360F9008BCDE2 /* SCItemsCache.h */,
+				1B81697914A360F9008BCDE2 /* SCItemsCache.m */,
+				1B81697C14A36816008BCDE2 /* SCItemRecord+Ownerships.h */,
+				1B81697D14A36816008BCDE2 /* SCItemRecord+Ownerships.m */,
+				1BBE2EC5154546AB004B683B /* SCItemsCache+UnregisterItems.h */,
+				1BBE2EC6154546AB004B683B /* SCItemsCache+UnregisterItems.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		1B8B6C4614C80B2B002DA26E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1B8B6C4F14C80B84002DA26E /* SCItemInfo.h */,
+				1B8B6C5014C80B84002DA26E /* SCItemInfo.m */,
+				1B155F9814C852CF004A4C99 /* SCItemIdPathAndLanguage.h */,
+				1B155F9914C852CF004A4C99 /* SCItemIdPathAndLanguage.m */,
+				1B363FDC152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.h */,
+				1B363FDD152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		1BC086EC147BBDD60066CFB3 = {
+			isa = PBXGroup;
+			children = (
+				1BC086FC147BBDD60066CFB3 /* SCApi */,
+				1BC0878E147BC6750066CFB3 /* SitecoreMobileSDK */,
+				1BC086F9147BBDD60066CFB3 /* Frameworks */,
+				1BC086F8147BBDD60066CFB3 /* Products */,
+				1BC087DF147BD1750066CFB3 /* Dependencies */,
+			);
+			sourceTree = "<group>";
+		};
+		1BC086F8147BBDD60066CFB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BC086F7147BBDD60066CFB3 /* libSCApi.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BC086F9147BBDD60066CFB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BC086FA147BBDD60066CFB3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BC086FC147BBDD60066CFB3 /* SCApi */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE2724152B3AD900F05F90 /* SmartDataLoaders */,
+				1B8B6C4614C80B2B002DA26E /* Detail */,
+				1B81697714A360ED008BCDE2 /* Cache */,
+				1BC48A1F14A0C30C00DD0960 /* Utils */,
+				1BC087A3147BC9530066CFB3 /* API */,
+				1BC0879B147BC79E0066CFB3 /* PathLogic */,
+				1BC08798147BC6FD0066CFB3 /* Data */,
+				1B577107147E7E310064903A /* SCError.h */,
+				1B577104147E7DA60064903A /* SCError.m */,
+				1BC48A1D14A0B7A600DD0960 /* SCApiContext.h */,
+				1BB2B856149F50C600A9D332 /* SCApiContext.m */,
+				1BC086FD147BBDD60066CFB3 /* Supporting Files */,
+			);
+			path = SCApi;
+			sourceTree = "<group>";
+		};
+		1BC086FD147BBDD60066CFB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BC086FE147BBDD60066CFB3 /* SCApi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BC0878E147BC6750066CFB3 /* SitecoreMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1BC08790147BC6860066CFB3 /* SCApi.h */,
+				1B7AC47F148FC60200DDD31D /* SCItemReaderScopeType.h */,
+				1B7AC48B1490C7FF00DDD31D /* SCItemReaderRequestType.h */,
+				1B030D8C14A07C98004CE872 /* SCItemReaderRequestFlags.h */,
+				1B0E58F214E542BA008EE5F9 /* SCTreelistField.h */,
+			);
+			path = SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1BC08798147BC6FD0066CFB3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B054DED1521CD15008E4B9E /* ApiRequests */,
+				1BF90C0314B5E13F000D0CF2 /* SCFields */,
+				1BC087A2147BC8C40066CFB3 /* BackendRecords */,
+				1B24238B152ED2E200147927 /* SCFieldRecord.h */,
+				1B24238C152ED2E200147927 /* SCFieldRecord.m */,
+				1B576FF9147E4B810064903A /* SCField.h */,
+				1B576FF5147E4B6C0064903A /* SCField.m */,
+				1BC087A0147BC81A0066CFB3 /* SCItem.h */,
+				1BC0879D147BC8070066CFB3 /* SCItem.m */,
+				1B8169F914A4C635008BCDE2 /* SCPagedItems.h */,
+				1B8169C314A4775C008BCDE2 /* SCPagedItems.m */,
+				1B816AC914A872B4008BCDE2 /* SCItemsPage.h */,
+				1B816ACA14A872B4008BCDE2 /* SCItemsPage.m */,
+				1B816AD114A872E5008BCDE2 /* SCItemRecordsPage.h */,
+				1B816AD214A872E5008BCDE2 /* SCItemRecordsPage.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1BC0879B147BC79E0066CFB3 /* PathLogic */ = {
+			isa = PBXGroup;
+			children = (
+				1B459567147BF8A2003E3479 /* NSString+ItemPathLogic.h */,
+				1B459568147BF8A2003E3479 /* NSString+ItemPathLogic.m */,
+			);
+			path = PathLogic;
+			sourceTree = "<group>";
+		};
+		1BC087A2147BC8C40066CFB3 /* BackendRecords */ = {
+			isa = PBXGroup;
+			children = (
+				1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */,
+				1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */,
+			);
+			path = BackendRecords;
+			sourceTree = "<group>";
+		};
+		1BC087A3147BC9530066CFB3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1BC087FD147BE1E30066CFB3 /* Parsers */,
+				1BC087F8147BD2CF0066CFB3 /* SCRemoteApi.h */,
+				1BC087F9147BD2CF0066CFB3 /* SCRemoteApi.m */,
+				1BF7F5F7152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h */,
+				1BF7F5F8152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m */,
+				1B1C0B8A152D8F3900ECF555 /* SCSrvResponseCaches.h */,
+				1B1C0B8B152D8F3900ECF555 /* SCSrvResponseCaches.m */,
+				1B8169F014A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.h */,
+				1B8169F114A4A72A008BCDE2 /* NSURL+URLWithItemsReaderRequest.m */,
+				1BAB6F25149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.h */,
+				1BAB6F26149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.m */,
+				1B4AD5D115234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.h */,
+				1B4AD5D215234FBB00DCBEC7 /* SCItemsReaderRequest+Factory.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1BC087DF147BD1750066CFB3 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		1BC087FD147BE1E30066CFB3 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				1B24586F152472CD00FBB6C2 /* JSON */,
+				1BC087FE147BE1FB0066CFB3 /* SCItemRecord+Parser.h */,
+				1BC087FF147BE1FB0066CFB3 /* SCItemRecord+Parser.m */,
+				1BB5D9A2152EEC7F00075752 /* SCFieldRecord+Parser.h */,
+				1BB5D9A3152EEC7F00075752 /* SCFieldRecord+Parser.m */,
+				1B816AD514A87400008BCDE2 /* SCItemRecordsPage+JsonParser.h */,
+				1B816AD614A87400008BCDE2 /* SCItemRecordsPage+JsonParser.m */,
+				1B597DA514FE73C900B10F1E /* SCFieldLinkData+XMLParser.h */,
+				1B597DA614FE73C900B10F1E /* SCFieldLinkData+XMLParser.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		1BC48A1F14A0C30C00DD0960 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BC48A2014A0C32500DD0960 /* SCApiUtils.h */,
+				1BC48A2114A0C32500DD0960 /* SCApiUtils.m */,
+				1B7A101014BF113000F37C95 /* SCHostLoginAndPassword.h */,
+				1B7A101114BF113000F37C95 /* SCHostLoginAndPassword.m */,
+				1B8B6C5314C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.h */,
+				1B8B6C5414C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.m */,
+				1B6FEADA1504D67400BA61A6 /* NSString+IsSitecoreItemID.h */,
+				1B6FEADB1504D67400BA61A6 /* NSString+IsSitecoreItemID.m */,
+				1B8D3F0A1523638A00CAF9C3 /* NSString+IsSCPathValid.h */,
+				1B8D3F0B1523638A00CAF9C3 /* NSString+IsSCPathValid.m */,
+				1B24574215245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h */,
+				1B24574315245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m */,
+				1B195B6D152490B700E80FFB /* NSString+MultipartFormDataBoundary.h */,
+				1B195B6E152490B700E80FFB /* NSString+MultipartFormDataBoundary.m */,
+				1BBD97D91524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h */,
+				1BBD97DA1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.m */,
+				1B363FD4152AE0B9006FBE6E /* SCApiAnalizers.h */,
+				1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */,
+				1B9F7F09152B1CE300B68ED4 /* JSBlocksDefinitions.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1BCE2724152B3AD900F05F90 /* SmartDataLoaders */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE2729152B3B6E00F05F90 /* SCDataCache.h */,
+				1BCE2725152B3AE600F05F90 /* SCSmartDataLoaders.h */,
+				1BCE2726152B3AE600F05F90 /* SCSmartDataLoaders.m */,
+			);
+			path = SmartDataLoaders;
+			sourceTree = "<group>";
+		};
+		1BF90C0314B5E13F000D0CF2 /* SCFields */ = {
+			isa = PBXGroup;
+			children = (
+				1BF90C1014B5E24B000D0CF2 /* SCChecklistField.h */,
+				1BF90C0D14B5E159000D0CF2 /* SCChecklistField.m */,
+				1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */,
+				1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */,
+				1B0E58E614E5420D008EE5F9 /* SCTreelistField.h */,
+				1B0E58E714E5420D008EE5F9 /* SCTreelistField.m */,
+				1BF90C1614B5E28A000D0CF2 /* SCImageField.h */,
+				1BF90C1314B5E27C000D0CF2 /* SCImageField.m */,
+				1BB2928F14B5F77000244765 /* SCDateField.h */,
+				1BB2928014B5F6DE00244765 /* SCDateField.m */,
+				1BB2929114B5F77A00244765 /* SCDateTimeField.h */,
+				1BB2928C14B5F74000244765 /* SCDateTimeField.m */,
+				1BB292A514B5F92B00244765 /* SCCheckboxField.h */,
+				1BB292A214B5F8AC00244765 /* SCCheckboxField.m */,
+				1BE2ABF214E52A60003097D3 /* SCColorPickerField.h */,
+				1BE2ABE114E522F9003097D3 /* SCColorPickerField.m */,
+				1B1FF41214FE5B3E000BB3F1 /* SCDroplinkField.h */,
+				1B1FF3CE14FE528D000BB3F1 /* SCDroplinkField.m */,
+				1B28D6B714FF75D700673110 /* SCDroptreeField.h */,
+				1B597D9114FE5E7C00B10F1E /* SCDroptreeField.m */,
+				1B28D66F14FF662400673110 /* SCFieldLinkData.h */,
+				1B597D9D14FE6B0900B10F1E /* SCFieldLinkData.m */,
+				1B28D67814FF665B00673110 /* SCGeneralLinkField.h */,
+				1B597DA114FE6CF900B10F1E /* SCGeneralLinkField.m */,
+			);
+			path = SCFields;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1BC086F5147BBDD60066CFB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC08791147BC6860066CFB3 /* SCApi.h in Headers */,
+				1BC087A1147BC81B0066CFB3 /* SCItem.h in Headers */,
+				1BC087DC147BCB6C0066CFB3 /* SCItemRecord.h in Headers */,
+				1BC087FA147BD2CF0066CFB3 /* SCRemoteApi.h in Headers */,
+				1BC08800147BE1FB0066CFB3 /* SCItemRecord+Parser.h in Headers */,
+				1B459569147BF8A2003E3479 /* NSString+ItemPathLogic.h in Headers */,
+				1B576FFA147E4B810064903A /* SCField.h in Headers */,
+				1B577108147E7E310064903A /* SCError.h in Headers */,
+				1B7AC480148FC60200DDD31D /* SCItemReaderScopeType.h in Headers */,
+				1B7AC48C1490C7FF00DDD31D /* SCItemReaderRequestType.h in Headers */,
+				1BAB6F29149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.h in Headers */,
+				1B030D8D14A07C98004CE872 /* SCItemReaderRequestFlags.h in Headers */,
+				1BC48A1E14A0B7A600DD0960 /* SCApiContext.h in Headers */,
+				1BC48A2214A0C32500DD0960 /* SCApiUtils.h in Headers */,
+				1B81697A14A360F9008BCDE2 /* SCItemsCache.h in Headers */,
+				1B81697E14A36816008BCDE2 /* SCItemRecord+Ownerships.h in Headers */,
+				1B8169F214A4A72B008BCDE2 /* NSURL+URLWithItemsReaderRequest.h in Headers */,
+				1B8169FA14A4C635008BCDE2 /* SCPagedItems.h in Headers */,
+				1B816ACB14A872B5008BCDE2 /* SCItemsPage.h in Headers */,
+				1B816AD314A872E5008BCDE2 /* SCItemRecordsPage.h in Headers */,
+				1B816AD714A87400008BCDE2 /* SCItemRecordsPage+JsonParser.h in Headers */,
+				1BF90C1114B5E24B000D0CF2 /* SCChecklistField.h in Headers */,
+				1BF90C1714B5E28A000D0CF2 /* SCImageField.h in Headers */,
+				1BF90C1D14B5E41D000D0CF2 /* SCMultilistField.h in Headers */,
+				1BB2929014B5F77000244765 /* SCDateField.h in Headers */,
+				1BB2929214B5F77A00244765 /* SCDateTimeField.h in Headers */,
+				1BB292A614B5F92B00244765 /* SCCheckboxField.h in Headers */,
+				1B7A101214BF113000F37C95 /* SCHostLoginAndPassword.h in Headers */,
+				1B8B6C5114C80B84002DA26E /* SCItemInfo.h in Headers */,
+				1B8B6C5514C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.h in Headers */,
+				1B155F9A14C852CF004A4C99 /* SCItemIdPathAndLanguage.h in Headers */,
+				1BE2ABF314E52A60003097D3 /* SCColorPickerField.h in Headers */,
+				1B0E58E814E5420D008EE5F9 /* SCTreelistField.h in Headers */,
+				1B0E58F314E542BA008EE5F9 /* SCTreelistField.h in Headers */,
+				1B597DA714FE73C900B10F1E /* SCFieldLinkData+XMLParser.h in Headers */,
+				1B6FEADC1504D67400BA61A6 /* NSString+IsSitecoreItemID.h in Headers */,
+				1B4AD5D315234FBC00DCBEC7 /* SCItemsReaderRequest+Factory.h in Headers */,
+				1B8D3F0C1523638A00CAF9C3 /* NSString+IsSCPathValid.h in Headers */,
+				1B24574415245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h in Headers */,
+				1B245873152472E600FBB6C2 /* SCWebApiParsers.h in Headers */,
+				1B195B6F152490B700E80FFB /* NSString+MultipartFormDataBoundary.h in Headers */,
+				1BBD97DB1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h in Headers */,
+				1B363FD6152AE0B9006FBE6E /* SCApiAnalizers.h in Headers */,
+				1B363FDE152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.h in Headers */,
+				1BCE2727152B3AE600F05F90 /* SCSmartDataLoaders.h in Headers */,
+				1B6B4283152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.h in Headers */,
+				1B1C0B8C152D8F3900ECF555 /* SCSrvResponseCaches.h in Headers */,
+				1B24238D152ED2E200147927 /* SCFieldRecord.h in Headers */,
+				1BF7F5F9152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h in Headers */,
+				1BB5D9A4152EEC7F00075752 /* SCFieldRecord+Parser.h in Headers */,
+				1BBE2EC7154546AB004B683B /* SCItemsCache+UnregisterItems.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1BC086F6147BBDD60066CFB3 /* SCApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BC08704147BBDD60066CFB3 /* Build configuration list for PBXNativeTarget "SCApi" */;
+			buildPhases = (
+				1BC086F3147BBDD60066CFB3 /* Sources */,
+				1BC086F4147BBDD60066CFB3 /* Frameworks */,
+				1BC086F5147BBDD60066CFB3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCApi;
+			productName = SCApi;
+			productReference = 1BC086F7147BBDD60066CFB3 /* libSCApi.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BC086EE147BBDD60066CFB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1BC086F1147BBDD60066CFB3 /* Build configuration list for PBXProject "SCApi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1BC086EC147BBDD60066CFB3;
+			productRefGroup = 1BC086F8147BBDD60066CFB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BC086F6147BBDD60066CFB3 /* SCApi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BC086F3147BBDD60066CFB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC0879F147BC8070066CFB3 /* SCItem.m in Sources */,
+				1BC087DD147BCB6C0066CFB3 /* SCItemRecord.m in Sources */,
+				1BC087FB147BD2CF0066CFB3 /* SCRemoteApi.m in Sources */,
+				1BC08801147BE1FB0066CFB3 /* SCItemRecord+Parser.m in Sources */,
+				1B45956A147BF8A2003E3479 /* NSString+ItemPathLogic.m in Sources */,
+				1B576FF7147E4B6C0064903A /* SCField.m in Sources */,
+				1B577106147E7DA60064903A /* SCError.m in Sources */,
+				1BAB6F2A149A3929003AB332 /* SCItemsReaderRequest+SCApiContext.m in Sources */,
+				1BB2B858149F50C600A9D332 /* SCApiContext.m in Sources */,
+				1BC48A2314A0C32500DD0960 /* SCApiUtils.m in Sources */,
+				1B81697B14A360F9008BCDE2 /* SCItemsCache.m in Sources */,
+				1B81697F14A36816008BCDE2 /* SCItemRecord+Ownerships.m in Sources */,
+				1B8169C514A4775C008BCDE2 /* SCPagedItems.m in Sources */,
+				1B8169F314A4A72B008BCDE2 /* NSURL+URLWithItemsReaderRequest.m in Sources */,
+				1B816ACC14A872B5008BCDE2 /* SCItemsPage.m in Sources */,
+				1B816AD414A872E5008BCDE2 /* SCItemRecordsPage.m in Sources */,
+				1B816AD814A87400008BCDE2 /* SCItemRecordsPage+JsonParser.m in Sources */,
+				1BF90C0F14B5E159000D0CF2 /* SCChecklistField.m in Sources */,
+				1BF90C1514B5E27C000D0CF2 /* SCImageField.m in Sources */,
+				1BF90C1B14B5E3E2000D0CF2 /* SCMultilistField.m in Sources */,
+				1BB2928214B5F6DE00244765 /* SCDateField.m in Sources */,
+				1BB2928E14B5F74100244765 /* SCDateTimeField.m in Sources */,
+				1BB292A414B5F8AC00244765 /* SCCheckboxField.m in Sources */,
+				1B7A101314BF113000F37C95 /* SCHostLoginAndPassword.m in Sources */,
+				1B8B6C5214C80B84002DA26E /* SCItemInfo.m in Sources */,
+				1B8B6C5614C80FF5002DA26E /* NSString+DefaultSitecoreLanguage.m in Sources */,
+				1B155F9B14C852CF004A4C99 /* SCItemIdPathAndLanguage.m in Sources */,
+				1BE2ABE314E522F9003097D3 /* SCColorPickerField.m in Sources */,
+				1B0E58E914E5420D008EE5F9 /* SCTreelistField.m in Sources */,
+				1B1FF3D014FE528D000BB3F1 /* SCDroplinkField.m in Sources */,
+				1B597D9314FE5E7C00B10F1E /* SCDroptreeField.m in Sources */,
+				1B597D9F14FE6B0900B10F1E /* SCFieldLinkData.m in Sources */,
+				1B597DA314FE6CF900B10F1E /* SCGeneralLinkField.m in Sources */,
+				1B597DA814FE73C900B10F1E /* SCFieldLinkData+XMLParser.m in Sources */,
+				1B6FEADD1504D67400BA61A6 /* NSString+IsSitecoreItemID.m in Sources */,
+				1B054DF11521CD41008E4B9E /* SCEditItemsRequest.m in Sources */,
+				1B054DF51521CD5D008E4B9E /* SCCreateItemRequest.m in Sources */,
+				1B054DF91521CDA9008E4B9E /* SCItemsReaderRequest.m in Sources */,
+				1B4AD5D415234FBC00DCBEC7 /* SCItemsReaderRequest+Factory.m in Sources */,
+				1B8D3F0D1523638A00CAF9C3 /* NSString+IsSCPathValid.m in Sources */,
+				1B24574515245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m in Sources */,
+				1B245874152472E600FBB6C2 /* SCWebApiParsers.m in Sources */,
+				1B2458C115247F2800FBB6C2 /* SCCreateMediaItemRequest.m in Sources */,
+				1B195B70152490B700E80FFB /* NSString+MultipartFormDataBoundary.m in Sources */,
+				1BBD97DC1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.m in Sources */,
+				1B363FD7152AE0B9006FBE6E /* SCApiAnalizers.m in Sources */,
+				1B363FDF152AE346006FBE6E /* SCItemsReaderRequest+SystemLanguages.m in Sources */,
+				1BCE2728152B3AE600F05F90 /* SCSmartDataLoaders.m in Sources */,
+				1B6B4284152C999800F2B1BA /* SCCreateMediaItemRequest+ToItemsReadRequest.m in Sources */,
+				1B1C0B8D152D8F3900ECF555 /* SCSrvResponseCaches.m in Sources */,
+				1B24238E152ED2E200147927 /* SCFieldRecord.m in Sources */,
+				1BF7F5FA152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m in Sources */,
+				1BB5D9A5152EEC7F00075752 /* SCFieldRecord+Parser.m in Sources */,
+				1BBE2EC8154546AB004B683B /* SCItemsCache+UnregisterItems.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1BC08702147BBDD60066CFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					"../../lib-third-party/JFFLibrary/lib",
+					.,
+					"../../lib-third-party/JFFLibrary/lib/JFFRestKit",
+					"../../lib-third-party/TouchXML",
+					"$(SDKROOT)/usr/include/libxml2/**",
+					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1BC08703147BBDD60066CFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					"../../lib-third-party/JFFLibrary/lib",
+					.,
+					"../../lib-third-party/JFFLibrary/lib/JFFRestKit",
+					"../../lib-third-party/TouchXML",
+					"$(SDKROOT)/usr/include/libxml2/**",
+					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BC08705147BBDD60066CFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCApi.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApi/SCApi-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1BC08706147BBDD60066CFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCApi.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApi/SCApi-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BC086F1147BBDD60066CFB3 /* Build configuration list for PBXProject "SCApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC08702147BBDD60066CFB3 /* Debug */,
+				1BC08703147BBDD60066CFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BC08704147BBDD60066CFB3 /* Build configuration list for PBXNativeTarget "SCApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC08705147BBDD60066CFB3 /* Debug */,
+				1BC08706147BBDD60066CFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BC086EE147BBDD60066CFB3 /* Project object */;
+}

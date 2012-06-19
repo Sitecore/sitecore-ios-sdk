@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'SCWebPlugins' target in the 'SCWebPlugins' project
+//
+
+#ifdef __OBJC__
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <JFFAsyncOperations/JFFAsyncOperations.h>
+    #import <JFFUI/JFFUI.h>
+    #import <JFFUtils/JFFUtils.h>
+    #import <JFFScheduler/JFFScheduler.h>
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

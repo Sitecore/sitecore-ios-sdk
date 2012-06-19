@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		062CA94A151333FD0053A66E /* SCGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 062CA948151333FD0053A66E /* SCGestureRecognizer.h */; };
+		062CA94B151333FD0053A66E /* SCGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 062CA949151333FD0053A66E /* SCGestureRecognizer.m */; };
+		06BF6409150F89C400281999 /* SCGoogleAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BF6407150F89C400281999 /* SCGoogleAPI.h */; };
+		06BF640A150F89C400281999 /* SCGoogleAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BF6408150F89C400281999 /* SCGoogleAPI.m */; };
+		06BF642C150F943D00281999 /* SCTwoPointsRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BF642A150F943D00281999 /* SCTwoPointsRoute.h */; };
+		06BF642D150F943D00281999 /* SCTwoPointsRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BF642B150F943D00281999 /* SCTwoPointsRoute.m */; };
+		1B0D86C11519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0D86BF1519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h */; };
+		1B0D86C21519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D86C01519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m */; };
+		1B33DD6C1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B33DD6A1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h */; };
+		1B33DD6D1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33DD6B1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m */; };
+		1B33DD701518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B33DD6E1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h */; };
+		1B33DD711518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33DD6F1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m */; };
+		1BBCA9481510C19000199B37 /* SCMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9461510C19000199B37 /* SCMapViewController.h */; };
+		1BBCA9491510C19000199B37 /* SCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCA9471510C19000199B37 /* SCMapViewController.m */; };
+		1BE4CEAA150F3CBE007259C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE4CEA9150F3CBE007259C2 /* Foundation.framework */; };
+		1BE4CEB0150F3CBE007259C2 /* SCMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4CEAF150F3CBE007259C2 /* SCMap.m */; };
+		1BE4CF87150F4416007259C2 /* SCMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4CF85150F4416007259C2 /* SCMapView.m */; };
+		1BE4CFCF150F5DA1007259C2 /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4CFCE150F5D9B007259C2 /* SCMapView.h */; };
+		1BE4D129150F82C0007259C2 /* SCMapViewLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D127150F82C0007259C2 /* SCMapViewLogic.h */; };
+		1BE4D12A150F82C0007259C2 /* SCMapViewLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D128150F82C0007259C2 /* SCMapViewLogic.m */; };
+		1BE4D131150F900F007259C2 /* SCPlacemark.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D12F150F900F007259C2 /* SCPlacemark.h */; };
+		1BE4D132150F900F007259C2 /* SCPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D130150F900F007259C2 /* SCPlacemark.m */; };
+		1BE4D135150F928B007259C2 /* SCMapKitLocationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D133150F928B007259C2 /* SCMapKitLocationUtils.h */; };
+		1BE4D136150F928B007259C2 /* SCMapKitLocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D134150F928B007259C2 /* SCMapKitLocationUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		062CA948151333FD0053A66E /* SCGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGestureRecognizer.h; sourceTree = "<group>"; };
+		062CA949151333FD0053A66E /* SCGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGestureRecognizer.m; sourceTree = "<group>"; };
+		06BF6407150F89C400281999 /* SCGoogleAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGoogleAPI.h; sourceTree = "<group>"; };
+		06BF6408150F89C400281999 /* SCGoogleAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGoogleAPI.m; sourceTree = "<group>"; };
+		06BF642A150F943D00281999 /* SCTwoPointsRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTwoPointsRoute.h; sourceTree = "<group>"; };
+		06BF642B150F943D00281999 /* SCTwoPointsRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTwoPointsRoute.m; sourceTree = "<group>"; };
+		1B0D86BF1519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFAsyncOperationGeocoder.h; sourceTree = "<group>"; };
+		1B0D86C01519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoder.m; sourceTree = "<group>"; };
+		1B33DD6A1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AddressWithItem.h"; sourceTree = "<group>"; };
+		1B33DD6B1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AddressWithItem.m"; sourceTree = "<group>"; };
+		1B33DD6E1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ContacAddressBuilder.h"; sourceTree = "<group>"; };
+		1B33DD6F1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ContacAddressBuilder.m"; sourceTree = "<group>"; };
+		1BBCA9461510C19000199B37 /* SCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapViewController.h; sourceTree = "<group>"; };
+		1BBCA9471510C19000199B37 /* SCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapViewController.m; sourceTree = "<group>"; };
+		1BE4CEA6150F3CBE007259C2 /* libSCMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCMap.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE4CEA9150F3CBE007259C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1BE4CEAD150F3CBE007259C2 /* SCMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCMap-Prefix.pch"; sourceTree = "<group>"; };
+		1BE4CEAE150F3CBE007259C2 /* SCMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMap.h; sourceTree = "<group>"; };
+		1BE4CEAF150F3CBE007259C2 /* SCMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMap.m; sourceTree = "<group>"; };
+		1BE4CF85150F4416007259C2 /* SCMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapView.m; sourceTree = "<group>"; };
+		1BE4CFCE150F5D9B007259C2 /* SCMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = ../SitecoreMobileSDK/SCMapView.h; sourceTree = "<group>"; };
+		1BE4D127150F82C0007259C2 /* SCMapViewLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapViewLogic.h; sourceTree = "<group>"; };
+		1BE4D128150F82C0007259C2 /* SCMapViewLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapViewLogic.m; sourceTree = "<group>"; };
+		1BE4D12F150F900F007259C2 /* SCPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlacemark.h; sourceTree = "<group>"; };
+		1BE4D130150F900F007259C2 /* SCPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlacemark.m; sourceTree = "<group>"; };
+		1BE4D133150F928B007259C2 /* SCMapKitLocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapKitLocationUtils.h; sourceTree = "<group>"; };
+		1BE4D134150F928B007259C2 /* SCMapKitLocationUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapKitLocationUtils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BE4CEA3150F3CBD007259C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BE4CEAA150F3CBE007259C2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06BF6406150F896600281999 /* GoogleAPI */ = {
+			isa = PBXGroup;
+			children = (
+				06BF6429150F942900281999 /* Detail */,
+				06BF6407150F89C400281999 /* SCGoogleAPI.h */,
+				06BF6408150F89C400281999 /* SCGoogleAPI.m */,
+			);
+			path = GoogleAPI;
+			sourceTree = "<group>";
+		};
+		06BF6429150F942900281999 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				06BF642A150F943D00281999 /* SCTwoPointsRoute.h */,
+				06BF642B150F943D00281999 /* SCTwoPointsRoute.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		1B0D86BB1519D86100EC4A92 /* AsyncOperartionsBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D86BF1519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h */,
+				1B0D86C01519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m */,
+			);
+			path = AsyncOperartionsBuilder;
+			sourceTree = "<group>";
+		};
+		1B33DD691518C0BD00EEA9BA /* MapKitLocations */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DD6A1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h */,
+				1B33DD6B1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m */,
+				1B33DD6E1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h */,
+				1B33DD6F1518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m */,
+			);
+			path = MapKitLocations;
+			sourceTree = "<group>";
+		};
+		1BE4CE9B150F3CBC007259C2 = {
+			isa = PBXGroup;
+			children = (
+				1BE4CEAB150F3CBE007259C2 /* SCMap */,
+				1BE4CEE4150F3D07007259C2 /* SitecoreMobileSDK */,
+				1BE4CEB6150F3CCD007259C2 /* Dependencies */,
+				1BE4CEA8150F3CBE007259C2 /* Frameworks */,
+				1BE4CEA7150F3CBE007259C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BE4CEA7150F3CBE007259C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BE4CEA6150F3CBE007259C2 /* libSCMap.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BE4CEA8150F3CBE007259C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BE4CEA9150F3CBE007259C2 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BE4CEAB150F3CBE007259C2 /* SCMap */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DD691518C0BD00EEA9BA /* MapKitLocations */,
+				06BF6406150F896600281999 /* GoogleAPI */,
+				1BE4D124150F82A6007259C2 /* Details */,
+				1BE4CEAE150F3CBE007259C2 /* SCMap.h */,
+				1BE4CEAF150F3CBE007259C2 /* SCMap.m */,
+				1BE4CFCE150F5D9B007259C2 /* SCMapView.h */,
+				1BE4CF85150F4416007259C2 /* SCMapView.m */,
+				1BBCA9461510C19000199B37 /* SCMapViewController.h */,
+				1BBCA9471510C19000199B37 /* SCMapViewController.m */,
+				1BE4CEAC150F3CBE007259C2 /* Supporting Files */,
+			);
+			path = SCMap;
+			sourceTree = "<group>";
+		};
+		1BE4CEAC150F3CBE007259C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BE4CEAD150F3CBE007259C2 /* SCMap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BE4CEB6150F3CCD007259C2 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		1BE4CEE4150F3D07007259C2 /* SitecoreMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+		1BE4D124150F82A6007259C2 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D86BB1519D86100EC4A92 /* AsyncOperartionsBuilder */,
+				1BE4D127150F82C0007259C2 /* SCMapViewLogic.h */,
+				1BE4D128150F82C0007259C2 /* SCMapViewLogic.m */,
+				1BE4D12F150F900F007259C2 /* SCPlacemark.h */,
+				1BE4D130150F900F007259C2 /* SCPlacemark.m */,
+				1BE4D133150F928B007259C2 /* SCMapKitLocationUtils.h */,
+				1BE4D134150F928B007259C2 /* SCMapKitLocationUtils.m */,
+				062CA948151333FD0053A66E /* SCGestureRecognizer.h */,
+				062CA949151333FD0053A66E /* SCGestureRecognizer.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1BE4CEA4150F3CBD007259C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BE4CFCF150F5DA1007259C2 /* SCMapView.h in Headers */,
+				06BF6409150F89C400281999 /* SCGoogleAPI.h in Headers */,
+				06BF642C150F943D00281999 /* SCTwoPointsRoute.h in Headers */,
+				1BE4D129150F82C0007259C2 /* SCMapViewLogic.h in Headers */,
+				1BE4D131150F900F007259C2 /* SCPlacemark.h in Headers */,
+				1BE4D135150F928B007259C2 /* SCMapKitLocationUtils.h in Headers */,
+				1BBCA9481510C19000199B37 /* SCMapViewController.h in Headers */,
+				062CA94A151333FD0053A66E /* SCGestureRecognizer.h in Headers */,
+				1B33DD6C1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h in Headers */,
+				1B33DD701518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h in Headers */,
+				1B0D86C11519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1BE4CEA5150F3CBD007259C2 /* SCMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BE4CEB3150F3CBE007259C2 /* Build configuration list for PBXNativeTarget "SCMap" */;
+			buildPhases = (
+				1BE4CEA2150F3CBD007259C2 /* Sources */,
+				1BE4CEA3150F3CBD007259C2 /* Frameworks */,
+				1BE4CEA4150F3CBD007259C2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCMap;
+			productName = SCMap;
+			productReference = 1BE4CEA6150F3CBE007259C2 /* libSCMap.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BE4CE9D150F3CBC007259C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1BE4CEA0150F3CBC007259C2 /* Build configuration list for PBXProject "SCMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1BE4CE9B150F3CBC007259C2;
+			productRefGroup = 1BE4CEA7150F3CBE007259C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BE4CEA5150F3CBD007259C2 /* SCMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BE4CEA2150F3CBD007259C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BE4CEB0150F3CBE007259C2 /* SCMap.m in Sources */,
+				1BE4CF87150F4416007259C2 /* SCMapView.m in Sources */,
+				06BF640A150F89C400281999 /* SCGoogleAPI.m in Sources */,
+				06BF642D150F943D00281999 /* SCTwoPointsRoute.m in Sources */,
+				1BE4D12A150F82C0007259C2 /* SCMapViewLogic.m in Sources */,
+				1BE4D132150F900F007259C2 /* SCPlacemark.m in Sources */,
+				1BE4D136150F928B007259C2 /* SCMapKitLocationUtils.m in Sources */,
+				1BBCA9491510C19000199B37 /* SCMapViewController.m in Sources */,
+				062CA94B151333FD0053A66E /* SCGestureRecognizer.m in Sources */,
+				1B33DD6D1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m in Sources */,
+				1B33DD711518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m in Sources */,
+				1B0D86C21519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1BE4CEB1150F3CBE007259C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1BE4CEB2150F3CBE007259C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BE4CEB4150F3CBE007259C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCMap.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCMap/SCMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					../SCApi,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCUI,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1BE4CEB5150F3CBE007259C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCMap.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCMap/SCMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					../SCUtils,
+					../SCApi,
+					"../../lib-third-party/JFFLibrary/lib",
+					../SCUI,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BE4CEA0150F3CBC007259C2 /* Build configuration list for PBXProject "SCMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BE4CEB1150F3CBE007259C2 /* Debug */,
+				1BE4CEB2150F3CBE007259C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BE4CEB3150F3CBE007259C2 /* Build configuration list for PBXNativeTarget "SCMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BE4CEB4150F3CBE007259C2 /* Debug */,
+				1BE4CEB5150F3CBE007259C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BE4CE9D150F3CBC007259C2 /* Project object */;
+}

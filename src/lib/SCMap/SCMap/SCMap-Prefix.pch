@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'SCMap' target in the 'SCMap' project
+//
+
+#ifdef __OBJC__
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <JFFAsyncOperations/JFFAsyncOperations.h>
+    #import <JFFUI/JFFUI.h>
+    #import <JFFUtils/JFFUtils.h>
+    #import <JFFAsyncOperations/JFFAsyncOperations.h>
+    #import <SitecoreMobileSDK/SCImageView.h>
+    #import <SitecoreMobileSDK/SCApi.h>
+
+    #import <MapKit/MapKit.h>
+    #import <Foundation/Foundation.h>
+#endif

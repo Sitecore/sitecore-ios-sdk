@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B3EDAED148637D200BA6680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3EDAEC148637D200BA6680 /* Foundation.framework */; };
+		1B3EDAF3148637D200BA6680 /* SCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3EDAF2148637D200BA6680 /* SCUtils.m */; };
+		1B3EDB61148638C100BA6680 /* SCArrayHelperBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDB60148638C100BA6680 /* SCArrayHelperBlocks.h */; };
+		1B3EDB631486399400BA6680 /* NSArray+SCBlocksAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDB621486399400BA6680 /* NSArray+SCBlocksAdditions.h */; };
+		1B3EDB65148639A800BA6680 /* SCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDB64148639A800BA6680 /* SCUtils.h */; };
+		1B3EDBA914863B0800BA6680 /* SCAsyncOpDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */; };
+		1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */; };
+		1BB2B860149F523200A9D332 /* SCAsyncOpUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B3EDAE9148637D200BA6680 /* libSCUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B3EDAEC148637D200BA6680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B3EDAF0148637D200BA6680 /* SCUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCUtils-Prefix.pch"; sourceTree = "<group>"; };
+		1B3EDAF2148637D200BA6680 /* SCUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCUtils.m; sourceTree = "<group>"; };
+		1B3EDB60148638C100BA6680 /* SCArrayHelperBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCArrayHelperBlocks.h; sourceTree = "<group>"; };
+		1B3EDB621486399400BA6680 /* NSArray+SCBlocksAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SCBlocksAdditions.h"; sourceTree = "<group>"; };
+		1B3EDB64148639A800BA6680 /* SCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUtils.h; sourceTree = "<group>"; };
+		1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpDefinitions.h; sourceTree = "<group>"; };
+		1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpUtils.h; sourceTree = "<group>"; };
+		1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncOpUtils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B3EDAE6148637D200BA6680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3EDAED148637D200BA6680 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B3EDADE148637D100BA6680 = {
+			isa = PBXGroup;
+			children = (
+				1B3EDB5A1486386000BA6680 /* SitecoreMobileSDK */,
+				1B3EDAEE148637D200BA6680 /* SCUtils */,
+				1B3EDAEB148637D200BA6680 /* Frameworks */,
+				1B3EDAEA148637D200BA6680 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B3EDAEA148637D200BA6680 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDAE9148637D200BA6680 /* libSCUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B3EDAEB148637D200BA6680 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDAEC148637D200BA6680 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B3EDAEE148637D200BA6680 /* SCUtils */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDAF2148637D200BA6680 /* SCUtils.m */,
+				1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */,
+				1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */,
+				1B3EDAEF148637D200BA6680 /* Supporting Files */,
+			);
+			path = SCUtils;
+			sourceTree = "<group>";
+		};
+		1B3EDAEF148637D200BA6680 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDAF0148637D200BA6680 /* SCUtils-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B3EDB5A1486386000BA6680 /* SitecoreMobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EDB60148638C100BA6680 /* SCArrayHelperBlocks.h */,
+				1B3EDB621486399400BA6680 /* NSArray+SCBlocksAdditions.h */,
+				1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */,
+				1B3EDB64148639A800BA6680 /* SCUtils.h */,
+			);
+			path = SitecoreMobileSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B3EDAE7148637D200BA6680 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3EDB61148638C100BA6680 /* SCArrayHelperBlocks.h in Headers */,
+				1B3EDB631486399400BA6680 /* NSArray+SCBlocksAdditions.h in Headers */,
+				1B3EDB65148639A800BA6680 /* SCUtils.h in Headers */,
+				1B3EDBA914863B0800BA6680 /* SCAsyncOpDefinitions.h in Headers */,
+				1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B3EDAE8148637D200BA6680 /* SCUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B3EDAF6148637D200BA6680 /* Build configuration list for PBXNativeTarget "SCUtils" */;
+			buildPhases = (
+				1B3EDAE5148637D200BA6680 /* Sources */,
+				1B3EDAE6148637D200BA6680 /* Frameworks */,
+				1B3EDAE7148637D200BA6680 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCUtils;
+			productName = SCUtils;
+			productReference = 1B3EDAE9148637D200BA6680 /* libSCUtils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B3EDAE0148637D100BA6680 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B3EDAE3148637D100BA6680 /* Build configuration list for PBXProject "SCUtils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B3EDADE148637D100BA6680;
+			productRefGroup = 1B3EDAEA148637D200BA6680 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B3EDAE8148637D200BA6680 /* SCUtils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B3EDAE5148637D200BA6680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3EDAF3148637D200BA6680 /* SCUtils.m in Sources */,
+				1BB2B860149F523200A9D332 /* SCAsyncOpUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1B3EDAF4148637D200BA6680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../lib-third-party/JFFLibrary/lib",
+					.,
+					"../../lib-third-party/TouchXML/Source",
+					"$(SDKROOT)/usr/include/libxml2/**",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B3EDAF5148637D200BA6680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../lib-third-party/JFFLibrary/lib",
+					.,
+					"../../lib-third-party/TouchXML/Source",
+					"$(SDKROOT)/usr/include/libxml2/**",
+					../SCApi,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B3EDAF7148637D200BA6680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCUtils.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCUtils/SCUtils-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../lib-third-party/JFFLibrary/lib . ../../lib-third-party/TouchXML/Source $(SDKROOT)/usr/include/libxml2/** ../SCApi";
+			};
+			name = Debug;
+		};
+		1B3EDAF8148637D200BA6680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCUtils.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCUtils/SCUtils-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../lib-third-party/JFFLibrary/lib . ../../lib-third-party/TouchXML/Source $(SDKROOT)/usr/include/libxml2/** ../SCApi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B3EDAE3148637D100BA6680 /* Build configuration list for PBXProject "SCUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B3EDAF4148637D200BA6680 /* Debug */,
+				1B3EDAF5148637D200BA6680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B3EDAF6148637D200BA6680 /* Build configuration list for PBXNativeTarget "SCUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B3EDAF7148637D200BA6680 /* Debug */,
+				1B3EDAF8148637D200BA6680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B3EDAE0148637D100BA6680 /* Project object */;
+}

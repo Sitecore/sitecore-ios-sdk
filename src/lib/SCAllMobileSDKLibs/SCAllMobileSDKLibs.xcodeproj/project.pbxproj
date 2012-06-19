@@ -1,0 +1,1375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061722FA152AE06A00549265 /* libJFFCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 061722F7152AE05500549265 /* libJFFCache.a */; };
+		067FD00C151B217100BA7F32 /* libSCQRCodeReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067FCFFE151B215B00BA7F32 /* libSCQRCodeReader.a */; };
+		0688E2A91518D02600437842 /* libJFFAsyncOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E29A1518CFF200437842 /* libJFFAsyncOperations.a */; };
+		0688E2AB1518D02600437842 /* libJFFNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2861518CFD600437842 /* libJFFNetwork.a */; };
+		0688E2AC1518D02600437842 /* libJFFScheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2771518CFC800437842 /* libJFFScheduler.a */; };
+		0688E2AD1518D02600437842 /* libJFFUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E26D1518CFBF00437842 /* libJFFUI.a */; };
+		0688E2AE1518D02600437842 /* libJFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2621518CFB600437842 /* libJFFUtils.a */; };
+		1B0D850F1519D3DB00EC4A92 /* libSCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D850B1519D3C600EC4A92 /* libSCWebView.a */; };
+		1B0D85F61519D4F900EC4A92 /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
+		1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33956315663E5100E935E9 /* libc++.dylib */; };
+		1B33DD931518C5BC00EEA9BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
+		1B33DD991518C5BC00EEA9BA /* SCAllMobileSDKLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33DD981518C5BC00EEA9BA /* SCAllMobileSDKLibs.m */; };
+		1B33DDB91518C60500EEA9BA /* libSCMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DDB31518C5EB00EEA9BA /* libSCMap.a */; };
+		1B33DF151518C76200EEA9BA /* libSCUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF0C1518C75600EEA9BA /* libSCUI.a */; };
+		1B33DF221518C79500EEA9BA /* libSCApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF1F1518C78A00EEA9BA /* libSCApi.a */; };
+		1B363FD7153D55CA00E46215 /* libSCWebContentApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363FD0153D55B000E46215 /* libSCWebContentApi.a */; };
+		1B3E6DC21554134000B3509B /* libSCDevice2Web.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3E6DBD1554132900B3509B /* libSCDevice2Web.a */; };
+		1BD6AB301518CD0F00D2FC84 /* libSCWebPlugins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB2B1518CD0400D2FC84 /* libSCWebPlugins.a */; };
+		65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
+		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
+		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
+		7ED1CAC91586432900EED5EA /* libDDUrlBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		061722F6152AE05500549265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 061722EF152AE05400549265 /* JFFCache.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65168477144F4ECD0014670E;
+			remoteInfo = JFFCache;
+		};
+		061722F8152AE06000549265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 061722EF152AE05400549265 /* JFFCache.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 65168476144F4ECD0014670E;
+			remoteInfo = JFFCache;
+		};
+		067FCFFD151B215B00BA7F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06BF62BB150F42D100281999;
+			remoteInfo = SCQRCodeReader;
+		};
+		067FD00A151B216900BA7F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06BF62BA150F42D100281999;
+			remoteInfo = SCQRCodeReader;
+		};
+		0688E2611518CFB600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFUtils;
+		};
+		0688E2631518CFB600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65802A5B148BF2930040A93A;
+			remoteInfo = JFFUtilsMacOS;
+		};
+		0688E2651518CFB600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5391044314A88C04007315A3;
+			remoteInfo = "JFFUtils-clang";
+		};
+		0688E26C1518CFBF00437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2671518CFBF00437842 /* JFFUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFUI;
+		};
+		0688E26E1518CFBF00437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2671518CFBF00437842 /* JFFUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 539103F014A88BE1007315A3;
+			remoteInfo = "JFFUI-clang";
+		};
+		0688E2761518CFC800437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFScheduler;
+		};
+		0688E2781518CFC800437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65802B07148BFB850040A93A;
+			remoteInfo = JFFSchedulerMacOS;
+		};
+		0688E27A1518CFC800437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 539103C614A88BD6007315A3;
+			remoteInfo = "JFFScheduler-clang";
+		};
+		0688E2851518CFD600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5AE6DB13F3E6C600EB6143;
+			remoteInfo = JFFNetwork;
+		};
+		0688E2871518CFD600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65802B22148BFC230040A93A;
+			remoteInfo = JFFNetworkMacOS;
+		};
+		0688E2891518CFD600437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 539103B714A88BCA007315A3;
+			remoteInfo = "JFFNetwork-clang";
+		};
+		0688E2991518CFF200437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFAsyncOperations;
+		};
+		0688E29B1518CFF200437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5391037B14A88BB5007315A3;
+			remoteInfo = "JFFAsyncOperations-clang";
+		};
+		0688E29D1518D01100437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2671518CFBF00437842 /* JFFUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFUI;
+		};
+		0688E2A11518D01100437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFScheduler;
+		};
+		0688E2A31518D01100437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5AE6DA13F3E6C600EB6143;
+			remoteInfo = JFFNetwork;
+		};
+		0688E2A51518D01100437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFAsyncOperations;
+		};
+		0688E2A71518D01100437842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFUtils;
+		};
+		1B0D850A1519D3C600EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BBCA9571510C35900199B37;
+			remoteInfo = SCWebView;
+		};
+		1B0D850D1519D3D300EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BBCA9561510C35900199B37;
+			remoteInfo = SCWebView;
+		};
+		1B0D85941519D44300EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B3EDAE9148637D200BA6680;
+			remoteInfo = SCUtils;
+		};
+		1B0D85E71519D4F300EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B3EDAE8148637D200BA6680;
+			remoteInfo = SCUtils;
+		};
+		1B33DDB21518C5EB00EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BE4CEA6150F3CBE007259C2;
+			remoteInfo = SCMap;
+		};
+		1B33DDB71518C60100EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BE4CEA5150F3CBD007259C2;
+			remoteInfo = SCMap;
+		};
+		1B33DF0B1518C75600EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B835A84142C9EA900FC004C;
+			remoteInfo = SCUI;
+		};
+		1B33DF0D1518C75600EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BEF7BBF14582D1700445F3B;
+			remoteInfo = BuildJS;
+		};
+		1B33DF131518C75F00EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B835A83142C9EA900FC004C;
+			remoteInfo = SCUI;
+		};
+		1B33DF1E1518C78A00EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BC086F7147BBDD60066CFB3;
+			remoteInfo = SCApi;
+		};
+		1B33DF201518C79200EEA9BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC086F6147BBDD60066CFB3;
+			remoteInfo = SCApi;
+		};
+		1B363FCF153D55B000E46215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B363F3E153D556800E46215;
+			remoteInfo = SCWebContentApi;
+		};
+		1B363FD1153D55B000E46215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B363F4E153D556800E46215;
+			remoteInfo = SCWebContentApiTests;
+		};
+		1B363FD5153D55BC00E46215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B363F3D153D556800E46215;
+			remoteInfo = SCWebContentApi;
+		};
+		1B3E6DBC1554132900B3509B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BC8B12F14443874001BC787;
+			remoteInfo = SCDevice2Web;
+		};
+		1B3E6DBE1554132900B3509B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BF5F2A41445D0C4004F487B;
+			remoteInfo = BuildJS;
+		};
+		1B3E6DC01554133B00B3509B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC8B12E14443874001BC787;
+			remoteInfo = SCDevice2Web;
+		};
+		1BC8A31A151B7E3E00A4AC26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E8F20C914F94BDF00588C7D;
+			remoteInfo = JFFAsyncOperationsFW;
+		};
+		1BC8A320151B7E3E00A4AC26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E8F204314F9494300588C7D;
+			remoteInfo = JFFNetworkFW;
+		};
+		1BC8A325151B7E3E00A4AC26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E8F202A14F9484F00588C7D;
+			remoteInfo = JFFSchedulerFW;
+		};
+		1BC8A32B151B7E3E00A4AC26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E57F42414F93738002D139B;
+			remoteInfo = JFFUtilsFW;
+		};
+		1BD6AB2A1518CD0400D2FC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BFEAFFA14E40DF50039CEBB;
+			remoteInfo = SCWebPlugins;
+		};
+		1BD6AB2C1518CD0400D2FC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BFEB13514E41F3F0039CEBB;
+			remoteInfo = BuildJS;
+		};
+		1BD6AB2E1518CD0B00D2FC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BFEAFF914E40DF50039CEBB;
+			remoteInfo = SCWebPlugins;
+		};
+		65B60A82153DF82500A57B15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B364046153D5B4700E46215;
+			remoteInfo = BuildJS;
+		};
+		65E3074D1531E64200E0B781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B7ABA81152D973A005DD4CA;
+			remoteInfo = JFFRestKit;
+		};
+		65E307A11531E6D100E0B781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B7ABA80152D973A005DD4CA;
+			remoteInfo = JFFRestKit;
+		};
+		7ED1CAA01586427F00EED5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E25B3B715860D2600469187;
+			remoteInfo = TouchXmlHelper;
+		};
+		7ED1CAA21586427F00EED5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0E82391563882000825E3C;
+			remoteInfo = TouchXMLiOS;
+		};
+		7ED1CAC31586431700EED5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
+		7ED1CAC51586431700EED5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
+			remoteInfo = DDUrlBuilderTest;
+		};
+		7ED1CAC71586432100EED5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E54C1D7157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
+		7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457940FF0D82217800EB2D22;
+			remoteInfo = TouchXML_UnitTests;
+		};
+		7EECFDBE15863CA4004D3D9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 451E6E311152EB4A0024ABA5;
+			remoteInfo = Validator;
+		};
+		7EECFDC015863CA4004D3D9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B0E823A1563882000825E3C;
+			remoteInfo = TouchXMLiOS;
+		};
+		7EECFDC715863CB6004D3D9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E25B3B815860D2600469187;
+			remoteInfo = TouchXmlHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		061722EF152AE05400549265 /* JFFCache.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFCache.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFCache/JFFCache.xcodeproj"; sourceTree = "<group>"; };
+		067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCQRCodeReader.xcodeproj; path = ../SCQRCodeReader/SCQRCodeReader.xcodeproj; sourceTree = "<group>"; };
+		0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUtils.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFUtils/JFFUtils.xcodeproj"; sourceTree = "<group>"; };
+		0688E2671518CFBF00437842 /* JFFUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUI.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFUI/JFFUI.xcodeproj"; sourceTree = "<group>"; };
+		0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFScheduler.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFScheduler/JFFScheduler.xcodeproj"; sourceTree = "<group>"; };
+		0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFNetwork.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFNetwork/JFFNetwork.xcodeproj"; sourceTree = "<group>"; };
+		0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFAsyncOperations.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFAsyncOperations/JFFAsyncOperations.xcodeproj"; sourceTree = "<group>"; };
+		1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebView.xcodeproj; path = ../SCWebView/SCWebView.xcodeproj; sourceTree = "<group>"; };
+		1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCUtils.xcodeproj; path = ../SCUtils/SCUtils.xcodeproj; sourceTree = "<group>"; };
+		1B33956315663E5100E935E9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCAllMobileSDKLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B33DD921518C5BC00EEA9BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B33DD961518C5BC00EEA9BA /* SCAllMobileSDKLibs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCAllMobileSDKLibs-Prefix.pch"; sourceTree = "<group>"; };
+		1B33DD971518C5BC00EEA9BA /* SCAllMobileSDKLibs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAllMobileSDKLibs.h; sourceTree = "<group>"; };
+		1B33DD981518C5BC00EEA9BA /* SCAllMobileSDKLibs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAllMobileSDKLibs.m; sourceTree = "<group>"; };
+		1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCMap.xcodeproj; path = ../SCMap/SCMap.xcodeproj; sourceTree = "<group>"; };
+		1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCUI.xcodeproj; path = ../SCUI/SCUI.xcodeproj; sourceTree = "<group>"; };
+		1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCApi.xcodeproj; path = ../SCApi/SCApi.xcodeproj; sourceTree = "<group>"; };
+		1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebContentApi.xcodeproj; path = ../SCWebContentApi/SCWebContentApi.xcodeproj; sourceTree = "<group>"; };
+		1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCDevice2Web.xcodeproj; path = ../SCDevice2Web/SCDevice2Web.xcodeproj; sourceTree = "<group>"; };
+		1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebPlugins.xcodeproj; path = ../SCWebPlugins/SCWebPlugins.xcodeproj; sourceTree = "<group>"; };
+		65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFRestKit.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFRestKit/JFFRestKit.xcodeproj"; sourceTree = "<group>"; };
+		7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../lib-third-party/davedelong-Demos/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
+		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
+		7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B33DD8C1518C5BC00EEA9BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED1CAC91586432900EED5EA /* libDDUrlBuilder.a in Frameworks */,
+				7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */,
+				7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */,
+				1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */,
+				1B3E6DC21554134000B3509B /* libSCDevice2Web.a in Frameworks */,
+				1B363FD7153D55CA00E46215 /* libSCWebContentApi.a in Frameworks */,
+				65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */,
+				067FD00C151B217100BA7F32 /* libSCQRCodeReader.a in Frameworks */,
+				1B0D85F61519D4F900EC4A92 /* libSCUtils.a in Frameworks */,
+				1B0D850F1519D3DB00EC4A92 /* libSCWebView.a in Frameworks */,
+				0688E2A91518D02600437842 /* libJFFAsyncOperations.a in Frameworks */,
+				0688E2AB1518D02600437842 /* libJFFNetwork.a in Frameworks */,
+				0688E2AC1518D02600437842 /* libJFFScheduler.a in Frameworks */,
+				0688E2AD1518D02600437842 /* libJFFUI.a in Frameworks */,
+				061722FA152AE06A00549265 /* libJFFCache.a in Frameworks */,
+				0688E2AE1518D02600437842 /* libJFFUtils.a in Frameworks */,
+				1BD6AB301518CD0F00D2FC84 /* libSCWebPlugins.a in Frameworks */,
+				1B33DF221518C79500EEA9BA /* libSCApi.a in Frameworks */,
+				1B33DF151518C76200EEA9BA /* libSCUI.a in Frameworks */,
+				1B33DDB91518C60500EEA9BA /* libSCMap.a in Frameworks */,
+				1B33DD931518C5BC00EEA9BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		061722F0152AE05400549265 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				061722F7152AE05500549265 /* libJFFCache.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		067FCFF3151B215A00BA7F32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				067FCFFE151B215B00BA7F32 /* libSCQRCodeReader.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0688E25C1518CFB600437842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0688E2621518CFB600437842 /* libJFFUtils.a */,
+				0688E2641518CFB600437842 /* libJFFUtilsMacOS.a */,
+				0688E2661518CFB600437842 /* libJFFUtils-clang.a */,
+				1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0688E2681518CFBF00437842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0688E26D1518CFBF00437842 /* libJFFUI.a */,
+				0688E26F1518CFBF00437842 /* libJFFUI copy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0688E2711518CFC800437842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0688E2771518CFC800437842 /* libJFFScheduler.a */,
+				0688E2791518CFC800437842 /* libJFFSchedulerMacOS.a */,
+				0688E27B1518CFC800437842 /* libJFFScheduler-clang.a */,
+				1BC8A326151B7E3E00A4AC26 /* JFFSchedulerFW.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0688E27D1518CFD600437842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0688E2861518CFD600437842 /* libJFFNetwork.a */,
+				0688E2881518CFD600437842 /* libJFFNetworkMacOS.a */,
+				0688E28A1518CFD600437842 /* libJFFNetwork-clang.a */,
+				1BC8A321151B7E3E00A4AC26 /* JFFNetworkFW.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0688E2951518CFF100437842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0688E29A1518CFF200437842 /* libJFFAsyncOperations.a */,
+				0688E29C1518CFF200437842 /* libJFFAsyncOperations-clang.a */,
+				1BC8A31B151B7E3E00A4AC26 /* JFFAsyncOperationsFW.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B0D84F91519D3C500EC4A92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D850B1519D3C600EC4A92 /* libSCWebView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B0D85841519D44200EC4A92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D85951519D44300EC4A92 /* libSCUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B33DD841518C5BC00EEA9BA = {
+			isa = PBXGroup;
+			children = (
+				1B33DD941518C5BC00EEA9BA /* SCAllMobileSDKLibs */,
+				1B33DD911518C5BC00EEA9BA /* Frameworks */,
+				1B33DDA81518C5D500EEA9BA /* Dependencies */,
+				1B33DD901518C5BC00EEA9BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B33DD901518C5BC00EEA9BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B33DD911518C5BC00EEA9BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B33956315663E5100E935E9 /* libc++.dylib */,
+				1B33DD921518C5BC00EEA9BA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B33DD941518C5BC00EEA9BA /* SCAllMobileSDKLibs */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DD971518C5BC00EEA9BA /* SCAllMobileSDKLibs.h */,
+				1B33DD981518C5BC00EEA9BA /* SCAllMobileSDKLibs.m */,
+				1B33DD951518C5BC00EEA9BA /* Supporting Files */,
+			);
+			path = SCAllMobileSDKLibs;
+			sourceTree = "<group>";
+		};
+		1B33DD951518C5BC00EEA9BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DD961518C5BC00EEA9BA /* SCAllMobileSDKLibs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B33DDA81518C5D500EEA9BA /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */,
+				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
+				7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */,
+				1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */,
+				1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */,
+				1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */,
+				1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */,
+				65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */,
+				061722EF152AE05400549265 /* JFFCache.xcodeproj */,
+				1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */,
+				1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */,
+				067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */,
+				1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */,
+				0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */,
+				0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */,
+				0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */,
+				0688E2671518CFBF00437842 /* JFFUI.xcodeproj */,
+				0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */,
+				1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		1B33DDAB1518C5EB00EEA9BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DDB31518C5EB00EEA9BA /* libSCMap.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B33DEFE1518C75500EEA9BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DF0C1518C75600EEA9BA /* libSCUI.a */,
+				1B33DF0E1518C75600EEA9BA /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B33DF1B1518C78A00EEA9BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DF1F1518C78A00EEA9BA /* libSCApi.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B363FBA153D55B000E46215 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B363FD0153D55B000E46215 /* libSCWebContentApi.a */,
+				1B363FD2153D55B000E46215 /* SCWebContentApiTests.octest */,
+				65B60A83153DF82500A57B15 /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B3E6DB51554132900B3509B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E6DBD1554132900B3509B /* libSCDevice2Web.a */,
+				1B3E6DBF1554132900B3509B /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BD6AB261518CD0400D2FC84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6AB2B1518CD0400D2FC84 /* libSCWebPlugins.a */,
+				1BD6AB2D1518CD0400D2FC84 /* BuildJS.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65E307471531E64200E0B781 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65E3074E1531E64200E0B781 /* libJFFRestKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED1CABF1586431700EED5EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */,
+				7ED1CAC61586431700EED5EA /* DDUrlBuilderTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EECFDA415863CA4004D3D9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EECFDBD15863CA4004D3D9B /* TouchXML_UnitTests.octest */,
+				7EECFDBF15863CA4004D3D9B /* Validator.app */,
+				7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EECFDC415863CB6004D3D9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B33DD8D1518C5BC00EEA9BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B33DD8E1518C5BC00EEA9BA /* SCAllMobileSDKLibs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B33DD9C1518C5BC00EEA9BA /* Build configuration list for PBXNativeTarget "SCAllMobileSDKLibs" */;
+			buildPhases = (
+				1B33DD8B1518C5BC00EEA9BA /* Sources */,
+				1B33DD8C1518C5BC00EEA9BA /* Frameworks */,
+				1B33DD8D1518C5BC00EEA9BA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED1CAC81586432100EED5EA /* PBXTargetDependency */,
+				7ED1CAA11586427F00EED5EA /* PBXTargetDependency */,
+				7ED1CAA31586427F00EED5EA /* PBXTargetDependency */,
+				1B3E6DC11554133B00B3509B /* PBXTargetDependency */,
+				1B363FD6153D55BC00E46215 /* PBXTargetDependency */,
+				65E307A21531E6D100E0B781 /* PBXTargetDependency */,
+				067FD00B151B216900BA7F32 /* PBXTargetDependency */,
+				1B0D85E81519D4F300EC4A92 /* PBXTargetDependency */,
+				1B0D850E1519D3D300EC4A92 /* PBXTargetDependency */,
+				0688E29E1518D01100437842 /* PBXTargetDependency */,
+				0688E2A21518D01100437842 /* PBXTargetDependency */,
+				0688E2A41518D01100437842 /* PBXTargetDependency */,
+				0688E2A61518D01100437842 /* PBXTargetDependency */,
+				061722F9152AE06000549265 /* PBXTargetDependency */,
+				0688E2A81518D01100437842 /* PBXTargetDependency */,
+				1BD6AB2F1518CD0B00D2FC84 /* PBXTargetDependency */,
+				1B33DF211518C79200EEA9BA /* PBXTargetDependency */,
+				1B33DF141518C75F00EEA9BA /* PBXTargetDependency */,
+				1B33DDB81518C60100EEA9BA /* PBXTargetDependency */,
+			);
+			name = SCAllMobileSDKLibs;
+			productName = SCAllMobileSDKLibs;
+			productReference = 1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B33DD861518C5BC00EEA9BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1B33DD891518C5BC00EEA9BA /* Build configuration list for PBXProject "SCAllMobileSDKLibs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B33DD841518C5BC00EEA9BA;
+			productRefGroup = 1B33DD901518C5BC00EEA9BA /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7ED1CABF1586431700EED5EA /* Products */;
+					ProjectRef = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
+				},
+				{
+					ProductGroup = 0688E2951518CFF100437842 /* Products */;
+					ProjectRef = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+				},
+				{
+					ProductGroup = 061722F0152AE05400549265 /* Products */;
+					ProjectRef = 061722EF152AE05400549265 /* JFFCache.xcodeproj */;
+				},
+				{
+					ProductGroup = 0688E27D1518CFD600437842 /* Products */;
+					ProjectRef = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = 65E307471531E64200E0B781 /* Products */;
+					ProjectRef = 65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 0688E2711518CFC800437842 /* Products */;
+					ProjectRef = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+				},
+				{
+					ProductGroup = 0688E2681518CFBF00437842 /* Products */;
+					ProjectRef = 0688E2671518CFBF00437842 /* JFFUI.xcodeproj */;
+				},
+				{
+					ProductGroup = 0688E25C1518CFB600437842 /* Products */;
+					ProjectRef = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B33DF1B1518C78A00EEA9BA /* Products */;
+					ProjectRef = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B3E6DB51554132900B3509B /* Products */;
+					ProjectRef = 1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B33DDAB1518C5EB00EEA9BA /* Products */;
+					ProjectRef = 1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */;
+				},
+				{
+					ProductGroup = 067FCFF3151B215A00BA7F32 /* Products */;
+					ProjectRef = 067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B33DEFE1518C75500EEA9BA /* Products */;
+					ProjectRef = 1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B0D85841519D44200EC4A92 /* Products */;
+					ProjectRef = 1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B363FBA153D55B000E46215 /* Products */;
+					ProjectRef = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+				},
+				{
+					ProductGroup = 1BD6AB261518CD0400D2FC84 /* Products */;
+					ProjectRef = 1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B0D84F91519D3C500EC4A92 /* Products */;
+					ProjectRef = 1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EECFDA415863CA4004D3D9B /* Products */;
+					ProjectRef = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EECFDC415863CB6004D3D9B /* Products */;
+					ProjectRef = 7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1B33DD8E1518C5BC00EEA9BA /* SCAllMobileSDKLibs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		061722F7152AE05500549265 /* libJFFCache.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFCache.a;
+			remoteRef = 061722F6152AE05500549265 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		067FCFFE151B215B00BA7F32 /* libSCQRCodeReader.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCQRCodeReader.a;
+			remoteRef = 067FCFFD151B215B00BA7F32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2621518CFB600437842 /* libJFFUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUtils.a;
+			remoteRef = 0688E2611518CFB600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2641518CFB600437842 /* libJFFUtilsMacOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUtilsMacOS.a;
+			remoteRef = 0688E2631518CFB600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2661518CFB600437842 /* libJFFUtils-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libJFFUtils-clang.a";
+			remoteRef = 0688E2651518CFB600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E26D1518CFBF00437842 /* libJFFUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUI.a;
+			remoteRef = 0688E26C1518CFBF00437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E26F1518CFBF00437842 /* libJFFUI copy.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = "libJFFUI copy.a";
+			path = "libJFFUI-clang.a";
+			remoteRef = 0688E26E1518CFBF00437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2771518CFC800437842 /* libJFFScheduler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFScheduler.a;
+			remoteRef = 0688E2761518CFC800437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2791518CFC800437842 /* libJFFSchedulerMacOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFSchedulerMacOS.a;
+			remoteRef = 0688E2781518CFC800437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E27B1518CFC800437842 /* libJFFScheduler-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libJFFScheduler-clang.a";
+			remoteRef = 0688E27A1518CFC800437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2861518CFD600437842 /* libJFFNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFNetwork.a;
+			remoteRef = 0688E2851518CFD600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E2881518CFD600437842 /* libJFFNetworkMacOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFNetworkMacOS.a;
+			remoteRef = 0688E2871518CFD600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E28A1518CFD600437842 /* libJFFNetwork-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libJFFNetwork-clang.a";
+			remoteRef = 0688E2891518CFD600437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E29A1518CFF200437842 /* libJFFAsyncOperations.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFAsyncOperations.a;
+			remoteRef = 0688E2991518CFF200437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0688E29C1518CFF200437842 /* libJFFAsyncOperations-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libJFFAsyncOperations-clang.a";
+			remoteRef = 0688E29B1518CFF200437842 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B0D850B1519D3C600EC4A92 /* libSCWebView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCWebView.a;
+			remoteRef = 1B0D850A1519D3C600EC4A92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B0D85951519D44300EC4A92 /* libSCUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCUtils.a;
+			remoteRef = 1B0D85941519D44300EC4A92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B33DDB31518C5EB00EEA9BA /* libSCMap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCMap.a;
+			remoteRef = 1B33DDB21518C5EB00EEA9BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B33DF0C1518C75600EEA9BA /* libSCUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCUI.a;
+			remoteRef = 1B33DF0B1518C75600EEA9BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B33DF0E1518C75600EEA9BA /* BuildJS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BuildJS.bundle;
+			remoteRef = 1B33DF0D1518C75600EEA9BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B33DF1F1518C78A00EEA9BA /* libSCApi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCApi.a;
+			remoteRef = 1B33DF1E1518C78A00EEA9BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B363FD0153D55B000E46215 /* libSCWebContentApi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCWebContentApi.a;
+			remoteRef = 1B363FCF153D55B000E46215 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B363FD2153D55B000E46215 /* SCWebContentApiTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SCWebContentApiTests.octest;
+			remoteRef = 1B363FD1153D55B000E46215 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B3E6DBD1554132900B3509B /* libSCDevice2Web.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCDevice2Web.a;
+			remoteRef = 1B3E6DBC1554132900B3509B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B3E6DBF1554132900B3509B /* BuildJS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BuildJS.bundle;
+			remoteRef = 1B3E6DBE1554132900B3509B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BC8A31B151B7E3E00A4AC26 /* JFFAsyncOperationsFW.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = JFFAsyncOperationsFW.framework;
+			remoteRef = 1BC8A31A151B7E3E00A4AC26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BC8A321151B7E3E00A4AC26 /* JFFNetworkFW.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = JFFNetworkFW.framework;
+			remoteRef = 1BC8A320151B7E3E00A4AC26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BC8A326151B7E3E00A4AC26 /* JFFSchedulerFW.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = JFFSchedulerFW.framework;
+			remoteRef = 1BC8A325151B7E3E00A4AC26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = JFFUtilsFW.framework;
+			remoteRef = 1BC8A32B151B7E3E00A4AC26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BD6AB2B1518CD0400D2FC84 /* libSCWebPlugins.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCWebPlugins.a;
+			remoteRef = 1BD6AB2A1518CD0400D2FC84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BD6AB2D1518CD0400D2FC84 /* BuildJS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BuildJS.bundle;
+			remoteRef = 1BD6AB2C1518CD0400D2FC84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65B60A83153DF82500A57B15 /* BuildJS.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BuildJS.bundle;
+			remoteRef = 65B60A82153DF82500A57B15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65E3074E1531E64200E0B781 /* libJFFRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFRestKit.a;
+			remoteRef = 65E3074D1531E64200E0B781 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDDUrlBuilder.a;
+			remoteRef = 7ED1CAC31586431700EED5EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED1CAC61586431700EED5EA /* DDUrlBuilderTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DDUrlBuilderTest.octest;
+			remoteRef = 7ED1CAC51586431700EED5EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EECFDBD15863CA4004D3D9B /* TouchXML_UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TouchXML_UnitTests.octest;
+			remoteRef = 7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EECFDBF15863CA4004D3D9B /* Validator.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Validator.app;
+			remoteRef = 7EECFDBE15863CA4004D3D9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTouchXMLiOS.a;
+			remoteRef = 7EECFDC015863CA4004D3D9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTouchXmlHelper.a;
+			remoteRef = 7EECFDC715863CB6004D3D9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B33DD8B1518C5BC00EEA9BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B33DD991518C5BC00EEA9BA /* SCAllMobileSDKLibs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		061722F9152AE06000549265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFCache;
+			targetProxy = 061722F8152AE06000549265 /* PBXContainerItemProxy */;
+		};
+		067FD00B151B216900BA7F32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCQRCodeReader;
+			targetProxy = 067FD00A151B216900BA7F32 /* PBXContainerItemProxy */;
+		};
+		0688E29E1518D01100437842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFUI;
+			targetProxy = 0688E29D1518D01100437842 /* PBXContainerItemProxy */;
+		};
+		0688E2A21518D01100437842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFScheduler;
+			targetProxy = 0688E2A11518D01100437842 /* PBXContainerItemProxy */;
+		};
+		0688E2A41518D01100437842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFNetwork;
+			targetProxy = 0688E2A31518D01100437842 /* PBXContainerItemProxy */;
+		};
+		0688E2A61518D01100437842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFAsyncOperations;
+			targetProxy = 0688E2A51518D01100437842 /* PBXContainerItemProxy */;
+		};
+		0688E2A81518D01100437842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFUtils;
+			targetProxy = 0688E2A71518D01100437842 /* PBXContainerItemProxy */;
+		};
+		1B0D850E1519D3D300EC4A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebView;
+			targetProxy = 1B0D850D1519D3D300EC4A92 /* PBXContainerItemProxy */;
+		};
+		1B0D85E81519D4F300EC4A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCUtils;
+			targetProxy = 1B0D85E71519D4F300EC4A92 /* PBXContainerItemProxy */;
+		};
+		1B33DDB81518C60100EEA9BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCMap;
+			targetProxy = 1B33DDB71518C60100EEA9BA /* PBXContainerItemProxy */;
+		};
+		1B33DF141518C75F00EEA9BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCUI;
+			targetProxy = 1B33DF131518C75F00EEA9BA /* PBXContainerItemProxy */;
+		};
+		1B33DF211518C79200EEA9BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCApi;
+			targetProxy = 1B33DF201518C79200EEA9BA /* PBXContainerItemProxy */;
+		};
+		1B363FD6153D55BC00E46215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebContentApi;
+			targetProxy = 1B363FD5153D55BC00E46215 /* PBXContainerItemProxy */;
+		};
+		1B3E6DC11554133B00B3509B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCDevice2Web;
+			targetProxy = 1B3E6DC01554133B00B3509B /* PBXContainerItemProxy */;
+		};
+		1BD6AB2F1518CD0B00D2FC84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebPlugins;
+			targetProxy = 1BD6AB2E1518CD0B00D2FC84 /* PBXContainerItemProxy */;
+		};
+		65E307A21531E6D100E0B781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFRestKit;
+			targetProxy = 65E307A11531E6D100E0B781 /* PBXContainerItemProxy */;
+		};
+		7ED1CAA11586427F00EED5EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TouchXmlHelper;
+			targetProxy = 7ED1CAA01586427F00EED5EA /* PBXContainerItemProxy */;
+		};
+		7ED1CAA31586427F00EED5EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TouchXMLiOS;
+			targetProxy = 7ED1CAA21586427F00EED5EA /* PBXContainerItemProxy */;
+		};
+		7ED1CAC81586432100EED5EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDUrlBuilder;
+			targetProxy = 7ED1CAC71586432100EED5EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B33DD9A1518C5BC00EEA9BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B33DD9B1518C5BC00EEA9BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B33DD9D1518C5BC00EEA9BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCAllMobileSDKLibs.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCAllMobileSDKLibs/SCAllMobileSDKLibs-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1B33DD9E1518C5BC00EEA9BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCAllMobileSDKLibs.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCAllMobileSDKLibs/SCAllMobileSDKLibs-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B33DD891518C5BC00EEA9BA /* Build configuration list for PBXProject "SCAllMobileSDKLibs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B33DD9A1518C5BC00EEA9BA /* Debug */,
+				1B33DD9B1518C5BC00EEA9BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B33DD9C1518C5BC00EEA9BA /* Build configuration list for PBXNativeTarget "SCAllMobileSDKLibs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B33DD9D1518C5BC00EEA9BA /* Debug */,
+				1B33DD9E1518C5BC00EEA9BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B33DD861518C5BC00EEA9BA /* Project object */;
+}
