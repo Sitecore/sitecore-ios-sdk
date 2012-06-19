@@ -1,0 +1,102 @@
+{
+    "{55D60A4C-1A51-44A9-BF80-1EBC4692C340}" =     {
+        Name = GeneralLinkFieldExtLinkNormal;
+        Type = "General Link";
+        Value = "<link text=\"Link Description\" linktype=\"external\" url=\"http://google.com\" anchor=\"\" title=\"Alternate Text\" target=\"_blank\" />";
+    };
+    "{6957EC53-A3C7-4AC0-8B20-AD694B4B6383}" =     {
+        Name = GeneralLinkFieldJavascriptEmpty;
+        Type = "General Link";
+        Value = "<link text=\" \" linktype=\"javascript\" url=\"javascript:\" anchor=\"\" title=\" \" id=\"\" />";
+    };
+    "{70453C5D-A29C-45B8-AC06-D2B9411CA979}" =     {
+        Name = GeneralLinkFieldJavascript;
+        Type = "General Link";
+        Value = "<link text=\"Link Description\" linktype=\"javascript\" url=\"javascript:document.write('Test javascript field')\" anchor=\"\" id=\"\" />";
+    };
+    "{7B7B4FC2-E67F-446A-87D2-ADDE311FF8BE}" =     {
+        Name = GeneralLinkFieldLinkEmpty;
+        Type = "General Link";
+        Value = "";
+    };
+    "{8546D6E6-0749-4591-90F3-CEC033D6E8D8}" =     {
+        Name = "__Page Level Test Set Definition";
+        Type = Datasource;
+        Value = "";
+    };
+    "{873D036C-3E4E-442E-AB97-C2F5DE72C59B}" =     {
+        Name = MultiListField;
+        Type = Multilist;
+        Value = "{812D47A0-4ED8-4E55-B2F7-9D64FBBF391D}|{F27FCB87-0CE6-4455-815F-F25310A51D0B}";
+    };
+    "{98EBF231-EA20-4466-A42E-C9BE6BF80D69}" =     {
+        Name = GeneralLinkFieldMediaNormal;
+        Type = "General Link";
+        Value = "<link text=\"Link description\" linktype=\"media\" url=\"/Mobile SDK/mobile_tweet\" title=\"Alternate Text\" target=\"_blank\" id=\"{C74A5229-ED73-49A8-A5D8-A834E90F2D8A}\" />";
+    };
+    "{99F79143-E6A1-44CB-AFB3-818C6A409855}" =     {
+        Name = Image;
+        Type = Image;
+        Value = "<image mediaid=\"{4D11D0A0-AC51-43CA-AB1D-1959A29D6FA5}\" mediapath=\"/Images/Nicam/Products/Lenses/normal zoom/24_120\" src=\"~/media/Images/Nicam/Products/Lenses/normal zoom/24_120.ashx\" alt=\"24_70\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />";
+    };
+    "{9C167812-81C3-468A-9AA0-5089DB05A7A2}" =     {
+        Name = DateTimeField;
+        Type = Datetime;
+        Value = 20120201T120000;
+    };
+    "{AEAABAA6-EE96-4880-9741-58DC67A5FB99}" =     {
+        Name = "Header Logo";
+        Type = Image;
+        Value = "<image mediaid=\"{725493AA-30E7-44F3-B596-8614312FF6C6}\" mediapath=\"/Images/Nicam/Home/header_logo\" src=\"~/media/Images/Nicam/Home/header_logo.ashx\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />";
+    };
+    "{B5E02AD9-D56F-4C41-A065-A133DB87BDEB}" =     {
+        Name = "__Display name";
+        Type = text;
+        Value = "";
+    };
+    "{BD99F97F-8E2A-4BCF-9FE9-4D243DEF7463}" =     {
+        Name = GeneralLinkFieldEmail;
+        Type = "General Link";
+        Value = "<link text=\"Link Description\" linktype=\"mailto\" url=\"mailto:rundueva@gmail.com\" anchor=\"\" title=\"Alternate Text\" />";
+    };
+    "{CB838795-37D7-4FAF-810E-018B4CF08D24}" =     {
+        Name = "Tab Icon";
+        Type = Image;
+        Value = "<image mediaid=\"{C5D0CBE3-E106-4770-940A-BE943ACC778C}\" mediapath=\"/Images/icon_document\" src=\"~/media/Images/icon_document.ashx\" />";
+    };
+    "{E3EAE394-49EA-4383-AD0A-9110B8FAC0D8}" =     {
+        Name = GeneralLinkFieldAnchor;
+        Type = "General Link";
+        Value = "<link text=\"Link Description\" linktype=\"anchor\" url=\"header1\" anchor=\"header1\" title=\"Alternate Text\" />";
+    };
+    "{EC34BB8D-0EC0-46F7-8C8A-23340CA9E96E}" =     {
+        Name = "Tab Icon";
+        Type = Image;
+        Value = "<image mediaid=\"{B4C122A9-E359-4E30-8F6F-E6BAEE55A9A8}\" mediapath=\"/Images/icon_case\" src=\"~/media/Images/icon_case.ashx\" />";
+    };
+    "{F5F53E34-2344-4742-B594-4E650DF2A201}" =     {
+        Name = ColorPickerField;
+        Type = "Color Picker";
+        Value = "#FFFF00";
+    };
+    "{F7D48A55-2158-4F02-9356-756654404F73}" =     {
+        Name = "__Standard values";
+        Type = reference;
+        Value = "";
+    };
+    "{F9BBEDC2-F74C-435A-8F34-749B3EBAF03A}" =     {
+        Name = CheckBoxField;
+        Type = Checkbox;
+        Value = 1;
+    };
+    "{FB3353D4-AED9-4464-8A5D-7EB334E190D7}" =     {
+        Name = Image;
+        Type = Image;
+        Value = "<image mediaid=\"{4D11D0A0-AC51-43CA-AB1D-1959A29D6FA5}\" mediapath=\"/Images/Nicam/Products/Lenses/normal zoom/24_120\" src=\"~/media/Images/Nicam/Products/Lenses/normal zoom/24_120.ashx\" alt=\"24_120\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />";
+    };
+    "{FDAF1A85-D3D4-44E7-87B8-96926E46CCEB}" =     {
+        Name = DateField;
+        Type = Date;
+        Value = 20120201T000000;
+    };
+}
