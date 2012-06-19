@@ -16,6 +16,7 @@
 		0688E2AE1518D02600437842 /* libJFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2621518CFB600437842 /* libJFFUtils.a */; };
 		1B0D850F1519D3DB00EC4A92 /* libSCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D850B1519D3C600EC4A92 /* libSCWebView.a */; };
 		1B0D85F61519D4F900EC4A92 /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
+		1B289FAD1590B0D200C733D4 /* libDDUrlBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B289FA81590B0BA00C733D4 /* libDDUrlBuilder.a */; };
 		1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33956315663E5100E935E9 /* libc++.dylib */; };
 		1B33DD931518C5BC00EEA9BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
 		1B33DD991518C5BC00EEA9BA /* SCAllMobileSDKLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33DD981518C5BC00EEA9BA /* SCAllMobileSDKLibs.m */; };
@@ -28,7 +29,6 @@
 		65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
-		7ED1CAC91586432900EED5EA /* libDDUrlBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +214,27 @@
 			remoteGlobalIDString = 1B3EDAE8148637D200BA6680;
 			remoteInfo = SCUtils;
 		};
+		1B289FA71590B0BA00C733D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
+		1B289FA91590B0BA00C733D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
+			remoteInfo = DDUrlBuilderTest;
+		};
+		1B289FAB1590B0C600C733D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E54C1D7157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
 		1B33DDB21518C5EB00EEA9BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */;
@@ -389,27 +410,6 @@
 			remoteGlobalIDString = 1B0E82391563882000825E3C;
 			remoteInfo = TouchXMLiOS;
 		};
-		7ED1CAC31586431700EED5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
-			remoteInfo = DDUrlBuilder;
-		};
-		7ED1CAC51586431700EED5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
-			remoteInfo = DDUrlBuilderTest;
-		};
-		7ED1CAC71586432100EED5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E54C1D7157F8687007D89F1;
-			remoteInfo = DDUrlBuilder;
-		};
 		7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
@@ -450,6 +450,7 @@
 		0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFAsyncOperations.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFAsyncOperations/JFFAsyncOperations.xcodeproj"; sourceTree = "<group>"; };
 		1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebView.xcodeproj; path = ../SCWebView/SCWebView.xcodeproj; sourceTree = "<group>"; };
 		1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCUtils.xcodeproj; path = ../SCUtils/SCUtils.xcodeproj; sourceTree = "<group>"; };
+		1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib-third-party/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
 		1B33956315663E5100E935E9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCAllMobileSDKLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B33DD921518C5BC00EEA9BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -463,7 +464,6 @@
 		1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCDevice2Web.xcodeproj; path = ../SCDevice2Web/SCDevice2Web.xcodeproj; sourceTree = "<group>"; };
 		1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebPlugins.xcodeproj; path = ../SCWebPlugins/SCWebPlugins.xcodeproj; sourceTree = "<group>"; };
 		65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFRestKit.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFRestKit/JFFRestKit.xcodeproj"; sourceTree = "<group>"; };
-		7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../lib-third-party/davedelong-Demos/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -473,7 +473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED1CAC91586432900EED5EA /* libDDUrlBuilder.a in Frameworks */,
+				1B289FAD1590B0D200C733D4 /* libDDUrlBuilder.a in Frameworks */,
 				7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */,
 				7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */,
 				1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */,
@@ -584,6 +584,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1B289FA01590B0B900C733D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B289FA81590B0BA00C733D4 /* libDDUrlBuilder.a */,
+				1B289FAA1590B0BA00C733D4 /* DDUrlBuilderTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1B33DD841518C5BC00EEA9BA = {
 			isa = PBXGroup;
 			children = (
@@ -632,7 +641,7 @@
 		1B33DDA81518C5D500EEA9BA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */,
+				1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */,
 				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
 				7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */,
 				1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */,
@@ -716,15 +725,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7ED1CABF1586431700EED5EA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */,
-				7ED1CAC61586431700EED5EA /* DDUrlBuilderTest.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7EECFDA415863CA4004D3D9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,7 +767,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7ED1CAC81586432100EED5EA /* PBXTargetDependency */,
+				1B289FAC1590B0C600C733D4 /* PBXTargetDependency */,
 				7ED1CAA11586427F00EED5EA /* PBXTargetDependency */,
 				7ED1CAA31586427F00EED5EA /* PBXTargetDependency */,
 				1B3E6DC11554133B00B3509B /* PBXTargetDependency */,
@@ -812,8 +812,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7ED1CABF1586431700EED5EA /* Products */;
-					ProjectRef = 7ED1CABE1586431700EED5EA /* DDUrlBuilder.xcodeproj */;
+					ProductGroup = 1B289FA01590B0B900C733D4 /* Products */;
+					ProjectRef = 1B289F9F1590B0B900C733D4 /* DDUrlBuilder.xcodeproj */;
 				},
 				{
 					ProductGroup = 0688E2951518CFF100437842 /* Products */;
@@ -1016,6 +1016,20 @@
 			remoteRef = 1B0D85941519D44300EC4A92 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		1B289FA81590B0BA00C733D4 /* libDDUrlBuilder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDDUrlBuilder.a;
+			remoteRef = 1B289FA71590B0BA00C733D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B289FAA1590B0BA00C733D4 /* DDUrlBuilderTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DDUrlBuilderTest.octest;
+			remoteRef = 1B289FA91590B0BA00C733D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1B33DDB31518C5EB00EEA9BA /* libSCMap.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1075,28 +1089,32 @@
 		1BC8A31B151B7E3E00A4AC26 /* JFFAsyncOperationsFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			path = JFFAsyncOperationsFW.framework;
+			name = JFFAsyncOperationsFW.framework;
+			path = JFFAsyncOperationsFW;
 			remoteRef = 1BC8A31A151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A321151B7E3E00A4AC26 /* JFFNetworkFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			path = JFFNetworkFW.framework;
+			name = JFFNetworkFW.framework;
+			path = JFFNetworkFW;
 			remoteRef = 1BC8A320151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A326151B7E3E00A4AC26 /* JFFSchedulerFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			path = JFFSchedulerFW.framework;
+			name = JFFSchedulerFW.framework;
+			path = JFFSchedulerFW;
 			remoteRef = 1BC8A325151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			path = JFFUtilsFW.framework;
+			name = JFFUtilsFW.framework;
+			path = JFFUtilsFW;
 			remoteRef = 1BC8A32B151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1126,20 +1144,6 @@
 			fileType = archive.ar;
 			path = libJFFRestKit.a;
 			remoteRef = 65E3074D1531E64200E0B781 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7ED1CAC41586431700EED5EA /* libDDUrlBuilder.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDDUrlBuilder.a;
-			remoteRef = 7ED1CAC31586431700EED5EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7ED1CAC61586431700EED5EA /* DDUrlBuilderTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DDUrlBuilderTest.octest;
-			remoteRef = 7ED1CAC51586431700EED5EA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7EECFDBD15863CA4004D3D9B /* TouchXML_UnitTests.octest */ = {
@@ -1229,6 +1233,11 @@
 			name = SCUtils;
 			targetProxy = 1B0D85E71519D4F300EC4A92 /* PBXContainerItemProxy */;
 		};
+		1B289FAC1590B0C600C733D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDUrlBuilder;
+			targetProxy = 1B289FAB1590B0C600C733D4 /* PBXContainerItemProxy */;
+		};
 		1B33DDB81518C60100EEA9BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SCMap;
@@ -1273,11 +1282,6 @@
 			isa = PBXTargetDependency;
 			name = TouchXMLiOS;
 			targetProxy = 7ED1CAA21586427F00EED5EA /* PBXContainerItemProxy */;
-		};
-		7ED1CAC81586432100EED5EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DDUrlBuilder;
-			targetProxy = 7ED1CAC71586432100EED5EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
