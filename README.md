@@ -1,3 +1,5 @@
+# Sitecore's Mobile SDK
+
 # Introduction
 
 **Sitecore Mobile SDK is a framework that is designed to help developers produce iOS based applications that use and serve the Sitecore content.**
@@ -14,8 +16,8 @@
 
 ***
 
-## The Mobile SDK Components
-### 1. The Server
+## 1. The Mobile SDK Components
+### 1.1 The Server
 
 **The Sitecore Mobile SDK server package contains components that allow you to use iOS features in your website.**
 
@@ -32,7 +34,7 @@
 
 **TODO Link to download  "Sitecore Web API"**
 
-### 2. The Client
+### 1.2 The Client
 
 **The client is an iOS project that contains the "SitecoreMobileSDK.framework" that provides an Objective-C API. You can use this API to access Sitecore content through the web service and use this content in your application. The API also supports advanced features such as preloading and caching.**
 
@@ -51,7 +53,29 @@
 **TODO Link to download "SitecoreMobileSDK.framework"**
 
 ***
-## The Mobile SDK Installation
+## 2. The Mobile SDK Installation
+
+**This chapter describes how to install the Mobile SDK components.**
+**This chapter contains the following sections:**
+
+* **Installing the Server Side Components**
+* **Installing the Client Side Components**
+
+
+### 2.1 Installing the Server Side Components
+##### 2.1.1 Installing the Sitecore Web API Service
+**Use the Sitecore Installation Wizard to install the Sitecore Web API service:**
+
+* **Log in to the Sitecore Desktop.** 
+* **Click Sitecore, Development Tools, Installation Wizard. The wizard will guide you through the installation process.**
+* **In the Select Package dialog box, specify the package that you want to install.**
+![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox.png)
+* **Click Browse to locate the package or click Upload to upload the package. The folder, to which the packages are uploaded, is specified in the web.config file.**
+* **In the License Agreement dialog box, accept the license agreement.**
+
+### 2.2 Installing the Client Side Components
+
+
 # Mou
 
 ![Mou icon](http://mouapp.com/Mou_128.png)
