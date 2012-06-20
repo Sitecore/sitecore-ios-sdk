@@ -82,20 +82,25 @@ Install.**
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
 ##### 2.1.1 Installing the Sitecore Mobile SDK server package
 **Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server package" on the server side:**
-* **1. Log in to the Sitecore Desktop.** 
-* **2. Click Sitecore, Development Tools, Installation Wizard.The wizard will guide you through the installation process.**
-* **3. In the Select Package dialog box, specify the package that you want to install.**
+
+1. **Log in to the Sitecore Desktop.** 
+2. **Click Sitecore, Development Tools, Installation Wizard.The wizard will guide you through the installation process.**
+3. **In the Select Package dialog box, specify the package that you want to install.**
 ![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox2.png)
-* **4. Click Browse to browse for an existing package or Upload to upload a new one.**
-* **5. In the Ready to Install dialog box, you can review the package information and then clickInstall.**
+4. **Click Browse to browse for an existing package or Upload to upload a new one.**
+5. **In the Ready to Install dialog box, you can review the package information and then clickInstall.**
 ![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox2.png)
-* **6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecoreserver and then click Finish.**
+6. **When the installation is complete, you can choose to restart the Sitecore client or the Sitecoreserver and then click Finish.**
 ![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
 ### 2.2 Installing the Client Side Components
+**To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.**
+##### 2.2.1 Installing the Sitecore Mobile SDK server package
+**To use the Sitecore Mobile SDK framework in your application:**
 
+* **1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created a XCode Single View Application project, you can skip this step.** 
 
 # Mou
 
