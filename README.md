@@ -68,30 +68,24 @@
 
 1. **Log in to the Sitecore Desktop.** 
 2. **Click Sitecore, Development Tools, Installation Wizard. The wizard will guide you through the installation process.**
-3. **In the Select Package dialog box, specify the package that you want to install.**
-![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox.png)
+3. **In the Select Package dialog box, specify the package that you want to install.**![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox.png)
 4. **Click Browse to locate the package or click Upload to upload the package. The folder, to which the packages are uploaded, is specified in the web.config file.**
-5. **In the License Agreement dialog box, accept the license agreement.**
-![License Agreement](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/LicenseAgreementDialogBox.png)
+5. **In the License Agreement dialog box, accept the license agreement.**![License Agreement](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/LicenseAgreementDialogBox.png)
 6. **In the Ready to Install dialog box, you can review the package information and then click
-Install.**
-![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox.png)
-7. **When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.**
-![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
-8. **In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.**
-![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
+Install.**![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox.png)
+7. **When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.**![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
+8. **In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.**![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
+
 ##### 2.1.1 Installing the Sitecore Mobile SDK server package
+
 **Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server package" on the server side:**
 
 1. **Log in to the Sitecore Desktop.** 
 2. **Click Sitecore, Development Tools, Installation Wizard.The wizard will guide you through the installation process.**
-3. **In the Select Package dialog box, specify the package that you want to install.**
-![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox2.png)
+3. **In the Select Package dialog box, specify the package that you want to install.**![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox2.png)
 4. **Click Browse to browse for an existing package or Upload to upload a new one.**
-5. **In the Ready to Install dialog box, you can review the package information and then clickInstall.**
-![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox2.png)
-6. **When the installation is complete, you can choose to restart the Sitecore client or the Sitecoreserver and then click Finish.**
-![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
+5. **In the Ready to Install dialog box, you can review the package information and then clickInstall.**![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox2.png)
+6. **When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.**![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
@@ -100,7 +94,28 @@ Install.**
 ##### 2.2.1 Installing the Sitecore Mobile SDK server package
 **To use the Sitecore Mobile SDK framework in your application:**
 
-* **1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created a XCode Single View Application project, you can skip this step.** 
+1. **Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created a XCode Single View Application project, you can skip this step.** 
+2. **Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.**
+![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
+3. **Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For moreinformation, see the section Build Setting Reference in the Apple Developer Manual.**
+![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/OtherLinkerFlag.png)
+4. **Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section Linking to Library or Framework in the Project EditorHelp in the Apple Developer Manual.**
+5. **Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.**
+6. **Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.**
+
+**Here is an example:**
+
+	#ifdef __OBJC
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #endif
+## 3. Getting Started
+### 3.1 Models of Working with the Mobile SDK
+### 3.2 Models of Working with the Mobile SDK
+### 3.3 Getting Started with the Embedded Browser
+### 3.4 Getting Started with the Web API Service
+### 3.5 Combining the Embedded Browser and the Web API Service
 
 # Mou
 
