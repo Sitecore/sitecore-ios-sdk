@@ -200,22 +200,22 @@
         return;
     }
 
-    _imagePickerController = [ UIImagePickerController new ];
-    _imagePickerController.delegate = self;
+    self->_imagePickerController = [ UIImagePickerController new ];
+    self->_imagePickerController.delegate = self;
 
     if ( sourceType_ > UIImagePickerControllerSourceTypeSavedPhotosAlbum )
     {
         sourceType_ = UIImagePickerControllerSourceTypePhotoLibrary;
     }
-    _imagePickerController.sourceType = sourceType_;
+    self->_imagePickerController.sourceType = sourceType_;
 
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
     {
-        [ rootController_ presentTopViewController: _imagePickerController ];
+        [ rootController_ presentTopViewController: self->_imagePickerController ];
     }
     else
     {
-        [ self showPopoverWithController: _imagePickerController
+        [ self showPopoverWithController: self->_imagePickerController
                                     view: webView_ ];
     }
 }

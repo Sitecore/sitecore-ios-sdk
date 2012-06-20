@@ -360,7 +360,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = NO;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = ". ../SCUtils ../SCWebPlugins ../SCMonad ../../lib-third-party/JFFLibrary/lib ../SCApi";
 			};
@@ -385,7 +384,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = NO;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = ". ../SCUtils ../SCWebPlugins ../SCMonad ../../lib-third-party/JFFLibrary/lib ../SCApi";
 			};

@@ -160,12 +160,12 @@
             NSLog( @"can not read item with path: %@", itemPath_ );
             return;
         }
-        SCItem* home_item_ = [ result_ objectAtIndex: 0 ];
-        NSString* path_ = [ rootPath_ stringByAppendingString: home_item_.path ];
+        SCItem* homeItem_ = [ result_ objectAtIndex: 0 ];
+        NSString* path_ = [ rootPath_ stringByAppendingString: homeItem_.path ];
         UIViewController* viewController_ = 
-            [ ViewController CreateTabItemWithTitle: [ home_item_ fieldValueWithName: titleFieldName_ ]
+            [ ViewController CreateTabItemWithTitle: [ homeItem_ fieldValueWithName: titleFieldName_ ]
                                            withPath: path_
-                                           withIcon: [ home_item_ fieldValueWithName: iconFieldName_ ] ];
+                                           withIcon: [ homeItem_ fieldValueWithName: iconFieldName_ ] ];
         [ listOfViewControllers addObject: viewController_ ];
         //start read children of home item
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
