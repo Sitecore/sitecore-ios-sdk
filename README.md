@@ -112,10 +112,15 @@ Install.**![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/r
     #endif
 ## 3. Getting Started
 ### 3.1 Models of Working with the Mobile SDK
-### 3.2 Models of Working with the Mobile SDK
-### 3.3 Getting Started with the Embedded Browser
-### 3.4 Getting Started with the Web API Service
-### 3.5 Combining the Embedded Browser and the Web API Service
+**There are three models that you can apply to make your application work with the Sitecore Mobile SDK:**
+
+* **Embedded Browser – If you already have a website that is running on Sitecore and optimized for the mobile application, you must use the website presentation. Then, you can display the embedded browser window inside your application. The native device features are typically unavailable in a normal website but you can access them through a set of HTML and Javascript APIs. For more information about this approach, see the section Getting Started with the Embedded Browser.**
+* **Web API – If you are familiar with Objective-C development, you can use the native code to develop all or part of your application and access the content in Sitecore to get all benefits of the Sitecore CMS. For more information about Objective-C API, see the section Getting Started with the Web API Service.**
+* **Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.**
+
+### 3.2 Getting Started with the Embedded Browser
+### 3.3 Getting Started with the Web API Service
+### 3.4 Combining the Embedded Browser and the Web API Service
 
 # Mou
 
