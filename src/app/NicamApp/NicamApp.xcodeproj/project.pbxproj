@@ -11,7 +11,6 @@
 		1B9D911914CD904500DD5EF1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9D911814CD904500DD5EF1 /* MessageUI.framework */; };
 		1BAFBF54157F5F1900F3062E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAFBF53157F5F1900F3062E /* libstdc++.dylib */; };
 		1BB960C315121E6C00B4F9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB960C215121E6C00B4F9B2 /* MapKit.framework */; };
-		1BD55FEB157F6E9D002BA8B0 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD55FEA157F6E9D002BA8B0 /* SitecoreMobileSDK.framework */; };
 		252BF843151097C100EFBFE2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0678E7341506374000E34034 /* AVFoundation.framework */; };
 		252BF845151097CC00EFBFE2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0678E7361506377E00E34034 /* CoreMedia.framework */; };
 		252BF846151097D500EFBFE2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0678E7371506377E00E34034 /* CoreVideo.framework */; };
@@ -61,7 +60,6 @@
 		1B9D911814CD904500DD5EF1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1BAFBF53157F5F1900F3062E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		1BB960C215121E6C00B4F9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1BD55FEA157F6E9D002BA8B0 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		252BF8481510A01F00EFBFE2 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		252BF8491510A01F00EFBFE2 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		252BF8581510ADA400EFBFE2 /* NicamApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NicamApp.png; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				25902A5114837659006FF9AA /* UIKit.framework in Frameworks */,
 				25902A5314837659006FF9AA /* Foundation.framework in Frameworks */,
 				25902A5514837659006FF9AA /* CoreGraphics.framework in Frameworks */,
-				1BD55FEB157F6E9D002BA8B0 /* SitecoreMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +183,6 @@
 		25902A4F14837659006FF9AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1BD55FEA157F6E9D002BA8B0 /* SitecoreMobileSDK.framework */,
 				1BAFBF53157F5F1900F3062E /* libstdc++.dylib */,
 				1B3395C0156642CD00E935E9 /* libc++.dylib */,
 				1BB960C215121E6C00B4F9B2 /* MapKit.framework */,

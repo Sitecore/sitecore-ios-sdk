@@ -33,6 +33,7 @@
 		1BBCAB171510CEF400199B37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCAB161510CEF400199B37 /* libiconv.dylib */; };
 		1BBCAB191510CF0A00199B37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCAB181510CF0A00199B37 /* CoreVideo.framework */; };
 		1BBCAB1B1510CF1800199B37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCAB1A1510CF1800199B37 /* CoreMedia.framework */; };
+		25995B2A159359AC0081B5DA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25995B29159359AC0081B5DA /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		1BBCAB161510CEF400199B37 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		1BBCAB181510CF0A00199B37 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1BBCAB1A1510CF1800199B37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		25995B29159359AC0081B5DA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25995B2A159359AC0081B5DA /* libc++.dylib in Frameworks */,
 				1B2C80461532B49000A087D1 /* libsqlite3.dylib in Frameworks */,
 				1B0D872E1519E44300EC4A92 /* CoreLocation.framework in Frameworks */,
 				1B0D872C1519E43500EC4A92 /* MapKit.framework in Frameworks */,
@@ -131,6 +134,7 @@
 				1B1167D714C6CEB8000AD289 /* AudioToolbox.framework */,
 				1B1167D814C6CEB8000AD289 /* CoreMotion.framework */,
 				1B1167D914C6CEB8000AD289 /* libstdc++.dylib */,
+				25995B29159359AC0081B5DA /* libc++.dylib */,
 				1B2C80451532B49000A087D1 /* libsqlite3.dylib */,
 				1B1167DA14C6CEB8000AD289 /* libxml2.dylib */,
 				1B1167DB14C6CEB8000AD289 /* libz.dylib */,
