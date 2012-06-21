@@ -29,8 +29,8 @@
   NSString *displayedMessage;
 }
 
-@property (nonatomic, retain) NSMutableArray*  points;
-@property (nonatomic, assign) id<CancelDelegate> delegate;
+@property (nonatomic) NSMutableArray*  points;
+@property (nonatomic, weak) id<CancelDelegate> delegate;
 @property (nonatomic, assign) BOOL oneDMode;
 @property (nonatomic, assign) CGRect cropRect;
 @property (nonatomic, copy) NSString *displayedMessage;

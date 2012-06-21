@@ -52,14 +52,14 @@
 }
 
 #if HAS_AVFF
-@property (nonatomic, retain) AVCaptureSession *captureSession;
-@property (nonatomic, retain) AVCaptureVideoPreviewLayer *prevLayer;
+@property (strong, nonatomic) AVCaptureSession *captureSession;
+@property (nonatomic) AVCaptureVideoPreviewLayer *prevLayer;
 #endif
-@property (nonatomic, retain ) NSSet *readers;
-@property (nonatomic, assign) id<ZXingDelegate> delegate;
-@property (nonatomic, retain) NSURL *soundToPlay;
-@property (nonatomic, retain) ParsedResult *result;
-@property (nonatomic, retain) OverlayView *overlayView;
+@property (nonatomic ) NSSet *readers;
+@property (weak, nonatomic) id<ZXingDelegate> delegate;
+@property (nonatomic) NSURL *soundToPlay;
+@property (nonatomic) ParsedResult *result;
+@property (nonatomic) OverlayView *overlayView;
 
 - (id)initWithDelegate:(id<ZXingDelegate>)delegate showCancel:(BOOL)shouldShowCancel OneDMode:(BOOL)shouldUseoOneDMode;
 

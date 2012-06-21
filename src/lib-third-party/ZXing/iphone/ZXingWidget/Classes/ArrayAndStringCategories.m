@@ -58,43 +58,42 @@
   int max = [self length];
   NSRange searchRange;
   NSRange foundRange;
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  while (i < max) {
-    searchRange = NSMakeRange(i, max - i);
-    foundRange = [self rangeOfString:prefix options:0 range:searchRange];
-    if(foundRange.location == NSNotFound) {
-      break;
-    }
-
-    int start = i = foundRange.location + foundRange.length;
-    bool done = false;
-    while (!done) {
+  @autoreleasepool {
+    while (i < max) {
       searchRange = NSMakeRange(i, max - i);
-      NSRange termRange = [self rangeOfString:term options:0 range:searchRange];
-      if (termRange.location == NSNotFound) {
-        i = max;
-        done = true;
-      } else if ([self characterAtIndex:termRange.location-1] == (unichar)'\\') {
-        i++;
-      } else {
-        NSAutoreleasePool *secondaryPool = [[NSAutoreleasePool alloc] init];
-        NSString *substring = [self substringWithRange:NSMakeRange(start, termRange.location - start)];
-        NSString *unescaped = [substring backslashUnescaped];
-        NSString *toBeInArray = [[NSString alloc] initWithString:unescaped];
-        [secondaryPool release];
-        if (result == nil) {
-          result = [[NSMutableArray alloc] initWithCapacity:1];
+      foundRange = [self rangeOfString:prefix options:0 range:searchRange];
+      if(foundRange.location == NSNotFound) {
+        break;
+      }
+
+      int start = i = foundRange.location + foundRange.length;
+      bool done = false;
+      while (!done) {
+        searchRange = NSMakeRange(i, max - i);
+        NSRange termRange = [self rangeOfString:term options:0 range:searchRange];
+        if (termRange.location == NSNotFound) {
+          i = max;
+          done = true;
+        } else if ([self characterAtIndex:termRange.location-1] == (unichar)'\\') {
+          i++;
+        } else {
+//        NSAutoreleasePool *secondaryPool = [[NSAutoreleasePool alloc] init];
+          NSString *substring = [self substringWithRange:NSMakeRange(start, termRange.location - start)];
+          NSString *unescaped = [substring backslashUnescaped];
+          NSString *toBeInArray = [[NSString alloc] initWithString:unescaped];
+//        [secondaryPool release];
+          if (result == nil) {
+            result = [[NSMutableArray alloc] initWithCapacity:1];
+          }
+          [result addObject:toBeInArray];
+          i = termRange.location + termRange.length;
+          done = true;
         }
-        [result addObject:toBeInArray];
-        [toBeInArray release];
-        i = termRange.location + termRange.length;
-        done = true;
       }
     }
   }
-  [pool release];
 
-  return [result autorelease];
+  return result;
 }
 
 - (NSString *)fieldWithPrefix:(NSString *)prefix {

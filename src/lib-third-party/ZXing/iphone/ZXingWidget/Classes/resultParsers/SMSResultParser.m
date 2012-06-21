@@ -70,8 +70,7 @@
     
     NSString *number = [s substringWithRange:numberRange];
     NSString *body = bodyRange.location != NSNotFound ? [s substringWithRange:bodyRange] : nil;
-    return [[[SMSParsedResult alloc] initWithNumber:number body:body]
-          autorelease];
+    return [[SMSParsedResult alloc] initWithNumber:number body:body];
   }
   return nil;
 }

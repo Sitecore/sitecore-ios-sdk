@@ -50,9 +50,4 @@
   //[actions addObject:[EmailAction actionWithRecipient:@"recipient@domain" subject:@"QR Code Contents" body:text]];
 }
 
-- (void)dealloc {
-  [text release];
-  [super dealloc];
-}
-
 @end

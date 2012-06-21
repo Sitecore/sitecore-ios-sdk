@@ -54,7 +54,7 @@
 }
 
 + (id)actionWithNumber:(NSString *)number body:(NSString *)body {
-  return [[[self alloc] initWithNumber:number body:body] autorelease];
+  return [[self alloc] initWithNumber:number body:body];
 }
 
 + (id)actionWithNumber:(NSString *)number {
@@ -75,11 +75,6 @@
 
 - (NSString *)alertButtonTitle {
   return NSLocalizedString(@"SMSAction alert button title", @"Compose");
-}
-
-- (void) dealloc {
-  [body release];
-  [super dealloc];
 }
 
 @end

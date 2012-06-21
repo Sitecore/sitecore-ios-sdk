@@ -47,7 +47,7 @@
   result.subject = [s fieldWithPrefix:@"SUB:"];
   result.body = [s fieldWithPrefix:@"BODY:"];
 
-  return [result autorelease];
+  return result;
 }
 
 @end

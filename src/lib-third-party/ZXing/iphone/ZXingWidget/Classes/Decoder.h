@@ -32,18 +32,18 @@
   size_t subsetWidth;
   size_t subsetHeight;
   size_t subsetBytesPerRow;
-  id<DecoderDelegate> delegate;
+  id<DecoderDelegate> __weak delegate;
 }
 
-@property(nonatomic, retain) UIImage *image;
-@property(nonatomic, retain) NSSet *readers;
+@property(nonatomic) UIImage *image;
+@property(nonatomic) NSSet *readers;
 @property(nonatomic, assign) CGRect cropRect;
-@property(nonatomic, retain) UIImage *subsetImage;
+@property(nonatomic) UIImage *subsetImage;
 @property(nonatomic, assign) unsigned char *subsetData;
 @property(assign) size_t subsetWidth;
 @property(assign) size_t subsetHeight;
 @property(assign) size_t subsetBytesPerRow;
-@property(nonatomic, assign) id<DecoderDelegate> delegate;
+@property(nonatomic, weak) id<DecoderDelegate> delegate;
 
 - (BOOL) decodeImage:(UIImage *)image;
 - (BOOL) decodeImage:(UIImage *)image cropRect:(CGRect)cropRect;

@@ -64,7 +64,7 @@
         NSString *host = [url host];
         NSString *emailAddress = nil;
         EmailParsedResult *result =
-            [[[EmailParsedResult alloc] init] autorelease];
+            [[EmailParsedResult alloc] init];
         if ([nameValues objectForKey:@"to"]) {
             emailAddress = [nameValues objectForKey:@"to"];
         } else if (user && host) {
@@ -92,7 +92,7 @@
           return nil;
         }
         EmailParsedResult *result =
-            [[[EmailParsedResult alloc] init] autorelease];
+            [[EmailParsedResult alloc] init];
         result.to = rawText;
         return result;
     }

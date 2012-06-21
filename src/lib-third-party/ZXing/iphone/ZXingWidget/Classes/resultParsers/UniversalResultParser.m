@@ -40,13 +40,15 @@ static NSMutableArray *sTheResultParsers = nil;
 }
 
 + (void) initWithDefaultParsers {
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  @synchronized(self) {
+  @autoreleasepool {
     if (!sTheResultParsers) {
-      sTheResultParsers = [[NSMutableArray alloc] init];
+      @synchronized(self) {
+        if (!sTheResultParsers) {
+          sTheResultParsers = [[NSMutableArray alloc] init];
+        }
+      }
     }
   }
-  [pool release];
   [self addParserClass:[BookmarkDoCoMoResultParser class]];
   [self addParserClass:[MeCardParser class]];
   [self addParserClass:[EmailDoCoMoResultParser class]];

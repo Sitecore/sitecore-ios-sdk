@@ -39,7 +39,7 @@
 }
 
 + (id)actionWithNumber:(NSString *)number {
-  return [[[self alloc] initWithNumber:number] autorelease];
+  return [[self alloc] initWithNumber:number];
 }
 
 - (NSString *)title {
@@ -56,12 +56,6 @@
 
 - (NSString *)alertButtonTitle {
   return NSLocalizedString(@"CallAction alert button title", @"Call");
-}
-
-
-- (void) dealloc {
-  [number release];
-  [super dealloc];
 }
 
 @end

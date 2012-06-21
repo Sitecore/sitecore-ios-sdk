@@ -79,6 +79,15 @@
         [ _webPlugin didOpenInWebView: _webView ];
 }
 
+-(void)onDeallocWebView
+{
+    self->_webPlugin.delegate = nil;
+    if ( !self->_closed )
+        [ self->_webPlugin didClose ];
+
+    self->_ownThemselves = nil;
+}
+
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
     if ( [ _webPlugin respondsToSelector: @selector( setDelegate: ) ] )
@@ -89,11 +98,7 @@
     __weak SCWebViewPluginHolder* self_ = self;
     [ _webView addOnDeallocBlock: ^
     {
-        self_->_webPlugin.delegate = nil;
-        if ( !self_->_closed )
-            [ self_->_webPlugin didClose ];
-
-        self_->_ownThemselves = nil;
+        [ self_ onDeallocWebView ];
     } ];
 
     [ self performSelectorOnMainThread: @selector( didOpenOnMainThread )

@@ -55,11 +55,4 @@
   [actions addObject:[SMSAction actionWithNumber:self.number body:self.body]];
 }
 
-- (void) dealloc {
-  [number release];
-  [body release];
-  [super dealloc];
-}
-
-
 @end

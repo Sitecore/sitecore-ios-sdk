@@ -96,7 +96,7 @@
     result.organization = org;
     result.jobTitle = title;
 
-    return [result autorelease];
+    return result;
 }
 
 @end

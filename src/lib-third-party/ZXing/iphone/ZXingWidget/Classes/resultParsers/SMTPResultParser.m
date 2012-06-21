@@ -58,7 +58,7 @@
         return nil;
     }
 
-    EmailParsedResult *result = [[[EmailParsedResult alloc] init] autorelease];
+    EmailParsedResult *result = [[EmailParsedResult alloc] init];
     if (n >= 2) {
         result.to = [components objectAtIndex:1];
     }

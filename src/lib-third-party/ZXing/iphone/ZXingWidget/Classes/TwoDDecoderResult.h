@@ -26,8 +26,8 @@
   NSArray *points;
 }
 
-@property (nonatomic, retain) NSString *text;
-@property (nonatomic, retain) NSArray *points;
+@property (nonatomic) NSString *text;
+@property (nonatomic) NSArray *points;
 
 + (id)resultWithText:(NSString *)text points:(NSArray *)points;
 - (id)initWithText:(NSString *)text points:(NSArray *)points;

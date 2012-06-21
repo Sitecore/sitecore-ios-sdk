@@ -68,7 +68,6 @@ public:
   if ([self.delegate respondsToSelector:@selector(decoder:didDecodeImage:usingSubset:withResult:)]) {
     [self.delegate decoder:self didDecodeImage:self.image usingSubset:self.subsetImage withResult:result];
   }
-  [result release];
 }
 
 - (void)failedToDecodeImage:(NSString *)reason {
@@ -158,116 +157,112 @@ public:
 }  
 
 - (BOOL)decode {
-  NSAutoreleasePool* mainpool = [[NSAutoreleasePool alloc] init];
-  TwoDDecoderResult *decoderResult = nil;
-  BOOL returnCode = NO;
-  { 
-    //NSSet *formatReaders = [FormatReader formatReaders];
-    NSSet *formatReaders = self.readers;
-    Ref<LuminanceSource> source 
-        (new GreyscaleLuminanceSource(subsetData, subsetBytesPerRow, subsetHeight, 0, 0, subsetWidth, subsetHeight));
+  @autoreleasepool {
+    TwoDDecoderResult *decoderResult = nil;
+    BOOL returnCode = NO;
+    { 
+      //NSSet *formatReaders = [FormatReader formatReaders];
+      NSSet *formatReaders = self.readers;
+      Ref<LuminanceSource> source 
+          (new GreyscaleLuminanceSource(subsetData, subsetBytesPerRow, subsetHeight, 0, 0, subsetWidth, subsetHeight));
 
-    Ref<Binarizer> binarizer (new HybridBinarizer(source));
-    source = 0;
-    Ref<BinaryBitmap> grayImage (new BinaryBitmap(binarizer));
-    binarizer = 0;
+      Ref<Binarizer> binarizer (new HybridBinarizer(source));
+      source = 0;
+      Ref<BinaryBitmap> grayImage (new BinaryBitmap(binarizer));
+      binarizer = 0;
 #ifdef DEBUG
-    NSLog(@"created GreyscaleLuminanceSource(%p,%d,%d,%d,%d,%d,%d)",
-          subsetData, subsetBytesPerRow, subsetHeight, 0, 0, subsetWidth, subsetHeight);
-    NSLog(@"grayImage count = %d", grayImage->count());
+      NSLog(@"created GreyscaleLuminanceSource(%p,%d,%d,%d,%d,%d,%d)",
+            subsetData, subsetBytesPerRow, subsetHeight, 0, 0, subsetWidth, subsetHeight);
+      NSLog(@"grayImage count = %d", grayImage->count());
 #endif
-    
-#ifdef TRY_ROTATIONS
-    for (int i = 0; !decoderResult && i < 4; i++) {
-#endif
-      for (FormatReader *reader in formatReaders) {
-        NSAutoreleasePool *secondarypool = [[NSAutoreleasePool alloc] init];
-        NSMutableArray *points = nil;
-        NSString *resultString = nil;
-        try {
-  #ifdef DEBUG
-          NSLog(@"decoding gray image");
-  #endif  
-          ResultPointCallback* callback_pointer(new ZXingWidgetControllerCallback(self));
-          Ref<ResultPointCallback> callback(callback_pointer);
-          Ref<Result> result([reader decode:grayImage andCallback:callback]);
-  #ifdef DEBUG
-          NSLog(@"gray image decoded");
-  #endif
-          
-          Ref<String> resultText(result->getText());
-          const char *cString = resultText->getText().c_str();
-          const std::vector<Ref<ResultPoint> > &resultPoints = result->getResultPoints();
-          points = [[NSMutableArray alloc ] initWithCapacity:resultPoints.size()];
-          
-          for (size_t i = 0; i < resultPoints.size(); i++) {
-            const Ref<ResultPoint> &rp = resultPoints[i];
-            CGPoint p = CGPointMake(rp->getX(), rp->getY());
-            [points addObject:[NSValue valueWithCGPoint:p]];
-          }
-          
-          resultString = [[NSString alloc] initWithCString:cString encoding:NSUTF8StringEncoding];
-          if (decoderResult) [decoderResult release];
-          decoderResult = [[TwoDDecoderResult alloc] initWithText:resultString points:points];
-        } catch (ReaderException &rex) {
-#ifdef DEBUG
-          NSLog(@"failed to decode, caught ReaderException '%s'",
-              rex.what());
-#endif
-        } catch (IllegalArgumentException &iex) {
-#ifdef DEBUG
-          NSLog(@"failed to decode, caught IllegalArgumentException '%s'", 
-              iex.what());
-#endif
-        } catch (...) {
-          NSLog(@"Caught unknown exception!");
-        }
-        [resultString release];
-        [points release];
-        [secondarypool release];
-      }
       
 #ifdef TRY_ROTATIONS
-      if (!decoderResult) {
-#ifdef DEBUG
-        NSLog(@"rotating gray image");
+      for (int i = 0; !decoderResult && i < 4; i++) {
 #endif
-        grayImage = grayImage->rotateCounterClockwise();
+        for (FormatReader *reader in formatReaders) {
+          @autoreleasepool {
+            NSMutableArray *points = nil;
+            NSString *resultString = nil;
+            try {
+    #ifdef DEBUG
+              NSLog(@"decoding gray image");
+    #endif  
+              ResultPointCallback* callback_pointer(new ZXingWidgetControllerCallback(self));
+              Ref<ResultPointCallback> callback(callback_pointer);
+              Ref<Result> result([reader decode:grayImage andCallback:callback]);
+    #ifdef DEBUG
+              NSLog(@"gray image decoded");
+    #endif
+              
+              Ref<String> resultText(result->getText());
+              const char *cString = resultText->getText().c_str();
+              const std::vector<Ref<ResultPoint> > &resultPoints = result->getResultPoints();
+              points = [[NSMutableArray alloc ] initWithCapacity:resultPoints.size()];
+              
+              for (size_t i = 0; i < resultPoints.size(); i++) {
+                const Ref<ResultPoint> &rp = resultPoints[i];
+                CGPoint p = CGPointMake(rp->getX(), rp->getY());
+                [points addObject:[NSValue valueWithCGPoint:p]];
+              }
+              
+              resultString = [[NSString alloc] initWithCString:cString encoding:NSUTF8StringEncoding];
+              decoderResult = [[TwoDDecoderResult alloc] initWithText:resultString points:points];
+            } catch (ReaderException &rex) {
 #ifdef DEBUG
-        NSLog(@"gray image rotated");
+              NSLog(@"failed to decode, caught ReaderException '%s'",
+                  rex.what());
 #endif
+            } catch (IllegalArgumentException &iex) {
+#ifdef DEBUG
+              NSLog(@"failed to decode, caught IllegalArgumentException '%s'", 
+                  iex.what());
+#endif
+            } catch (...) {
+              NSLog(@"Caught unknown exception!");
+            }
+          }
+        }
+        
+#ifdef TRY_ROTATIONS
+        if (!decoderResult) {
+#ifdef DEBUG
+          NSLog(@"rotating gray image");
+#endif
+          grayImage = grayImage->rotateCounterClockwise();
+#ifdef DEBUG
+          NSLog(@"gray image rotated");
+#endif
+        }
       }
-    }
 #endif
 	  
 	free(subsetData);
 	self.subsetData = NULL;
 	  
-        // DONT COMMIT
-        // [decoderResult release];
-        // decoderResult = nil;
-        
+          // DONT COMMIT
+          // [decoderResult release];
+          // decoderResult = nil;
+          
 
-    if (decoderResult) {
-      [self performSelectorOnMainThread:@selector(didDecodeImage:)
-                   withObject:[[decoderResult copy]autorelease]
-                waitUntilDone:NO];
-      [decoderResult release];
-      returnCode = YES;
-    } else {
-      [self performSelectorOnMainThread:@selector(failedToDecodeImage:)
-                   withObject:NSLocalizedString(@"Decoder BarcodeDetectionFailure", @"No barcode detected.")
-                waitUntilDone:NO];
+      if (decoderResult) {
+        [self performSelectorOnMainThread: @selector(didDecodeImage:)
+                               withObject: [ decoderResult copy ]
+                            waitUntilDone: NO ];
+        returnCode = YES;
+      } else {
+        [self performSelectorOnMainThread:@selector(failedToDecodeImage:)
+                     withObject:NSLocalizedString(@"Decoder BarcodeDetectionFailure", @"No barcode detected.")
+                  waitUntilDone:NO];
+      }
     }
-  }
-  
-  
+    
+    
 #ifdef DEBUG
-  NSLog(@"finished decoding.");
+    NSLog(@"finished decoding.");
 #endif
-  [mainpool release];
 
-  return returnCode;
+    return returnCode;
+  }
 }
 
 - (BOOL) decodeImage:(UIImage *)i {
@@ -283,12 +278,7 @@ public:
 }
 
 - (void) dealloc {
-  delegate = nil;
-  [image release];
-  [subsetImage release];
   free(subsetData);
-  [readers release];
-  [super dealloc];
 }
 
 @end

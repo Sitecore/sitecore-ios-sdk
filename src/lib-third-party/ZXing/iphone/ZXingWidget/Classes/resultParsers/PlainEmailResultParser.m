@@ -32,7 +32,7 @@
 + (ParsedResult *)parsedResultForString:(NSString *)s
                                  format:(BarcodeFormat)format {
   if ([EmailParsedResult looksLikeAnEmailAddress:s]) {
-    EmailParsedResult *result = [[[EmailParsedResult alloc] init] autorelease];
+    EmailParsedResult *result = [[EmailParsedResult alloc] init];
     [result setTo:s];
     return result;
   }

@@ -26,7 +26,7 @@
   NSURL *URL;
 }
 
-@property(nonatomic, retain) NSURL *URL;
+@property(nonatomic) NSURL *URL;
 
 - (id)initWithURL:(NSURL *)URL;
 + (id)actionWithURL:(NSURL *)URL;

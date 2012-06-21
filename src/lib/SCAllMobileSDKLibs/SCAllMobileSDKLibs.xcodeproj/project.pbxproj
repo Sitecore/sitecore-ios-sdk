@@ -14,9 +14,9 @@
 		0688E2AC1518D02600437842 /* libJFFScheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2771518CFC800437842 /* libJFFScheduler.a */; };
 		0688E2AD1518D02600437842 /* libJFFUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E26D1518CFBF00437842 /* libJFFUI.a */; };
 		0688E2AE1518D02600437842 /* libJFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2621518CFB600437842 /* libJFFUtils.a */; };
+		1B049C9515930C1400E22402 /* libDDUrlBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B049C9015930C0300E22402 /* libDDUrlBuilder.a */; };
 		1B0D850F1519D3DB00EC4A92 /* libSCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D850B1519D3C600EC4A92 /* libSCWebView.a */; };
 		1B0D85F61519D4F900EC4A92 /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
-		1B28A53415919D2500C733D4 /* libDDUrlBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B28A52F15919D1000C733D4 /* libDDUrlBuilder.a */; };
 		1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33956315663E5100E935E9 /* libc++.dylib */; };
 		1B33DD931518C5BC00EEA9BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
 		1B33DD991518C5BC00EEA9BA /* SCAllMobileSDKLibs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33DD981518C5BC00EEA9BA /* SCAllMobileSDKLibs.m */; };
@@ -186,6 +186,27 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = JFFUtils;
 		};
+		1B049C8F15930C0300E22402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
+		1B049C9115930C0300E22402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
+			remoteInfo = DDUrlBuilderTest;
+		};
+		1B049C9315930C0C00E22402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E54C1D7157F8687007D89F1;
+			remoteInfo = DDUrlBuilder;
+		};
 		1B0D850A1519D3C600EC4A92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */;
@@ -213,27 +234,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1B3EDAE8148637D200BA6680;
 			remoteInfo = SCUtils;
-		};
-		1B28A52E15919D1000C733D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
-			remoteInfo = DDUrlBuilder;
-		};
-		1B28A53015919D1000C733D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
-			remoteInfo = DDUrlBuilderTest;
-		};
-		1B28A53215919D1D00C733D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E54C1D7157F8687007D89F1;
-			remoteInfo = DDUrlBuilder;
 		};
 		1B33DDB21518C5EB00EEA9BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -448,9 +448,9 @@
 		0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFScheduler.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFScheduler/JFFScheduler.xcodeproj"; sourceTree = "<group>"; };
 		0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFNetwork.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFNetwork/JFFNetwork.xcodeproj"; sourceTree = "<group>"; };
 		0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFAsyncOperations.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFAsyncOperations/JFFAsyncOperations.xcodeproj"; sourceTree = "<group>"; };
+		1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../lib-third-party/davedelong-Demos/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
 		1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebView.xcodeproj; path = ../SCWebView/SCWebView.xcodeproj; sourceTree = "<group>"; };
 		1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCUtils.xcodeproj; path = ../SCUtils/SCUtils.xcodeproj; sourceTree = "<group>"; };
-		1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../lib-third-party/davedelong-Demos/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
 		1B33956315663E5100E935E9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCAllMobileSDKLibs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B33DD921518C5BC00EEA9BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -473,7 +473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B28A53415919D2500C733D4 /* libDDUrlBuilder.a in Frameworks */,
+				1B049C9515930C1400E22402 /* libDDUrlBuilder.a in Frameworks */,
 				7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */,
 				7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */,
 				1B33956415663E5100E935E9 /* libc++.dylib in Frameworks */,
@@ -568,6 +568,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1B049C8B15930C0200E22402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B049C9015930C0300E22402 /* libDDUrlBuilder.a */,
+				1B049C9215930C0300E22402 /* DDUrlBuilderTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1B0D84F91519D3C500EC4A92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,15 +589,6 @@
 			isa = PBXGroup;
 			children = (
 				1B0D85951519D44300EC4A92 /* libSCUtils.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1B28A52A15919D1000C733D4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1B28A52F15919D1000C733D4 /* libDDUrlBuilder.a */,
-				1B28A53115919D1000C733D4 /* DDUrlBuilderTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -641,7 +641,7 @@
 		1B33DDA81518C5D500EEA9BA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */,
+				1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */,
 				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
 				7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */,
 				1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */,
@@ -767,7 +767,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1B28A53315919D1D00C733D4 /* PBXTargetDependency */,
+				1B049C9415930C0C00E22402 /* PBXTargetDependency */,
 				7ED1CAA11586427F00EED5EA /* PBXTargetDependency */,
 				7ED1CAA31586427F00EED5EA /* PBXTargetDependency */,
 				1B3E6DC11554133B00B3509B /* PBXTargetDependency */,
@@ -812,8 +812,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1B28A52A15919D1000C733D4 /* Products */;
-					ProjectRef = 1B28A52915919D1000C733D4 /* DDUrlBuilder.xcodeproj */;
+					ProductGroup = 1B049C8B15930C0200E22402 /* Products */;
+					ProjectRef = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
 				},
 				{
 					ProductGroup = 0688E2951518CFF100437842 /* Products */;
@@ -1002,6 +1002,20 @@
 			remoteRef = 0688E29B1518CFF200437842 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		1B049C9015930C0300E22402 /* libDDUrlBuilder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDDUrlBuilder.a;
+			remoteRef = 1B049C8F15930C0300E22402 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B049C9215930C0300E22402 /* DDUrlBuilderTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DDUrlBuilderTest.octest;
+			remoteRef = 1B049C9115930C0300E22402 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1B0D850B1519D3C600EC4A92 /* libSCWebView.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1014,20 +1028,6 @@
 			fileType = archive.ar;
 			path = libSCUtils.a;
 			remoteRef = 1B0D85941519D44300EC4A92 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1B28A52F15919D1000C733D4 /* libDDUrlBuilder.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDDUrlBuilder.a;
-			remoteRef = 1B28A52E15919D1000C733D4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1B28A53115919D1000C733D4 /* DDUrlBuilderTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DDUrlBuilderTest.octest;
-			remoteRef = 1B28A53015919D1000C733D4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1B33DDB31518C5EB00EEA9BA /* libSCMap.a */ = {
@@ -1223,6 +1223,11 @@
 			name = JFFUtils;
 			targetProxy = 0688E2A71518D01100437842 /* PBXContainerItemProxy */;
 		};
+		1B049C9415930C0C00E22402 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDUrlBuilder;
+			targetProxy = 1B049C9315930C0C00E22402 /* PBXContainerItemProxy */;
+		};
 		1B0D850E1519D3D300EC4A92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SCWebView;
@@ -1232,11 +1237,6 @@
 			isa = PBXTargetDependency;
 			name = SCUtils;
 			targetProxy = 1B0D85E71519D4F300EC4A92 /* PBXContainerItemProxy */;
-		};
-		1B28A53315919D1D00C733D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DDUrlBuilder;
-			targetProxy = 1B28A53215919D1D00C733D4 /* PBXContainerItemProxy */;
 		};
 		1B33DDB81518C60100EEA9BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

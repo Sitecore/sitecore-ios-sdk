@@ -51,9 +51,4 @@
   [actions addObject:[ShowMapAction actionWithLocation:self.location]];
 }
 
-- (void) dealloc {
-  [location release];
-  [super dealloc];
-}
-
 @end

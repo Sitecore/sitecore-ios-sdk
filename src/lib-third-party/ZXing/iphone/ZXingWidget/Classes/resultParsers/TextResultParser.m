@@ -27,7 +27,7 @@
 
 + (ParsedResult *)parsedResultForString:(NSString *)s
                                  format:(BarcodeFormat)format {
-  return [[[TextParsedResult alloc] initWithString:s] autorelease];
+  return [[TextParsedResult alloc] initWithString:s];
 }
 
 

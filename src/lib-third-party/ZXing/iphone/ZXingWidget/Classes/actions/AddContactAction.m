@@ -42,7 +42,7 @@
                 note:(NSString *)nt
         organization:(NSString *)org
             jobTitle:(NSString *)title {
-  AddContactAction *aca = [[[self alloc] init] autorelease];
+  AddContactAction *aca = [[self alloc] init];
   aca.name = n;
   aca.phoneNumbers = nums;
   aca.email = em;
@@ -68,39 +68,42 @@
   if (commaRange.location != NSNotFound) {
     NSString *lastName = [[name substringToIndex:commaRange.location] 
                           stringByTrimmingCharactersInSet:whitespaceSet];
-    ABRecordSetValue(person, kABPersonLastNameProperty, lastName, error);
+    ABRecordSetValue(person
+                     , kABPersonLastNameProperty
+                     , (__bridge CFTypeRef)lastName
+                     , error);
     NSArray *firstNames = [[[name substringFromIndex:commaRange.location + commaRange.length]
                             stringByTrimmingCharactersInSet:whitespaceSet] 
                            componentsSeparatedByCharactersInSet:whitespaceSet];
-    ABRecordSetValue(person, kABPersonFirstNameProperty, [firstNames objectAtIndex:0], error);
+    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)([firstNames objectAtIndex:0]), error);
     for (unsigned i = 1; i < [firstNames count]; i++) {
-      ABRecordSetValue(person, kABPersonMiddleNameProperty, [firstNames objectAtIndex:1], error);
+      ABRecordSetValue(person, kABPersonMiddleNameProperty, (__bridge CFTypeRef)([firstNames objectAtIndex:1]), error);
     }
   } else {
     NSArray *nameParts = [name componentsSeparatedByCharactersInSet:whitespaceSet];
     int nParts = nameParts.count;
     if (nParts == 1) {
-      ABRecordSetValue(person, kABPersonFirstNameProperty, name, error);
+      ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)name, error);
     } else if (nParts >= 2) {
       int lastPart = nParts - 1;
-      ABRecordSetValue(person, kABPersonFirstNameProperty, [nameParts objectAtIndex:0], error);
+      ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)([nameParts objectAtIndex:0]), error);
       for (int i = 1; i < lastPart; i++) {
-        ABRecordSetValue(person, kABPersonMiddleNameProperty, [nameParts objectAtIndex:i], error);
+        ABRecordSetValue(person, kABPersonMiddleNameProperty, (__bridge CFTypeRef)([nameParts objectAtIndex:i]), error);
       }
-      ABRecordSetValue(person, kABPersonLastNameProperty, [nameParts objectAtIndex:lastPart], error);
+      ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)([nameParts objectAtIndex:lastPart]), error);
     }
   }
   
   if (self.note) {
-    ABRecordSetValue(person, kABPersonNoteProperty, self.note, error);
+    ABRecordSetValue(person, kABPersonNoteProperty, (__bridge CFTypeRef)(self.note), error);
   }
   
   if (self.organization) {
-    ABRecordSetValue(person, kABPersonOrganizationProperty, (CFStringRef)self.organization, error);
+    ABRecordSetValue(person, kABPersonOrganizationProperty, (__bridge CFStringRef)self.organization, error);
   }
   
   if (self.jobTitle) {
-    ABRecordSetValue(person, kABPersonJobTitleProperty, (CFStringRef)self.jobTitle, error);
+    ABRecordSetValue(person, kABPersonJobTitleProperty, (__bridge CFStringRef)self.jobTitle, error);
   }
   
   if (self.phoneNumbers && self.phoneNumbers.count > 0) {
@@ -108,7 +111,7 @@
     ABMutableMultiValueRef phoneNumberMultiValue = 
     ABMultiValueCreateMutable(kABStringPropertyType);
     for (NSString *number in self.phoneNumbers) {
-      ABMultiValueAddValueAndLabel(phoneNumberMultiValue, number, 
+      ABMultiValueAddValueAndLabel(phoneNumberMultiValue, (__bridge CFTypeRef)number, 
                                    kABPersonPhoneMainLabel, NULL);
     }
     ABRecordSetValue(person, kABPersonPhoneProperty,
@@ -120,7 +123,7 @@
     // a single email address
     ABMutableMultiValueRef emailMultiValue = 
     ABMultiValueCreateMutable(kABStringPropertyType);
-    ABMultiValueAddValueAndLabel(emailMultiValue, self.email, 
+    ABMultiValueAddValueAndLabel(emailMultiValue, (__bridge CFTypeRef)(self.email), 
                                  kABHomeLabel, NULL);
     ABRecordSetValue(person, kABPersonEmailProperty, emailMultiValue, error);
     CFRelease(emailMultiValue);
@@ -130,7 +133,7 @@
     // a single url as the home page
     ABMutableMultiValueRef urlMultiValue = 
     ABMultiValueCreateMutable(kABStringPropertyType);
-    ABMultiValueAddValueAndLabel(urlMultiValue, self.urlString,
+    ABMultiValueAddValueAndLabel(urlMultiValue, (__bridge CFTypeRef)(self.urlString),
                                  kABPersonHomePageLabel, NULL);
     ABRecordSetValue(person, kABPersonURLProperty, urlMultiValue, error);
     CFRelease(urlMultiValue);
@@ -165,7 +168,7 @@
                                   1, 
                                   &kCFTypeDictionaryKeyCallBacks, 
                                   &kCFTypeDictionaryValueCallBacks);
-    CFDictionarySetValue(addressDict, kABPersonAddressStreetKey, street);
+    CFDictionarySetValue(addressDict, kABPersonAddressStreetKey, (__bridge CFTypeRef)street);
     
     ABMutableMultiValueRef addressMultiValue = 
         ABMultiValueCreateMutable(kABStringPropertyType);
@@ -186,9 +189,8 @@
   unknownPersonViewController.unknownPersonViewDelegate = self;
   CFRelease(person);
   
-  viewController = [controller retain];
+  viewController = controller;
   [[viewController navigationController] pushViewController:unknownPersonViewController animated:YES];
-  [unknownPersonViewController release];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -223,7 +225,6 @@
 
 - (void)dismissUnknownPersonViewController:(ABUnknownPersonViewController *)unknownPersonViewController {
   [[viewController navigationController] popToViewController:viewController animated:YES];
-  [viewController release];
   viewController = nil;
 }
 
@@ -236,14 +237,4 @@
   }
 }
 
-- (void)dealloc {
-  [name release];
-  [phoneNumbers release];
-  [note release];
-  [email release];
-  [urlString release];
-  [address release];
-  [organization release];
-  [super dealloc];
-}
 @end

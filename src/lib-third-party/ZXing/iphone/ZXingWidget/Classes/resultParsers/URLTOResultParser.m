@@ -44,9 +44,8 @@
                                        colonRange.location - titleStart);
       int linkStart = colonRange.location + colonRange.length;
       NSRange linkRange = NSMakeRange(linkStart, max - linkStart);
-      return [[[URIParsedResult alloc] initWithURLString:[s substringWithRange:linkRange]
-                                                   title:[s substringWithRange:titleRange]]
-              autorelease];
+      return [[URIParsedResult alloc] initWithURLString:[s substringWithRange:linkRange]
+                                                   title:[s substringWithRange:titleRange]];
     }
   }
   return nil;

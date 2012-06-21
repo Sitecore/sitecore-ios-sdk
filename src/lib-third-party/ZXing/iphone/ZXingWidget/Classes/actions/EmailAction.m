@@ -45,7 +45,7 @@ static NSURL *MailtoURL(NSString *to, NSString *sub, NSString *body) {
 }
 
 + (id)actionWithRecipient:(NSString *)recipient subject:(NSString *)subject body:(NSString *)body {
-  return [[[self alloc] initWithRecipient:recipient subject:subject body:body] autorelease];
+  return [[self alloc] initWithRecipient:recipient subject:subject body:body];
 }
 
 - (NSString *)title {

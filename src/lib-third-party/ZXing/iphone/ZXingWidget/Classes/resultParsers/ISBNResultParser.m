@@ -49,7 +49,7 @@
       return nil;
     }
 
-    ISBNParsedResult *result = [[[ISBNParsedResult alloc] init] autorelease];
+    ISBNParsedResult *result = [[ISBNParsedResult alloc] init];
     result.value = rawText;
     return result;
 }

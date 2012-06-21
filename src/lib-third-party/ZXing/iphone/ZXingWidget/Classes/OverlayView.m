@@ -19,8 +19,8 @@
 static const CGFloat kPadding = 10;
 
 @interface OverlayView()
-@property (nonatomic,assign) UIButton *cancelButton;
-@property (nonatomic,retain) UILabel *instructionsLabel;
+@property (nonatomic) UIButton *cancelButton;
+@property (nonatomic) UILabel *instructionsLabel;
 @end
 
 
@@ -74,20 +74,10 @@ static const CGFloat kPadding = 10;
 
 - (void)cancel:(id)sender {
 	// call delegate to cancel this scanner
-	if (delegate != nil) {
-		[delegate cancelled];
-	}
+    [delegate cancelled];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) dealloc {
-	[imageView release];
-	[_points release];
-  [instructionsLabel release];
-  [displayedMessage release];
-	[super dealloc];
-}
-
 
 - (void)drawRect:(CGRect)rect inContext:(CGContextRef)context {
 	CGContextBeginPath(context);
@@ -234,8 +224,6 @@ static const CGFloat kPadding = 10;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) setPoints:(NSMutableArray*)pnts {
-    [pnts retain];
-    [_points release];
     _points = pnts;
 	
     if (pnts != nil) {

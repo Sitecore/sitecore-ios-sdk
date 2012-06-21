@@ -104,21 +104,6 @@
                                                jobTitle:self.jobTitle]];
 }
 
-- (void)dealloc {
-    [names release];
-    [pronunciation release];
-    [phoneNumbers release];
-    [emails release];
-    [note release];
-    [addresses release];
-    [organization release];
-    [birthday release];
-    [jobTitle release];
-    [url release];
-
-    [super dealloc];
-}
-
 + (NSString *)typeName {
     return NSLocalizedString(@"Contact Result Type Name", @"Contact");
 }

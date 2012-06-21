@@ -5,7 +5,7 @@
 +(NSString*)multipartFormDataBoundary
 {
     long long timeInMilliSeconds_ = (long long)floor( [ [ NSDate new ] timeIntervalSince1970 ] * 1000. );
-    return [ self stringWithFormat: @"----------------------------%d"
+    return [ self stringWithFormat: @"----------------------------%lld"
             , timeInMilliSeconds_ ];
 }
 

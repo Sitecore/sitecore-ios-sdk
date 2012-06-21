@@ -37,7 +37,7 @@
 }
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, retain) NSArray *phoneNumbers;
+@property (nonatomic) NSArray *phoneNumbers;
 @property (nonatomic, copy) NSString *note;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *urlString;

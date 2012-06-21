@@ -50,7 +50,7 @@ static NSMutableDictionary *iconsByClass = nil;
   if (iconsByClass == nil) {
     iconsByClass = [[NSMutableDictionary alloc] initWithCapacity:16];
   }
-  UIImage *icon = [iconsByClass objectForKey:[self class]];
+  UIImage *icon = [iconsByClass objectForKey:NSStringFromClass( [self class] )];
   if (icon == nil) {
     UIGraphicsBeginImageContext(CGSizeMake(ICON_SIZE, ICON_SIZE));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -74,8 +74,8 @@ static NSMutableDictionary *iconsByClass = nil;
     
     [s drawAtPoint:CGPointMake(0, 0) withFont:font];
     
-    icon = [UIGraphicsGetImageFromCurrentImageContext() retain];
-    [iconsByClass setObject:icon forKey:[self class]];
+    icon = UIGraphicsGetImageFromCurrentImageContext();
+    [iconsByClass setObject:icon forKey: NSStringFromClass( [ self class ] )];
     UIGraphicsEndImageContext();
   }
   return icon;
@@ -94,11 +94,6 @@ static NSMutableDictionary *iconsByClass = nil;
 }
 
 - (void) populateActions {
-}
-
-- (void) dealloc {
-  [actions release];
-  [super dealloc];
 }
 
 @end

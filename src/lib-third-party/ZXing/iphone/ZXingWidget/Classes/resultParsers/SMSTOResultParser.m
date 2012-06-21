@@ -44,13 +44,11 @@
                                         colonRange.location - restStart);
       int bodyStart = colonRange.location + colonRange.length;
       NSRange bodyRange = NSMakeRange(bodyStart, max - bodyStart);
-      return [[[SMSParsedResult alloc] initWithNumber:[s substringWithRange:numberRange]
-                                                 body:[s substringWithRange:bodyRange]]
-              autorelease];
+      return [[SMSParsedResult alloc] initWithNumber:[s substringWithRange:numberRange]
+                                                 body:[s substringWithRange:bodyRange]];
     } else {
-      return [[[SMSParsedResult alloc] initWithNumber:[s substringFromIndex:restStart] 
-                                                 body:nil]
-                autorelease];
+      return [[SMSParsedResult alloc] initWithNumber:[s substringFromIndex:restStart] 
+                                                 body:nil];
     }
   }
   return nil;

@@ -67,7 +67,6 @@
                                                             oneDMode:oneDMode];
     [theOverLayView setDelegate:self];
     self.overlayView = theOverLayView;
-    [theOverLayView release];
   }
   
   return self;
@@ -79,12 +78,6 @@
   }
   
   [self stopCapture];
-
-  [result release];
-  [soundToPlay release];
-  [overlayView release];
-  [readers release];
-  [super dealloc];
 }
 
 - (void)cancelled {
@@ -94,9 +87,7 @@
   }
 
   wasCancelled = YES;
-  if (delegate != nil) {
-    [delegate zxingControllerDidCancel:self];
-  }
+  [delegate zxingControllerDidCancel:self];
 }
 
 - (NSString *)getPlatform {
@@ -120,7 +111,7 @@
   [super viewWillAppear:animated];
   self.wantsFullScreenLayout = YES;
   if ([self soundToPlay] != nil) {
-    OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)[self soundToPlay], &beepSound);
+    OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)[self soundToPlay], &beepSound);
     if (error != kAudioServicesNoError) {
       NSLog(@"Problem loading nearSound.caf");
     }
@@ -252,21 +243,19 @@
   // simply add the points to the image view
   NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithArray:resultPoints];
   [overlayView setPoints:mutableArray];
-  [mutableArray release];
 }
 
 - (void)decoder:(Decoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)twoDResult {
   [self presentResultForString:[twoDResult text]];
   [self presentResultPoints:[twoDResult points] forImage:image usingSubset:subset];
   // now, in a selector, call the delegate to give this overlay time to show the points
-  [self performSelector:@selector(notifyDelegate:) withObject:[[[twoDResult text] copy]autorelease] afterDelay:0.0];
+  [self performSelector:@selector(notifyDelegate:) withObject:[[twoDResult text] copy] afterDelay:0.0];
   decoder.delegate = nil;
 }
 
 - (void)notifyDelegate:(id)text {
   if (!isStatusBarHidden) [[UIApplication sharedApplication] setStatusBarHidden:NO];
   [delegate zxingController:self didScanResult:text];
-  [text release];
 }
 
 - (void)decoder:(Decoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason {
@@ -304,13 +293,11 @@
   NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA]; 
   NSDictionary* videoSettings = [NSDictionary dictionaryWithObject:value forKey:key]; 
   [captureOutput setVideoSettings:videoSettings]; 
-  self.captureSession = [[[AVCaptureSession alloc] init] autorelease];
+  self.captureSession = [[AVCaptureSession alloc] init];
   self.captureSession.sessionPreset = AVCaptureSessionPresetMedium; // 480x360 on a 4
 
   [self.captureSession addInput:captureInput];
   [self.captureSession addOutput:captureOutput];
-
-  [captureOutput release];
 
 /*
   [[NSNotificationCenter defaultCenter]
@@ -448,8 +435,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   cropRect.origin.x = 0.0;  
   cropRect.origin.y = 0.0;
   decoding = [d decodeImage:scrn cropRect:cropRect] == YES ? NO : YES;
-  [d release];
-  [scrn release];
 } 
 #endif
 

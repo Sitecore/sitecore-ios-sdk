@@ -120,7 +120,7 @@
     result.note = note;
     result.addresses = addresses;
 
-    return [result autorelease];
+    return result;
 }
 
 @end

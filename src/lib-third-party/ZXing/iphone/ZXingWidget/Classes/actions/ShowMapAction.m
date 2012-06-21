@@ -40,7 +40,7 @@ static NSURL * URLForLocation(NSString *location) {
 }
 
 + (id)actionWithLocation:(NSString *)location {
-  return [[[self alloc] initWithLocation:location] autorelease];
+  return [[self alloc] initWithLocation:location];
 }
 
 - (NSString *)title {
@@ -57,12 +57,6 @@ static NSURL * URLForLocation(NSString *location) {
 
 - (NSString *)alertButtonTitle {
   return NSLocalizedString(@"ShowMapAction alert button title", @"Show");
-}
-
-
-- (void)dealloc {
-  [location release];
-  [super dealloc];
 }
 
 @end

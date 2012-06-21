@@ -36,21 +36,21 @@
 }
 
 - (NSString *)massagedURLString {
-  NSRange colonRange = [self rangeOfString:@":"];
-  if (colonRange.location == NSNotFound) {
-    return [NSString stringWithFormat:@"http://%@", self];
-  } else {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSString *part1 = [[self substringToIndex:colonRange.location] lowercaseString];
-    NSString *part2 = [self substringFromIndex:colonRange.location];
-    NSString *result = [[NSString alloc] initWithFormat:@"%@%@", part1,part2];
-    [pool release];
-    return [result autorelease];
-  }
+    NSRange colonRange = [self rangeOfString:@":"];
+    if (colonRange.location == NSNotFound) {
+        return [NSString stringWithFormat:@"http://%@", self];
+    } else {
+        @autoreleasepool
+        {
+            NSString *part1 = [[self substringToIndex:colonRange.location] lowercaseString];
+            NSString *part2 = [self substringFromIndex:colonRange.location];
+            NSString *result = [[NSString alloc] initWithFormat:@"%@%@", part1,part2];
+            return result;
+        }
+    }
 }
 
 @end
-
 
 #define PREFIX @"URL:"
 
@@ -63,26 +63,25 @@
 + (ParsedResult *)parsedResultForString:(NSString *)s
                                  format:(BarcodeFormat)format {
   
-  NSAutoreleasePool *myPool = [[NSAutoreleasePool alloc] init];
-  ParsedResult *result = nil;
+    @autoreleasepool
+    {
+        ParsedResult *result = nil;
   
-  NSRange prefixRange = [s rangeOfString:PREFIX options:NSCaseInsensitiveSearch];
-  if (prefixRange.location == 0) {
-    int restStart = /*prefixRange.location + */ prefixRange.length;
-    result = [[URIParsedResult alloc] initWithURLString:[[s substringFromIndex:restStart] massagedURLString]]; 
+        NSRange prefixRange = [s rangeOfString:PREFIX options:NSCaseInsensitiveSearch];
+        if (prefixRange.location == 0) {
+            int restStart = /*prefixRange.location + */ prefixRange.length;
+            result = [[URIParsedResult alloc] initWithURLString:[[s substringFromIndex:restStart] massagedURLString]]; 
 //    return [[[URIParsedResult alloc] initWithURLString:[[s substringFromIndex:restStart] massagedURLString]]
 //            autorelease];
-  } else if ([s looksLikeAURI]) {
-    NSString *massaged = [s massagedURLString];
-    NSURL *url = [[NSURL alloc] initWithString:massaged];
-    if (url != nil) {
-      result = [[URIParsedResult alloc] initWithURLString:massaged URL:url];
+        } else if ([s looksLikeAURI]) {
+            NSString *massaged = [s massagedURLString];
+            NSURL *url = [[NSURL alloc] initWithString:massaged];
+            if (url != nil) {
+                result = [[URIParsedResult alloc] initWithURLString:massaged URL:url];
+            }
+        }
+        return result;
     }
-    [url release];
-  }
-  [myPool release];
-  return [result autorelease];
 }
-
 
 @end

@@ -27,9 +27,9 @@
 @implementation MultiFormatReader
 
 + (void)load {
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  [FormatReader registerFormatReader:[[[self alloc] init] autorelease]];
-  [pool drain];
+  @autoreleasepool {
+    [FormatReader registerFormatReader:[[self alloc] init]];
+  }
 }
 
 - (id)init {

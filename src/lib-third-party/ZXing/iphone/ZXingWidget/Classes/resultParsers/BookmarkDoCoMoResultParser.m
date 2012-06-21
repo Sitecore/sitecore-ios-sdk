@@ -44,8 +44,8 @@
 
   NSString *title = [s fieldWithPrefix:@"TITLE:"];
 
-  return [[[URIParsedResult alloc] initWithURLString:urlString
-                                               title:title] autorelease];
+  return [[URIParsedResult alloc] initWithURLString:urlString
+                                               title:title];
 }
 
 

@@ -33,20 +33,20 @@
 static NSMutableSet *sResultParsers = nil;
 
 + (void)registerResultParserClass:(Class)resultParser {
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  @synchronized(self) {
-    if (!sResultParsers) {
-      sResultParsers = [[NSMutableSet alloc] init];
+  @autoreleasepool {
+    @synchronized(self) {
+      if (!sResultParsers) {
+        sResultParsers = [[NSMutableSet alloc] init];
+      }
+      [sResultParsers addObject:resultParser];
     }
-    [sResultParsers addObject:resultParser];
   }
-  [pool drain];
 }
 
 + (NSSet *)resultParsers {
   NSSet *resultParsers = nil;
   @synchronized(self) {
-    resultParsers = [[sResultParsers copy] autorelease];
+    resultParsers = [sResultParsers copy];
   }
   return resultParsers;
 }

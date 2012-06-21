@@ -82,7 +82,7 @@
   result.organization = [[s fieldWithPrefix:@"ORG:"] stringWithTrimmedWhitespace];
   result.jobTitle = [s fieldWithPrefix:@"TITLE:"];
 
-  return [result autorelease];
+  return result;
 }
 
 

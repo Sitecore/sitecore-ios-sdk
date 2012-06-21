@@ -138,7 +138,6 @@
     }
 
     [ self.layer addSublayer: self.prevLayer ];
-    
 }
 
 -(CGImageRef)CGImageRotated90:( CGImageRef )imgRef_ CF_RETURNS_RETAINED
