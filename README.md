@@ -1,4 +1,4 @@
-# Sitecore's Mobile SDK ver. 1.0
+# Sitecore's Mobile SDK ver. 1.0.0
 
 # Introduction
 
@@ -38,7 +38,7 @@ License : SITECORE SHARED SOURCE LICENSE
 
 ### 1.2 The Client
 
-**The client is an iOS project that contains the "SitecoreMobileSDK.framework" that provides an Objective-C API. You can use this API to access Sitecore content through the web service and use this content in your application. The API also supports advanced features such as preloading and caching.**
+**The client is an iOS project that contains the "SitecoreMobileSDK.framework" that provides an Objective-C API. You can use this API to access Sitecore content through the web service and use this content in your application. The API also supports advanced features such as caching.**
 
 **You can use the Mobile SDK to display the existing HTML presentation while having access to the native iOS hardware and software abilities. You can reuse the elements of the website and reduce the implementation cost. You can also use native Objective-C.**
 
