@@ -197,6 +197,95 @@ For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on
     Path     | [SCItem path]         |
   Template   | [SCItem itemTemplate] |
 
+**For example, the following method shows the item’s display name in the console:**
+	NSLog(@"item display name: %@", item.displayName);
+
+**For more information about the properties of the SCItem class, see the section Requirements toAccess an Item. TODO link to full ducumentation here**
+
+**The SCItem object may contain some or all Sitecore item's fields according to the type value of the[SCItemsReaderRequest fieldNames] property of the request.The fieldNames property of the request can be of type: nil, empty set, or set of strings.**
+* **If the type is nil, all the fields are read for the item.**
+* **If the type is empty set, only the item is read without the fields.**
+* **If the type is set of field names, only the fields in the set are read.**
+
+	Note:
+    To read a field, its Read property must be set to Allow in the Field Remote Read security settings of Sitecore.
+
+**For more information, see the section Accessing the Fields of an Item. TODO link to full ducumentation here**
+
+#### Get the item’s children
+
+**You must use the [SCApiContext itemsReaderWithRequest:] method to load an item and its children:**
+
+**1. Create an SCItemsReaderRequest object that contains the set of parameters:**
+
+	SCItemsReaderRequest *request = [SCItemsReaderRequest new];
+    //The path of item
+    request.request = @"/sitecore/content/Nicam";
+    //Specifies the type of request option, now item path used
+    request.requestType = SCItemReaderRequestItemPath;
+    //Specifies the set of the items which will be loaded. Here item and its children will be loaded
+    request.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+    ￼//The set of the field’s names which will be read with each item. Here no fields will be read.
+    request.fieldNames = [NSSet set];
+
+**2. Load the items with the created request object:**
+
+	[context itemsReaderWithRequest: request](^(id result, NSError *error)
+    {
+        //result - is NSArray object where fist element is item and left items - its children
+        SCItem *item = [result objectAtIndex:0];
+        NSLog(@"item display name: %@", item.displayName);
+        for (NSUInteger index = 1; index < [result count]; ++index)
+        {
+            SCItem *child = [result objectAtIndex:index];
+            NSLog( @"child display name: %@", child.displayName);
+        }
+    });
+
+**For more information, see the section Accessing the Children of an Item. TODO link to full ducumentation here**
+
+#### Use the children of a particular item to populate the tab bar
+
+**You must use the SCItemsReaderRequest class with the SCItemReaderRequestReadFieldsValues flag and the SCItemReaderChildrenScope scope to load the field values of the item’s children.**
+
+**To populate the tab bar:**
+
+1. **Create an XCode Single View Application project.**
+2. **Install the Sitecore Mobile SDK. For more information about installing the Mobile SDK, see the chapter The Mobile SDK Installation.**
+3. **Add a Tab Bar Controller to the project – in the implementation of ViewController**
+
+**Then add the following code:**
+
+
+	- (void)viewDidLoad
+    {
+        [super viewDidLoad];
+        NSMutableArray *listOfViewControllers = [NSMutableArray new];
+        SCApiContext *session = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi"];
+        NSSet* fieldNames = [NSSet setWithObjects: @"Menu title", @"Tab Icon", nil ];
+        SCItemsReaderRequest* request_ = [SCItemsReaderRequest requestWithItemPath: @"/sitecore/content/Nicam/"
+    ￼    fieldsNames: fieldNames];
+        request_.flags = SCItemReaderRequestReadFieldsValues; //to read field values
+        request_.scope = SCItemReaderChildrenScope; //to read children of the item
+        [session itemsReaderWithRequest: request_](^(id result, NSError *errors)
+        {
+            for (SCItem* item in result)
+            {
+                NSString* title = [item fieldValueWithName: @"Menu title"];
+                UIImage* icon = [item fieldValueWithName: @"Tab Icon"];
+                UIViewController* viewController = [UIViewController new];
+                viewController.title = title;
+                viewController.tabBarItem.image = icon;
+                [listOfViewControllers addObject: viewController];
+            }
+            [self performSegueWithIdentifier: @"showTabBar" sender: self];
+            UITabBarController* tabBar = (UITabBarController*)self.modalViewController;
+            [tabBar setViewControllers:listOfViewControllers animated:YES];
+        });
+    }
+
+**For more information, see the section Populating the Tab Bar. TODO link to full ducumentation here**
+
 ### 3.4 Combining the Embedded Browser and the Web API Service
 
 # Mou
