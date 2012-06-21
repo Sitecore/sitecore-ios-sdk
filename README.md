@@ -134,7 +134,69 @@ Help in the Apple Developer Manual.**
 * **Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.**
 
 ### 3.2 Getting Started with the Embedded Browser
-### 3.3 Getting Started with the Web API Service
+**The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference.You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:**
+	-(void)viewDidLoad
+    {
+        [super viewDidLoad];
+        
+        SCWebView* webView = [[SCWebView alloc] initWithFrame: self.view.bounds];
+        webView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;
+        NSURL* url = [NSURL URLWithString: @"http://mobilesdk.sc-demo.net/"];
+        [webView loadURL: url];
+        [self.view addSubview: webView];
+    }
+
+**You are now ready to use the SCWebView class. You can use the WebView enhancements, such as,
+left-right swipes with any website that is displayed with SCWebView.
+For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on the right swipe and to http://mobilesdk.sc-demo.net/Products.aspx on the left swipe, you must turn on swiping and add the links to the web page as follows:**
+
+	<html>
+    <head>
+        <link rel="scm-forward" href="http://mobilesdk.sc-demo.net/Nicam.aspx" />
+        <link rel="scm-back" href="http://mobilesdk.sc-demo.net/Products.aspx" />
+
+**Swiping is now enabled.If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference.**
+### 3.3 Getting Started with the Web API Service
+**To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.The following list is an overview of how to use the Web API service:**
+#### Establish an anonymous session for a website
+
+	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi"];
+
+**Use the [SCApiContext itemReaderForItemPath:] and [SCApiContextitemReaderForItemId:] methods to read the item with the item's path and ID, for example:**
+
+#### Get a single item
+
+**Now, use the SCApiContext object to access the required items and fields.For more information, see the section Installing the Client Side. TODO link to full ducumentation here**
+	//Read an item with path
+    [context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
+    {
+        SCItem* item = result;
+        NSLog(@"item display name: %@", item.displayName);
+    } );
+
+**For more information, see the section Accessing an Item.**
+
+#### Get the main properties of the item
+
+**Use the Web API service to get the items and the following properties:**
+
+* **DisplayName**
+* **ID**
+* **LongID**
+* **Path**
+* **Template**
+
+**Use the SCItem class to access these properties:**
+
+  Property   |         Class         |
+------------ | --------------------- |
+ DisplayName | [SCItem displayName]  |
+     ID      | [SCItem itemId]       |
+   LongID    | [SCItem longID]       |
+    Path     | [SCItem path]         |
+  Template   | [SCItem itemTemplate] |
+
 ### 3.4 Combining the Embedded Browser and the Web API Service
 
 # Mou
