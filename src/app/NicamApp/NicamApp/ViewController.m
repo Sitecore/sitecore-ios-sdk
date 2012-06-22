@@ -171,7 +171,7 @@
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
         request_.request = @"/sitecore/content/Nicam/*[@@templatename='Site Section']";
         request_.requestType = SCItemReaderRequestQuery;
-        request_.fieldNames = [ [ NSSet alloc ] initWithObjects: @"Title", iconFieldName_, nil ];;                                                                                                                                                                                           
+        request_.fieldNames = [ [ NSSet alloc ] initWithObjects: @"Title", iconFieldName_, nil ];                                                                                                                                                                                           
         request_.flags = SCItemReaderRequestReadFieldsValues;
 
         [ context_ itemsReaderWithRequest: request_ ]( ^( id result, NSError* error_ )

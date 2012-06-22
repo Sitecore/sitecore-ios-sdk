@@ -78,8 +78,7 @@ Install.
 ![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox.png)
 7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.
 ![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
-8. In a browser, enter the URL: http://yoursite/-
-/webapi/v1/sitecore/Content/Home.
+8. In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
 
 ##### 2.1.1 Installing the Sitecore Mobile SDK server package
