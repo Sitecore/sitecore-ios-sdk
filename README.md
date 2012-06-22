@@ -1,10 +1,8 @@
-# Sitecore's Mobile SDK ver. 1.0.0
+# Sitecore Mobile SDK ver. 1.0.0
 
 # Introduction
 
-Sitecore Mobile SDK is a framework that is designed to help developers produce iOS based applications that use and serve the Sitecore content.
-
-This guide describes the Sitecore Mobile SDK Framework should be useful for developers who are looking for information about the framework’s API.
+Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. This should enable you to rapidly develop iPhone applications utilizing the full phone features (camera, location, accelerometer and gestures for example). The applications can then request content from Sitecore efficiently and securely.Details on what is contained in the Sitecore package and the iOS project template and libraries can be found below.The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.Sitecore Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately.
 
 Please follow this chapters for more details:
 
