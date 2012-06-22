@@ -32,7 +32,7 @@ The Mobile SDK API is called the "Sitecore Web API" and is web service based. Th
 
 The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
 
-**TODO Link to download  "Sitecore Web API"**
+**Link to download** [Sitecore Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Web%20API%200.9.0%20rev.%20120622%20Beta.zip)
 
 ### 1.2 The Client
 
@@ -322,19 +322,29 @@ The following procedure describes this scenario:
 	}
 	- (void)viewDidLoad
 	{
-	    for (SCItem* item in result)
+	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+	    
+		SCItemsReaderRequest *request = [ SCItemsReaderRequest new ];
+		request_.request = @"/sitecore/content/Nicam/*[@@templatename='Site Section']";
+		request_.requestType = SCItemReaderRequestQuery;
+		request_.fieldNames = [ [ NSSet alloc ] initWithObjects: @"Title", @"Tab Icon", nil ];
+		request_.flags = SCItemReaderRequestReadFieldsValues;
+		
+		[ context itemsReaderWithRequest: request ]( ^( id result, NSError* error_ )
 	    {
-			NSString* title = [item fieldValueWithName: @"Menu title"];
-			UIImage* icon = [item fieldValueWithName: @"Tab Icon"];
-			BrowserViewController* viewController = [BrowserViewController new];
-			viewController.title = title;
-			viewController.tabBarItem.image = icon;
-			viewController.urlString = [@"http://mobilesdk.sc-demo.net/" stringByAppendingString: item.path];
-			[listOfViewControllers addObject: viewController];
-	    }
-	    [self performSegueWithIdentifier: @"showTabBar" sender: self];
-	    UITabBarController *tabBar = (UITabBarController*)self.modalViewController;
-	    [tabBar setViewControllers:listOfViewControllers animated:YES];
+	        for (SCItem* item in result)
+	        {
+	            NSString* title = [item fieldValueWithName: @"Menu title"];
+	            UIImage* icon = [item fieldValueWithName: @"Tab Icon"];
+	            BrowserViewController* viewController = [BrowserViewController new];
+	            viewController.title = title;
+	            viewController.tabBarItem.image = icon;
+	            [listOfViewControllers addObject: viewController];
+	        }
+	        [self performSegueWithIdentifier: @"showTabBar" sender: self];
+	        UITabBarController *tabBar = (UITabBarController*)self.modalViewController;
+	        [tabBar setViewControllers:listOfViewControllers animated:YES];
+	    } );
 	}
 
 *5. Build and run the application*
