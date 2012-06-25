@@ -38,7 +38,9 @@ The Mobile SDK API is called the "Sitecore Web API" and is web service based. Th
 
 The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
 
-**Link to download** [Sitecore Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Web%20API%200.9.0%20rev.%20120622%20Beta.zip)
+**Link to download** [Sitecore Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Web%20API%200.9.0%20rev.%20120622%20Beta.zip) **package**
+
+**Link to download** [Sitecore Web API PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore_Web_API_User_Guide_USLetter.pdf) **documentation**
 
 ### 1.2 The Client
 
@@ -84,7 +86,7 @@ Install.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
 9. If you want to create/edit/remove items using WebApi, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
 
-##### 2.1.1 Installing the Sitecore Mobile SDK server package
+##### 2.1.2 Installing the Sitecore Mobile SDK server package
 
 Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server package" on the server side:
 
@@ -96,6 +98,13 @@ The wizard will guide you through the installation process.
 5. In the Ready to Install dialog box, you can review the package information and then click
 Install.
 6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.
+7. After package installation add the following string to <xslExtensions> section of web.config file:
+
+**Example:**
+
+	...
+	<extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
+	...
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
