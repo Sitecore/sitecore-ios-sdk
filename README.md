@@ -2,9 +2,15 @@
 
 # Introduction
 
-Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. This should enable you to rapidly develop iPhone applications utilizing the full phone features (camera, location, accelerometer and gestures for example). The applications can then request content from Sitecore efficiently and securely.Details on what is contained in the Sitecore package and the iOS project template and libraries can be found below.The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.Sitecore Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately.
+Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. This should enable you to rapidly develop iPhone applications utilizing the full phone features (camera, location, accelerometer and gestures for example). The applications can then request content from Sitecore efficiently and securely.
 
-Please follow this chapters for more details:
+Details on what is contained in the Sitecore package and the iOS project template and libraries can be found below.
+
+The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.
+
+Sitecore Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately.
+
+Please follow these chapters for more details:
 
 * **The Mobile SDK Components** This chapter contains a brief description for the components of the Sitecore Mobile SDK.
 * **The Mobile SDK Installation** This chapter describes how to install the Mobile SDK on the client and the server sides.
@@ -77,9 +83,9 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 Install.
 ![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox.png)
 7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.
-![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
 8. In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
+9. If you want to create/edit/remove items using WebApi, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
 
 ##### 2.1.1 Installing the Sitecore Mobile SDK server package
 
@@ -95,7 +101,6 @@ The wizard will guide you through the installation process.
 Install.
 ![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox2.png)
 6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.
-![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/FinishDialogBox.png)
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
@@ -132,8 +137,9 @@ There are three models that you can apply to make your application work with the
 * Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.
 
 ### 3.2 Getting Started with the Embedded Browser
-The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference.You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
-	-(void)viewDidLoad
+The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference.
+You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
+	-(void)viewDidLoad
     {
         [super viewDidLoad];
         
@@ -149,24 +155,29 @@ You are now ready to use the SCWebView class. You can use the WebView enhancemen
 left-right swipes with any website that is displayed with SCWebView.
 For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on the right swipe and to http://mobilesdk.sc-demo.net/Products.aspx on the left swipe, you must turn on swiping and add the links to the web page as follows:
 
-	<html>
+	<html>
     <head>
         <link rel="scm-forward" href="http://mobilesdk.sc-demo.net/Nicam.aspx" />
         <link rel="scm-back" href="http://mobilesdk.sc-demo.net/Products.aspx" />
 
-Swiping is now enabled.If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference.
-### 3.3 Getting Started with the Web API Service
-To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.The following list is an overview of how to use the Web API service:
-#### Establish an anonymous session for a website
+Swiping is now enabled.
+If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
+For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference.
+### 3.3 Getting Started with the Web API Service
+To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.
+The following list is an overview of how to use the Web API service:
+#### Establish an anonymous session for a website
 
 	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi"];
 
-Use the [SCApiContext itemReaderForItemPath:] and [SCApiContextitemReaderForItemId:] methods to read the item with the item's path and ID, for example:
+Use the [SCApiContext itemReaderForItemPath:] and [SCApiContext
+itemReaderForItemId:] methods to read the item with the item's path and ID, for example:
 
 #### Get a single item
 
-Now, use the SCApiContext object to access the required items and fields.For more information, see the section Installing the Client Side. TODO link to full ducumentation here
-	//Read an item with path
+Now, use the SCApiContext object to access the required items and fields.
+For more information, see the section Installing the Client Side. TODO link to full ducumentation here
+	//Read an item with path
     [context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
     {
         SCItem* item = result;
@@ -197,12 +208,16 @@ Use the SCItem class to access these properties:
 
 
 For example, the following method shows the item’s display name in the console:
-	NSLog(@"item display name: %@", item.displayName);
+	NSLog(@"item display name: %@", item.displayName);
 
-**For more information about the properties of the SCItem class, see the section Requirements toAccess an Item. TODO link to full ducumentation here**
+**For more information about the properties of the SCItem class, see the section Requirements to
+Access an Item. TODO link to full ducumentation here**
 
-The SCItem object may contain some or all Sitecore item's fields according to the type value of the[SCItemsReaderRequest fieldNames] property of the request.The fieldNames property of the request can be of type: nil, empty set, or set of strings.
-* If the type is nil, all the fields are read for the item.
+The SCItem object may contain some or all Sitecore item's fields according to the type value of the
+[SCItemsReaderRequest fieldNames] property of the request.
+The fieldNames property of the request can be of type: nil, empty set, or set of strings.
+
+* If the type is nil, all the fields are read for the item.
 * If the type is empty set, only the item is read without the fields.
 * If the type is set of field names, only the fields in the set are read.
 
