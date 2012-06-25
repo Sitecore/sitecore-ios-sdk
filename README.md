@@ -172,12 +172,13 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 
 Now, use the SCApiContext object to access the required items and fields.
 For more information, see the section Installing the Client Side. TODO link to full ducumentation here
+
 	//Read an item with path
-    [context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
-    {
-        SCItem* item = result;
-        NSLog(@"item display name: %@", item.displayName);
-    } );
+	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
+	{
+	    SCItem* item = result;
+	    NSLog(@"item display name: %@", item.displayName);
+	} );
 
 **For more information, see the section Accessing an Item. TODO link to docs here**
 
