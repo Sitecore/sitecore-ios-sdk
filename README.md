@@ -58,7 +58,7 @@ The list of native features available in HTML environment includes:
 * Creating tweets through the system-wide twitter accounts
 * Sending email messages using the email account
 
-**Link to download** [SitecoreMobileSDK.framework](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SitecoreMobileSDK.framework-ver.1.0.0%20rev.120621.zip)
+**Link to download** [SitecoreMobileSDK.framework](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SitecoreMobileSDK.framework-ver.1.0.0%20rev.120625.zip)
 
 ***
 ## 2. The Mobile SDK Installation
