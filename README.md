@@ -32,7 +32,7 @@ The Sitecore Mobile SDK server package requires:
 * .Net Framework version 2.0 and later for the Application Pool of your website.
 * Sitecore CMS version 6.5 or later.
 
-**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0%20rev.120625.zip) **package**
+**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.120625.zip) **package**
 
 The Mobile SDK API is called the "Sitecore Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
 
