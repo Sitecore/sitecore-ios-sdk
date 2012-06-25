@@ -75,7 +75,6 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 1. Log in to the Sitecore Desktop.
 2. Click Sitecore, Development Tools, Installation Wizard. The wizard will guide you through the installation process.
 3. In the Select Package dialog box, specify the package that you want to install.
-![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox.png)
 4. Click Browse to locate the package or click Upload to upload the package. The folder, to which the packages are uploaded, is specified in the web.config file.
 5. In the License Agreement dialog box, accept the license agreement.
 ![License Agreement](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/LicenseAgreementDialogBox.png)
@@ -95,7 +94,6 @@ Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server 
 2. Click Sitecore, Development Tools, Installation Wizard.
 The wizard will guide you through the installation process.
 3. In the Select Package dialog box, specify the package that you want to install.
-![Select Package](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SelectPackageDialogBox2.png)
 4. Click Browse to browse for an existing package or Upload to upload a new one.
 5. In the Ready to Install dialog box, you can review the package information and then click
 Install.
