@@ -180,7 +180,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 	    NSLog(@"item display name: %@", item.displayName);
 	} );
 
-**For more information, see the section Accessing an Item. TODO link to docs here**
+**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_A4.pdf)
 
 #### Get the main properties of the item
 
