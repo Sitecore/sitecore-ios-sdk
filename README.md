@@ -143,7 +143,8 @@ There are three models that you can apply to make your application work with the
 ### 3.2 Getting Started with the Embedded Browser
 The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_A4.pdf).
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
-
+	
+	
 	-(void)viewDidLoad
     {
         [super viewDidLoad];
