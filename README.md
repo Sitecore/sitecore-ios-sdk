@@ -77,7 +77,6 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 3. In the Select Package dialog box, specify the package that you want to install.
 4. Click Browse to locate the package or click Upload to upload the package. The folder, to which the packages are uploaded, is specified in the web.config file.
 5. In the License Agreement dialog box, accept the license agreement.
-![License Agreement](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/LicenseAgreementDialogBox.png)
 6. In the Ready to Install dialog box, you can review the package information and then click
 Install.
 ![Ready to Install](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/ReadyToInstallDialogBox.png)
@@ -135,7 +134,7 @@ There are three models that you can apply to make your application work with the
 * Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.
 
 ### 3.2 Getting Started with the Embedded Browser
-The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference.
+The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference. (TODO Add link to doc here)
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
 	-(void)viewDidLoad
     {
@@ -160,7 +159,7 @@ For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on
 
 Swiping is now enabled.
 If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
-For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference.
+For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference. (TODO Add link to doc here)
 ### 3.3 Getting Started with the Web API Service
 To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.
 The following list is an overview of how to use the Web API service:
