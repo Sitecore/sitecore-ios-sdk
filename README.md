@@ -81,7 +81,7 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 5. In the **License Agreement** dialog box, accept the license agreement.
 6. In the **Ready to Install** dialog box, you can review the package information and then click
 **Install**.
-7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.
+7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click **Finish**. To test that the Sitecore Web API Service is working, make a simple request to the service.
 8. In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
 9. If you want to create/edit/remove items using WebApi, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
@@ -91,13 +91,13 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server package" on the server side:
 
 1. Log in to the Sitecore Desktop.
-2. Click Sitecore, Development Tools, Installation Wizard.
+2. Click **Sitecore, Development Tools, Installation Wizard**.
 The wizard will guide you through the installation process.
-3. In the Select Package dialog box, specify the package that you want to install.
-4. Click Browse to browse for an existing package or Upload to upload a new one.
-5. In the Ready to Install dialog box, you can review the package information and then click
-Install.
-6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.
+3. In the **Select Package** dialog box, specify the package that you want to install.
+4. Click **Browse** to browse for an existing package or **Upload** to upload a new one.
+5. In the **Ready to Install** dialog box, you can review the package information and then click
+**Install**.
+6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click **Finish**.
 7. After package installation add the following string to < xslExtensions > section of web.config file:
 
 **Example:**
@@ -108,7 +108,7 @@ Install.
 	...
 	</xslExtensions>
 
-**Now, you can use the Sitecore Mobile SDK server side component.**
+Now, you can use the Sitecore Mobile SDK server side component.
 
 ### 2.2 Installing the Client Side Components
 To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.
