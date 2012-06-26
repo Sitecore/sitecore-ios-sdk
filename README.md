@@ -124,7 +124,7 @@ information, see the section *Build Setting Reference* in the *Apple Developer M
 4. Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section *Linking to Library or Framework in the Project Editor*
 Help in the *Apple Developer Manual*.
 5. Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section *Linking to Library or Framework in the Project Editor* Help in the *Apple Developer Manual*.
-6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section *Build Setting Reference* in the *Apple Developer Manual*.
+6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's .pch or GCC_PREFIX_HEADER file. For more information, see the section *Build Setting Reference* in the *Apple Developer Manual*.
 
 **Here is an example:**
 
