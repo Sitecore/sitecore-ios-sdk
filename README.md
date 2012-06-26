@@ -8,7 +8,7 @@ Details on what is contained in the Sitecore package and the iOS project templat
 
 The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.
 
-Sitecore Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately.
+The Mobile SDK requires Sitecore Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the Chapter 1 below for a download link.
 
 Please follow these chapters for more details:
 
