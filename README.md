@@ -315,13 +315,13 @@ You can retrieve Sitecore content, and use it in both the Xcode Web View control
 
 The following procedure describes this scenario:
 
-*1. Install the Sitecore Mobile SDK.*
+1. Install the Sitecore Mobile SDK.
 
-*2. Create an XCode project.*
+2. Create an XCode project.
 
-*3. Create a tab bar menu. For more information about creating a tab bar menu, see the chapter Using the API.*
+3. Create a tab bar menu. For more information about creating a tab bar menu, see the chapter *Using the API*.
 
-*4. Extend the project with the following code:*
+4. Extend the project with the following code:
 
 	ViewController.m
 	
@@ -370,6 +370,6 @@ The following procedure describes this scenario:
 	    } );
 	}
 
-*5. Build and run the application*
+5. Build and run the application.
 
 ![Embedded Browser](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/EmbeddedBrowser.png)
