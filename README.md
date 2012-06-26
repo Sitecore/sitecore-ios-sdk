@@ -8,7 +8,7 @@ Details on what is contained in the Sitecore package and the iOS project templat
 
 The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.
 
-The Mobile SDK requires Sitecore Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the Chapter 1 below for a download link.
+The Mobile SDK requires Sitecore Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the *Chapter 1* below for a download link.
 
 Please follow these chapters for more details:
 
@@ -115,16 +115,16 @@ To start the client side installation, you must have the SitecoreMobileSDK.frame
 ##### 2.2.1 Installing the Sitecore Mobile SDK server package
 To use the Sitecore Mobile SDK framework in your application:
 
-1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
+1. Create a simple XCode Single View Application project. For more information, see the *Getting Started* section in the *Apple Developer Manual*. If you have already created an XCode Single View Application project, you can skip this step.
 2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
 ![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
-information, see the section Build Setting Reference in the Apple Developer Manual.
+information, see the section *Build Setting Reference* in the *Apple Developer Manual*.
 ![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/OtherLinkerFlag.png)
-4. Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section Linking to Library or Framework in the Project Editor
-Help in the Apple Developer Manual.
-5. Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
-6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
+4. Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section *Linking to Library or Framework in the Project Editor*
+Help in the *Apple Developer Manual*.
+5. Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section *Linking to Library or Framework in the Project Editor* Help in the *Apple Developer Manual*.
+6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section *Build Setting Reference* in the *Apple Developer Manual*.
 
 **Here is an example:**
 
@@ -139,11 +139,11 @@ Help in the Apple Developer Manual.
 There are three models that you can apply to make your application work with the Sitecore Mobile SDK:
 
 * Embedded Browser – If you already have a website that is running on Sitecore and optimized for the mobile application, you must use the website presentation. Then, you can display the embedded browser window inside your application. The native device features are typically unavailable in a normal website but you can access them through a set of HTML and Javascript APIs. For more information about this approach, see the section Getting Started with the Embedded Browser.
-* Web API – If you are familiar with Objective-C development, you can use the native code to develop all or part of your application and access the content in Sitecore to get all benefits of the Sitecore CMS. For more information about Objective-C API, see the section Getting Started with the Web API Service.
-* Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.
+* Web API – If you are familiar with Objective-C development, you can use the native code to develop all or part of your application and access the content in Sitecore to get all benefits of the Sitecore CMS. For more information about Objective-C API, see the section *Getting Started with the Web API Service*.
+* Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section *Combining the Embedded Browser and the Web API Service*.
 
 ### 3.2 Getting Started with the Embedded Browser
-The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf).
+The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter *Using the Enhanced Web View Reference*: [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf).
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
 	
 	
@@ -170,7 +170,7 @@ For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on
 
 Swiping is now enabled.
 If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
-For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf).
+For a complete list of the features that are available in the Embedded Web View, see the chapter *Using the Enhanced Web View Reference*: [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf).
 ### 3.3 Getting Started with the Web API Service
 To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.
 The following list is an overview of how to use the Web API service:
@@ -184,7 +184,7 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 #### Get a single item
 
 Now, use the SCApiContext object to access the required items and fields.
-For more information, see the section Installing the Client Side. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section *Installing the Client Side*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 	//Read an item with path
 	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
@@ -193,7 +193,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 	    NSLog(@"item display name: %@", item.displayName);
 	} );
 
-**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section *Accessing an Item*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 #### Get the main properties of the item
 
@@ -219,8 +219,8 @@ Use the SCItem class to access these properties:
 For example, the following method shows the item’s display name in the console:
 	NSLog(@"item display name: %@", item.displayName);
 
-**For more information about the properties of the SCItem class, see the section Requirements to
-Access an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information about the properties of the SCItem class, see the section *Requirements to
+Access an Item*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 The SCItem object may contain some or all Sitecore item's fields according to the type value of the
 [SCItemsReaderRequest fieldNames] property of the request.
@@ -233,13 +233,13 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 	Note:
     To read a field, its Read property must be set to Allow in the Field Remote Read security settings of Sitecore.
 
-**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section *Accessing the Fields of an Item*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 #### Get the item’s children
 
 You must use the [SCApiContext itemsReaderWithRequest:] method to load an item and its children:
 
-*1. Create an SCItemsReaderRequest object that contains the set of parameters:*
+1. Create an SCItemsReaderRequest object that contains the set of parameters:
 
 	SCItemsReaderRequest *request = [SCItemsReaderRequest new];
     //The path of item
@@ -251,7 +251,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
     ￼//The set of the field’s names which will be read with each item. Here no fields will be read.
     request.fieldNames = [NSSet set];
 
-*2. Load the items with the created request object:*
+2. Load the items with the created request object:
 
 	[context itemsReaderWithRequest: request](^(id result, NSError *error)
     {
@@ -265,7 +265,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
         }
     });
 
-**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section *Accessing the Children of an Item*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 #### Use the children of a particular item to populate the tab bar
 
@@ -274,7 +274,7 @@ You must use the SCItemsReaderRequest class with the SCItemReaderRequestReadFiel
 To populate the tab bar:
 
 1. Create an XCode Single View Application project.
-2. Install the Sitecore Mobile SDK. For more information about installing the Mobile SDK, see the chapter The Mobile SDK Installation.
+2. Install the Sitecore Mobile SDK. For more information about installing the Mobile SDK, see the chapter *The Mobile SDK Installation*.
 3. Add a Tab Bar Controller to the project – in the implementation of ViewController
 
 Then add the following code:
@@ -307,7 +307,7 @@ Then add the following code:
         });
     }
 
-**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section *Populating the Tab Bar*. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
 
 ### 3.4 Combining the Embedded Browser and the Web API Service
 
