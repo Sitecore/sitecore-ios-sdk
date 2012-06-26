@@ -102,9 +102,11 @@ Install.
 
 **Example:**
 
+	<xslExtensions>
 	...
 	<extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
 	...
+	</xslExtensions>
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
