@@ -240,7 +240,7 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 You must use the [SCApiContext itemsReaderWithRequest:] method to load an item and its children:
 
 *1. Create an SCItemsReaderRequest object that contains the set of parameters:*
-
+	
 	SCItemsReaderRequest *request = [SCItemsReaderRequest new];
     //The path of item
     request.request = @"/sitecore/content/Nicam";
@@ -252,7 +252,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
     request.fieldNames = [NSSet set];
 
 *2. Load the items with the created request object:*
-
+	
 	[context itemsReaderWithRequest: request](^(id result, NSError *error)
     {
         //result - is NSArray object where fist element is item and left items - its children
