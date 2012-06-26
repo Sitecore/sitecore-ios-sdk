@@ -98,7 +98,7 @@ The wizard will guide you through the installation process.
 5. In the Ready to Install dialog box, you can review the package information and then click
 Install.
 6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.
-7. After package installation add the following string to <xslExtensions> section of web.config file:
+7. After package installation add the following string to < xslExtensions > section of web.config file:
 
 **Example:**
 
@@ -113,7 +113,7 @@ To start the client side installation, you must have the SitecoreMobileSDK.frame
 ##### 2.2.1 Installing the Sitecore Mobile SDK server package
 To use the Sitecore Mobile SDK framework in your application:
 
-1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created a XCode Single View Application project, you can skip this step.
+1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
 2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
 ![Finish](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
