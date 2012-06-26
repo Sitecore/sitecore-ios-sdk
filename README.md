@@ -347,7 +347,8 @@ The following procedure describes this scenario:
 	{
 	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
 	    
-		SCItemsReaderRequest *request = [ SCItemsReaderRequest new ];
+        NSMutableArray *listOfViewControllers = [NSMutableArray new];
+		SCItemsReaderRequest *request = [SCItemsReaderRequest new];
 		request_.request = @"/sitecore/content/Nicam/*[@@templatename='Site Section']";
 		request_.requestType = SCItemReaderRequestQuery;
 		request_.fieldNames = [ [ NSSet alloc ] initWithObjects: @"Title", @"Tab Icon", nil ];
