@@ -319,7 +319,7 @@ The following procedure describes this scenario:
 
 *2. Create an XCode project.*
 
-*3. Create a tab bar menu. For more information about creating a tab bar menu, see the chapter Using the API.*
+*3. Create a tab bar menu. For more information about creating a tab bar menu, see the chapter "Populating the Tab Bar".*
 
 *4. Extend the project with the following code:*
 
