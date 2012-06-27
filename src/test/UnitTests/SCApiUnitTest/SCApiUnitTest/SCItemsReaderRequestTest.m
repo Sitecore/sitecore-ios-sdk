@@ -1,6 +1,19 @@
 
 #import <SCApi/Api/NSURL+URLWithItemsReaderRequest.h>
 
+@interface NSURL (XQueryComponentsJNetwork)
+
+-(NSDictionary*)queryComponents;
+
+@end
+
+@interface NSDictionary (XQueryComponentsJNetwork)
+
+-(NSString*)stringFromQueryComponents;
+-(NSString*)firstValueIfExsistsForKey:( NSString* )key_;
+
+@end
+
 @interface SCItemsReaderRequestTest : GHTestCase
 @end
 

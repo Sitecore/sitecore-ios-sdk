@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B28BAFE152C32AE0037919E /* ParentIdOfLongIdTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B28BAFD152C32AE0037919E /* ParentIdOfLongIdTest.m */; };
 		1B8D3F5A152363CB00CAF9C3 /* IsSCPathValidTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D3F59152363CB00CAF9C3 /* IsSCPathValidTest.m */; };
+		1B982A1B159B39A600C88006 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B982A1A159B39A500C88006 /* libc++.dylib */; };
 		1B9F7FA7152B1E5800B68ED4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9F7FA6152B1E5800B68ED4 /* libsqlite3.dylib */; };
 		1BB5D99E152EE7BF00075752 /* to_test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5D99D152EE7BF00075752 /* to_test.txt */; };
 		1BB5D9A1152EE7F800075752 /* SCFieldRecordCreateFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB5D9A0152EE7F800075752 /* SCFieldRecordCreateFieldTest.m */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		1B28BAFD152C32AE0037919E /* ParentIdOfLongIdTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentIdOfLongIdTest.m; sourceTree = "<group>"; };
 		1B8D3F59152363CB00CAF9C3 /* IsSCPathValidTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsSCPathValidTest.m; sourceTree = "<group>"; };
+		1B982A1A159B39A500C88006 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		1B9F7FA6152B1E5800B68ED4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1BB5D99D152EE7BF00075752 /* to_test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = to_test.txt; sourceTree = "<group>"; };
 		1BB5D9A0152EE7F800075752 /* SCFieldRecordCreateFieldTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFieldRecordCreateFieldTest.m; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B982A1B159B39A600C88006 /* libc++.dylib in Frameworks */,
 				1B9F7FA7152B1E5800B68ED4 /* libsqlite3.dylib in Frameworks */,
 				65A3AAFB151D1FD500F41086 /* CoreLocation.framework in Frameworks */,
 				65A3AAF9151D1FBE00F41086 /* CoreMotion.framework in Frameworks */,
@@ -144,6 +147,7 @@
 		65024E75151D1B55006FB442 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B982A1A159B39A500C88006 /* libc++.dylib */,
 				1B9F7FA6152B1E5800B68ED4 /* libsqlite3.dylib */,
 				65A3AAFA151D1FD500F41086 /* CoreLocation.framework */,
 				65A3AAF8151D1FBE00F41086 /* CoreMotion.framework */,
