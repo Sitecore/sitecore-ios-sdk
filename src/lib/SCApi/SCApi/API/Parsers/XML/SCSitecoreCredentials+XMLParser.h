@@ -1,13 +1,8 @@
-//
-//  SCSitecoreCredentials+XMLParser.h
-//  SCApi
-//
-//  Created by Vladimir on 08.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
-#import "SCApiUtils.h"
+#import "SCSitecoreCredentials.h"
 
 @interface SCSitecoreCredentials (XMLParser)
+
++(SCSitecoreCredentials*)sitecoreCredentialsWithXMLData:( NSData* )xmlData_
+                                                  error:( NSError** )error_;
 
 @end

@@ -1,13 +1,12 @@
-//
-//  SCSitecoreCredentials.h
-//  SCApi
-//
-//  Created by Vladimir on 08.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface SCSitecoreCredentials : NSObject
+
+@property ( nonatomic ) NSString* login;
+@property ( nonatomic ) NSString* password;
+@property ( nonatomic ) NSString* modulus;
+@property ( nonatomic ) NSString* exponent;
+
+@property ( nonatomic, readonly ) NSString* encryptedPassword;
 
 @end
