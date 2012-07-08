@@ -50,16 +50,6 @@
 @end
 
 /**
- The SCAuthError error may happens if webservice returns an error at authentication
- */
-@interface SCAuthError : SCError
-/**
- The authentication error message
- */
-@property(nonatomic) NSString *message;
-@end
-
-/**
  The SCResponseError error may happens if WebApi returns error on request instead of expected data, see SCResponseError properties for details
  */
 @interface SCResponseError : SCBackendError
