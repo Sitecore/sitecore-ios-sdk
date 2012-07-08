@@ -238,6 +238,22 @@ static NSString* const apiVersion_ = @"v1";
                             newItemTemplate: createItemRequest_.itemTemplate ];
 }
 
++(id)URLToGetSecureKeyForHost:( NSString* )host_
+{
+    NSString* hostWithSheme_ = host_;
+    if ( ![ hostWithSheme_ hasPrefix: @"https://" ]
+        && ![ hostWithSheme_ hasPrefix: @"http://" ] )
+    {
+        hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
+    }
+
+    NSString* requestString_ = [ NSString stringWithFormat: @"%@/%@/-/system/securekey"
+                                , hostWithSheme_
+                                , apiVersion_ ];
+
+    return [ NSURL URLWithString: requestString_ ];
+}
+
 +(id)URLToGetRenderingHTMLLoaderForRenderingId:( NSString* )rendereringId_
                                       sourceId:( NSString* )sourceId_
                                           host:( NSString* )host_

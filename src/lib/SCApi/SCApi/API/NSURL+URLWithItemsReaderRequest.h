@@ -20,6 +20,8 @@
                                 host:( NSString* )host_
                           apiContext:( SCApiContext* )apiContext_;
 
++(id)URLToGetSecureKeyForHost:( NSString* )host_;
+
 +(id)URLToGetRenderingHTMLLoaderForRenderingId:( NSString* )rendereringId_
                                       sourceId:( NSString* )sourceId_
                                           host:( NSString* )host_
