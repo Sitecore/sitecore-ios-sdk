@@ -34,14 +34,12 @@ static JFFCaches* sharedSCCaches()
 
     if ( !instance_ )
     {
-        NSDictionary* srvResponseCacheInfo_ = [ NSDictionary dictionaryWithObjectsAndKeys:
-                                               @"scSrvResponseCache.data", @"fileName"
-                                               , @"1", @"version"
-                                               , nil ];
+        NSDictionary* srvResponseCacheInfo_ = @{
+        @"fileName" : @"scSrvResponseCache.data",
+        @"version"  : @"1"
+        };
 
-        NSDictionary* dbDescription_ = [ NSDictionary dictionaryWithObjectsAndKeys:
-                                        srvResponseCacheInfo_, scSrvCacheName_
-                                        , nil ];
+        NSDictionary* dbDescription_ = @{ scSrvCacheName_ : srvResponseCacheInfo_ };
 
         instance_ = [ [ JFFCaches alloc ] initWithDBInfoDictionary: dbDescription_ ];
     }
