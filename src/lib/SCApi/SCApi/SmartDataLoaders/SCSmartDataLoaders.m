@@ -23,25 +23,40 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
                                              , id(^keyForURL_)(NSURL*)
                                              , NSTimeInterval lifeTime_ )
 {
-    JFFSmartUrlDataLoaderFields* args_ = [ JFFSmartUrlDataLoaderFields new ];
-    args_.urlBuilder        = urlBuilder_;
-    args_.dataLoaderForURL  = dataLoaderForURL_;
-    args_.analyzerForData   = analyzerForData_;
-    args_.cache             = (id< JFFRestKitCache >)cache_;
-    args_.cacheKeyForURL    = keyForURL_;
-    args_.cacheDataLifeTime = lifeTime_;
+    urlBuilder_       = [ urlBuilder_       copy ];
+    dataLoaderForURL_ = [ dataLoaderForURL_ copy ];
+    analyzerForData_  = [ analyzerForData_  copy ];
+    keyForURL_        = [ keyForURL_        copy ];
 
-    JFFAsyncOperation loader_ = jSmartDataLoaderWithCache( args_ );
-
-    JFFChangedErrorBuilder errorBuilder_ = ^NSError*(NSError* error_)
+    return ^JFFCancelAsyncOperation( JFFAsyncOperationProgressHandler progressCallback_
+                                    , JFFCancelAsyncOperationHandler cancelCallback_
+                                    , JFFDidFinishAsyncOperationHandler doneCallback_ )
     {
-        if ( [ error_ isMemberOfClass: [ JFFRestKitNoURLError class ] ] )
-            return [ SCError error ];
+        //NSLog( @"start load data with url: %@", urlBuilder_() );
 
-        return error_;
+        JFFSmartUrlDataLoaderFields* args_ = [ JFFSmartUrlDataLoaderFields new ];
+        args_.urlBuilder        = urlBuilder_;
+        args_.dataLoaderForURL  = dataLoaderForURL_;
+        args_.analyzerForData   = analyzerForData_;
+        args_.cache             = (id< JFFRestKitCache >)cache_;
+        args_.cacheKeyForURL    = keyForURL_;
+        args_.cacheDataLifeTime = lifeTime_;
+
+        JFFAsyncOperation loader_ = jSmartDataLoaderWithCache( args_ );
+
+        JFFChangedErrorBuilder errorBuilder_ = ^NSError*(NSError* error_)
+        {
+            if ( [ error_ isMemberOfClass: [ JFFRestKitNoURLError class ] ] )
+                return [ SCError new ];
+
+            return error_;
+        };
+
+        loader_ = asyncOperationWithChangedError( loader_, errorBuilder_ );
+        return loader_( progressCallback_
+                       , cancelCallback_
+                       , doneCallback_ );
     };
-
-    return asyncOperationWithChangedError( loader_, errorBuilder_ );
 }
 
 JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
