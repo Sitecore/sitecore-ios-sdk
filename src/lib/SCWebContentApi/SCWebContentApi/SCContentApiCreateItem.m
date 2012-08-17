@@ -176,7 +176,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSString* imagePath_ = [ args_ firstValueIfExsistsForKey: @"imageUrl" ];
 
     NSString* location_  = [ args_ firstValueIfExsistsForKey: @"location" ];
-    self->_location = [ NSString stringWithFormat: @"%@/-/webapi", location_ ];
+    self->_location = [ [ NSString alloc ] initWithFormat: @"%@/-/item", location_ ];
 
     self->_login    = [ args_ firstValueIfExsistsForKey: @"login"    ];
     self->_password = [ args_ firstValueIfExsistsForKey: @"password" ];
