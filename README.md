@@ -82,7 +82,7 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 6. In the Ready to Install dialog box, you can review the package information and then click
 Install.
 7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.
-8. In a browser, enter the URL: http://yoursite/-/webapi/v1/sitecore/Content/Home.
+8. In a browser, enter the URL: http://yoursite/-/item/v1/sitecore/Content/Home.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
 9. If you want to create/edit/remove items using WebApi, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
 
@@ -176,7 +176,7 @@ To start working with the Web API service, you must create an XCode project and 
 The following list is an overview of how to use the Web API service:
 #### Establish an anonymous session for a website
 
-	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi"];
+	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"];
 
 Use the [SCApiContext itemReaderForItemPath:] and [SCApiContext
 itemReaderForItemId:] methods to read the item with the item's path and ID, for example:
@@ -284,7 +284,7 @@ Then add the following code:
     {
         [super viewDidLoad];
         NSMutableArray *listOfViewControllers = [NSMutableArray new];
-        SCApiContext *session = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi"];
+        SCApiContext *session = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"];
         NSSet* fieldNames = [NSSet setWithObjects: @"Menu title", @"Tab Icon", nil ];
         SCItemsReaderRequest* request_ = [SCItemsReaderRequest requestWithItemPath: @"/sitecore/content/Nicam/"
     ￼    fieldsNames: fieldNames];
@@ -345,7 +345,7 @@ The following procedure describes this scenario:
 	}
 	- (void)viewDidLoad
 	{
-	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item" ];
 	    
         NSMutableArray *listOfViewControllers = [NSMutableArray new];
 		SCItemsReaderRequest *request = [SCItemsReaderRequest new];
