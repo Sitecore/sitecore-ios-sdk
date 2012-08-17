@@ -339,8 +339,8 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
 {
     request_ = [ request_ itemsReaderRequestWithApiContext: self ];
 
-    JFFAsyncOperation loader_ = [ _api removeItemsLoaderWithRequest: request_
-                                                         apiContext: self ];
+    JFFAsyncOperation loader_ = [ self->_api removeItemsLoaderWithRequest: request_
+                                                               apiContext: self ];
 
     loader_ = [ self.itemsCache unregisterItemsWithItemsIdsArrayLoader: loader_ ];
 
@@ -357,8 +357,8 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
 
 -(JFFAsyncOperation)mediaItemCreatLoaderWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_
 {
-    JFFAsyncOperation loader_ = [ _api mediaItemCreatorWithRequest: createMediaItemRequest_
-                                                        apiContext: self ];
+    JFFAsyncOperation loader_ = [ self->_api mediaItemCreatorWithRequest: createMediaItemRequest_
+                                                              apiContext: self ];
 
     SCItemsReaderRequest* request_ = [ createMediaItemRequest_ toItemsReadRequestWithApiContext: self ];
     loader_ = [ self cachedItemsPageLoader: loader_

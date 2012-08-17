@@ -46,7 +46,7 @@
 
  But SCApiContext object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.
 
- @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/webapi"
+ @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/item"
  @return existing SCApiContext object for the given host or new created one if it doesn't exist
  */
 + (id)contextWithHost:(NSString *)host;
@@ -61,7 +61,7 @@
  
  But SCApiContext object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.
  
- @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/webapi"
+ @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/item"
  @param login the login of user to the Sitecore site
  @param password the password of user to the Sitecore site
  */
