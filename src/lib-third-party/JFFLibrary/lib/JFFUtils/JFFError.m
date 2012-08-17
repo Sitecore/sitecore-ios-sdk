@@ -6,8 +6,8 @@
                   domain:( NSString* )domain_
                     code:( NSInteger )code_
 {
-    NSDictionary* userInfo_ = [ NSDictionary dictionaryWithObject: description_
-                                                           forKey: NSLocalizedDescriptionKey ];
+    NSDictionary* userInfo_ = @{ NSLocalizedDescriptionKey : description_ };
+
     return [ super initWithDomain: domain_
                              code: code_
                          userInfo: userInfo_ ];
@@ -30,7 +30,7 @@
     return [ [ self alloc ] initWithDescription: description_ code: code_ ];
 }
 
-+(id)errorWithDescription:( NSString* )description_
++(id)newErrorWithDescription:( NSString* )description_
 {
     return [ [ self alloc ] initWithDescription: description_ ];
 }
