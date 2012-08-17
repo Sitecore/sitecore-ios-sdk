@@ -4,6 +4,7 @@
 
 #include "JSBlocksDefinitions.h"
 
+@class SCSitecoreCredentials;
 @class SCCreateMediaItemRequest;
 
 JFFAsyncOperation firstItemFromArrayReader( JFFAsyncOperation loader_ );
@@ -16,13 +17,7 @@ JFFAsyncOperation itemRecordsPageToItemsPage( JFFAsyncOperation asyncOp_ );
 JFFAsyncOperation itemPageToItems( JFFAsyncOperation loader_ );
 
 JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
-                                          , NSString* login_
-                                          , NSString* password_
+                                          , SCSitecoreCredentials* credentials_
                                           , NSData* httpBody_
                                           , NSString* httpMethod_
                                           , NSDictionary* headers_ );
-
-JFFAsyncOperationBinder createMediaItemRequestDataLoader( SCCreateMediaItemRequest* request_
-                                                         , NSString* login_
-                                                         , NSString* password_ );
-

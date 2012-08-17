@@ -13,8 +13,9 @@
 
 #import "NSString+IsSitecoreItemID.h"
 #import "NSString+IsSCPathValid.h"
-#import "NSString+MultipartFormDataBoundary.h"
-#import "NSData+MultipartFormDataWithBoundary.h"
+
+#import "SCSitecoreCredentials.h"
+#import "SCRemoteApi.h"
 
 @interface SCError (SCRemoteApi)
 
@@ -105,18 +106,22 @@ JFFAsyncOperation itemPageToItems( JFFAsyncOperation loader_ )
 }
 
 JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
-                                          , NSString* login_
-                                          , NSString* password_
+                                          , SCSitecoreCredentials* credentials_
                                           , NSData* httpBody_
                                           , NSString* httpMethod_
                                           , NSDictionary* headers_ )
 {
     headers_ = headers_ ?: [ NSDictionary new ];
-    if ( [ login_ length ] != 0 )
+    if ( [ credentials_.login length ] != 0 )
     {
+//TODO implement crypting password
+//        NSString* encryptedPassword_ = credentials_.encryptedPassword;
+
         NSDictionary* authHeaders_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                                      login_, @"X-Scwebapi-Username"
-                                      , password_ ?: @"", @"X-Scwebapi-Password"
+                                      credentials_.login  , @"X-Scwebapi-Username"
+                                      , credentials_.password, @"X-Scwebapi-Password"
+//                                      , encryptedPassword_, @"X-Scwebapi-Password"
+//                                      , @"1", @"X-Scwebapi-Encrypted"
                                       , nil ];
         headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
     }
@@ -134,31 +139,4 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
         return [ SCNetworkError errorWithDescription: error_.localizedDescription ];
     };
     return asyncOperationWithChangedError( loader_, errorBuilder_ );
-}
-
-JFFAsyncOperationBinder createMediaItemRequestDataLoader( SCCreateMediaItemRequest* request_
-                                                         , NSString* login_
-                                                         , NSString* password_ )
-{
-    return ^JFFAsyncOperation( NSURL* url_ )
-    {
-        NSLog( @"request url: %@", url_ );
-        NSString* boundaryId_     = [ NSString multipartFormDataBoundary ];
-        NSString* boundaryHeader_ = [ [ NSString alloc ] initWithFormat: @"multipart/form-data; boundary=%@", boundaryId_ ];
-
-        NSData* httpBody_ = [ request_.mediaItemData multipartFormDataWithBoundary: boundaryId_
-                                                                          fileName: request_.fileName
-                                                                       contentType: request_.contentType ];
-
-        NSDictionary* headers_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                                  boundaryHeader_ , @"Content-Type"
-                                  , nil ];
-
-        return scDataURLResponseLoader( url_
-                                       , login_
-                                       , password_
-                                       , httpBody_
-                                       , @"POST"
-                                       , headers_ );
-    };
 }
