@@ -2,8 +2,6 @@
 
 @implementation JFFOnDeallocBlockOwner
 
-@synthesize block = _block;
-
 -(id)initWithBlock:( JFFSimpleBlock )block_
 {
     self = [ super init ];
@@ -16,8 +14,8 @@
 
 -(void)dealloc
 {
-    if ( _block )
-        _block();
+    if ( self->_block )
+        self->_block();
 }
 
 @end

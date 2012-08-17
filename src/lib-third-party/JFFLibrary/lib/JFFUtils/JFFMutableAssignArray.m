@@ -7,6 +7,8 @@
 
 #include "JFFUtilsBlockDefinitions.h"
 
+#import "JFFClangLiterals.h"
+
 @interface JFFAutoRemoveAssignProxy : JFFAssignProxy
 
 @property ( nonatomic, copy ) JFFSimpleBlock onDeallocBlock;
@@ -14,8 +16,6 @@
 @end
 
 @implementation JFFAutoRemoveAssignProxy
-
-@synthesize onDeallocBlock = _onDeallocBlock;
 
 -(void)onAddToMutableAssignArray:( JFFMutableAssignArray* )array_
 {
@@ -44,7 +44,6 @@
 
 @implementation JFFMutableAssignArray
 
-@synthesize mutableArray = _mutableArray;
 @dynamic array;
 
 -(void)dealloc
@@ -54,16 +53,16 @@
 
 -(NSMutableArray*)mutableArray
 {
-    if ( !_mutableArray )
+    if ( !self->_mutableArray )
     {
-        _mutableArray = [ NSMutableArray new ];
+        self->_mutableArray = [ @[] mutableCopy ];
     }
-    return _mutableArray;
+    return self->_mutableArray;
 }
 
 -(NSArray*)array
 {
-    return [ _mutableArray map: ^id( JFFAutoRemoveAssignProxy* proxy_ )
+    return [ self->_mutableArray map: ^id( JFFAutoRemoveAssignProxy* proxy_ )
     {
         return proxy_.target;
     } ];
@@ -78,7 +77,7 @@
 
 -(BOOL)containsObject:( id )object_
 {
-    return [ _mutableArray firstMatch: ^BOOL( id element_ )
+    return [ self->_mutableArray firstMatch: ^BOOL( id element_ )
     {
         JFFAutoRemoveAssignProxy* proxy_ = element_;
         return proxy_.target == object_;
@@ -87,7 +86,7 @@
 
 -(void)removeObject:( id )object_
 {
-    NSUInteger index_ = [ _mutableArray firstIndexOfObjectMatch: ^BOOL( id element_ )
+    NSUInteger index_ = [ self->_mutableArray firstIndexOfObjectMatch: ^BOOL( id element_ )
     {
         JFFAutoRemoveAssignProxy* proxy_ = element_;
         return proxy_.target == object_;
@@ -95,24 +94,24 @@
 
     if ( index_ != NSNotFound )
     {
-        JFFAutoRemoveAssignProxy* proxy_ = [ _mutableArray objectAtIndex: index_ ];
+        JFFAutoRemoveAssignProxy* proxy_ = self->_mutableArray[ index_ ];
         [  proxy_ onRemoveFromMutableAssignArray: self ];
-        [ _mutableArray removeObjectAtIndex: index_ ];
+        [ self->_mutableArray removeObjectAtIndex: index_ ];
     }
 }
 
 -(void)removeAllObjects
 {
-    for( JFFAutoRemoveAssignProxy* proxy_ in _mutableArray )
+    for( JFFAutoRemoveAssignProxy* proxy_ in self->_mutableArray )
     {
         [  proxy_ onRemoveFromMutableAssignArray: self ];
     }
-    [ _mutableArray removeAllObjects ];
+    [ self->_mutableArray removeAllObjects ];
 }
 
 -(NSUInteger)count
 {
-    return [ _mutableArray count ];
+    return [ self->_mutableArray count ];
 }
 
 +(id)arrayWithObject:( id )anObject_
@@ -124,7 +123,7 @@
 
 -(id)firstMatch:( JFFPredicateBlock )predicate_
 {
-    for ( JFFAutoRemoveAssignProxy* proxy_ in _mutableArray )
+    for ( JFFAutoRemoveAssignProxy* proxy_ in self->_mutableArray )
     {
         if ( predicate_( proxy_.target ) )
             return proxy_.target;
