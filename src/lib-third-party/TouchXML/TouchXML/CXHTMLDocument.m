@@ -96,9 +96,9 @@
 		else
             {
 			xmlErrorPtr theLastErrorPtr = xmlGetLastError();
-			NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                theLastErrorPtr ? [NSString stringWithUTF8String:theLastErrorPtr->message] : @"unknown", NSLocalizedDescriptionKey,
-                NULL];
+                NSDictionary *theUserInfo = @{
+                NSLocalizedDescriptionKey : theLastErrorPtr ? @(theLastErrorPtr->message) : @"unknown"
+                };
 			
 			theError = [NSError errorWithDomain:@"CXMLErrorDomain" code:1 userInfo:theUserInfo];
 			

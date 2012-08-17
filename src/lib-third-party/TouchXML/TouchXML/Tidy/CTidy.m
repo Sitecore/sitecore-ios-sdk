@@ -97,9 +97,7 @@ if (theResultCode < 0)
 	{
 	if (outError)
 		{
-		NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-			[NSString stringWithUTF8String:(char *)theErrorBuffer.bp], NSLocalizedDescriptionKey,
-			NULL];
+            NSDictionary *theUserInfo = @{ NSLocalizedDescriptionKey : @( (char *)theErrorBuffer.bp ) };
 		*outError = [NSError errorWithDomain:@"TODO_DOMAIN" code:theResultCode userInfo:theUserInfo];
 		}
 	return(NO);
@@ -188,10 +186,8 @@ if (theResultCode < 0)
 	{
 	if (outError)
 		{
-		NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-			[NSString stringWithUTF8String:(char *)theErrorBuffer.bp], NSLocalizedDescriptionKey,
-			NULL];
-		*outError = [NSError errorWithDomain:@"TODO_DOMAIN" code:theResultCode userInfo:theUserInfo];
+            NSDictionary *theUserInfo = @{ NSLocalizedDescriptionKey, @( (char *)theErrorBuffer.bp ) };
+            *outError = [NSError errorWithDomain:@"TODO_DOMAIN" code:theResultCode userInfo:theUserInfo];
 		}
 	return(NO);
 	}

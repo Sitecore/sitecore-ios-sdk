@@ -72,11 +72,9 @@
             {
             xmlErrorPtr	theLastErrorPtr = xmlGetLastError();
             
-                NSString* message = [NSString stringWithUTF8String:
-                                     (theLastErrorPtr ? theLastErrorPtr->message : "Unknown error")];
-            
-            NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                         message, NSLocalizedDescriptionKey, NULL];
+            NSString* message = @( (theLastErrorPtr ? theLastErrorPtr->message : "Unknown error") );
+
+            NSDictionary *theUserInfo =  @{ NSLocalizedDescriptionKey : message };
             theError = [NSError errorWithDomain:@"CXMLErrorDomain" code:1 userInfo:theUserInfo];
             
             xmlResetLastError();
@@ -138,10 +136,8 @@
             else
                 {
                 xmlErrorPtr	theLastErrorPtr = xmlCtxtGetLastError( xmlCtxt );
-                NSString* message = [NSString stringWithUTF8String:
-                                     (theLastErrorPtr ? theLastErrorPtr->message : "Unknown error")];
-                NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                             message, NSLocalizedDescriptionKey, NULL];
+                NSString* message = @( (theLastErrorPtr ? theLastErrorPtr->message : "Unknown error") );
+                    NSDictionary *theUserInfo = @{ NSLocalizedDescriptionKey : message };
                 theError = [NSError errorWithDomain:@"CXMLErrorDomain" code:1 userInfo:theUserInfo];
 
                 xmlCtxtResetLastError( xmlCtxt );

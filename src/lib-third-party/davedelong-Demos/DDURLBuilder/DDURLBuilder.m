@@ -12,18 +12,6 @@
 
 @implementation DDURLBuilder
 
-@synthesize scheme;
-@synthesize user;
-@synthesize password;
-@synthesize host;
-@synthesize path;
-@synthesize fragment;
-@synthesize port;
-@synthesize shouldEncodeSpaceAsHex;
-
-@synthesize usesSchemeSeparators;
-
-
 -(NSString*)ddurlbuilder_percentEncode:(NSString*)string
 {
     NSMutableString * output = [NSMutableString string];
