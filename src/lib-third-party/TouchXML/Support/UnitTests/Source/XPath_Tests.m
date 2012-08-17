@@ -60,9 +60,7 @@ STAssertNotNil(theXMLDocument, NULL);
 
 NSArray *theNodes = NULL;
 
-NSDictionary *theMappings = [NSDictionary dictionaryWithObjectsAndKeys:
-	@"urn:ebay:apis:eBLBaseComponents", @"ebay",
-	NULL];
+    NSDictionary *theMappings = @{ @"ebay" : @"urn:ebay:apis:eBLBaseComponents" };
 
 theNodes = [theXMLDocument nodesForXPath:@"//ebay:Timestamp" namespaceMappings:theMappings error:&theError];
 STAssertTrue([theNodes count] == 1, NULL);

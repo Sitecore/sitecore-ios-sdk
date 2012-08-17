@@ -47,13 +47,11 @@ static NSString* userAgent()
         return;
 
     NSString* webViewUserAgent_ = [ UIWebView threadSafeUserAgent ];
-    NSString* newUserAgent_ = [ NSString stringWithFormat: @"%@ %@"
+    NSString* newUserAgent_ = [ [ NSString alloc ] initWithFormat: @"%@ %@"
                                , webViewUserAgent_
                                , userAgentAddition_ ];
 
-    NSDictionary* dictionnary_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                                  newUserAgent_, @"UserAgent"
-                                  , nil];
+    NSDictionary* dictionnary_ = @{ @"UserAgent" : newUserAgent_ };
     [ [ NSUserDefaults standardUserDefaults ] registerDefaults: dictionnary_ ];
 }
 
