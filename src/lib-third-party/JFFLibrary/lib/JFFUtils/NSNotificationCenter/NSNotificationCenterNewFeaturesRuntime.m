@@ -15,12 +15,10 @@ typedef void (^JFFNotificationCenterBlock)( NSNotification* notification_ );
 
 @implementation JFFNotificationCenterBlockHolder
 
-@synthesize block, queue;
-
 -(void)dealloc
 {
-   [ block release ];
-   [ queue release ];
+   [ self->_block release ];
+   [ self->_queue release ];
 
    [ super dealloc ];
 }
@@ -78,13 +76,13 @@ typedef void (^JFFNotificationCenterBlock)( NSNotification* notification_ );
 
 -(void)removeObserverWithBlockHolder:( id )observer_
 {
-   if ( [ observer_ isKindOfClass: [ JFFNotificationCenterBlockHolder class ] ] )
-   {
-      JFFNotificationCenterBlockHolder* block_holder_ = observer_;
-      [ block_holder_ removeSelfFromNotificationCenter: self ];
-   }
+    if ( [ observer_ isKindOfClass: [ JFFNotificationCenterBlockHolder class ] ] )
+    {
+        JFFNotificationCenterBlockHolder* block_holder_ = observer_;
+        [ block_holder_ removeSelfFromNotificationCenter: self ];
+    }
 
-   objc_msgSend( self, @selector( removeObserverWithBlockHolderNativeMethod: ), observer_ );
+    objc_msgSend( self, @selector( removeObserverWithBlockHolderNativeMethod: ), observer_ );
 }
 
 -(void)removeObserverWithBlockHolder:( id )observer_
