@@ -4,15 +4,11 @@
 
 @implementation JFFURLResponse
 
-@synthesize statusCode
-, allHeaderFields
-, url;
-
 @dynamic expectedContentLength;
 
 -(long long)expectedContentLength
 {
-    return [ [ allHeaderFields objectForKey: @"Content-Length" ] longLongValue ];
+    return [ self->_allHeaderFields[ @"Content-Length" ] longLongValue ];
 }
 
 #pragma mark -
@@ -20,7 +16,7 @@
 -(NSString*)description
 {
     NSString* custom_ = [ JFFUrlResponseLogger descriptionStringForUrlResponse: self ];
-    return [ NSString stringWithFormat: @"%@ \n   %@", [ super description ], custom_ ];
+    return [ [ NSString alloc ] initWithFormat: @"%@ \n   %@", [ super description ], custom_ ];
 }
 
 @end
