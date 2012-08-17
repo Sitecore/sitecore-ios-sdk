@@ -1,5 +1,7 @@
 #import "NSArray+BlocksAdditions.h"
 
+#import "JFFClangLiterals.h"
+
 @implementation NSArray (BlocksAdditions)
 
 -(void)each:( JFFActionBlock )block_
@@ -36,7 +38,7 @@
         [ result_ addObject: block_( object_ ) ];
     }
 
-    return [ [ NSArray alloc ] initWithArray: result_ ];
+    return [ result_ copy ];
 }
 
 -(NSArray*)map:( JFFMappingWithErrorBlock )block_ error:( NSError** )outError_
@@ -56,7 +58,44 @@
         }
     }
 
-    return [ [ NSArray alloc ] initWithArray: result_ ];
+    return [ result_ copy ];
+}
+
+-(NSArray*)forceMap:( JFFMappingBlock )block_
+{
+    NSMutableArray* result_ = [ [ NSMutableArray alloc ] initWithCapacity: [ self count ] ];
+
+    for ( id object_ in self )
+    {
+        id newObject_ = block_( object_ );
+        if ( newObject_ )
+        {
+            [ result_ addObject: newObject_ ];
+        }
+    }
+
+    return [ result_ copy ];
+}
+
+-(NSArray*)mapIgnoringNilError:( JFFMappingWithErrorBlock )block_ error:( NSError** )outError_
+{
+    NSParameterAssert( NULL != outError_ );
+    NSMutableArray* result_ = [ [ NSMutableArray alloc ] initWithCapacity: [ self count ] ];
+
+    for ( id object_ in self )
+    {
+        id newObject_ = block_( object_, outError_ );
+        if ( newObject_ )
+        {
+            [ result_ addObject: newObject_ ];
+        }
+        else if ( nil != *outError_ )
+        {
+            return nil;
+        }
+    }
+
+    return [ result_ copy ];
 }
 
 -(NSDictionary*)mapDict:( JFFMappingDictBlock )block_
@@ -87,7 +126,7 @@
         [ result_ addObjectsFromArray: objectItems_ ]; 
     } ];
 
-    return [ [ NSArray alloc ] initWithArray: result_ ];
+    return [ result_ copy ];
 }
 
 +(id)arrayWithSize:( NSUInteger )size_
@@ -100,7 +139,7 @@
         [ result_ addObject: block_( index_ ) ];
     }
 
-    return [ [ NSArray alloc ] initWithArray: result_ ];
+    return [ result_ copy ];
 }
 
 -(NSUInteger)count:( JFFPredicateBlock )predicate_
@@ -142,7 +181,7 @@
     NSUInteger arraySize_ = [ self count ];
     for ( NSUInteger itemIndex_ = 0; itemIndex_ < arraySize_; ++itemIndex_ )
     {
-        block_( [ self objectAtIndex: itemIndex_ ], [ other_ objectAtIndex: itemIndex_ ] );
+        block_( self[ itemIndex_ ], other_[ itemIndex_ ] );
     }
 }
 
