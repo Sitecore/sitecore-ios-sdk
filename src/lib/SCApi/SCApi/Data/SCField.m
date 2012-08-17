@@ -79,7 +79,7 @@
 -(NSString*)description
 {
     NSString* className_ = NSStringFromClass( [ self class ] );
-    return [ NSString stringWithFormat: @"<%@ name:\"%@\" type:\"%@\" value:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<%@ name:\"%@\" type:\"%@\" value:\"%@\" >"
             , className_
             , self.name
             , self.type

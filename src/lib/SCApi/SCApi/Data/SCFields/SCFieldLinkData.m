@@ -35,7 +35,7 @@
 -(NSString*)description
 {
     NSString* otherFields_ = [ self otherFieldsDescription ];
-    return [ NSString stringWithFormat: @"<%@ linkDescription:\"%@\" linkType:\"%@\" alternateText:\"%@\" url:\"%@\" %@ >"
+    return [ [ NSString alloc ] initWithFormat: @"<%@ linkDescription:\"%@\" linkType:\"%@\" alternateText:\"%@\" url:\"%@\" %@ >"
             , [ self class ]
             , self.linkDescription
             , self.linkType
@@ -71,7 +71,7 @@
 
 -(NSString*)otherFieldsDescription
 {
-    return [ NSString stringWithFormat: @"anchor:\"%@\" queryString:\"%@\" itemId:\"%@\""
+    return [ [ NSString alloc ] initWithFormat: @"anchor:\"%@\" queryString:\"%@\" itemId:\"%@\""
             , self.anchor
             , self.queryString
             , self.itemId ];
@@ -96,7 +96,7 @@
 
 -(NSString*)otherFieldsDescription
 {
-    return [ NSString stringWithFormat: @"itemId:\"%@\""
+    return [ [ NSString alloc ] initWithFormat: @"itemId:\"%@\""
             , self.itemId ];
 }
 
@@ -117,7 +117,7 @@
 
 -(NSString*)otherFieldsDescription
 {
-    return [ NSString stringWithFormat: @"anchor:\"%@\""
+    return [ [ NSString alloc ] initWithFormat: @"anchor:\"%@\""
             , self.anchor ];
 }
 

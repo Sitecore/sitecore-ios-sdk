@@ -16,7 +16,7 @@
 
 -(NSString*)description
 {
-    return [ NSString stringWithFormat: @"<SCImageField name:\"%@\" type:\"%@\" value:\"%@\" imagePath:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCImageField name:\"%@\" type:\"%@\" value:\"%@\" imagePath:\"%@\" >"
             , self.name
             , self.type
             , self.rawValue

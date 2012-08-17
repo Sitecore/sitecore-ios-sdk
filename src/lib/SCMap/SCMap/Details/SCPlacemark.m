@@ -100,7 +100,7 @@
 
         //doc: https://developer.apple.com/library/ios/#featuredarticles/iPhoneURLScheme_Reference/Articles/MapLinks.html
         NSString* format_ = @"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f";
-        NSString* googleMapsURLString_ = [ NSString stringWithFormat: format_
+        NSString* googleMapsURLString_ = [ [ NSString alloc ] initWithFormat: format_
                                           , start_.latitude
                                           , start_.longitude
                                           , destination_.latitude

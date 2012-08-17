@@ -29,7 +29,7 @@
 
 -(id)init
 {
-    NSString* description_ = [ NSString stringWithFormat: @"%@", [ self class ] ];
+    NSString* description_ = [ [ NSString alloc ] initWithFormat: @"%@", [ self class ] ];
     return [ self initWithDescription: description_ ];
 }
 

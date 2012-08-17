@@ -107,7 +107,7 @@
 
 -(NSString*)description
 {
-    return [ NSString stringWithFormat: @"<SCItem displayName:\"%@\" template:\"%@\" hasChildren:\"%d\" path:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCItem displayName:\"%@\" template:\"%@\" hasChildren:\"%d\" path:\"%@\" >"
             , self.displayName
             , self.itemTemplate
             , self.hasChildren

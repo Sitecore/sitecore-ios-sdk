@@ -46,7 +46,7 @@
 
 -(NSString*)description
 {
-    return [ NSString stringWithFormat: @"<SCItemIdPathAndLanguage itemIdPath:\"%@\" language:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCItemIdPathAndLanguage itemIdPath:\"%@\" language:\"%@\" >"
             , self.itemIdPath
             , self.language ];
 }

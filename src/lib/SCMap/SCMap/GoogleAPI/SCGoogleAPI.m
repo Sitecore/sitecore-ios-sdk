@@ -9,7 +9,7 @@
 
 +(id)googleApiLocationParamWithCCCoordinate:( CLLocationCoordinate2D )coordinate_
 {
-    return [ NSString stringWithFormat: @"%f,%f", coordinate_.latitude, coordinate_.longitude ];
+    return [ [ NSString alloc ] initWithFormat: @"%f,%f", coordinate_.latitude, coordinate_.longitude ];
 }
 
 @end
@@ -54,7 +54,7 @@
     {
         SCTwoPointsRoute* route_ = object_;
 
-        NSString* queryString_ = [ NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=true&mode=driving"
+        NSString* queryString_ = [ [ NSString alloc ] initWithFormat: @"https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=true&mode=driving"
                                   , [ NSString googleApiLocationParamWithCCCoordinate: route_.origin ]
                                   , [ NSString googleApiLocationParamWithCCCoordinate: route_.destination ] ];
 

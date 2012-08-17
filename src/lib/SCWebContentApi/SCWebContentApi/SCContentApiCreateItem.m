@@ -147,12 +147,12 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
             }
             else
             {
-                message_ = [ NSString stringWithFormat: @"{ error: 'Can not serialize the JSON object' }" ];
+                message_ = [ [ NSString alloc ] initWithFormat: @"{ error: 'Can not serialize the JSON object' }" ];
             }
         }
         else
         {
-            message_ = [ NSString stringWithFormat: @"{ error: '%@' }", [ error_ description ] ];
+            message_ = [ [ NSString alloc ] initWithFormat: @"{ error: '%@' }", [ error_ description ] ];
         }
 
         [ self.delegate sendMessage: message_ ];
