@@ -11,11 +11,8 @@
 
 #import "NSUrlLocationValidator.h"
 
-
 //#define SHOW_DEBUG_LOGS
 #import <JFFLibrary/JDebugLog.h>
-
-
 
 @interface JFFURLConnection ()
 
@@ -62,7 +59,7 @@ static void readStreamCallback( CFReadStreamRef stream_
             [ self_ handleResponseForReadStream: stream_ ];
 
             CFStreamError error_ = CFReadStreamGetError( stream_ );
-            NSString* errorDescription_ = [ NSString stringWithFormat: @"CFStreamError domain: %ld", error_.domain ];
+            NSString* errorDescription_ = [ [ NSString alloc ] initWithFormat: @"CFStreamError domain: %ld", error_.domain ];
 
             [ self_ handleFinish: [ JFFError errorWithDescription: errorDescription_
                                                              code: error_.error ] ];
@@ -223,7 +220,7 @@ static void readStreamCallback( CFReadStreamRef stream_
         return;
     }
 
-    NSString* contentEncoding_ = [ _urlResponse.allHeaderFields objectForKey: @"Content-Encoding" ];
+    NSString* contentEncoding_ = self->_urlResponse.allHeaderFields[ @"Content-Encoding" ];
     id< JNHttpDecoder > decoder_ = [ JNHttpEncodingsFactory decoderForHeaderString: contentEncoding_ ];
 
     NSError* decoderError_ = nil;
@@ -294,25 +291,26 @@ static void readStreamCallback( CFReadStreamRef stream_
     if ( 302 == statusCode_ )
     {
         NSDebugLog( @"JConnection - creating URL..." );
-        NSString* location_ = [ allHeadersDict_ objectForKey: @"Location" ];
+        NSDebugLog( @"%@", self->_params.url );
+        NSString* location_ = allHeadersDict_[ @"Location" ];
         if ( ![ NSUrlLocationValidator isValidLocation: location_ ] )
         {
             NSLog( @"[!!!WARNING!!!] JConnection : path for URL is invalid. Ignoring..." );
             location_ = @"/";
         }
 
-        
         DDURLBuilder* urlBuilder_ = [ DDURLBuilder URLBuilderWithURL: self->_params.url ];
         urlBuilder_.path = location_;
         
         self->_params.url = [ urlBuilder_ URL ];
+        NSDebugLog( @"%@", self->_params.url );
         NSDebugLog( @"Done." );
 
         [ self start ];
     }
     else
     {
-        _responseHandled = YES;
+        self->_responseHandled = YES;
 
         if ( self.didReceiveResponseBlock )
         {
@@ -325,7 +323,7 @@ static void readStreamCallback( CFReadStreamRef stream_
             self.didReceiveResponseBlock( urlResponse_ );
             self.didReceiveResponseBlock = nil;
 
-            _urlResponse = urlResponse_;
+            self->_urlResponse = urlResponse_;
         }
     }
 }

@@ -13,17 +13,14 @@
 
 @implementation JFFDownloadedBytesPerDate
 
-@synthesize date       = _date;
-@synthesize bytesCount = _bytesCount;
-
 -(id)initWithBytesCount:( NSUInteger )bytesCount_
 {
     self = [ super init ];
 
     if ( self )
     {
-        _date       = [ NSDate new ];
-        _bytesCount = bytesCount_;
+        self->_date       = [ NSDate new ];
+        self->_bytesCount = bytesCount_;
     }
 
     return self;
@@ -82,8 +79,8 @@
             donloadedBytes_ += item_.bytesCount;
         }
 
-        JFFDownloadedBytesPerDate* first_item_ = [ arrayExcludeLast_ objectAtIndex: 0 ];
-        NSDate* lastDate_ = ( [ arrayExcludeLast_ count ] == 1 ) ? [ NSDate new ] : first_item_.date;
+        JFFDownloadedBytesPerDate* firstItem_ = arrayExcludeLast_[ 0 ];
+        NSDate* lastDate_ = ( [ arrayExcludeLast_ count ] == 1 ) ? [ NSDate new ] : firstItem_.date;
 
         JFFDownloadedBytesPerDate* lastItem_ = [ arrayExcludeLast_ lastObject ];
         speed_ = (float) donloadedBytes_ /
@@ -95,16 +92,16 @@
 
 -(void)stop
 {
-    _scheduler = nil;
+    self->_scheduler = nil;
 
-    _downloadingSpeedInfo = [ NSMutableArray new ];
+    self->_downloadingSpeedInfo = [ NSMutableArray new ];
     [ self calculateDownloadSpeed ];
 }
 
--(void)bytesReceived:( NSUInteger )bytes_count_
+-(void)bytesReceived:( NSUInteger )bytesCount_
 {
-    JFFDownloadedBytesPerDate* item_ = [ [ JFFDownloadedBytesPerDate alloc ] initWithBytesCount: bytes_count_ ];
-    [ _downloadingSpeedInfo insertObject: item_ atIndex: 0 ];
+    JFFDownloadedBytesPerDate* item_ = [ [ JFFDownloadedBytesPerDate alloc ] initWithBytesCount: bytesCount_ ];
+    [ self->_downloadingSpeedInfo insertObject: item_ atIndex: 0 ];
 
     [ self removeOldItemsFromDownloadingSpeedInfo ];
 }
@@ -119,8 +116,8 @@
         [ self_ calculateDownloadSpeed ];
     };
 
-    _scheduler = [ JFFScheduler new ];
-    [ _scheduler addBlock: block_ duration: calculateSpeedInterval_ ];
+    self->_scheduler = [ JFFScheduler new ];
+    [ self->_scheduler addBlock: block_ duration: calculateSpeedInterval_ ];
 }
 
 @end
