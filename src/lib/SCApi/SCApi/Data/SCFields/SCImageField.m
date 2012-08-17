@@ -2,7 +2,6 @@
 
 #import "SCApiContext.h"
 
-
 @interface SCApiContext ()
 
 -(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_;
