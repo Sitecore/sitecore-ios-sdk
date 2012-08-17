@@ -6,7 +6,7 @@
 
 -(NSString*)dwFilePath
 {
-    return [ NSString stringWithFormat: @"%@://localhost:%d%@", JDWFileSystemURLScheme
+    return [ [ NSString alloc ] initWithFormat: @"%@://localhost:%d%@", JDWFileSystemURLScheme
             , JDWFileSystemURLPort
             , self ];
 }

@@ -33,7 +33,7 @@ static NSString* sourceTypeToJSName( NSNumber* typeNum_ )
 
     result_ = [ result_ map: ^id( NSNumber* number_ )
     {
-        return [ NSString stringWithFormat: @"%@: '%@'", sourceTypeToJSName( number_ ), number_ ];
+        return [ [ NSString alloc ] initWithFormat: @"%@: '%@'", sourceTypeToJSName( number_ ), number_ ];
     } ];
 
     return result_;

@@ -56,7 +56,7 @@
             return;
 
         NSString* jsFormat_ = @"{ x: %f, y: %f, z: %f, timestamp: %f }";
-        NSString* js_ = [ NSString stringWithFormat: jsFormat_
+        NSString* js_ = [ [ NSString alloc ] initWithFormat: jsFormat_
                          , accelerometerData.acceleration.x
                          , accelerometerData.acceleration.y
                          , accelerometerData.acceleration.z

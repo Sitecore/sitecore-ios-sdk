@@ -44,7 +44,7 @@ static NSString* const apiVersion_ = @"v1";
 {
     NSString* request_ = [ ( self.request ?: @"" ) stringByEncodingURLFormat ];
     return ( self.requestType == SCItemReaderRequestItemId )
-        ? [ NSString stringWithFormat: @"sc_itemid=%@", request_ ]
+        ? [ [ NSString alloc ] initWithFormat: @"sc_itemid=%@", request_ ]
         : @"";
 }
 
@@ -66,7 +66,7 @@ static NSString* const apiVersion_ = @"v1";
 
     NSString* result_ = [ scopes_ componentsJoinedByString: @"|" ];
     result_ = [ result_ stringByEncodingURLFormat ];
-    return [ NSString stringWithFormat: @"scope=%@", result_ ];
+    return [ [ NSString alloc ] initWithFormat: @"scope=%@", result_ ];
 }
 
 -(NSString*)queryURLParam
@@ -75,7 +75,7 @@ static NSString* const apiVersion_ = @"v1";
         return @"";
 
     NSString* request_ = [ self.request ?: @"" stringByEncodingURLFormat ];
-    return [ NSString stringWithFormat: @"query=%@", request_ ];
+    return [ [ NSString alloc ] initWithFormat: @"query=%@", request_ ];
 }
 
 -(NSString*)fieldsURLParam
@@ -176,7 +176,7 @@ static NSString* const apiVersion_ = @"v1";
         hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
     }
 
-    NSString* urlString_ = [ NSString stringWithFormat: @"%@/%@%@?%@"
+    NSString* urlString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@%@?%@"
                             , hostWithSheme_
                             , apiVersionWithPath_
                             , pathParam_
@@ -247,7 +247,7 @@ static NSString* const apiVersion_ = @"v1";
         hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
     }
 
-    NSString* requestString_ = [ NSString stringWithFormat: @"%@/%@/-/system/securekey"
+    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@/-/system/securekey"
                                 , hostWithSheme_
                                 , apiVersion_ ];
 
@@ -266,7 +266,7 @@ static NSString* const apiVersion_ = @"v1";
         hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
     }
 
-    NSString* requestString_ = [ NSString stringWithFormat: @"%@/%@/-/system/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@"
+    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@/-/system/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@"
                                 , hostWithSheme_
                                 , apiVersion_
                                 , [ apiContext_.defaultDatabase stringByEncodingURLFormat ]

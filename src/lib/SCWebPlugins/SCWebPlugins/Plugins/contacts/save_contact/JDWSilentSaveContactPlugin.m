@@ -36,7 +36,7 @@
 
     [ arg_ save ];
 
-    [ self.delegate sendMessage: [ NSString stringWithFormat: @"%d", arg_.contactInternalId ] ];
+    [ self.delegate sendMessage: [ [ NSString alloc ] initWithFormat: @"%d", arg_.contactInternalId ] ];
     [ self.delegate close ];
 }
 

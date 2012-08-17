@@ -123,7 +123,7 @@
     if ( contact_ )
     {
         //STODO - send all fields
-        message_ = [ NSString stringWithFormat: @"{ contactInternalId: %d }", contact_.contactInternalId ];
+        message_ = [ [ NSString alloc ] initWithFormat: @"{ contactInternalId: %d }", contact_.contactInternalId ];
     }
     else
     {
