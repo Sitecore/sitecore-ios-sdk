@@ -26,7 +26,7 @@
 -(NSString*)jsonValue
 {
     return self.value
-        ? [ NSString stringWithFormat: @"%f", [ self.value timeIntervalSince1970 ] * 1000. ]
+        ? [ [ NSString alloc ] initWithFormat: @"%f", [ self.value timeIntervalSince1970 ] * 1000. ]
         : @"";
 }
 

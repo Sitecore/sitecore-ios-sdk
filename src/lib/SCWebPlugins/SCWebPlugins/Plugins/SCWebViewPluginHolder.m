@@ -90,13 +90,13 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    if ( [ _webPlugin respondsToSelector: @selector( setDelegate: ) ] )
-        _webPlugin.delegate = self;
+    if ( [ self->_webPlugin respondsToSelector: @selector( setDelegate: ) ] )
+        self->_webPlugin.delegate = self;
 
-    _webView = webView_;
+    self->_webView = webView_;
 
     __weak SCWebViewPluginHolder* self_ = self;
-    [ _webView addOnDeallocBlock: ^
+    [ self->_webView addOnDeallocBlock: ^
     {
         [ self_ onDeallocWebView ];
     } ];
@@ -108,16 +108,16 @@
 
 -(void)didReceiveMessage:( NSString* )message_
 {
-    if ( [ _webPlugin respondsToSelector: @selector( didReceiveMessage: ) ] )
-        [ _webPlugin didReceiveMessage: message_ ];
+    if ( [ self->_webPlugin respondsToSelector: @selector( didReceiveMessage: ) ] )
+        [ self->_webPlugin didReceiveMessage: message_ ];
 }
 
 -(void)didClose
 {
-    if ( [ _webPlugin respondsToSelector: @selector( didClose ) ] )
-        [ _webPlugin didClose ];
+    if ( [ self->_webPlugin respondsToSelector: @selector( didClose ) ] )
+        [ self->_webPlugin didClose ];
 
-    _ownThemselves = nil;
+    self->_ownThemselves = nil;
 }
 
 #pragma mark SCWebPluginDelegate
@@ -129,10 +129,10 @@
     NSData* data_ = [ message_ dataUsingEncoding: NSUTF8StringEncoding ];
     NSString* base64_ = [ NSString base64StringFromData: data_ length: 0 ];
 
-    NSString* javascript_ = [ NSString stringWithFormat: sendMessageSocketFormat_
+    NSString* javascript_ = [ [ NSString alloc ] initWithFormat: sendMessageSocketFormat_
                              , self.socketGuid
                              , base64_ ];
-    [ _webView stringByEvaluatingJavaScriptFromString: javascript_ ];
+    [ self->_webView stringByEvaluatingJavaScriptFromString: javascript_ ];
 }
 
 -(void)sendMessage:( NSString* )message_
@@ -146,14 +146,14 @@
 {
     static NSString* const closeSocketFormat_ = @"scmobile.utils.internalCloseSCWebSocketWithGUID( '%@' )";
     NSString* const javascript_ = [ NSString stringWithFormat: closeSocketFormat_, self.socketGuid ];
-    [ _webView stringByEvaluatingJavaScriptFromString: javascript_ ];
+    [ self->_webView stringByEvaluatingJavaScriptFromString: javascript_ ];
 
-    _ownThemselves = nil;
+    self->_ownThemselves = nil;
 }
 
 -(void)close
 {
-    _closed = YES;
+    self->_closed = YES;
 
     [ self performSelectorOnMainThread: @selector( closeNextTick )
                             withObject: nil
