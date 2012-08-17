@@ -8,7 +8,7 @@ Details on what is contained in the Sitecore package and the iOS project templat
 
 The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.
 
-The Mobile SDK requires Sitecore Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the Chapter 1 below for a download link.
+The Mobile SDK requires Sitecore Item Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the Chapter 1 below for a download link.
 
 Please follow these chapters for more details:
 
@@ -34,13 +34,13 @@ The Sitecore Mobile SDK server package requires:
 
 **Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.120625.zip) **package**
 
-The Mobile SDK API is called the "Sitecore Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
+The Mobile SDK API is called the "Sitecore Item Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
 
 The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
 
-**Link to download** [Sitecore Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Web%20API%200.9.0%20rev.%20120622%20Beta.zip) **package**
+**Link to download** [Sitecore Item Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Web%20API%200.9.0%20rev.%20120622%20Beta.zip) **package**
 
-**Link to download** [Sitecore Web API PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore_Web_API_User_Guide_USLetter.pdf) **documentation**
+**Link to download** [Sitecore Item Web API PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore_Web_API_User_Guide_USLetter.pdf) **documentation**
 
 ### 1.2 The Client
 
@@ -71,8 +71,8 @@ This chapter contains the following sections:
 
 
 ### 2.1 Installing the Server Side Components
-##### 2.1.1 Installing the Sitecore Web API Service
-Use the Sitecore Installation Wizard to install the Sitecore Web API service:
+##### 2.1.1 Installing the Sitecore Item Web API Service
+Use the Sitecore Installation Wizard to install the Sitecore Item Web API service:
 
 1. Log in to the Sitecore Desktop.
 2. Click Sitecore, Development Tools, Installation Wizard. The wizard will guide you through the installation process.
@@ -81,10 +81,10 @@ Use the Sitecore Installation Wizard to install the Sitecore Web API service:
 5. In the License Agreement dialog box, accept the license agreement.
 6. In the Ready to Install dialog box, you can review the package information and then click
 Install.
-7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Web API Service is working, make a simple request to the service.
+7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Item Web API Service is working, make a simple request to the service.
 8. In a browser, enter the URL: http://yoursite/-/item/v1/sitecore/Content/Home.
 ![simple request](https://github.com/Sitecore/sitecore-mobile-sdk/raw/master/resources/SimpleRequest.png)
-9. If you want to create/edit/remove items using WebApi, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
+9. If you want to create/edit/remove items using Sitecore Item Web Api, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
 
 ##### 2.1.2 Installing the Sitecore Mobile SDK server package
 
