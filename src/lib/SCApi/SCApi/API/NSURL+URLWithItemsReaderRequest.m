@@ -87,14 +87,14 @@ static NSString* const apiVersion_ = @"v1";
         return @"payload=1";
 
     NSString* fieldsParams_ = [ [ self.fieldNames allObjects ] componentsJoinedByString: @"|" ];
-    return [ NSString stringWithFormat: @"fields=%@", [ fieldsParams_ stringByEncodingURLFormat ] ];
+    return [ [ NSString alloc ] initWithFormat: @"fields=%@", [ fieldsParams_ stringByEncodingURLFormat ] ];
 }
 
 -(NSString*)pagesURLParam
 {
     return self.pageSize == 0
         ? @""
-        : [ NSString stringWithFormat: @"pageSize=%d&page=%d", self.pageSize, self.page ];
+        : [ [ NSString alloc ] initWithFormat: @"pageSize=%d&page=%d", self.pageSize, self.page ];
 }
 
 @end
@@ -106,7 +106,7 @@ static NSString* const apiVersion_ = @"v1";
     name_ = [ name_ stringByEncodingURLFormat ];
     return [ name_ length ] == 0
         ? @""
-        : [ NSString stringWithFormat: @"name=%@", name_ ];
+        : [ [ NSString alloc ] initWithFormat: @"name=%@", name_ ];
 }
 
 +(NSString*)templateParamWithTemplate:( NSString* )template_
@@ -114,14 +114,14 @@ static NSString* const apiVersion_ = @"v1";
     template_ = [ template_ stringByEncodingURLFormat ];
     return [ template_ length ] == 0
         ? @""
-        : [ NSString stringWithFormat: @"template=%@", template_ ];
+        : [ [ NSString alloc ] initWithFormat: @"template=%@", template_ ];
 }
 
 +(NSString*)databaseParamWithDatabase:( NSString* )database_
 {
     database_ = [ ( database_ ?: @"" ) stringByEncodingURLFormat ];
     return [ database_ length ]
-        ? [ NSString stringWithFormat: @"sc_database=%@", database_ ]
+        ? [ [ NSString alloc ] initWithFormat: @"sc_database=%@", database_ ]
         : @"";
 }
 
@@ -130,7 +130,7 @@ static NSString* const apiVersion_ = @"v1";
     if ( [ language_ length ] == 0 )
         return @"";
 
-    return [ NSString stringWithFormat: @"sc_lang=%@", language_ ];
+    return [ [ NSString alloc ] initWithFormat: @"sc_lang=%@", language_ ];
 }
 
 +(id)URLWithItemsReaderRequest:( SCItemsReaderRequest* )request_
