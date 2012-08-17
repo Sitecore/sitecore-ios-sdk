@@ -13,7 +13,7 @@
 
     if ( self )
     {
-        _allCookies = [ NSMutableSet new ];
+        self->_allCookies = [ NSMutableSet new ];
     }
 
     return self;
@@ -21,15 +21,22 @@
 
 -(void)setCookie:( NSHTTPCookie* )cookie_
 {
-    [ _allCookies addObject: cookie_ ];
+    [ self->_allCookies addObject: cookie_ ];
 }
 
 -(NSArray*)cookiesForURL:( NSURL* )url_
 {
-    return [ _allCookies selectArray: ^BOOL( NSHTTPCookie* cookie_ )
+    NSArray* result_ = [ self->_allCookies selectArray: ^BOOL( NSHTTPCookie* cookie_ )
     {
-        return [ cookie_ matchesURL: url_ ];
+        BOOL result_ = [ cookie_ matchesURL: url_ ];
+
+        result_ &= cookie_.expiresDate == nil
+            || [ cookie_.expiresDate compare: [ NSDate new ] ] == NSOrderedDescending;
+
+        return result_;
     } ];
+
+    return result_;
 }
 
 @end
