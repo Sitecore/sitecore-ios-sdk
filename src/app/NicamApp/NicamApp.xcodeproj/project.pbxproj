@@ -391,8 +391,11 @@
 				HEADER_SEARCH_PATHS = (
 					../../lib/SCUI,
 					../../lib/SCApi,
-					../../lib/SCMonad,
+					../../lib/SCQRCodeReader,
 					../../lib/SCUtils,
+					../../lib/SitecoreMobileSDK,
+					../../lib/SCWebView,
+					../../lib/SCMap,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -416,8 +419,11 @@
 				HEADER_SEARCH_PATHS = (
 					../../lib/SCUI,
 					../../lib/SCApi,
-					../../lib/SCMonad,
+					../../lib/SCQRCodeReader,
 					../../lib/SCUtils,
+					../../lib/SitecoreMobileSDK,
+					../../lib/SCWebView,
+					../../lib/SCMap,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -438,18 +444,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicamApp/NicamApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					../../lib/SCUI,
-					../../lib/SCApi,
-					../../lib/SCMonad,
-					../../lib/SCUtils,
-					../../lib/SitecoreMobileSDK,
-				);
 				INFOPLIST_FILE = "NicamApp/NicamApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/NicamApp-etazjnklsnkieoftafecqcvdkwta/Build/Products/Debug-iphoneos\"",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -472,18 +467,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicamApp/NicamApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					../../lib/SCUI,
-					../../lib/SCApi,
-					../../lib/SCMonad,
-					../../lib/SCUtils,
-					../../lib/SitecoreMobileSDK,
-				);
 				INFOPLIST_FILE = "NicamApp/NicamApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/NicamApp-etazjnklsnkieoftafecqcvdkwta/Build/Products/Debug-iphoneos\"",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
