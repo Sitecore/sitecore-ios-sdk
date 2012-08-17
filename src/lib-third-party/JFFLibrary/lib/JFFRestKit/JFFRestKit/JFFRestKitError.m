@@ -17,3 +17,12 @@
 }
 
 @end
+
+@implementation JFFRestKitEmptyFileResponseError
+
+-(id)init
+{
+    return [ super initWithDescription: NSLocalizedString( @"REST_KIT_EMPTY_FILE_RESPONSE_ERROR", nil ) ];
+}
+
+@end
