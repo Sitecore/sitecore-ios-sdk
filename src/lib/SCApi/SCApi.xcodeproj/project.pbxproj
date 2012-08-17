@@ -113,6 +113,10 @@
 		1BF90C1714B5E28A000D0CF2 /* SCImageField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF90C1614B5E28A000D0CF2 /* SCImageField.h */; };
 		1BF90C1B14B5E3E2000D0CF2 /* SCMultilistField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */; };
 		1BF90C1D14B5E41D000D0CF2 /* SCMultilistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */; };
+		656409C115A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */; };
+		656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */; };
+		656409C515A9CB750062F28D /* SCSitecoreCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 656409C315A9CB750062F28D /* SCSitecoreCredentials.h */; };
+		656409C615A9CB750062F28D /* SCSitecoreCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 656409C415A9CB750062F28D /* SCSitecoreCredentials.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +238,10 @@
 		1BF90C1614B5E28A000D0CF2 /* SCImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageField.h; path = ../../../SitecoreMobileSDK/SCImageField.h; sourceTree = "<group>"; };
 		1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMultilistField.m; sourceTree = "<group>"; };
 		1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMultilistField.h; path = ../../../SitecoreMobileSDK/SCMultilistField.h; sourceTree = "<group>"; };
+		656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSitecoreCredentials+XMLParser.h"; sourceTree = "<group>"; };
+		656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSitecoreCredentials+XMLParser.m"; sourceTree = "<group>"; };
+		656409C315A9CB750062F28D /* SCSitecoreCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitecoreCredentials.h; sourceTree = "<group>"; };
+		656409C415A9CB750062F28D /* SCSitecoreCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitecoreCredentials.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +408,8 @@
 		1BC087A2147BC8C40066CFB3 /* BackendRecords */ = {
 			isa = PBXGroup;
 			children = (
+				656409C315A9CB750062F28D /* SCSitecoreCredentials.h */,
+				656409C415A9CB750062F28D /* SCSitecoreCredentials.m */,
 				1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */,
 				1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */,
 			);
@@ -436,6 +446,7 @@
 		1BC087FD147BE1E30066CFB3 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				656409BD15A9CB260062F28D /* XML */,
 				1B24586F152472CD00FBB6C2 /* JSON */,
 				1BC087FE147BE1FB0066CFB3 /* SCItemRecord+Parser.h */,
 				1BC087FF147BE1FB0066CFB3 /* SCItemRecord+Parser.m */,
@@ -516,6 +527,15 @@
 			path = SCFields;
 			sourceTree = "<group>";
 		};
+		656409BD15A9CB260062F28D /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */,
+				656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -574,6 +594,8 @@
 				1BF7F5F9152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h in Headers */,
 				1BB5D9A4152EEC7F00075752 /* SCFieldRecord+Parser.h in Headers */,
 				1BBE2EC7154546AB004B683B /* SCItemsCache+UnregisterItems.h in Headers */,
+				656409C115A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h in Headers */,
+				656409C515A9CB750062F28D /* SCSitecoreCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +703,8 @@
 				1BF7F5FA152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m in Sources */,
 				1BB5D9A5152EEC7F00075752 /* SCFieldRecord+Parser.m in Sources */,
 				1BBE2EC8154546AB004B683B /* SCItemsCache+UnregisterItems.m in Sources */,
+				656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */,
+				656409C615A9CB750062F28D /* SCSitecoreCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,7 +726,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -714,6 +737,7 @@
 					"../../lib-third-party/TouchXML",
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
+					"../../lib-third-party/ios-openssl/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -728,7 +752,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -740,6 +763,7 @@
 					"../../lib-third-party/TouchXML",
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
+					"../../lib-third-party/ios-openssl/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;

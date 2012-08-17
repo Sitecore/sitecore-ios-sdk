@@ -26,6 +26,8 @@
 		1B363FD7153D55CA00E46215 /* libSCWebContentApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363FD0153D55B000E46215 /* libSCWebContentApi.a */; };
 		1B3E6DC21554134000B3509B /* libSCDevice2Web.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3E6DBD1554132900B3509B /* libSCDevice2Web.a */; };
 		1BD6AB301518CD0F00D2FC84 /* libSCWebPlugins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB2B1518CD0400D2FC84 /* libSCWebPlugins.a */; };
+		6564094215A9B9D80062F28D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094015A9B9D80062F28D /* libcrypto.a */; };
+		6564094315A9B9D80062F28D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094115A9B9D80062F28D /* libssl.a */; };
 		65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
@@ -463,6 +465,8 @@
 		1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebContentApi.xcodeproj; path = ../SCWebContentApi/SCWebContentApi.xcodeproj; sourceTree = "<group>"; };
 		1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCDevice2Web.xcodeproj; path = ../SCDevice2Web/SCDevice2Web.xcodeproj; sourceTree = "<group>"; };
 		1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCWebPlugins.xcodeproj; path = ../SCWebPlugins/SCWebPlugins.xcodeproj; sourceTree = "<group>"; };
+		6564094015A9B9D80062F28D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../lib-third-party/ios-openssl/lib/libcrypto.a"; sourceTree = "<group>"; };
+		6564094115A9B9D80062F28D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../lib-third-party/ios-openssl/lib/libssl.a"; sourceTree = "<group>"; };
 		65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFRestKit.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFRestKit/JFFRestKit.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
@@ -494,6 +498,8 @@
 				1B33DF151518C76200EEA9BA /* libSCUI.a in Frameworks */,
 				1B33DDB91518C60500EEA9BA /* libSCMap.a in Frameworks */,
 				1B33DD931518C5BC00EEA9BA /* Foundation.framework in Frameworks */,
+				6564094215A9B9D80062F28D /* libcrypto.a in Frameworks */,
+				6564094315A9B9D80062F28D /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +620,8 @@
 		1B33DD911518C5BC00EEA9BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6564094015A9B9D80062F28D /* libcrypto.a */,
+				6564094115A9B9D80062F28D /* libssl.a */,
 				1B33956315663E5100E935E9 /* libc++.dylib */,
 				1B33DD921518C5BC00EEA9BA /* Foundation.framework */,
 			);
@@ -1089,32 +1097,28 @@
 		1BC8A31B151B7E3E00A4AC26 /* JFFAsyncOperationsFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			name = JFFAsyncOperationsFW.framework;
-			path = JFFAsyncOperationsFW;
+			path = JFFAsyncOperationsFW.framework;
 			remoteRef = 1BC8A31A151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A321151B7E3E00A4AC26 /* JFFNetworkFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			name = JFFNetworkFW.framework;
-			path = JFFNetworkFW;
+			path = JFFNetworkFW.framework;
 			remoteRef = 1BC8A320151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A326151B7E3E00A4AC26 /* JFFSchedulerFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			name = JFFSchedulerFW.framework;
-			path = JFFSchedulerFW;
+			path = JFFSchedulerFW.framework;
 			remoteRef = 1BC8A325151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework.static;
-			name = JFFUtilsFW.framework;
-			path = JFFUtilsFW;
+			path = JFFUtilsFW.framework;
 			remoteRef = 1BC8A32B151B7E3E00A4AC26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1300,7 +1304,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1316,7 +1319,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1333,6 +1335,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCAllMobileSDKLibs/SCAllMobileSDKLibs-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1346,6 +1352,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCAllMobileSDKLibs/SCAllMobileSDKLibs-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
