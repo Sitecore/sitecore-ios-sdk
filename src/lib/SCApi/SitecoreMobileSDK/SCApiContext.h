@@ -37,7 +37,7 @@
 @interface SCApiContext : NSObject
 
 /**
- Returns SCApiContext's instance with a WebApi host.
+ Returns SCApiContext's instance with a Sitecore Item Web Api host.
  Used to read items and fields as anonimous user from Sitecore site.
 
  You can create the only one SCApiContext object for the one set of options host, login and password, it means that if you try to create another SCApiContext object with the same host, login and password, just previous created SCApiContext object for this host will be returned.
@@ -46,13 +46,13 @@
 
  But SCApiContext object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.
 
- @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/item"
+ @param host the host of Sitecore Item Web Api, example: "mobilesdk.sc-demo.net/-/item"
  @return existing SCApiContext object for the given host or new created one if it doesn't exist
  */
 + (id)contextWithHost:(NSString *)host;
 
 /**
- Returns SCApiContext's instance with a WebApi host, login and password.
+ Returns SCApiContext's instance with a Sitecore Item Web Api host, login and password.
  Used to read items and fields as authenticated user with given login and password from Sitecore site.
 
  You can create the only one SCApiContext object for the one set of options: host, login and password, it means that if you try to create another SCApiContext object with the same host, login and passwor, just previous created SCApiContext object for this host will be returned.
@@ -61,7 +61,7 @@
  
  But SCApiContext object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.
  
- @param host the host of Sitecore WebApi, example: "mobilesdk.sc-demo.net/-/item"
+ @param host the host of Sitecore Item Web Api, example: "mobilesdk.sc-demo.net/-/item"
  @param login the login of user to the Sitecore site
  @param password the password of user to the Sitecore site
  */
@@ -127,7 +127,7 @@
  @param itemId system item's id, -[SCItem itemId] can be used.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is SCItem object or nil if error happens.
 
- If WebApi(backend) does not return any item, SCNoItemError error will be returned by SCAsyncOpResult handler.
+ If Sitecore Item Web Api(backend) does not return any item, SCNoItemError error will be returned by SCAsyncOpResult handler.
  */
 - (SCAsyncOp)itemReaderForItemId:(NSString *)itemId;
 
@@ -138,7 +138,7 @@
 
  SCAsyncOpResult handler may return such errors:
 
- - SCNoItemError                - if WebApi(backend) does not return any item.
+ - SCNoItemError                - if Sitecore Item Web Api(backend) does not return any item.
 
  - SCInvalidPathError           - invalid path argument was passed.
 
@@ -173,7 +173,7 @@
 
  SCAsyncOpResult handler may return such errors:
 
- - SCNoItemError                - if WebApi(backend) does not return any item.
+ - SCNoItemError                - if Sitecore Item Web Api(backend) does not return any item.
 
  - SCNetworkError               - if network error happens.
  
@@ -191,7 +191,7 @@
 
  SCAsyncOpResult handler may return such errors:
 
- - SCNoItemError                - if WebApi(backend) does not return any item.
+ - SCNoItemError                - if Sitecore Item Web Api(backend) does not return any item.
 
  - SCInvalidPathError           - invalid path argument was passed.
 

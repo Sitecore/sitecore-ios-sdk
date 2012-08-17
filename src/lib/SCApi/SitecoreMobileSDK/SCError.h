@@ -11,7 +11,7 @@
 @end
 
 /**
- The SCNoItemError error may happens with calling such method as [SCApiContext itemReaderForItemId:] when WebApi does not return any item
+ The SCNoItemError error may happens with calling such method as [SCApiContext itemReaderForItemId:] when Sitecore Item Web Api does not return any item
  */
 @interface SCNoItemError : SCError
 @end
@@ -44,30 +44,30 @@
 @end
 
 /**
- Any Backend error ( invalid response format or WebApi error ) has type like SCBackendError, see SCBackendError inheritors for details.
+ Any Backend error ( invalid response format or Sitecore Item Web Api error ) has type like SCBackendError, see SCBackendError inheritors for details.
  */
 @interface SCBackendError : SCError
 @end
 
 /**
- The SCResponseError error may happens if WebApi returns error on request instead of expected data, see SCResponseError properties for details
+ The SCResponseError error may happens if Sitecore Item Web Api returns error on request instead of expected data, see SCResponseError properties for details
  */
 @interface SCResponseError : SCBackendError
 
 /**
- The statusCode code of WebApi error, see WebApi documentation for details
+ The statusCode code of Sitecore Item Web Api error, see Sitecore Item Web Api documentation for details
  */
 @property(nonatomic) NSUInteger statusCode;
 /**
- The error's message of WebApi error, see WebApi documentation for details
+ The error's message of Sitecore Item Web Api error, see Sitecore Item Web Api documentation for details
  */
 @property(nonatomic) NSString *message;
 /**
- The error's type of WebApi error, see WebApi documentation for details
+ The error's type of Sitecore Item Web Api error, see Sitecore Item Web Api documentation for details
  */
 @property(nonatomic) NSString *type;
 /**
- The WebApi method which cause an error, see WebApi documentation for details
+ The Sitecore Item Web Api method which cause an error, see Sitecore Item Web Api documentation for details
  */
 @property(nonatomic) NSString *method;
 
