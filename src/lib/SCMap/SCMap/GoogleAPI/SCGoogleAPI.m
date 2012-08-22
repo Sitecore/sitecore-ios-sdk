@@ -96,7 +96,7 @@
                 return nil;
             }
 
-            NSString* status_ = [ jsonDict_ objectForKey: @"status" ];
+            NSString* status_ = jsonDict_[ @"status" ];
             if ( ![ status_ isEqualToString: @"OK" ] )
             {
                 NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad status in [directions response from google API]" ];
@@ -104,7 +104,7 @@
                 return nil;
             }
 
-            NSArray* routes_ = [ jsonDict_ objectForKey: @"routes" ];
+            NSArray* routes_ = jsonDict_[ @"routes" ];
 
             NSDictionary* route_ = [ routes_ noThrowObjectAtIndex: 0 ];
 
@@ -115,7 +115,7 @@
                 return nil;
             }
 
-            NSDictionary* overviewPolyline_ = [ route_ objectForKey: @"overview_polyline" ];
+            NSDictionary* overviewPolyline_ = route_[ @"overview_polyline" ];
             if ( ![ overviewPolyline_ isKindOfClass: [ NSDictionary class ] ]  )
             {
                 NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
@@ -123,7 +123,7 @@
                 return nil;
             }
 
-            NSString* codedPoints_ = [ overviewPolyline_ objectForKey: @"points" ];
+            NSString* codedPoints_ = overviewPolyline_[ @"points" ];
 
             if ( !codedPoints_ )
             {
@@ -190,10 +190,11 @@
 
         lng_ += dlng;
 
-        NSNumber* latitude  = [ [ NSNumber alloc] initWithFloat: lat_ * 1e-5 ];  
-        NSNumber* longitude = [ [ NSNumber alloc] initWithFloat: lng_ * 1e-5 ];  
- 
-        CLLocation* location_ = [ [ CLLocation alloc] initWithLatitude:[ latitude floatValue ] longitude:[ longitude floatValue ] ];
+        NSNumber* latitude  = @( lat_ * 1e-5 );
+        NSNumber* longitude = @( lng_ * 1e-5 );
+
+        CLLocation* location_ = [ [ CLLocation alloc] initWithLatitude: [ latitude floatValue ]
+                                                             longitude: [ longitude floatValue ] ];
         if ( location_ )
         {
             [ array_ addObject: location_ ];

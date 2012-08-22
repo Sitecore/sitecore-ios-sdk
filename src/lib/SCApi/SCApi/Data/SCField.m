@@ -20,9 +20,6 @@
 
 @implementation SCField
 
-@synthesize rawValue    = _rawValue;
-@synthesize fieldRecord = _fieldRecord;
-
 @dynamic fieldId
 , name
 , type

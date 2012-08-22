@@ -15,6 +15,9 @@
 @optional
 +(NSString*)pluginJavascript;
 
+/**
+ This is an entry point for custom plug-in code
+ */
 -(void)didOpenInWebView:( UIWebView* )webView_;
 -(void)didClose;
 

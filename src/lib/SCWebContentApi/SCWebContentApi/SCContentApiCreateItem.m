@@ -35,8 +35,6 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSDictionary* _fields;
 }
 
-@synthesize delegate;
-
 +(BOOL)canInitWithRequest:( NSURLRequest* )request_
 {
     return [ request_.URL.path isEqualToString: @"/scmobile/contentapi/create_media_item" ];

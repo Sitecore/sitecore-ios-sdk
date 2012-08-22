@@ -10,17 +10,6 @@
 
 @implementation SCItemsReaderRequest
 
-@synthesize scope           = _scope;
-@synthesize request         = _request;
-@synthesize requestType     = _requestType;
-@synthesize fieldNames      = _fieldNames;
-@synthesize flags           = _flags;
-@synthesize page            = _page;
-@synthesize pageSize        = _pageSize;
-@synthesize language        = _language;
-@synthesize database        = _database;
-@synthesize lifeTimeInCache = _lifeTimeInCache;
-
 -(id)initWithRequest:( NSString* )request_
          requestType:( SCItemReaderRequestType )requestType_
          fieldsNames:( NSSet* )fieldNames

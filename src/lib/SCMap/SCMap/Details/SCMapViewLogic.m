@@ -29,20 +29,16 @@
     MKMapView* _mapView;
 }
 
-@synthesize regionRadius                = _regionRadius;
-@synthesize drawRouteToNearestAddress   = _drawRouteToNearestAddress;
-@synthesize didLoadedAnnotationsHandler = _didLoadedAnnotationsHandler;
-
 -(id)initWithMapView:( MKMapView* )mapView_
 {
     self = [ super init ];
 
     if ( self )
     {
-        _mapView                   = mapView_;
-        _mapView.showsUserLocation = YES;
-        _drawRouteToNearestAddress = YES;
-        _selfLocation = _mapView.userLocation.location;
+        self->_mapView                   = mapView_;
+        self->_mapView.showsUserLocation = YES;
+        self->_drawRouteToNearestAddress = YES;
+        self->_selfLocation = self->_mapView.userLocation.location;
         [ self initialize ];
     }
 

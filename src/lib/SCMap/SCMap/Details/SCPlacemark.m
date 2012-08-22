@@ -14,11 +14,11 @@
 
     if ( self )
     {
-        NSString* title_ = [ addressDictionary_ objectForKey: @"PlacemarkTitle" ];
+        NSString* title_ = addressDictionary_[ @"PlacemarkTitle" ];
         title_ = [ title_ stringByTrimmingWhitespaces ];
-        _title = [ title_ length ] == 0 ? nil : title_;
+        self->_title = [ title_ length ] == 0 ? nil : title_;
 
-        _iconReader = [ addressDictionary_ objectForKey: @"PlacemarkIconReader"  ];
+        self->_iconReader = addressDictionary_[ @"PlacemarkIconReader"  ];
     }
 
     return self;

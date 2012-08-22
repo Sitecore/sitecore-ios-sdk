@@ -9,8 +9,6 @@
 //STODO create beautiful wait screen
 @implementation SCWaitView
 
-@synthesize alert = _alert;
-
 -(id)init
 {
     self = [ super init ];
@@ -30,7 +28,7 @@
 
 +(id)waitView
 {
-    return [ [ self alloc ] init ];
+    return [ self new ];
 }
 
 -(void)show

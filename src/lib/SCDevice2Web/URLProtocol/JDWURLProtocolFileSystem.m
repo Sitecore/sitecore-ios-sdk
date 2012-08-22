@@ -54,7 +54,7 @@
 -(void)startLoading
 {
     NSString* path_ = [ self.request.URL.path stringByDecodingURLFormat ];
-    NSData* data_ = [ NSData dataWithContentsOfFile: path_ ];
+    NSData* data_ = [ [ NSData alloc ] initWithContentsOfFile: path_ ];
 
     if ( nil == data_ )
     {

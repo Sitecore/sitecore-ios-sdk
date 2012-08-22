@@ -32,13 +32,6 @@
     SCRemoteApi* _api;
 }
 
-@synthesize defaultLanguage              = _defaultLanguage;
-@synthesize defaultDatabase              = _defaultDatabase;
-@synthesize defaultLifeTimeInCache       = _defaultLifeTimeInCache;
-@synthesize defaultImagesLifeTimeInCache = _defaultImagesLifeTimeInCache;
-@synthesize systemLanguages              = _systemLanguages;
-@synthesize itemsCache                   = _itemsCache;
-
 -(id)init
 {
     NSAssert( NO, @"don't call this method" );
@@ -111,14 +104,14 @@
     {
         contextByHost_ = [ JFFMutableAssignDictionary new ];
     }
-    id result_ = [ contextByHost_ objectForKey: key_ ];
+    id result_ = contextByHost_[ key_ ];
     if ( !result_ )
     {
         result_ = [ [ self alloc ] initWithHost: host_
                                           login: login_
                                        password: password_ ];
 
-        [ contextByHost_ setObject: result_ forKey: key_ ];
+        contextByHost_[ key_ ] = result_;
     }
     return result_;
 }
@@ -302,8 +295,8 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
 {
     request_ = ( SCCreateItemRequest* )[ request_ itemsReaderRequestWithApiContext: self ];
 
-    JFFAsyncOperation loader_ = [ _api itemCreatorWithRequest: request_
-                                                   apiContext: self ];
+    JFFAsyncOperation loader_ = [ self->_api itemCreatorWithRequest: request_
+                                                         apiContext: self ];
     loader_ = [ self cachedItemsPageLoader: loader_
                                    request: request_ ];
 
@@ -401,19 +394,19 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
     return asyncOpWithJAsyncOp( loader_ );
 }
 
--(SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId_
-                                         sourceId:(NSString *)sourceId_
+-(SCAsyncOp)renderingHTMLLoaderForRenderingWithId:( NSString* )renderingId_
+                                         sourceId:( NSString* )sourceId_
 {
-    JFFAsyncOperation loader_ = [ _api renderingHTMLLoaderForRenderingId: renderingId_
-                                                                sourceId: sourceId_ 
-                                                              apiContext: self ];
+    JFFAsyncOperation loader_ = [ self->_api renderingHTMLLoaderForRenderingId: renderingId_
+                                                                      sourceId: sourceId_
+                                                                    apiContext: self ];
 
     JFFAsyncOperationBinder binder_ = ^JFFAsyncOperation( NSArray* ids_ )
     {
         return loader_;
     };
 
-    NSArray* ids_ = [ NSArray arrayWithObjects: renderingId_?:@"", sourceId_?:@"", nil ];
+    NSArray* ids_ = @[ renderingId_?:@"", sourceId_?:@"" ];
     loader_ = asyncOpWithValidIds( binder_, ids_ );
 
     return asyncOpWithJAsyncOp( loader_ );

@@ -13,8 +13,6 @@ typedef void (^JFFActionsPerfomer)( JFFSimpleBlock );
 
 @implementation SCCacheURLProtocol
 
-@synthesize cachedData;
-
 +(NSData*)cachedDataForURL:( NSURL* )url_
 {
     __block id result_ = nil;

@@ -9,6 +9,8 @@
 
 #import "NSArray+kABMultiValue.h"
 
+
+#import "SCAddressBook.h"
 #import <AddressBook/AddressBook.h>
 
 static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
@@ -32,18 +34,20 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 @interface SCContact ()
 
 @property ( nonatomic ) BOOL newContact;
+-(ABRecordRef)rawPerson CF_RETURNS_NOT_RETAINED;
+-(void)setRawPerson:( ABRecordRef )person_;
+
 
 @end
 
 @implementation SCContact
 {
     NSMutableDictionary* _fieldByName;
+    SCAddressBook*       _addressBookWrapper;
+    ABRecordRef          _person;
 }
 
-@synthesize contactInternalId = _contactInternalId;
-@synthesize person            = _person;
-@synthesize newContact        = _newContact;
-@synthesize addressBook       = _addressBook;
+@dynamic addressBook;
 
 @dynamic firstName
 , lastName
@@ -58,30 +62,27 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 -(id)forwardingTargetForSelector:( SEL )selector_
 {
     NSString* selectorName_ = NSStringFromSelector( selector_ );
-    SCContactField* field_ = [ _fieldByName objectForKey: selectorName_ ];
+    SCContactField* field_ = self->_fieldByName[ selectorName_ ];
     if ( !field_ )
     {
-        field_ = [ _fieldByName objectForKey: [ selectorName_ propertyGetNameFromPropertyName ] ];
+        field_ = self->_fieldByName[ [ selectorName_ propertyGetNameFromPropertyName ] ];
     }
     return field_ ?: self;
 }
 
 -(void)dealloc
 {
-    if ( _person )
-        CFRelease( _person );
-    if ( _addressBook )
-        CFRelease( _addressBook );
+    self.rawPerson = nil;
 }
 
 -(void)addField:( SCContactField* )field_
 {
-    [ _fieldByName setObject: field_ forKey: field_.name ];
+    self->_fieldByName[ field_.name ] = field_;
 }
 
 -(void)initializeDynamicFields
 {
-    _fieldByName = [ NSMutableDictionary new ];
+    self->_fieldByName = [ NSMutableDictionary new ];
 
     [ self addField: [ SCContactStringField contactFieldWithName: @"firstName"
                                                       propertyID: kABPersonFirstNameProperty ] ];
@@ -93,12 +94,12 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
                                                     propertyID: kABPersonBirthdayProperty ] ];
     [ self addField: [ SCContactPhotoField contactFieldWithName: @"photo" ] ];
 
-    NSArray* labels_ = [ NSArray arrayWithObjects: @"home", @"work", nil ];
+    NSArray* labels_ = @[ @"home", @"work" ];
     [ self addField: [ SCContactEmailsField contactFieldWithName: @"emails" 
                                                       propertyID: kABPersonEmailProperty
                                                           labels: labels_ ] ];
 
-    labels_ = [ NSArray arrayWithObjects: @"mobile"
+    labels_ = @[ @"mobile"
                , @"iPhone"
                , @"home"
                , @"work"
@@ -107,38 +108,38 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
                , @"work fax"
                , @"other fax"
                , @"pager"
-               , @"other"
-               , nil ];
+               , @"other" ];
     [ self addField: [ SCContactStringArrayField contactFieldWithName: @"phones" 
                                                            propertyID: kABPersonPhoneProperty
                                                                labels: labels_ ] ];
 
-    labels_ = [ NSArray arrayWithObjects: @"home page"
+    labels_ = @[ @"home page"
                , @"home"
                , @"work"
-               , @"other"
-               , nil ];
+               , @"other" ];
     [ self addField: [ SCContactStringArrayField contactFieldWithName: @"websites" 
                                                            propertyID: kABPersonURLProperty
                                                                labels: labels_ ] ];
 
-    labels_ = [ NSArray arrayWithObjects: @"home"
+    labels_ = @[ @"home"
                , @"work"
-               , @"other"
-               , nil ];
+               , @"other" ];
     [ self addField: [ SCContactDictionaryArrayField contactFieldWithName: @"addresses" 
                                                                propertyID: kABPersonAddressProperty
                                                                    labels: labels_ ] ];
 }
 
 -(id)initWithPerson:( ABRecordRef )person_
+        addressBook:( SCAddressBook* )addressBook_
 {
     self = [ super init ];
 
     if ( self )
     {
         NSParameterAssert( person_ );
-
+        NSParameterAssert( nil != addressBook_ );
+        self->_addressBookWrapper = addressBook_;
+        
         [ self initializeDynamicFields ];
 
         _contactInternalId = ABRecordGetRecordID( person_ );
@@ -148,18 +149,23 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
             [ field_ readPropertyFromRecord: person_ ];
         } ];
 
-        _person = CFRetain( person_ );
+        self.rawPerson = person_;
     }
 
     return self;
 }
 
 -(id)initWithArguments:( NSDictionary* )args_
+           addressBook:( SCAddressBook* )addressBook_
 {
     self = [ super init ];
 
+    NSParameterAssert( nil != addressBook_ );
+    
     if ( self )
     {
+        self->_addressBookWrapper = addressBook_;
+        
         [ self initializeDynamicFields ];
 
         _contactInternalId = [ [ args_ firstValueIfExsistsForKey: @"contactInternalId" ] longLongValue ];
@@ -176,13 +182,10 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
     return self;
 }
 
+
 -(ABAddressBookRef)addressBook
 {
-    if ( !_addressBook )
-    {
-        _addressBook = ABAddressBookCreate();
-    }
-    return _addressBook;
+    return self->_addressBookWrapper.rawBook;
 }
 
 -(ABRecordRef)person
@@ -194,15 +197,41 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
     return _person;
 }
 
+-(ABRecordRef)rawPerson
+{
+    return self->_person;
+}
+
+-(void)setRawPerson:( ABRecordRef )person_
+{
+    if ( person_ == self->_person )
+    {
+        return;
+    }
+    
+    
+    if ( NULL != self->_person )
+    {
+        CFRelease( self->_person );
+    }
+    self->_person = NULL;
+
+    if ( NULL != person_ )
+    {
+        self->_person = CFRetain( person_ );
+    }
+}
+
+
 -(NSDictionary*)toDictionary
 {
-    NSMutableDictionary* result_ = [ [ NSMutableDictionary alloc ] initWithObjectsAndKeys:
-            [ NSNumber numberWithLongLong: _contactInternalId ], @"contactInternalId"
-            , nil ];
+    NSMutableDictionary* result_ = [ @{
+    @"contactInternalId" : @( self->_contactInternalId )
+    } mutableCopy ];
 
-    [ _fieldByName enumerateKeysAndObjectsUsingBlock: ^( id key, SCContactField* field_, BOOL* stop )
+    [ self->_fieldByName enumerateKeysAndObjectsUsingBlock: ^( id key, SCContactField* field_, BOOL* stop )
     {
-        [ result_ setObject: field_.jsonValue forKey: field_.name ];
+        result_[ field_.name ] = field_.jsonValue;
     } ];
 
     return result_;

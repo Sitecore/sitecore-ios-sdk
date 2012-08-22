@@ -29,19 +29,6 @@
 
 @implementation SCItemRecord
 
-@synthesize path         = _path;
-@synthesize itemId       = _itemId;
-@synthesize hasChildren  = _hasChildren;
-@synthesize displayName  = _displayName;
-@synthesize itemTemplate = _itemTemplate;
-@synthesize longID       = _longID;
-@synthesize fieldsByName = _allFieldsByName;
-@synthesize hasAllFields = _hasAllFields;
-@synthesize language     = _language;
-
-@synthesize itemRef    = _itemRef;
-@synthesize apiContext = _apiContext;
-
 -(void)dealloc
 {
     [ self unregisterFromCacheItemAndChildren: NO ];

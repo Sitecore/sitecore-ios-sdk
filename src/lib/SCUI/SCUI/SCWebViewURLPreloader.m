@@ -11,15 +11,13 @@
 
 @implementation SCWebViewURLPreloader
 
-@synthesize urls;
-
 -(id)initWithURLs:( NSArray* )URLs_
 {
     self = [ super init ];
 
     if ( self )
     {
-        urls = URLs_;
+        self->_urls = URLs_;
     }
 
     return self;

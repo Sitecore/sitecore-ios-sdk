@@ -23,13 +23,9 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     __weak SCGestureRecognizer* _recognizer;
 }
 
-@synthesize addresses    = _addresses;
-@synthesize drawRoute    = _drawRoute;
-@synthesize regionRadius = _regionRadius;
-
 -(void)dealloc
 {
-    [ _recognizer removeTarget: self action: @selector( tapAction ) ];
+    [ self->_recognizer removeTarget: self action: @selector( tapAction ) ];
 }
 
 -(SCMapView*)mapView

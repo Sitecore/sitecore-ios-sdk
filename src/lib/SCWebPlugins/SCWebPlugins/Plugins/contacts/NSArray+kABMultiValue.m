@@ -22,7 +22,7 @@
         }
     }
 
-    return [ NSArray arrayWithArray: result_ ];
+    return [ result_ copy ];
 }
 
 @end

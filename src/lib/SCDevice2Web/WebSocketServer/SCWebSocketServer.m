@@ -56,10 +56,10 @@ NSString* const SCWebSocketServerPortChanged = @"SCWebSocketServerPortChanged";
 
 -(void)didBecomeActive:( NSNotification* )notification_
 {
-    [ _server stop ];
+    [ self->_server stop ];
     [ self startOnSomePort ];
 
-    NSNumber* port_ = [ NSNumber numberWithUnsignedInt: _port ];
+    NSNumber* port_ = @( self->_port );
     [ [ NSNotificationCenter defaultCenter ] postNotificationName: SCWebSocketServerPortChanged
                                                            object: port_ ];
 }

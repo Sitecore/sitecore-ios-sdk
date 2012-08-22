@@ -40,8 +40,6 @@
     __weak UIView* _viewToIgnoreTouches;
 }
 
-@synthesize scDelegate = _scDelegate;
-
 +(id)recognizerWithView:( UIView* )view_
     viewToIgnoreTouches:( UIView* )viewToIgnoreTouches_
 {

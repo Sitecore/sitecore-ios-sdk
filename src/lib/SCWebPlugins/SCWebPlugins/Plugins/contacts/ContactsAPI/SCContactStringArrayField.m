@@ -67,10 +67,10 @@ static ABMutableMultiValueRef createMutableMultiValueWithArray( NSArray* element
 -(void)setPropertyFromValues:( NSDictionary* )components_
                     toRecord:( ABRecordRef )record_
 {
-    self.value = [ self filteredValues: [ components_ objectForKey: self.name ] ];
+    self.value = [ self filteredValues: components_[ self.name ] ];
 
     CFErrorRef error_ = NULL;
-    ABMutableMultiValueRef values_ = createMutableMultiValueWithArray( self.value, _labels );
+    ABMutableMultiValueRef values_ = createMutableMultiValueWithArray( self.value, self->_labels );
     BOOL didSet = ABRecordSetValue( record_
                                    , self.propertyID
                                    , values_

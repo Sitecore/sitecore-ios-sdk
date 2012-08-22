@@ -33,10 +33,10 @@ JFFAsyncOperation firstItemFromArrayReader( JFFAsyncOperation loader_ )
 {
     JFFAnalyzer analyzer_ = ^id( NSArray* items_, NSError** error_ )
     {
-        SCItem* item_ = [ items_ count ] > 0 ? [ items_ objectAtIndex: 0 ] : nil;
+        SCItem* item_ = [ items_ count ] > 0 ? items_[ 0 ] : nil;
 
         if ( !item_ && error_ )
-            *error_ = [ SCNoItemError error ];
+            *error_ = [ SCNoItemError new ];
 
         return item_;
     };
@@ -47,7 +47,7 @@ JFFAsyncOperation firstItemFromArrayReader( JFFAsyncOperation loader_ )
 static JFFAsyncOperation asyncOpForItemPath( NSString* path_ )
 {
     if ( ![ path_ isSCPathValid ] )
-        return asyncOperationWithError( [ SCInvalidPathError error ] );
+        return asyncOperationWithError( [ SCInvalidPathError new ] );
 
     return asyncOperationWithResult( path_ );
 }
@@ -111,18 +111,17 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
                                           , NSString* httpMethod_
                                           , NSDictionary* headers_ )
 {
-    headers_ = headers_ ?: [ NSDictionary new ];
+    headers_ = headers_ ?: @{};
     if ( [ credentials_.login length ] != 0 )
     {
-//TODO implement crypting password
 //        NSString* encryptedPassword_ = credentials_.encryptedPassword;
 
-        NSDictionary* authHeaders_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                                      credentials_.login  , @"X-Scwebapi-Username"
-                                      , credentials_.password, @"X-Scwebapi-Password"
-//                                      , encryptedPassword_, @"X-Scwebapi-Password"
-//                                      , @"1", @"X-Scwebapi-Encrypted"
-                                      , nil ];
+        NSDictionary* authHeaders_ = @{
+        @"X-Scitemwebapi-Username" : credentials_.login,
+//        @"X-Scitemwebapi-Password" : credentials_.encryptedPassword,
+        @"X-Scitemwebapi-Password" : credentials_.password,
+//        @"X-Scitemwebapi-Encrypted" : @"1"
+        };
         headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
     }
 

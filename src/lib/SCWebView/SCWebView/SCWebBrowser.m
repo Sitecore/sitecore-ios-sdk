@@ -19,8 +19,6 @@ static CGFloat navigatin_header_height_ = 40.f;
 
 @implementation SCWebBrowser
 
-@synthesize webView, navigationHeader;
-
 @dynamic dataDetectorTypes
 , allowsInlineMediaPlayback
 , mediaPlaybackRequiresUserAction
@@ -89,8 +87,8 @@ static CGFloat navigatin_header_height_ = 40.f;
     SCNavigationHeader* navigationHeader_ = [ [ SCNavigationHeader alloc ] initWithFrame: [ self navigationHeaderRect ] ];
     [ self setCustomToollbarView: navigationHeader_ ];
     
-    webView = [ [ SCWebView alloc ] initWithFrame: [ self webViewRect ] ];
-    webView.delegate = self;
+    self->_webView = [ [ SCWebView alloc ] initWithFrame: [ self webViewRect ] ];
+    self->_webView.delegate = self;
     [ self addSubviewAndScale: self.webView ];
 }
 

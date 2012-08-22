@@ -1,6 +1,8 @@
 #import "SCWebPlugin.h"
 
 #import "SCContact.h"
+#import "SCAddressBook.h"
+#import "SCAddressBookFactory.h"
 
 #import "NSArray+ContactsToJSON.h"
 #import "UIPopoverController+PresentPopoverInWebView.h"
@@ -15,6 +17,8 @@
     , UIPopoverControllerDelegate
 >
 
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWSelectContactsPlugin
@@ -26,18 +30,20 @@
     ABRecordRef _person;
 }
 
-@synthesize delegate;
-
 -(void)dealloc
 {
-    CFRelease( _person );
+    if ( self->_person )
+        CFRelease( self->_person );
 }
 
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -57,16 +63,14 @@
         return;
     }
 
-    _controller = [ ABPeoplePickerNavigationController new ];
-    _controller.delegate = self;
-    _controller.peoplePickerDelegate = self;
+    self->_controller = [ ABPeoplePickerNavigationController new ];
+    self->_controller.delegate = self;
+    self->_controller.peoplePickerDelegate = self;
 
-    NSArray* displayedItems = [ NSArray arrayWithObjects:
-                               [ NSNumber numberWithInt: kABPersonPhoneProperty ]
-                               , [ NSNumber numberWithInt: kABPersonEmailProperty    ]
-                               , [ NSNumber numberWithInt: kABPersonBirthdayProperty ]
-                               , nil ];
-    _controller.displayedProperties = displayedItems;
+    NSArray* displayedItems = @[ @( kABPersonPhoneProperty    )
+                               , @( kABPersonEmailProperty    )
+                               , @( kABPersonBirthdayProperty ) ];
+    self->_controller.displayedProperties = displayedItems;
 
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone)
     {
@@ -74,10 +78,10 @@
     }
     else
     {
-        _popover = [ [ UIPopoverController alloc ] initWithContentViewController: _controller ];
-        _popover.delegate = self;
-        [ _popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 480.f, 320.f )
-                                inWebView: webView_ ];
+        self->_popover = [ [ UIPopoverController alloc ] initWithContentViewController: self->_controller ];
+        self->_popover.delegate = self;
+        [self->_popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 480.f, 320.f )
+                                     inWebView: webView_ ];
     }
 }
 
@@ -114,10 +118,42 @@
 
 -(void)selectItemAction:( id )sender_
 {
-    NSString* message_;
-    if ( _person )
+    __weak JDWSelectContactsPlugin* weakSelf_ = self;
+
+    
+    [ SCAddressBookFactory asyncAddressBookWithOnCreatedBlock:
+        ^void(SCAddressBook* book_, ABAuthorizationStatus status_, NSError* error_)
+        {
+            if ( kABAuthorizationStatusAuthorized != status_ )
+            {
+                [ weakSelf_ processAccessError: error_
+                                forAddressBook: book_
+                                        status: status_ ];
+            }
+            else
+            {
+                [ self selectItemActionWithAddressBook: book_ ];
+            }
+        } ];
+}
+
+-(void)processAccessError:( NSError* )error_
+           forAddressBook:( SCAddressBook* )book_
+                   status:( ABAuthorizationStatus )status_
+{
+    NSString* msg_ = [ error_ localizedDescription ];
+    
+    [ self.delegate sendMessage: msg_ ];
+    [ self.delegate close ];
+}
+
+-(void)selectItemActionWithAddressBook:( SCAddressBook* )book_
+{
+    NSString* message_ = nil;
+    if ( self->_person )
     {
-        SCContact* contact_ = [ [ SCContact alloc ] initWithPerson: _person ];
+        SCContact* contact_ = [ [ SCContact alloc ] initWithPerson: _person
+                                                       addressBook: book_ ];
         NSArray* contacts_ = [ NSArray arrayWithObject: contact_ ];
         message_ = [ contacts_ scContactsToJSON ];
         message_ = message_ ?: @"{ error: 'Invalid Contacts JSON 1' }";
@@ -126,7 +162,7 @@
     {
         message_ = @"{ error: 'canceled' }";
     }
-
+    
     [ self hideControllers ];
     [ self onStopWithMessage: message_ ];
 }

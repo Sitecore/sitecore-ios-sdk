@@ -1,5 +1,7 @@
 #import "SCWebPlugin.h"
 
+#import "SCAddressBookFactory.h"
+#import "SCAddressBook.h"
 #import "SCContact.h"
 
 #import "UIPopoverController+PresentPopoverInWebView.h"
@@ -34,6 +36,8 @@
     , UIPopoverControllerDelegate
 >
 
+@property ( nonatomic, strong ) SCAddressBook* book;
+
 @end
 
 @implementation JDWSaveContactPlugin
@@ -43,13 +47,14 @@
     UIPopoverController* _popover;
 }
 
-@synthesize delegate;
-
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -106,8 +111,20 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
+    __weak JDWSaveContactPlugin* weakSelf_ = self;
+    [ SCAddressBookFactory asyncAddressBookWithSuccessBlock: ^( SCAddressBook* book_ )
+     {
+         weakSelf_.book = book_;
+     }
+                                              errorCallback: ^(ABAuthorizationStatus status_, NSError* error_)
+     {
+         [ weakSelf_.delegate sendMessage: error_.localizedDescription ];
+         [ weakSelf_.delegate close ];
+     }];
+    
     NSDictionary* args_  = [ _request.URL queryComponents ];
-    SCContact* contact_ = [ [ SCContact alloc ] initWithArguments: args_ ];
+    SCContact* contact_ = [ [ SCContact alloc ] initWithArguments: args_
+                                                      addressBook: self->_book ];
 
     [ self saveOrCreateContact: contact_
                        webView: webView_ ];
@@ -116,7 +133,8 @@
 -(void)sendSavedPerson:( ABRecordRef )person_
 {
     SCContact* contact_ = person_
-        ? [ [ SCContact alloc ] initWithPerson: person_ ]
+        ? [ [ SCContact alloc ] initWithPerson: person_
+                                   addressBook: self->_book ]
         : nil;
 
     NSString* message_;

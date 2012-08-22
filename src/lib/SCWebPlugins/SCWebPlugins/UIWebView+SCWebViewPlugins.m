@@ -113,7 +113,7 @@
 
     NSString* socketGuid_ = [ [ request_.URL queryComponents ] firstValueIfExsistsForKey: @"guid" ];
     NSString* path_ = request_.URL.path;
-    SCWebViewPluginHolder* holder_ = [ self.pluginBySocketGuid objectForKey: socketGuid_ ];
+    SCWebViewPluginHolder* holder_ = self.pluginBySocketGuid[ socketGuid_ ];
 
     if( !holder_ && [ path_ scCloseSocketPath ] )
     {
@@ -137,7 +137,7 @@
     else
     {
         holder_ = [ SCWebViewPluginHolder webViewPluginHolderForRequest: request_ ];
-        [ self.pluginBySocketGuid setObject: holder_ forKey: socketGuid_ ];
+        self.pluginBySocketGuid[ socketGuid_ ] = holder_;
         [ holder_ didOpenInWebView: self ];
     }
 

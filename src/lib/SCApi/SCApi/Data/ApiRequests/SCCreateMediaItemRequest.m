@@ -2,25 +2,20 @@
 
 @implementation SCCreateMediaItemRequest
 
-@synthesize itemName      = _itemName;
-@synthesize itemTemplate  = _itemTemplate;
-@synthesize mediaItemData = _mediaItemData;
-@synthesize fieldNames    = _fieldNames;
-@synthesize fileName      = _fileName;
-@synthesize contentType   = _contentType;
-@synthesize folder        = _folder;
-
 -(id)copyWithZone:( NSZone* )zone_
 {
     SCCreateMediaItemRequest* result_ = [ [ [ self class ] allocWithZone: zone_ ] init ];
 
-    result_->_itemName      = [ self.itemName      copyWithZone: zone_ ];
-    result_->_itemTemplate  = [ self.itemTemplate  copyWithZone: zone_ ];
-    result_->_mediaItemData = [ self.mediaItemData copyWithZone: zone_ ];
-    result_->_fileName      = [ self.fileName      copyWithZone: zone_ ];
-    result_->_contentType   = [ self.contentType   copyWithZone: zone_ ];
-    result_->_folder        = [ self.folder        copyWithZone: zone_ ];
-    result_->_fieldNames    = [ self.fieldNames    copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_->_itemName      = [ self.itemName      copyWithZone: zone_ ];
+        result_->_itemTemplate  = [ self.itemTemplate  copyWithZone: zone_ ];
+        result_->_mediaItemData = [ self.mediaItemData copyWithZone: zone_ ];
+        result_->_fileName      = [ self.fileName      copyWithZone: zone_ ];
+        result_->_contentType   = [ self.contentType   copyWithZone: zone_ ];
+        result_->_folder        = [ self.folder        copyWithZone: zone_ ];
+        result_->_fieldNames    = [ self.fieldNames    copyWithZone: zone_ ];
+    }
 
     return result_;
 }

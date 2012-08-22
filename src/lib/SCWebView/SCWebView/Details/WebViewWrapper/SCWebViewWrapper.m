@@ -36,10 +36,6 @@ UIWebViewDelegate
     SCWebViewDeviceEvents*  _deviceEvents;
 }
 
-@synthesize delegate;
-@synthesize activityIndicator = _activityIndicator;
-@synthesize contentRequest = _contentRequest;
-
 @dynamic scalesPageToFit;
 @dynamic request;
 
@@ -139,49 +135,49 @@ UIWebViewDelegate
 
 -(UIScrollView*)scrollView
 {
-    return _webView.scrollView;
+    return self->_webView.scrollView;
 }
 
 -(void)loadRequest:( NSURLRequest* )request_
 {
-    [ _activityIndicator startAnimating ];
+    [ self->_activityIndicator startAnimating ];
     
-    [ _webView loadRequest: request_ ];
+    [ self->_webView loadRequest: request_ ];
 }
 
 -(void)loadHTMLString:( NSString* )string_ baseURL:( NSURL* )baseURL_
 {
-    [ _webView loadHTMLString: string_ baseURL: baseURL_ ];
+    [ self->_webView loadHTMLString: string_ baseURL: baseURL_ ];
 }
 
 -(void)reload
 {
-    [ _webView reload ];
+    [ self->_webView reload ];
 }
 
 -(void)stopLoading
 {
-    [ _webView stopLoading ];
+    [ self->_webView stopLoading ];
 }
 
 -(void)goBack
 {
-    [ _webView goBack ];
+    [ self->_webView goBack ];
 }
 
 -(void)goForward
 {
-    [ _webView goForward ];
+    [ self->_webView goForward ];
 }
 
 -(BOOL)canGoBack
 {
-    return [ _webView canGoBack ];
+    return [ self->_webView canGoBack ];
 }
 
 -(BOOL)canGoForward
 {
-    return [ _webView canGoForward ];
+    return [ self->_webView canGoForward ];
 }
 
 -(id)forwardingTargetForSelector:( SEL )aSelector
@@ -196,12 +192,12 @@ UIWebViewDelegate
 
 -(NSString*)stringByEvaluatingJavaScriptFromString:( NSString* )script_
 {
-    return [ _webView stringByEvaluatingJavaScriptFromString: script_ ];
+    return [ self->_webView stringByEvaluatingJavaScriptFromString: script_ ];
 }
 
 -(BOOL)isLoading
 {
-    return [ _webView isLoading ];
+    return [ self->_webView isLoading ];
 }
 
 -(void)loadData:(NSData *)data
@@ -209,17 +205,17 @@ UIWebViewDelegate
 textEncodingName:(NSString *)textEncodingName
         baseURL:(NSURL *)baseURL
 {
-    [ _webView loadData: data
-               MIMEType: MIMEType
-       textEncodingName: textEncodingName
-                baseURL: baseURL ];
+    [ self->_webView loadData: data
+                     MIMEType: MIMEType
+             textEncodingName: textEncodingName
+                      baseURL: baseURL ];
 }
 
 -(void)layoutSubviews
 {
     [ super layoutSubviews ];
-    
-    _activityIndicator.center = self.center;
+
+    self->_activityIndicator.center = self.center;
 }
 
 #pragma mark UIWebViewDelegate
@@ -230,44 +226,44 @@ navigationType:( UIWebViewNavigationType )navigation_type_
 {
     if ( [ webView_ applyPluginToRequest: request_ ] )
         return NO;
-    
+
     if ( [ [ request_ URL ] isDWFilePathURL ] )
         return YES;
-    
+
     SEL selector_ = @selector( webView:shouldStartLoadWithRequest:navigationType: );
-    if ( [ delegate respondsToSelector: selector_ ] )
+    if ( [ self->_delegate respondsToSelector: selector_ ] )
     {
-        return [ delegate webView: self
+        return [ self->_delegate webView: self
        shouldStartLoadWithRequest: request_
                    navigationType: navigation_type_ ];
     }
-    
+
     return YES;
 }
 
 -(void)webViewDidStartLoad:( UIWebView* )webView_
 {
-    if ( [ delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
-        [ delegate webViewDidStartLoad: self ];
+    if ( [ self->_delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+        [ self->_delegate webViewDidStartLoad: self ];
 }
 
 -(void)webViewDidFinishLoad:( UIWebView* )webView_
 {
-    [ _activityIndicator stopAnimating ];
-    
-    if ( [ delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
-        [ delegate webViewDidFinishLoad: self ];
-    
+    [ self->_activityIndicator stopAnimating ];
+
+    if ( [ self->_delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+        [ self->_delegate webViewDidFinishLoad: self ];
+
     [ [ self class ] enableSCJavascriptForWevView: webView_ ];
 }
 
 -(void)webView:( UIWebView* )web_view_
 didFailLoadWithError:( NSError* )error_
 {
-    [ _activityIndicator stopAnimating ];
-    
-    if ( [ delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
-        [ delegate webView: self didFailLoadWithError: error_ ];
+    [ self->_activityIndicator stopAnimating ];
+
+    if ( [ self->_delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
+        [ self->_delegate webView: self didFailLoadWithError: error_ ];
 }
 
 @end

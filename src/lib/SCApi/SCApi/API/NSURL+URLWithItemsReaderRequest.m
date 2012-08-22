@@ -23,6 +23,17 @@ static NSString* const apiVersion_ = @"v1";
     return [ self stringByAppendingString: @"/sitecore/shell" ];
 }
 
+-(NSString*)scHostWithURLScheme
+{
+    NSString* result_ = self;
+    if ( ![ result_ hasPrefix: @"https://" ]
+        && ![ result_ hasPrefix: @"http://" ] )
+    {
+        result_ = [ @"http://" stringByAppendingString: self ];
+    }
+    return result_;
+}
+
 @end
 
 @interface SCItemsReaderRequest (URLWithItemsReaderRequestPrivate)
@@ -53,10 +64,9 @@ static NSString* const apiVersion_ = @"v1";
     if ( self.requestType == SCItemReaderRequestQuery )
         return @"";
 
-    NSArray* scopes_ = [ NSMutableArray arrayWithObjects: @"p"
+    NSArray* scopes_ = @[ @"p"
                         , @"s"
-                        , @"c"
-                        , nil ];
+                        , @"c" ];
 
     scopes_ = [ scopes_ selectWithIndex: ^BOOL( id object_, NSUInteger index_ )
     {
@@ -152,8 +162,7 @@ static NSString* const apiVersion_ = @"v1";
     NSString* fieldsParam_ = [ request_ fieldsURLParam ];
     NSString* pagesParam_  = [ request_ pagesURLParam  ];
 
-    NSArray* params_ = [ [ NSArray alloc ] initWithObjects:
-                        scopeParam_
+    NSArray* params_ = @[ scopeParam_
                         , queryParam_
                         , itemIdParam_
                         , fieldsParam_
@@ -161,20 +170,14 @@ static NSString* const apiVersion_ = @"v1";
                         , languageParam_
                         , databaseParam_
                         , nameParam_
-                        , templateParam_
-                        , nil ];
+                        , templateParam_ ];
 
     params_ = [ params_ select: ^BOOL( NSString* string_ )
     {
         return [ string_ length ] != 0;
     } ];
 
-    NSString* hostWithSheme_ = host_;
-    if ( ![ hostWithSheme_ hasPrefix: @"https://" ]
-        && ![ hostWithSheme_ hasPrefix: @"http://" ] )
-    {
-        hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
-    }
+    NSString* hostWithSheme_ = [ host_ scHostWithURLScheme ];
 
     NSString* urlString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@%@?%@"
                             , hostWithSheme_
@@ -182,7 +185,7 @@ static NSString* const apiVersion_ = @"v1";
                             , pathParam_
                             , [ params_ componentsJoinedByString: @"&" ] ];
 
-    return [ NSURL URLWithString: urlString_ ];
+    return [ [ NSURL alloc ] initWithString: urlString_ ];
 }
 
 +(id)URLWithItemsReaderRequest:( SCItemsReaderRequest* )request_
@@ -240,41 +243,35 @@ static NSString* const apiVersion_ = @"v1";
 
 +(id)URLToGetSecureKeyForHost:( NSString* )host_
 {
-    NSString* hostWithSheme_ = host_;
-    if ( ![ hostWithSheme_ hasPrefix: @"https://" ]
-        && ![ hostWithSheme_ hasPrefix: @"http://" ] )
-    {
-        hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
-    }
+    NSString* hostWithSheme_ = [ host_ scHostWithURLScheme ];
 
-    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@/-/system/securekey"
+    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@/-/actions/getpublickey"
                                 , hostWithSheme_
                                 , apiVersion_ ];
 
-    return [ NSURL URLWithString: requestString_ ];
+    return [ [ NSURL alloc ] initWithString: requestString_ ];
 }
 
+//http://localhost/-/item/v1/-/actions/GetRenderingHtml?database=master&language=en&renderingId={493B3A83
+//    -0FA7-4484-8FC9-4680991CF743}&itemId={110D559F-DEA5-42EA-9C1C-
+//        8A5DF7E70EF9}&itemVersion=7&a=1&b=2&c=3
 +(id)URLToGetRenderingHTMLLoaderForRenderingId:( NSString* )rendereringId_
                                       sourceId:( NSString* )sourceId_
                                           host:( NSString* )host_
                                     apiContext:( SCApiContext* )apiContext_
 {
-    NSString* hostWithSheme_ = host_;
-    if ( ![ hostWithSheme_ hasPrefix: @"https://" ]
-        && ![ hostWithSheme_ hasPrefix: @"http://" ] )
-    {
-        hostWithSheme_ = [ @"http://" stringByAppendingString: host_ ];
-    }
+    NSString* hostWithSheme_ = [ host_ scHostWithURLScheme ];
 
-    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: @"%@/%@/-/system/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@"
+    static NSString* const urlFormat_ = @"%@/%@/-/system/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@";
+    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: urlFormat_
                                 , hostWithSheme_
                                 , apiVersion_
                                 , [ apiContext_.defaultDatabase stringByEncodingURLFormat ]
                                 , [ apiContext_.defaultLanguage stringByEncodingURLFormat ]
-                                , [ rendereringId_ stringByEncodingURLFormat ]
-                                , [ sourceId_ stringByEncodingURLFormat ] ];
+                                , [ rendereringId_              stringByEncodingURLFormat ]
+                                , [ sourceId_                   stringByEncodingURLFormat ] ];
 
-    return [ NSURL URLWithString: requestString_ ];
+    return [ [ NSURL alloc ] initWithString: requestString_ ];
 }
 
 @end

@@ -64,7 +64,7 @@
         {
             SCSitecoreCredentials* credentials_ = [ SCSitecoreCredentials new ];
             JFFAsyncOperation loader_ = asyncOperationWithResult( credentials_ );
-            return loader_( progressCallback_, cancelCallback_, doneCallback_ );
+            return loader_(progressCallback_, cancelCallback_, doneCallback_ );
         };
     }
     else
@@ -158,7 +158,7 @@
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLWithItemsReaderRequest: request_
-                                            host: _host ];
+                                            host: self->_host ];
     };
 
     SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiCntext( apiContext_ );
@@ -213,9 +213,7 @@
                                                           url: url_ ];
 
     NSString* httpMethod_  = @"PUT";
-    NSDictionary* headers_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                              @"application/x-www-form-urlencoded", @"Content-Type"
-                              , nil ];
+    NSDictionary* headers_ = @{ @"Content-Type" : @"application/x-www-form-urlencoded" };
 
     return [ self authedApiResponseDataLoaderForURL: url_
                                            httpBody: httpBody_
@@ -321,7 +319,7 @@
                                                          encoding: NSUTF8StringEncoding ];
             if ( !result_ )
             {
-                SCInvalidResponseFormatError* error_ = [ SCInvalidResponseFormatError error ];
+                SCInvalidResponseFormatError* error_ = [ SCInvalidResponseFormatError new ];
                 error_.responseData = serverData_;
                 [ error_ setToPointer: outError_ ];
                 return nil;
@@ -338,7 +336,7 @@
                                                          apiContext: apiContext_ ];
 
     if ( !url_ )
-        return asyncOperationWithError( [ SCError error ] );
+        return asyncOperationWithError( [ SCError new ] );
 
     return bindSequenceOfAsyncOperations( [ self scDataLoaderWithURL ]( url_ )
                                          , parser_

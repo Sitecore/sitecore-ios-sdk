@@ -15,8 +15,6 @@
     CLLocationDistance _regionRadius;
 }
 
-@synthesize delegate = _delegate;
-
 @dynamic mapType
 , region
 , centerCoordinate

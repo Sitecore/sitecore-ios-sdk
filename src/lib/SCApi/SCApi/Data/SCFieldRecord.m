@@ -21,48 +21,39 @@
 
 @implementation SCFieldRecord
 
-@synthesize apiContext = _apiContext;
-@synthesize fieldId    = _fieldId;
-@synthesize name       = _name;
-@synthesize type       = _type;
-@synthesize rawValue   = _rawValue;
-@synthesize itemRecord = _itemRecord;
-@synthesize fieldRef   = _fieldRef;
-@synthesize fieldValue = _fieldValue;
-
 +(Class)fieldClassForType:( NSString* )type_
 {
     static NSDictionary* classByFieldType_ = nil;
     if ( !classByFieldType_ )
     {
-        classByFieldType_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                             [ SCImageField         class ], @"Image"
-                             , [ SCCheckboxField    class ], @"Checkbox"
-                             , [ SCDateField        class ], @"Date"
-                             , [ SCDateTimeField    class ], @"Datetime"
-                             , [ SCChecklistField   class ], @"Checklist"
-                             , [ SCMultilistField   class ], @"Multilist"
-                             , [ SCTreelistField    class ], @"Treelist"
-                             , [ SCColorPickerField class ], @"Color Picker"
-                             , [ SCDroplinkField    class ], @"Droplink"
-                             , [ SCDroptreeField    class ], @"Droptree"
-                             , [ SCGeneralLinkField class ], @"General Link"
-                             , nil ];
+        classByFieldType_ = @{
+        @"Image"        : [ SCImageField       class ],
+        @"Checkbox"     : [ SCCheckboxField    class ],
+        @"Date"         : [ SCDateField        class ],
+        @"Datetime"     : [ SCDateTimeField    class ],
+        @"Checklist"    : [ SCChecklistField   class ],
+        @"Multilist"    : [ SCMultilistField   class ],
+        @"Treelist"     : [ SCTreelistField    class ],
+        @"Color Picker" : [ SCColorPickerField class ],
+        @"Droplink"     : [ SCDroplinkField    class ],
+        @"Droptree"     : [ SCDroptreeField    class ],
+        @"General Link" : [ SCGeneralLinkField class ],
+        };
     }
-    id class_ = [ classByFieldType_ objectForKey: type_ ];
+    id class_ = classByFieldType_[ type_ ];
     return class_ ?: [ SCField class ];
 }
 
 -(SCField*)field
 {
-    SCField* field_ = _fieldRef;
+    SCField* field_ = self->_fieldRef;
 
     if ( !field_ )
     {
         Class fieldClass_ = [ [ self class ] fieldClassForType: self.type ];
         field_ = [ fieldClass_ fieldWithFieldRecord: self
                                          apiContext: self.apiContext ];
-        _fieldRef = field_;
+        self->_fieldRef = field_;
     }
 
     return field_;

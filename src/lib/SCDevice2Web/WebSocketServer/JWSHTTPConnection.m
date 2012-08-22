@@ -14,21 +14,22 @@ static NSMutableDictionary* listenerByPath_ = nil;
         return [ super webSocketForURI: path_ ];
     }
 
-    NSString* request_path_ = request.url.path;
+    NSString* requestPath_ = request.url.path;
 
-    Class listener_class_ = [ listenerByPath_ objectForKey: request_path_ ];
-    if ( listener_class_ )
+    Class listenerClass_ = listenerByPath_[ requestPath_ ];
+    if ( listenerClass_ )
     {
-        return [ [ listener_class_ alloc ] initWithRequest: request socket: asyncSocket ];
+        return [ [ listenerClass_ alloc ] initWithRequest: request socket: asyncSocket ];
     }
 
-	return [ super webSocketForURI: path_ ];
+    return [ super webSocketForURI: path_ ];
 }
 
 +(void)registerListerClass:( Class )class_
 {
     NSString* path_ = objc_msgSend( class_, @selector( requestURLPath ) );
     NSAssert( [ path_ length ], @"path can not be empty" );
+//  its not possibke to set with: listenerByPath_[ path_ ] = class_; here
     [ listenerByPath_ setObject: class_ forKey: path_ ];
 }
 

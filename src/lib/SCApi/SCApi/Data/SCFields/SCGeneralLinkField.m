@@ -7,19 +7,18 @@
 
 @interface SCFieldLinkData (SCGeneralLinkField)
 
-@property(nonatomic) SCApiContext *apiContext;
+@property ( nonatomic ) SCApiContext *apiContext;
 
 @end
 
 @interface SCGeneralLinkField ()
 
-@property(nonatomic) SCFieldLinkData *linkData;
+@property ( nonatomic ) SCFieldLinkData *linkData;
 
 @end
 
 @implementation SCGeneralLinkField
 
-@synthesize linkData = _linkData;
 @dynamic fieldValue;
 
 -(SCFieldLinkData*)linkData

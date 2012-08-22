@@ -28,14 +28,6 @@
 
 @implementation SCQRCodeReaderView
 
-@synthesize readers;
-@synthesize delegate = _delegate;
-
-@synthesize captureSession = _captureSession;
-@synthesize prevLayer;
-@synthesize decoding;
-@synthesize captureRect = _captureRect;
-
 + (id)viewWithDelegate:(id<SCQRCodeReaderViewDelegate>)delegate_
            captureRect:(CGRect)captureRect_;
 {
@@ -51,7 +43,7 @@
 
 -(void)setup
 {
-    readers = [ [ NSSet alloc ] initWithObjects: [ QRCodeReader new ], nil ];
+    self->_readers = [ [ NSSet alloc ] initWithObjects: [ QRCodeReader new ], nil ];
 }
 
 -(void)awakeFromNib
@@ -96,10 +88,10 @@
 
 -(AVCaptureSession*)captureSession
 {
-    if ( !_captureSession )
+    if ( !self->_captureSession )
     {
-        _captureSession = [ AVCaptureSession new ];
-        _captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+        self->_captureSession = [ AVCaptureSession new ];
+        self->_captureSession.sessionPreset = AVCaptureSessionPresetMedium;
 
         AVCaptureDevice* device_           = [ AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo ];
         AVCaptureDeviceInput* captureInput = [ AVCaptureDeviceInput deviceInputWithDevice: device_
@@ -111,15 +103,15 @@
         [ captureOutput setSampleBufferDelegate: self queue: dispatch_get_main_queue() ];
 
         NSString* key               = (NSString*)kCVPixelBufferPixelFormatTypeKey; 
-        NSNumber* value             = [ NSNumber numberWithUnsignedInt: kCVPixelFormatType_32BGRA ]; 
-        NSDictionary* videoSettings = [ NSDictionary dictionaryWithObject: value forKey: key]; 
+        NSNumber* value             = @( kCVPixelFormatType_32BGRA );
+        NSDictionary* videoSettings = @{ key : value };
 
         [ captureOutput setVideoSettings: videoSettings ];
 
-        [ _captureSession addInput: captureInput ];
-        [ _captureSession addOutput: captureOutput ];
+        [ self->_captureSession addInput: captureInput ];
+        [ self->_captureSession addOutput: captureOutput ];
      }
-    return _captureSession;
+    return self->_captureSession;
 }
 
 -(void)initCapture

@@ -17,7 +17,7 @@ static char pluginBySocketGuidKey_;
 {
     objc_setAssociatedObject( self
                              , &scHookTouchesViewEnabledKey_
-                             , [ NSNumber numberWithBool: enabled_ ]
+                             , @( enabled_ )
                              , OBJC_ASSOCIATION_RETAIN_NONATOMIC );
 }
 

@@ -8,13 +8,14 @@
 
 @implementation SCEditItemsRequest
 
-@synthesize fieldsRawValuesByName = fieldsRawValuesByName;
-
 -(id)copyWithZone:( NSZone* )zone_
 {
     SCEditItemsRequest* result_ = [ super copyWithZone: zone_ ];
 
-    result_->fieldsRawValuesByName = [ self.fieldsRawValuesByName copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_->_fieldsRawValuesByName = [ self.fieldsRawValuesByName copyWithZone: zone_ ];
+    }
 
     return result_;
 }

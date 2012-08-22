@@ -14,8 +14,6 @@
 
 @implementation JFFAsyncOperationGeocoderBase
 
-@synthesize geocoder = _geocoder;
-
 -(id)init
 {
     self = [ super init ];
@@ -65,8 +63,6 @@
 @end
 
 @implementation JFFAsyncOperationGeocoderDict
-
-@synthesize addressDictionary = _addressDictionary;
 
 -(void (^)( void (^)( id, NSError* ) ))asyncOperation
 {

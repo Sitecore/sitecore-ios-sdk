@@ -38,15 +38,15 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ )
         }
         else
         {
-            NSDictionary* errorJson_ = [ json_ objectForKey: @"error" ];
+            NSDictionary* errorJson_ = json_[ @"error" ];
             if ( errorJson_ )
             {
                 SCResponseError* srvError_ = [ SCResponseError new ];
 
-                srvError_.statusCode = [ [ json_ objectForKey: @"statusCode" ] integerValue ];
-                srvError_.message = [ errorJson_ objectForKey: @"message" ];
-                srvError_.type    = [ errorJson_ objectForKey: @"type"    ];
-                srvError_.method  = [ errorJson_ objectForKey: @"method"  ];
+                srvError_.statusCode = [ json_[ @"statusCode" ] integerValue ];
+                srvError_.message = errorJson_[ @"message" ];
+                srvError_.type    = errorJson_[ @"type"    ];
+                srvError_.method  = errorJson_[ @"method"  ];
                 localError_ = srvError_;
             }
         }
@@ -66,14 +66,14 @@ JFFAsyncOperationBinder deleteItemsJSONResponseParser( NSData* responseData_ )
             return invalidResponseFormatLoader( responseData_ );
         }
 
-        NSDictionary* result_ = [ json_ objectForKey: @"result" ];
+        NSDictionary* result_ = json_[ @"result" ];
 
         if ( ![ result_ isKindOfClass: [ NSDictionary class ] ] )
         {
             return invalidResponseFormatLoader( responseData_ );
         }
 
-        NSArray* itemsDeleted_ = [ result_ objectForKey: @"itemIds" ];
+        NSArray* itemsDeleted_ = result_[ @"itemIds" ];
 
         if ( ![ itemsDeleted_ isKindOfClass: [ NSArray class ] ] )
         {

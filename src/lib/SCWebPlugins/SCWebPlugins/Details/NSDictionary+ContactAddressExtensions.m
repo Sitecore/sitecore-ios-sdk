@@ -13,26 +13,26 @@ SCAsyncOp imageReaderForURLString( NSString* urlString_
 
 +(NSDictionary*)mapJSONToAddresses
 {
-    return [ NSDictionary dictionaryWithObjectsAndKeys:
-            ( __bridge id )kABPersonAddressStreetKey   , @"street"
-            , ( __bridge id )kABPersonAddressCityKey   , @"city"
-            , ( __bridge id )kABPersonAddressStateKey  , @"state"
-            , ( __bridge id )kABPersonAddressZIPKey    , @"zip"
-            , ( __bridge id )kABPersonAddressCountryKey, @"country"
-            , @"PlacemarkTitle"     , @"title"
-            , @"PlacemarkIconReader", @"icon"
-            , nil ];
+    return @{
+    @"street"  : ( __bridge id )kABPersonAddressStreetKey ,
+    @"city"    : ( __bridge id )kABPersonAddressCityKey   ,
+    @"state"   : ( __bridge id )kABPersonAddressStateKey  ,
+    @"zip"     : ( __bridge id )kABPersonAddressZIPKey    ,
+    @"country" : ( __bridge id )kABPersonAddressCountryKey,
+    @"title"   : @"PlacemarkTitle",
+    @"icon"    : @"PlacemarkIconReader",
+    };
 }
 
 +(NSDictionary*)mapAddressesToJSON
 {
-    return [ NSDictionary dictionaryWithObjectsAndKeys:
-            @"street"   , ( __bridge id )kABPersonAddressStreetKey
-            , @"city"   , ( __bridge id )kABPersonAddressCityKey   
-            , @"state"  , ( __bridge id )kABPersonAddressStateKey  
-            , @"zip"    , ( __bridge id )kABPersonAddressZIPKey    
-            , @"country", ( __bridge id )kABPersonAddressCountryKey
-            , nil ];
+    return @{
+    ( __bridge id )kABPersonAddressStreetKey  : @"street" ,
+    ( __bridge id )kABPersonAddressCityKey    : @"city"   ,
+    ( __bridge id )kABPersonAddressStateKey   : @"state"  ,
+    ( __bridge id )kABPersonAddressZIPKey     : @"zip"    ,
+    ( __bridge id )kABPersonAddressCountryKey : @"country",
+    };
 }
 
 -(NSDictionary*)addressesDictToJSONDict
@@ -40,7 +40,7 @@ SCAsyncOp imageReaderForURLString( NSString* urlString_
     NSDictionary* mapAddressesToJSON_ = [ NSDictionary mapAddressesToJSON ];
     return [ self mapKey: ^id( id key_, id object_ )
     {
-        return [ mapAddressesToJSON_ objectForKey: key_ ];
+        return mapAddressesToJSON_[ key_ ];
     } ];
 }
 
@@ -50,7 +50,7 @@ SCAsyncOp imageReaderForURLString( NSString* urlString_
 
     NSDictionary* result_ = [ self mapKey: ^id( id key_, id object_ )
     {
-        return [ mapJSONToAddresses_ objectForKey: key_ ];
+        return mapJSONToAddresses_[ key_ ];
     } ];
 
     return [ result_ map: ^id( id key_, id object_ )

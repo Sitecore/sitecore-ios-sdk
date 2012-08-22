@@ -17,8 +17,6 @@ static CGFloat navigation_button_indent_ = 10.f;
 
 @implementation SCNavigationHeader
 
-@synthesize backwardButton, forwardButton, activityIndicator, delegate;
-
 -(id)initWithFrame:( CGRect )frame_
 {
     self = [ super initWithFrame: frame_ ];
@@ -44,7 +42,7 @@ static CGFloat navigation_button_indent_ = 10.f;
                                 action: @selector( goForward: )
                       forControlEvents: UIControlEventTouchUpInside ];
 
-        activityIndicator = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray ];
+        self->_activityIndicator = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray ];
         self.activityIndicator.frame = [ self activityIndicatorRect ];
         [ self addSubview: self.activityIndicator ];
     }

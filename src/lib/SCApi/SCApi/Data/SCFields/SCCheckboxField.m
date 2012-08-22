@@ -6,7 +6,7 @@
 
 -(id)createFieldValue
 {
-    return [ [ NSNumber alloc ] initWithBool: [ self.rawValue isEqualToString: @"1" ] ];
+    return @( [ self.rawValue isEqualToString: @"1" ] );
 }
 
 @end

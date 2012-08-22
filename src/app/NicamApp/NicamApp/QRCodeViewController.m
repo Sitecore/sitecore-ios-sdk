@@ -33,7 +33,7 @@
     if ( resultString )
     {
         [ self.qrcodeView stopCapture ];
-        SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+        SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item" ];
         [ context_ itemReaderForItemPath: resultString ]( ^( id result_, NSError* error_ )
         {
             if ( !error_ )
@@ -46,7 +46,7 @@
             }
             else
             {
-                 [ self.qrcodeView startCapture ];
+                [ self.qrcodeView startCapture ];
             }
         } );
     }

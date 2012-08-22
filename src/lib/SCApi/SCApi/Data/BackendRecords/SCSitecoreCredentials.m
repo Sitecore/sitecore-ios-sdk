@@ -12,12 +12,6 @@
 
 @implementation SCSitecoreCredentials
 
-@synthesize login   = _login
-, password          = _password
-, modulus           = _modulus
-, exponent          = _exponent
-, encryptedPassword = _encryptedPassword;
-
 -(NSString*)password
 {
     return self->_password ?: @"";

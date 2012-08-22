@@ -24,9 +24,6 @@
     SCItemsReaderRequest* _requestTemplate;
 }
 
-@synthesize apiContext        = _apiContext;
-@synthesize itemsByPageNumber = _itemsByPageNumber;
-
 -(id)initWithApiContext:( SCApiContext* )apiContext_
                 request:( SCItemsReaderRequest* )request_
 {
@@ -86,7 +83,7 @@
                                                                                           , NSError **error_)
         {
            if ( page_ )
-               _totalItemsCount = [ NSNumber numberWithUnsignedInt: page_.totalCount ];
+               self->_totalItemsCount = @( page_.totalCount );
 
            return page_.items;
         });
@@ -98,19 +95,19 @@
     };
 
     JFFPropertyPath* propertPath_ = [ [ JFFPropertyPath alloc ] initWithName: @"itemsByPageNumber"
-                                                                         key: [ NSNumber numberWithInt: pageNumber_ ] ];
+                                                                         key: @( pageNumber_ ) ];
     return [ self asyncOperationForPropertyWithPath: propertPath_
                                      asyncOperation: loader_ ];
 }
 
 -(SCItem*)itemForIndex:( NSUInteger )index_
 {
-    NSNumber* page_       = [ NSNumber numberWithUnsignedInteger: index_ / self.pageSize ];
-    NSArray* itemsPage_   = [ _itemsByPageNumber objectForKey: page_ ];
+    NSNumber* page_       = @( index_ / self.pageSize );
+    NSArray* itemsPage_   = self->_itemsByPageNumber[ page_ ];
     NSUInteger pageIndex_ = index_ % self.pageSize;
     if ( [ itemsPage_ count ] > pageIndex_ )
     {
-        return [ itemsPage_ objectAtIndex: pageIndex_ ];
+        return itemsPage_[ pageIndex_ ];
     }
     return nil;
 }

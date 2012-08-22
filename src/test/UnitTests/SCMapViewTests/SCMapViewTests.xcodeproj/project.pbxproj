@@ -25,6 +25,9 @@
 		1B33DEFC1518C73D00EEA9BA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DEFB1518C73D00EEA9BA /* libz.dylib */; };
 		1B33DF181518C77400EEA9BA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF161518C77400EEA9BA /* AddressBook.framework */; };
 		1B33DF191518C77400EEA9BA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF171518C77400EEA9BA /* AddressBookUI.framework */; };
+		1BACF66D15E25BD90084B334 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BACF66C15E25BD90084B334 /* libstdc++.dylib */; };
+		1BACF66F15E25BFF0084B334 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BACF66E15E25BFF0084B334 /* libc++.dylib */; };
+		1BACF67115E25C110084B334 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BACF67015E25C110084B334 /* libsqlite3.dylib */; };
 		1BC8A37C151B7E6C00A4AC26 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC8A379151B7E6C00A4AC26 /* AVFoundation.framework */; };
 		1BC8A37D151B7E6C00A4AC26 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC8A37A151B7E6C00A4AC26 /* CoreMedia.framework */; };
 		1BC8A37E151B7E6C00A4AC26 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC8A37B151B7E6C00A4AC26 /* CoreVideo.framework */; };
@@ -78,6 +81,9 @@
 		1B33DEFB1518C73D00EEA9BA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1B33DF161518C77400EEA9BA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1B33DF171518C77400EEA9BA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		1BACF66C15E25BD90084B334 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		1BACF66E15E25BFF0084B334 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1BACF67015E25C110084B334 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1BC8A379151B7E6C00A4AC26 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1BC8A37A151B7E6C00A4AC26 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1BC8A37B151B7E6C00A4AC26 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -95,6 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BACF67115E25C110084B334 /* libsqlite3.dylib in Frameworks */,
+				1BACF66F15E25BFF0084B334 /* libc++.dylib in Frameworks */,
+				1BACF66D15E25BD90084B334 /* libstdc++.dylib in Frameworks */,
 				1BC8A380151B7E7800A4AC26 /* libiconv.dylib in Frameworks */,
 				1BC8A37C151B7E6C00A4AC26 /* AVFoundation.framework in Frameworks */,
 				1BC8A37D151B7E6C00A4AC26 /* CoreMedia.framework in Frameworks */,
@@ -144,6 +153,9 @@
 		06D8FAE91518ADF40052ABA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BACF67015E25C110084B334 /* libsqlite3.dylib */,
+				1BACF66E15E25BFF0084B334 /* libc++.dylib */,
+				1BACF66C15E25BD90084B334 /* libstdc++.dylib */,
 				1BC8A37F151B7E7800A4AC26 /* libiconv.dylib */,
 				1BC8A379151B7E6C00A4AC26 /* AVFoundation.framework */,
 				1BC8A37A151B7E6C00A4AC26 /* CoreMedia.framework */,

@@ -7,6 +7,9 @@
 #import <Foundation/Foundation.h>
 
 @interface JWSAccelerometerListener : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JWSAccelerometerListener
@@ -15,18 +18,19 @@
     CMMotionManager* _motionManager;
 }
 
-@synthesize delegate;
-
 -(void)dealloc
 {
-    [ _motionManager stopAccelerometerUpdates ];
+    [ self->_motionManager stopAccelerometerUpdates ];
 }
 
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }

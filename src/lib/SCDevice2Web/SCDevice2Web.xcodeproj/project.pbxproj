@@ -11,7 +11,7 @@
 		1B0ED9E31473C92800EE2BD0 /* NSString+MD5Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0ED9DF1473C92800EE2BD0 /* NSString+MD5Addition.h */; };
 		1B0ED9E41473C92800EE2BD0 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0ED9E01473C92800EE2BD0 /* NSString+MD5Addition.m */; };
 		1B0ED9E51473C92800EE2BD0 /* UIDevice+IdentifierAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0ED9E11473C92800EE2BD0 /* UIDevice+IdentifierAddition.h */; };
-		1B0ED9E61473C92800EE2BD0 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.m */; };
+		1B0ED9E61473C92800EE2BD0 /* UIDevice+IdentifierAddition.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.mm */; };
 		1B1D309914716534001799A4 /* DDData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1D306114716534001799A4 /* DDData.h */; };
 		1B1D309A14716534001799A4 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D306214716534001799A4 /* DDData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1B1D309B14716534001799A4 /* DDNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1D306314716534001799A4 /* DDNumber.h */; };
@@ -101,7 +101,7 @@
 		1B0ED9DF1473C92800EE2BD0 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
 		1B0ED9E01473C92800EE2BD0 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
 		1B0ED9E11473C92800EE2BD0 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
-		1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIDevice+IdentifierAddition.mm"; sourceTree = "<group>"; };
 		1B1D306114716534001799A4 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
 		1B1D306214716534001799A4 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
 		1B1D306314716534001799A4 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 				1B0ED9DF1473C92800EE2BD0 /* NSString+MD5Addition.h */,
 				1B0ED9E01473C92800EE2BD0 /* NSString+MD5Addition.m */,
 				1B0ED9E11473C92800EE2BD0 /* UIDevice+IdentifierAddition.h */,
-				1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.m */,
+				1B0ED9E21473C92800EE2BD0 /* UIDevice+IdentifierAddition.mm */,
 			);
 			name = "UIDevice-with-UniqueIdentifier-for-iOS-5";
 			path = "../../lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5/UIDevice-with-UniqueIdentifier-for-iOS-5";
@@ -621,7 +621,7 @@
 				1B1D30C614716534001799A4 /* DDLog.m in Sources */,
 				1B1D30C814716534001799A4 /* DDTTYLogger.m in Sources */,
 				1B0ED9E41473C92800EE2BD0 /* NSString+MD5Addition.m in Sources */,
-				1B0ED9E61473C92800EE2BD0 /* UIDevice+IdentifierAddition.m in Sources */,
+				1B0ED9E61473C92800EE2BD0 /* UIDevice+IdentifierAddition.mm in Sources */,
 				1B3E6D55155412D700B3509B /* SCDWSettings.m in Sources */,
 				1B3E6DE01554142700B3509B /* NSArray+ScSelectUtils.m in Sources */,
 				1B3E6DE21554142700B3509B /* NSString+PathToDWFileURL.m in Sources */,

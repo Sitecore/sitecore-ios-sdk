@@ -14,16 +14,14 @@ static NSString* const scSrvCacheName_ = @"scSrvResponseCache";
 
 @implementation SCCacheDBAdaptor
 
-@synthesize jffCacheDB;
-
 -(void)setData:( NSData* )data_ forKey:( NSString* )key_
 {
-    [ jffCacheDB setData: data_ forKey: key_ ];
+    [ self->_jffCacheDB setData: data_ forKey: key_ ];
 }
 
 -(NSData*)dataForKey:( NSString* )data_ lastUpdateDate:( NSDate** )date_
 {
-    return  [ jffCacheDB dataForKey: data_ lastUpdateTime: date_ ];
+    return  [ self->_jffCacheDB dataForKey: data_ lastUpdateTime: date_ ];
 }
 
 @end

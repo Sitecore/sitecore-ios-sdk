@@ -14,6 +14,9 @@
 @end
 
 @interface JDWTwitterPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWTwitterPlugin
@@ -21,13 +24,14 @@
     NSURLRequest* _request;
 }
 
-@synthesize delegate;
-
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -108,11 +112,11 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    NSDictionary* components_ = [ _request.URL queryComponents ];
+    NSDictionary* components_ = [ self->_request.URL queryComponents ];
 
     NSString* text_      = [ components_ firstValueIfExsistsForKey: @"text" ];
-    NSArray*  urls_      = [ components_ objectForKey: @"url" ];
-    NSArray*  imageUrls_ = [ components_ objectForKey: @"image_url" ];
+    NSArray*  urls_      = components_[ @"url" ];
+    NSArray*  imageUrls_ = components_[ @"image_url" ];
 
     [ self tweetText: text_
            imageUrls: imageUrls_

@@ -2,8 +2,6 @@
 
 @implementation SCWebViewPluginDefaultPlugin
 
-@synthesize delegate;
-
 +(BOOL)canInitWithRequest:( NSURLRequest* )request_
 {
     return YES;

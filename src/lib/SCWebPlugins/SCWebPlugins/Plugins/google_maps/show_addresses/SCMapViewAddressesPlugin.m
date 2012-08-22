@@ -8,6 +8,9 @@
 
 //STODO move to SCMap project
 @interface SCMapViewAddressesPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation SCMapViewAddressesPlugin
@@ -15,15 +18,13 @@
     NSURLRequest* _request;
 }
 
-@synthesize delegate;
-
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
     if ( self )
     {
-        _request = request_;
+        self->_request = request_;
     }
 
     return self;

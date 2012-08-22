@@ -6,9 +6,7 @@
 {
     return [ self map: ^id( SCItem* item_ )
     {
-        return [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                item_.itemId, @"itemId"
-                , nil ];
+        return @{ @"itemId" : item_.itemId };
     } ];
 }
 

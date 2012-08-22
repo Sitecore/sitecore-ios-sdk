@@ -18,6 +18,7 @@
 		252BF84A1510A01F00EFBFE2 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BF8491510A01F00EFBFE2 /* QRCodeViewController.m */; };
 		252BF8591510ADA400EFBFE2 /* NicamApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF8581510ADA400EFBFE2 /* NicamApp.png */; };
 		252BF85B1510ADE500EFBFE2 /* QRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF85A1510ADE500EFBFE2 /* QRCode.png */; };
+		2532599715E23E0600CB0A3A /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2532599615E23E0600CB0A3A /* SitecoreMobileSDK.framework */; };
 		253955651518A6FB00217CD4 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253954FC15188F7400217CD4 /* ProductDetailsViewController.m */; };
 		257F5E7A1520B03600BB5088 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257F5E781520B03600BB5088 /* MapViewController.m */; };
 		257F5E7E1520B5D600BB5088 /* pin_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 257F5E7D1520B5D600BB5088 /* pin_map.png */; };
@@ -64,6 +65,7 @@
 		252BF8491510A01F00EFBFE2 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		252BF8581510ADA400EFBFE2 /* NicamApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NicamApp.png; sourceTree = "<group>"; };
 		252BF85A1510ADE500EFBFE2 /* QRCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRCode.png; sourceTree = "<group>"; };
+		2532599615E23E0600CB0A3A /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		253954FB15188F7400217CD4 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductDetailsViewController.h; path = iPhone/ProductDetailsViewController.h; sourceTree = "<group>"; };
 		253954FC15188F7400217CD4 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductDetailsViewController.m; path = iPhone/ProductDetailsViewController.m; sourceTree = "<group>"; };
 		254E7247148D0B7600C32B1E /* ProductsViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				25902A5114837659006FF9AA /* UIKit.framework in Frameworks */,
 				25902A5314837659006FF9AA /* Foundation.framework in Frameworks */,
 				25902A5514837659006FF9AA /* CoreGraphics.framework in Frameworks */,
+				2532599715E23E0600CB0A3A /* SitecoreMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 		25902A4F14837659006FF9AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2532599615E23E0600CB0A3A /* SitecoreMobileSDK.framework */,
 				1BAFBF53157F5F1900F3062E /* libstdc++.dylib */,
 				1B3395C0156642CD00E935E9 /* libc++.dylib */,
 				1BB960C215121E6C00B4F9B2 /* MapKit.framework */,

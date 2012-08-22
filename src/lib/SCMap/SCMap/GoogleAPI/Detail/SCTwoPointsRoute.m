@@ -2,9 +2,6 @@
 
 @implementation SCTwoPointsRoute
 
-@synthesize origin;
-@synthesize destination;
-
 +(id)routeWithOrigin:( CLLocationCoordinate2D )origin_
          destination:( CLLocationCoordinate2D )destination_
 {

@@ -21,12 +21,6 @@
 
 @implementation SCFieldLinkData
 
-@synthesize apiContext
-, linkDescription
-, linkType
-, alternateText
-, url;
-
 -(NSString*)otherFieldsDescription
 {
     return @"";
@@ -58,10 +52,6 @@
 
 
 @implementation SCInternalFieldLinkData
-
-@synthesize anchor
-, queryString
-, itemId;
 
 -(SCAsyncOp)itemReader
 {

@@ -18,8 +18,6 @@
     BOOL _closed;
 }
 
-@synthesize socketGuid = _socketGuid;
-
 -(void)dealloc
 {
     [ [ NSNotificationCenter defaultCenter ] removeObserver: self ];
@@ -65,8 +63,8 @@
 
 -(void)didOpenOnMainThread
 {
-    if ( [ _webPlugin respondsToSelector: @selector( closeWhenBackground ) ]
-        && [ _webPlugin closeWhenBackground ] )
+    if ( [ self->_webPlugin respondsToSelector: @selector( closeWhenBackground ) ]
+        && [ self->_webPlugin closeWhenBackground ] )
     {
         UIApplication* application_ = [ UIApplication sharedApplication ];
         [ [ NSNotificationCenter defaultCenter ] addObserver: self
@@ -75,8 +73,8 @@
                                                       object: application_ ];
     }
 
-    if ( [ _webPlugin respondsToSelector: @selector( didOpenInWebView: ) ] )
-        [ _webPlugin didOpenInWebView: _webView ];
+    if ( [ self->_webPlugin respondsToSelector: @selector( didOpenInWebView: ) ] )
+        [ self->_webPlugin didOpenInWebView: self->_webView ];
 }
 
 -(void)onDeallocWebView

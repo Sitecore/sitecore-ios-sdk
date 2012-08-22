@@ -11,10 +11,6 @@
 
 @implementation SCCreateItemRequest
 
-@synthesize itemName              = _itemName;
-@synthesize itemTemplate          = _itemTemplate;
-@synthesize fieldsRawValuesByName = _fieldsRawValuesByName;
-
 -(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_
 {
     SCCreateItemRequest* result_ = (SCCreateItemRequest*)[ super itemsReaderRequestWithApiContext: context_ ];

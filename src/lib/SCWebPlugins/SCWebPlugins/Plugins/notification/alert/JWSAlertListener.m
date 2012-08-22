@@ -6,6 +6,7 @@
 @interface JWSAlertListener : NSObject < SCWebPlugin >
 
 @property ( nonatomic ) NSURLRequest* request;
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
 @end
 
@@ -30,8 +31,6 @@
     UIAlertView* _alertView;
 }
 
-@synthesize delegate, request;
-
 -(void)dealloc
 {
     [ [ NSNotificationCenter defaultCenter ] removeObserver: self ];
@@ -41,7 +40,10 @@
 {
     self = [ super init ];
 
-    self.request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }

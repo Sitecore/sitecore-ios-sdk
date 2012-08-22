@@ -14,7 +14,7 @@
     [ super didOpen ];
 
     NSDictionary* components_ = [ request.url queryComponents ];
-    NSString* logMessage_ = [ [ components_ objectForKey: @"log" ] noThrowObjectAtIndex: 0 ];
+    NSString* logMessage_ = [ components_[ @"log" ] noThrowObjectAtIndex: 0 ];
     NSLog( @"WebView: %@", logMessage_ );
 
     [ self stop ];

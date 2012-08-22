@@ -5,16 +5,13 @@ static NSString* sourceTypeToJSName( NSNumber* typeNum_ )
     static NSDictionary* jsTypeBySourceType_;
     if ( !jsTypeBySourceType_ )
     {
-        jsTypeBySourceType_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                               @"PHOTOLIBRARY"
-                               , [ NSNumber numberWithUnsignedInt: UIImagePickerControllerSourceTypePhotoLibrary ]
-                               , @"CAMERA"
-                               , [ NSNumber numberWithUnsignedInt: UIImagePickerControllerSourceTypeCamera ]
-                               , @"SAVEDPHOTOALBUM"
-                               , [ NSNumber numberWithUnsignedInt: UIImagePickerControllerSourceTypeSavedPhotosAlbum ]
-                               , nil ];
+        jsTypeBySourceType_ = @{
+        @( UIImagePickerControllerSourceTypePhotoLibrary     ) : @"PHOTOLIBRARY"   ,
+        @( UIImagePickerControllerSourceTypeCamera           ) : @"CAMERA"         ,
+        @( UIImagePickerControllerSourceTypeSavedPhotosAlbum ) : @"SAVEDPHOTOALBUM",
+        };
     }
-    return [ jsTypeBySourceType_ objectForKey: typeNum_ ];
+    return jsTypeBySourceType_[ typeNum_ ];
 }
 
 @implementation NSArray (CameraSourceTypes)
@@ -24,7 +21,7 @@ static NSString* sourceTypeToJSName( NSNumber* typeNum_ )
     NSArray* result_ = [ NSArray arrayWithSize: UIImagePickerControllerSourceTypeSavedPhotosAlbum + 1
                                       producer: ^id( NSUInteger index_ )
     {
-        return [ NSNumber numberWithUnsignedInt: index_ ];
+        return @( index_ );
     } ];
     result_ = [ result_ select: ^BOOL( NSNumber* number_ )
     {

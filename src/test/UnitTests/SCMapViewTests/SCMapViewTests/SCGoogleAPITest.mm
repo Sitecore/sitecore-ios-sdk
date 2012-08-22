@@ -136,13 +136,9 @@
     {
         JFFDidFinishAsyncOperationHandler doneCallBack_ = ^( NSArray* points_, NSError* error_ )
         {
-            NSUInteger expectedPointsCount_ = 357;
-
-            if ( points_.count != expectedPointsCount_ )
+            if ( points_.count == 0 )
             {
-                errorDescription_ = [ NSString stringWithFormat: @"Route points count is not valid should be %d instead of %d"
-                                     , expectedPointsCount_
-                                     , points_.count ];
+                errorDescription_ = @"Route points is not valid";
                 didFinishCallback_();
                 return;
             }
@@ -183,7 +179,7 @@
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
 
-    GHAssertTrue( NO, errorDescription_ );
+    GHAssertTrue( errorDescription_ == nil, errorDescription_ );
 }
 
 @end

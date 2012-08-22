@@ -64,9 +64,6 @@
 , language
 , lazyFieldNamesToChange;
 
-@synthesize record = _record;
-@synthesize fieldNamesToChange = _fieldNamesToChange;
-
 -(id)init
 {
     [ self doesNotRecognizeSelector: _cmd ];
@@ -102,7 +99,7 @@
 
 -(SCItem*)itemWithId:( NSString* )itemId_
 {
-    return [ _apiContext itemWithId: itemId_ ];
+    return [ self->_apiContext itemWithId: itemId_ ];
 }
 
 -(NSString*)description
@@ -220,7 +217,7 @@
 
     JFFAnalyzer analyzer_ = ^id( NSDictionary* fieldValueByName_, NSError** error_ )
     {
-        id value_ = [ fieldValueByName_ objectForKey: fieldName_ ];
+        id value_ = fieldValueByName_[ fieldName_ ];
         if ( !value_ && error_ )
             *error_ = [ SCNoFieldError new ];
         return value_;
@@ -283,7 +280,7 @@
         if ( [ self.itemId length ] == 0 )
         {
             if ( handler_ )
-                handler_( nil, [ SCNoItemError error ] );
+                handler_( nil, [ SCNoItemError new ] );
             return;
         }
 

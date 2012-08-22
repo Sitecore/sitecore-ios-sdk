@@ -10,17 +10,16 @@
 
 @implementation SCHostLoginAndPassword
 
-@synthesize host     = _host;
-@synthesize login    = _login;
-@synthesize password = _password;
-
 -(id)copyWithZone:( NSZone* )zone_
 {
     SCHostLoginAndPassword* result_ = [ [ [ self class ] allocWithZone: zone_ ] init ];
 
-    result_.host     = [ _host     copyWithZone: zone_ ];
-    result_.login    = [ _login    copyWithZone: zone_ ];
-    result_.password = [ _password copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_.host     = [ self->_host     copyWithZone: zone_ ];
+        result_.login    = [ self->_login    copyWithZone: zone_ ];
+        result_.password = [ self->_password copyWithZone: zone_ ];
+    }
 
     return result_;
 }
@@ -33,9 +32,9 @@
 
     if ( self )
     {
-        _host     = host_    ?:@"";
-        _login    = login_   ?:@"";
-        _password = password_?:@"";
+        self->_host     = host_    ?:@"";
+        self->_login    = login_   ?:@"";
+        self->_password = password_?:@"";
     }
 
     return self;
@@ -57,9 +56,9 @@
     if ( self == other_ )
         return YES;
 
-    return [ _host     isEqualToString: other_.host     ]
-        && [ _login    isEqualToString: other_.login    ]
-        && [ _password isEqualToString: other_.password ];
+    return [ self->_host     isEqualToString: other_.host     ]
+        && [ self->_login    isEqualToString: other_.login    ]
+        && [ self->_password isEqualToString: other_.password ];
 }
 
 -(NSUInteger)hash

@@ -82,6 +82,10 @@
 		1BFEB14C14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB14A14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h */; };
 		1BFEB14D14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB14B14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m */; };
 		1BFEB14F14E420230039CEBB /* scmobile.js.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB14E14E420230039CEBB /* scmobile.js.h */; };
+		7E84E5EB15E25BDB00FB8E36 /* SCAddressBookFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E84E5E915E25BDA00FB8E36 /* SCAddressBookFactory.h */; };
+		7E84E5EC15E25BDB00FB8E36 /* SCAddressBookFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */; };
+		7E84E61915E2660800FB8E36 /* SCAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E84E61715E2660800FB8E36 /* SCAddressBook.h */; };
+		7E84E61A15E2660800FB8E36 /* SCAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84E61815E2660800FB8E36 /* SCAddressBook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +191,10 @@
 		1BFEB14A14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMobilePluginsJavaScriptExport.h; sourceTree = "<group>"; };
 		1BFEB14B14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobilePluginsJavaScriptExport.m; sourceTree = "<group>"; };
 		1BFEB14E14E420230039CEBB /* scmobile.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scmobile.js.h; sourceTree = "<group>"; };
+		7E84E5E915E25BDA00FB8E36 /* SCAddressBookFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAddressBookFactory.h; sourceTree = "<group>"; };
+		7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCAddressBookFactory.mm; sourceTree = "<group>"; };
+		7E84E61715E2660800FB8E36 /* SCAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAddressBook.h; sourceTree = "<group>"; };
+		7E84E61815E2660800FB8E36 /* SCAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAddressBook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +268,10 @@
 				1B0E822814EBD2A9001D4299 /* SCContactEmailsField.m */,
 				1B1BA9DA14EAA7570040D99E /* SCContact.h */,
 				1B1BA9DB14EAA7570040D99E /* SCContact.m */,
+				7E84E5E915E25BDA00FB8E36 /* SCAddressBookFactory.h */,
+				7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */,
+				7E84E61715E2660800FB8E36 /* SCAddressBook.h */,
+				7E84E61815E2660800FB8E36 /* SCAddressBook.m */,
 			);
 			path = ContactsAPI;
 			sourceTree = "<group>";
@@ -574,6 +586,8 @@
 				1BBCAC5B1510F4FD00199B37 /* google_maps.js.h in Headers */,
 				1BB95D5D1512054300B4F9B2 /* NSArray+AddressesDictionariesWithJSON.h in Headers */,
 				1BB95D611512114500B4F9B2 /* NSDictionary+ContactAddressExtensions.h in Headers */,
+				7E84E5EB15E25BDB00FB8E36 /* SCAddressBookFactory.h in Headers */,
+				7E84E61915E2660800FB8E36 /* SCAddressBook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +724,8 @@
 				1BBCAC571510F02500199B37 /* SCMapViewAddressesPlugin.m in Sources */,
 				1BB95D5E1512054300B4F9B2 /* NSArray+AddressesDictionariesWithJSON.m in Sources */,
 				1BB95D621512114500B4F9B2 /* NSDictionary+ContactAddressExtensions.m in Sources */,
+				7E84E5EC15E25BDB00FB8E36 /* SCAddressBookFactory.mm in Sources */,
+				7E84E61A15E2660800FB8E36 /* SCAddressBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +769,8 @@
 					"../../lib-third-party/JFFLibrary/lib",
 					../SCMap,
 					../SCUtils,
+					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
+					"../../lib-third-party",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -774,6 +792,8 @@
 					"../../lib-third-party/JFFLibrary/lib",
 					../SCMap,
 					../SCUtils,
+					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
+					"../../lib-third-party",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;

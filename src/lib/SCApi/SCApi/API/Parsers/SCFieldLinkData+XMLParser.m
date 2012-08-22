@@ -4,7 +4,7 @@
 
 @interface SCError (SCField)
 
-+ (id)errorWithDescription:(NSString *)description;
++(id)errorWithDescription:( NSString* )description_;
 
 @end
 
@@ -23,16 +23,16 @@
     static NSDictionary* classByFieldType_ = nil;
     if ( !classByFieldType_ )
     {
-        classByFieldType_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                             [ SCInternalFieldLinkData     class ], @"internal"
-                             , [ SCMediaFieldLinkData      class ], @"media"
-                             , [ SCExternalFieldLinkData   class ], @"external"
-                             , [ SCAnchorFieldLinkData     class ], @"anchor"
-                             , [ SCEmailFieldLinkData      class ], @"mailto"
-                             , [ SCJavascriptFieldLinkData class ], @"javascript"
-                             , nil ];
+        classByFieldType_ = @{
+        @"internal"   : [ SCInternalFieldLinkData   class ],
+        @"media"      : [ SCMediaFieldLinkData      class ],
+        @"external"   : [ SCExternalFieldLinkData   class ],
+        @"anchor"     : [ SCAnchorFieldLinkData     class ],
+        @"mailto"     : [ SCEmailFieldLinkData      class ],
+        @"javascript" : [ SCJavascriptFieldLinkData class ],
+        };
     }
-    id class_ = [ classByFieldType_ objectForKey: type_ ];
+    id class_ = classByFieldType_[ type_ ];
     return class_ ?: [ self class ];
 }
 

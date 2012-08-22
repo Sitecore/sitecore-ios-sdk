@@ -124,21 +124,20 @@
 @property ( nonatomic ) UIImagePickerController* imagePickerController;
 @property ( nonatomic ) UIPopoverController* popover;
 @property ( nonatomic ) NSURLRequest* request;
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
 @end
 
 @implementation SCGetPicturePlugin
 
-@synthesize delegate;
-@synthesize imagePickerController = _imagePickerController;
-@synthesize popover               = _popover;
-@synthesize request               = _request;
-
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    self.request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -206,6 +205,15 @@
     {
         sourceType_ = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+
+#if TARGET_IPHONE_SIMULATOR
+    //fix crash for simulator only
+    if ( sourceType_ == UIImagePickerControllerSourceTypeSavedPhotosAlbum )
+    {
+        sourceType_ = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+#endif //TARGET_IPHONE_SIMULATOR
+
     self->_imagePickerController.sourceType = sourceType_;
 
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
@@ -258,7 +266,7 @@
 -(void)imagePickerController:( UIImagePickerController* )picker_
 didFinishPickingMediaWithInfo:( NSDictionary* )info_
 {
-    UIImage* image_ = [ info_ objectForKey: UIImagePickerControllerOriginalImage ];
+    UIImage* image_ = info_[ UIImagePickerControllerOriginalImage ];
     image_ = [ image_ fixOrientation ];
 
     [ self hideImagePicker ];

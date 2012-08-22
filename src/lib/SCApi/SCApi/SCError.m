@@ -8,7 +8,7 @@
 
     if ( !errorDomain_ )
     {
-        NSString* appName_ = @"net.sitecore.mobileSDK";
+        static NSString* const appName_ = @"net.sitecore.mobileSDK";
         errorDomain_ = [ appName_ stringByAppendingString: @".ErrorDomain" ];
     }
 
@@ -17,9 +17,9 @@
 
 -(id)initWithDescription:( NSString* )description_ code:( NSInteger )code_
 {
-    NSDictionary* user_info_ = [ NSDictionary dictionaryWithObject: description_
-                                                            forKey: NSLocalizedDescriptionKey ];
-    return [ super initWithDomain: [ [ self class ] errorDomain ] code: code_ userInfo: user_info_ ];
+    NSDictionary* userInfo_ = @{ NSLocalizedDescriptionKey : description_ };
+    return [ super initWithDomain: [ [ self class ] errorDomain ] code: code_
+                         userInfo: userInfo_ ];
 }
 
 -(id)initWithDescription:( NSString* )description_
@@ -41,11 +41,6 @@
 +(id)errorWithDescription:( NSString* )description_
 {
     return [ [ self alloc ] initWithDescription: description_ ];
-}
-
-+(id)error
-{
-    return [ self new ];
 }
 
 @end
@@ -73,15 +68,13 @@
 
 @implementation SCInvalidItemIdError
 
-@synthesize itemId = _itemId;
-
 -(id)initWithItemId:( NSString* )itemId_
 {
     NSString* description_ = [ [ NSString alloc ] initWithFormat: @"Item id: \"%@\" has invalid format", itemId_ ];
     self = [ super initWithDescription: description_ ];
     if ( self )
     {
-        self.itemId = itemId_;
+        self->_itemId = itemId_;
     }
     return self;
 }
@@ -95,7 +88,10 @@
 {
     SCInvalidItemIdError* result_ = [ super copyWithZone: zone_ ];
 
-    result_->_itemId = [ self.itemId copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_->_itemId = [ self->_itemId copyWithZone: zone_ ];
+    }
 
     return result_;
 }
@@ -110,11 +106,6 @@
 
 @implementation SCResponseError
 
-@synthesize statusCode
-, message
-, type
-, method;
-
 -(id)copyWithZone:( NSZone* )zone_
 {
     SCResponseError* result_ = [ super copyWithZone: zone_ ];
@@ -122,9 +113,9 @@
     if ( result_ )
     {
         result_.statusCode = self.statusCode;
-        result_->message    = [ self.message copyWithZone: zone_ ];
-        result_->type       = [ self.type    copyWithZone: zone_ ];
-        result_->method     = [ self.method  copyWithZone: zone_ ];
+        result_->_message    = [ self->_message copyWithZone: zone_ ];
+        result_->_type       = [ self->_type    copyWithZone: zone_ ];
+        result_->_method     = [ self->_method  copyWithZone: zone_ ];
     }
 
     return result_;

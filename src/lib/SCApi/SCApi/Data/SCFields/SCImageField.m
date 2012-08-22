@@ -11,7 +11,6 @@
 @implementation SCImageField
 
 //STODO should be full path
-@synthesize imagePath = _imagePath;
 @dynamic fieldValue;
 
 -(NSString*)description

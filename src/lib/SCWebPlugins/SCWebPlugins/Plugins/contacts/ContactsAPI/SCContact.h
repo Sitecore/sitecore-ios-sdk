@@ -3,6 +3,9 @@
 #include <AddressBook/ABRecord.h>
 #include <AddressBook/ABAddressBook.h>
 
+@class SCAddressBook;
+
+
 @interface SCContact : NSObject
 
 @property ( nonatomic ) NSString* firstName;
@@ -19,11 +22,13 @@
 @property ( nonatomic, readonly ) ABAddressBookRef addressBook;
 @property ( nonatomic, readonly ) BOOL newContact;
 
--(id)initWithPerson:( ABRecordRef )person_;
--(id)initWithArguments:( NSDictionary* )args_;
+-(id)initWithPerson:( ABRecordRef )person_
+        addressBook:( SCAddressBook* )addressBook_;
+
+-(id)initWithArguments:( NSDictionary* )args_
+           addressBook:( SCAddressBook* )addressBook_;
 
 -(NSDictionary*)toDictionary;
-
 -(void)save;
 
 @end

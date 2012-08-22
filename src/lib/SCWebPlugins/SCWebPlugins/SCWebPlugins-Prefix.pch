@@ -11,4 +11,8 @@
 
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #ifdef __cplusplus
+        #import <ObjcScopedGuard/ObjcScopedGuard.h>
+    #endif
 #endif

@@ -5,9 +5,6 @@
  If Sitecore Mobile SDK error type is SCError ( [ error isMemberOfClass: [ SCError class ] ] == YES ), this is invalid behaviour, please contact Sitecore support team in such case to fix problem.
  */
 @interface SCError : NSError
-
-+ (id)error;
-
 @end
 
 /**

@@ -31,7 +31,7 @@
     if ( ![ field_ placeMarkValue ] )
         return;
 
-    [ dict_ setObject: field_.placeMarkValue forKey: key_ ];
+    dict_[ key_ ] = field_.placeMarkValue;
 }
 
 +(id)addressDictionaryWithItem:( SCItem* )item_
@@ -40,24 +40,24 @@
 
     NSDictionary* fields_ = [ item_ readFieldsByName ];
 
-    NSDictionary* addressKeyByFieldName_ = [ NSDictionary dictionaryWithObjectsAndKeys:
-                                            (__bridge id)kABPersonAddressStreetKey , @"Street"
-                                            , (__bridge id)kABPersonAddressCityKey   , @"City"
-                                            , (__bridge id)kABPersonAddressStateKey  , @"State"
-                                            , (__bridge id)kABPersonAddressZIPKey    , @"ZIP"
-                                            , (__bridge id)kABPersonAddressCountryKey, @"Country"
-                                            , @"PlacemarkTitle"     , @"Title"
-                                            , @"PlacemarkIconReader", @"Icon"
-                                            , nil ];
+    NSDictionary* addressKeyByFieldName_ = @{
+    @"Street"  : (__bridge id)kABPersonAddressStreetKey ,
+    @"City"    : (__bridge id)kABPersonAddressCityKey   ,
+    @"State"   : (__bridge id)kABPersonAddressStateKey  ,
+    @"ZIP"     : (__bridge id)kABPersonAddressZIPKey    ,
+    @"Country" : (__bridge id)kABPersonAddressCountryKey,
+    @"Title"   : @"PlacemarkTitle",
+    @"Icon"    : @"PlacemarkIconReader",
+    };
 
     [ addressKeyByFieldName_ enumerateKeysAndObjectsUsingBlock: ^( id fieldName_, id addressKey_, BOOL *stop )
     {
-        [ self addField: [ fields_ objectForKey: fieldName_ ]
+        [ self addField: fields_[ fieldName_ ]
                  toDict: result_
                     key: addressKey_ ];
     } ];
 
-    return [ NSDictionary dictionaryWithDictionary: result_ ];
+    return [ result_ copy ];
 }
 
 @end

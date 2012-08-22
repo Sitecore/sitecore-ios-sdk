@@ -28,13 +28,13 @@
             {
                 SCItemRecord* result_ = [ self new ];
 
-                result_.displayName  = [ json_ objectForKey: @"DisplayName" ];
-                result_.path         = [ [ json_ objectForKey: @"Path" ] lowercaseString ];
-                result_.hasChildren  = [ [ json_ objectForKey: @"HasChildren" ] boolValue ];
-                result_.itemId       = [ json_ objectForKey: @"ID" ];
-                result_.itemTemplate = [ json_ objectForKey: @"Template" ];
-                result_.longID       = [ json_ objectForKey: @"LongID" ];
-                result_.language     = [ json_ objectForKey: @"Language" ];
+                result_.displayName  = json_[ @"DisplayName" ];
+                result_.path         = [ json_[ @"Path" ] lowercaseString ];
+                result_.hasChildren  = [ json_[ @"HasChildren" ] boolValue ];
+                result_.itemId       = json_[ @"ID"       ];
+                result_.itemTemplate = json_[ @"Template" ];
+                result_.longID       = json_[ @"LongID"   ];
+                result_.language     = json_[ @"Language" ];
 
                 result_.fieldsByName = [ allFieldsByName_ fieldsByNameDictionary ];
 
@@ -43,7 +43,7 @@
 
             //parse fields
             {
-                NSDictionary* fields_ = [ json_ objectForKey: @"Fields" ];
+                NSDictionary* fields_ = json_[ @"Fields" ];
                 JFFAsyncOperation loader_ = [ fields_ asyncMap: ^JFFAsyncOperation( id fieldId_, id json_ )
                 {
                     id result_ = [ SCFieldRecord fieldRecordWithJson: json_

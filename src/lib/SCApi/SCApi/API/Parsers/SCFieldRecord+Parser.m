@@ -9,9 +9,9 @@
     SCFieldRecord* result_ = [ self new ];
 
     result_.fieldId    = fieldId_;
-    result_.name       = [ json_ objectForKey: @"Name" ];
-    result_.type       = [ json_ objectForKey: @"Type" ];
-    result_.rawValue   = [ [ json_ objectForKey: @"Value" ] stringByTrimmingWhitespaces ];
+    result_.name       = json_[ @"Name" ];
+    result_.type       = json_[ @"Type" ];
+    result_.rawValue   = [ json_[ @"Value" ] stringByTrimmingWhitespaces ];
     result_.apiContext = apiContext_;
 
     return result_;

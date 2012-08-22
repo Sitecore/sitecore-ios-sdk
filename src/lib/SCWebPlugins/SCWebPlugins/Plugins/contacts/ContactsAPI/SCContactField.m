@@ -11,10 +11,6 @@
 
 @implementation SCContactField
 
-@synthesize name       = _name;
-@synthesize propertyID = _propertyID;
-@synthesize value      = _value;
-
 -(id)init
 {
     [ self doesNotRecognizeSelector: _cmd ];

@@ -82,7 +82,7 @@
         }
         if ( !result_ )
         {
-            result_ = [ self objectAtIndex: 0 ];
+            result_ = self[ 0 ];
         }
     }
     return result_;
@@ -92,25 +92,17 @@
 
 @implementation SCItemsCache
 
-@synthesize rootItemRecord = _rootItemRecord;
-
-@synthesize itemRecordsByPath                    = _itemRecordsByPath;
-@synthesize itemRecordsById                      = _itemRecordsById;
-@synthesize fieldsByItemIdAndLanguage            = _fieldsByItemIdAndLanguage;
-@synthesize hasAllChildrenForItemIdAndLanguage   = _hasAllChildrenForItemIdAndLanguage;
-@synthesize hasAllChildrenForItemPathAndLanguage = _hasAllChildrenForItemPathAndLanguage;
-
 -(id)init
 {
     self = [ super init ];
 
     if ( self )
     {
-        _itemRecordsByPath                    = [ NSMutableDictionary new ];
-        _itemRecordsById                      = [ NSMutableDictionary new ];
-        _fieldsByItemIdAndLanguage            = [ NSMutableDictionary new ];
-        _hasAllChildrenForItemIdAndLanguage   = [ NSMutableSet new ];
-        _hasAllChildrenForItemPathAndLanguage = [ NSMutableSet new ];
+        self->_itemRecordsByPath                    = [ NSMutableDictionary new ];
+        self->_itemRecordsById                      = [ NSMutableDictionary new ];
+        self->_fieldsByItemIdAndLanguage            = [ NSMutableDictionary new ];
+        self->_hasAllChildrenForItemIdAndLanguage   = [ NSMutableSet new ];
+        self->_hasAllChildrenForItemPathAndLanguage = [ NSMutableSet new ];
     }
 
     return self;
@@ -118,13 +110,13 @@
 
 -(SCItemRecord*)rootItemRecord
 {
-    SCItemRecord* result_ = _rootItemRecord;
+    SCItemRecord* result_ = self->_rootItemRecord;
     if ( !result_ )
     {
         result_ = [ SCItemRecord rootRecord ];
         [ self registerItemRecord: result_
                         allFields: YES ];
-        _rootItemRecord = result_;
+        self->_rootItemRecord = result_;
     }
     return result_;
 }
@@ -133,7 +125,7 @@
 {
     if ( [ itemId_ isEqualToString: [ SCItemRecord rootItemId ] ] )
         return [ JFFMutableAssignArray arrayWithObject: self.rootItemRecord ];
-    return [ _itemRecordsById objectForKey: itemId_ ];
+    return self->_itemRecordsById[ itemId_ ];
 }
 
 -(JFFMutableAssignArray*)itemRecordsWithPath:( NSString* )path_
@@ -141,14 +133,14 @@
     path_ = [ path_ lowercaseString ];
     if ( [ path_ isEqualToString: [ SCItemRecord rootItemPath ] ] )
         return [ JFFMutableAssignArray arrayWithObject: self.rootItemRecord ];
-    return [ self.itemRecordsByPath objectForKey: path_ ];
+    return self->_itemRecordsByPath[ path_ ];
 }
 
 -(SCItemRecord*)existedItemRecordWithItemInfo:( SCItemInfo* )itemInfo_
 {
     JFFMutableAssignArray* itemsArray_ = itemInfo_.itemId
-        ? [ _itemRecordsById   objectForKey: itemInfo_.itemId ]
-        : [ _itemRecordsByPath objectForKey: itemInfo_.itemPath ];
+        ? self->_itemRecordsById  [ itemInfo_.itemId ]
+        : self->_itemRecordsByPath[ itemInfo_.itemPath ];
 
     NSArray* items_ = [ itemsArray_ array ];
     return [ items_ scItemRecordWithLanguage: itemInfo_.language
@@ -175,7 +167,7 @@
     SCItemIdPathAndLanguage* itemIdAndLang_ = [ SCItemIdPathAndLanguage new ];
     itemIdAndLang_.itemIdPath = itemId_;
     itemIdAndLang_.language   = language_;
-    return [ _fieldsByItemIdAndLanguage objectForKey: itemIdAndLang_ ];
+    return self->_fieldsByItemIdAndLanguage[ itemIdAndLang_ ];
 }
 
 -(SCField*)fieldWithName:( NSString* )fieldName_
@@ -184,7 +176,7 @@
 {
     JFFMutableAssignDictionary* fields_ = [ self readFieldsByNameForItemId: itemId_
                                                                   language: language_ ];
-    return [ fields_ objectForKey: fieldName_ ];
+    return fields_[ fieldName_ ];
 }
 
 -(NSArray*)cachedChildrenWithPredicate:( JFFPredicateBlock )predicate_
@@ -257,7 +249,7 @@
                                                               , SCFieldRecord* prevFieldRecord_
                                                               , BOOL *stop)
     {
-        SCFieldRecord* newFieldRecord_  = [ fieldsByName_ objectForKey: cachedFieldName_ ];
+        SCFieldRecord* newFieldRecord_  = fieldsByName_[ cachedFieldName_ ];
 
         if ( [ newFieldRecord_.type isEqualToString: prevFieldRecord_.type ]
             && prevFieldRecord_.fieldRef )
@@ -283,12 +275,12 @@
     SCItemIdPathAndLanguage* itemIdAndLang_ = [ SCItemIdPathAndLanguage new ];
     itemIdAndLang_.itemIdPath = itemRecord_.itemId;
     itemIdAndLang_.language   = itemRecord_.language;
-    JFFMutableAssignDictionary* cachedFeldsByName_ = [ self.fieldsByItemIdAndLanguage objectForKey: itemIdAndLang_ ];
+    JFFMutableAssignDictionary* cachedFeldsByName_ = self->_fieldsByItemIdAndLanguage[ itemIdAndLang_ ];
 
     if ( !cachedFeldsByName_ )
     {
         cachedFeldsByName_ = [ JFFMutableAssignDictionary new ];
-        [ self.fieldsByItemIdAndLanguage setObject: cachedFeldsByName_ forKey: itemIdAndLang_ ];
+        self->_fieldsByItemIdAndLanguage[ itemIdAndLang_ ] = cachedFeldsByName_;
     }
 
     [ self mergeOldFields: fieldsByName_
@@ -298,7 +290,7 @@
     [ fieldsByName_ enumerateKeysAndObjectsUsingBlock: ^( id key, SCFieldRecord* fieldRecord_, BOOL* stop )
     {
         [ itemRecord_.ownerships addObject: fieldRecord_ ];
-        [ cachedFeldsByName_ setObject: fieldRecord_ forKey: fieldRecord_.name ];
+        cachedFeldsByName_[ fieldRecord_.name ] = fieldRecord_;
         fieldRecord_.itemRecord = itemRecord_;
     } ];
 }
@@ -308,11 +300,11 @@
                   dict:( NSMutableDictionary* )dict_
                    key:( NSString* )key_
 {
-    JFFMutableAssignArray* items_ = [ dict_ objectForKey: key_ ];
+    JFFMutableAssignArray* items_ = dict_[ key_ ];
     if ( [ items_ count ] == 0 )
     {
         items_ = [ JFFMutableAssignArray new ];
-        [ dict_ setObject: items_ forKey: key_ ];
+        dict_[ key_ ] = items_;
     }
 
     if ( previosItemRec_ )

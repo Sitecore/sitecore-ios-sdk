@@ -15,10 +15,10 @@
                                         , JFFCancelAsyncOperationHandler cancelCallback_
                                         , JFFDidFinishAsyncOperationHandler doneCallback_ )
         {
-            NSDictionary* resultJson_ = [ json_ objectForKey: @"result" ];
+            NSDictionary* resultJson_ = json_[ @"result" ];
 
-            NSNumber* totalCount_ = [ resultJson_ objectForKey: @"totalCount" ];
-            NSArray* itemsJson_   = [ resultJson_ objectForKey: @"items" ];
+            NSNumber* totalCount_ = resultJson_[ @"totalCount" ];
+            NSArray* itemsJson_   = resultJson_[ @"items" ];
 
             if ( !totalCount_ || !itemsJson_ )
             {

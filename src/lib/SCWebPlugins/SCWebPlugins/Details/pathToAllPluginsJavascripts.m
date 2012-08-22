@@ -20,7 +20,7 @@ NSArray* scWebPluginsClasses( void )
                 [ plugins_ addObject: class_ ];
         } );
 
-        instance_ = [ [ NSArray alloc ] initWithArray: plugins_ ];
+        instance_ = [ plugins_ copy ];
     } );
 
     return instance_;

@@ -35,13 +35,13 @@ JFFAsyncOperationBinder fieldValuesLoadersForFieldsDict( NSSet* fieldsNames_ )
 
         fieldsNamesArr_ = [ fieldsNamesArr_ select: ^BOOL( NSString* fieldName_ )
         {
-            SCField* field_ = [ fieldsByName_ objectForKey: fieldName_ ];
+            SCField* field_ = fieldsByName_[ fieldName_ ];
             return [ field_ fieldValueLoader ] != nil;
         } ];
 
         return [ fieldsNamesArr_ tolerantFaultAsyncMap: ^JFFAsyncOperation( NSString* fieldName_ )
         {
-            SCField* field_ = [ fieldsByName_ objectForKey: fieldName_ ];
+            SCField* field_ = fieldsByName_[ fieldName_ ];
             return [ field_ fieldValueLoader ];
         } ];
     };

@@ -12,12 +12,11 @@
 
     for ( NSString* fieldName_ in fieldNames_ )
     {
-        SCField* field_ = [ fieldsByName_ objectForKey: fieldName_ ];
-        NSString* rawValue_ = field_.rawValue ?: @"";
-        [ result_ setObject: rawValue_ forKey: fieldName_ ];
+        SCField* field_ = fieldsByName_[ fieldName_ ];
+        result_[ fieldName_ ] = field_.rawValue ?: @"";
     }
 
-    return [ NSDictionary dictionaryWithDictionary: result_ ];
+    return [ result_ copy ];
 }
 
 @end

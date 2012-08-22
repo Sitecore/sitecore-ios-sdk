@@ -9,8 +9,6 @@
 
 @implementation SCImageView
 
-@synthesize reader = _reader;
-
 -(void)showImage:( UIImage* )image_ reader:( SCAsyncOp )reader_
 {
     if ( reader_ != self.reader )
