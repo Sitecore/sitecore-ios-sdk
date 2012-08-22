@@ -674,7 +674,10 @@ typedef struct LoggerNode LoggerNode;
 		// Add to linked list of LoggerNode elements.
 		// Need to create loggerQueue if loggerNode doesn't provide one.
 		
-		LoggerNode *loggerNode = malloc(sizeof(LoggerNode));
+        static const size_t LOGGER_NODE_SIZE = sizeof(LoggerNode);
+		LoggerNode *loggerNode = malloc( LOGGER_NODE_SIZE );
+        memset( loggerNode, 0, LOGGER_NODE_SIZE );
+        
 		loggerNode->logger = [logger retain];
 		
 		if ([logger respondsToSelector:@selector(loggerQueue)])

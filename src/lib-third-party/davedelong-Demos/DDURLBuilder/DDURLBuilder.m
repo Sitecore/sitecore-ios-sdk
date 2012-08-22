@@ -46,7 +46,7 @@
 - (id) initWithURL:(NSURL *)url {
     self = [super init];
     if (self) {
-        queryValues = [[NSMutableDictionary alloc] init];
+        self->_queryValues = [[NSMutableDictionary alloc] init];
         [self setUsesSchemeSeparators:YES];
         if (url) {
             [self setURL:url];
@@ -56,14 +56,14 @@
 }
 
 - (void)dealloc {
-    [scheme release];
-    [user release];
-    [password release];
-    [host release];
-    [port release];
-    [path release];
-    [queryValues release];
-    [fragment release];
+    [ self->_scheme release];
+    [ self->_user release];
+    [ self->_password release];
+    [ self->_host release];
+    [ self->_port release];
+    [ self->_path release];
+    [ self->_queryValues release];
+    [ self->_fragment release];
     [super dealloc];
 }
 
@@ -79,7 +79,7 @@
     NSString *absolute = [URL absoluteString];
     [self setUsesSchemeSeparators:([absolute hasPrefix:[NSString stringWithFormat:@"%@://", [self scheme]]])];
     
-    [queryValues removeAllObjects];
+    [self->_queryValues removeAllObjects];
     NSString *query = [URL query];
     NSArray *components = [query componentsSeparatedByString:@"&"];
     for (NSString *component in components) {
@@ -126,12 +126,12 @@
         }
     }
     
-    if ([queryValues count] > 0) 
+    if ([ self->_queryValues count] > 0)
     {
         NSMutableArray *components = [NSMutableArray array];
-        for (NSString *key in queryValues) 
+        for (NSString *key in self->_queryValues )
         {
-            NSArray *values = [queryValues objectForKey:key];
+            NSArray *values = [ self->_queryValues objectForKey:key];
             key = [ self ddurlbuilder_percentEncode: key ];
             for (NSString *value in values) 
             {
@@ -153,22 +153,22 @@
 
 - (NSArray *) queryValuesForKey:(NSString *)key {
     if (key == nil) { return nil; }
-    return [[[queryValues objectForKey:key] copy] autorelease];
+    return [[[ self->_queryValues objectForKey:key] copy] autorelease];
 }
 
 - (void) addQueryValue:(NSString *)value forKey:(NSString *)key {
     if (value == nil || key == nil) { return; }
-    NSMutableArray *values = [queryValues objectForKey:key];
+    NSMutableArray *values = [ self->_queryValues objectForKey:key];
     if (values == nil) {
         values = [NSMutableArray array];
-        [queryValues setObject:values forKey:key];
+        [ self->_queryValues setObject:values forKey:key];
     }
     [values addObject:value];
 }
 
 - (void) removeQueryValue:(NSString *)value forKey:(NSString *)key {
     if (value == nil || key == nil) { return; }
-    NSMutableArray *values = [queryValues objectForKey:key];
+    NSMutableArray *values = [ self->_queryValues objectForKey:key];
     if (values) {
         [values removeObject:value];
     }
@@ -176,7 +176,7 @@
 
 - (void) removeQueryValuesForKey:(NSString *)key {
     if (key == nil) { return; }
-    [queryValues removeObjectForKey:key];
+    [ self->_queryValues removeObjectForKey:key];
 }
 
 @end

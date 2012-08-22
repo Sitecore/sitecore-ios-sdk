@@ -20,6 +20,9 @@ static SystemSoundID systemSoundID( void )
 }
 
 @interface JDWBeepPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWBeepPlugin
@@ -27,13 +30,14 @@ static SystemSoundID systemSoundID( void )
     NSURLRequest* _request;
 }
 
-@synthesize delegate;
-
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }

@@ -9,17 +9,10 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DDURLBuilder : NSObject {
-    @private
-    
-    NSString *scheme;
-    NSString *user;
-    NSString *password;
-    NSString *host;
-    NSNumber *port;
-    NSString *path;
-    NSMutableDictionary *queryValues;
-    NSString *fragment;
+@interface DDURLBuilder : NSObject
+{
+@private
+    NSMutableDictionary* _queryValues;
 }
 
 + (id) URLBuilderWithURL:(NSURL *)url;
