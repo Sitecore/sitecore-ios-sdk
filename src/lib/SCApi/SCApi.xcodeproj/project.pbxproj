@@ -116,7 +116,8 @@
 		656409C115A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */; };
 		656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */; };
 		656409C515A9CB750062F28D /* SCSitecoreCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 656409C315A9CB750062F28D /* SCSitecoreCredentials.h */; };
-		656409C615A9CB750062F28D /* SCSitecoreCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 656409C415A9CB750062F28D /* SCSitecoreCredentials.m */; };
+		656409C615A9CB750062F28D /* SCSitecoreCredentials.mm in Sources */ = {isa = PBXBuildFile; fileRef = 656409C415A9CB750062F28D /* SCSitecoreCredentials.mm */; };
+		7EF913E515E4E6940015F01F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF913E415E4E6940015F01F /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,7 +242,8 @@
 		656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSitecoreCredentials+XMLParser.h"; sourceTree = "<group>"; };
 		656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSitecoreCredentials+XMLParser.m"; sourceTree = "<group>"; };
 		656409C315A9CB750062F28D /* SCSitecoreCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitecoreCredentials.h; sourceTree = "<group>"; };
-		656409C415A9CB750062F28D /* SCSitecoreCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSitecoreCredentials.m; sourceTree = "<group>"; };
+		656409C415A9CB750062F28D /* SCSitecoreCredentials.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCSitecoreCredentials.mm; sourceTree = "<group>"; };
+		7EF913E415E4E6940015F01F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF913E515E4E6940015F01F /* Security.framework in Frameworks */,
 				1BC086FB147BBDD60066CFB3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +314,7 @@
 		1BC086EC147BBDD60066CFB3 = {
 			isa = PBXGroup;
 			children = (
+				7EF913E415E4E6940015F01F /* Security.framework */,
 				1BC086FC147BBDD60066CFB3 /* SCApi */,
 				1BC0878E147BC6750066CFB3 /* SitecoreMobileSDK */,
 				1BC086F9147BBDD60066CFB3 /* Frameworks */,
@@ -409,7 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				656409C315A9CB750062F28D /* SCSitecoreCredentials.h */,
-				656409C415A9CB750062F28D /* SCSitecoreCredentials.m */,
+				656409C415A9CB750062F28D /* SCSitecoreCredentials.mm */,
 				1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */,
 				1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */,
 			);
@@ -704,7 +708,7 @@
 				1BB5D9A5152EEC7F00075752 /* SCFieldRecord+Parser.m in Sources */,
 				1BBE2EC8154546AB004B683B /* SCItemsCache+UnregisterItems.m in Sources */,
 				656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */,
-				656409C615A9CB750062F28D /* SCSitecoreCredentials.m in Sources */,
+				656409C615A9CB750062F28D /* SCSitecoreCredentials.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +742,7 @@
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
 					"../../lib-third-party/ios-openssl/include",
+					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -764,6 +769,7 @@
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"../../lib-third-party/JFFLibrary/lib/TouchXmlHelper",
 					"../../lib-third-party/ios-openssl/include",
+					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;

@@ -77,8 +77,8 @@
 
     if ( self )
     {
-        _record     = record_;
-        _apiContext = apiContext_;
+        self->_record     = record_;
+        self->_apiContext = apiContext_;
     }
 
     return self;
@@ -113,28 +113,28 @@
 
 -(NSMutableSet*)lazyFieldNamesToChange
 {
-    if ( !_fieldNamesToChange )
+    if ( !self->_fieldNamesToChange )
     {
-        _fieldNamesToChange = [ NSMutableSet new ];
+        self->_fieldNamesToChange = [ NSMutableSet new ];
     }
-    return _fieldNamesToChange;
+    return self->_fieldNamesToChange;
 }
 
 -(SCApiContext*)apiContext
 {
-    return _apiContext;
+    return self->_apiContext;
 }
 
 -(id)forwardingTargetForSelector:( SEL )selector_
 {
-    return _record;
+    return self->_record;
 }
 
 -(SCField*)fieldWithName:( NSString* )fieldName_
 {
-    return [ _apiContext fieldWithName: fieldName_
-                                itemId: self.itemId
-                              language: self.language ];
+    return [ self->_apiContext fieldWithName: fieldName_
+                                      itemId: self.itemId
+                                    language: self.language ];
 }
 
 -(id)fieldValueWithName:( NSString* )name_
@@ -178,7 +178,7 @@
     JFFAsyncOperationBinder binder_ = asyncOperationBinderWithAnalyzer( ^id( id result_, NSError** error_ )
     {
         NSDictionary* dict_ = [ result_ readFieldsByName ];
-        dict_ = dict_ ? dict_ : [ NSDictionary new ];
+        dict_ = dict_ ? dict_ : @{};
         return dict_;
     } );
     return bindSequenceOfAsyncOperations( loader_, binder_, nil );
@@ -247,7 +247,7 @@
 {
     return ^( SCAsyncOpResult handler_ )
     {
-        if ( [ _fieldNamesToChange count ] == 0 )
+        if ( [ self->_fieldNamesToChange count ] == 0 )
         {
             if ( handler_ )
                 handler_( self, nil );
@@ -257,9 +257,9 @@
         SCEditItemsRequest* editItemsRequest_ = [ SCEditItemsRequest requestWithItemId: self.itemId ];
 
         editItemsRequest_.fieldsRawValuesByName =
-            [ NSDictionary fieldsRawFaluesByNameWithNames: _fieldNamesToChange
+            [ NSDictionary fieldsRawFaluesByNameWithNames: self->_fieldNamesToChange
                                              fieldsByName: [ self readFieldsByName ] ];
-        _fieldNamesToChange = nil;
+        self->_fieldNamesToChange = nil;
 
         JFFAsyncOperation loader_ = [ self.apiContext editItemsLoaderWithRequest: editItemsRequest_ ];
         loader_ = firstItemFromArrayReader( loader_ );

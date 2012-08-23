@@ -121,7 +121,7 @@
         NSUInteger pageIndex_ = index_ % self.pageSize;
 
         if ( [ items_ count ] > pageIndex_ )
-            return [ items_ objectAtIndex: pageIndex_ ];
+            return items_[ pageIndex_ ];
 
         if ( error_ )
             *error_ = [ SCNoItemError new ];

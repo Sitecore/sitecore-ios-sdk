@@ -262,7 +262,7 @@ static NSString* const apiVersion_ = @"v1";
 {
     NSString* hostWithSheme_ = [ host_ scHostWithURLScheme ];
 
-    static NSString* const urlFormat_ = @"%@/%@/-/system/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@";
+    static NSString* const urlFormat_ = @"%@/%@/-/actions/GetRenderingHtml?database=%@&language=%@&renderingId=%@&itemId=%@";
     NSString* requestString_ = [ [ NSString alloc ] initWithFormat: urlFormat_
                                 , hostWithSheme_
                                 , apiVersion_

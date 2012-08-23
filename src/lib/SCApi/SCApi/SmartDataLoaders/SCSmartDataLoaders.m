@@ -32,12 +32,24 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
                                     , JFFCancelAsyncOperationHandler cancelCallback_
                                     , JFFDidFinishAsyncOperationHandler doneCallback_ )
     {
-        NSLog( @"start load data with url: %@", urlBuilder_() );
+        NSURL* url_ = urlBuilder_();
+        NSLog( @"start load data with url: %@", url_ );
+
+        SCAsyncBinderForURL analyzerForData2_ = ^JFFAsyncOperationBinder( NSURL* url_ )
+        {
+            JFFAsyncOperationBinder binder_ = analyzerForData_( url_ );
+            return ^JFFAsyncOperation( NSData* result_ )
+            {
+                NSString* responseStr_ = [ [ NSString alloc ] initWithData: result_ encoding: NSUTF8StringEncoding ];
+                NSLog( @"finish load data: %@ for url: %@", responseStr_, url_ );
+                return binder_( result_ );
+            };
+        };
 
         JFFSmartUrlDataLoaderFields* args_ = [ JFFSmartUrlDataLoaderFields new ];
         args_.urlBuilder        = urlBuilder_;
         args_.dataLoaderForURL  = dataLoaderForURL_;
-        args_.analyzerForData   = analyzerForData_;
+        args_.analyzerForData   = analyzerForData2_;
         args_.cache             = (id< JFFRestKitCache >)cache_;
         args_.cacheKeyForURL    = keyForURL_;
         args_.cacheDataLifeTime = lifeTime_;
@@ -53,6 +65,7 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
         };
 
         loader_ = asyncOperationWithChangedError( loader_, errorBuilder_ );
+
         return loader_( progressCallback_
                        , cancelCallback_
                        , doneCallback_ );

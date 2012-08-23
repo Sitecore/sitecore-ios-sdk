@@ -58,7 +58,7 @@ JFFAsyncOperationBinder fieldsByNameToFieldsValuesByName( NSSet* fieldsNames_
         {
             return field_.fieldValue;
         } ];
-       return fieldValuesByName_ ?: [ NSDictionary new ];
+        return fieldValuesByName_ ?: @{};
     } );
 
     return binderAsSequenceOfBinders( readValuesBinder_, changeResultBinder_, nil );

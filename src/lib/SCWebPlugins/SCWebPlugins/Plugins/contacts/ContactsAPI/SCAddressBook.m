@@ -1,5 +1,7 @@
 #import "SCAddressBook.h"
 
+#import <AddressBook/AddressBook.h>
+
 @implementation SCAddressBook
 {
     ABAddressBookRef _rawBook;
@@ -31,6 +33,34 @@
     self->_rawBook = rawBook_;
     
     return self;
+}
+
+-(BOOL)removeAllContactsWithError:( NSError** )error_
+{
+    ABAddressBookRef rawBook_ = self.rawBook;
+    CFErrorRef rawError_ = NULL;
+    NSArray* contacts_ = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople( rawBook_ );
+    
+    for ( id record_ in contacts_ )
+    {
+        ABRecordRef rawRecord_ = (__bridge ABRecordRef)record_;
+        ABAddressBookRemoveRecord( rawBook_, rawRecord_, &rawError_ );
+        if ( NULL != rawError_ )
+        {
+            [ (__bridge NSError*)rawError_ setToPointer: error_ ];
+            return NO;
+        }
+    }
+    
+
+    ABAddressBookSave( rawBook_, &rawError_ );
+    if ( NULL != rawError_ )
+    {
+        [ (__bridge NSError*)rawError_ setToPointer: error_ ];
+        return NO;
+    }
+
+    return YES;
 }
 
 @end

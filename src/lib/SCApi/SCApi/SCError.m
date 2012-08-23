@@ -49,7 +49,7 @@
 
 -(id)init
 {
-    return [ super initWithDescription: @"Item was not found" ];
+    return [ super initWithDescription: NSLocalizedString( @"ITEM_WAS_NOT_FOUND", nil ) ];
 }
 
 @end
@@ -61,7 +61,7 @@
 
 -(id)init
 {
-    return [ super initWithDescription: @"Item path is invalid" ];
+    return [ super initWithDescription: NSLocalizedString( @"ITEM_PATH_IS_INVALID", nil ) ];
 }
 
 @end

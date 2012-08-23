@@ -15,12 +15,12 @@
 
 -(id)fieldValue
 {
-    return _checklistFieldValue;
+    return self->_checklistFieldValue;
 }
 
 -(void)setFieldValue:(id)fieldValue_
 {
-    _checklistFieldValue = fieldValue_;
+    self->_checklistFieldValue = fieldValue_;
 }
 
 -(JFFAsyncOperation)fieldValueLoader

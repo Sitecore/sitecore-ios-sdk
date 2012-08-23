@@ -37,6 +37,7 @@
 >
 
 @property ( nonatomic, strong ) SCAddressBook* book;
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
 @end
 

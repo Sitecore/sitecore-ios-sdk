@@ -58,18 +58,18 @@
     CLLocation* startLocation_;
     CLLocation* endLocation_;
 
-    if ( [ _placeMarks count ] > 0 )
+    if ( [ self->_placeMarks count ] > 0 )
     {
-        if ( !_selfLocation )
+        if ( !self->_selfLocation )
         {
-            SCPlacemark* firstPlaceMark_ = [ _placeMarks objectAtIndex: 0 ];
+            SCPlacemark* firstPlaceMark_ = self->_placeMarks[ 0 ];
 
             CLLocationDegrees minLat_  = firstPlaceMark_.location.coordinate.latitude;
             CLLocationDegrees maxLat_  = firstPlaceMark_.location.coordinate.latitude;
             CLLocationDegrees minLong_ = firstPlaceMark_.location.coordinate.longitude;
             CLLocationDegrees maxLong_ = firstPlaceMark_.location.coordinate.longitude;
 
-            for ( SCPlacemark* placeMark_ in _placeMarks )
+            for ( SCPlacemark* placeMark_ in self->_placeMarks )
             {
                 minLat_  = fmin( minLat_ , placeMark_.location.coordinate.latitude  );
                 maxLat_  = fmax( maxLat_ , placeMark_.location.coordinate.latitude  );
@@ -80,10 +80,10 @@
             startLocation_ = [ [ CLLocation alloc ] initWithLatitude: minLat_ longitude: minLong_ ];
             endLocation_   = [ [ CLLocation alloc ] initWithLatitude: maxLat_ longitude: maxLong_ ];
         }
-        else if ( _drawRouteToNearestAddress )
+        else if ( self->_drawRouteToNearestAddress )
         {
-            startLocation_ =_selfLocation;
-            endLocation_   = [ self nearestPlaceMarkLocationFromLocation: _selfLocation ];
+            startLocation_ = self->_selfLocation;
+            endLocation_   = [ self nearestPlaceMarkLocationFromLocation: self->_selfLocation ];
         }
     }
 
@@ -94,9 +94,9 @@
                                                   ,fabs( startLocation_.coordinate.longitude - endLocation_.coordinate.longitude ) * 1.02 );
 
     MKCoordinateRegion viewRegion_     = MKCoordinateRegionMake( center_, span_ );
-    MKCoordinateRegion adjustedRegion_ = [ _mapView regionThatFits: viewRegion_ ];
+    MKCoordinateRegion adjustedRegion_ = [ self->_mapView regionThatFits: viewRegion_ ];
 
-    [ _mapView setRegion: adjustedRegion_ animated: YES ];
+    [ self->_mapView setRegion: adjustedRegion_ animated: YES ];
 
     ///eul alternative algorith to cheack result
     //    CLLocationCoordinate2D points[2] = {startLocation_.coordinate, endLocation_.coordinate};
@@ -106,10 +106,10 @@
 
 -(void)setRegionRadius:( CLLocationDistance )regionRadius_
 {
-    if ( _regionRadius == regionRadius_ )
+    if ( self->_regionRadius == regionRadius_ )
         return;
 
-    _regionRadius = regionRadius_;
+    self->_regionRadius = regionRadius_;
     [ self adjustRegion ];
 }
 
@@ -117,8 +117,8 @@
 {
     if ( placeMarks_ )
     {
-        _placeMarks = placeMarks_;
-        [ _mapView addAnnotations: placeMarks_ ];
+        self->_placeMarks = placeMarks_;
+        [ self->_mapView addAnnotations: placeMarks_ ];
 
         [ self adjustRegion ];
         [ self drawRouteToClosestPlaceMark ];
@@ -152,12 +152,12 @@
 
 -(CLLocation*)nearestPlaceMarkLocationFromLocation:( CLLocation* )location_
 {
-    CLLocation* placeMarksLocation_ = [ [ _placeMarks objectAtIndex: 0 ] location ];
+    CLLocation* placeMarksLocation_ = [ self->_placeMarks[ 0 ] location ];
 
     CLLocationDistance minDistance_ = [ location_ distanceFromLocation: placeMarksLocation_ ];
-    CLLocation* nearestLoacation_   = [ [ _placeMarks objectAtIndex: 0 ] location ];
+    CLLocation* nearestLoacation_   = [ self->_placeMarks[ 0 ] location ];
 
-    for ( SCPlacemark* placeMark_ in _placeMarks )
+    for ( SCPlacemark* placeMark_ in self->_placeMarks )
     {
         CLLocationDistance distance_ = [ location_ distanceFromLocation: placeMark_.location ];
         if ( distance_ < minDistance_ )
@@ -172,18 +172,18 @@
 
 -(void)hideRouteLineView
 {
-    if ( _routeLine )
+    if ( self->_routeLine )
     {
-        [ _mapView removeOverlay: _routeLine ];
-        _routeLine = nil;
+        [ self->_mapView removeOverlay: self->_routeLine ];
+        self->_routeLine = nil;
     }
 }
 
 -(void)drawRouteToClosestPlaceMark
 {
-    if ( [ _placeMarks count ] == 0
-        || !_selfLocation
-        /*|| !_drawRouteToNearestAddress*/ )
+    if ( [ self->_placeMarks count ] == 0
+        || !self->_selfLocation
+        /*|| !self->_drawRouteToNearestAddress*/ )
         return;
 
     CLLocation* closestMarkPlace_ = [ self nearestPlaceMarkLocationFromLocation: _selfLocation ];
@@ -194,17 +194,17 @@
 
         for ( NSUInteger index_ = 0; index_ < points_.count; ++index_ )
         {
-            CLLocation* location_  = [ points_ objectAtIndex: index_ ];
+            CLLocation* location_  = points_[ index_ ];
             coordinates_[ index_ ] = location_.coordinate;
         }
 
         [ self hideRouteLineView ];
 
-        _routeLine = [ MKPolyline polylineWithCoordinates: coordinates_ count: points_.count ];
+        self->_routeLine = [ MKPolyline polylineWithCoordinates: coordinates_ count: points_.count ];
 
-        if ( _routeLine )
+        if ( self->_routeLine )
         {
-            [ _mapView addOverlay: _routeLine ];
+            [ self->_mapView addOverlay: self->_routeLine ];
         }
     };
 
@@ -216,10 +216,10 @@
 
 -(void)setDrawRouteToNearestItemAddress:( BOOL )drawRouteToNearestAddress_
 {
-    if ( _drawRouteToNearestAddress == drawRouteToNearestAddress_ )
+    if ( self->_drawRouteToNearestAddress == drawRouteToNearestAddress_ )
         return;
 
-    _drawRouteToNearestAddress = drawRouteToNearestAddress_;
+    self->_drawRouteToNearestAddress = drawRouteToNearestAddress_;
 
     if ( drawRouteToNearestAddress_ )
     {
@@ -283,20 +283,20 @@
 {
     MKOverlayView* overlayView_ = nil;
 
-    if ( overlay_ == _routeLine )
+    if ( overlay_ == self->_routeLine )
     {
-        if( _routeLineView )
+        if( self->_routeLineView )
         {
-            [ _routeLineView removeFromSuperview ];
-            _routeLineView = nil;
+            [ self->_routeLineView removeFromSuperview ];
+            self->_routeLineView = nil;
         }
 
-        _routeLineView             = [ [ MKPolylineView alloc ] initWithPolyline: _routeLine ]; 
-        _routeLineView.fillColor   = [ UIColor redColor ];
-        _routeLineView.strokeColor = [ UIColor blueColor ];
-        _routeLineView.lineWidth   = 7;
+        self->_routeLineView             = [ [ MKPolylineView alloc ] initWithPolyline: self->_routeLine ]; 
+        self->_routeLineView.fillColor   = [ UIColor redColor ];
+        self->_routeLineView.strokeColor = [ UIColor blueColor ];
+        self->_routeLineView.lineWidth   = 7;
 
-		overlayView_ = _routeLineView;
+        overlayView_ = self->_routeLineView;
     }
 
     return overlayView_;
@@ -311,7 +311,7 @@
 
         [ annotationObject_ didTappedCalloutAccessoryControl: control_
                                               annotationView: view_ 
-                                                     mapView: _mapView ];
+                                                     mapView: self->_mapView ];
     }
 }
 
