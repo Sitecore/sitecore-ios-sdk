@@ -51,7 +51,7 @@ JFFAsyncOperationBinder bindSequenceOfBindersPair( JFFAsyncOperationBinder first
             __block JFFCancelAsyncOperation cancelBlockHolder_;
 
             progressCallback_ = [ progressCallback_ copy ];
-            doneCallback_ = [ doneCallback_ copy ];
+            doneCallback_     = [ doneCallback_     copy ];
 
             JFFCancelAsyncOperation firstCancel_ = firstLoader_( progressCallback_
                                                                 , cancelCallback_

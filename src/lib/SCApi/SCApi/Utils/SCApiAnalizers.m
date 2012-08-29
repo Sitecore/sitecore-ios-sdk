@@ -52,7 +52,7 @@ JFFAsyncOperationBinder fieldsByNameToFieldsValuesByName( NSSet* fieldsNames_
 {
     JFFAsyncOperationBinder readValuesBinder_ = fieldValuesLoadersForFieldsDict( fieldsNames_ );
 
-    JFFAsyncOperationBinder changeResultBinder_ = asyncOperationBinderWithAnalyzer(^id(id result_, NSError** error_)
+    JFFAsyncOperationBinder changeResultBinder_ = asyncOperationBinderWithAnalyzer( ^id( id result_, NSError** error_)
     {
         NSDictionary* fieldValuesByName_ = [ fieldsGetter_() map: ^id( id key_, SCField* field_ )
         {

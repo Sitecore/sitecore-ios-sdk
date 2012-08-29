@@ -18,7 +18,7 @@
     return self->_checklistFieldValue;
 }
 
--(void)setFieldValue:(id)fieldValue_
+-(void)setFieldValue:( id )fieldValue_
 {
     self->_checklistFieldValue = fieldValue_;
 }

@@ -183,10 +183,10 @@ static NSString* const createRecords_ =
 {
     fileLink_ = [ NSString cachesPathByAppendingPathComponent: fileLink_ ];
     [ [ NSFileManager defaultManager ] removeItemAtPath: fileLink_ error: nil ];
-    
+
     NSString* removeQuery_ = [ [ NSString alloc ] initWithFormat: @"DELETE FROM records WHERE record_id LIKE '%@';"
                               , recordId_ ];
-    
+
     sqlite3_stmt* statement_ = 0;
     if ( [ self prepareQuery: removeQuery_ statement: &statement_ ] )
     {
@@ -367,7 +367,7 @@ static NSString* const createRecords_ =
         {
             const unsigned char * str_ = sqlite3_column_text( statement_, 0 );
             NSString* fileLink_ = @((const char *)str_);
-            
+
             fileLink_ = [ NSString cachesPathByAppendingPathComponent: fileLink_ ];
             [ [ NSFileManager defaultManager ] removeItemAtPath: fileLink_ error: nil ];
         }
