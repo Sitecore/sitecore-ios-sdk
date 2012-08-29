@@ -1,6 +1,0 @@
-TEMP_DIR=$(/usr/bin/getconf DARWIN_USER_TEMP_DIR)
-TEST_DIR_NAME=test-results
-
-TEST_RESULTS_DIR=$TEMP_DIR$TEST_DIR_NAME
-
-rm -r -f "$TEST_RESULTS_DIR"
