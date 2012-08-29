@@ -98,22 +98,16 @@
                                            httpMethod:( NSString* )httpMethod_
                                               headers:( NSDictionary* )headers_
 {
-    //JFFAsyncOperation credentioalsLoader_ = [ self credentioalsLoader ];
+    JFFAsyncOperation credentioalsLoader_ = [ self credentioalsLoader ];
 
     JFFAsyncOperationBinder secondLoaderBinder_ = ^JFFAsyncOperation( SCSitecoreCredentials* credentials_ )
     {
         return scDataURLResponseLoader( url_, credentials_, httpBody_, httpMethod_, headers_ );
     };
 
-//    return bindSequenceOfAsyncOperations( credentioalsLoader_
-//                                         , secondLoaderBinder_
-//                                         , nil );
-    SCSitecoreCredentials* credentials_ = [ SCSitecoreCredentials new ];
-
-    credentials_.login    = self->_login;
-    credentials_.password = self->_password;
-
-    return secondLoaderBinder_( credentials_ );
+    return bindSequenceOfAsyncOperations( credentioalsLoader_
+                                         , secondLoaderBinder_
+                                         , nil );
 }
 
 -(JFFAsyncOperationBinder)scDataLoaderWithHttpBodyAndURL:( NSData* )httpBody_

@@ -112,19 +112,35 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
                                           , NSDictionary* headers_ )
 {
     headers_ = headers_ ?: @{};
-    if ( [ credentials_.login length ] != 0 )
+    
+    BOOL isAuthenticationRequired_ = [ credentials_.login hasSymbols ];
+    BOOL isSslUsed_ = ( NSOrderedSame == [ url_.scheme compare: @"https"
+                                                       options: NSCaseInsensitiveSearch ] );
+    
+    NSDictionary* authHeaders_ = nil;
+    
+    if ( isAuthenticationRequired_ )
     {
-//        NSString* encryptedPassword_ = credentials_.encryptedPassword;
-
-        NSDictionary* authHeaders_ = @{
-        @"X-Scitemwebapi-Username" : credentials_.login,
-//        @"X-Scitemwebapi-Password" : credentials_.encryptedPassword,
-        @"X-Scitemwebapi-Password" : credentials_.password,
-//        @"X-Scitemwebapi-Encrypted" : @"1"
-        };
-        headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
+        if ( isSslUsed_ )
+        {
+            authHeaders_ =
+            @{
+                @"X-Scitemwebapi-Username" : credentials_.login,
+                @"X-Scitemwebapi-Password" : credentials_.password,
+            };
+        }
+        else
+        {
+            authHeaders_ =
+            @{
+                @"X-Scitemwebapi-Username" : credentials_.encryptedLogin,
+                @"X-Scitemwebapi-Password" : credentials_.encryptedPassword,
+                @"X-Scitemwebapi-Encrypted" : @"1"
+            };
+        }
     }
-
+    headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
+    
     JFFURLConnectionParams* params_ = [ JFFURLConnectionParams new ];
     params_.url        = url_;
     params_.httpBody   = httpBody_;

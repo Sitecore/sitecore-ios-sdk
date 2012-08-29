@@ -10,6 +10,9 @@
 @class SCItemsReaderRequest;
 @class SCCreateMediaItemRequest;
 
+// TODO : store password securely.
+// Password ivar is a potential exploit
+
 @interface SCRemoteApi : NSObject
 
 -(id)initWithHost:( NSString* )host_
