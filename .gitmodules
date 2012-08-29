@@ -7,3 +7,6 @@
 [submodule "src/lib-third-party/HTMLParser"]
 	path = src/lib-third-party/HTMLParser
 	url = https://github.com/EmbeddedSources/HTMLParser.git
+[submodule "src/lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5"]
+	path = src/lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5
+	url = https://github.com/EmbeddedSources/UIDevice-with-UniqueIdentifier-for-iOS-5.git
