@@ -1,3 +1,6 @@
 [submodule "src/lib-third-party/ObjcScopedGuard"]
 	path = src/lib-third-party/ObjcScopedGuard
 	url = https://github.com/Sitecore/ObjcScopedGuard.git
+[submodule "src/lib-third-party/AmberFramework-lite"]
+	path = src/lib-third-party/AmberFramework-lite
+	url = https://github.com/Sitecore/AmberFramework-lite.git
