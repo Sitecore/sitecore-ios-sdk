@@ -10,3 +10,6 @@
 [submodule "src/lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5"]
 	path = src/lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5
 	url = https://github.com/EmbeddedSources/UIDevice-with-UniqueIdentifier-for-iOS-5.git
+[submodule "src/lib-third-party/davedelong-Demos"]
+	path = src/lib-third-party/davedelong-Demos
+	url = https://github.com/EmbeddedSources/Demos.git
