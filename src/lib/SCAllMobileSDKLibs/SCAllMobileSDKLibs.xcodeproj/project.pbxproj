@@ -29,6 +29,7 @@
 		6564094215A9B9D80062F28D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094015A9B9D80062F28D /* libcrypto.a */; };
 		6564094315A9B9D80062F28D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094115A9B9D80062F28D /* libssl.a */; };
 		65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
+		7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
@@ -399,6 +400,27 @@
 			remoteGlobalIDString = 1B7ABA80152D973A005DD4CA;
 			remoteInfo = JFFRestKit;
 		};
+		7E3A5C4615E67C7B008BA4D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53A0190614E27A720007DC05;
+			remoteInfo = AmberFoundation;
+		};
+		7E3A5C4815E67C7B008BA4D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53A0193214E27BB40007DC05;
+			remoteInfo = "AmberFoundatio-clang";
+		};
+		7E3A5C6315E67C87008BA4D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53A0190514E27A720007DC05;
+			remoteInfo = AmberFoundation;
+		};
 		7E84E60415E25ED300FB8E36 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */;
@@ -497,6 +519,7 @@
 		6564094015A9B9D80062F28D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../lib-third-party/ios-openssl/lib/libcrypto.a"; sourceTree = "<group>"; };
 		6564094115A9B9D80062F28D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../lib-third-party/ios-openssl/lib/libssl.a"; sourceTree = "<group>"; };
 		65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFRestKit.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFRestKit/JFFRestKit.xcodeproj"; sourceTree = "<group>"; };
+		7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AmberFoundation.xcodeproj; path = "../../lib-third-party/AmberFramework-lite/AmberFoundation/AmberFoundation.xcodeproj"; sourceTree = "<group>"; };
 		7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjcScopedGuard.xcodeproj; path = "../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
@@ -507,6 +530,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */,
 				7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */,
 				1B049C9515930C1400E22402 /* libDDUrlBuilder.a in Frameworks */,
 				7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */,
@@ -680,6 +704,7 @@
 		1B33DDA81518C5D500EEA9BA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */,
 				7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */,
 				1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */,
 				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
@@ -765,6 +790,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E3A5C3F15E67C7A008BA4D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */,
+				7E3A5C4915E67C7B008BA4D9 /* libAmberFoundatio-clang.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E84E5EF15E25ED200FB8E36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +851,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E3A5C6415E67C87008BA4D9 /* PBXTargetDependency */,
 				7E84E61515E25EE600FB8E36 /* PBXTargetDependency */,
 				1B049C9415930C0C00E22402 /* PBXTargetDependency */,
 				7ED1CAA11586427F00EED5EA /* PBXTargetDependency */,
@@ -862,6 +897,10 @@
 			productRefGroup = 1B33DD901518C5BC00EEA9BA /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 7E3A5C3F15E67C7A008BA4D9 /* Products */;
+					ProjectRef = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
+				},
 				{
 					ProductGroup = 1B049C8B15930C0200E22402 /* Products */;
 					ProjectRef = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
@@ -1197,6 +1236,20 @@
 			remoteRef = 65E3074D1531E64200E0B781 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAmberFoundation.a;
+			remoteRef = 7E3A5C4615E67C7B008BA4D9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E3A5C4915E67C7B008BA4D9 /* libAmberFoundatio-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libAmberFoundatio-clang.a";
+			remoteRef = 7E3A5C4815E67C7B008BA4D9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1344,6 +1397,11 @@
 			isa = PBXTargetDependency;
 			name = JFFRestKit;
 			targetProxy = 65E307A11531E6D100E0B781 /* PBXContainerItemProxy */;
+		};
+		7E3A5C6415E67C87008BA4D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AmberFoundation;
+			targetProxy = 7E3A5C6315E67C87008BA4D9 /* PBXContainerItemProxy */;
 		};
 		7E84E61515E25EE600FB8E36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
