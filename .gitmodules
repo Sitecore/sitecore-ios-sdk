@@ -13,3 +13,6 @@
 [submodule "src/lib-third-party/davedelong-Demos"]
 	path = src/lib-third-party/davedelong-Demos
 	url = https://github.com/EmbeddedSources/Demos.git
+[submodule "src/lib-third-party/TouchXML"]
+	path = src/lib-third-party/TouchXML
+	url = https://github.com/EmbeddedSources/TouchXML.git
