@@ -4,3 +4,6 @@
 [submodule "src/lib-third-party/AmberFramework-lite"]
 	path = src/lib-third-party/AmberFramework-lite
 	url = https://github.com/Sitecore/AmberFramework-lite.git
+[submodule "src/lib-third-party/HTMLParser"]
+	path = src/lib-third-party/HTMLParser
+	url = https://github.com/EmbeddedSources/HTMLParser.git
