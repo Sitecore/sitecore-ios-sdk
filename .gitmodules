@@ -19,3 +19,6 @@
 [submodule "src/lib-third-party/ios-openssl"]
 	path = src/lib-third-party/ios-openssl
 	url = https://github.com/Sitecore/ios-openssl.git
+[submodule "src/lib-third-party/JFFLibrary"]
+	path = src/lib-third-party/JFFLibrary
+	url = https://github.com/EmbeddedSources/iAsync.git
