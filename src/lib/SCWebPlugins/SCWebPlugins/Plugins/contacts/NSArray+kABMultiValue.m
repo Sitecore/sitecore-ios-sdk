@@ -11,7 +11,7 @@
     if ( 0 == count_ )
         return nil;
 
-    NSMutableArray* result_ = [ NSMutableArray arrayWithCapacity: count_ ];
+    NSMutableArray* result_ = [ NSMutableArray arrayWithCapacity: (NSUInteger)count_ ];
 
     for ( CFIndex index_ = 0; index_ < count_; ++index_ )
     {

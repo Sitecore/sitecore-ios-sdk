@@ -64,10 +64,10 @@ using namespace ::Utils;
         BIGNUM* bn_mod = NULL;
         BIGNUM* bn_exp = NULL;
 
-        bn_mod = BN_bin2bn(modulusCStr_, modulusSize_, NULL); // Convert both values to BIGNUM
+        bn_mod = BN_bin2bn(modulusCStr_, static_cast<int>( modulusSize_ ), NULL); // Convert both values to BIGNUM
         ObjcScopedGuard bn_mod_guard( ^void(){ BN_free( bn_mod ); } );
         
-        bn_exp = BN_bin2bn(exp_, exponentSize_, NULL);
+        bn_exp = BN_bin2bn(exp_, static_cast<int>( exponentSize_ ), NULL);
         ObjcScopedGuard bn_exp_guard( ^void(){ BN_free( bn_exp ); } );
 
         
@@ -92,7 +92,7 @@ using namespace ::Utils;
 
         int cipherTextSize = RSA_public_encrypt
         (
-            plainSize_
+            static_cast<int>( plainSize_ )
           , plain
           , cipher
           , key
@@ -103,11 +103,11 @@ using namespace ::Utils;
         {
             return @"";
         }
-        cipherVt.resize( cipherTextSize );
+        cipherVt.resize( static_cast<size_t>( cipherTextSize ) );
         cipher = &cipherVt[0]; // Just in case resize does reallocation. It should not do it though.
         
         NSData* data_ = [ [ NSData alloc ] initWithBytes: cipher
-                                                  length: maxSize ];
+                                                  length: static_cast<NSUInteger>( maxSize ) ];
         NSString* result_ = [ NSString base64StringFromData: data_
                                                      length: 0 ];
 

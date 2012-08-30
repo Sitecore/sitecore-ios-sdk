@@ -134,20 +134,23 @@
 
 -(CGImageRef)CGImageRotated90:( CGImageRef )imgRef_ CF_RETURNS_RETAINED
 {
-    CGFloat angleInRadians_ = -90 * ( M_PI / 180 );
+    const double rad_ = -90 * ( M_PI / 180 );
+    
+    CGFloat angleInRadians_ = static_cast<CGFloat>( rad_ );
     CGFloat width_          = CGImageGetWidth ( imgRef_ );
     CGFloat height_         = CGImageGetHeight( imgRef_ );
 
     CGRect rotatedRect_          = CGRectMake( 0.f, 0.f, height_, width_ );
 
     CGColorSpaceRef colorSpace_ = CGColorSpaceCreateDeviceRGB();
-    CGContextRef bmContext_     = CGBitmapContextCreate( NULL
-                                                        , rotatedRect_.size.width
-                                                        , rotatedRect_.size.height
-                                                        , 8
-                                                        , 0
-                                                        , colorSpace_
-                                                        , kCGImageAlphaPremultipliedFirst );
+    CGContextRef bmContext_     = CGBitmapContextCreate(
+        NULL
+        , lroundf( rotatedRect_.size.width )
+        , lroundf( rotatedRect_.size.height )
+        , 8
+        , 0
+        , colorSpace_
+        , kCGImageAlphaPremultipliedFirst );
 
     CGContextSetAllowsAntialiasing  ( bmContext_, FALSE );
     CGContextSetInterpolationQuality( bmContext_, kCGInterpolationNone);

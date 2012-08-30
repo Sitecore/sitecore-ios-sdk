@@ -168,7 +168,7 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
         
         [ self initializeDynamicFields ];
 
-        _contactInternalId = [ [ args_ firstValueIfExsistsForKey: @"contactInternalId" ] longLongValue ];
+        _contactInternalId = (ABRecordID)[ [ args_ firstValueIfExsistsForKey: @"contactInternalId" ] longLongValue ];
         self.newContact = ( _contactInternalId == 0 );
 
         ABRecordRef person_ = self.person;

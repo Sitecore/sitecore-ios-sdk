@@ -46,7 +46,7 @@
     ABAddressBookRef addressBook_ = self.addressBook.rawBook;
     
     ABRecordRef record_ = ABAddressBookGetPersonWithRecordID( addressBook_
-                                                             , [ accountInternalId_ longLongValue ] );
+                                                             , (ABRecordID)[ accountInternalId_ longLongValue ] );
     
     if ( record_ )
     {

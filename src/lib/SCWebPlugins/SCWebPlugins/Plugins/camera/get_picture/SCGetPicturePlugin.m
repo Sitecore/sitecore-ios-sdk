@@ -26,23 +26,26 @@
     // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
     CGAffineTransform transform = CGAffineTransformIdentity;
     
+    static const CGFloat M_PI_F = (CGFloat)M_PI;
+    static const CGFloat M_PI_2_F = (CGFloat)M_PI_2;
+    
     switch (self.imageOrientation) {
         case UIImageOrientationDown:
         case UIImageOrientationDownMirrored:
             transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height);
-            transform = CGAffineTransformRotate(transform, M_PI);
+            transform = CGAffineTransformRotate(transform, M_PI_F);
             break;
             
         case UIImageOrientationLeft:
         case UIImageOrientationLeftMirrored:
             transform = CGAffineTransformTranslate(transform, self.size.width, 0);
-            transform = CGAffineTransformRotate(transform, M_PI_2);
+            transform = CGAffineTransformRotate(transform, M_PI_2_F);
             break;
             
         case UIImageOrientationRight:
         case UIImageOrientationRightMirrored:
             transform = CGAffineTransformTranslate(transform, 0, self.size.height);
-            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            transform = CGAffineTransformRotate(transform, -M_PI_2_F);
             break;
         case UIImageOrientationUp:
         case UIImageOrientationUpMirrored:
@@ -70,10 +73,14 @@
     
     // Now we draw the underlying CGImage into a new context, applying the transform
     // calculated above.
-    CGContextRef ctx = CGBitmapContextCreate(NULL, self.size.width, self.size.height,
-                                             CGImageGetBitsPerComponent(self.CGImage), 0,
-                                             CGImageGetColorSpace(self.CGImage),
-                                             CGImageGetBitmapInfo(self.CGImage));
+    CGContextRef ctx = CGBitmapContextCreate(
+        NULL,
+        (size_t)lroundf( self.size.width  ),
+        (size_t)lroundf( self.size.height ),
+        CGImageGetBitsPerComponent(self.CGImage), 0,
+        CGImageGetColorSpace(self.CGImage),
+        CGImageGetBitmapInfo(self.CGImage));
+    
     CGContextConcatCTM(ctx, transform);
     switch (self.imageOrientation) {
         case UIImageOrientationLeft:
@@ -189,7 +196,7 @@
         return;
     }
 
-    UIImagePickerControllerSourceType sourceType_ = [ sourceTypeStr_ integerValue ];
+    UIImagePickerControllerSourceType sourceType_ = (UIImagePickerControllerSourceType)[ sourceTypeStr_ integerValue ];
 
     if ( ![ UIImagePickerController isSourceTypeAvailable: sourceType_ ] )
     {

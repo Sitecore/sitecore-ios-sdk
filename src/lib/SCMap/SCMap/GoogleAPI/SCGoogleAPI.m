@@ -150,8 +150,8 @@
                                   options: NSLiteralSearch
                                     range: NSMakeRange( 0, [ encoded_ length ] ) ];
 
-    NSInteger       len_   = [ encoded_ length ];  
-    NSInteger       index_ = 0;  
+    NSUInteger       len_   = [ encoded_ length ];
+    NSUInteger       index_ = 0;
     NSMutableArray* array_ = [ [ NSMutableArray alloc ] init ];
     NSInteger       lat_   = 0;
     NSInteger       lng_   = 0;

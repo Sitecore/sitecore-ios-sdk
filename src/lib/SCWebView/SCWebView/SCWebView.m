@@ -134,7 +134,7 @@ textEncodingName:(NSString *)textEncodingName
 
 -(NSInteger)numberOfElementsInStripeView:( JFFPageSlider* )pageSlider_
 {
-    return _numberOfElements;
+    return (NSInteger)_numberOfElements;
 }
 
 -(UIView*)stripeView:( JFFPageSlider* )pageSlider_
@@ -293,7 +293,7 @@ handleMemoryWarningForElementAtIndex:( NSInteger )element_index_
             JSignedRange range_ = JSignedRangeMake( _stripeView.firstIndex
                                                    , newIndex_ - _stripeView.firstIndex + 1 );
             
-            _numberOfElements -= range_.length;
+            _numberOfElements -= (NSUInteger)range_.length;
             [ _stripeView removeViewsInRange: range_ ];
         }
     }
@@ -326,7 +326,7 @@ handleMemoryWarningForElementAtIndex:( NSInteger )element_index_
             JSignedRange range_ = JSignedRangeMake( newIndex_
                                                    , _stripeView.lastIndex - newIndex_ + 1 );
 
-            _numberOfElements -= range_.length;
+            _numberOfElements -= (NSUInteger)range_.length;
             [ _stripeView removeViewsInRange: range_ ];
         }
     }

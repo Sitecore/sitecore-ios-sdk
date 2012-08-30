@@ -70,7 +70,7 @@ static NSString* const apiVersion_ = @"v1";
 
     scopes_ = [ scopes_ selectWithIndex: ^BOOL( id object_, NSUInteger index_ )
     {
-        NSUInteger paw_ = pow( 2, index_ );
+        NSUInteger paw_ = (NSUInteger)lroundf( powf( 2, index_ ) );
         return ( self.scope & paw_ );
     } ];
 
