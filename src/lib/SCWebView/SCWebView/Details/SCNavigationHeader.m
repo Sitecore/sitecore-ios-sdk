@@ -17,6 +17,8 @@ static CGFloat navigation_button_indent_ = 10.f;
 
 @implementation SCNavigationHeader
 
+@synthesize delegate;
+
 -(id)initWithFrame:( CGRect )frame_
 {
     self = [ super initWithFrame: frame_ ];
