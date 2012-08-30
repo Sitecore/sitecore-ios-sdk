@@ -72,7 +72,7 @@ using namespace ::Utils;
         return nil;
     }
 
-    return errors_[ status_ ];
+    return errors_[ static_cast<NSUInteger>( status_ ) ];
 }
 
 +(void)asyncAddressBookWithSuccessBlock:( SCAddressBookSuccessCallback )onSuccess_

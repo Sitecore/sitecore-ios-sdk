@@ -125,7 +125,7 @@
 
 -(void)didReceiveMessage:( NSString* )msg_
 {
-    NSUInteger index_ = [ msg_ integerValue ];
+    NSInteger index_ = [ msg_ integerValue ];
     index_ = index_ < _alertView.numberOfButtons ? index_ : _alertView.numberOfButtons - 1;
     _alertView.delegate = nil;
     [ _alertView dismissWithClickedButtonIndex: index_ animated: NO ];
