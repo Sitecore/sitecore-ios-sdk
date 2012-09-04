@@ -76,7 +76,7 @@
 		1BF8BDBC15050A01006F4D7F /* SCWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF8BDBA15050A01006F4D7F /* SCWaitView.m */; };
 		1BFEAFFE14E40DF50039CEBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFEAFFD14E40DF50039CEBB /* Foundation.framework */; };
 		1BFEB05314E40F090039CEBB /* UIWebView+SCWebViewPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */; };
-		1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */; };
+		1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */; };
 		1BFEB05A14E412AF0039CEBB /* SCWebPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB05914E412AF0039CEBB /* SCWebPlugin.h */; };
 		1BFEB13714E41F3F0039CEBB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFEB13614E41F3F0039CEBB /* Cocoa.framework */; };
 		1BFEB14C14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB14A14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h */; };
@@ -180,7 +180,7 @@
 		1BFEB00114E40DF50039CEBB /* SCWebPlugins-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCWebPlugins-Prefix.pch"; sourceTree = "<group>"; };
 		1BFEB00214E40DF50039CEBB /* SCWebPlugins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCWebPlugins.h; sourceTree = "<group>"; };
 		1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SCWebViewPlugins.h"; sourceTree = "<group>"; };
-		1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SCWebViewPlugins.m"; sourceTree = "<group>"; };
+		1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebView+SCWebViewPlugins.mm"; sourceTree = "<group>"; };
 		1BFEB05914E412AF0039CEBB /* SCWebPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebPlugin.h; sourceTree = "<group>"; };
 		1BFEB13514E41F3F0039CEBB /* BuildJS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildJS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFEB13614E41F3F0039CEBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -490,7 +490,7 @@
 				1BFEB14714E41F930039CEBB /* Javascript */,
 				1BFEB05814E412930039CEBB /* Plugins */,
 				1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */,
-				1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */,
+				1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */,
 				1BFEB00214E40DF50039CEBB /* SCWebPlugins.h */,
 				1BFEB00014E40DF50039CEBB /* Supporting Files */,
 			);
@@ -687,7 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.m in Sources */,
+				1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm in Sources */,
 				1BFEB14D14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m in Sources */,
 				1BBB07E114E56C40003E77D0 /* pathToAllPluginsJavascripts.m in Sources */,
 				1BBB07E514E56DA6003E77D0 /* SCWebViewPluginHolder.m in Sources */,
