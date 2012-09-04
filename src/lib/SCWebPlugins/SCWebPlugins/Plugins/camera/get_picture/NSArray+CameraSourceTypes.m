@@ -25,7 +25,8 @@ static NSString* sourceTypeToJSName( NSNumber* typeNum_ )
     } ];
     result_ = [ result_ select: ^BOOL( NSNumber* number_ )
     {
-        return [ UIImagePickerController isSourceTypeAvailable: [ number_ unsignedIntValue ] ];
+        // Apple has changed UIImagePickerControllerSourceType to NSInteger in iOS6 SDK
+        return [ UIImagePickerController isSourceTypeAvailable: (UIImagePickerControllerSourceType)[ number_ unsignedIntegerValue ] ];
     } ];
 
     result_ = [ result_ map: ^id( NSNumber* number_ )
