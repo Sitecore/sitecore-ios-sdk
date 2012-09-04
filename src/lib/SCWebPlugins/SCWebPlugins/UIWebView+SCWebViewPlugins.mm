@@ -107,9 +107,18 @@
 
 -(BOOL)applyPluginToRequest:( NSURLRequest* )request_
 {
+    NSLog( @"[BEGIN]applyPluginToRequest : %@", request_.URL );
+    ::Utils::ObjcScopedGuard logGuard_(
+        ^void(){ NSLog( @"[END]applyPluginToRequest : %@", request_.URL ); } );
+
+
     NSString* scheme_ = [ request_.URL scheme ];
     if ( ![ scheme_ isEqualToString: @"sc" ] )
+    {
+        NSLog( @"invalid scheme : %@", scheme_ );
         return NO;
+    }
+
 
     NSString* socketGuid_ = [ [ request_.URL queryComponents ] firstValueIfExsistsForKey: @"guid" ];
     NSString* path_ = request_.URL.path;
@@ -136,9 +145,15 @@
     }
     else
     {
+        NSLog( @"Searching the plug-in..." );
         holder_ = [ SCWebViewPluginHolder webViewPluginHolderForRequest: request_ ];
         self.pluginBySocketGuid[ socketGuid_ ] = holder_;
+        NSLog( @"Done." );
+        
+        
+        NSLog( @"holder_ didOpenInWebView..." );
         [ holder_ didOpenInWebView: self ];
+        NSLog( @"Done." );
     }
 
     return YES;
