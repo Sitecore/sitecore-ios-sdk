@@ -11,8 +11,11 @@
   xmlns:sc="http://www.sitecore.net/sc"
   xmlns:dot="http://www.sitecore.net/dot"
   xmlns:scmobile="http://www.sitecore.net/scmobile"
-  xmlns:fn="http://www.w3.org/2005/xpath-functions"
-  exclude-result-prefixes="dot sc">
+  xmlns:wu="http://www.sitecore.net/webutil" 
+  exclude-result-prefixes="sc dot wu" >
+
+  <!--<xsl:strip-space elements="Message Body"/>-->
+  <!--<xsl:preserve-space elements="toRecipients ccRecipients bccRecipients Subject"/> -->
 
   <!-- output directives -->
   <xsl:output method="html" indent="no" encoding="UTF-8" />
@@ -55,8 +58,14 @@
           email.toRecipients  = htmlDecode( '<xsl:value-of select="scmobile:htmlEncode(sc:field('toRecipients' ,$sc_item))"/>' ).split(brTagStr_);
           email.ccRecipients  = htmlDecode( '<xsl:value-of select="scmobile:htmlEncode(sc:field('ccRecipients' ,$sc_item))"/>' ).split(brTagStr_);
           email.bccRecipients = htmlDecode( '<xsl:value-of select="scmobile:htmlEncode(sc:field('bccRecipients',$sc_item))"/>' ).split(brTagStr_);
-          email.subject       = htmlDecode( '<xsl:value-of select="scmobile:htmlEncode(sc:field('Subject'      ,$sc_item))"/>' );	
-          email.messageBody   = '<xsl:value-of select="translate( sc:field('Message Body' ,$sc_item), '&#xa;', ' ' )" />';
+          email.subject       = htmlDecode( '<xsl:value-of select="scmobile:htmlEncode(sc:field('Subject'      ,$sc_item))"/>' );
+          
+		  var localBody = '<xsl:value-of select="translate( sc:field('Message Body' ,$sc_item), '&#xa;', ' ' )" />';
+		  var loc = window.location;
+		  var hostPrefix = loc.protocol + '//' + loc.hostname + ':' + loc.port;
+		  localBody = localBody.replace( '"~/', '"' + hostPrefix + '/~/' );	  
+		  email.messageBody = localBody;
+		  
           email.isHTML = true;
 
           function onSuccess( data )
