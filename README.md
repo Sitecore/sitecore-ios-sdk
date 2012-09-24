@@ -184,7 +184,7 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 #### Get a single item
 
 Now, use the SCApiContext object to access the required items and fields.
-For more information, see the section Installing the Client Side. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section Installing the Client Side. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 	//Read an item with path
 	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
@@ -193,7 +193,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 	    NSLog(@"item display name: %@", item.displayName);
 	} );
 
-**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Get the main properties of the item
 
@@ -220,7 +220,7 @@ For example, the following method shows the item’s display name in the console
 	NSLog(@"item display name: %@", item.displayName);
 
 **For more information about the properties of the SCItem class, see the section Requirements to
-Access an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+Access an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 The SCItem object may contain some or all Sitecore item's fields according to the type value of the
 [SCItemsReaderRequest fieldNames] property of the request.
@@ -233,7 +233,7 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 	Note:
     To read a field, its Read property must be set to Allow in the Field Remote Read security settings of Sitecore.
 
-**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Get the item’s children
 
@@ -265,7 +265,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
         }
     });
 
-**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Use the children of a particular item to populate the tab bar
 
@@ -307,7 +307,7 @@ Then add the following code:
         });
     }
 
-**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 ### 3.4 Combining the Embedded Browser and the Web API Service
 
