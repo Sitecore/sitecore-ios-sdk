@@ -38,9 +38,7 @@ The Mobile SDK API is called the "Sitecore Item Web API" and is web service base
 
 The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
 
-**Link to download** [Sitecore Item Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Item%20Web%20API%201.0.0%20rev.%20120810.zip) **package**
-
-**Link to download** [Sitecore Item Web API PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore_Web_API_User_Guide_USLetter.pdf) **documentation**
+**Link to download** [Sitecore Item Web API](http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx) **package**
 
 ### 1.2 The Client
 
