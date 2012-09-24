@@ -16,7 +16,7 @@ Please follow these chapters for more details:
 * **The Mobile SDK Installation** This chapter describes how to install the Mobile SDK on the client and the server sides.
 * **Getting Started** This chapter describes requirements and procedures to start using the Mobile SDK.
 
-**Link to download complete** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**Link to download complete** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 License : SITECORE SHARED SOURCE LICENSE
 
@@ -32,7 +32,7 @@ The Sitecore Mobile SDK server package requires:
 * .Net Framework version 2.0 and later for the Application Pool of your website.
 * Sitecore CMS version 6.5 or later.
 
-**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.120625.zip) **package**
+**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.%20120906.zip) **package**
 
 The Mobile SDK API is called the "Sitecore Item Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
 
