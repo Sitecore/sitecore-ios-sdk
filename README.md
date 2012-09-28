@@ -16,7 +16,7 @@ Please follow these chapters for more details:
 * **The Mobile SDK Installation** This chapter describes how to install the Mobile SDK on the client and the server sides.
 * **Getting Started** This chapter describes requirements and procedures to start using the Mobile SDK.
 
-**Link to download complete** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**Link to download complete** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 License : SITECORE SHARED SOURCE LICENSE
 
@@ -32,15 +32,13 @@ The Sitecore Mobile SDK server package requires:
 * .Net Framework version 2.0 and later for the Application Pool of your website.
 * Sitecore CMS version 6.5 or later.
 
-**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.120625.zip) **package**
+**Link to download** [Sitecore Mobile SDK server](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Mobile%20SDK%20Server%20Package-1.0.0%20rev.%20120906.zip) **package**
 
 The Mobile SDK API is called the "Sitecore Item Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
 
 The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
 
-**Link to download** [Sitecore Item Web API](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore%20Item%20Web%20API%201.0.0%20rev.%20120810.zip) **package**
-
-**Link to download** [Sitecore Item Web API PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/Sitecore_Web_API_User_Guide_USLetter.pdf) **documentation**
+**Link to download** [Sitecore Item Web API](http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx) **package**
 
 ### 1.2 The Client
 
@@ -58,7 +56,7 @@ The list of native features available in HTML environment includes:
 * Creating tweets through the system-wide twitter accounts
 * Sending email messages using the email account
 
-**Link to download** [SitecoreMobileSDK.framework](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SitecoreMobileSDK.framework-ver.1.0.0%20rev.120625.zip)
+**Link to download** [SitecoreMobileSDK.framework](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SitecoreMobileSDK.framework-ver.1.0.0%20rev.120906.zip)
 
 ***
 ## 2. The Mobile SDK Installation
@@ -184,7 +182,7 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 #### Get a single item
 
 Now, use the SCApiContext object to access the required items and fields.
-For more information, see the section Installing the Client Side. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+For more information, see the section Installing the Client Side. [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 	//Read an item with path
 	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
@@ -193,7 +191,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 	    NSLog(@"item display name: %@", item.displayName);
 	} );
 
-**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Get the main properties of the item
 
@@ -220,7 +218,7 @@ For example, the following method shows the item’s display name in the console
 	NSLog(@"item display name: %@", item.displayName);
 
 **For more information about the properties of the SCItem class, see the section Requirements to
-Access an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+Access an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 The SCItem object may contain some or all Sitecore item's fields according to the type value of the
 [SCItemsReaderRequest fieldNames] property of the request.
@@ -233,7 +231,7 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 	Note:
     To read a field, its Read property must be set to Allow in the Field Remote Read security settings of Sitecore.
 
-**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Get the item’s children
 
@@ -265,7 +263,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
         }
     });
 
-**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 #### Use the children of a particular item to populate the tab bar
 
@@ -307,7 +305,7 @@ Then add the following code:
         });
     }
 
-**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_100_USLetter.pdf)
+**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation PDF](https://github.com/downloads/Sitecore/sitecore-mobile-sdk/SC_Mobile_SDK_Developer_Guide_SC65-66-USLetter.pdf)
 
 ### 3.4 Combining the Embedded Browser and the Web API Service
 
