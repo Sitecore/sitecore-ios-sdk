@@ -56,6 +56,7 @@
 		7E9F943115EF62F2002D55C8 /* nicam-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F942B15EF62F2002D55C8 /* nicam-Small.png */; };
 		7E9F943215EF62F2002D55C8 /* nicam-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F942C15EF62F2002D55C8 /* nicam-Small@2x.png */; };
 		7E9F943615EF653B002D55C8 /* nicam-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F943515EF653B002D55C8 /* nicam-72@2x.png */; };
+		7EB382CF1694866C001C1561 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EB382CE1694866C001C1561 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		7E9F942B15EF62F2002D55C8 /* nicam-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nicam-Small.png"; sourceTree = "<group>"; };
 		7E9F942C15EF62F2002D55C8 /* nicam-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nicam-Small@2x.png"; sourceTree = "<group>"; };
 		7E9F943515EF653B002D55C8 /* nicam-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nicam-72@2x.png"; sourceTree = "<group>"; };
+		7EB382CE1694866C001C1561 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		25902A4114837659006FF9AA = {
 			isa = PBXGroup;
 			children = (
+				7EB382CE1694866C001C1561 /* Default-568h@2x.png */,
 				7E9F943515EF653B002D55C8 /* nicam-72@2x.png */,
 				7E9F942915EF62F2002D55C8 /* nicam-72.png */,
 				7E9F942A15EF62F2002D55C8 /* nicam-Small-50.png */,
@@ -357,6 +360,7 @@
 				7E9F943115EF62F2002D55C8 /* nicam-Small.png in Resources */,
 				7E9F943215EF62F2002D55C8 /* nicam-Small@2x.png in Resources */,
 				7E9F943615EF653B002D55C8 /* nicam-72@2x.png in Resources */,
+				7EB382CF1694866C001C1561 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +432,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -458,6 +463,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -466,9 +472,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../deployment\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../../../sitecore-mobile-sdk-pure\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -491,9 +495,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../deployment\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../../../sitecore-mobile-sdk-pure\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -538,6 +540,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = AppStore;
 		};
@@ -547,9 +550,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../deployment\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../../../sitecore-mobile-sdk-pure\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
