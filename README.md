@@ -99,13 +99,13 @@ Install.
 7. After package installation add the following string to < xslExtensions > section of web.config file:
 
 **Example:**
-
+```xml
 	<xslExtensions>
 	...
 	<extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
 	...
 	</xslExtensions>
-
+```	
 **Now, you can use the Sitecore Mobile SDK server side component.**
 
 ### 2.2 Installing the Client Side Components
