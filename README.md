@@ -126,11 +126,13 @@ Help in the Apple Developer Manual.
 
 **Here is an example:**
 
+	```objc
 	#ifdef __OBJC
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #endif
+	```
 
 ## 3. Getting Started
 ### 3.1 Models of Working with the Mobile SDK
@@ -144,7 +146,7 @@ There are three models that you can apply to make your application work with the
 The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx).
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
 	
-	
+	```objc
 	-(void)viewDidLoad
     {
         [super viewDidLoad];
@@ -156,15 +158,18 @@ You can use SCWebView in the same way as UIWebView, as all of their methods are 
         [webView loadURL: url];
         [self.view addSubview: webView];
     }
+	```	
 
 You are now ready to use the SCWebView class. You can use the WebView enhancements, such as,
 left-right swipes with any website that is displayed with SCWebView.
 For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on the right swipe and to http://mobilesdk.sc-demo.net/Products.aspx on the left swipe, you must turn on swiping and add the links to the web page as follows:
 
+	```html
 	<html>
     <head>
         <link rel="scm-forward" href="http://mobilesdk.sc-demo.net/Nicam.aspx" />
         <link rel="scm-back" href="http://mobilesdk.sc-demo.net/Products.aspx" />
+	```	
 
 Swiping is now enabled.
 If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
@@ -174,7 +179,9 @@ To start working with the Web API service, you must create an XCode project and 
 The following list is an overview of how to use the Web API service:
 #### Establish an anonymous session for a website
 
+	```objc
 	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"];
+	```
 
 Use the [SCApiContext itemReaderForItemPath:] and [SCApiContext
 itemReaderForItemId:] methods to read the item with the item's path and ID, for example:
@@ -184,12 +191,14 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 Now, use the SCApiContext object to access the required items and fields.
 For more information, see the section Installing the Client Side. [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
+	```objc
 	//Read an item with path
 	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
 	{
 	    SCItem* item = result;
 	    NSLog(@"item display name: %@", item.displayName);
 	} );
+	```
 
 **For more information, see the section Accessing an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
@@ -238,7 +247,7 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 You must use the [SCApiContext itemsReaderWithRequest:] method to load an item and its children:
 
 *1. Create an SCItemsReaderRequest object that contains the set of parameters:*
-	
+	```objc
 	SCItemsReaderRequest *request = [SCItemsReaderRequest new];
     //The path of item
     request.request = @"/sitecore/content/Nicam";
@@ -248,9 +257,10 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
     request.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
     ￼//The set of the field’s names which will be read with each item. Here no fields will be read.
     request.fieldNames = [NSSet set];
+	```
 
 *2. Load the items with the created request object:*
-	
+	```objc
 	[context itemsReaderWithRequest: request](^(id result, NSError *error)
     {
         //result - is NSArray object where fist element is item and left items - its children
@@ -262,6 +272,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
             NSLog( @"child display name: %@", child.displayName);
         }
     });
+	```
 
 **For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
@@ -278,6 +289,7 @@ To populate the tab bar:
 Then add the following code:
 
 
+	```objc
 	- (void)viewDidLoad
     {
         [super viewDidLoad];
@@ -304,6 +316,7 @@ Then add the following code:
             [tabBar setViewControllers:listOfViewControllers animated:YES];
         });
     }
+	```
 
 **For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
@@ -323,6 +336,7 @@ The following procedure describes this scenario:
 
 	ViewController.m
 	
+	```objc
 	@interface BrowserViewController : UIViewController
 	
 	@property ( nonatomic, retain ) NSString* urlString;
@@ -368,6 +382,7 @@ The following procedure describes this scenario:
 	        [tabBar setViewControllers:listOfViewControllers animated:YES];
 	    } );
 	}
+	```
 
 *5. Build and run the application*
 
