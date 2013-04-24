@@ -27,4 +27,8 @@
                                           host:( NSString* )host_
                                     apiContext:( SCApiContext* )apiContext_;
 
++(id)URLToTriggerAction:( NSString* )itemPath_
+              paramName:( NSString* )paramName_
+             paramValue:( NSString* )paramValue_;
+
 @end

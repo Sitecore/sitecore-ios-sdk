@@ -18,7 +18,10 @@
 #import "NSString+MultipartFormDataBoundary.h"
 #import "NSData+MultipartFormDataWithBoundary.h"
 
-#import <JFFCache/JFFCache.h>
+#import "SCTriggeringImplRequest.h"
+#import "SCTriggerExecutor.h"
+
+//#import <JFFCache/JFFCache.h>
 
 @interface SCRemoteApi ()
 
@@ -72,6 +75,15 @@
         NSURL* credentioalsURL_ = [ NSURL URLToGetSecureKeyForHost: self->_host ];
         credentioalsLoader_ = scDataURLResponseLoader( credentioalsURL_, nil, nil, nil, nil );
 
+        credentioalsLoader_ = asyncOperationWithChangedError( credentioalsLoader_,
+        ^NSError*( NSError *error )
+        {
+            SCEncryptionError* newError = [ [ SCEncryptionError alloc ] initWithDescription: @"Credentials not received" code: 2 ];
+            newError.underlyingError = error;
+            
+            return newError;
+        } );
+        
         JFFAsyncOperationBinder xmlAnalizer_ = asyncOperationBinderWithAnalyzer( ^id( NSData* xmlData_, NSError** error_ )
         {
             SCSitecoreCredentials* credentials_ = [ SCSitecoreCredentials sitecoreCredentialsWithXMLData: xmlData_
@@ -149,6 +161,7 @@
 -(JFFAsyncOperation)itemsReaderWithRequest:( SCItemsReaderRequest* )request_
                                 apiContext:( SCApiContext* )apiContext_
 {
+    NSLog(@"lifeTimeInCache %f", request_.lifeTimeInCache);
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLWithItemsReaderRequest: request_
@@ -160,7 +173,7 @@
     id< SCDataCache > cache_ = nil;
     if ( !( request_.flags & SCItemReaderRequestIngnoreCache ) )
     {
-        cache_ = sharedSrvResponseCache();
+        cache_ = [ SCSrvResponseCachesFactory sharedSrvResponseCache ];
     }
 
     id(^keyForURL_)(NSURL*) = ^id( NSURL* url_ )
@@ -171,6 +184,7 @@
         return str_;
     };
 
+    NSLog(@"lifeTimeInCache %f", request_.lifeTimeInCache);
     return scSmartDataLoaderWithCache( urlBuilder_
                                       , [ self scDataLoaderWithURL ]
                                       , analyzerForData_
@@ -305,10 +319,36 @@
                                              sourceId:( NSString* )sourceId_
                                            apiContext:( SCApiContext* )apiContext_
 {
-    JFFAsyncOperationBinder parser_ = ^JFFAsyncOperation( id serverData_ )
+
+    NSURL* url_ = [ NSURL URLToGetRenderingHTMLLoaderForRenderingId: rendereringId_
+                                                           sourceId: sourceId_ 
+                                                               host: self->_host
+                                                         apiContext: apiContext_ ];
+
+    return [ self renderingWithUrl: url_ ];
+}
+
+-(JFFAsyncOperation)triggerLoaderWithRequest:( SCTriggeringRequest* )request_
+{
+    
+    return [ SCTriggerExecutor triggerLoaderWithRequest: request_
+                                                   host: self->_host ];
+}
+
+-(JFFAsyncOperation)renderingWithUrl:( NSURL * )url_
+{
+    if ( !url_ )
+    {
+        // TODO : add a proper internal error class
+        return asyncOperationWithError( [ SCError new ] );
+    }
+    
+    JFFAsyncOperationBinder parser_ = ^JFFAsyncOperation( NSData* serverData_ )
     {
         JFFSyncOperation loadDataBlock_ = ^id( NSError** outError_ )
         {
+            NSParameterAssert( [ serverData_ isKindOfClass: [ NSData class ] ] );
+            
             NSString* result_ = [ [ NSString alloc ] initWithData: serverData_
                                                          encoding: NSUTF8StringEncoding ];
             if ( !result_ )
@@ -320,18 +360,13 @@
             }
             return result_;
         };
-
+        
         return asyncOperationWithSyncOperation( loadDataBlock_ );
     };
-
-    NSURL* url_ = [ NSURL URLToGetRenderingHTMLLoaderForRenderingId: rendereringId_
-                                                           sourceId: sourceId_ 
-                                                               host: self->_host
-                                                         apiContext: apiContext_ ];
-
+    
     if ( !url_ )
         return asyncOperationWithError( [ SCError new ] );
-
+    
     return bindSequenceOfAsyncOperations( [ self scDataLoaderWithURL ]( url_ )
                                          , parser_
                                          , nil );

@@ -1,32 +1,16 @@
 #import "SCSrvResponseCaches.h"
 
+#import "SCCacheDBAdaptor.h"
 #import "SCDataCache.h"
 
 #import <JFFCache/JFFCache.h>
 
+
 static NSString* const scSrvCacheName_ = @"scSrvResponseCache";
 
-@interface SCCacheDBAdaptor : NSObject < SCDataCache >
+@implementation SCSrvResponseCachesFactory
 
-@property ( nonatomic ) id< JFFCacheDB >  jffCacheDB;
-
-@end
-
-@implementation SCCacheDBAdaptor
-
--(void)setData:( NSData* )data_ forKey:( NSString* )key_
-{
-    [ self->_jffCacheDB setData: data_ forKey: key_ ];
-}
-
--(NSData*)dataForKey:( NSString* )data_ lastUpdateDate:( NSDate** )date_
-{
-    return  [ self->_jffCacheDB dataForKey: data_ lastUpdateTime: date_ ];
-}
-
-@end
-
-static JFFCaches* sharedSCCaches()
++(JFFCaches*)sharedSCCaches
 {
     static id instance_ = nil;
 
@@ -45,9 +29,16 @@ static JFFCaches* sharedSCCaches()
     return instance_;
 }
 
-id< SCDataCache > sharedSrvResponseCache( void )
++(id< SCDataCache >)sharedSrvResponseCache
 {
     SCCacheDBAdaptor* result_ = [ SCCacheDBAdaptor new ];
-    result_.jffCacheDB = [ sharedSCCaches() cacheByName: scSrvCacheName_ ];
+    result_.jffCacheDB = [ self mobileSdkRawCache ];
     return result_;
 }
+
++(id< JFFCacheDB >)mobileSdkRawCache;
+{
+    return [ [ self sharedSCCaches ] cacheByName: scSrvCacheName_ ];
+}
+
+@end

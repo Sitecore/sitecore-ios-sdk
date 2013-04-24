@@ -6,7 +6,7 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#import <SitecoreMobileSDK/SCDroplinkField.h>
+#import "SitecoreMobileSDK/SCDroplinkField.h"
 
 /**
  The SCDroptreeField object identifies a Sitecore system item's droplink field.

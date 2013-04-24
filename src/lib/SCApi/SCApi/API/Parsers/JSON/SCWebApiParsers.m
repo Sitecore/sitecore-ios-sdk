@@ -34,6 +34,8 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ )
             NSLog( @"can not process response: %@ for url: %@", responseStr_, url_ );
             SCInvalidResponseFormatError* srvError_ = [ SCInvalidResponseFormatError new ];
             srvError_.responseData = data_;
+            srvError_.underlyingError = localError_;
+            
             localError_ = srvError_;
         }
         else

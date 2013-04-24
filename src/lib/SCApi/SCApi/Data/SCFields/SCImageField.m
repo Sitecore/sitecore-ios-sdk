@@ -24,9 +24,17 @@
 
 -(JFFAsyncOperation)fieldValueLoader
 {
-    JFFAsyncOperation loader_ = [ self.apiContext privateImageLoaderForSCMediaPath: self.imagePath ];
-    return [ self asyncOperationForPropertyWithName: @"fieldValue"
-                                     asyncOperation: loader_ ];
+    NSString *imagePath_ = self.imagePath;
+    if (imagePath_)
+    {
+        JFFAsyncOperation loader_ = [ self.apiContext privateImageLoaderForSCMediaPath: imagePath_ ];
+        return [ self asyncOperationForPropertyWithName: @"fieldValue"
+                                         asyncOperation: loader_ ];
+    }
+    
+    return NULL;
+    
+    
 }
 
 -(NSString*)imagePath

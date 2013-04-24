@@ -29,6 +29,9 @@
 		6564094215A9B9D80062F28D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094015A9B9D80062F28D /* libcrypto.a */; };
 		6564094315A9B9D80062F28D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094115A9B9D80062F28D /* libssl.a */; };
 		65E307B41531E6D700E0B781 /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
+		7E046219170C23B400AB6873 /* libiFeatureAvailability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */; };
+		7E16FC0E16EF1D8C00031889 /* libCocoaHTTPServerCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */; };
+		7E16FC4216EF22C300031889 /* libDeviceUniqueIdentifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */; };
 		7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
@@ -400,6 +403,62 @@
 			remoteGlobalIDString = 1B7ABA80152D973A005DD4CA;
 			remoteInfo = JFFRestKit;
 		};
+		7E0461FE170C236B00AB6873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E0461E7170C231600AB6873;
+			remoteInfo = iFeatureAvailability;
+		};
+		7E04621A170C23BB00AB6873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E0461E6170C231600AB6873;
+			remoteInfo = iFeatureAvailability;
+		};
+		7E16FBA116EF169500031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7A1AB8713ED46B700CFDFD0;
+			remoteInfo = "CocoaHTTPServerCore-iOS";
+		};
+		7E16FBB216EF169500031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE444A1C1608609100DD85B0;
+			remoteInfo = JFFUtilsTest;
+		};
+		7E16FBB416EF169500031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED3CB1516E6387B00E5A00F;
+			remoteInfo = "JFFUtilsTest-CI";
+		};
+		7E16FBF016EF1D8200031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A1AB8613ED46B700CFDFD0;
+			remoteInfo = "CocoaHTTPServerCore-iOS";
+		};
+		7E16FC4016EF229100031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E16FC2416EF1F3900031889;
+			remoteInfo = DeviceUniqueIdentifier;
+		};
+		7E16FC4316EF22CE00031889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E16FC2316EF1F3900031889;
+			remoteInfo = DeviceUniqueIdentifier;
+		};
 		7E3A5C4615E67C7B008BA4D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
@@ -519,6 +578,9 @@
 		6564094015A9B9D80062F28D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../lib-third-party/ios-openssl/lib/libcrypto.a"; sourceTree = "<group>"; };
 		6564094115A9B9D80062F28D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../lib-third-party/ios-openssl/lib/libssl.a"; sourceTree = "<group>"; };
 		65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFRestKit.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFRestKit/JFFRestKit.xcodeproj"; sourceTree = "<group>"; };
+		7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iFeatureAvailability.xcodeproj; path = "../../lib-third-party/iFeatureAvailability/iFeatureAvailability.xcodeproj"; sourceTree = "<group>"; };
+		7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocoahttpserver.xcodeproj; path = "../../lib-third-party/cocoahttpserver/cocoahttpserver.xcodeproj"; sourceTree = "<group>"; };
+		7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeviceUniqueIdentifier.xcodeproj; path = "../../lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5/DeviceUniqueIdentifier/DeviceUniqueIdentifier.xcodeproj"; sourceTree = "<group>"; };
 		7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AmberFoundation.xcodeproj; path = "../../lib-third-party/AmberFramework-lite/AmberFoundation/AmberFoundation.xcodeproj"; sourceTree = "<group>"; };
 		7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjcScopedGuard.xcodeproj; path = "../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
@@ -530,6 +592,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E046219170C23B400AB6873 /* libiFeatureAvailability.a in Frameworks */,
+				7E16FC4216EF22C300031889 /* libDeviceUniqueIdentifier.a in Frameworks */,
+				7E16FC0E16EF1D8C00031889 /* libCocoaHTTPServerCore-iOS.a in Frameworks */,
 				7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */,
 				7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */,
 				1B049C9515930C1400E22402 /* libDDUrlBuilder.a in Frameworks */,
@@ -584,6 +649,8 @@
 				0688E2641518CFB600437842 /* libJFFUtilsMacOS.a */,
 				0688E2661518CFB600437842 /* libJFFUtils-clang.a */,
 				1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */,
+				7E16FBB316EF169500031889 /* JFFUtilsTest.octest */,
+				7E16FBB516EF169500031889 /* JFFUtilsTest-CI.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -704,27 +771,9 @@
 		1B33DDA81518C5D500EEA9BA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */,
-				7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */,
-				1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */,
-				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
-				7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */,
-				1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */,
-				1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */,
-				1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */,
-				1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */,
-				65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */,
-				061722EF152AE05400549265 /* JFFCache.xcodeproj */,
-				1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */,
-				1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */,
-				067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */,
-				1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */,
-				0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */,
-				0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */,
-				0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */,
-				0688E2671518CFBF00437842 /* JFFUI.xcodeproj */,
-				0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */,
-				1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */,
+				7E01665E1704587E0073298E /* Common */,
+				7E016641170458620073298E /* MobileSDK */,
+				7E016663170458A40073298E /* ThirdParty */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -790,6 +839,75 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E016641170458620073298E /* MobileSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */,
+				1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */,
+				1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */,
+				067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */,
+				1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */,
+				1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */,
+				1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */,
+				1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */,
+				1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */,
+			);
+			name = MobileSDK;
+			sourceTree = "<group>";
+		};
+		7E01665E1704587E0073298E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */,
+				061722EF152AE05400549265 /* JFFCache.xcodeproj */,
+				0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */,
+				0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */,
+				0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */,
+				0688E2671518CFBF00437842 /* JFFUI.xcodeproj */,
+				0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		7E016663170458A40073298E /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */,
+				7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */,
+				7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */,
+				7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */,
+				7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */,
+				1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */,
+				7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */,
+				7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		7E0461F9170C236B00AB6873 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E16FB9D16EF169500031889 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E16FC3D16EF229100031889 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E3A5C3F15E67C7A008BA4D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +969,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E04621B170C23BB00AB6873 /* PBXTargetDependency */,
+				7E16FC4416EF22CE00031889 /* PBXTargetDependency */,
+				7E16FBF116EF1D8200031889 /* PBXTargetDependency */,
 				7E3A5C6415E67C87008BA4D9 /* PBXTargetDependency */,
 				7E84E61515E25EE600FB8E36 /* PBXTargetDependency */,
 				1B049C9415930C0C00E22402 /* PBXTargetDependency */,
@@ -902,8 +1023,20 @@
 					ProjectRef = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
 				},
 				{
+					ProductGroup = 7E16FB9D16EF169500031889 /* Products */;
+					ProjectRef = 7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */;
+				},
+				{
 					ProductGroup = 1B049C8B15930C0200E22402 /* Products */;
 					ProjectRef = 1B049C8A15930C0200E22402 /* DDUrlBuilder.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E16FC3D16EF229100031889 /* Products */;
+					ProjectRef = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E0461F9170C236B00AB6873 /* Products */;
+					ProjectRef = 7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */;
 				},
 				{
 					ProductGroup = 0688E2951518CFF100437842 /* Products */;
@@ -1236,6 +1369,41 @@
 			remoteRef = 65E3074D1531E64200E0B781 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiFeatureAvailability.a;
+			remoteRef = 7E0461FE170C236B00AB6873 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCocoaHTTPServerCore-iOS.a";
+			remoteRef = 7E16FBA116EF169500031889 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E16FBB316EF169500031889 /* JFFUtilsTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JFFUtilsTest.octest;
+			remoteRef = 7E16FBB216EF169500031889 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E16FBB516EF169500031889 /* JFFUtilsTest-CI.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "JFFUtilsTest-CI.octest";
+			remoteRef = 7E16FBB416EF169500031889 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDeviceUniqueIdentifier.a;
+			remoteRef = 7E16FC4016EF229100031889 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1398,6 +1566,21 @@
 			name = JFFRestKit;
 			targetProxy = 65E307A11531E6D100E0B781 /* PBXContainerItemProxy */;
 		};
+		7E04621B170C23BB00AB6873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iFeatureAvailability;
+			targetProxy = 7E04621A170C23BB00AB6873 /* PBXContainerItemProxy */;
+		};
+		7E16FBF116EF1D8200031889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CocoaHTTPServerCore-iOS";
+			targetProxy = 7E16FBF016EF1D8200031889 /* PBXContainerItemProxy */;
+		};
+		7E16FC4416EF22CE00031889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DeviceUniqueIdentifier;
+			targetProxy = 7E16FC4316EF22CE00031889 /* PBXContainerItemProxy */;
+		};
 		7E3A5C6415E67C87008BA4D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AmberFoundation;
@@ -1470,7 +1653,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1487,7 +1673,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

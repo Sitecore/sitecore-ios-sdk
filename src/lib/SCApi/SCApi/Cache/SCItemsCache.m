@@ -124,7 +124,13 @@
 -(JFFMutableAssignArray*)itemRecordsWithId:( NSString* )itemId_
 {
     if ( [ itemId_ isEqualToString: [ SCItemRecord rootItemId ] ] )
-        return [ JFFMutableAssignArray arrayWithObject: self.rootItemRecord ];
+    {
+        {
+            JFFMutableAssignArray *mutableAssignArray = [ [ JFFMutableAssignArray alloc ] init ];
+            [ mutableAssignArray addObject: self.rootItemRecord ];
+            return mutableAssignArray;
+        }
+    }
     return self->_itemRecordsById[ itemId_ ];
 }
 
@@ -132,7 +138,11 @@
 {
     path_ = [ path_ lowercaseString ];
     if ( [ path_ isEqualToString: [ SCItemRecord rootItemPath ] ] )
-        return [ JFFMutableAssignArray arrayWithObject: self.rootItemRecord ];
+    {
+        JFFMutableAssignArray *mutableAssignArray = [ [ JFFMutableAssignArray alloc ] init ];
+        [ mutableAssignArray addObject: self.rootItemRecord ];
+        return mutableAssignArray;
+    }
     return self->_itemRecordsByPath[ path_ ];
 }
 
@@ -262,10 +272,10 @@
         if ( prevFieldRecord_ && !newFieldRecord_ )
         {
             prevFieldRecord_.itemRecord = itemRecord_;
-            [ itemRecord_.ownerships addObject: prevFieldRecord_ ];
+            [ itemRecord_ addOwnedObject: prevFieldRecord_ ];
         }
 
-        [ prevItemRecord_.ownerships removeObject: prevFieldRecord_ ];
+        [ prevItemRecord_ addOwnedObject: prevFieldRecord_ ];
     } ];
 }
 
@@ -289,7 +299,7 @@
 
     [ fieldsByName_ enumerateKeysAndObjectsUsingBlock: ^( id key, SCFieldRecord* fieldRecord_, BOOL* stop )
     {
-        [ itemRecord_.ownerships addObject: fieldRecord_ ];
+        [ itemRecord_ addOwnedObject: fieldRecord_ ];
         cachedFeldsByName_[ fieldRecord_.name ] = fieldRecord_;
         fieldRecord_.itemRecord = itemRecord_;
     } ];

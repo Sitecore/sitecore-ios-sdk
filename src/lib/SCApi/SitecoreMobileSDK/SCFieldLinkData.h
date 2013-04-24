@@ -5,7 +5,7 @@
 //  Created on 2/29/2012.
 //  Copyright 2012. Sitecore. All rights reserved.
 //
-#include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
+#include "SitecoreMobileSDK/SCAsyncOpDefinitions.h"
 
 #import <Foundation/Foundation.h>
 

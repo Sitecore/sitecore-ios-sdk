@@ -6,7 +6,7 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#import <SitecoreMobileSDK/SCDateField.h>
+#import "SitecoreMobileSDK/SCDateField.h"
 
 /**
  The SCDateTimeField object identifies a Sitecore system item's dateTime field.

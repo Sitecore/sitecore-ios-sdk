@@ -9,6 +9,7 @@
 @class SCCreateItemRequest;
 @class SCItemsReaderRequest;
 @class SCCreateMediaItemRequest;
+@class SCTriggeringRequest;
 
 // TODO : store password securely.
 // Password ivar is a potential exploit
@@ -41,4 +42,5 @@
                                              sourceId:( NSString* )sourceId_
                                            apiContext:( SCApiContext* )apiContext_;
 
+-(JFFAsyncOperation)triggerLoaderWithRequest:( SCTriggeringRequest* )request_;
 @end

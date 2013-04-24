@@ -5,12 +5,31 @@
  If Sitecore Mobile SDK error type is SCError ( [ error isMemberOfClass: [ SCError class ] ] == YES ), this is invalid behaviour, please contact Sitecore support team in such case to fix problem.
  */
 @interface SCError : NSError
+
+-(id)initWithDescription:( NSString* )description_;
+-(id)initWithDescription:( NSString* )description_
+                    code:( NSInteger )code_;
+
+
+/**
+ A lower level error for more precise diagnostics
+ */
+@property (nonatomic) NSError* underlyingError;
+
+
 @end
 
 /**
  The SCNoItemError error may happens with calling such method as [SCApiContext itemReaderForItemId:] when Sitecore Item Web Api does not return any item
  */
 @interface SCNoItemError : SCError
+@end
+
+
+/**
+ The SCCreateItemError error is returned by [SCApiContext itemCreatorWithRequest:] method in case of insufficient permissions or connectivity issues. Sitecore Item Web Api does not return any item
+ */
+@interface SCCreateItemError : SCError
 @end
 
 /**
@@ -40,6 +59,13 @@
 @interface SCNetworkError : SCError
 @end
 
+
+/**
+ The SCEncryptionError error occurs if the encryption data provider is not properly configured on the server side. See "Sitecore Item Web API 1.0 Developer's Guide" document for details
+*/
+@interface SCEncryptionError : SCError
+@end
+
 /**
  Any Backend error ( invalid response format or Sitecore Item Web Api error ) has type like SCBackendError, see SCBackendError inheritors for details.
  */
@@ -47,7 +73,7 @@
 @end
 
 /**
- The SCResponseError error may happens if Sitecore Item Web Api returns error on request instead of expected data, see SCResponseError properties for details
+ The SCResponseError error may happen if Sitecore Item Web Api returns error on request instead of expected data, see SCResponseError properties for details
  */
 @interface SCResponseError : SCBackendError
 
@@ -86,4 +112,32 @@
  The SCNotImageFound error may happens if SCApi can not process the server response as image, you can inspect response using -[SCNotImageFound responseData] property
  */
 @interface SCNotImageFound : SCInvalidResponseFormatError
+@end
+
+
+/**
+ The SCTriggeringError occurs if a triggering request is not processed by the instance. This may happen when an item has no rendering available or due to connectivity issues.
+ */
+@interface SCTriggeringError : SCBackendError
+
+/**
+ Item's path in the content tree
+ */
+@property(nonatomic, readonly) NSString *itemPath;
+
+/**
+ The triggering action.
+ - @"sc_trk" for goal triggering
+ - @"sc_camp" for campaign triggering
+ */
+@property(nonatomic, readonly) NSString *actionType;
+
+
+/**
+ The trigger identifier.
+ - Goal name for goal triggering
+ - Campaign id for campaign triggering
+ */
+@property(nonatomic, readonly) NSString *actionValue;
+
 @end

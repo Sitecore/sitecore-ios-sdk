@@ -47,19 +47,23 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
         };
 
         JFFSmartUrlDataLoaderFields* args_ = [ JFFSmartUrlDataLoaderFields new ];
-        args_.urlBuilder        = urlBuilder_;
-        args_.dataLoaderForURL  = dataLoaderForURL_;
+        
+        args_.loadDataIdentifier        = urlBuilder_();
+        args_.dataLoaderForIdentifier  = dataLoaderForURL_;
         args_.analyzerForData   = analyzerForData2_;
         args_.cache             = (id< JFFRestKitCache >)cache_;
-        args_.cacheKeyForURL    = keyForURL_;
-        args_.cacheDataLifeTime = lifeTime_;
+        args_.cacheKeyForIdentifier    = keyForURL_;
+        args_.cacheDataLifeTimeInSeconds = lifeTime_;
+
 
         JFFAsyncOperation loader_ = jSmartDataLoaderWithCache( args_ );
 
         JFFChangedErrorBuilder errorBuilder_ = ^NSError*(NSError* error_)
         {
-            if ( [ error_ isMemberOfClass: [ JFFRestKitNoURLError class ] ] )
+            if ( [ error_ isMemberOfClass: [ JFFRestKitError class ] ] )
+            {
                 return [ SCError new ];
+            }
 
             return error_;
         };
@@ -85,7 +89,15 @@ JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
 
     JFFAsyncOperationBinder dataLoaderForURL_ = ^JFFAsyncOperation( NSURL* url_ )
     {
-        return dataURLResponseLoader( url_, nil, nil );
+        return asyncOperationWithChangedError(
+            dataURLResponseLoader( url_, nil, nil ),
+            ^NSError* (NSError *error)
+            {
+                SCNotImageFound* result = [ SCNotImageFound new ];
+                result.underlyingError = error;
+                
+                return result;
+            } );
     };
 
     SCAsyncBinderForURL analyzerForData_ = ^JFFAsyncOperationBinder( NSURL* url_ )
@@ -107,7 +119,7 @@ JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
         return asyncOperationBinderWithAnalyzer( analyzer_ );
     };
 
-    id< SCDataCache > cache_ = sharedSrvResponseCache();
+    id< SCDataCache > cache_ = [ SCSrvResponseCachesFactory sharedSrvResponseCache ];
 
     JFFAsyncOperation loader_ =  scSmartDataLoaderWithCache( urlBuilder_
                                                              , dataLoaderForURL_

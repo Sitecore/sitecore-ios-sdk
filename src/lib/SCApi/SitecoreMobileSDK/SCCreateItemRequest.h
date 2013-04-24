@@ -6,7 +6,7 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#import <SitecoreMobileSDK/SCItemsReaderRequest.h>
+#import "SitecoreMobileSDK/SCItemsReaderRequest.h"
 
 #import <Foundation/Foundation.h>
 

@@ -1,6 +1,9 @@
 #import "SCError.h"
+#import "SCTriggeringImplRequest.h"
 
 @implementation SCError
+
+@synthesize underlyingError = _underlyingError;
 
 +(NSString*)errorDomain
 {
@@ -53,6 +56,10 @@
 }
 
 @end
+
+@implementation SCCreateItemError
+@end
+
 
 @implementation SCNoFieldError
 @end
@@ -142,4 +149,19 @@
 @end
 
 @implementation SCNotImageFound
+@end
+
+@implementation SCEncryptionError
+@end
+
+@interface SCTriggeringError()
+
+@property (nonatomic) NSString *itemPath;
+@property (nonatomic) NSString *actionType;
+@property (nonatomic) NSString *actionValue;
+@property (nonatomic) NSError* underlyingError;
+
+@end
+
+@implementation SCTriggeringError
 @end

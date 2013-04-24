@@ -83,7 +83,13 @@ using namespace ::Utils;
         key->q = NULL;
 
         int maxSize = RSA_size(key); // Find the length of the cipher text
-        NSAssert( 0 != maxSize, @"OpenSSL error - invalid maxSize" );
+//        NSAssert( 0 != maxSize, @"OpenSSL error - invalid maxSize" );
+
+        if ( 0 == maxSize )
+        {
+            // @adk : error handling should be performed in the calling code
+            return nil;
+        }
 
 
 

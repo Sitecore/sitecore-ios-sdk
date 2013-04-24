@@ -36,7 +36,9 @@ JFFAsyncOperation firstItemFromArrayReader( JFFAsyncOperation loader_ )
         SCItem* item_ = [ items_ count ] > 0 ? items_[ 0 ] : nil;
 
         if ( !item_ && error_ )
+        {
             *error_ = [ SCNoItemError new ];
+        }
 
         return item_;
     };
@@ -131,10 +133,19 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
         }
         else
         {
+            NSString* login_    = credentials_.encryptedLogin   ;
+            NSString* password_ = credentials_.encryptedPassword;
+            if ( nil == login_ || nil == password_ )
+            {
+                SCEncryptionError* error_ = [ [ SCEncryptionError alloc ] initWithDescription: @"ERROR: .NET cryptoprovider is not set up properly"
+                                                                                code: 1 ];
+                return asyncOperationWithError( error_ );
+            }
+            
             authHeaders_ =
             @{
-                @"X-Scitemwebapi-Username" : credentials_.encryptedLogin,
-                @"X-Scitemwebapi-Password" : credentials_.encryptedPassword,
+                @"X-Scitemwebapi-Username"  : login_,
+                @"X-Scitemwebapi-Password"  : password_,
                 @"X-Scitemwebapi-Encrypted" : @"1"
             };
         }
@@ -151,7 +162,11 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
 
     JFFChangedErrorBuilder errorBuilder_ = ^NSError*( NSError* error_ )
     {
-        return [ SCNetworkError errorWithDescription: error_.localizedDescription ];
+        SCNetworkError* result = [ SCNetworkError errorWithDescription: error_.localizedDescription ];
+        result.underlyingError = error_;
+   
+        return result;
     };
+    
     return asyncOperationWithChangedError( loader_, errorBuilder_ );
 }

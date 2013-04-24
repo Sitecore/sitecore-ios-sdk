@@ -14,10 +14,16 @@
 -(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_
 {
     SCItemsReaderRequest* result_ = [ self copy ];
-
+ 
     result_.language        = result_.language ?: context_.defaultLanguage;
     result_.database        = context_.defaultDatabase;
-    result_.lifeTimeInCache = result_.lifeTimeInCache ?: context_.defaultLifeTimeInCache;
+    
+    result_.lifeTimeInCache = self.lifeTimeInCache;
+    
+    if ( 0.0 == result_.lifeTimeInCache )
+    {
+        result_.lifeTimeInCache = context_.defaultLifeTimeInCache;
+    }
 
     return result_;
 }

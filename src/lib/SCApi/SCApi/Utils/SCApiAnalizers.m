@@ -56,7 +56,16 @@ JFFAsyncOperationBinder fieldsByNameToFieldsValuesByName( NSSet* fieldsNames_
     {
         NSDictionary* fieldValuesByName_ = [ fieldsGetter_() map: ^id( id key_, SCField* field_ )
         {
-            return field_.fieldValue;
+            id result = field_.fieldValue;
+
+            // @adk - map method does not accept "nil" return value
+            // TODO : handle empty fields properly
+            if ( nil == result )
+            {
+                result = [ NSNull null ];
+            }
+            
+            return result;
         } ];
         return fieldValuesByName_ ?: @{};
     } );

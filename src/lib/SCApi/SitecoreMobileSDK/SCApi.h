@@ -15,6 +15,8 @@
 #import <SitecoreMobileSDK/SCItemsReaderRequest.h>
 #import <SitecoreMobileSDK/SCCreateItemRequest.h>
 #import <SitecoreMobileSDK/SCCreateMediaItemRequest.h>
+#import <SitecoreMobileSDK/SCPageEventTriggeringRequest.h>
+#import <SitecoreMobileSDK/SCCampaignTriggeringRequest.h>
 
 #import <SitecoreMobileSDK/SCField.h>
 #import <SitecoreMobileSDK/SCDateField.h>

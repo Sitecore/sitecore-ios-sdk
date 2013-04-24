@@ -117,6 +117,28 @@
 		656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */; };
 		656409C515A9CB750062F28D /* SCSitecoreCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 656409C315A9CB750062F28D /* SCSitecoreCredentials.h */; };
 		656409C615A9CB750062F28D /* SCSitecoreCredentials.mm in Sources */ = {isa = PBXBuildFile; fileRef = 656409C415A9CB750062F28D /* SCSitecoreCredentials.mm */; };
+		789826F417046B5000E9DC58 /* SCTriggeringRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789826F217046B5000E9DC58 /* SCTriggeringRequest.m */; };
+		789826F817046B7100E9DC58 /* SCPageEventTriggeringRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789826F617046B7100E9DC58 /* SCPageEventTriggeringRequest.m */; };
+		789826FC17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789826FA17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m */; };
+		789827071704926B00E9DC58 /* SCTriggeringImplRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 789827051704926900E9DC58 /* SCTriggeringImplRequest.h */; };
+		789827081704926B00E9DC58 /* SCTriggeringImplRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789827061704926A00E9DC58 /* SCTriggeringImplRequest.m */; };
+		7898270B1704982600E9DC58 /* NSString+TriggeringPathLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 789827091704982600E9DC58 /* NSString+TriggeringPathLogic.h */; };
+		7898270C1704982600E9DC58 /* NSString+TriggeringPathLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7898270A1704982600E9DC58 /* NSString+TriggeringPathLogic.m */; };
+		78A4D55217057EC60035D5DA /* SCCampaignTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A4D55017057EC60035D5DA /* SCCampaignTriggeringRequest.h */; };
+		78A4D55317057EC60035D5DA /* SCPageEventTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A4D55117057EC60035D5DA /* SCPageEventTriggeringRequest.h */; };
+		7E8868B71709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E8868B51709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h */; };
+		7E8868B81709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8868B61709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m */; };
+		7E921ABC1705C4610006747C /* SCTriggerExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921ABA1705C4600006747C /* SCTriggerExecutor.h */; };
+		7E921ABD1705C4610006747C /* SCTriggerExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921ABB1705C4600006747C /* SCTriggerExecutor.m */; };
+		7E98C83A170EA8D100DA3AD8 /* SCApiContext+Init.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E98C838170EA8D100DA3AD8 /* SCApiContext+Init.h */; };
+		7E98C83B170EA8D100DA3AD8 /* SCApiContext+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98C839170EA8D100DA3AD8 /* SCApiContext+Init.m */; };
+		7EB908B21709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB908B01709C34E0094072F /* SCTriggeringRequest+PrivateConstructor.h */; };
+		7EB908B31709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB908B11709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.m */; };
+		7EB908B61709C7B00094072F /* SCTriggeringRequest+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB908B41709C7AF0094072F /* SCTriggeringRequest+Factory.h */; };
+		7EB908B71709C7B00094072F /* SCTriggeringRequest+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB908B51709C7AF0094072F /* SCTriggeringRequest+Factory.m */; };
+		7EB908B91709CBB60094072F /* SCTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB908B81709CBB60094072F /* SCTriggeringRequest.h */; };
+		7EDB118116F1F74B0088824E /* SCCacheDBAdaptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDB117F16F1F74B0088824E /* SCCacheDBAdaptor.h */; };
+		7EDB118216F1F74B0088824E /* SCCacheDBAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB118016F1F74B0088824E /* SCCacheDBAdaptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +264,28 @@
 		656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSitecoreCredentials+XMLParser.m"; sourceTree = "<group>"; };
 		656409C315A9CB750062F28D /* SCSitecoreCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitecoreCredentials.h; sourceTree = "<group>"; };
 		656409C415A9CB750062F28D /* SCSitecoreCredentials.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCSitecoreCredentials.mm; sourceTree = "<group>"; };
+		789826F217046B5000E9DC58 /* SCTriggeringRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggeringRequest.m; sourceTree = "<group>"; };
+		789826F617046B7100E9DC58 /* SCPageEventTriggeringRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPageEventTriggeringRequest.m; sourceTree = "<group>"; };
+		789826FA17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCampaignTriggeringRequest.m; sourceTree = "<group>"; };
+		789827051704926900E9DC58 /* SCTriggeringImplRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTriggeringImplRequest.h; sourceTree = "<group>"; };
+		789827061704926A00E9DC58 /* SCTriggeringImplRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggeringImplRequest.m; sourceTree = "<group>"; };
+		789827091704982600E9DC58 /* NSString+TriggeringPathLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TriggeringPathLogic.h"; sourceTree = "<group>"; };
+		7898270A1704982600E9DC58 /* NSString+TriggeringPathLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TriggeringPathLogic.m"; sourceTree = "<group>"; };
+		78A4D55017057EC60035D5DA /* SCCampaignTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCampaignTriggeringRequest.h; path = SitecoreMobileSDK/SCCampaignTriggeringRequest.h; sourceTree = SOURCE_ROOT; };
+		78A4D55117057EC60035D5DA /* SCPageEventTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCPageEventTriggeringRequest.h; path = SitecoreMobileSDK/SCPageEventTriggeringRequest.h; sourceTree = SOURCE_ROOT; };
+		7E8868B51709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCTriggeringError+PrivateConstructor.h"; sourceTree = "<group>"; };
+		7E8868B61709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCTriggeringError+PrivateConstructor.m"; sourceTree = "<group>"; };
+		7E921ABA1705C4600006747C /* SCTriggerExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTriggerExecutor.h; sourceTree = "<group>"; };
+		7E921ABB1705C4600006747C /* SCTriggerExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggerExecutor.m; sourceTree = "<group>"; };
+		7E98C838170EA8D100DA3AD8 /* SCApiContext+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCApiContext+Init.h"; sourceTree = "<group>"; };
+		7E98C839170EA8D100DA3AD8 /* SCApiContext+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCApiContext+Init.m"; sourceTree = "<group>"; };
+		7EB908B01709C34E0094072F /* SCTriggeringRequest+PrivateConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCTriggeringRequest+PrivateConstructor.h"; sourceTree = "<group>"; };
+		7EB908B11709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCTriggeringRequest+PrivateConstructor.m"; sourceTree = "<group>"; };
+		7EB908B41709C7AF0094072F /* SCTriggeringRequest+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCTriggeringRequest+Factory.h"; sourceTree = "<group>"; };
+		7EB908B51709C7AF0094072F /* SCTriggeringRequest+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCTriggeringRequest+Factory.m"; sourceTree = "<group>"; };
+		7EB908B81709CBB60094072F /* SCTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCTriggeringRequest.h; path = SitecoreMobileSDK/SCTriggeringRequest.h; sourceTree = SOURCE_ROOT; };
+		7EDB117F16F1F74B0088824E /* SCCacheDBAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCacheDBAdaptor.h; sourceTree = "<group>"; };
+		7EDB118016F1F74B0088824E /* SCCacheDBAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCacheDBAdaptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +303,7 @@
 		1B054DED1521CD15008E4B9E /* ApiRequests */ = {
 			isa = PBXGroup;
 			children = (
+				789826F017046B5000E9DC58 /* Triggering */,
 				1B195B6B15248DF700E80FFB /* SCCreateMediaItemRequest.h */,
 				1B2458BF15247F2800FBB6C2 /* SCCreateMediaItemRequest.m */,
 				1B054DFC1521CE17008E4B9E /* SCCreateItemRequest.h */,
@@ -349,6 +394,8 @@
 				1B577104147E7DA60064903A /* SCError.m */,
 				1BC48A1D14A0B7A600DD0960 /* SCApiContext.h */,
 				1BB2B856149F50C600A9D332 /* SCApiContext.m */,
+				7E98C838170EA8D100DA3AD8 /* SCApiContext+Init.h */,
+				7E98C839170EA8D100DA3AD8 /* SCApiContext+Init.m */,
 				1BC086FD147BBDD60066CFB3 /* Supporting Files */,
 			);
 			path = SCApi;
@@ -401,6 +448,8 @@
 			children = (
 				1B459567147BF8A2003E3479 /* NSString+ItemPathLogic.h */,
 				1B459568147BF8A2003E3479 /* NSString+ItemPathLogic.m */,
+				789827091704982600E9DC58 /* NSString+TriggeringPathLogic.h */,
+				7898270A1704982600E9DC58 /* NSString+TriggeringPathLogic.m */,
 			);
 			path = PathLogic;
 			sourceTree = "<group>";
@@ -419,6 +468,7 @@
 		1BC087A3147BC9530066CFB3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				7EDB117E16F1F7300088824E /* Detail */,
 				1BC087FD147BE1E30066CFB3 /* Parsers */,
 				1BC087F8147BD2CF0066CFB3 /* SCRemoteApi.h */,
 				1BC087F9147BD2CF0066CFB3 /* SCRemoteApi.m */,
@@ -536,6 +586,38 @@
 			path = XML;
 			sourceTree = "<group>";
 		};
+		789826F017046B5000E9DC58 /* Triggering */ = {
+			isa = PBXGroup;
+			children = (
+				7EB908B81709CBB60094072F /* SCTriggeringRequest.h */,
+				789826F217046B5000E9DC58 /* SCTriggeringRequest.m */,
+				7EB908B01709C34E0094072F /* SCTriggeringRequest+PrivateConstructor.h */,
+				7EB908B11709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.m */,
+				7EB908B41709C7AF0094072F /* SCTriggeringRequest+Factory.h */,
+				7EB908B51709C7AF0094072F /* SCTriggeringRequest+Factory.m */,
+				78A4D55117057EC60035D5DA /* SCPageEventTriggeringRequest.h */,
+				789826F617046B7100E9DC58 /* SCPageEventTriggeringRequest.m */,
+				78A4D55017057EC60035D5DA /* SCCampaignTriggeringRequest.h */,
+				789826FA17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m */,
+				789827051704926900E9DC58 /* SCTriggeringImplRequest.h */,
+				789827061704926A00E9DC58 /* SCTriggeringImplRequest.m */,
+				7E921ABA1705C4600006747C /* SCTriggerExecutor.h */,
+				7E921ABB1705C4600006747C /* SCTriggerExecutor.m */,
+				7E8868B51709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h */,
+				7E8868B61709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m */,
+			);
+			path = Triggering;
+			sourceTree = "<group>";
+		};
+		7EDB117E16F1F7300088824E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7EDB117F16F1F74B0088824E /* SCCacheDBAdaptor.h */,
+				7EDB118016F1F74B0088824E /* SCCacheDBAdaptor.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -596,6 +678,17 @@
 				1BBE2EC7154546AB004B683B /* SCItemsCache+UnregisterItems.h in Headers */,
 				656409C115A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h in Headers */,
 				656409C515A9CB750062F28D /* SCSitecoreCredentials.h in Headers */,
+				7EDB118116F1F74B0088824E /* SCCacheDBAdaptor.h in Headers */,
+				789827071704926B00E9DC58 /* SCTriggeringImplRequest.h in Headers */,
+				7898270B1704982600E9DC58 /* NSString+TriggeringPathLogic.h in Headers */,
+				78A4D55217057EC60035D5DA /* SCCampaignTriggeringRequest.h in Headers */,
+				78A4D55317057EC60035D5DA /* SCPageEventTriggeringRequest.h in Headers */,
+				7E921ABC1705C4610006747C /* SCTriggerExecutor.h in Headers */,
+				7EB908B21709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.h in Headers */,
+				7EB908B61709C7B00094072F /* SCTriggeringRequest+Factory.h in Headers */,
+				7EB908B91709CBB60094072F /* SCTriggeringRequest.h in Headers */,
+				7E8868B71709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h in Headers */,
+				7E98C83A170EA8D100DA3AD8 /* SCApiContext+Init.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +718,7 @@
 		1BC086EE147BBDD60066CFB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 1BC086F1147BBDD60066CFB3 /* Build configuration list for PBXProject "SCApi" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -705,6 +798,17 @@
 				1BBE2EC8154546AB004B683B /* SCItemsCache+UnregisterItems.m in Sources */,
 				656409C215A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m in Sources */,
 				656409C615A9CB750062F28D /* SCSitecoreCredentials.mm in Sources */,
+				7EDB118216F1F74B0088824E /* SCCacheDBAdaptor.m in Sources */,
+				789826F417046B5000E9DC58 /* SCTriggeringRequest.m in Sources */,
+				789826F817046B7100E9DC58 /* SCPageEventTriggeringRequest.m in Sources */,
+				789826FC17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m in Sources */,
+				789827081704926B00E9DC58 /* SCTriggeringImplRequest.m in Sources */,
+				7898270C1704982600E9DC58 /* NSString+TriggeringPathLogic.m in Sources */,
+				7E921ABD1705C4610006747C /* SCTriggerExecutor.m in Sources */,
+				7EB908B31709C34F0094072F /* SCTriggeringRequest+PrivateConstructor.m in Sources */,
+				7EB908B71709C7B00094072F /* SCTriggeringRequest+Factory.m in Sources */,
+				7E8868B81709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m in Sources */,
+				7E98C83B170EA8D100DA3AD8 /* SCApiContext+Init.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +822,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -748,6 +851,7 @@
 					"../../lib-third-party/ios-openssl/include",
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party/AmberFramework-lite",
+					"../../lib-third-party/JFFLibrary/lib/JFFCache",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -761,7 +865,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -784,6 +887,7 @@
 					"../../lib-third-party/ios-openssl/include",
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party/AmberFramework-lite",
+					"../../lib-third-party/JFFLibrary/lib/JFFCache",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;

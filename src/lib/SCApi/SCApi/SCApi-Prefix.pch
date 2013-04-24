@@ -6,6 +6,7 @@
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFAsyncOperations/JFFAsyncOperations.h>
     #import <JFFUtils/JFFUtils.h>
+    #import <JFFCache/JFFCache.h>
     #import <JFFRestKit/JFFRestKit.h>
     #import <SCUtils/SCAsyncOpUtils.h>
 

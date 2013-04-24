@@ -1,4 +1,5 @@
 #import "SCApiContext.h"
+#import "SCApiContext+Init.h"
 
 #import "SCItemInfo.h"
 #import "SCFieldRecord.h"
@@ -20,17 +21,18 @@
 #import "SCItemsCache+UnregisterItems.h"
 
 #import "SCApiAnalizers.h"
+#import "SCTriggeringRequest.h"
+
+#import "SCError.h"
 
 @interface SCApiContext ()
 
 @property ( nonatomic ) SCItemsCache* itemsCache;
+@property ( nonatomic ) SCRemoteApi * api;
 
 @end
 
 @implementation SCApiContext
-{
-    SCRemoteApi* _api;
-}
 
 -(id)init
 {
@@ -72,23 +74,6 @@
         _defaultImagesLifeTimeInCache = 60*60*24*30;
     }
     return _defaultImagesLifeTimeInCache;
-}
-
--(id)initWithHost:( NSString* )host_
-            login:( NSString* )login_
-         password:( NSString* )password_
-{
-    self = [ super init ];
-
-    if ( self )
-    {
-        _api = [ [ SCRemoteApi alloc ] initWithHost: host_
-                                              login: login_
-                                           password: password_ ];
-        _itemsCache = [ SCItemsCache new ];
-    }
-
-    return self;
 }
 
 +(id)contextWithHost:( NSString* )host_
@@ -305,6 +290,16 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
     loader_ = itemPageToItems( loader_ );
     loader_ = firstItemFromArrayReader( loader_ );
 
+    loader_ = asyncOperationWithChangedError( loader_, ^NSError *(NSError *error)
+    {
+        SCCreateItemError* newError =
+        [ [ SCCreateItemError alloc ] initWithDescription: @"Item not created"
+                                                     code: 1 ];
+        newError.underlyingError = error;
+        
+        return newError;
+    });
+    
     return asyncOpWithJAsyncOp( loader_ );
 }
 
@@ -410,6 +405,16 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
     loader_ = asyncOpWithValidIds( binder_, ids_ );
 
     return asyncOpWithJAsyncOp( loader_ );
+}
+
+-(JFFAsyncOperation)privateTriggerLoaderForRequest:( SCTriggeringRequest* )request_
+{
+    return [ _api triggerLoaderWithRequest: request_ ];
+}
+
+-(SCAsyncOp)triggerLoaderForRequest:( SCTriggeringRequest* )request_
+{
+    return asyncOpWithJAsyncOp( [ self privateTriggerLoaderForRequest: request_ ] );
 }
 
 @end

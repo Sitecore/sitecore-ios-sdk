@@ -252,7 +252,7 @@ static NSString* const apiVersion_ = @"v1";
     return [ [ NSURL alloc ] initWithString: requestString_ ];
 }
 
-//http://localhost/-/item/v1/-/actions/GetRenderingHtml?database=master&language=en&renderingId={493B3A83
+//ht database=master&language=en&renderingId={493B3A83
 //    -0FA7-4484-8FC9-4680991CF743}&itemId={110D559F-DEA5-42EA-9C1C-
 //        8A5DF7E70EF9}&itemVersion=7&a=1&b=2&c=3
 +(id)URLToGetRenderingHTMLLoaderForRenderingId:( NSString* )rendereringId_
@@ -273,5 +273,22 @@ static NSString* const apiVersion_ = @"v1";
 
     return [ [ NSURL alloc ] initWithString: requestString_ ];
 }
+
++(id)URLToTriggerAction:( NSString* )itemPath_
+              paramName:( NSString* )paramName_
+             paramValue:( NSString* )paramValue_
+{
+    static NSString* const urlFormat_ = @"%@?%@=%@";
+    
+    NSString* requestString_ = [ [ NSString alloc ] initWithFormat: urlFormat_
+                                , itemPath_
+                                , paramName_
+                                , paramValue_
+                                ];
+    requestString_ = [ requestString_ stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    
+    return [ [ NSURL alloc ] initWithString: requestString_ ];
+}
+
 
 @end

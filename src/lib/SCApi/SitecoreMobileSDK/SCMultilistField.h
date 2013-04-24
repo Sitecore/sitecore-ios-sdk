@@ -6,7 +6,7 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#import <SitecoreMobileSDK/SCChecklistField.h>
+#import "SitecoreMobileSDK/SCChecklistField.h"
 
 /**
  The SCMultilistField object identifies a Sitecore system item's multilist field.

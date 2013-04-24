@@ -6,9 +6,9 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#include <SitecoreMobileSDK/SCItemReaderScopeType.h>
-#include <SitecoreMobileSDK/SCItemReaderRequestType.h>
-#include <SitecoreMobileSDK/SCItemReaderRequestFlags.h>
+#include "SitecoreMobileSDK/SCItemReaderScopeType.h"
+#include "SitecoreMobileSDK/SCItemReaderRequestType.h"
+#include "SitecoreMobileSDK/SCItemReaderRequestFlags.h"
 
 #import <Foundation/Foundation.h>
 

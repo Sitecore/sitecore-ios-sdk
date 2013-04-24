@@ -6,9 +6,9 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#include <SitecoreMobileSDK/SCItemReaderScopeType.h>
-#include <SitecoreMobileSDK/SCItemReaderRequestType.h>
-#include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
+#include "SitecoreMobileSDK/SCItemReaderScopeType.h"
+#include "SitecoreMobileSDK/SCItemReaderRequestType.h"
+#include "SitecoreMobileSDK/SCAsyncOpDefinitions.h"
 
 #import <Foundation/Foundation.h>
 
@@ -18,6 +18,7 @@
 @class SCCreateItemRequest;
 @class SCItemsReaderRequest;
 @class SCCreateMediaItemRequest;
+@class SCTriggeringRequest;
 
 /**
  The SCApiContext object provides support to perform the loading of system Items and their Fields from the backend.
@@ -264,9 +265,18 @@
  Usd defauld language and database of SCApiContext
  @param renderingId - id of rendering which you want to request
  @param sourceId - item's id for render using rendering with renderingId
- @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSSting object or nil if error happens.
+ @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
 */
 - (SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
                                           sourceId:(NSString *)sourceId;
+
+/**
+  Used to trigger a goal or a campain with the given request
+ 
+  @param request A triggering request. See SCTrafficTriggeringRequest and SCCampaignTriggeringRequest for details
+ 
+  @return SCAsyncOp block. Call it to trigger either a goal or a campaign. The SCAsyncOpResult handler's result is an NSString that contains the rendering of the item (an HTML web page).
+ */
+- (SCAsyncOp)triggerLoaderForRequest:( SCTriggeringRequest* )request;
 
 @end

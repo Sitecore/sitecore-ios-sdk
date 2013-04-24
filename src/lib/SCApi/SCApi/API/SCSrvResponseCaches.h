@@ -1,5 +1,13 @@
 #import <Foundation/Foundation.h>
 
 @protocol SCDataCache;
+@protocol JFFCacheDB;
+@class JFFCaches;
 
-id< SCDataCache > sharedSrvResponseCache( void );
+@interface SCSrvResponseCachesFactory : NSObject
+
++(JFFCaches*)sharedSCCaches;
++(id< SCDataCache >)sharedSrvResponseCache;
++(id< JFFCacheDB >)mobileSdkRawCache;
+
+@end

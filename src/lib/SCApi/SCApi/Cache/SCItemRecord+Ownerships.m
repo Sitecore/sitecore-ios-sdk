@@ -46,7 +46,7 @@
     SCItemRecord* parent_ = [ self findNearestParent ];
     while ( parent_ )
     {
-        [ parent_.ownerships removeObject: self ];
+        [ parent_ addOwnedObject: self ];
         parent_ = [ parent_ findNearestParent ];
     }
 }
@@ -54,7 +54,7 @@
 -(void)setOwnershipsForParent
 {
     SCItemRecord* parent_ = [ self findNearestParent ];
-    [ parent_.ownerships addObject: self ];
+    [ parent_ addOwnedObject: self ];
 }
 
 -(void)setOwnershipsForChildren
@@ -71,7 +71,7 @@
             && [ itemRecord_.language isEqualToString: self.language ]
             && [ [ itemRecord_.longID pathComponents ] containsObject: self.itemId ] )
         {
-            [ self.ownerships addObject: itemRecord_ ];
+            [ self addOwnedObject: itemRecord_ ];
         }
     }
 }
