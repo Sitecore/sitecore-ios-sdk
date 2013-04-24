@@ -37,6 +37,8 @@
 		1BD6AB401518CE1A00D2FC84 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB3F1518CE1A00D2FC84 /* Twitter.framework */; };
 		1BD6AB421518CE2C00D2FC84 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB411518CE2C00D2FC84 /* MessageUI.framework */; };
 		1BD6AB441518CE3C00D2FC84 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB431518CE3C00D2FC84 /* AudioToolbox.framework */; };
+		7E0B4366171594A50094A79E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0B4365171594A40094A79E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7EDE003F1701F6C300938D80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE003E1701F6C300938D80 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		1BD6AB3F1518CE1A00D2FC84 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		1BD6AB411518CE2C00D2FC84 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1BD6AB431518CE3C00D2FC84 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7E0B4365171594A40094A79E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7EDE003E1701F6C300938D80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0B4366171594A50094A79E /* Social.framework in Frameworks */,
 				1BACF67115E25C110084B334 /* libsqlite3.dylib in Frameworks */,
 				1BACF66F15E25BFF0084B334 /* libc++.dylib in Frameworks */,
 				1BACF66D15E25BD90084B334 /* libstdc++.dylib in Frameworks */,
@@ -133,6 +138,7 @@
 		06D8FADB1518ADF30052ABA6 = {
 			isa = PBXGroup;
 			children = (
+				7EDE003E1701F6C300938D80 /* Default-568h@2x.png */,
 				06D9C6061519E6E400517C5E /* Resources */,
 				06D8FAF01518ADF40052ABA6 /* SCMapViewTests */,
 				1B33DD7B1518C59600EEA9BA /* SCAllMobileSDKLibs */,
@@ -157,6 +163,7 @@
 				1BACF66E15E25BFF0084B334 /* libc++.dylib */,
 				1BACF66C15E25BD90084B334 /* libstdc++.dylib */,
 				1BC8A37F151B7E7800A4AC26 /* libiconv.dylib */,
+				7E0B4365171594A40094A79E /* Social.framework */,
 				1BC8A379151B7E6C00A4AC26 /* AVFoundation.framework */,
 				1BC8A37A151B7E6C00A4AC26 /* CoreMedia.framework */,
 				1BC8A37B151B7E6C00A4AC26 /* CoreVideo.framework */,
@@ -263,6 +270,7 @@
 				06D8FAE21518ADF40052ABA6 /* Sources */,
 				06D8FAE31518ADF40052ABA6 /* Frameworks */,
 				06D8FAE41518ADF40052ABA6 /* Resources */,
+				7E7F20C515F0CDFD00066C7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,7 +288,7 @@
 		06D8FADD1518ADF30052ABA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 06D8FAE01518ADF30052ABA6 /* Build configuration list for PBXProject "SCMapViewTests" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,10 +330,28 @@
 			files = (
 				06D8FAF51518ADF40052ABA6 /* InfoPlist.strings in Resources */,
 				06D9C6081519E72200517C5E /* gApiRouteResponce.json in Resources */,
+				7EDE003F1701F6C300938D80 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E7F20C515F0CDFD00066C7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n#/bin/bash\n#\n## Dump XCode variables\n\n\nXCODE_DUMP_DIR=/tmp/${PRODUCT_NAME}Build\nmkdir -p \"$XCODE_DUMP_DIR\"\nCI_TEST_PRODUCT_DIR_FILE=$XCODE_DUMP_DIR/PRODUCT_DIR.txt\n\ncd \"$BUILT_PRODUCTS_DIR\"\ncd ..\necho $PWD > \"$CI_TEST_PRODUCT_DIR_FILE\"\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06D8FAE21518ADF40052ABA6 /* Sources */ = {
@@ -368,6 +394,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -400,6 +430,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
