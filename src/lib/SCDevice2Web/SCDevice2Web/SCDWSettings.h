@@ -1,4 +1,4 @@
 #import <Foundation/Foundation.h>
 
-extern NSUInteger JDWFileSystemURLPort;
+extern long JDWFileSystemURLPort;
 extern NSString* const JDWFileSystemURLScheme;
