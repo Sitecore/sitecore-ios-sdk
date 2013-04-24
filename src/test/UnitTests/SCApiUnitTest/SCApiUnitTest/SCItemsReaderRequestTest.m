@@ -1,4 +1,5 @@
 
+#import <JFFNetwork/JFFNetwork.h>
 #import <SCApi/Api/NSURL+URLWithItemsReaderRequest.h>
 
 @interface SCItemsReaderRequestTest : GHTestCase
