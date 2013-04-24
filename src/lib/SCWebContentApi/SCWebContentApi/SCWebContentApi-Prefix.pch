@@ -1,9 +1,15 @@
-//
-// Prefix header for all source files of the 'SCWebContentApi' target in the 'SCWebContentApi' project
-//
 
 #ifdef __OBJC__
+    #import <SCApi/Data/ApiRequests/Triggering/SCTriggerExecutor.h>
+    #import <SCApi/Data/ApiRequests/Triggering/SCTriggeringImplRequest.h>
+
+    #import <SCWebPlugins/Plugins/SCWebPlugin.h>
     #import <SitecoreMobileSDK/SCApi.h>
+
+    #import <SCApi/SmartDataLoaders/SCSmartDataLoaders.h>
+
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <JFFAsyncOperations/JFFAsyncOperations.h>
     #import <JFFUtils/JFFUtils.h>
 
     #import <Foundation/Foundation.h>

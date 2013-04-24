@@ -1,9 +1,5 @@
 #import "SCContentApiCreateItem.h"
 
-#import <SCApi/SmartDataLoaders/SCSmartDataLoaders.h>
-
-#import <JFFAsyncOperations/JFFAsyncOperations.h>
-#import <JFFNetwork/JFFNetwork.h>
 
 #import "NSDictionary+SCItemFieldsWithURLParam.h"
 #import "NSArray+scItemsToJSON.h"

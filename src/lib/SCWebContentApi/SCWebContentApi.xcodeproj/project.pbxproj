@@ -22,6 +22,10 @@
 		1B36426C153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B36426A153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m */; };
 		1B3CDFE6156126A500949EA6 /* NSArray+scItemsToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3CDFE4156126A500949EA6 /* NSArray+scItemsToJSON.h */; };
 		1B3CDFE7156126A500949EA6 /* NSArray+scItemsToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDFE5156126A500949EA6 /* NSArray+scItemsToJSON.m */; };
+		7E016677170466330073298E /* SCTriggerDmsGoalPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E016673170466330073298E /* SCTriggerDmsGoalPlugin.m */; };
+		7E016678170466330073298E /* SCTriggerDmsCampaignPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E016674170466330073298E /* SCTriggerDmsCampaignPlugin.m */; };
+		7E01667D17046C590073298E /* SCAbstractTriggerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E01667B17046C590073298E /* SCAbstractTriggerPlugin.h */; };
+		7E01667E17046C590073298E /* SCAbstractTriggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E01667C17046C590073298E /* SCAbstractTriggerPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,12 @@
 		1B36426A153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCItemFieldsWithURLParam.m"; sourceTree = "<group>"; };
 		1B3CDFE4156126A500949EA6 /* NSArray+scItemsToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+scItemsToJSON.h"; sourceTree = "<group>"; };
 		1B3CDFE5156126A500949EA6 /* NSArray+scItemsToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+scItemsToJSON.m"; sourceTree = "<group>"; };
+		7E016673170466330073298E /* SCTriggerDmsGoalPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggerDmsGoalPlugin.m; sourceTree = "<group>"; };
+		7E016674170466330073298E /* SCTriggerDmsCampaignPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggerDmsCampaignPlugin.m; sourceTree = "<group>"; };
+		7E016675170466330073298E /* analytics.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = analytics.js; sourceTree = "<group>"; };
+		7E016676170466330073298E /* analytics.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analytics.js.h; sourceTree = "<group>"; };
+		7E01667B17046C590073298E /* SCAbstractTriggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAbstractTriggerPlugin.h; sourceTree = "<group>"; };
+		7E01667C17046C590073298E /* SCAbstractTriggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAbstractTriggerPlugin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,7 @@
 		1B363F43153D556800E46215 /* SCWebContentApi */ = {
 			isa = PBXGroup;
 			children = (
+				7E016672170466330073298E /* analytics */,
 				1B364262153D7D0D00E46215 /* Details */,
 				1B36405A153D5BBF00E46215 /* createMediaItem.js */,
 				1B36405E153D5DA500E46215 /* createMediaItem.js.h */,
@@ -191,6 +202,19 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		7E016672170466330073298E /* analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7E016673170466330073298E /* SCTriggerDmsGoalPlugin.m */,
+				7E016674170466330073298E /* SCTriggerDmsCampaignPlugin.m */,
+				7E016675170466330073298E /* analytics.js */,
+				7E016676170466330073298E /* analytics.js.h */,
+				7E01667B17046C590073298E /* SCAbstractTriggerPlugin.h */,
+				7E01667C17046C590073298E /* SCAbstractTriggerPlugin.m */,
+			);
+			path = analytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -202,6 +226,7 @@
 				1B36405F153D5DA500E46215 /* createMediaItem.js.h in Headers */,
 				1B36426B153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.h in Headers */,
 				1B3CDFE6156126A500949EA6 /* NSArray+scItemsToJSON.h in Headers */,
+				7E01667D17046C590073298E /* SCAbstractTriggerPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/bin/sh\n#SCWebContentApi\ntouch ./SCWebContentApi/SCContentApiCreateItem.m\nxxd -i ./SCWebContentApi/createMediaItem.js > ./SCWebContentApi/createMediaItem.js.h\n";
+			shellScript = "#/bin/sh\n#SCWebContentApi\ntouch ./SCWebContentApi/SCContentApiCreateItem.m\nxxd -i ./SCWebContentApi/createMediaItem.js > ./SCWebContentApi/createMediaItem.js.h\n\n\n\n#compile analytics\ntouch \"./SCWebContentApi/analytics/SCTriggerDmsGoalPlugin.m\"\ntouch \"./SCWebContentApi/analytics/SCTriggerDmsCampaignPlugin.m\"\nxxd -i \"./SCWebContentApi/analytics/analytics.js\" > \"./SCWebContentApi/analytics/analytics.js.h\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -345,6 +370,9 @@
 				1B363FDB153D569500E46215 /* SCContentApiCreateItem.m in Sources */,
 				1B36426C153D8D6D00E46215 /* NSDictionary+SCItemFieldsWithURLParam.m in Sources */,
 				1B3CDFE7156126A500949EA6 /* NSArray+scItemsToJSON.m in Sources */,
+				7E016677170466330073298E /* SCTriggerDmsGoalPlugin.m in Sources */,
+				7E016678170466330073298E /* SCTriggerDmsCampaignPlugin.m in Sources */,
+				7E01667E17046C590073298E /* SCAbstractTriggerPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
