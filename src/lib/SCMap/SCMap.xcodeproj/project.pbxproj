@@ -31,6 +31,12 @@
 		1BE4D132150F900F007259C2 /* SCPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D130150F900F007259C2 /* SCPlacemark.m */; };
 		1BE4D135150F928B007259C2 /* SCMapKitLocationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D133150F928B007259C2 /* SCMapKitLocationUtils.h */; };
 		1BE4D136150F928B007259C2 /* SCMapKitLocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D134150F928B007259C2 /* SCMapKitLocationUtils.m */; };
+		7E936ABD1702DC0900879849 /* JFFAsyncOperationGeocoderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E936ABB1702DC0900879849 /* JFFAsyncOperationGeocoderBase.h */; };
+		7E936ABE1702DC0900879849 /* JFFAsyncOperationGeocoderBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E936ABC1702DC0900879849 /* JFFAsyncOperationGeocoderBase.m */; };
+		7E936AC11702DC2000879849 /* JFFAsyncOperationGeocoderDict.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E936ABF1702DC2000879849 /* JFFAsyncOperationGeocoderDict.h */; };
+		7E936AC21702DC2000879849 /* JFFAsyncOperationGeocoderDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E936AC01702DC2000879849 /* JFFAsyncOperationGeocoderDict.m */; };
+		7E936AC51702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E936AC31702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h */; };
+		7E936AC61702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E936AC41702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,12 @@
 		1BE4D130150F900F007259C2 /* SCPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlacemark.m; sourceTree = "<group>"; };
 		1BE4D133150F928B007259C2 /* SCMapKitLocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapKitLocationUtils.h; sourceTree = "<group>"; };
 		1BE4D134150F928B007259C2 /* SCMapKitLocationUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapKitLocationUtils.m; sourceTree = "<group>"; };
+		7E936ABB1702DC0900879849 /* JFFAsyncOperationGeocoderBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFAsyncOperationGeocoderBase.h; sourceTree = "<group>"; };
+		7E936ABC1702DC0900879849 /* JFFAsyncOperationGeocoderBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoderBase.m; sourceTree = "<group>"; };
+		7E936ABF1702DC2000879849 /* JFFAsyncOperationGeocoderDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFAsyncOperationGeocoderDict.h; sourceTree = "<group>"; };
+		7E936AC01702DC2000879849 /* JFFAsyncOperationGeocoderDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoderDict.m; sourceTree = "<group>"; };
+		7E936AC31702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFAsyncOperationGeocoderAddress.h; sourceTree = "<group>"; };
+		7E936AC41702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoderAddress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,12 @@
 			children = (
 				1B0D86BF1519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h */,
 				1B0D86C01519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m */,
+				7E936ABB1702DC0900879849 /* JFFAsyncOperationGeocoderBase.h */,
+				7E936ABC1702DC0900879849 /* JFFAsyncOperationGeocoderBase.m */,
+				7E936ABF1702DC2000879849 /* JFFAsyncOperationGeocoderDict.h */,
+				7E936AC01702DC2000879849 /* JFFAsyncOperationGeocoderDict.m */,
+				7E936AC31702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h */,
+				7E936AC41702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m */,
 			);
 			path = AsyncOperartionsBuilder;
 			sourceTree = "<group>";
@@ -214,6 +232,9 @@
 				1B33DD6C1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h in Headers */,
 				1B33DD701518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h in Headers */,
 				1B0D86C11519D89C00EC4A92 /* JFFAsyncOperationGeocoder.h in Headers */,
+				7E936ABD1702DC0900879849 /* JFFAsyncOperationGeocoderBase.h in Headers */,
+				7E936AC11702DC2000879849 /* JFFAsyncOperationGeocoderDict.h in Headers */,
+				7E936AC51702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +264,7 @@
 		1BE4CE9D150F3CBC007259C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 1BE4CEA0150F3CBC007259C2 /* Build configuration list for PBXProject "SCMap" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -279,6 +300,9 @@
 				1B33DD6D1518C0D100EEA9BA /* NSDictionary+AddressWithItem.m in Sources */,
 				1B33DD711518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.m in Sources */,
 				1B0D86C21519D89C00EC4A92 /* JFFAsyncOperationGeocoder.m in Sources */,
+				7E936ABE1702DC0900879849 /* JFFAsyncOperationGeocoderBase.m in Sources */,
+				7E936AC21702DC2000879849 /* JFFAsyncOperationGeocoderDict.m in Sources */,
+				7E936AC61702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +316,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -324,7 +347,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
