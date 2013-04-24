@@ -66,10 +66,10 @@ std::vector<Ref<DataBlock> > DataBlock::getDataBlocks(ArrayRef<unsigned char> ra
 
   // All blocks have the same amount of data, except that the last n
   // (where n may be 0) have 1 more byte. Figure out where these start.
-  int shorterBlocksTotalCodewords = result[0]->codewords_.size();
+  int shorterBlocksTotalCodewords = result.at(0)->codewords_.size();
   int longerBlocksStartAt = result.size() - 1;
   while (longerBlocksStartAt >= 0) {
-    int numCodewords = result[longerBlocksStartAt]->codewords_.size();
+    int numCodewords = result.at(longerBlocksStartAt)->codewords_.size();
     if (numCodewords == shorterBlocksTotalCodewords) {
       break;
     }

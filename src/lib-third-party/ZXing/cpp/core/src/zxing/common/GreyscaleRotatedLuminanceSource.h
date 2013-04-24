@@ -28,7 +28,10 @@ class GreyscaleRotatedLuminanceSource : public LuminanceSource {
  private:
   unsigned char* greyData_;
   int dataWidth_;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-private-field"
   int dataHeight_;
+#pragma clang diagnostic pop
   int left_;
   int top_;
   int width_;

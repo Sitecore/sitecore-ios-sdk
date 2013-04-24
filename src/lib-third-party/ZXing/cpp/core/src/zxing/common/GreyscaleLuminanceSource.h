@@ -28,6 +28,7 @@ class GreyscaleLuminanceSource : public LuminanceSource {
  private:
   unsigned char* greyData_;
   int dataWidth_;
+    
   int dataHeight_;
   int left_;
   int top_;

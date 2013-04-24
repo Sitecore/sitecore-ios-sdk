@@ -20,6 +20,7 @@
 
 #include <zxing/common/GreyscaleRotatedLuminanceSource.h>
 #include <zxing/common/IllegalArgumentException.h>
+#include <sstream>
 
 namespace zxing {
 
@@ -39,7 +40,10 @@ GreyscaleRotatedLuminanceSource::GreyscaleRotatedLuminanceSource(unsigned char* 
 // The API asks for rows, but we're rotated, so we return columns.
 unsigned char* GreyscaleRotatedLuminanceSource::getRow(int y, unsigned char* row) {
   if (y < 0 || y >= getHeight()) {
-    throw IllegalArgumentException("Requested row is outside the image: " + y);
+      std::ostringstream msg_;
+      msg_ << "Requested row is outside the image: " << y;
+      
+    throw IllegalArgumentException( msg_.str().c_str() );
   }
   int width = getWidth();
   if (row == NULL) {
