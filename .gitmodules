@@ -22,3 +22,6 @@
 [submodule "src/lib-third-party/iFeatureAvailability"]
 	path = src/lib-third-party/iFeatureAvailability
 	url = https://github.com/dodikk/iFeatureAvailability.git
+[submodule "src/lib-third-party/JFFLibrary"]
+	path = src/lib-third-party/JFFLibrary
+	url = https://github.com/EmbeddedSources/iAsync.git
