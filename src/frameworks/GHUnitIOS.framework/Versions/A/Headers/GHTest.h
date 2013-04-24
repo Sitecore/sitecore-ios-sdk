@@ -38,12 +38,12 @@ typedef enum {
   GHTestStatusCancelling, // Test is being cancelled
   GHTestStatusCancelled, // Test was cancelled
   GHTestStatusSucceeded, // Test finished and succeeded
-  GHTestStatusErrored, // Test finished and errored
+  GHTestStatusErrored // Test finished and errored
 } GHTestStatus;
 
 enum {
   GHTestOptionReraiseExceptions = 1 << 0, // Allows exceptions to be raised (so you can trigger the debugger)
-  GHTestOptionForceSetUpTearDownClass = 1 << 1, // Runs setUpClass/tearDownClass for this (each) test; Used when re-running a single test in a group
+  GHTestOptionForceSetUpTearDownClass = 1 << 1 // Runs setUpClass/tearDownClass for this (each) test; Used when re-running a single test in a group
 };
 typedef NSInteger GHTestOptions;
 
