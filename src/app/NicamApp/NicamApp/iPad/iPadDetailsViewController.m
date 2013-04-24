@@ -59,6 +59,12 @@
     return YES;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [ self.webBrowser refreshViews ];
+}
+
 #pragma mark ProductsViewControllerDelegate
 
 -(void)productsViewController:( id )sender_

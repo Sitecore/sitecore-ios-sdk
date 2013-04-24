@@ -9,7 +9,7 @@
 {
     [ super viewDidLoad ];
     //start recognizing
-    [ self.qrcodeView startCapture ];
+   // [ self.qrcodeView startCapture ];
 }
 -(void)viewDidUnload
 {
@@ -20,9 +20,16 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [ super viewDidAppear: YES ];
+    [ super viewDidAppear: animated ];
     //start recognizing
+    self.qrcodeView.frame = self.view.bounds;
     [ self.qrcodeView startCapture ];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [ super viewWillDisappear: animated ];
+    [ self.qrcodeView stopCapture ];
 }
 
 #pragma mark- SCQRCodeReaderViewDelegate
