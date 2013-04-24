@@ -15,6 +15,8 @@
 		1B3EDBA914863B0800BA6680 /* SCAsyncOpDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */; };
 		1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */; };
 		1BB2B860149F523200A9D332 /* SCAsyncOpUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */; };
+		7EF7805316D767140043168A /* SCAsyncOpRelationsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7805116D767140043168A /* SCAsyncOpRelationsBuilder.m */; };
+		7EF7805516D7674E0043168A /* SCAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF7805416D7674E0043168A /* SCAsyncOpRelationsBuilder.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpDefinitions.h; sourceTree = "<group>"; };
 		1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpUtils.h; sourceTree = "<group>"; };
 		1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncOpUtils.m; sourceTree = "<group>"; };
+		7EF7805116D767140043168A /* SCAsyncOpRelationsBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncOpRelationsBuilder.m; sourceTree = "<group>"; };
+		7EF7805416D7674E0043168A /* SCAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +75,11 @@
 		1B3EDAEE148637D200BA6680 /* SCUtils */ = {
 			isa = PBXGroup;
 			children = (
+				1B3EDAEF148637D200BA6680 /* Supporting Files */,
 				1B3EDAF2148637D200BA6680 /* SCUtils.m */,
 				1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */,
 				1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */,
-				1B3EDAEF148637D200BA6680 /* Supporting Files */,
+				7EF7805116D767140043168A /* SCAsyncOpRelationsBuilder.m */,
 			);
 			path = SCUtils;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		1B3EDB5A1486386000BA6680 /* SitecoreMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
+				7EF7805416D7674E0043168A /* SCAsyncOpRelationsBuilder.h */,
 				1B3EDB60148638C100BA6680 /* SCArrayHelperBlocks.h */,
 				1B3EDB621486399400BA6680 /* NSArray+SCBlocksAdditions.h */,
 				1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */,
@@ -110,6 +116,7 @@
 				1B3EDB65148639A800BA6680 /* SCUtils.h in Headers */,
 				1B3EDBA914863B0800BA6680 /* SCAsyncOpDefinitions.h in Headers */,
 				1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */,
+				7EF7805516D7674E0043168A /* SCAsyncOpRelationsBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +172,7 @@
 			files = (
 				1B3EDAF3148637D200BA6680 /* SCUtils.m in Sources */,
 				1BB2B860149F523200A9D332 /* SCAsyncOpUtils.m in Sources */,
+				7EF7805316D767140043168A /* SCAsyncOpRelationsBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

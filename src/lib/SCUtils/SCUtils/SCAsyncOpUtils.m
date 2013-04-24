@@ -3,13 +3,9 @@
 SCAsyncOp asyncOpWithJAsyncOp( JFFAsyncOperation loader_ )
 {
     loader_ = [ loader_ copy ];
-    return ^( SCAsyncOpResult handler_ )
+    return ^void( SCAsyncOpResult handler_ )
     {
         handler_ = [ handler_ copy ];
-        loader_( nil, nil, ^( id result_, NSError* error_ )
-        {
-            if ( handler_ )
-                handler_( result_, error_ );
-        } );
+        loader_( nil, nil, handler_ );
     };
 }
