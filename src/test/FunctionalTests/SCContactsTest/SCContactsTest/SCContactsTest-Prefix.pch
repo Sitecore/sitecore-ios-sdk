@@ -1,0 +1,22 @@
+//
+// Prefix header for all source files of the 'SCContactsTest' target in the 'SCContactsTest' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "SCAsyncTestCase.h"
+
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+    #import <JFFUtils/JFFUtils.h>
+    #import <JFFUI/JFFUI.h>
+
+    #import <GHUnitIOS/GHUnit.h>
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

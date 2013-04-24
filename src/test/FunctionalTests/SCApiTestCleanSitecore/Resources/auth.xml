@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <VerifyCredentialsResponse xmlns="http://sitecore.net/visual/">
+         <VerifyCredentialsResult>
+            <sitecore xmlns="">
+               <status>ok</status>
+               <data>
+                  <data>OK</data>
+               </data>
+            </sitecore>
+         </VerifyCredentialsResult>
+      </VerifyCredentialsResponse>
+   </soap:Body>
+</soap:Envelope>

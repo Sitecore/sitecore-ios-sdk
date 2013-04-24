@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0BFBDF15612F1F00853028 /* libJFFTestTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0BFBDC15612BD300853028 /* libJFFTestTools.a */; };
+		1B0BFBE215612F2700853028 /* libJFFTestTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0BFBDC15612BD300853028 /* libJFFTestTools.a */; };
+		1B0BFBE31561316500853028 /* WebViewAccountsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */; };
+		1B0BFBE41561316500853028 /* WebViewVersionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */; };
+		1B0BFBE51561316500853028 /* WebViewAlertTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A3892147690C5007D8C10 /* WebViewAlertTest.m */; };
+		1B0BFBE61561316500853028 /* WebViewAccelerometerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A38971476A095007D8C10 /* WebViewAccelerometerTest.m */; };
+		1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */; };
+		1B104CD914838D960025FDDA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B104CD814838D960025FDDA /* AddressBookUI.framework */; };
+		1B154B3C151A3D70005C28F2 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D83B61519D11600EC4A92 /* libSCAllMobileSDKLibs.a */; };
+		1B2122F61560FB67008779F9 /* WebViewMediaItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2122F51560FB67008779F9 /* WebViewMediaItemsTest.m */; };
+		1B3A369414766A33007D8C10 /* alert_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A369314766A33007D8C10 /* alert_tests.js */; };
+		1B3A37BB1476828E007D8C10 /* SCAlerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A36D71476706D007D8C10 /* SCAlerPlugin.m */; };
+		1B3A389A1476A15E007D8C10 /* accelerometer_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A38991476A15E007D8C10 /* accelerometer_tests.js */; };
+		1B3CDF2D1561124E00949EA6 /* SCTestServerDomainHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */; };
+		1B3CDF32156116F500949EA6 /* SCTestServerDomainHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */; };
+		1B3CDF35156118E500949EA6 /* NSURLRequest+isTestDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */; };
+		1B3CDF361561195300949EA6 /* NSURLRequest+isTestDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */; };
+		1B3CDF3715611ADF00949EA6 /* media_items.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B2122F81560FBA4008779F9 /* media_items.js */; };
+		1B3CDF3815611AE300949EA6 /* media_items.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B2122F81560FBA4008779F9 /* media_items.js */; };
+		1BAFB7181511E8B30007A91D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25913CBA146D57920099177E /* main.m */; };
+		1BAFB7191511E8B30007A91D /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */; };
+		1BAFB71A1511E8B30007A91D /* SCWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */; };
+		1BAFB71B1511E8B30007A91D /* SCAlerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A36D71476706D007D8C10 /* SCAlerPlugin.m */; };
+		1BAFB7211511E8B30007A91D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABF81510E9BD00199B37 /* AVFoundation.framework */; };
+		1BAFB7221511E8B30007A91D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABF91510E9BD00199B37 /* CoreMedia.framework */; };
+		1BAFB7231511E8B30007A91D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABFA1510E9BD00199B37 /* CoreVideo.framework */; };
+		1BAFB7241511E8B30007A91D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABFB1510E9BD00199B37 /* libiconv.dylib */; };
+		1BAFB7251511E8B30007A91D /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453DA14CD694A00A33C78 /* libstdc++.dylib */; };
+		1BAFB7261511E8B30007A91D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453D814CD67C700A33C78 /* MessageUI.framework */; };
+		1BAFB7271511E8B30007A91D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453D614CD67A300A33C78 /* CoreLocation.framework */; };
+		1BAFB7281511E8B30007A91D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B104CD814838D960025FDDA /* AddressBookUI.framework */; };
+		1BAFB7291511E8B30007A91D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC086B0147AAF890066CFB3 /* Twitter.framework */; };
+		1BAFB72A1511E8B30007A91D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257F504514752CF00066AC47 /* AudioToolbox.framework */; };
+		1BAFB72B1511E8B30007A91D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD9146D5C2F0099177E /* libsqlite3.dylib */; };
+		1BAFB72C1511E8B30007A91D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD7146D5C250099177E /* libz.dylib */; };
+		1BAFB72D1511E8B30007A91D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD5146D5C130099177E /* libxml2.dylib */; };
+		1BAFB72E1511E8B30007A91D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD3146D5BFA0099177E /* AddressBook.framework */; };
+		1BAFB72F1511E8B30007A91D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD1146D5BF00099177E /* CoreMotion.framework */; };
+		1BAFB7301511E8B30007A91D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CCF146D5BDE0099177E /* CFNetwork.framework */; };
+		1BAFB7311511E8B30007A91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CAE146D57920099177E /* UIKit.framework */; };
+		1BAFB7321511E8B30007A91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB0146D57920099177E /* Foundation.framework */; };
+		1BAFB7331511E8B30007A91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB2146D57920099177E /* CoreGraphics.framework */; };
+		1BAFB7341511E8B30007A91D /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258CCE531471292700DCDE0A /* GHUnitIOS.framework */; };
+		1BAFB7371511E8B30007A91D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25913CB7146D57920099177E /* InfoPlist.strings */; };
+		1BAFB7381511E8B30007A91D /* contacts_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25CF77CF147138C7002C0525 /* contacts_tests.js */; };
+		1BAFB7391511E8B30007A91D /* version_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25936A08147A3DF2004389B0 /* version_tests.js */; };
+		1BAFB73A1511E8B30007A91D /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 65684978147305460064CDE4 /* test.html */; };
+		1BAFB73B1511E8B30007A91D /* alert_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A369314766A33007D8C10 /* alert_tests.js */; };
+		1BAFB73C1511E8B30007A91D /* accelerometer_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A38991476A15E007D8C10 /* accelerometer_tests.js */; };
+		1BAFB73D1511E8B30007A91D /* manual tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14EE14E537AB00DA4DE5 /* manual tests.png */; };
+		1BB95DB61512174F00B4F9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB95DB51512174F00B4F9B2 /* MapKit.framework */; };
+		1BBCABFC1510E9BD00199B37 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABF81510E9BD00199B37 /* AVFoundation.framework */; };
+		1BBCABFD1510E9BD00199B37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABF91510E9BD00199B37 /* CoreMedia.framework */; };
+		1BBCABFE1510E9BD00199B37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABFA1510E9BD00199B37 /* CoreVideo.framework */; };
+		1BBCABFF1510E9BD00199B37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABFB1510E9BD00199B37 /* libiconv.dylib */; };
+		1BC086B1147AAF890066CFB3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC086B0147AAF890066CFB3 /* Twitter.framework */; };
+		1BD5614E157F8137002BA8B0 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD5614D157F8137002BA8B0 /* libc++.dylib */; };
+		1BD5614F157F813E002BA8B0 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD5614D157F8137002BA8B0 /* libc++.dylib */; };
+		1BE673141518A40F00725302 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB95DB51512174F00B4F9B2 /* MapKit.framework */; };
+		251CA68E14713AB600C67296 /* contacts_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25CF77CF147138C7002C0525 /* contacts_tests.js */; };
+		257F504614752CF00066AC47 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257F504514752CF00066AC47 /* AudioToolbox.framework */; };
+		258A14EF14E537AB00DA4DE5 /* manual tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14EE14E537AB00DA4DE5 /* manual tests.png */; };
+		258CCE541471292700DCDE0A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258CCE531471292700DCDE0A /* GHUnitIOS.framework */; };
+		258CCE5B14712B1200DCDE0A /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */; };
+		25913CAF146D57920099177E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CAE146D57920099177E /* UIKit.framework */; };
+		25913CB1146D57920099177E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB0146D57920099177E /* Foundation.framework */; };
+		25913CB3146D57920099177E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB2146D57920099177E /* CoreGraphics.framework */; };
+		25913CB9146D57920099177E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25913CB7146D57920099177E /* InfoPlist.strings */; };
+		25913CBB146D57920099177E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25913CBA146D57920099177E /* main.m */; };
+		25913CD0146D5BDE0099177E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CCF146D5BDE0099177E /* CFNetwork.framework */; };
+		25913CD2146D5BF00099177E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD1146D5BF00099177E /* CoreMotion.framework */; };
+		25913CD4146D5BFA0099177E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD3146D5BFA0099177E /* AddressBook.framework */; };
+		25913CD6146D5C130099177E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD5146D5C130099177E /* libxml2.dylib */; };
+		25913CD8146D5C250099177E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD7146D5C250099177E /* libz.dylib */; };
+		25913CDA146D5C2F0099177E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CD9146D5C2F0099177E /* libsqlite3.dylib */; };
+		25936A0A147A3FF2004389B0 /* version_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25936A08147A3DF2004389B0 /* version_tests.js */; };
+		259453D714CD67A300A33C78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453D614CD67A300A33C78 /* CoreLocation.framework */; };
+		259453D914CD67C700A33C78 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453D814CD67C700A33C78 /* MessageUI.framework */; };
+		259453DB14CD694A00A33C78 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 259453DA14CD694A00A33C78 /* libstdc++.dylib */; };
+		6568491D1472F9AD0064CDE4 /* SCWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */; };
+		65684979147305460064CDE4 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 65684978147305460064CDE4 /* test.html */; };
+		789D6BFB17140E1000074ED5 /* JSInjectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789D6BFA17140E1000074ED5 /* JSInjectionTest.m */; };
+		789D6BFE1714137B00074ED5 /* JSInjectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 789D6BFA17140E1000074ED5 /* JSInjectionTest.m */; };
+		789D6BFF1714315B00074ED5 /* WebViewAccountsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */; };
+		789D6C001714315B00074ED5 /* WebViewVersionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */; };
+		789D6C011714315B00074ED5 /* WebViewAlertTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A3892147690C5007D8C10 /* WebViewAlertTest.m */; };
+		789D6C021714315B00074ED5 /* WebViewAccelerometerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A38971476A095007D8C10 /* WebViewAccelerometerTest.m */; };
+		789D6C031714315B00074ED5 /* WebViewMediaItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2122F51560FB67008779F9 /* WebViewMediaItemsTest.m */; };
+		789D6C041714315B00074ED5 /* WebViewDmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */; };
+		7E015B0D1716B1E900F79665 /* analytics_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7E015B0E1716B1EE00F79665 /* analytics_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7E0166AC17048BAE0073298E /* WebViewDmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */; };
+		7E0166AF17048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7E0166B017048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7EA15B9E170AD9D6003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
+		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
+		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B0BFBDB15612BD300853028 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1BE0542B154826DA00270B58;
+			remoteInfo = JFFTestTools;
+		};
+		1B0BFBDD15612F0E00853028 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BE0542A154826DA00270B58;
+			remoteInfo = JFFTestTools;
+		};
+		1B0BFBE015612F2300853028 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BE0542A154826DA00270B58;
+			remoteInfo = JFFTestTools;
+		};
+		1B0D83B51519D11600EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+		1B154B3A151A3D67005C28F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+		7EF932EB15E6526A00117BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B13993D1446E84F0015C191;
+			remoteInfo = SitecoreMobileSDK;
+		};
+		7EF932ED15E6527700117BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B13993C1446E84F0015C191;
+			remoteInfo = SitecoreMobileSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFTestTools.xcodeproj; path = "../../../lib-third-party/JFFLibrary/lib/JFFTestTools/JFFTestTools.xcodeproj"; sourceTree = "<group>"; };
+		1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCAllMobileSDKLibs.xcodeproj; path = ../../../lib/SCAllMobileSDKLibs/SCAllMobileSDKLibs.xcodeproj; sourceTree = "<group>"; };
+		1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		1B104CD814838D960025FDDA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		1B2122F51560FB67008779F9 /* WebViewMediaItemsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewMediaItemsTest.m; sourceTree = "<group>"; };
+		1B2122F81560FBA4008779F9 /* media_items.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = media_items.js; sourceTree = "<group>"; };
+		1B3A369314766A33007D8C10 /* alert_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = alert_tests.js; sourceTree = "<group>"; };
+		1B3A36D71476706D007D8C10 /* SCAlerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAlerPlugin.m; sourceTree = "<group>"; };
+		1B3A3892147690C5007D8C10 /* WebViewAlertTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewAlertTest.m; sourceTree = "<group>"; };
+		1B3A38971476A095007D8C10 /* WebViewAccelerometerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewAccelerometerTest.m; sourceTree = "<group>"; };
+		1B3A38991476A15E007D8C10 /* accelerometer_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = accelerometer_tests.js; sourceTree = "<group>"; };
+		1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTestServerDomainHook.m; sourceTree = "<group>"; };
+		1B3CDF33156118E500949EA6 /* NSURLRequest+isTestDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+isTestDomain.h"; sourceTree = "<group>"; };
+		1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+isTestDomain.m"; sourceTree = "<group>"; };
+		1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCContactsTest copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BB95DB51512174F00B4F9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1BBCABF81510E9BD00199B37 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1BBCABF91510E9BD00199B37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1BBCABFA1510E9BD00199B37 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1BBCABFB1510E9BD00199B37 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		1BBCAC0F1510EB5C00199B37 /* SCWebPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebPlugin.h; path = ../../../../../lib/SCWebPlugins/SCWebPlugins/Plugins/SCWebPlugin.h; sourceTree = "<group>"; };
+		1BC086B0147AAF890066CFB3 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		1BD5614D157F8137002BA8B0 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewVersionTest.m; sourceTree = "<group>"; };
+		257F504514752CF00066AC47 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		258A14EE14E537AB00DA4DE5 /* manual tests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "manual tests.png"; sourceTree = "<group>"; };
+		258CCE531471292700DCDE0A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
+		258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewAccountsTest.m; sourceTree = "<group>"; };
+		258CCE5914712B1200DCDE0A /* SCAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncTestCase.h; sourceTree = "<group>"; };
+		258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncTestCase.m; sourceTree = "<group>"; };
+		25913CAA146D57920099177E /* SCContactsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCContactsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25913CAE146D57920099177E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25913CB0146D57920099177E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25913CB2146D57920099177E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		25913CB6146D57920099177E /* SCContactsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCContactsTest-Info.plist"; sourceTree = "<group>"; };
+		25913CB8146D57920099177E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		25913CBA146D57920099177E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25913CBC146D57920099177E /* SCContactsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCContactsTest-Prefix.pch"; sourceTree = "<group>"; };
+		25913CCF146D5BDE0099177E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		25913CD1146D5BF00099177E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		25913CD3146D5BFA0099177E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		25913CD5146D5C130099177E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		25913CD7146D5C250099177E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		25913CD9146D5C2F0099177E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		25936A08147A3DF2004389B0 /* version_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = version_tests.js; sourceTree = "<group>"; };
+		259453D614CD67A300A33C78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		259453D814CD67C700A33C78 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		259453DA14CD694A00A33C78 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		25CF77CF147138C7002C0525 /* contacts_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = contacts_tests.js; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		6568491B1472F9AD0064CDE4 /* SCWebViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewContainer.h; sourceTree = "<group>"; };
+		6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewContainer.m; sourceTree = "<group>"; };
+		65684978147305460064CDE4 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		789D6BFA17140E1000074ED5 /* JSInjectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSInjectionTest.m; sourceTree = "<group>"; };
+		7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDmsTriggeringTest.m; sourceTree = "<group>"; };
+		7E0166AE17048EDB0073298E /* analytics_test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = analytics_test.js; sourceTree = "<group>"; };
+		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
+		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
+		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SitecoreMobileSDK.xcodeproj; path = ../../../lib/SitecoreMobileSDK/SitecoreMobileSDK.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BAFB7201511E8B30007A91D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */,
+				1BD5614E157F8137002BA8B0 /* libc++.dylib in Frameworks */,
+				1B0BFBDF15612F1F00853028 /* libJFFTestTools.a in Frameworks */,
+				1B154B3C151A3D70005C28F2 /* libSCAllMobileSDKLibs.a in Frameworks */,
+				1BB95DB61512174F00B4F9B2 /* MapKit.framework in Frameworks */,
+				1BAFB7211511E8B30007A91D /* AVFoundation.framework in Frameworks */,
+				1BAFB7221511E8B30007A91D /* CoreMedia.framework in Frameworks */,
+				1BAFB7231511E8B30007A91D /* CoreVideo.framework in Frameworks */,
+				1BAFB7241511E8B30007A91D /* libiconv.dylib in Frameworks */,
+				1BAFB7251511E8B30007A91D /* libstdc++.dylib in Frameworks */,
+				1BAFB7261511E8B30007A91D /* MessageUI.framework in Frameworks */,
+				1BAFB7271511E8B30007A91D /* CoreLocation.framework in Frameworks */,
+				1BAFB7281511E8B30007A91D /* AddressBookUI.framework in Frameworks */,
+				1BAFB7291511E8B30007A91D /* Twitter.framework in Frameworks */,
+				1BAFB72A1511E8B30007A91D /* AudioToolbox.framework in Frameworks */,
+				1BAFB72B1511E8B30007A91D /* libsqlite3.dylib in Frameworks */,
+				1BAFB72C1511E8B30007A91D /* libz.dylib in Frameworks */,
+				1BAFB72D1511E8B30007A91D /* libxml2.dylib in Frameworks */,
+				1BAFB72E1511E8B30007A91D /* AddressBook.framework in Frameworks */,
+				1BAFB72F1511E8B30007A91D /* CoreMotion.framework in Frameworks */,
+				1BAFB7301511E8B30007A91D /* CFNetwork.framework in Frameworks */,
+				1BAFB7311511E8B30007A91D /* UIKit.framework in Frameworks */,
+				1BAFB7321511E8B30007A91D /* Foundation.framework in Frameworks */,
+				1BAFB7331511E8B30007A91D /* CoreGraphics.framework in Frameworks */,
+				1BAFB7341511E8B30007A91D /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25913CA7146D57920099177E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */,
+				1BD5614F157F813E002BA8B0 /* libc++.dylib in Frameworks */,
+				1B0BFBE215612F2700853028 /* libJFFTestTools.a in Frameworks */,
+				1BE673141518A40F00725302 /* MapKit.framework in Frameworks */,
+				1BBCABFC1510E9BD00199B37 /* AVFoundation.framework in Frameworks */,
+				1BBCABFD1510E9BD00199B37 /* CoreMedia.framework in Frameworks */,
+				1BBCABFE1510E9BD00199B37 /* CoreVideo.framework in Frameworks */,
+				1BBCABFF1510E9BD00199B37 /* libiconv.dylib in Frameworks */,
+				259453DB14CD694A00A33C78 /* libstdc++.dylib in Frameworks */,
+				259453D914CD67C700A33C78 /* MessageUI.framework in Frameworks */,
+				259453D714CD67A300A33C78 /* CoreLocation.framework in Frameworks */,
+				1B104CD914838D960025FDDA /* AddressBookUI.framework in Frameworks */,
+				1BC086B1147AAF890066CFB3 /* Twitter.framework in Frameworks */,
+				257F504614752CF00066AC47 /* AudioToolbox.framework in Frameworks */,
+				25913CDA146D5C2F0099177E /* libsqlite3.dylib in Frameworks */,
+				25913CD8146D5C250099177E /* libz.dylib in Frameworks */,
+				25913CD6146D5C130099177E /* libxml2.dylib in Frameworks */,
+				25913CD4146D5BFA0099177E /* AddressBook.framework in Frameworks */,
+				25913CD2146D5BF00099177E /* CoreMotion.framework in Frameworks */,
+				25913CD0146D5BDE0099177E /* CFNetwork.framework in Frameworks */,
+				25913CAF146D57920099177E /* UIKit.framework in Frameworks */,
+				25913CB1146D57920099177E /* Foundation.framework in Frameworks */,
+				25913CB3146D57920099177E /* CoreGraphics.framework in Frameworks */,
+				258CCE541471292700DCDE0A /* GHUnitIOS.framework in Frameworks */,
+				1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B0BFBD515612BD300853028 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B0BFBDC15612BD300853028 /* libJFFTestTools.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B0D83711519D11500EC4A92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D83B61519D11600EC4A92 /* libSCAllMobileSDKLibs.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B3A36D51476704C007D8C10 /* AlertPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				1B3A36D71476706D007D8C10 /* SCAlerPlugin.m */,
+			);
+			path = AlertPlugin;
+			sourceTree = "<group>";
+		};
+		258CCE5814712AF200DCDE0A /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1BBCAC0F1510EB5C00199B37 /* SCWebPlugin.h */,
+				258CCE5914712B1200DCDE0A /* SCAsyncTestCase.h */,
+				258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */,
+				6568491B1472F9AD0064CDE4 /* SCWebViewContainer.h */,
+				6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */,
+				1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */,
+				1B3CDF33156118E500949EA6 /* NSURLRequest+isTestDomain.h */,
+				1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */,
+				1B3A36D51476704C007D8C10 /* AlertPlugin */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		25913C9F146D57910099177E = {
+			isa = PBXGroup;
+			children = (
+				258A14EE14E537AB00DA4DE5 /* manual tests.png */,
+				25913CB4146D57920099177E /* SCContactsTest */,
+				25913CAD146D57920099177E /* Frameworks */,
+				25913CAB146D57920099177E /* Products */,
+				25CF77CE147138A5002C0525 /* Resources */,
+				6568491F1472F9DC0064CDE4 /* Dependencies */,
+			);
+			sourceTree = "<group>";
+		};
+		25913CAB146D57920099177E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25913CAA146D57920099177E /* SCContactsTest.app */,
+				1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25913CAD146D57920099177E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EA3AD8C170B1CD200E53489 /* Social.framework */,
+				1BD5614D157F8137002BA8B0 /* libc++.dylib */,
+				1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */,
+				1BB95DB51512174F00B4F9B2 /* MapKit.framework */,
+				1BBCABF81510E9BD00199B37 /* AVFoundation.framework */,
+				1BBCABF91510E9BD00199B37 /* CoreMedia.framework */,
+				1BBCABFA1510E9BD00199B37 /* CoreVideo.framework */,
+				1BBCABFB1510E9BD00199B37 /* libiconv.dylib */,
+				259453D814CD67C700A33C78 /* MessageUI.framework */,
+				259453D614CD67A300A33C78 /* CoreLocation.framework */,
+				1B104CD814838D960025FDDA /* AddressBookUI.framework */,
+				1BC086B0147AAF890066CFB3 /* Twitter.framework */,
+				257F504514752CF00066AC47 /* AudioToolbox.framework */,
+				258CCE531471292700DCDE0A /* GHUnitIOS.framework */,
+				25913CD9146D5C2F0099177E /* libsqlite3.dylib */,
+				259453DA14CD694A00A33C78 /* libstdc++.dylib */,
+				25913CD7146D5C250099177E /* libz.dylib */,
+				25913CD5146D5C130099177E /* libxml2.dylib */,
+				25913CD3146D5BFA0099177E /* AddressBook.framework */,
+				25913CD1146D5BF00099177E /* CoreMotion.framework */,
+				25913CCF146D5BDE0099177E /* CFNetwork.framework */,
+				25913CAE146D57920099177E /* UIKit.framework */,
+				25913CB0146D57920099177E /* Foundation.framework */,
+				25913CB2146D57920099177E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25913CB4146D57920099177E /* SCContactsTest */ = {
+			isa = PBXGroup;
+			children = (
+				258CCE5814712AF200DCDE0A /* Details */,
+				258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */,
+				253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */,
+				1B3A3892147690C5007D8C10 /* WebViewAlertTest.m */,
+				1B3A38971476A095007D8C10 /* WebViewAccelerometerTest.m */,
+				1B2122F51560FB67008779F9 /* WebViewMediaItemsTest.m */,
+				7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */,
+				7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */,
+				789D6BFA17140E1000074ED5 /* JSInjectionTest.m */,
+				25913CB5146D57920099177E /* Supporting Files */,
+			);
+			path = SCContactsTest;
+			sourceTree = "<group>";
+		};
+		25913CB5146D57920099177E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25913CB6146D57920099177E /* SCContactsTest-Info.plist */,
+				25913CB7146D57920099177E /* InfoPlist.strings */,
+				25913CBA146D57920099177E /* main.m */,
+				25913CBC146D57920099177E /* SCContactsTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25CF77CE147138A5002C0525 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B3A38991476A15E007D8C10 /* accelerometer_tests.js */,
+				1B3A369314766A33007D8C10 /* alert_tests.js */,
+				7E0166AE17048EDB0073298E /* analytics_test.js */,
+				25CF77CF147138C7002C0525 /* contacts_tests.js */,
+				1B2122F81560FBA4008779F9 /* media_items.js */,
+				7EA15B9D170AD9C4003FC13C /* social_test.js */,
+				25936A08147A3DF2004389B0 /* version_tests.js */,
+				65684978147305460064CDE4 /* test.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6568491F1472F9DC0064CDE4 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */,
+				1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */,
+				1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		7EF932E415E6526900117BCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EF932EC15E6526A00117BCF /* SitecoreMobileSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BAFB7161511E8B30007A91D /* SCContactsTestLibs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BAFB73E1511E8B30007A91D /* Build configuration list for PBXNativeTarget "SCContactsTestLibs" */;
+			buildPhases = (
+				1BAFB7171511E8B30007A91D /* Sources */,
+				1BAFB7201511E8B30007A91D /* Frameworks */,
+				1BAFB7361511E8B30007A91D /* Resources */,
+				7E7F1FE415F0CB6B00066C7B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B0BFBDE15612F0E00853028 /* PBXTargetDependency */,
+				1B154B3B151A3D67005C28F2 /* PBXTargetDependency */,
+			);
+			name = SCContactsTestLibs;
+			productName = SCContactsTest;
+			productReference = 1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25913CA9146D57920099177E /* SCContactsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25913CC8146D57920099177E /* Build configuration list for PBXNativeTarget "SCContactsTest" */;
+			buildPhases = (
+				25913CA6146D57920099177E /* Sources */,
+				25913CA7146D57920099177E /* Frameworks */,
+				25913CA8146D57920099177E /* Resources */,
+				7E7F1FE315F0CB6200066C7B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EF932EE15E6527700117BCF /* PBXTargetDependency */,
+				1B0BFBE115612F2300853028 /* PBXTargetDependency */,
+			);
+			name = SCContactsTest;
+			productName = SCContactsTest;
+			productReference = 25913CAA146D57920099177E /* SCContactsTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25913CA1146D57910099177E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 25913CA4146D57910099177E /* Build configuration list for PBXProject "SCContactsTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 25913C9F146D57910099177E;
+			productRefGroup = 25913CAB146D57920099177E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1B0BFBD515612BD300853028 /* Products */;
+					ProjectRef = 1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B0D83711519D11500EC4A92 /* Products */;
+					ProjectRef = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EF932E415E6526900117BCF /* Products */;
+					ProjectRef = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				25913CA9146D57920099177E /* SCContactsTest */,
+				1BAFB7161511E8B30007A91D /* SCContactsTestLibs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1B0BFBDC15612BD300853028 /* libJFFTestTools.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFTestTools.a;
+			remoteRef = 1B0BFBDB15612BD300853028 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B0D83B61519D11600EC4A92 /* libSCAllMobileSDKLibs.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCAllMobileSDKLibs.a;
+			remoteRef = 1B0D83B51519D11600EC4A92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EF932EC15E6526A00117BCF /* SitecoreMobileSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SitecoreMobileSDK.framework;
+			remoteRef = 7EF932EB15E6526A00117BCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BAFB7361511E8B30007A91D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BAFB7371511E8B30007A91D /* InfoPlist.strings in Resources */,
+				7E015B0E1716B1EE00F79665 /* analytics_test.js in Resources */,
+				7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */,
+				1BAFB7381511E8B30007A91D /* contacts_tests.js in Resources */,
+				1BAFB7391511E8B30007A91D /* version_tests.js in Resources */,
+				1BAFB73A1511E8B30007A91D /* test.html in Resources */,
+				1BAFB73B1511E8B30007A91D /* alert_tests.js in Resources */,
+				1BAFB73C1511E8B30007A91D /* accelerometer_tests.js in Resources */,
+				1B3CDF3715611ADF00949EA6 /* media_items.js in Resources */,
+				1BAFB73D1511E8B30007A91D /* manual tests.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25913CA8146D57920099177E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25913CB9146D57920099177E /* InfoPlist.strings in Resources */,
+				7E015B0D1716B1E900F79665 /* analytics_test.js in Resources */,
+				7EA15B9E170AD9D6003FC13C /* social_test.js in Resources */,
+				251CA68E14713AB600C67296 /* contacts_tests.js in Resources */,
+				25936A0A147A3FF2004389B0 /* version_tests.js in Resources */,
+				65684979147305460064CDE4 /* test.html in Resources */,
+				1B3A369414766A33007D8C10 /* alert_tests.js in Resources */,
+				1B3A389A1476A15E007D8C10 /* accelerometer_tests.js in Resources */,
+				1B3CDF3815611AE300949EA6 /* media_items.js in Resources */,
+				258A14EF14E537AB00DA4DE5 /* manual tests.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E7F1FE315F0CB6200066C7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n#/bin/bash\n#\n## Dump XCode variables\n\n\nXCODE_DUMP_DIR=/tmp/${PRODUCT_NAME}Build\nmkdir -p \"$XCODE_DUMP_DIR\"\nCI_TEST_PRODUCT_DIR_FILE=$XCODE_DUMP_DIR/PRODUCT_DIR.txt\n\ncd \"$BUILT_PRODUCTS_DIR\"\ncd ..\necho $PWD > \"$CI_TEST_PRODUCT_DIR_FILE\"\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+		7E7F1FE415F0CB6B00066C7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n#/bin/bash\n#\n## Dump XCode variables\n\n\nXCODE_DUMP_DIR=/tmp/${PRODUCT_NAME}Build\nmkdir -p \"$XCODE_DUMP_DIR\"\nCI_TEST_PRODUCT_DIR_FILE=$XCODE_DUMP_DIR/PRODUCT_DIR.txt\n\ncd \"$BUILT_PRODUCTS_DIR\"\ncd ..\necho $PWD > \"$CI_TEST_PRODUCT_DIR_FILE\"\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BAFB7171511E8B30007A91D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BAFB7181511E8B30007A91D /* main.m in Sources */,
+				1BAFB7191511E8B30007A91D /* SCAsyncTestCase.m in Sources */,
+				1BAFB71A1511E8B30007A91D /* SCWebViewContainer.m in Sources */,
+				1BAFB71B1511E8B30007A91D /* SCAlerPlugin.m in Sources */,
+				1B3CDF32156116F500949EA6 /* SCTestServerDomainHook.m in Sources */,
+				1B3CDF361561195300949EA6 /* NSURLRequest+isTestDomain.m in Sources */,
+				7E0166B017048EDB0073298E /* analytics_test.js in Sources */,
+				789D6BFE1714137B00074ED5 /* JSInjectionTest.m in Sources */,
+				789D6BFF1714315B00074ED5 /* WebViewAccountsTest.m in Sources */,
+				789D6C001714315B00074ED5 /* WebViewVersionTest.m in Sources */,
+				789D6C011714315B00074ED5 /* WebViewAlertTest.m in Sources */,
+				789D6C021714315B00074ED5 /* WebViewAccelerometerTest.m in Sources */,
+				789D6C031714315B00074ED5 /* WebViewMediaItemsTest.m in Sources */,
+				789D6C041714315B00074ED5 /* WebViewDmsTriggeringTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25913CA6146D57920099177E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25913CBB146D57920099177E /* main.m in Sources */,
+				258CCE5B14712B1200DCDE0A /* SCAsyncTestCase.m in Sources */,
+				6568491D1472F9AD0064CDE4 /* SCWebViewContainer.m in Sources */,
+				1B3A37BB1476828E007D8C10 /* SCAlerPlugin.m in Sources */,
+				1B2122F61560FB67008779F9 /* WebViewMediaItemsTest.m in Sources */,
+				1B3CDF2D1561124E00949EA6 /* SCTestServerDomainHook.m in Sources */,
+				1B3CDF35156118E500949EA6 /* NSURLRequest+isTestDomain.m in Sources */,
+				1B0BFBE31561316500853028 /* WebViewAccountsTest.m in Sources */,
+				1B0BFBE41561316500853028 /* WebViewVersionTest.m in Sources */,
+				1B0BFBE51561316500853028 /* WebViewAlertTest.m in Sources */,
+				1B0BFBE61561316500853028 /* WebViewAccelerometerTest.m in Sources */,
+				7E0166AC17048BAE0073298E /* WebViewDmsTriggeringTest.m in Sources */,
+				7E0166AF17048EDB0073298E /* analytics_test.js in Sources */,
+				789D6BFB17140E1000074ED5 /* JSInjectionTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B0BFBDE15612F0E00853028 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFTestTools;
+			targetProxy = 1B0BFBDD15612F0E00853028 /* PBXContainerItemProxy */;
+		};
+		1B0BFBE115612F2300853028 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFTestTools;
+			targetProxy = 1B0BFBE015612F2300853028 /* PBXContainerItemProxy */;
+		};
+		1B154B3B151A3D67005C28F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCAllMobileSDKLibs;
+			targetProxy = 1B154B3A151A3D67005C28F2 /* PBXContainerItemProxy */;
+		};
+		7EF932EE15E6527700117BCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SitecoreMobileSDK;
+			targetProxy = 7EF932ED15E6527700117BCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25913CB7146D57920099177E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25913CB8146D57920099177E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BAFB73F1511E8B30007A91D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+					"\"$(SRCROOT)/../../../deployment\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "SCContactsTest copy";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1BAFB7401511E8B30007A91D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+					"\"$(SRCROOT)/../../../deployment\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "SCContactsTest copy";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		25913CC6146D57920099177E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../lib/SCUI,
+					../../../lib/SCUtils,
+					../../../lib/SCQRCodeReader,
+					../../../lib/SCApi,
+					../../../lib/SitecoreMobileSDK,
+					../../../lib,
+					"../../../lib-third-party/JFFLibrary/lib",
+					../../../lib/SCWebView,
+					../../../lib/SCMap,
+					"../../../lib-third-party/JFFLibrary/lib/JFFTestTools",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25913CC7146D57920099177E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../lib/SCUI,
+					../../../lib/SCUtils,
+					../../../lib/SCQRCodeReader,
+					../../../lib/SCApi,
+					../../../lib/SitecoreMobileSDK,
+					../../../lib,
+					"../../../lib-third-party/JFFLibrary/lib",
+					../../../lib/SCWebView,
+					../../../lib/SCMap,
+					"../../../lib-third-party/JFFLibrary/lib/JFFTestTools",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25913CC9146D57920099177E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+					"\"$(SRCROOT)/../../../deployment\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		25913CCA146D57920099177E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+					"\"$(SRCROOT)/../../../deployment\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BAFB73E1511E8B30007A91D /* Build configuration list for PBXNativeTarget "SCContactsTestLibs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BAFB73F1511E8B30007A91D /* Debug */,
+				1BAFB7401511E8B30007A91D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25913CA4146D57910099177E /* Build configuration list for PBXProject "SCContactsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25913CC6146D57920099177E /* Debug */,
+				25913CC7146D57920099177E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25913CC8146D57920099177E /* Build configuration list for PBXNativeTarget "SCContactsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25913CC9146D57920099177E /* Debug */,
+				25913CCA146D57920099177E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25913CA1146D57910099177E /* Project object */;
+}

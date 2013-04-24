@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'SCApiTest' target in the 'SCApiTest' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "SCAsyncTestCase.h"
+
+    #import <SCApi/SCApiContext+Init.h>
+
+    #import <SitecoreMobileSDK/SCApi.h>
+    #import "SCGlobalSettings.h"
+
+    #import <JFFNetwork/JFFNetwork.h>
+    #import <JFFNetwork/Mock/JNConnectionMock.h>
+
+    #import <JFFUtils/JFFUtils.h>
+    #import <SitecoreMobileSDK/SCApi.h>
+
+    #import <GHUnitIOS/GHUnit.h>
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
