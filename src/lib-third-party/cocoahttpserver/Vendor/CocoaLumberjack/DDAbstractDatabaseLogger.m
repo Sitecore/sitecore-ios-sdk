@@ -172,7 +172,6 @@
 	if ((deleteTimer == NULL) && (deleteInterval > 0.0) && (maxAge > 0.0))
 	{
 		deleteTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, loggerQueue);
-		
 		dispatch_source_set_event_handler(deleteTimer, ^{
 			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 			
@@ -183,7 +182,15 @@
 		
 		[self updateDeleteTimer];
 		
-		dispatch_resume(deleteTimer);
+        if ( NULL == deleteTimer )
+        {
+            NSLog( @"[ERROR] : CocoaLumberjack - timer not created" );
+            return;
+        }
+        else
+        {
+            dispatch_resume(deleteTimer);
+        }
 	}
 }
 
