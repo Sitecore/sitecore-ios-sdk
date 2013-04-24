@@ -7,6 +7,8 @@
 #import "NSArray+ContactsToJSON.h"
 #import "UIPopoverController+PresentPopoverInWebView.h"
 
+#import "SCContactsPluginError.h"
+
 #import <AddressBookUI/AddressBookUI.h>
 
 @interface JDWSelectContactsPlugin : NSObject
@@ -58,8 +60,9 @@
     UIViewController* rootController_ = webView_.window.rootViewController;
     if ( !rootController_ )
     {
-        [ self.delegate sendMessage: @"{ error: 'can not open window' }" ];
-        [ self.delegate close ];
+        SCContactsPluginError* error = [ SCContactsPluginError noRootViewControllerError ];
+
+        [ self onStopWithMessage: [ error toJson ] ];
         return;
     }
 
@@ -141,10 +144,8 @@
            forAddressBook:( SCAddressBook* )book_
                    status:( ABAuthorizationStatus )status_
 {
-    NSString* msg_ = [ error_ localizedDescription ];
-    
-    [ self.delegate sendMessage: msg_ ];
-    [ self.delegate close ];
+    NSString* msg_ = [ error_ toJson ];
+    [ self onStopWithMessage: msg_ ];
 }
 
 -(void)selectItemActionWithAddressBook:( SCAddressBook* )book_
@@ -156,11 +157,15 @@
                                                        addressBook: book_ ];
         NSArray* contacts_ = [ NSArray arrayWithObject: contact_ ];
         message_ = [ contacts_ scContactsToJSON ];
-        message_ = message_ ?: @"{ error: 'Invalid Contacts JSON 1' }";
+        
+        if ( nil == message_ )
+        {
+            message_ = [ [ SCContactsPluginError invalidContactsJsonError ] toJson ];
+        }
     }
     else
     {
-        message_ = @"{ error: 'canceled' }";
+        message_ = [ [ SCContactsPluginError operationCancelledError ] toJson ];
     }
     
     [ self hideControllers ];
@@ -172,7 +177,9 @@
 -(void)peoplePickerNavigationControllerDidCancel:( ABPeoplePickerNavigationController* )peoplePicker_
 {
     [ self hideControllers ];
-    [ self onStopWithMessage: @"{ error: 'canceled' }" ];
+    
+    NSString* msg_ = [ [ SCContactsPluginError operationCancelledError ] toJson ];
+    [ self onStopWithMessage: msg_ ];
 }
 
 -(BOOL)peoplePickerNavigationController:( ABPeoplePickerNavigationController* )peoplePicker_
@@ -181,7 +188,9 @@
     if ( _person != person_ )
     {
         if ( _person )
+        {
             CFRelease( _person );
+        }
         _person = CFRetain( person_ );
     }
     return YES;
@@ -230,7 +239,8 @@
 
 -(void)popoverControllerDidDismissPopover:( UIPopoverController* )popoverController_
 {
-    [ self onStopWithMessage: @"{ error: 'canceled' }" ];
+    NSString* msg_ = [ [ SCContactsPluginError operationCancelledError ] toJson ];
+    [ self onStopWithMessage: msg_ ];
 }
 
 @end

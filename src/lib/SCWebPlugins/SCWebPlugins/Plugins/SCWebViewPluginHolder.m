@@ -40,17 +40,25 @@
 
 +(id)webViewPluginHolderForRequest:( NSURLRequest* )request_
 {
-    Class pluginClass_ = [ scWebPluginsClasses() firstMatch: ^BOOL( id object_ )
+    NSArray* allPlugins_ = scWebPluginsClasses();
+    Class pluginClass_ = [ allPlugins_ firstMatch: ^BOOL( id object_ )
     {
         return [ object_ canInitWithRequest: request_ ]
               && object_ != [ SCWebViewPluginDefaultPlugin class ];
     } ];
+    
+    NSLog( @"webViewPluginHolderForRequest : %@", request_.URL );
+    NSLog( @"plugin classes : %@", allPlugins_ );
+    NSLog( @"plugin class : %@", pluginClass_ );
 
     if ( !pluginClass_ )
+    {
         pluginClass_ = [ SCWebViewPluginDefaultPlugin class ];
+    }
 
     id< SCWebPlugin > webPlugin_ = [ [ pluginClass_ alloc ] initWithRequest: request_ ];
-
+    NSLog( @"plugin : %@", webPlugin_ );
+    
     return [ [ self alloc ] initWithWebPlugin: webPlugin_
                                       request: request_ ];
 }

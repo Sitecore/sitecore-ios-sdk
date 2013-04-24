@@ -3,8 +3,9 @@
 #import <SCMap/SCMapViewController.h>
 
 #import "NSArray+AddressesDictionariesWithJSON.h"
+#import "SCMobileMapPluginError.h"
 
-#include "google_maps.js.h"
+#import "google_maps.js.h"
 
 //STODO move to SCMap project
 @interface SCMapViewAddressesPlugin : NSObject < SCWebPlugin >
@@ -49,7 +50,10 @@
 {
     if ( !webView_.window )
     {
-        [ self.delegate sendMessage: @"{ error: 'can not open window' }" ];
+        SCMobileMapPluginError* error = [ [ SCMobileMapPluginError alloc ] initWithDescription: @"Root view controller not found"
+                                                                                         code: 1 ];
+        
+        [ self.delegate sendMessage: [ error toJson ] ];
         [ self.delegate close ];
         return;
     }

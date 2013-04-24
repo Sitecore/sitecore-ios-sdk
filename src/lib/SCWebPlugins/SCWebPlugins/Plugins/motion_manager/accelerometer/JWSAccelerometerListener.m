@@ -57,7 +57,10 @@
                                             , NSError* error_ )
     {
         if ( error_ )
+        {
+            NSLog( @"[ACCELEROMETER ERROR] : %@", error_ );
             return;
+        }
 
         NSString* jsFormat_ = @"{ x: %f, y: %f, z: %f, timestamp: %f }";
         NSString* js_ = [ [ NSString alloc ] initWithFormat: jsFormat_

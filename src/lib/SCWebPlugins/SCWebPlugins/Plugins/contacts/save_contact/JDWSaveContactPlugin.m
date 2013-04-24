@@ -3,6 +3,7 @@
 #import "SCAddressBookFactory.h"
 #import "SCAddressBook.h"
 #import "SCContact.h"
+#import "SCContactsPluginError.h"
 
 #import "UIPopoverController+PresentPopoverInWebView.h"
 
@@ -86,7 +87,9 @@
     UIViewController* rootController_ = webView_.window.rootViewController;
     if ( !rootController_ )
     {
-        [ self.delegate sendMessage: @"{ error: 'can not open window' }" ];
+        SCContactsPluginError* error_ = [ SCContactsPluginError noRootViewControllerError ];
+        
+        [ self.delegate sendMessage: [ error_ toJson ] ];
         [ self.delegate close ];
         return;
     }
@@ -113,22 +116,30 @@
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
     __weak JDWSaveContactPlugin* weakSelf_ = self;
-    [ SCAddressBookFactory asyncAddressBookWithSuccessBlock: ^( SCAddressBook* book_ )
-     {
-         weakSelf_.book = book_;
-     }
-                                              errorCallback: ^(ABAuthorizationStatus status_, NSError* error_)
-     {
-         [ weakSelf_.delegate sendMessage: error_.localizedDescription ];
-         [ weakSelf_.delegate close ];
-     }];
-    
-    NSDictionary* args_  = [ _request.URL queryComponents ];
-    SCContact* contact_ = [ [ SCContact alloc ] initWithArguments: args_
-                                                      addressBook: self->_book ];
 
-    [ self saveOrCreateContact: contact_
-                       webView: webView_ ];
+    
+    SCAddressBookSuccessCallback addressBookReceived = ^( SCAddressBook* book_ )
+    {
+        weakSelf_.book = book_;
+        
+        NSDictionary* args_  = [ _request.URL queryComponents ];
+        SCContact* contact_ = [ [ SCContact alloc ] initWithArguments: args_
+                                                          addressBook: self->_book ];
+        
+        [ weakSelf_ saveOrCreateContact: contact_
+                                webView: webView_ ];
+        
+    };
+    
+    
+    SCAddressBookErrorCallback onAddressBookError = ^(ABAuthorizationStatus status_, NSError* error_)
+    {
+        [ weakSelf_.delegate sendMessage: [ error_ toJson ] ];
+        [ weakSelf_.delegate close ];
+    };
+    
+    [ SCAddressBookFactory asyncAddressBookWithSuccessBlock: addressBookReceived
+                                              errorCallback: onAddressBookError ];
 }
 
 -(void)sendSavedPerson:( ABRecordRef )person_
@@ -146,7 +157,8 @@
     }
     else
     {
-        message_ = @"{ error: 'canceled' }";
+        SCContactsPluginError* error_ = [ SCContactsPluginError operationCancelledError ];
+        message_ = [ error_ toJson ];
     }
 
     [ self.delegate sendMessage: message_ ];
@@ -172,6 +184,7 @@
 {
     _popover = nil;
 
+    // @adk - a nasty threading issue.
     [ [ JFFScheduler sharedByThreadScheduler ] addBlock: ^( JFFCancelScheduledBlock cancel_ )
     {
         _navigationController = nil;

@@ -1,6 +1,6 @@
 
 scmobile.share = scmobile.share || {}
-scmobile.share._construct = function()
+scmobile.share._constructEmail = function()
 {
     function _Email()
     {
@@ -77,4 +77,4 @@ scmobile.share._construct = function()
     }
     this.Email = _Email;
 }
-scmobile.share._construct();
+scmobile.share._constructEmail();

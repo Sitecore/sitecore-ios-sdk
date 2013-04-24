@@ -5,8 +5,10 @@
 
 #import "SCWaitView.h"
 
-#include "camera.js.h"
-#include "cameraSourceType.js.h"
+#import "SCCameraPluginError.h"
+
+#import "camera.js.h"
+#import "cameraSourceType.js.h"
 
 //src: http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload
 @interface UIImage (fixOrientation)
@@ -191,7 +193,9 @@
     UIViewController* rootController_ = webView_.window.rootViewController;
     if ( !rootController_ )
     {
-        [ self.delegate sendMessage: @"{ error: 'Can not open window' }" ];
+        SCCameraPluginError* error = [ SCCameraPluginError noRootViewControllerError ];
+        
+        [ self.delegate sendMessage: [ error toJson ] ];
         [ self.delegate close ];
         return;
     }
@@ -200,7 +204,8 @@
 
     if ( ![ UIImagePickerController isSourceTypeAvailable: sourceType_ ] )
     {
-        [ self.delegate sendMessage: @"{ error: 'Camera source type is not available' }" ];
+        SCCameraPluginError* error = [ SCCameraPluginError cameraSourceUnavailableError ];
+        [ self.delegate sendMessage: [ error toJson ] ];
         [ self.delegate close ];
         return;
     }
@@ -298,7 +303,8 @@ didFinishPickingMediaWithInfo:( NSDictionary* )info_
 
 -(void)imagePickerControllerDidCancel:( UIImagePickerController* )picker_
 {
-    [ self.delegate sendMessage: @"{ error: 'Did cancel image pick' }" ];
+    SCCameraPluginError* error = [ SCCameraPluginError operationCancelledError ];
+    [ self.delegate sendMessage: [ error toJson ] ];
 
     [ self hideImagePicker ];
 
@@ -309,7 +315,8 @@ didFinishPickingMediaWithInfo:( NSDictionary* )info_
 
 -(void)popoverControllerDidDismissPopover:( UIPopoverController* )popoverController_
 {
-    [ self.delegate sendMessage: @"{ error: 'Did cancel image pick' }" ];
+    SCCameraPluginError* error = [ SCCameraPluginError operationCancelledError ];
+    [ self.delegate sendMessage: [ error toJson ] ];
 
     [ self onStop ];
 }

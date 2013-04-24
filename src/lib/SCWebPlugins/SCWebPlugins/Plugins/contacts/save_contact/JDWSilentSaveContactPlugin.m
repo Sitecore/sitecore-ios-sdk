@@ -59,7 +59,7 @@
            forAddressBook:( SCAddressBook* )book_
                    status:( ABAuthorizationStatus )status_
 {
-    NSString* msg_ = [ error_ localizedDescription ];
+    NSString* msg_ = [ error_ toJson ];
 
     [ self.delegate sendMessage: msg_ ];
     [ self.delegate close ];

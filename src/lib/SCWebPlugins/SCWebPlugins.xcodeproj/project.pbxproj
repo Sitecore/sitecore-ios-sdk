@@ -13,8 +13,6 @@
 		1B0E822A14EBD2AA001D4299 /* SCContactEmailsField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E822814EBD2A9001D4299 /* SCContactEmailsField.m */; };
 		1B0E826914EBDAE4001D4299 /* SCContactDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0E826714EBDAE2001D4299 /* SCContactDateField.h */; };
 		1B0E826A14EBDAE4001D4299 /* SCContactDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E826814EBDAE3001D4299 /* SCContactDateField.m */; };
-		1B0FB8F4150613D60056F14E /* twitter.js.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0FB8F3150613D60056F14E /* twitter.js.h */; };
-		1B0FB8F8150613E30056F14E /* JDWTwitterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FB8F6150613E30056F14E /* JDWTwitterPlugin.m */; };
 		1B100F0E14ED148700B9E6F4 /* SCContactPhotoField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B100F0C14ED148600B9E6F4 /* SCContactPhotoField.h */; };
 		1B100F0F14ED148700B9E6F4 /* SCContactPhotoField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B100F0D14ED148700B9E6F4 /* SCContactPhotoField.m */; };
 		1B100F8814ED317700B9E6F4 /* SCContactDictionaryArrayField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B100F8614ED317600B9E6F4 /* SCContactDictionaryArrayField.h */; };
@@ -76,16 +74,39 @@
 		1BF8BDBC15050A01006F4D7F /* SCWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF8BDBA15050A01006F4D7F /* SCWaitView.m */; };
 		1BFEAFFE14E40DF50039CEBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFEAFFD14E40DF50039CEBB /* Foundation.framework */; };
 		1BFEB05314E40F090039CEBB /* UIWebView+SCWebViewPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */; };
-		1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */; };
+		1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */; };
 		1BFEB05A14E412AF0039CEBB /* SCWebPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB05914E412AF0039CEBB /* SCWebPlugin.h */; };
 		1BFEB13714E41F3F0039CEBB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFEB13614E41F3F0039CEBB /* Cocoa.framework */; };
 		1BFEB14C14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB14A14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h */; };
 		1BFEB14D14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEB14B14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m */; };
 		1BFEB14F14E420230039CEBB /* scmobile.js.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEB14E14E420230039CEBB /* scmobile.js.h */; };
+		7E0461C5170C1B5E00AB6873 /* SCSocialFrameworkPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461C1170C1B5E00AB6873 /* SCSocialFrameworkPoster.h */; };
+		7E0461C6170C1B5E00AB6873 /* SCSocialFrameworkPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461C2170C1B5E00AB6873 /* SCSocialFrameworkPoster.m */; };
+		7E0461CC170C1B6B00AB6873 /* SCTwitterPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461C8170C1B6B00AB6873 /* SCTwitterPoster.h */; };
+		7E0461CD170C1B6B00AB6873 /* SCTwitterPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461C9170C1B6B00AB6873 /* SCTwitterPoster.m */; };
+		7E0461D2170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461D0170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h */; };
+		7E0461D3170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461D1170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m */; };
+		7E0461D5170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461D4170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m */; };
+		7E0461DC170C1E1700AB6873 /* SCSocialNetworkPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461DA170C1E1400AB6873 /* SCSocialNetworkPluginError.h */; };
+		7E0461DD170C1E1700AB6873 /* SCSocialNetworkPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461DB170C1E1500AB6873 /* SCSocialNetworkPluginError.m */; };
 		7E84E5EB15E25BDB00FB8E36 /* SCAddressBookFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E84E5E915E25BDA00FB8E36 /* SCAddressBookFactory.h */; };
 		7E84E5EC15E25BDB00FB8E36 /* SCAddressBookFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */; };
 		7E84E61915E2660800FB8E36 /* SCAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E84E61715E2660800FB8E36 /* SCAddressBook.h */; };
 		7E84E61A15E2660800FB8E36 /* SCAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84E61815E2660800FB8E36 /* SCAddressBook.m */; };
+		7E921AB41705B6230006747C /* SCWebPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921AB21705B6230006747C /* SCWebPluginError.h */; };
+		7E921AB51705B6230006747C /* SCWebPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921AB31705B6230006747C /* SCWebPluginError.m */; };
+		7E921AB81705B64C0006747C /* SCMobileEmailError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921AB61705B64C0006747C /* SCMobileEmailError.h */; };
+		7E921AB91705B64C0006747C /* SCMobileEmailError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921AB71705B64C0006747C /* SCMobileEmailError.m */; };
+		7E921AC01705D94E0006747C /* SCContactsPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921ABE1705D94E0006747C /* SCContactsPluginError.h */; };
+		7E921AC11705D94E0006747C /* SCContactsPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921ABF1705D94E0006747C /* SCContactsPluginError.m */; };
+		7E921AC81705EEE90006747C /* SCCameraPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921AC61705EEE90006747C /* SCCameraPluginError.h */; };
+		7E921AC91705EEE90006747C /* SCCameraPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921AC71705EEE90006747C /* SCCameraPluginError.m */; };
+		7E921ACC1705F16D0006747C /* SCMobileMapPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921ACA1705F16D0006747C /* SCMobileMapPluginError.h */; };
+		7E921ACD1705F16D0006747C /* SCMobileMapPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921ACB1705F16D0006747C /* SCMobileMapPluginError.m */; };
+		7EA15BAD170AFF26003FC13C /* SCBaseSocialPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA15BAB170AFF26003FC13C /* SCBaseSocialPoster.h */; };
+		7EA15BAE170AFF26003FC13C /* SCBaseSocialPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */; };
+		7EE49FD6170B0F85004288E1 /* SCSocialFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE49FD4170B0F85004288E1 /* SCSocialFactory.h */; };
+		7EE49FD7170B0F85004288E1 /* SCSocialFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE49FD5170B0F85004288E1 /* SCSocialFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +126,6 @@
 		1B0E822814EBD2A9001D4299 /* SCContactEmailsField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContactEmailsField.m; sourceTree = "<group>"; };
 		1B0E826714EBDAE2001D4299 /* SCContactDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContactDateField.h; sourceTree = "<group>"; };
 		1B0E826814EBDAE3001D4299 /* SCContactDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContactDateField.m; sourceTree = "<group>"; };
-		1B0FB8F1150613C90056F14E /* twitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = twitter.js; sourceTree = "<group>"; };
-		1B0FB8F3150613D60056F14E /* twitter.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twitter.js.h; sourceTree = "<group>"; };
-		1B0FB8F6150613E30056F14E /* JDWTwitterPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDWTwitterPlugin.m; sourceTree = "<group>"; };
 		1B100F0C14ED148600B9E6F4 /* SCContactPhotoField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContactPhotoField.h; sourceTree = "<group>"; };
 		1B100F0D14ED148700B9E6F4 /* SCContactPhotoField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContactPhotoField.m; sourceTree = "<group>"; };
 		1B100F8614ED317600B9E6F4 /* SCContactDictionaryArrayField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContactDictionaryArrayField.h; sourceTree = "<group>"; };
@@ -180,7 +198,7 @@
 		1BFEB00114E40DF50039CEBB /* SCWebPlugins-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCWebPlugins-Prefix.pch"; sourceTree = "<group>"; };
 		1BFEB00214E40DF50039CEBB /* SCWebPlugins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCWebPlugins.h; sourceTree = "<group>"; };
 		1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SCWebViewPlugins.h"; sourceTree = "<group>"; };
-		1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebView+SCWebViewPlugins.mm"; sourceTree = "<group>"; };
+		1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SCWebViewPlugins.m"; sourceTree = "<group>"; };
 		1BFEB05914E412AF0039CEBB /* SCWebPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebPlugin.h; sourceTree = "<group>"; };
 		1BFEB13514E41F3F0039CEBB /* BuildJS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildJS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFEB13614E41F3F0039CEBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -191,10 +209,35 @@
 		1BFEB14A14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMobilePluginsJavaScriptExport.h; sourceTree = "<group>"; };
 		1BFEB14B14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobilePluginsJavaScriptExport.m; sourceTree = "<group>"; };
 		1BFEB14E14E420230039CEBB /* scmobile.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scmobile.js.h; sourceTree = "<group>"; };
+		7E0461C1170C1B5E00AB6873 /* SCSocialFrameworkPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSocialFrameworkPoster.h; sourceTree = "<group>"; };
+		7E0461C2170C1B5E00AB6873 /* SCSocialFrameworkPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSocialFrameworkPoster.m; sourceTree = "<group>"; };
+		7E0461C8170C1B6B00AB6873 /* SCTwitterPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTwitterPoster.h; sourceTree = "<group>"; };
+		7E0461C9170C1B6B00AB6873 /* SCTwitterPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTwitterPoster.m; sourceTree = "<group>"; };
+		7E0461D0170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCBaseSocialPoster+ServiceType.h"; sourceTree = "<group>"; };
+		7E0461D1170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCBaseSocialPoster+ServiceType.m"; sourceTree = "<group>"; };
+		7E0461D4170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDWSocialNetworkPlugin.m; sourceTree = "<group>"; };
+		7E0461D6170C1BC000AB6873 /* social.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = social.js; sourceTree = "<group>"; };
+		7E0461D7170C1BC000AB6873 /* social.js.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = social.js.h; sourceTree = "<group>"; };
+		7E0461DA170C1E1400AB6873 /* SCSocialNetworkPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSocialNetworkPluginError.h; sourceTree = "<group>"; };
+		7E0461DB170C1E1500AB6873 /* SCSocialNetworkPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSocialNetworkPluginError.m; sourceTree = "<group>"; };
 		7E84E5E915E25BDA00FB8E36 /* SCAddressBookFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAddressBookFactory.h; sourceTree = "<group>"; };
 		7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCAddressBookFactory.mm; sourceTree = "<group>"; };
 		7E84E61715E2660800FB8E36 /* SCAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAddressBook.h; sourceTree = "<group>"; };
 		7E84E61815E2660800FB8E36 /* SCAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAddressBook.m; sourceTree = "<group>"; };
+		7E921AB21705B6230006747C /* SCWebPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebPluginError.h; sourceTree = "<group>"; };
+		7E921AB31705B6230006747C /* SCWebPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebPluginError.m; sourceTree = "<group>"; };
+		7E921AB61705B64C0006747C /* SCMobileEmailError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMobileEmailError.h; sourceTree = "<group>"; };
+		7E921AB71705B64C0006747C /* SCMobileEmailError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobileEmailError.m; sourceTree = "<group>"; };
+		7E921ABE1705D94E0006747C /* SCContactsPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContactsPluginError.h; sourceTree = "<group>"; };
+		7E921ABF1705D94E0006747C /* SCContactsPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContactsPluginError.m; sourceTree = "<group>"; };
+		7E921AC61705EEE90006747C /* SCCameraPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCameraPluginError.h; sourceTree = "<group>"; };
+		7E921AC71705EEE90006747C /* SCCameraPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCameraPluginError.m; sourceTree = "<group>"; };
+		7E921ACA1705F16D0006747C /* SCMobileMapPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMobileMapPluginError.h; sourceTree = "<group>"; };
+		7E921ACB1705F16D0006747C /* SCMobileMapPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobileMapPluginError.m; sourceTree = "<group>"; };
+		7EA15BAB170AFF26003FC13C /* SCBaseSocialPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBaseSocialPoster.h; sourceTree = "<group>"; };
+		7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBaseSocialPoster.m; sourceTree = "<group>"; };
+		7EE49FD4170B0F85004288E1 /* SCSocialFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSocialFactory.h; sourceTree = "<group>"; };
+		7EE49FD5170B0F85004288E1 /* SCSocialFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSocialFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,8 +263,18 @@
 		1B0FB8ED150613AD0056F14E /* share */ = {
 			isa = PBXGroup;
 			children = (
+				7E0461D6170C1BC000AB6873 /* social.js */,
+				7E0461D7170C1BC000AB6873 /* social.js.h */,
+				7E0461D4170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m */,
+				7EE49FD4170B0F85004288E1 /* SCSocialFactory.h */,
+				7EE49FD5170B0F85004288E1 /* SCSocialFactory.m */,
+				7EA15BAB170AFF26003FC13C /* SCBaseSocialPoster.h */,
+				7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */,
+				7E0461DA170C1E1400AB6873 /* SCSocialNetworkPluginError.h */,
+				7E0461DB170C1E1500AB6873 /* SCSocialNetworkPluginError.m */,
+				7E0461C7170C1B6B00AB6873 /* twitter */,
+				7E0461BE170C1B5E00AB6873 /* social */,
 				1B0FB8EE150613AD0056F14E /* email */,
-				1B0FB8EF150613AD0056F14E /* twitter */,
 			);
 			path = share;
 			sourceTree = "<group>";
@@ -234,18 +287,10 @@
 				1BBBDA661506676C00E7FA83 /* SCEmailFields.h */,
 				1BBBDA671506676C00E7FA83 /* SCEmailFields.m */,
 				1BBBDA741506678D00E7FA83 /* JDWEmailPlugin.m */,
+				7E921AB61705B64C0006747C /* SCMobileEmailError.h */,
+				7E921AB71705B64C0006747C /* SCMobileEmailError.m */,
 			);
 			path = email;
-			sourceTree = "<group>";
-		};
-		1B0FB8EF150613AD0056F14E /* twitter */ = {
-			isa = PBXGroup;
-			children = (
-				1B0FB8F1150613C90056F14E /* twitter.js */,
-				1B0FB8F3150613D60056F14E /* twitter.js.h */,
-				1B0FB8F6150613E30056F14E /* JDWTwitterPlugin.m */,
-			);
-			path = twitter;
 			sourceTree = "<group>";
 		};
 		1B1BA9D814EAA7390040D99E /* ContactsAPI */ = {
@@ -315,6 +360,8 @@
 				1B90996314EA4B1D00B19283 /* SCGetPicturePlugin.m */,
 				1BF8BDB915050A01006F4D7F /* SCWaitView.h */,
 				1BF8BDBA15050A01006F4D7F /* SCWaitView.m */,
+				7E921AC61705EEE90006747C /* SCCameraPluginError.h */,
+				7E921AC71705EEE90006747C /* SCCameraPluginError.m */,
 			);
 			path = get_picture;
 			sourceTree = "<group>";
@@ -349,6 +396,8 @@
 			children = (
 				1B90999814EA607400B19283 /* JDWSilentSaveContactPlugin.m */,
 				1B90999C14EA608E00B19283 /* JDWSaveContactPlugin.m */,
+				7E921ABE1705D94E0006747C /* SCContactsPluginError.h */,
+				7E921ABF1705D94E0006747C /* SCContactsPluginError.m */,
 			);
 			path = save_contact;
 			sourceTree = "<group>";
@@ -421,6 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				1BBCAC551510F02500199B37 /* SCMapViewAddressesPlugin.m */,
+				7E921ACA1705F16D0006747C /* SCMobileMapPluginError.h */,
+				7E921ACB1705F16D0006747C /* SCMobileMapPluginError.m */,
 			);
 			path = show_addresses;
 			sourceTree = "<group>";
@@ -490,7 +541,7 @@
 				1BFEB14714E41F930039CEBB /* Javascript */,
 				1BFEB05814E412930039CEBB /* Plugins */,
 				1BFEB05114E40F090039CEBB /* UIWebView+SCWebViewPlugins.h */,
-				1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm */,
+				1BFEB05214E40F090039CEBB /* UIWebView+SCWebViewPlugins.m */,
 				1BFEB00214E40DF50039CEBB /* SCWebPlugins.h */,
 				1BFEB00014E40DF50039CEBB /* Supporting Files */,
 			);
@@ -509,15 +560,17 @@
 			isa = PBXGroup;
 			children = (
 				1BFEB05914E412AF0039CEBB /* SCWebPlugin.h */,
+				7E921AB21705B6230006747C /* SCWebPluginError.h */,
+				7E921AB31705B6230006747C /* SCWebPluginError.m */,
 				1BBB07E214E56DA6003E77D0 /* SCWebViewPluginHolder.h */,
 				1BBB07E314E56DA6003E77D0 /* SCWebViewPluginHolder.m */,
 				1BE73D4414E964420072C825 /* Details */,
+				1B90995D14EA4B1D00B19283 /* camera */,
+				1B90997B14EA5E9D00B19283 /* contacts */,
+				1BBCAC521510ED8600199B37 /* google_maps */,
 				1B96845714FCEEE700B0135F /* motion_manager */,
 				1B1FA56114F29E7000FAE82C /* notification */,
-				1B90997B14EA5E9D00B19283 /* contacts */,
-				1B90995D14EA4B1D00B19283 /* camera */,
 				1B0FB8ED150613AD0056F14E /* share */,
-				1BBCAC521510ED8600199B37 /* google_maps */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -541,6 +594,26 @@
 				1BFEB14B14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m */,
 			);
 			path = Javascript;
+			sourceTree = "<group>";
+		};
+		7E0461BE170C1B5E00AB6873 /* social */ = {
+			isa = PBXGroup;
+			children = (
+				7E0461D0170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h */,
+				7E0461D1170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m */,
+				7E0461C1170C1B5E00AB6873 /* SCSocialFrameworkPoster.h */,
+				7E0461C2170C1B5E00AB6873 /* SCSocialFrameworkPoster.m */,
+			);
+			path = social;
+			sourceTree = "<group>";
+		};
+		7E0461C7170C1B6B00AB6873 /* twitter */ = {
+			isa = PBXGroup;
+			children = (
+				7E0461C8170C1B6B00AB6873 /* SCTwitterPoster.h */,
+				7E0461C9170C1B6B00AB6873 /* SCTwitterPoster.m */,
+			);
+			path = twitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,7 +651,6 @@
 				1BE4B43A14F3B34D003A9BF2 /* SCContactAddress.h in Headers */,
 				1B96846A14FCF19B00B0135F /* motion_manager.js.h in Headers */,
 				1BF8BDBB15050A01006F4D7F /* SCWaitView.h in Headers */,
-				1B0FB8F4150613D60056F14E /* twitter.js.h in Headers */,
 				1BBBDA65150666DC00E7FA83 /* email.js.h in Headers */,
 				1BBBDA681506676C00E7FA83 /* SCEmailFields.h in Headers */,
 				1BBBDAC61506718500E7FA83 /* beep.caf.h in Headers */,
@@ -588,6 +660,17 @@
 				1BB95D611512114500B4F9B2 /* NSDictionary+ContactAddressExtensions.h in Headers */,
 				7E84E5EB15E25BDB00FB8E36 /* SCAddressBookFactory.h in Headers */,
 				7E84E61915E2660800FB8E36 /* SCAddressBook.h in Headers */,
+				7E921AB41705B6230006747C /* SCWebPluginError.h in Headers */,
+				7E921AB81705B64C0006747C /* SCMobileEmailError.h in Headers */,
+				7E921AC01705D94E0006747C /* SCContactsPluginError.h in Headers */,
+				7E921AC81705EEE90006747C /* SCCameraPluginError.h in Headers */,
+				7E921ACC1705F16D0006747C /* SCMobileMapPluginError.h in Headers */,
+				7EA15BAD170AFF26003FC13C /* SCBaseSocialPoster.h in Headers */,
+				7EE49FD6170B0F85004288E1 /* SCSocialFactory.h in Headers */,
+				7E0461C5170C1B5E00AB6873 /* SCSocialFrameworkPoster.h in Headers */,
+				7E0461CC170C1B6B00AB6873 /* SCTwitterPoster.h in Headers */,
+				7E0461D2170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h in Headers */,
+				7E0461DC170C1E1700AB6873 /* SCSocialNetworkPluginError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +719,7 @@
 		1BFEAFF114E40DF50039CEBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 1BFEAFF414E40DF50039CEBB /* Build configuration list for PBXProject "SCWebPlugins" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -678,7 +761,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/bin/sh\n#compile javascript\ntouch ./SCWebPlugins/Javascript/SCMobilePluginsJavaScriptExport.m\nxxd -i ./SCWebPlugins/Javascript/scmobile.js > ./SCWebPlugins/Javascript/scmobile.js.h\n\n#contacts\ntouch ./SCWebPlugins/Plugins/contacts/select_contact/JDWSilentSelectContactsPlugin.m\nxxd -i ./SCWebPlugins/Plugins/contacts/contacts.js > ./SCWebPlugins/Plugins/contacts/contacts.js.h\n\n#notifications\ntouch ./SCWebPlugins/Plugins/notification/alert/JWSAlertListener.m\nxxd -i ./SCWebPlugins/Plugins/notification/notifications.js > ./SCWebPlugins/Plugins/notification/notifications.js.h\n\n#Accelerometer\ntouch ./SCWebPlugins/Plugins/motion_manager/accelerometer/JWSAccelerometerListener.m\nxxd -i ./SCWebPlugins/Plugins/motion_manager/motion_manager.js > ./SCWebPlugins/Plugins/motion_manager/motion_manager.js.h\n\n#compile twitter\ntouch ./SCWebPlugins/Plugins/share/twitter/JDWTwitterPlugin.m\nxxd -i ./SCWebPlugins/Plugins/share/twitter/twitter.js > ./SCWebPlugins/Plugins/share/twitter/twitter.js.h\n\n#compile emails\ntouch ./SCWebPlugins/Plugins/share/email/JDWEmailPlugin.m\nxxd -i ./SCWebPlugins/Plugins/share/email/email.js > ./SCWebPlugins/Plugins/share/email/email.js.h\n\n#compile google_maps\ntouch ./SCWebPlugins/Plugins/google_maps/show_addresses/SCMapViewAddressesPlugin.m\nxxd -i ./SCWebPlugins/Plugins/google_maps/google_maps.js > ./SCWebPlugins/Plugins/google_maps/google_maps.js.h\n\n#compile audio\nxxd -i ./SCWebPlugins/Plugins/notification/beep/beep.caf > ./SCWebPlugins/Plugins/notification/beep/beep.caf.h\n";
+			shellScript = "#/bin/sh\n#compile javascript\ntouch ./SCWebPlugins/Javascript/SCMobilePluginsJavaScriptExport.m\nxxd -i ./SCWebPlugins/Javascript/scmobile.js > ./SCWebPlugins/Javascript/scmobile.js.h\n\n#contacts\ntouch ./SCWebPlugins/Plugins/contacts/select_contact/JDWSilentSelectContactsPlugin.m\nxxd -i ./SCWebPlugins/Plugins/contacts/contacts.js > ./SCWebPlugins/Plugins/contacts/contacts.js.h\n\n#notifications\ntouch ./SCWebPlugins/Plugins/notification/alert/JWSAlertListener.m\nxxd -i ./SCWebPlugins/Plugins/notification/notifications.js > ./SCWebPlugins/Plugins/notification/notifications.js.h\n\n#Accelerometer\ntouch ./SCWebPlugins/Plugins/motion_manager/accelerometer/JWSAccelerometerListener.m\nxxd -i ./SCWebPlugins/Plugins/motion_manager/motion_manager.js > ./SCWebPlugins/Plugins/motion_manager/motion_manager.js.h\n\n#compile social networks plug-in\ntouch ./SCWebPlugins/Plugins/share/JDWSocialNetworkPlugin.m\nxxd -i ./SCWebPlugins/Plugins/share/social.js > ./SCWebPlugins/Plugins/share/social.js.h\n\n#compile emails\ntouch ./SCWebPlugins/Plugins/share/email/JDWEmailPlugin.m\nxxd -i ./SCWebPlugins/Plugins/share/email/email.js > ./SCWebPlugins/Plugins/share/email/email.js.h\n\n#compile google_maps\ntouch ./SCWebPlugins/Plugins/google_maps/show_addresses/SCMapViewAddressesPlugin.m\nxxd -i ./SCWebPlugins/Plugins/google_maps/google_maps.js > ./SCWebPlugins/Plugins/google_maps/google_maps.js.h\n\n#compile audio\nxxd -i ./SCWebPlugins/Plugins/notification/beep/beep.caf > ./SCWebPlugins/Plugins/notification/beep/beep.caf.h\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -687,7 +770,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.mm in Sources */,
+				1BFEB05414E40F090039CEBB /* UIWebView+SCWebViewPlugins.m in Sources */,
 				1BFEB14D14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.m in Sources */,
 				1BBB07E114E56C40003E77D0 /* pathToAllPluginsJavascripts.m in Sources */,
 				1BBB07E514E56DA6003E77D0 /* SCWebViewPluginHolder.m in Sources */,
@@ -716,7 +799,6 @@
 				1BE4B43B14F3B34D003A9BF2 /* SCContactAddress.m in Sources */,
 				1B96845D14FCEF1A00B0135F /* JWSAccelerometerListener.m in Sources */,
 				1BF8BDBC15050A01006F4D7F /* SCWaitView.m in Sources */,
-				1B0FB8F8150613E30056F14E /* JDWTwitterPlugin.m in Sources */,
 				1BBBDA691506676C00E7FA83 /* SCEmailFields.m in Sources */,
 				1BBBDA761506678E00E7FA83 /* JDWEmailPlugin.m in Sources */,
 				1BBBDAC81506718500E7FA83 /* JBeepFileURL.m in Sources */,
@@ -726,6 +808,18 @@
 				1BB95D621512114500B4F9B2 /* NSDictionary+ContactAddressExtensions.m in Sources */,
 				7E84E5EC15E25BDB00FB8E36 /* SCAddressBookFactory.mm in Sources */,
 				7E84E61A15E2660800FB8E36 /* SCAddressBook.m in Sources */,
+				7E921AB51705B6230006747C /* SCWebPluginError.m in Sources */,
+				7E921AB91705B64C0006747C /* SCMobileEmailError.m in Sources */,
+				7E921AC11705D94E0006747C /* SCContactsPluginError.m in Sources */,
+				7E921AC91705EEE90006747C /* SCCameraPluginError.m in Sources */,
+				7E921ACD1705F16D0006747C /* SCMobileMapPluginError.m in Sources */,
+				7EA15BAE170AFF26003FC13C /* SCBaseSocialPoster.m in Sources */,
+				7EE49FD7170B0F85004288E1 /* SCSocialFactory.m in Sources */,
+				7E0461C6170C1B5E00AB6873 /* SCSocialFrameworkPoster.m in Sources */,
+				7E0461CD170C1B6B00AB6873 /* SCTwitterPoster.m in Sources */,
+				7E0461D3170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m in Sources */,
+				7E0461D5170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m in Sources */,
+				7E0461DD170C1E1700AB6873 /* SCSocialNetworkPluginError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,11 +848,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -779,6 +873,8 @@
 					../SCUtils,
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party",
+					../SCApi,
+					"../../lib-third-party/iFeatureAvailability",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -792,11 +888,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -810,6 +906,8 @@
 					../SCUtils,
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party",
+					../SCApi,
+					"../../lib-third-party/iFeatureAvailability",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;

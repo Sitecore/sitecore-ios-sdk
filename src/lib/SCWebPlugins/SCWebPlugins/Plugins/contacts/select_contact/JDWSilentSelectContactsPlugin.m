@@ -6,9 +6,11 @@
 #import "SCAddressBookFactory.h"
 #import "SCAddressBook.h"
 
+#import "SCContactsPluginError.h"
+
 #import <AddressBook/AddressBook.h>
 
-#include "contacts.js.h"
+#import "contacts.js.h"
 
 @interface JDWSilentSelectContactsPlugin : NSObject < SCWebPlugin >
 
@@ -89,7 +91,7 @@
            forAddressBook:( SCAddressBook* )book_
                    status:( ABAuthorizationStatus )status_
 {
-    NSString* msg_ = [ error_ localizedDescription ];
+    NSString* msg_ = [ error_ toJson ];
     NSLog(@"[ERROR] - %@. %@", NSStringFromClass( [ self class ] ), error_ );
     
     
@@ -102,7 +104,11 @@
     NSArray* contacts_ = [ self allAccountsWithAllFieldsFromAddressBook: book_ ];
     
     NSString* msg_ = [ contacts_ scContactsToJSON ];
-    msg_ = msg_ ?: @"{ error: 'Invalid Contacts JSON 2' }";
+    if ( nil == msg_ )
+    {
+        msg_ = [ [ SCContactsPluginError invalidContactsJsonError ] toJson ];
+    }
+    
     [ self.delegate sendMessage: msg_ ];
     [ self.delegate close ];
     

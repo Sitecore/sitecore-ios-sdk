@@ -4,8 +4,8 @@
 #include "email.js.h"
 
 #import "SCEmailFields.h"
+#import "SCMobileEmailError.h"
 
-#import <MessageUI/MessageUI.h>
 
 @interface JDWEmailPlugin : NSObject
     <
@@ -31,38 +31,59 @@
     {
         self->_request = request_;
     }
+    else
+    {
+        NSLog( @"[BEGIN] JDWEmailPlugin - [ super init ] error" );
+    }
 
     return self;
 }
 
 +(NSString*)pluginJavascript
 {
-    return [ [ NSString alloc ] initWithBytes: __SCWebPlugins_Plugins_share_email_email_js
-                                       length: __SCWebPlugins_Plugins_share_email_email_js_len
-                                     encoding: NSUTF8StringEncoding ];
+    NSString* result_ = [ [ NSString alloc ] initWithBytes: __SCWebPlugins_Plugins_share_email_email_js
+                                                    length: __SCWebPlugins_Plugins_share_email_email_js_len
+                                                  encoding: NSUTF8StringEncoding ];
+
+    return result_;
 }
 
 +(BOOL)canInitWithRequest:( NSURLRequest* )request_
 {
-    return [ request_.URL.path isEqualToString: @"/scmobile/share/email" ];
+    BOOL result_ =[ request_.URL.path isEqualToString: @"/scmobile/share/email" ];
+    NSLog( @"JDWEmailPlugin->canInitWithRequest(%@) == %d", request_.URL, result_ );
+    
+    return result_;
 }
 
 -(void)sendEmail:( SCEmailFields* )fields_
          webView:( UIWebView* )webView_
 {
     UIViewController* rootController_ = webView_.window.rootViewController;
+    SCMobileEmailError* error = nil;
+    
+    
     if ( ![ MFMailComposeViewController canSendMail ] )
     {
-        [ self.delegate sendMessage: @"{ error: 'can not send email' }" ];
-        [ self.delegate close ];
-        return;
+        NSLog( @"sendEmail - canSendMail() failed" );
+        error = [ [ SCMobileEmailError alloc ] initWithDescription: @"There is no e-mail account on your device"
+                                                              code: 1 ];
     }
     if ( !rootController_ )
     {
-        [ self.delegate sendMessage: @"{ error: 'can not open window' }" ];
+        NSLog( @"sendEmail - no root ViewController" );
+        
+        error = [ [ SCMobileEmailError alloc ] initWithDescription: @"No window to present e-mail composer"
+                                                              code: 2 ];
+    }
+    
+    if ( nil != error )
+    {
+        [ self.delegate sendMessage: [ error toJson ] ];
         [ self.delegate close ];
         return;
     }
+    
 
     self->_emailController = [ MFMailComposeViewController new ];
     self->_emailController.mailComposeDelegate = self;
@@ -112,9 +133,18 @@
 {
     [ self hideControllers ];
 
-    if ( result_ == MFMailComposeResultFailed || error_ )
+    if ( nil != error_ )
     {
-        [ self.delegate sendMessage: @"{ error: 'failed' }" ];
+        [ self.delegate sendMessage: [ error_ toJson ] ];
+        [ self.delegate close ];
+        return;        
+    }
+    else if ( result_ == MFMailComposeResultFailed )
+    {
+        NSError* mailFailedError = [ [ SCMobileEmailError alloc ] initWithDescription: @"Email sending failed"
+                                                                                 code: 3 ];
+        
+        [ self.delegate sendMessage: [ mailFailedError toJson ] ];
         [ self.delegate close ];
         return;
     }

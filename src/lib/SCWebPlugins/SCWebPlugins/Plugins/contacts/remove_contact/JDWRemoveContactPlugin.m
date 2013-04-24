@@ -76,25 +76,25 @@ forAuthorizationStatus:( ABAuthorizationStatus )status_
 {
     NSLog(@"[ERROR] - %@", NSStringFromClass( [ self class ] ) );
 
-    [ self.delegate sendMessage: error_.localizedDescription ];
+    [ self.delegate sendMessage: [ error_ toJson ] ];
     [ self.delegate close ];
 }
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    [ SCAddressBookFactory asyncAddressBookWithSuccessBlock:
-         ^void( SCAddressBook* book_ )
-         {
-             self.addressBook = book_;
-             [ self doWork ];
-         }
-                                                  errorCallback:
-         ^void( ABAuthorizationStatus status_, NSError* error_ )
-         {
-             [ self handleError: error_
-         forAuthorizationStatus: status_ ];
-         }
-    ];
+    SCAddressBookSuccessCallback onSuccess_ = ^void( SCAddressBook* book_ )
+    {
+        self.addressBook = book_;
+        [ self doWork ];
+    };
+    SCAddressBookErrorCallback onFailure_ = ^void( ABAuthorizationStatus status_, NSError* error_ )
+    {
+        [ self handleError: error_
+    forAuthorizationStatus: status_ ];
+    };
+
+    [ SCAddressBookFactory asyncAddressBookWithSuccessBlock: onSuccess_
+                                              errorCallback: onFailure_ ];
 }
 
 @end

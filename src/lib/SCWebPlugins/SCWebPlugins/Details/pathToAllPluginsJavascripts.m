@@ -42,13 +42,7 @@ static void writeAllJSToFileAtPath( NSString* path_ )
     NSString* pluginJs_ = [ plugins_javascripts_ componentsJoinedByString: @"\n" ];
     NSString* allJs_ = [ scWebPluginsCoreJavascript() stringByAppendingString: pluginJs_ ];
 
-    NSError* fsError_ = nil;
-    [ allJs_ writeToFile: path_
-              atomically: YES
-                encoding: NSUTF8StringEncoding
-                   error: &fsError_ ];
-    
-    [ fsError_ writeErrorToNSLog ];
+    [ allJs_ writeToFile: path_ atomically: YES encoding: NSUTF8StringEncoding error: nil ];
 }
 
 NSString* pathToAllPluginsJavascripts()

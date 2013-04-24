@@ -9,7 +9,12 @@
     #import <JFFUtils/JFFUtils.h>
     #import <JFFScheduler/JFFScheduler.h>
 
+    #import <iFeatureAvailability/iFeatureAvailability.h>
+
     #import <UIKit/UIKit.h>
+    #import <Social/Social.h>
+    #import <Twitter/Twitter.h>
+    #import <MessageUI/MessageUI.h>
     #import <Foundation/Foundation.h>
 
     #ifdef __cplusplus
