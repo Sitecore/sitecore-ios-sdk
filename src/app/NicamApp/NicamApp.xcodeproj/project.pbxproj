@@ -19,6 +19,7 @@
 		252BF8591510ADA400EFBFE2 /* NicamApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF8581510ADA400EFBFE2 /* NicamApp.png */; };
 		252BF85B1510ADE500EFBFE2 /* QRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF85A1510ADE500EFBFE2 /* QRCode.png */; };
 		253955651518A6FB00217CD4 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253954FC15188F7400217CD4 /* ProductDetailsViewController.m */; };
+		254E5C2C171451D100D2C010 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E5C2B171451D100D2C010 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		257F5E7A1520B03600BB5088 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257F5E781520B03600BB5088 /* MapViewController.m */; };
 		257F5E7E1520B5D600BB5088 /* pin_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 257F5E7D1520B5D600BB5088 /* pin_map.png */; };
 		2582C3CA14ED373300DCE4C4 /* NavigationToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2582C3C914ED373300DCE4C4 /* NavigationToolbar.m */; };
@@ -74,6 +75,7 @@
 		252BF85A1510ADE500EFBFE2 /* QRCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRCode.png; sourceTree = "<group>"; };
 		253954FB15188F7400217CD4 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductDetailsViewController.h; path = iPhone/ProductDetailsViewController.h; sourceTree = "<group>"; };
 		253954FC15188F7400217CD4 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductDetailsViewController.m; path = iPhone/ProductDetailsViewController.m; sourceTree = "<group>"; };
+		254E5C2B171451D100D2C010 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		254E7247148D0B7600C32B1E /* ProductsViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewControllerDelegate.h; sourceTree = "<group>"; };
 		257F5E771520B03600BB5088 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		257F5E781520B03600BB5088 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		25902A4F14837659006FF9AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				254E5C2B171451D100D2C010 /* Social.framework */,
 				1BAFBF53157F5F1900F3062E /* libstdc++.dylib */,
 				1B3395C0156642CD00E935E9 /* libc++.dylib */,
 				1BB960C215121E6C00B4F9B2 /* MapKit.framework */,
@@ -432,7 +435,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -463,7 +465,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
