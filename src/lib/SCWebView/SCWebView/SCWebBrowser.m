@@ -97,6 +97,11 @@ static CGFloat navigatin_header_height_ = 40.f;
     [ self initialize ];
 }
 
+-(void)refreshViews
+{
+    [ self->_webView refreshViews ];
+}
+
 -(void)layoutSubviews
 {
     [ super layoutSubviews ];

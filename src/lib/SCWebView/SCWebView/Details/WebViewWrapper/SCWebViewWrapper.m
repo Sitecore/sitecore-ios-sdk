@@ -60,11 +60,27 @@ UIWebViewDelegate
     return self;
 }
 
+-(void)refresh
+{
+    //TODO: render page after rotation on iOS 5
+    [ self->_webView setFrame: self.bounds ];
+    [ self->_webView.scrollView setFrame:self->_webView.bounds ];
+    
+    [self->_webView stringByEvaluatingJavaScriptFromString:@"var e = document.createEvent('Events'); e.initEvent('orientationchange', true, true); document.dispatchEvent(e);"];
+}
+
 -(UIWebView*)webView
 {
     if ( !_webView )
     {
         _webView = [ [ UIWebView alloc ] initWithFrame: self.frame ];
+        _webView.autoresizingMask =
+         UIViewAutoresizingFlexibleLeftMargin
+        |UIViewAutoresizingFlexibleWidth
+        |UIViewAutoresizingFlexibleRightMargin
+        |UIViewAutoresizingFlexibleTopMargin
+        |UIViewAutoresizingFlexibleHeight
+        |UIViewAutoresizingFlexibleBottomMargin;
         _webView.delegate = self;
         [ self addSubviewAndScale: _webView ];
 
@@ -214,7 +230,6 @@ textEncodingName:(NSString *)textEncodingName
 -(void)layoutSubviews
 {
     [ super layoutSubviews ];
-
     self->_activityIndicator.center = self.center;
 }
 
@@ -250,7 +265,7 @@ navigationType:( UIWebViewNavigationType )navigation_type_
 -(void)webViewDidFinishLoad:( UIWebView* )webView_
 {
     [ self->_activityIndicator stopAnimating ];
-
+    
     if ( [ self->_delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
         [ self->_delegate webViewDidFinishLoad: self ];
 

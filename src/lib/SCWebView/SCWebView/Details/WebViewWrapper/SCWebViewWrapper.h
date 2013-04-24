@@ -9,6 +9,7 @@
 @property(nonatomic,readonly) UIScrollView *scrollView;
 
 - (void)reload;
+-(void)refresh;
 - (void)stopLoading;
 - (void)goBack;
 - (void)goForward;

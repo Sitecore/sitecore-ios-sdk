@@ -75,17 +75,17 @@
 
 -(BOOL)gestureRecognizerShouldBegin:( UISwipeGestureRecognizer* )gestureRecognizer_
 {
+    UIScrollView* scrollView_ = [_view scrollView];
+    
     if ( gestureRecognizer_.direction == UISwipeGestureRecognizerDirectionRight )
     {
         //<--
-        UIScrollView* scrollView_ = _view.scrollView;
         if ( scrollView_.contentOffset.x > 0.f )
             return NO;
     }
     if ( gestureRecognizer_.direction == UISwipeGestureRecognizerDirectionLeft )
     {
         //-->
-        UIScrollView* scrollView_ = _view.scrollView;
         if ( scrollView_.contentOffset.x + scrollView_.bounds.size.width < scrollView_.contentSize.width )
             return NO;
     }

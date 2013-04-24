@@ -63,6 +63,11 @@
  This method is alias to -[UIWebView reload] method.
  */
 - (void)reload;
+
+/**
+ Refresh views
+ */
+-(void)refreshViews;
 /**
  This method is alias to -[UIWebView stopLoading] method.
  */

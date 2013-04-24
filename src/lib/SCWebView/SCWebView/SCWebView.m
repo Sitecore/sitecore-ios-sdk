@@ -71,9 +71,15 @@ SCWebViewWrapperDelegate
                                                               view: (UIWebView*)self ];
 }
 
+-(UIScrollView *)scrollView
+{
+    return [ [ self webView ] scrollView ];
+}
+
 -(SCWebViewWrapper*)webView
 {
-    return (SCWebViewWrapper*)[ _stripeView elementAtIndex: _stripeView.activeIndex ];
+    SCWebViewWrapper *webViewWrapper = (SCWebViewWrapper*)[ _stripeView elementAtIndex: _stripeView.activeIndex ];
+    return webViewWrapper;
 }
 
 #pragma mark UIWebView proxy methods
@@ -128,6 +134,26 @@ textEncodingName:(NSString *)textEncodingName
 {
     self.cachedScalesPageToFit = scalesPageToFit_;
     self.webView.scalesPageToFit = scalesPageToFit_;
+}
+
+-(void)setFrame:(CGRect)frame
+{
+    [ super setFrame:frame ];
+    [ self->_stripeView layoutSubviews ];
+}
+
+-(void)refreshViews
+{
+    
+    //TODO:each webView refreshing may help to reload pages after retation
+    
+//    [self->_stripeView.viewByIndex enumerateKeysAndObjectsUsingBlock:^(NSNumber *index, UIView *view, BOOL *stop) {
+//        
+//        SCWebViewWrapper *elem = (SCWebViewWrapper *)view ;
+//        [ elem refresh ];
+//    }];
+    
+    [ self->_stripeView syncContentOffsetWithActiveElement ];
 }
 
 #pragma mark JFFStripeViewDelegate
@@ -408,8 +434,11 @@ shouldStartLoadWithRequest:(NSURLRequest *)request_
 navigationType:(UIWebViewNavigationType)navigationType_
 {
     if ( self.webView != webView_ )
+    {
         return NO;
+    }
 
+    
     if ( [ @"scr" isEqualToString: request_.URL.scheme ] )
     {
         NSString* host_ = request_.URL.host;
