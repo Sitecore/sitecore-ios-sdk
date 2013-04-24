@@ -146,19 +146,24 @@
             CLLocation* firstLocation_ = [ points_ objectAtIndex: 0 ];
             CLLocation* lastLocation_  = [ points_ lastObject ];
 
-            CLLocation* myFirstLocation_ = [ [ CLLocation alloc ] initWithLatitude: 51.20122147 longitude: 0.00151 ];
-            CLLocation* myLastLocation_  = [ [ CLLocation alloc ] initWithLatitude: 51.39984131 longitude: 0.0002 ];
+            // @adk - may fail from time to time since real requests to google are sent
+            // respomse is subject to change
+            CLLocation* myFirstLocation_ = [ [ CLLocation alloc ] initWithLatitude: 51.20121002 longitude: 0.00151 ];
+            CLLocation* myLastLocation_  = [ [ CLLocation alloc ] initWithLatitude: 51.39981842 longitude: 0.00016000 ];
 
-            double litleValue_ = 0.00001;
+            double litleValue_ = 0.005;
+            double distance = 0.0;
 
-            if ( abs( [ myFirstLocation_ distanceFromLocation: firstLocation_ ] ) > litleValue_ )
+            distance = fabs( [ myFirstLocation_ distanceFromLocation: firstLocation_ ] );
+            if ( distance > litleValue_ )
             {
                 errorDescription_ = @"First location coordinate is not valid";
                 didFinishCallback_();
                 return;
             }
 
-            if ( abs( [ myLastLocation_ distanceFromLocation: lastLocation_ ] ) > litleValue_ )
+            distance = fabs( [ myLastLocation_ distanceFromLocation: lastLocation_ ] );
+            if ( distance > litleValue_ )
             {
                 errorDescription_ = @"First location coordinate is not valid";
                 didFinishCallback_();
@@ -179,7 +184,7 @@
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
 
-    GHAssertTrue( errorDescription_ == nil, errorDescription_ );
+    GHAssertNil( errorDescription_, errorDescription_ );
 }
 
 @end

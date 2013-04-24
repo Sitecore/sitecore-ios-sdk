@@ -17,14 +17,17 @@
 -(void)testInvalidAddressDict
 {
     __block BOOL resultOk_ = NO;
- 
+    
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        NSDictionary* address_ = [ NSDictionary contactAddressWithStreet: @"V.I. Lenina square"
-                                                                    city: @"Dnipropetrovsk"
-                                                                   state: @""
-                                                                     ZIP: @"49000"
-                                                                 country: @"Ukraine" ];
+        // @adk : see valid location example in Apple's tutorial
+        // http://developer.apple.com/library/ios/#samplecode/GeocoderDemo/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011097
+        NSDictionary* address_ =
+        [ NSDictionary contactAddressWithStreet: @"V.I. Lenina square"
+                                           city: @"Dnipropetrovsk"
+                                          state: @""
+                                            ZIP: @"49000"
+                                        country: @"Ukraine" ];
 
         placemarksLoaderWithAddressDict( address_ )( nil, nil, ^( id result_, NSError* error_ )
         {
@@ -126,7 +129,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/webapi" ];
+        SCApiContext* context_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item" ];
         NSString* path_ = @"/sitecore/content/Test Data/Maps";
         itemAddressesGeocoderWithPath( context_, path_ )( nil, nil, ^( id result_, NSError* error_ )
         {
@@ -134,7 +137,7 @@
                 NSLog( @"failed: %@", error_ );
             else 
                 NSLog( @"addresses: %@", result_ );
-            resultOk_ = [ result_ count ] == 4;
+            resultOk_ = [ result_ count ] == 6;
             didFinishCallback_();
         } );
     };
