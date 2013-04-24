@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using Sitecore.Configuration;
 
 namespace Sitecore.XslHelpers
 {
