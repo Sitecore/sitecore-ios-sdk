@@ -25,11 +25,11 @@ OLD_XCODE_PATH=$(xcode-select -print-path)
 ##mkdir -p "$PROJECT_ROOT/deployment/test-results"
 
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/CleanTestReports.sh"
-    /bin/bash "$PWD/RunSCApiTest.sh" "$IOS_VERSION" "$CONFIGURATION"
-    if [ "$?" -ne "0" ]; then 
-       echo "[!!! ERROR !!!] : RunSCApiTest.sh failed"
-       exit 1
-    fi
+    # /bin/bash "$PWD/RunSCApiTest.sh" "$IOS_VERSION" "$CONFIGURATION"
+    # if [ "$?" -ne "0" ]; then 
+    #    echo "[!!! ERROR !!!] : RunSCApiTest.sh failed"
+    #    exit 1
+    # fi
 
     /bin/bash "$PWD/RunSCApiTestCleanSitecore.sh" "$IOS_VERSION" "$CONFIGURATION"
     if [ "$?" -ne "0" ]; then 
@@ -37,11 +37,11 @@ OLD_XCODE_PATH=$(xcode-select -print-path)
        exit 1
     fi
 
-    /bin/bash "$PWD/RunSCApiUnitTest.sh" "$IOS_VERSION" "$CONFIGURATION"
-    if [ "$?" -ne "0" ]; then 
-       echo "[!!! ERROR !!!] : RunSCApiUnitTest.sh failed"
-       exit 1
-    fi
+#    /bin/bash "$PWD/RunSCApiUnitTest.sh" "$IOS_VERSION" "$CONFIGURATION"
+#    if [ "$?" -ne "0" ]; then 
+#       echo "[!!! ERROR !!!] : RunSCApiUnitTest.sh failed"
+#       exit 1
+#    fi
 
 
     /bin/bash "$PWD/RunSCContactTest.sh" "$IOS_VERSION" "$CONFIGURATION"

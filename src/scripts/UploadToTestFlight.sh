@@ -19,7 +19,7 @@ curl http://testflightapp.com/api/builds.json \
 -F team_token='9a4cf26c2ba6dab0ae956567f92fc0c0_ODA1NzEyMDEyLTA0LTEzIDA0OjEzOjM5LjA5OTQ0Nw' \
 -F notes='Built by Hudson' \
 -F notify=True \
--F distribution_lists='iPad2-users, iPad3-users'
+-F distribution_lists='Mobile Team'
 # -F dsym=@$DSYM_FILE
 
 cd "$LAUNCH_DIR"

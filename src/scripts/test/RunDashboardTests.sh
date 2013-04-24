@@ -27,10 +27,15 @@ mkdir -p "$PROJECT_ROOT/deployment/test-results"
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/CleanTestReports.sh"
     /bin/bash "$PWD/RunChartStateTest.sh" "$IOS_VERSION" "$CONFIGURATION"
     if [ "$?" -ne "0" ]; then 
-       echo "[!!! ERROR !!!] : JFFUtilsTest.sh failed"
+       echo "[!!! ERROR !!!] : RunChartStateTest.sh failed"
        exit 1
     fi
 
+    /bin/bash "$PWD/RunSDApiTest.sh" "$IOS_VERSION" "$CONFIGURATION"
+    if [ "$?" -ne "0" ]; then 
+       echo "[!!! ERROR !!!] : RunSDApiTest.sh failed"
+       exit 1
+    fi
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/CopyTestReports.sh"
 
 #restore settings
