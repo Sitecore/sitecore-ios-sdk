@@ -19,7 +19,6 @@
 		252BF8591510ADA400EFBFE2 /* NicamApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF8581510ADA400EFBFE2 /* NicamApp.png */; };
 		252BF85B1510ADE500EFBFE2 /* QRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = 252BF85A1510ADE500EFBFE2 /* QRCode.png */; };
 		253955651518A6FB00217CD4 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253954FC15188F7400217CD4 /* ProductDetailsViewController.m */; };
-		254E5C2C171451D100D2C010 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E5C2B171451D100D2C010 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		257F5E7A1520B03600BB5088 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257F5E781520B03600BB5088 /* MapViewController.m */; };
 		257F5E7E1520B5D600BB5088 /* pin_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 257F5E7D1520B5D600BB5088 /* pin_map.png */; };
 		2582C3CA14ED373300DCE4C4 /* NavigationToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2582C3C914ED373300DCE4C4 /* NavigationToolbar.m */; };
@@ -50,6 +49,7 @@
 		25902A85148377F3006FF9AA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25902A84148377F3006FF9AA /* libsqlite3.dylib */; };
 		259BEC5D14D8153D00DD2173 /* bg_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 259BEC5C14D8153D00DD2173 /* bg_black.png */; };
 		25B9A30B1489104800434594 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B9A30A1489104800434594 /* ProductCell.m */; };
+		7E66E5691729244300BFBE54 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E5C2B171451D100D2C010 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E9F942615EF62BF002D55C8 /* nicam.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F942515EF62BF002D55C8 /* nicam.png */; };
 		7E9F942815EF62CD002D55C8 /* nicam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F942715EF62CD002D55C8 /* nicam@2x.png */; };
 		7E9F942F15EF62F2002D55C8 /* nicam-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9F942915EF62F2002D55C8 /* nicam-72.png */; };
@@ -134,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E66E5691729244300BFBE54 /* Social.framework in Frameworks */,
 				1BAFBF54157F5F1900F3062E /* libstdc++.dylib in Frameworks */,
 				1B3395C1156642CD00E935E9 /* libc++.dylib in Frameworks */,
 				1BB960C315121E6C00B4F9B2 /* MapKit.framework in Frameworks */,
@@ -474,6 +475,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../deployment\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -497,6 +499,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../deployment\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -552,6 +555,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../deployment\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
