@@ -1,22 +1,33 @@
-# Sitecore Mobile SDK ver. 1.1
+# Sitecore Mobile SDK 1.1 for iOS
 
 # Introduction
 
-Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. This should enable you to rapidly develop iPhone applications utilizing the full phone features (camera, location, accelerometer and gestures for example). The applications can then request content from Sitecore efficiently and securely.
+Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both **Objective-C** and **JavaScript** API. This should enable you to **rapidly develop** iPhone applications utilizing phone features such as  
 
-Details on what is contained in the Sitecore package and the iOS project template and libraries can be found below.
+* camera, 
+* location,
+* accelerometer
+* multitouch gestures 
 
-The framework comes with a sample project that makes it very easy to start writing apps, along with comprehensive developer documentation, and several sample projects, including the iPhone/iPad application based on the Nicam demonstration site.
+The applications powered by this SDK can request content from Sitecore efficiently and securely via **Sitecore Item Web API** RESTful web service component.
 
-The Mobile SDK requires Sitecore Item Web API to be installed on the server. Web API is a new Sitecore REST-style web service that outputs JSON, that enables the mobile applications to get content from Sitecore efficiently and securely. However this service is also useful for many other purposes outside of iOS development, including Android/Windows Phone development and even desktop apps and tools, and for this reason it is packaged and documented separately. Please see the Chapter 1 below for a download link.
 
-Please follow these chapters for more details:
 
-* **The Mobile SDK Components** This chapter contains a brief description for the components of the Sitecore Mobile SDK.
-* **The Mobile SDK Installation** This chapter describes how to install the Mobile SDK on the client and the server sides.
-* **Getting Started** This chapter describes requirements and procedures to start using the Mobile SDK.
+This repository contains:
 
-**Link to download the complete ** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+* Source code of the **Sitecore SDK for iOS** framework
+* A [SampleApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/SampleApp) project template 
+* The [NicamApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/NicamApp) demo application.
+
+
+```
+The demo application is based on the "Nicam" web site : http://mobilesdk.sc-demo.net
+```
+
+# Download Links 
+* Product page on SDN : <http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx>
+* Landing page at github : <https://github.com/Sitecore/sitecore-mobile-sdk/>
+
 
 ```
 License : SITECORE SHARED SOURCE LICENSE
@@ -99,7 +110,7 @@ Note :
 ### 2.2 Installing the Client Side Components
 To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.
 ##### 2.2.1 Installing the Sitecore Mobile SDK server package
-To use the Sitecore Mobile SDK framework in your application:
+To use the Sitecore Mobile SDK framework in your application please follow steps below:
 
 1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
 2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
@@ -107,10 +118,37 @@ To use the Sitecore Mobile SDK framework in your application:
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
 information, see the section Build Setting Reference in the Apple Developer Manual.
 ![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/OtherLinkerFlag.png)
-4. Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section Linking to Library or Framework in the Project Editor
-Help in the Apple Developer Manual.
-5. Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
-6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
+4. Link the following frameworks to the project: 
+
+
+	* CFNetwork.framework 
+	* CoreMotion.framework
+	* CoreLocation.framework
+	* CoreMedia.framework
+	* CoreVideo.framework
+	* AddressBook.framework
+	* AudioToolbox.framework
+	* AddressBookUI.framework
+	* Twitter.framework
+	* MessageUI.framework
+	* MapKit.framework
+	* AVFoundation.framework
+
+
+5. Link the following libraries to the project: 
+
+	* libxml2.dylib
+	* libz.dylib
+	* libsqlite3.dylib
+	* libstdc++.dylib 
+	* libc++.dylib
+	* libiconv.dylib
+
+```
+For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
+```
+
+6). Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
 
 **Here is an example:**
 
@@ -123,14 +161,7 @@ Help in the Apple Developer Manual.
 ```
 
 ## 3. Getting Started
-### 3.1 Models of Working with the Mobile SDK
-There are three models that you can apply to make your application work with the Sitecore Mobile SDK:
-
-* Embedded Browser – If you already have a website that is running on Sitecore and optimized for the mobile application, you must use the website presentation. Then, you can display the embedded browser window inside your application. The native device features are typically unavailable in a normal website but you can access them through a set of HTML and Javascript APIs. For more information about this approach, see the section Getting Started with the Embedded Browser.
-* Web API – If you are familiar with Objective-C development, you can use the native code to develop all or part of your application and access the content in Sitecore to get all benefits of the Sitecore CMS. For more information about Objective-C API, see the section Getting Started with the Web API Service.
-* Creating a Hybrid of the Embedded Browser and the Web API – For example, you can use the native code and UI elements for parts of the screen, such as the standard navigation elements like the tab bar and the navigation bar, and use the embedded browser to display your content. For more information about this approach, see the section Combining the Embedded Browser and the Web API Service.
-
-### 3.2 Getting Started with the Embedded Browser
+### 3.1 Getting Started with the Embedded Browser
 The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx).
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
 	
