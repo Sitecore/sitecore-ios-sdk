@@ -1,4 +1,4 @@
-# Sitecore Mobile SDK ver. 1.1.0
+# Sitecore Mobile SDK ver. 1.1
 
 # Introduction
 
