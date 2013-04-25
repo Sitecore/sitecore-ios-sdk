@@ -27,6 +27,7 @@ The demo application is based on the "Nicam" web site : http://mobilesdk.sc-demo
 # Download Links 
 * Product page on SDN : <http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx>
 * Landing page at github : <https://github.com/Sitecore/sitecore-mobile-sdk/>
+* **Sitecore Item Web API** page on SDN : <http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx>
 
 
 ```
@@ -38,20 +39,13 @@ License : SITECORE SHARED SOURCE LICENSE
 ## 1. The Mobile SDK Components
 ### 1.1 The Server
 
-The Sitecore Mobile SDK server package contains components that allow you to use iOS features in your website.
-
-The Sitecore Mobile SDK server package requires:
+The Sitecore Mobile SDK server package contains components that allow you to use the iOS features in your website.The Sitecore Mobile SDK server package requires:
 
 * .Net Framework version 2.0 and later for the Application Pool of your website.
 * Sitecore CMS version 6.5 or later.
+* Sitecore Item Web API.
 
-**Link to download** [Sitecore Mobile SDK server](http://sdn.sitecore.net/downloads/MobileSDKDemoIos10.download) **package**
-
-The Mobile SDK API is called the "Sitecore Item Web API" and is web service based. This web service is designed with the REST principles to make the Sitecore content accessible through HTTP requests in the JSON format.
-
-The Web API supports accessing the content through items paths, IDs, or by running queries. The output produced by the service is highly customizable and optimized to reduce the number of requests.
-
-**Link to download** [Sitecore Item Web API](http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx) **package**
+**Link to download** [Sitecore Mobile SDK demo](http://sdn.sitecore.net/downloads/MobileSDKDemoIos10.download) **package**
 
 ### 1.2 The Client
 
@@ -133,6 +127,7 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 	* MessageUI.framework
 	* MapKit.framework
 	* AVFoundation.framework
+	* Social.framework (optional)
 
 
 5. Link the following libraries to the project: 
