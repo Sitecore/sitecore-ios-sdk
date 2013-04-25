@@ -47,21 +47,12 @@ The Sitecore Mobile SDK server package contains components that allow you to use
 
 ### 1.2 The Client
 
-The client is an iOS project that contains the "SitecoreMobileSDK.framework" that provides an Objective-C API. You can use this API to access Sitecore content through the web service and use this content in your application. The API also supports advanced features such as caching.
+The client is an iOS project that contains the "SitecoreMobileSDK.framework". The framework provides an Objective-C API. You can use this API to access Sitecore content and use it in your application. The API also supports advanced features such as caching.
 
 You can use the Mobile SDK to display the existing HTML presentation while having access to the native iOS hardware and software abilities. You can reuse the elements of the website and reduce the implementation cost. You can also use native Objective-C.
 
-The list of native features available in HTML environment includes:
+See the [landing page](https://github.com/Sitecore/sitecore-mobile-sdk/) for more details on how it works.
 
-* Left-Right swipe navigation.
-* Access to the camera and the photo library.
-* Accelerometer data.
-* Device information.
-* Access to the contact list and easy creation of new contacts.
-* Creating tweets through the system-wide twitter accounts
-* Sending email messages using the email account
-
-**Link to download** [SitecoreMobileSDK.framework](http://sdn.sitecore.net/downloads/MobileSDKIos10.download)
 
 ***
 ## 2. The Mobile SDK Installation
@@ -113,29 +104,29 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 4. Link the following frameworks to the project: 
 
 
-	* CFNetwork.framework 
-	* CoreMotion.framework
-	* CoreLocation.framework
-	* CoreMedia.framework
-	* CoreVideo.framework
-	* AddressBook.framework
-	* AudioToolbox.framework
-	* AddressBookUI.framework
-	* Twitter.framework
-	* MessageUI.framework
-	* MapKit.framework
-	* AVFoundation.framework
-	* Social.framework (optional)
+* CFNetwork.framework 
+* CoreMotion.framework
+* CoreLocation.framework
+* CoreMedia.framework
+* CoreVideo.framework
+* AddressBook.framework
+* AudioToolbox.framework
+* AddressBookUI.framework
+* Twitter.framework
+* MessageUI.framework
+* MapKit.framework
+* AVFoundation.framework
+* Social.framework (optional)
 
 
 5. Link the following libraries to the project: 
 
-	* libxml2.dylib
-	* libz.dylib
-	* libsqlite3.dylib
-	* libstdc++.dylib 
-	* libc++.dylib
-	* libiconv.dylib
+* libxml2.dylib
+* libz.dylib
+* libsqlite3.dylib
+* libstdc++.dylib 
+* libc++.dylib
+* libiconv.dylib
 
 ```
 For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
