@@ -92,7 +92,6 @@ Note :
 
 ### 2.2 Installing the Client Side Components
 To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.
-##### 2.2.1 Installing the Sitecore Mobile SDK server package
 To use the Sitecore Mobile SDK framework in your application please follow steps below:
 
 1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
