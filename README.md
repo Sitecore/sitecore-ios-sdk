@@ -4,7 +4,14 @@
 
 Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both **Objective-C** and **JavaScript** API. This should enable you to **rapidly develop** iPhone applications utilizing phone features such as  
 
-* Left-Right **swipe navigation*** Access to the **camera** and the **photo library*** Accelerometer* Device information* Access to the built-in **address book** and easy creation of new contacts* Creating tweets through the system-wide twitter accounts* Sending **e-mails** using the e-mail account* **Social networks** integration (Facebook, Weibo) for iOS 6.0 and newer devices
+* Left-Right **swipe navigation**
+* Access to the **camera** and the **photo library**
+* Accelerometer
+* Device information
+* Access to the built-in **address book** and easy creation of new contacts
+* Creating tweets through the system-wide twitter accounts
+* Sending **e-mails** using the e-mail account
+* **Social networks** integration (Facebook, Weibo) for iOS 6.0 and newer devices
 
 
 The applications powered by this SDK can request content from Sitecore efficiently and securely via **Sitecore Item Web API** RESTful web service component.
@@ -37,7 +44,8 @@ License : SITECORE SHARED SOURCE LICENSE
 ## 1. The Mobile SDK Components
 ### 1.1 The Server
 
-The Sitecore Mobile SDK server package contains components that allow you to use the iOS features in your website.The Sitecore Mobile SDK server package requires:
+The Sitecore Mobile SDK server package contains components that allow you to use the iOS features in your website.
+The Sitecore Mobile SDK server package requires:
 
 * .Net Framework version 2.0 and later for the Application Pool of your website.
 * Sitecore CMS version 6.5 or later.
@@ -70,7 +78,8 @@ This chapter contains the following sections:
 You must install the Sitecore Item Web API service and the Mobile SDK components before you can access Sitecore content.
 ```
 
-The Mobile SDK Demo for iOS is distributed as a Sitecore package. To install it, use the Sitecore Installation Wizard. After you install the package, in the web.config file, the < xslExtensions > section, add the following string:
+The Mobile SDK Demo for iOS is distributed as a Sitecore package. To install it, use the Sitecore Installation Wizard.
+ After you install the package, in the web.config file, the < xslExtensions > section, add the following string:
  
 **Example:**
 
@@ -87,7 +96,9 @@ The Mobile SDK Demo for iOS is distributed as a Sitecore package. To install it,
 
 ```
 Note :
-￼￼The installation of Mobile SDK Demo for iOS package is optional. You can implement your own custom mobile renderings that use the native features of the device.```
+￼￼The installation of Mobile SDK Demo for iOS package is optional. You can implement your own custom mobile renderings that use the native features of the device.
+
+```
 
 
 ### 2.2 Installing the Client Side Components
@@ -99,7 +110,9 @@ To use the Sitecore Mobile SDK framework in your application please follow steps
 ![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
 information, see the section Build Setting Reference in the Apple Developer Manual.
+
 ![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/OtherLinkerFlag.png)
+
 4. Link the following frameworks to the project: 
 
 
@@ -117,7 +130,6 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 * AVFoundation.framework
 * Social.framework (optional)
 
-
 5. Link the following libraries to the project: 
 
 * libxml2.dylib
@@ -131,7 +143,7 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
 ```
 
-6). Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
+6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
 
 **Here is an example:**
 
