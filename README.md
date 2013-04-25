@@ -4,10 +4,8 @@
 
 Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both **Objective-C** and **JavaScript** API. This should enable you to **rapidly develop** iPhone applications utilizing phone features such as  
 
-* camera
-* location
-* accelerometer
-* multitouch gestures 
+* Left-Right **swipe navigation*** Access to the **camera** and the **photo library*** Accelerometer* Device information* Access to the built-in **address book** and easy creation of new contacts* Creating tweets through the system-wide twitter accounts* Sending **e-mails** using the e-mail account* **Social networks** integration (Facebook, Weibo) for iOS 6.0 and newer devices
+
 
 The applications powered by this SDK can request content from Sitecore efficiently and securely via **Sitecore Item Web API** RESTful web service component.
 
