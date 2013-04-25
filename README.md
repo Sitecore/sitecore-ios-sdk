@@ -18,7 +18,9 @@ Please follow these chapters for more details:
 
 **Link to download the complete ** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
+```
 License : SITECORE SHARED SOURCE LICENSE
+```
 
 ***
 
@@ -69,35 +71,13 @@ This chapter contains the following sections:
 
 
 ### 2.1 Installing the Server Side Components
-##### 2.1.1 Installing the Sitecore Item Web API Service
-Use the Sitecore Installation Wizard to install the Sitecore Item Web API service:
 
-1. Log in to the Sitecore Desktop.
-2. Click Sitecore, Development Tools, Installation Wizard. The wizard will guide you through the installation process.
-3. In the Select Package dialog box, specify the package that you want to install.
-4. Click Browse to locate the package or click Upload to upload the package. The folder, to which the packages are uploaded, is specified in the web.config file.
-5. In the License Agreement dialog box, accept the license agreement.
-6. In the Ready to Install dialog box, you can review the package information and then click
-Install.
-7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Item Web API Service is working, make a simple request to the service.
-8. In a browser, enter the URL: http://yoursite/-/item/v1/sitecore/Content/Home.
-![simple request](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/SimpleRequest.png)
-9. If you want to create/edit/remove items using Sitecore Item Web Api, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
+```
+You must install the Sitecore Item Web API service and the Mobile SDK components before you can access Sitecore content.
+```
 
-##### 2.1.2 Installing the Sitecore Mobile SDK server package
-
-Use the Sitecore Installation Wizard to install the Sitecore "Mobile SDK server package" on the server side:
-
-1. Log in to the Sitecore Desktop.
-2. Click Sitecore, Development Tools, Installation Wizard.
-The wizard will guide you through the installation process.
-3. In the Select Package dialog box, specify the package that you want to install.
-4. Click Browse to browse for an existing package or Upload to upload a new one.
-5. In the Ready to Install dialog box, you can review the package information and then click
-Install.
-6. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish.
-7. After package installation add the following string to < xslExtensions > section of web.config file:
-
+The Mobile SDK Demo for iOS is distributed as a Sitecore package. To install it, use the Sitecore Installation Wizard. After you install the package, in the web.config file, the < xslExtensions > section, add the following string:
+ 
 **Example:**
 
 ```xml
@@ -109,6 +89,12 @@ Install.
 ```	
 
 **Now, you can use the Sitecore Mobile SDK server side component.**
+
+
+```
+Note :
+￼￼The installation of Mobile SDK Demo for iOS package is optional. You can implement your own custom mobile renderings that use the native features of the device.```
+
 
 ### 2.2 Installing the Client Side Components
 To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.
