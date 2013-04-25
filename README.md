@@ -292,9 +292,11 @@ The following procedure describes this scenario:
 
 *3. Extend the project with the following code:*
 
-	ViewController.m
+
 	
 ```objc
+	// ViewController.m
+
 	@interface BrowserViewController : UIViewController
 	
 	@property ( nonatomic, retain ) NSString* urlString;
