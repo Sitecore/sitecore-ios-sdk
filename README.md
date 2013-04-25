@@ -105,16 +105,18 @@ Note :
 To start the client side installation, you must have the SitecoreMobileSDK.framework bundle.
 To use the Sitecore Mobile SDK framework in your application please follow steps below:
 
-1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
-2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
+1) Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
+
+2) Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
+
 ![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
-3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
+
+3) Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
 information, see the section Build Setting Reference in the Apple Developer Manual.
 
 ![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/OtherLinkerFlag.png)
 
-4. Link the following frameworks to the project: 
-
+4) Link the following frameworks to the project: 
 
 * CFNetwork.framework 
 * CoreMotion.framework
@@ -130,7 +132,7 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 * AVFoundation.framework
 * Social.framework (optional)
 
-5. Link the following libraries to the project: 
+5) Link the following libraries to the project: 
 
 * libxml2.dylib
 * libz.dylib
@@ -143,7 +145,7 @@ information, see the section Build Setting Reference in the Apple Developer Manu
 For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
 ```
 
-6. Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
+6) Add line - "#import <SitecoreMobileSDK/SitecoreMobileSDK.h>" to your project's *.pch or GCC_PREFIX_HEADER file. For more information, see the section Build Setting Reference in the Apple Developer Manual.
 
 **Here is an example:**
 
