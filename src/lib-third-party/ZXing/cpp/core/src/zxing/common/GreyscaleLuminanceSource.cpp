@@ -20,6 +20,7 @@
 #include <zxing/common/GreyscaleLuminanceSource.h>
 #include <zxing/common/GreyscaleRotatedLuminanceSource.h>
 #include <zxing/common/IllegalArgumentException.h>
+#include <sstream>
 
 namespace zxing {
 
@@ -35,7 +36,11 @@ GreyscaleLuminanceSource::GreyscaleLuminanceSource(unsigned char* greyData, int 
 
 unsigned char* GreyscaleLuminanceSource::getRow(int y, unsigned char* row) {
   if (y < 0 || y >= this->getHeight()) {
-    throw IllegalArgumentException("Requested row is outside the image: " + y);
+      
+      std::ostringstream msg_;
+      msg_ << "Requested row is outside the image: " << y;
+      
+    throw IllegalArgumentException( msg_.str().c_str() );
   }
   int width = getWidth();
   // TODO(flyashi): determine if row has enough size.

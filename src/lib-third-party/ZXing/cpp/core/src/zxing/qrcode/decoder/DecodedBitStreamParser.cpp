@@ -24,6 +24,8 @@
 #include <zxing/FormatException.h>
 #include <zxing/common/StringUtils.h>
 #include <iostream>
+#include <cstdlib>
+
 #ifndef NO_ICONV
 #include <iconv.h>
 #endif
@@ -324,7 +326,13 @@ namespace {
       int secondThirdBytes = bits.readBits(16);
       return ((firstByte & 0x1F) << 16) | secondThirdBytes;
     }
-    throw IllegalArgumentException("Bad ECI bits starting with byte " + firstByte);
+      
+      
+      std::ostringstream msgStream_;
+      msgStream_ << "Bad ECI bits starting with byte " << firstByte;
+      
+      
+    throw IllegalArgumentException( msgStream_.str().c_str() );
   }
 }
 

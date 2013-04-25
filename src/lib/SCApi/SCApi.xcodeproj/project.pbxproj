@@ -748,6 +748,7 @@
 					"../../lib-third-party/ios-openssl/include",
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party/AmberFramework-lite",
+					"../../lib-third-party/JFFLibrary/lib/JFFCache",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -784,6 +785,7 @@
 					"../../lib-third-party/ios-openssl/include",
 					"../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 					"../../lib-third-party/AmberFramework-lite",
+					"../../lib-third-party/JFFLibrary/lib/JFFCache",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
