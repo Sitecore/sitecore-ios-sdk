@@ -4,8 +4,8 @@
 
 Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both **Objective-C** and **JavaScript** API. This should enable you to **rapidly develop** iPhone applications utilizing phone features such as  
 
-* camera, 
-* location,
+* camera
+* location
 * accelerometer
 * multitouch gestures 
 
@@ -193,7 +193,7 @@ For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on
 Swiping is now enabled.
 If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
 For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx).
-### 3.3 Getting Started with the Web API Service
+### 3.2 Getting Started with the Web API Service
 To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.
 The following list is an overview of how to use the Web API service:
 #### Establish an anonymous session for a website
@@ -295,51 +295,8 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
 
 **For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
 
-#### Use the children of a particular item to populate the tab bar
 
-You must use the SCItemsReaderRequest class with the SCItemReaderRequestReadFieldsValues flag and the SCItemReaderChildrenScope scope to load the field values of the item’s children.
-
-To populate the tab bar:
-
-1. Create an XCode Single View Application project.
-2. Install the Sitecore Mobile SDK. For more information about installing the Mobile SDK, see the chapter The Mobile SDK Installation.
-3. Add a Tab Bar Controller to the project – in the implementation of ViewController
-
-Then add the following code:
-
-
-```objc
-	- (void)viewDidLoad
-    {
-        [super viewDidLoad];
-        NSMutableArray *listOfViewControllers = [NSMutableArray new];
-        SCApiContext *session = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"];
-        NSSet* fieldNames = [NSSet setWithObjects: @"Menu title", @"Tab Icon", nil ];
-        SCItemsReaderRequest* request_ = [SCItemsReaderRequest requestWithItemPath: @"/sitecore/content/Nicam/"
-    ￼    fieldsNames: fieldNames];
-        request_.flags = SCItemReaderRequestReadFieldsValues; //to read field values
-        request_.scope = SCItemReaderChildrenScope; //to read children of the item
-        [session itemsReaderWithRequest: request_](^(id result, NSError *errors)
-        {
-            for (SCItem* item in result)
-            {
-                NSString* title = [item fieldValueWithName: @"Menu title"];
-                UIImage* icon = [item fieldValueWithName: @"Tab Icon"];
-                UIViewController* viewController = [UIViewController new];
-                viewController.title = title;
-                viewController.tabBarItem.image = icon;
-                [listOfViewControllers addObject: viewController];
-            }
-            [self performSegueWithIdentifier: @"showTabBar" sender: self];
-            UITabBarController* tabBar = (UITabBarController*)self.modalViewController;
-            [tabBar setViewControllers:listOfViewControllers animated:YES];
-        });
-    }
-```
-
-**For more information, see the section Populating the Tab Bar.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
-
-### 3.4 Combining the Embedded Browser and the Web API Service
+### 3.3 Combining the Embedded Browser and the Web API Service
 
 You can retrieve Sitecore content, and use it in both the Xcode Web View controls and the embedded browser. This example describes how to create a Tab Bar menu that contains the Sitecore items, titles, and icons and then load the web page in a web browser for each item.
 
@@ -349,9 +306,7 @@ The following procedure describes this scenario:
 
 *2. Create an XCode project.*
 
-*3. Create a tab bar menu. For more information about creating a tab bar menu, see the chapter "Populating the Tab Bar".*
-
-*4. Extend the project with the following code:*
+*3. Extend the project with the following code:*
 
 	ViewController.m
 	
@@ -399,6 +354,9 @@ The following procedure describes this scenario:
 	        [self performSegueWithIdentifier: @"showTabBar" sender: self];
 	        UITabBarController *tabBar = (UITabBarController*)self.modalViewController;
 	        [tabBar setViewControllers:listOfViewControllers animated:YES];
+	        
+	        ￼NSURL* url = [NSURL URLWithString: self.urlString ]; 
+            [self.webView loadURL: url];
 	    } );
 	}
 ```
