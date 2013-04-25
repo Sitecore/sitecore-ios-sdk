@@ -81,7 +81,7 @@ Use the Sitecore Installation Wizard to install the Sitecore Item Web API servic
 Install.
 7. When the installation is complete, you can choose to restart the Sitecore client or the Sitecore server and then click Finish. To test that the Sitecore Item Web API Service is working, make a simple request to the service.
 8. In a browser, enter the URL: http://yoursite/-/item/v1/sitecore/Content/Home.
-![simple request](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0.0/resources/SimpleRequest.png)
+![simple request](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0/resources/SimpleRequest.png)
 9. If you want to create/edit/remove items using Sitecore Item Web Api, you need to disable WebDav: (see 'WebDAV.Enabled' setting in Sitecore.WebDAV.config)
 
 ##### 2.1.2 Installing the Sitecore Mobile SDK server package
@@ -115,10 +115,10 @@ To use the Sitecore Mobile SDK framework in your application:
 
 1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
 2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
-![Finish](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0.0/resources/SitecoreMobileSDK.framework_bundle.png)
+![Finish](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0/resources/SitecoreMobileSDK.framework_bundle.png)
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
 information, see the section Build Setting Reference in the Apple Developer Manual.
-![Finish](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0.0/resources/OtherLinkerFlag.png)
+![Finish](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0/resources/OtherLinkerFlag.png)
 4. Link the following frameworks to the project: ***CFNetwork.framework***, ***CoreMotion.framework***, ***CoreLocation.framework***, ***CoreMedia.framework***, ***CoreVideo.framework***, ***AddressBook.framework***, ***AudioToolbox.framework***, ***AddressBookUI.framework***, ***Twitter.framework***, ***MessageUI.framework***, ***MapKit.framework***, ***AVFoundation.framework***. For more information, see the section Linking to Library or Framework in the Project Editor
 Help in the Apple Developer Manual.
 5. Link the following libraries to the project: ***libxml2.dylib***, ***libz.dylib***, ***libsqlite3.dylib***, ***libstdc++.dylib***, ***libc++.dylib***, ***libiconv.dylib*** For more information, see the section Linking to Library or Framework in the Project Editor Help in the Apple Developer Manual.
@@ -386,4 +386,4 @@ The following procedure describes this scenario:
 
 *5. Build and run the application*
 
-![Embedded Browser](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0.0/resources/EmbeddedBrowser.png)
+![Embedded Browser](https://raw.github.com/Sitecore/sitecore-ios-sdk/sdk1.0/resources/EmbeddedBrowser.png)
