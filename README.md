@@ -43,7 +43,7 @@ The Sitecore Mobile SDK server package contains components that allow you to use
 * Sitecore CMS version 6.5 or later.
 * Sitecore Item Web API.
 
-**Link to download** [Sitecore Mobile SDK demo](http://sdn.sitecore.net/downloads/MobileSDKDemoIos10.download) **package**
+**Link to download** [Sitecore Mobile SDK demo](http://sdn.sitecore.net/downloads/MobileSDKDemoIos11.download) **package**
 
 ### 1.2 The Client
 
@@ -145,7 +145,7 @@ For more information, see the section Linking to Library or Framework in the Pro
 
 ## 3. Getting Started
 ### 3.1 Getting Started with the Embedded Browser
-The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx).
+The Sitecore Mobile SDK contains the SCWebView classes that extend the WebView class with additional features such as sharing on Twitter and left-right swiping. For more information, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx).
 You can use SCWebView in the same way as UIWebView, as all of their methods are similar. The following example illustrates how to use the SCWebView class:
 	
 ```objc
@@ -175,7 +175,7 @@ For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on
 
 Swiping is now enabled.
 If you also want to use the browser's Back and Forward navigation controls, use SCWebBrowser instead of SCWebView. This is because SCWebBrowser inherits methods and properties of SCWebView and adds additional navigation controls.
-For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx).
+For a complete list of the features that are available in the Embedded Web View, see the chapter Using the Enhanced Web View Reference: [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx).
 ### 3.2 Getting Started with the Web API Service
 To start working with the Web API service, you must create an XCode project and install the Sitecore Mobile SDK.
 The following list is an overview of how to use the Web API service:
@@ -191,7 +191,7 @@ itemReaderForItemId:] methods to read the item with the item's path and ID, for 
 #### Get a single item
 
 Now, use the SCApiContext object to access the required items and fields.
-For more information, see the section Installing the Client Side. [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+For more information, see the section Installing the Client Side. [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx)
 
 ```objc
 	//Read an item with path
@@ -202,7 +202,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 	} );
 ```
 
-**For more information, see the section Accessing an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+**For more information, see the section Accessing an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx)
 
 #### Get the main properties of the item
 
@@ -229,7 +229,7 @@ For example, the following method shows the item’s display name in the console
 	NSLog(@"item display name: %@", item.displayName);
 
 **For more information about the properties of the SCItem class, see the section Requirements to
-Access an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+Access an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx)
 
 The SCItem object may contain some or all Sitecore item's fields according to the type value of the
 [SCItemsReaderRequest fieldNames] property of the request.
@@ -242,7 +242,7 @@ The fieldNames property of the request can be of type: nil, empty set, or set of
 	Note:
     To read a field, its Read property must be set to Allow in the Field Remote Read security settings of Sitecore.
 
-**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation ](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+**For more information, see the section Accessing the Fields of an Item.** [Mobile SDK documentation ](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx)
 
 #### Get the item’s children
 
@@ -276,7 +276,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
     });
 ```
 
-**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%20on%20GitHub/Documentation.aspx)
+**For more information, see the section Accessing the Children of an Item.** [Mobile SDK documentation](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Mobile%20SDK%201,-d-,1/Documentation.aspx)
 
 
 ### 3.3 Combining the Embedded Browser and the Web API Service
