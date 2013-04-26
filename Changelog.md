@@ -28,10 +28,26 @@
 
 
 ### 1. JavaScript API
-* Left-Right **swipe navigation*** Access to the **camera** and the **photo library*** Accelerometer* Device information* Access to the built-in **address book** and easy creation of new contacts* Creating tweets through the system-wide twitter accounts* Sending **e-mails** using the e-mail account
-### 2. Objective-C API
-* Accessing data from Sitecore CMS	* CRUD	* caching	* security	* paging
-	* sitecore **queries** and **fast queries** support* Enchanced Google Maps navigation* QR code scanner
+* Left-Right **swipe navigation**
+* Access to the **camera** and the **photo library**
+* Accelerometer
+* Device information
+* Access to the built-in **address book** and easy creation of new contacts
+* Creating tweets through the system-wide twitter accounts
+* Sending **e-mails** using the e-mail account
+
+
+
+### 2. Objective-C API
+
+* Accessing data from Sitecore CMS
+	* CRUD
+	* caching
+	* security
+	* paging
+	* sitecore **queries** and **fast queries** support
+* Enchanced Google Maps navigation
+* QR code scanner
+
 ----------------------
 
-
