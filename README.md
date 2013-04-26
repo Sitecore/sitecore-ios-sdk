@@ -14,8 +14,8 @@ The applications powered by this SDK can request content from Sitecore efficient
 This repository contains:
 
 * Source code of the **Sitecore SDK for iOS** framework
-* A [SampleApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/SampleApp) project template 
-* The [NicamApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/NicamApp) demo application.
+* A [SampleApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/sdk1.1/src/app/SampleApp) project template 
+* The [NicamApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/sdk1.1/src/app/NicamApp) demo application.
 
 
 ```
@@ -96,10 +96,10 @@ To use the Sitecore Mobile SDK framework in your application please follow steps
 
 1. Create a simple XCode Single View Application project. For more information, see the Getting Started section in the Apple Developer Manual. If you have already created an XCode Single View Application project, you can skip this step.
 2. Drag the SitecoreMobileSDK.framework bundle and drop it into the project's Frameworks source group.
-![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/SitecoreMobileSDK.framework_bundle.png)
+![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk1.1/resources/SitecoreMobileSDK.framework_bundle.png)
 3. Add the -ObjC flag to the Other linker flag in the XCode Build Settings. For more
 information, see the section Build Setting Reference in the Apple Developer Manual.
-![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/OtherLinkerFlag.png)
+![Finish](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk1.1/resources/OtherLinkerFlag.png)
 4. Link the following frameworks to the project: 
 
 
@@ -348,4 +348,4 @@ The following procedure describes this scenario:
 
 *5. Build and run the application*
 
-![Embedded Browser](https://github.com/Sitecore/sitecore-ios-sdk/raw/master/resources/EmbeddedBrowser.png)
+![Embedded Browser](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk1.1/resources/EmbeddedBrowser.png)
