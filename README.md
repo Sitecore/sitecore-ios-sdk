@@ -22,12 +22,10 @@ This repository contains:
 
 * Source code of the **Sitecore SDK for iOS** framework
 * A [SampleApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/SampleApp) project template 
-* The [NicamApp](https://github.com/Sitecore/sitecore-ios-sdk/tree/master/src/app/NicamApp) demo application.
 
 
-```
-The demo application is based on the "Nicam" web site : http://mobilesdk.sc-demo.net
-```
+
+
 
 # Download Links 
 * Product page on SDN : <http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx>
@@ -170,7 +168,7 @@ You can use SCWebView in the same way as UIWebView, as all of their methods are 
         SCWebView* webView = [[SCWebView alloc] initWithFrame: self.view.bounds];
         webView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
         UIViewAutoresizingFlexibleHeight;
-        NSURL* url = [NSURL URLWithString: @"http://mobilesdk.sc-demo.net/"];
+        NSURL* url = [NSURL URLWithString: @"http://<host_name>/"];
         [webView loadURL: url];
         [self.view addSubview: webView];
     }
@@ -178,13 +176,13 @@ You can use SCWebView in the same way as UIWebView, as all of their methods are 
 
 You are now ready to use the SCWebView class. You can use the WebView enhancements, such as,
 left-right swipes with any website that is displayed with SCWebView.
-For example, if you want to browse to http://mobilesdk.sc-demo.net/Nicam.aspx on the right swipe and to http://mobilesdk.sc-demo.net/Products.aspx on the left swipe, you must turn on swiping and add the links to the web page as follows:
+For example, if you want to browse to http://<host_name>/Home.aspx on the right swipe and to http://<host_name>/Products.aspx on the left swipe, you must turn on swiping and add the links to the web page as follows:
 
 ```html
 	<html>
     <head>
-        <link rel="scm-forward" href="http://mobilesdk.sc-demo.net/Nicam.aspx" />
-        <link rel="scm-back" href="http://mobilesdk.sc-demo.net/Products.aspx" />
+        <link rel="scm-forward" href="http://<host_name>/Home.aspx" />
+        <link rel="scm-back" href="http://<host_name>/Products.aspx" />
 ```	
 
 Swiping is now enabled.
@@ -196,7 +194,7 @@ The following list is an overview of how to use the Web API service:
 #### Establish an anonymous session for a website
 
 ```objc
-	SCApiContext *context = [SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"];
+	SCApiContext *context = [SCApiContext contextWithHost: @"<host_name>/-/item"];
 ```
 
 Use the [SCApiContext itemReaderForItemPath:] and [SCApiContext
@@ -209,7 +207,7 @@ For more information, see the section Installing the Client Side. [Mobile SDK do
 
 ```objc
 	//Read an item with path
-	[context itemReaderForItemPath: @"/sitecore/content/nicam"](^(id result, NSError *error)
+	[context itemReaderForItemPath: @"/sitecore/content/MyItem"](^(id result, NSError *error)
 	{
 	    SCItem* item = result;
 	    NSLog(@"item display name: %@", item.displayName);
@@ -266,7 +264,7 @@ You must use the [SCApiContext itemsReaderWithRequest:] method to load an item a
 ```objc
 	SCItemsReaderRequest *request = [SCItemsReaderRequest new];
     //The path of item
-    request.request = @"/sitecore/content/Nicam";
+    request.request = @"/sitecore/content/MyItem";
     //Specifies the type of request option, now item path used
     request.requestType = SCItemReaderRequestItemPath;
     //Specifies the set of the items which will be loaded. Here item and its children will be loaded
@@ -330,11 +328,11 @@ The following procedure describes this scenario:
 	}
 	- (void)viewDidLoad
 	{
-	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item" ];
+	    SCApiContext* context_ = [ SCApiContext contextWithHost: @"<host_name>/-/item" ];
 	    
         NSMutableArray *listOfViewControllers = [NSMutableArray new];
 		SCItemsReaderRequest *request = [SCItemsReaderRequest new];
-		request_.request = @"/sitecore/content/Nicam/*[@@templatename='Site Section']";
+		request_.request = @"/sitecore/content/MyItem/*[@@templatename='Site Section']";
 		request_.requestType = SCItemReaderRequestQuery;
 		request_.fieldNames = [ [ NSSet alloc ] initWithObjects: @"Title", @"Tab Icon", nil ];
 		request_.flags = SCItemReaderRequestReadFieldsValues;
