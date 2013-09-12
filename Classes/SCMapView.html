@@ -1,0 +1,2789 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SCMapView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Sitecore Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">Sitecore</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SCMapView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/NA">&nbsp;&nbsp;&nbsp;&nbsp;NA</option>
+	
+	<option value="//api/name/annotationVisibleRect">&nbsp;&nbsp;&nbsp;&nbsp;annotationVisibleRect</option>
+	
+	<option value="//api/name/annotations">&nbsp;&nbsp;&nbsp;&nbsp;annotations</option>
+	
+	<option value="//api/name/centerCoordinate">&nbsp;&nbsp;&nbsp;&nbsp;centerCoordinate</option>
+	
+	<option value="//api/name/didLoadedAnnotationsHandler">&nbsp;&nbsp;&nbsp;&nbsp;didLoadedAnnotationsHandler</option>
+	
+	<option value="//api/name/drawRouteToNearestAddress">&nbsp;&nbsp;&nbsp;&nbsp;drawRouteToNearestAddress</option>
+	
+	<option value="//api/name/mapType">&nbsp;&nbsp;&nbsp;&nbsp;mapType</option>
+	
+	<option value="//api/name/region">&nbsp;&nbsp;&nbsp;&nbsp;region</option>
+	
+	<option value="//api/name/regionRadius">&nbsp;&nbsp;&nbsp;&nbsp;regionRadius</option>
+	
+	<option value="//api/name/scrollEnabled">&nbsp;&nbsp;&nbsp;&nbsp;scrollEnabled</option>
+	
+	<option value="//api/name/selectedAnnotations">&nbsp;&nbsp;&nbsp;&nbsp;selectedAnnotations</option>
+	
+	<option value="//api/name/showsUserLocation">&nbsp;&nbsp;&nbsp;&nbsp;showsUserLocation</option>
+	
+	<option value="//api/name/userLocation">&nbsp;&nbsp;&nbsp;&nbsp;userLocation</option>
+	
+	<option value="//api/name/userLocationVisible">&nbsp;&nbsp;&nbsp;&nbsp;userLocationVisible</option>
+	
+	<option value="//api/name/visibleMapRect">&nbsp;&nbsp;&nbsp;&nbsp;visibleMapRect</option>
+	
+	<option value="//api/name/zoomEnabled">&nbsp;&nbsp;&nbsp;&nbsp;zoomEnabled</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- addAnnotation:</option>
+	
+	<option value="//api/name/addAnnotations:">&nbsp;&nbsp;&nbsp;&nbsp;- addAnnotations:</option>
+	
+	<option value="//api/name/addItemsAnnotationsForQuery:apiContext:handler:">&nbsp;&nbsp;&nbsp;&nbsp;- addItemsAnnotationsForQuery:apiContext:handler:</option>
+	
+	<option value="//api/name/addItemsAnnotationsWithPath:apiContext:handler:">&nbsp;&nbsp;&nbsp;&nbsp;- addItemsAnnotationsWithPath:apiContext:handler:</option>
+	
+	<option value="//api/name/addOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- addOverlay:</option>
+	
+	<option value="//api/name/addOverlays:">&nbsp;&nbsp;&nbsp;&nbsp;- addOverlays:</option>
+	
+	<option value="//api/name/annotationsInMapRect:">&nbsp;&nbsp;&nbsp;&nbsp;- annotationsInMapRect:</option>
+	
+	<option value="//api/name/convertCoordinate:toPointToView:">&nbsp;&nbsp;&nbsp;&nbsp;- convertCoordinate:toPointToView:</option>
+	
+	<option value="//api/name/convertPoint:toCoordinateFromView:">&nbsp;&nbsp;&nbsp;&nbsp;- convertPoint:toCoordinateFromView:</option>
+	
+	<option value="//api/name/convertRect:toRegionFromView:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRect:toRegionFromView:</option>
+	
+	<option value="//api/name/convertRegion:toRectToView:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRegion:toRectToView:</option>
+	
+	<option value="//api/name/dequeueReusableAnnotationViewWithIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;- dequeueReusableAnnotationViewWithIdentifier:</option>
+	
+	<option value="//api/name/deselectAnnotation:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- deselectAnnotation:animated:</option>
+	
+	<option value="//api/name/exchangeOverlayAtIndex:withOverlayAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- exchangeOverlayAtIndex:withOverlayAtIndex:</option>
+	
+	<option value="//api/name/insertOverlay:aboveOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- insertOverlay:aboveOverlay:</option>
+	
+	<option value="//api/name/insertOverlay:atIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- insertOverlay:atIndex:</option>
+	
+	<option value="//api/name/insertOverlay:belowOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- insertOverlay:belowOverlay:</option>
+	
+	<option value="//api/name/mapRectThatFits:">&nbsp;&nbsp;&nbsp;&nbsp;- mapRectThatFits:</option>
+	
+	<option value="//api/name/mapRectThatFits:edgePadding:">&nbsp;&nbsp;&nbsp;&nbsp;- mapRectThatFits:edgePadding:</option>
+	
+	<option value="//api/name/regionThatFits:">&nbsp;&nbsp;&nbsp;&nbsp;- regionThatFits:</option>
+	
+	<option value="//api/name/removeAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAnnotation:</option>
+	
+	<option value="//api/name/removeAnnotations:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAnnotations:</option>
+	
+	<option value="//api/name/removeOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- removeOverlay:</option>
+	
+	<option value="//api/name/removeOverlays:">&nbsp;&nbsp;&nbsp;&nbsp;- removeOverlays:</option>
+	
+	<option value="//api/name/selectAnnotation:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- selectAnnotation:animated:</option>
+	
+	<option value="//api/name/setCenterCoordinate:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setCenterCoordinate:animated:</option>
+	
+	<option value="//api/name/setRegion:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setRegion:animated:</option>
+	
+	<option value="//api/name/setUserTrackingMode:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setUserTrackingMode:animated:</option>
+	
+	<option value="//api/name/setVisibleMapRect:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setVisibleMapRect:animated:</option>
+	
+	<option value="//api/name/setVisibleMapRect:edgePadding:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setVisibleMapRect:edgePadding:animated:</option>
+	
+	<option value="//api/name/viewForAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- viewForAnnotation:</option>
+	
+	<option value="//api/name/viewForOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- viewForOverlay:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SitecoreAPI Methods">SitecoreAPI Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_OverlaysAPI Methods">OverlaysAPI Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/NA">NA</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotationVisibleRect">annotationVisibleRect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotations">annotations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/centerCoordinate">centerCoordinate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didLoadedAnnotationsHandler">didLoadedAnnotationsHandler</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/drawRouteToNearestAddress">drawRouteToNearestAddress</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapType">mapType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/region">region</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/regionRadius">regionRadius</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scrollEnabled">scrollEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedAnnotations">selectedAnnotations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showsUserLocation">showsUserLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userLocation">userLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userLocationVisible">userLocationVisible</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/visibleMapRect">visibleMapRect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoomEnabled">zoomEnabled</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addAnnotation:">addAnnotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addAnnotations:">addAnnotations:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addItemsAnnotationsForQuery:apiContext:handler:">addItemsAnnotationsForQuery:apiContext:handler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addItemsAnnotationsWithPath:apiContext:handler:">addItemsAnnotationsWithPath:apiContext:handler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addOverlay:">addOverlay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addOverlays:">addOverlays:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotationsInMapRect:">annotationsInMapRect:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertCoordinate:toPointToView:">convertCoordinate:toPointToView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertPoint:toCoordinateFromView:">convertPoint:toCoordinateFromView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRect:toRegionFromView:">convertRect:toRegionFromView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRegion:toRectToView:">convertRegion:toRectToView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dequeueReusableAnnotationViewWithIdentifier:">dequeueReusableAnnotationViewWithIdentifier:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deselectAnnotation:animated:">deselectAnnotation:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exchangeOverlayAtIndex:withOverlayAtIndex:">exchangeOverlayAtIndex:withOverlayAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertOverlay:aboveOverlay:">insertOverlay:aboveOverlay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertOverlay:atIndex:">insertOverlay:atIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertOverlay:belowOverlay:">insertOverlay:belowOverlay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapRectThatFits:">mapRectThatFits:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapRectThatFits:edgePadding:">mapRectThatFits:edgePadding:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/regionThatFits:">regionThatFits:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAnnotation:">removeAnnotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAnnotations:">removeAnnotations:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeOverlay:">removeOverlay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeOverlays:">removeOverlays:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectAnnotation:animated:">selectAnnotation:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCenterCoordinate:animated:">setCenterCoordinate:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRegion:animated:">setRegion:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUserTrackingMode:animated:">setUserTrackingMode:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVisibleMapRect:animated:">setVisibleMapRect:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVisibleMapRect:edgePadding:animated:">setVisibleMapRect:edgePadding:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewForAnnotation:">viewForAnnotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewForOverlay:">viewForOverlay:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SCMapView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SCMapView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIView</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCoding</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SCMapView.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapType">&nbsp;&nbsp;mapType</a></code>
+		<span class="tooltip"><p>Changing the map type or <a href="#//api/name/region">region</a> can cause the map to start loading map content.<br/>
+The loading delegate methods will be called as map content is loaded.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/region">&nbsp;&nbsp;region</a></code>
+		<span class="tooltip"><p>Region is the coordinate and span of the map.<br/>
+Region may be modified to fit the aspect ratio of the view using <a href="#//api/name/regionThatFits:">regionThatFits:</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRegion:animated:">&ndash;&nbsp;setRegion:animated:</a></code>
+		<span class="tooltip"><p>Changes the currently visible <a href="#//api/name/region">region</a> and optionally animates the change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/centerCoordinate">&nbsp;&nbsp;centerCoordinate</a></code>
+		<span class="tooltip"><p>centerCoordinate allows the coordinate of the <a href="#//api/name/region">region</a> to be changed without changing the zoom level.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCenterCoordinate:animated:">&ndash;&nbsp;setCenterCoordinate:animated:</a></code>
+		<span class="tooltip"><p>Changes the center coordinate of the map and optionally animates the change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/regionThatFits:">&ndash;&nbsp;regionThatFits:</a></code>
+		<span class="tooltip"><p>Returns a <a href="#//api/name/region">region</a> of the aspect ratio of the map view that contains the given <a href="#//api/name/region">region</a>, with the same center point.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/visibleMapRect">&nbsp;&nbsp;visibleMapRect</a></code>
+		<span class="tooltip"><p>Access the visible <a href="#//api/name/region">region</a> of the map in projected coordinates.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVisibleMapRect:animated:">&ndash;&nbsp;setVisibleMapRect:animated:</a></code>
+		<span class="tooltip"><p>Changes the currently visible portion of the map and optionally animates the change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapRectThatFits:">&ndash;&nbsp;mapRectThatFits:</a></code>
+		<span class="tooltip"><p>Returns an MKMapRect modified to fit the aspect ratio of the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVisibleMapRect:edgePadding:animated:">&ndash;&nbsp;setVisibleMapRect:edgePadding:animated:</a></code>
+		<span class="tooltip"><p>Edge padding is the minumum padding on each side around the specified MKMapRect.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapRectThatFits:edgePadding:">&ndash;&nbsp;mapRectThatFits:edgePadding:</a></code>
+		<span class="tooltip"><p>Adjusts the aspect ratio of the specified map rectangle, incorporating the specified inset values.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertCoordinate:toPointToView:">&ndash;&nbsp;convertCoordinate:toPointToView:</a></code>
+		<span class="tooltip"><p>Converts a map coordinate to a point in the specified view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertPoint:toCoordinateFromView:">&ndash;&nbsp;convertPoint:toCoordinateFromView:</a></code>
+		<span class="tooltip"><p>Converts a point in the specified view’s coordinate system to a map coordinate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRegion:toRectToView:">&ndash;&nbsp;convertRegion:toRectToView:</a></code>
+		<span class="tooltip"><p>Converts a map <a href="#//api/name/region">region</a> to a rectangle in the specified view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRect:toRegionFromView:">&ndash;&nbsp;convertRect:toRegionFromView:</a></code>
+		<span class="tooltip"><p>Converts a rectangle in the specified view’s coordinate system to a map <a href="#//api/name/region">region</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zoomEnabled">&nbsp;&nbsp;zoomEnabled</a></code>
+		<span class="tooltip"><p>Disable user interaction from zooming the map.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scrollEnabled">&nbsp;&nbsp;scrollEnabled</a></code>
+		<span class="tooltip"><p>Disable user interaction from scrolling the map.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showsUserLocation">&nbsp;&nbsp;showsUserLocation</a></code>
+		<span class="tooltip"><p>Set to YES to add the user location annotation to the map and start updating its location</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userLocation">&nbsp;&nbsp;userLocation</a></code>
+		<span class="tooltip"><p>The annotation representing the user&rsquo;s location</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/NA">&nbsp;&nbsp;NA</a></code>
+		<span class="tooltip"><p>Track the user location.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUserTrackingMode:animated:">&ndash;&nbsp;setUserTrackingMode:animated:</a></code>
+		<span class="tooltip"><p>Sets the mode used to track the user location with optional animation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userLocationVisible">&nbsp;&nbsp;userLocationVisible</a></code>
+		<span class="tooltip"><p>Returns YES if the user&rsquo;s location is displayed within the currently visible map <a href="#//api/name/region">region</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addAnnotation:">&ndash;&nbsp;addAnnotation:</a></code>
+		<span class="tooltip"><p>Adds the specified annotation to the map view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addAnnotations:">&ndash;&nbsp;addAnnotations:</a></code>
+		<span class="tooltip"><p>Adds an array of annotation objects to the map view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAnnotation:">&ndash;&nbsp;removeAnnotation:</a></code>
+		<span class="tooltip"><p>Removes the specified annotation to the map view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAnnotations:">&ndash;&nbsp;removeAnnotations:</a></code>
+		<span class="tooltip"><p>Removes an array of annotation objects to the map view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/annotations">&nbsp;&nbsp;annotations</a></code>
+		<span class="tooltip"><p>Annotations are models used to annotate coordinates on the map.<br/>
+Implement mapView:<a href="#//api/name/viewForAnnotation:">viewForAnnotation:</a> on <a href="../Protocols/SCMapViewDelegate.html">SCMapViewDelegate</a> to return the annotation view for each annotation.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/annotationsInMapRect:">&ndash;&nbsp;annotationsInMapRect:</a></code>
+		<span class="tooltip"><p>Returns the annotation objects located in the specified map rectangle.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewForAnnotation:">&ndash;&nbsp;viewForAnnotation:</a></code>
+		<span class="tooltip"><p>Currently displayed view for an annotation; returns nil if the view for the annotation isn&rsquo;t being displayed.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dequeueReusableAnnotationViewWithIdentifier:">&ndash;&nbsp;dequeueReusableAnnotationViewWithIdentifier:</a></code>
+		<span class="tooltip"><p>Used by the delegate to acquire an already allocated annotation view, in lieu of allocating a new one.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectAnnotation:animated:">&ndash;&nbsp;selectAnnotation:animated:</a></code>
+		<span class="tooltip"><p>Select a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deselectAnnotation:animated:">&ndash;&nbsp;deselectAnnotation:animated:</a></code>
+		<span class="tooltip"><p>Deselect a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectedAnnotations">&nbsp;&nbsp;selectedAnnotations</a></code>
+		<span class="tooltip"><p>Array with selected <a href="#//api/name/annotations">annotations</a></p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/annotationVisibleRect">&nbsp;&nbsp;annotationVisibleRect</a></code>
+		<span class="tooltip"><p>annotationVisibleRect is the visible rect where the <a href="#//api/name/annotations">annotations</a> views are currently displayed.<br/>
+The delegate can use annotationVisibleRect when animating the adding of the <a href="#//api/name/annotations">annotations</a> views in mapView:didAddAnnotationViews:</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="SitecoreAPI Methods" name="task_SitecoreAPI Methods"></a>
+						<h3 class="subsubtitle task-title">SitecoreAPI Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/regionRadius">&nbsp;&nbsp;regionRadius</a></code>
+		<span class="tooltip"><p>Active area radius</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/drawRouteToNearestAddress">&nbsp;&nbsp;drawRouteToNearestAddress</a></code>
+		<span class="tooltip"><p>Set YES to draw route to nearest address</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addItemsAnnotationsForQuery:apiContext:handler:">&ndash;&nbsp;addItemsAnnotationsForQuery:apiContext:handler:</a></code>
+		<span class="tooltip"><p>Adds <a href="#//api/name/annotations">annotations</a> with items from query</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addItemsAnnotationsWithPath:apiContext:handler:">&ndash;&nbsp;addItemsAnnotationsWithPath:apiContext:handler:</a></code>
+		<span class="tooltip"><p>Adds <a href="#//api/name/annotations">annotations</a> with items from path</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didLoadedAnnotationsHandler">&nbsp;&nbsp;didLoadedAnnotationsHandler</a></code>
+		<span class="tooltip"><p>Tells that the <a href="#//api/name/annotations">annotations</a> was loaded</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="OverlaysAPI Methods" name="task_OverlaysAPI Methods"></a>
+						<h3 class="subsubtitle task-title">OverlaysAPI Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addOverlay:">&ndash;&nbsp;addOverlay:</a></code>
+		<span class="tooltip"><p>Adds a single overlay object to the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addOverlays:">&ndash;&nbsp;addOverlays:</a></code>
+		<span class="tooltip"><p>Adds an array of overlay objects to the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeOverlay:">&ndash;&nbsp;removeOverlay:</a></code>
+		<span class="tooltip"><p>Removes a single overlay object to the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeOverlays:">&ndash;&nbsp;removeOverlays:</a></code>
+		<span class="tooltip"><p>Removes an array of overlay objects to the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertOverlay:atIndex:">&ndash;&nbsp;insertOverlay:atIndex:</a></code>
+		<span class="tooltip"><p>Inserts an overlay object into the list associated with the map.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exchangeOverlayAtIndex:withOverlayAtIndex:">&ndash;&nbsp;exchangeOverlayAtIndex:withOverlayAtIndex:</a></code>
+		<span class="tooltip"><p>Exchanges the position of two overlay objects.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertOverlay:aboveOverlay:">&ndash;&nbsp;insertOverlay:aboveOverlay:</a></code>
+		<span class="tooltip"><p>Inserts one overlay object on top of another.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertOverlay:belowOverlay:">&ndash;&nbsp;insertOverlay:belowOverlay:</a></code>
+		<span class="tooltip"><p>Inserts one overlay object below another.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewForOverlay:">&ndash;&nbsp;viewForOverlay:</a></code>
+		<span class="tooltip"><p>Currently displayed view for overlay; returns nil if the view has not been created yet.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/NA" title="NA"></a>
+	<h3 class="subsubtitle method-title">NA</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Track the user location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) MKUserTrackingMode userTrackingMode NS_AVAILABLE ( NA</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Track the user location.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/annotationVisibleRect" title="annotationVisibleRect"></a>
+	<h3 class="subsubtitle method-title">annotationVisibleRect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>annotationVisibleRect is the visible rect where the <a href="#//api/name/annotations">annotations</a> views are currently displayed.<br/>
+The delegate can use annotationVisibleRect when animating the adding of the <a href="#//api/name/annotations">annotations</a> views in mapView:didAddAnnotationViews:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGRect annotationVisibleRect</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>annotationVisibleRect is the visible rect where the <a href="#//api/name/annotations">annotations</a> views are currently displayed.<br/>
+The delegate can use annotationVisibleRect when animating the adding of the <a href="#//api/name/annotations">annotations</a> views in mapView:didAddAnnotationViews:</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/annotations" title="annotations"></a>
+	<h3 class="subsubtitle method-title">annotations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Annotations are models used to annotate coordinates on the map.<br/>
+Implement mapView:<a href="#//api/name/viewForAnnotation:">viewForAnnotation:</a> on <a href="../Protocols/SCMapViewDelegate.html">SCMapViewDelegate</a> to return the annotation view for each annotation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *annotations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Annotations are models used to annotate coordinates on the map.<br/>
+Implement mapView:<a href="#//api/name/viewForAnnotation:">viewForAnnotation:</a> on <a href="../Protocols/SCMapViewDelegate.html">SCMapViewDelegate</a> to return the annotation view for each annotation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/centerCoordinate" title="centerCoordinate"></a>
+	<h3 class="subsubtitle method-title">centerCoordinate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>centerCoordinate allows the coordinate of the <a href="#//api/name/region">region</a> to be changed without changing the zoom level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CLLocationCoordinate2D centerCoordinate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>centerCoordinate allows the coordinate of the <a href="#//api/name/region">region</a> to be changed without changing the zoom level.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didLoadedAnnotationsHandler" title="didLoadedAnnotationsHandler"></a>
+	<h3 class="subsubtitle method-title">didLoadedAnnotationsHandler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells that the <a href="#//api/name/annotations">annotations</a> was loaded</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) SCMapViewResultHandler didLoadedAnnotationsHandler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells that the <a href="#//api/name/annotations">annotations</a> was loaded</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/drawRouteToNearestAddress" title="drawRouteToNearestAddress"></a>
+	<h3 class="subsubtitle method-title">drawRouteToNearestAddress</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set YES to draw route to nearest address</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL drawRouteToNearestAddress</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set YES to draw route to nearest address</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapType" title="mapType"></a>
+	<h3 class="subsubtitle method-title">mapType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changing the map type or <a href="#//api/name/region">region</a> can cause the map to start loading map content.<br/>
+The loading delegate methods will be called as map content is loaded.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) MKMapType mapType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changing the map type or <a href="#//api/name/region">region</a> can cause the map to start loading map content.<br/>
+The loading delegate methods will be called as map content is loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/region" title="region"></a>
+	<h3 class="subsubtitle method-title">region</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Region is the coordinate and span of the map.<br/>
+Region may be modified to fit the aspect ratio of the view using <a href="#//api/name/regionThatFits:">regionThatFits:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) MKCoordinateRegion region</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Region is the coordinate and span of the map.<br/>
+Region may be modified to fit the aspect ratio of the view using <a href="#//api/name/regionThatFits:">regionThatFits:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/regionRadius" title="regionRadius"></a>
+	<h3 class="subsubtitle method-title">regionRadius</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Active area radius</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CLLocationDistance regionRadius</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Active area radius</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scrollEnabled" title="scrollEnabled"></a>
+	<h3 class="subsubtitle method-title">scrollEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disable user interaction from scrolling the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isScrollEnabled) BOOL scrollEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Disable user interaction from scrolling the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectedAnnotations" title="selectedAnnotations"></a>
+	<h3 class="subsubtitle method-title">selectedAnnotations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Array with selected <a href="#//api/name/annotations">annotations</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray *selectedAnnotations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Array with selected <a href="#//api/name/annotations">annotations</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showsUserLocation" title="showsUserLocation"></a>
+	<h3 class="subsubtitle method-title">showsUserLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set to YES to add the user location annotation to the map and start updating its location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL showsUserLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set to YES to add the user location annotation to the map and start updating its location</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userLocation" title="userLocation"></a>
+	<h3 class="subsubtitle method-title">userLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The annotation representing the user&rsquo;s location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MKUserLocation *userLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The annotation representing the user&rsquo;s location</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userLocationVisible" title="userLocationVisible"></a>
+	<h3 class="subsubtitle method-title">userLocationVisible</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the user&rsquo;s location is displayed within the currently visible map <a href="#//api/name/region">region</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isUserLocationVisible) BOOL userLocationVisible</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the user&rsquo;s location is displayed within the currently visible map <a href="#//api/name/region">region</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/visibleMapRect" title="visibleMapRect"></a>
+	<h3 class="subsubtitle method-title">visibleMapRect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Access the visible <a href="#//api/name/region">region</a> of the map in projected coordinates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) MKMapRect visibleMapRect</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Access the visible <a href="#//api/name/region">region</a> of the map in projected coordinates.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zoomEnabled" title="zoomEnabled"></a>
+	<h3 class="subsubtitle method-title">zoomEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disable user interaction from zooming the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isZoomEnabled) BOOL zoomEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Disable user interaction from zooming the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addAnnotation:" title="addAnnotation:"></a>
+	<h3 class="subsubtitle method-title">addAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds the specified annotation to the map view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds the specified annotation to the map view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addAnnotations:" title="addAnnotations:"></a>
+	<h3 class="subsubtitle method-title">addAnnotations:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an array of annotation objects to the map view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addAnnotations:(NSArray *)<em>annotations</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an array of annotation objects to the map view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addItemsAnnotationsForQuery:apiContext:handler:" title="addItemsAnnotationsForQuery:apiContext:handler:"></a>
+	<h3 class="subsubtitle method-title">addItemsAnnotationsForQuery:apiContext:handler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds <a href="#//api/name/annotations">annotations</a> with items from query</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addItemsAnnotationsForQuery:(NSString *)<em>query</em> apiContext:(SCApiContext *)<em>apiContext</em> handler:(void ( ^ ) ( NSError *))<em>handler</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds <a href="#//api/name/annotations">annotations</a> with items from query</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addItemsAnnotationsWithPath:apiContext:handler:" title="addItemsAnnotationsWithPath:apiContext:handler:"></a>
+	<h3 class="subsubtitle method-title">addItemsAnnotationsWithPath:apiContext:handler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds <a href="#//api/name/annotations">annotations</a> with items from path</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addItemsAnnotationsWithPath:(NSString *)<em>path</em> apiContext:(SCApiContext *)<em>apiContext</em> handler:(void ( ^ ) ( NSError *))<em>handler</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds <a href="#//api/name/annotations">annotations</a> with items from path</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addOverlay:" title="addOverlay:"></a>
+	<h3 class="subsubtitle method-title">addOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a single overlay object to the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a single overlay object to the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addOverlays:" title="addOverlays:"></a>
+	<h3 class="subsubtitle method-title">addOverlays:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an array of overlay objects to the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addOverlays:(NSArray *)<em>overlays</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an array of overlay objects to the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/annotationsInMapRect:" title="annotationsInMapRect:"></a>
+	<h3 class="subsubtitle method-title">annotationsInMapRect:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the annotation objects located in the specified map rectangle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSSet *)annotationsInMapRect:(MKMapRect)<em>mapRect</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the annotation objects located in the specified map rectangle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertCoordinate:toPointToView:" title="convertCoordinate:toPointToView:"></a>
+	<h3 class="subsubtitle method-title">convertCoordinate:toPointToView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a map coordinate to a point in the specified view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CGPoint)convertCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> toPointToView:(UIView *)<em>view</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Converts a map coordinate to a point in the specified view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertPoint:toCoordinateFromView:" title="convertPoint:toCoordinateFromView:"></a>
+	<h3 class="subsubtitle method-title">convertPoint:toCoordinateFromView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a point in the specified view’s coordinate system to a map coordinate.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CLLocationCoordinate2D)convertPoint:(CGPoint)<em>point</em> toCoordinateFromView:(UIView *)<em>view</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Converts a point in the specified view’s coordinate system to a map coordinate.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRect:toRegionFromView:" title="convertRect:toRegionFromView:"></a>
+	<h3 class="subsubtitle method-title">convertRect:toRegionFromView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a rectangle in the specified view’s coordinate system to a map <a href="#//api/name/region">region</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKCoordinateRegion)convertRect:(CGRect)<em>rect</em> toRegionFromView:(UIView *)<em>view</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Converts a rectangle in the specified view’s coordinate system to a map <a href="#//api/name/region">region</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRegion:toRectToView:" title="convertRegion:toRectToView:"></a>
+	<h3 class="subsubtitle method-title">convertRegion:toRectToView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a map <a href="#//api/name/region">region</a> to a rectangle in the specified view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CGRect)convertRegion:(MKCoordinateRegion)<em>region</em> toRectToView:(UIView *)<em>view</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Converts a map <a href="#//api/name/region">region</a> to a rectangle in the specified view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dequeueReusableAnnotationViewWithIdentifier:" title="dequeueReusableAnnotationViewWithIdentifier:"></a>
+	<h3 class="subsubtitle method-title">dequeueReusableAnnotationViewWithIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used by the delegate to acquire an already allocated annotation view, in lieu of allocating a new one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKAnnotationView *)dequeueReusableAnnotationViewWithIdentifier:(NSString *)<em>identifier</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used by the delegate to acquire an already allocated annotation view, in lieu of allocating a new one.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deselectAnnotation:animated:" title="deselectAnnotation:animated:"></a>
+	<h3 class="subsubtitle method-title">deselectAnnotation:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deselect a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deselectAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em> animated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Deselect a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exchangeOverlayAtIndex:withOverlayAtIndex:" title="exchangeOverlayAtIndex:withOverlayAtIndex:"></a>
+	<h3 class="subsubtitle method-title">exchangeOverlayAtIndex:withOverlayAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exchanges the position of two overlay objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)exchangeOverlayAtIndex:(NSUInteger)<em>index1</em> withOverlayAtIndex:(NSUInteger)<em>index2</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Exchanges the position of two overlay objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertOverlay:aboveOverlay:" title="insertOverlay:aboveOverlay:"></a>
+	<h3 class="subsubtitle method-title">insertOverlay:aboveOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts one overlay object on top of another.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em> aboveOverlay:(id&lt;MKOverlay&gt;)<em>sibling</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts one overlay object on top of another.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertOverlay:atIndex:" title="insertOverlay:atIndex:"></a>
+	<h3 class="subsubtitle method-title">insertOverlay:atIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts an overlay object into the list associated with the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts an overlay object into the list associated with the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertOverlay:belowOverlay:" title="insertOverlay:belowOverlay:"></a>
+	<h3 class="subsubtitle method-title">insertOverlay:belowOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts one overlay object below another.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em> belowOverlay:(id&lt;MKOverlay&gt;)<em>sibling</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts one overlay object below another.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapRectThatFits:" title="mapRectThatFits:"></a>
+	<h3 class="subsubtitle method-title">mapRectThatFits:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an MKMapRect modified to fit the aspect ratio of the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKMapRect)mapRectThatFits:(MKMapRect)<em>mapRect</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an MKMapRect modified to fit the aspect ratio of the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapRectThatFits:edgePadding:" title="mapRectThatFits:edgePadding:"></a>
+	<h3 class="subsubtitle method-title">mapRectThatFits:edgePadding:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adjusts the aspect ratio of the specified map rectangle, incorporating the specified inset values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKMapRect)mapRectThatFits:(MKMapRect)<em>mapRect</em> edgePadding:(UIEdgeInsets)<em>insets</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adjusts the aspect ratio of the specified map rectangle, incorporating the specified inset values.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/regionThatFits:" title="regionThatFits:"></a>
+	<h3 class="subsubtitle method-title">regionThatFits:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a <a href="#//api/name/region">region</a> of the aspect ratio of the map view that contains the given <a href="#//api/name/region">region</a>, with the same center point.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKCoordinateRegion)regionThatFits:(MKCoordinateRegion)<em>region</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a <a href="#//api/name/region">region</a> of the aspect ratio of the map view that contains the given <a href="#//api/name/region">region</a>, with the same center point.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAnnotation:" title="removeAnnotation:"></a>
+	<h3 class="subsubtitle method-title">removeAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the specified annotation to the map view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the specified annotation to the map view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAnnotations:" title="removeAnnotations:"></a>
+	<h3 class="subsubtitle method-title">removeAnnotations:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes an array of annotation objects to the map view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAnnotations:(NSArray *)<em>annotations</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes an array of annotation objects to the map view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeOverlay:" title="removeOverlay:"></a>
+	<h3 class="subsubtitle method-title">removeOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a single overlay object to the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes a single overlay object to the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeOverlays:" title="removeOverlays:"></a>
+	<h3 class="subsubtitle method-title">removeOverlays:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes an array of overlay objects to the map.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeOverlays:(NSArray *)<em>overlays</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes an array of overlay objects to the map.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectAnnotation:animated:" title="selectAnnotation:animated:"></a>
+	<h3 class="subsubtitle method-title">selectAnnotation:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Select a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)selectAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em> animated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Select a given annotation.  Asks the delegate for the corresponding annotation view if necessary.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCenterCoordinate:animated:" title="setCenterCoordinate:animated:"></a>
+	<h3 class="subsubtitle method-title">setCenterCoordinate:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changes the center coordinate of the map and optionally animates the change.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCenterCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> animated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changes the center coordinate of the map and optionally animates the change.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRegion:animated:" title="setRegion:animated:"></a>
+	<h3 class="subsubtitle method-title">setRegion:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changes the currently visible <a href="#//api/name/region">region</a> and optionally animates the change.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRegion:(MKCoordinateRegion)<em>region</em> animated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changes the currently visible <a href="#//api/name/region">region</a> and optionally animates the change.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUserTrackingMode:animated:" title="setUserTrackingMode:animated:"></a>
+	<h3 class="subsubtitle method-title">setUserTrackingMode:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the mode used to track the user location with optional animation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setUserTrackingMode:(MKUserTrackingMode)<em>mode</em> animated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the mode used to track the user location with optional animation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVisibleMapRect:animated:" title="setVisibleMapRect:animated:"></a>
+	<h3 class="subsubtitle method-title">setVisibleMapRect:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changes the currently visible portion of the map and optionally animates the change.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setVisibleMapRect:(MKMapRect)<em>mapRect</em> animated:(BOOL)<em>animate</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changes the currently visible portion of the map and optionally animates the change.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVisibleMapRect:edgePadding:animated:" title="setVisibleMapRect:edgePadding:animated:"></a>
+	<h3 class="subsubtitle method-title">setVisibleMapRect:edgePadding:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Edge padding is the minumum padding on each side around the specified MKMapRect.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setVisibleMapRect:(MKMapRect)<em>mapRect</em> edgePadding:(UIEdgeInsets)<em>insets</em> animated:(BOOL)<em>animate</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Edge padding is the minumum padding on each side around the specified MKMapRect.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/viewForAnnotation:" title="viewForAnnotation:"></a>
+	<h3 class="subsubtitle method-title">viewForAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Currently displayed view for an annotation; returns nil if the view for the annotation isn&rsquo;t being displayed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKAnnotationView *)viewForAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Currently displayed view for an annotation; returns nil if the view for the annotation isn&rsquo;t being displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/viewForOverlay:" title="viewForOverlay:"></a>
+	<h3 class="subsubtitle method-title">viewForOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Currently displayed view for overlay; returns nil if the view has not been created yet.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKOverlayView *)viewForOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Currently displayed view for overlay; returns nil if the view has not been created yet.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Sitecore. All rights reserved. (Last updated: 2013-04-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,2049 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SCApiContext Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Sitecore Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">Sitecore</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SCApiContext Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/defaultDatabase">&nbsp;&nbsp;&nbsp;&nbsp;defaultDatabase</option>
+	
+	<option value="//api/name/defaultImagesLifeTimeInCache">&nbsp;&nbsp;&nbsp;&nbsp;defaultImagesLifeTimeInCache</option>
+	
+	<option value="//api/name/defaultLanguage">&nbsp;&nbsp;&nbsp;&nbsp;defaultLanguage</option>
+	
+	<option value="//api/name/defaultLifeTimeInCache">&nbsp;&nbsp;&nbsp;&nbsp;defaultLifeTimeInCache</option>
+	
+	<option value="//api/name/systemLanguages">&nbsp;&nbsp;&nbsp;&nbsp;systemLanguages</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/contextWithHost:">&nbsp;&nbsp;&nbsp;&nbsp;+ contextWithHost:</option>
+	
+	<option value="//api/name/contextWithHost:login:password:">&nbsp;&nbsp;&nbsp;&nbsp;+ contextWithHost:login:password:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/childrenReaderWithItemId:">&nbsp;&nbsp;&nbsp;&nbsp;- childrenReaderWithItemId:</option>
+	
+	<option value="//api/name/childrenReaderWithItemPath:">&nbsp;&nbsp;&nbsp;&nbsp;- childrenReaderWithItemPath:</option>
+	
+	<option value="//api/name/editItemsWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- editItemsWithRequest:</option>
+	
+	<option value="//api/name/fieldWithName:itemId:">&nbsp;&nbsp;&nbsp;&nbsp;- fieldWithName:itemId:</option>
+	
+	<option value="//api/name/imageLoaderForSCMediaPath:">&nbsp;&nbsp;&nbsp;&nbsp;- imageLoaderForSCMediaPath:</option>
+	
+	<option value="//api/name/itemCreatorWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- itemCreatorWithRequest:</option>
+	
+	<option value="//api/name/itemReaderForItemId:">&nbsp;&nbsp;&nbsp;&nbsp;- itemReaderForItemId:</option>
+	
+	<option value="//api/name/itemReaderForItemPath:">&nbsp;&nbsp;&nbsp;&nbsp;- itemReaderForItemPath:</option>
+	
+	<option value="//api/name/itemReaderWithFieldsNames:itemId:">&nbsp;&nbsp;&nbsp;&nbsp;- itemReaderWithFieldsNames:itemId:</option>
+	
+	<option value="//api/name/itemReaderWithFieldsNames:itemPath:">&nbsp;&nbsp;&nbsp;&nbsp;- itemReaderWithFieldsNames:itemPath:</option>
+	
+	<option value="//api/name/itemWithId:">&nbsp;&nbsp;&nbsp;&nbsp;- itemWithId:</option>
+	
+	<option value="//api/name/itemWithPath:">&nbsp;&nbsp;&nbsp;&nbsp;- itemWithPath:</option>
+	
+	<option value="//api/name/itemsReaderWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- itemsReaderWithRequest:</option>
+	
+	<option value="//api/name/mediaItemCreatorWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- mediaItemCreatorWithRequest:</option>
+	
+	<option value="//api/name/readFieldsByNameForItemId:">&nbsp;&nbsp;&nbsp;&nbsp;- readFieldsByNameForItemId:</option>
+	
+	<option value="//api/name/removeItemsWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- removeItemsWithRequest:</option>
+	
+	<option value="//api/name/renderingHTMLLoaderForRenderingWithId:sourceId:">&nbsp;&nbsp;&nbsp;&nbsp;- renderingHTMLLoaderForRenderingWithId:sourceId:</option>
+	
+	<option value="//api/name/systemLanguagesReader">&nbsp;&nbsp;&nbsp;&nbsp;- systemLanguagesReader</option>
+	
+	<option value="//api/name/triggerLoaderForRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- triggerLoaderForRequest:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultDatabase">defaultDatabase</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultImagesLifeTimeInCache">defaultImagesLifeTimeInCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultLanguage">defaultLanguage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultLifeTimeInCache">defaultLifeTimeInCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemLanguages">systemLanguages</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contextWithHost:">contextWithHost:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contextWithHost:login:password:">contextWithHost:login:password:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/childrenReaderWithItemId:">childrenReaderWithItemId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/childrenReaderWithItemPath:">childrenReaderWithItemPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/editItemsWithRequest:">editItemsWithRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fieldWithName:itemId:">fieldWithName:itemId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageLoaderForSCMediaPath:">imageLoaderForSCMediaPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemCreatorWithRequest:">itemCreatorWithRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemReaderForItemId:">itemReaderForItemId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemReaderForItemPath:">itemReaderForItemPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemReaderWithFieldsNames:itemId:">itemReaderWithFieldsNames:itemId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemReaderWithFieldsNames:itemPath:">itemReaderWithFieldsNames:itemPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemWithId:">itemWithId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemWithPath:">itemWithPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemsReaderWithRequest:">itemsReaderWithRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mediaItemCreatorWithRequest:">mediaItemCreatorWithRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readFieldsByNameForItemId:">readFieldsByNameForItemId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeItemsWithRequest:">removeItemsWithRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renderingHTMLLoaderForRenderingWithId:sourceId:">renderingHTMLLoaderForRenderingWithId:sourceId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemLanguagesReader">systemLanguagesReader</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/triggerLoaderForRequest:">triggerLoaderForRequest:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SCApiContext Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SCApiContext Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SCApiContext.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The SCApiContext object provides support to perform the loading of system Items and their Fields from the backend.</p>
+
+<p>All methods of this class can be divided into two general types.</p>
+
+<p>First type  - Asynchronous methods which used to load data from the backend. All such methods returns a block with SCAsyncOp type as a result.</p>
+
+<p>Second type - synchronous &ldquo;getters&rdquo; methods, which can be used for accessing loaded Items and Fields which are still in the memory.</p>
+
+<p>SCApiContext object does not owns loaded items and fields, so they will be immediately released if you does not owns them.</p>
+
+<p>Items ( <a href="../Classes/SCItem.html">SCItem</a> objects ) owns their descendant items and fields ( <a href="../Classes/SCField.html">SCField</a> objects ).</p>
+
+<p>All methods of this class is not thread safe and they should be called exceptionally from one thread (main thread suggested)</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/contextWithHost:">+&nbsp;contextWithHost:</a></code>
+		<span class="tooltip"><p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host.<br/>
+Used to read items and fields as anonimous user from Sitecore site.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/contextWithHost:login:password:">+&nbsp;contextWithHost:login:password:</a></code>
+		<span class="tooltip"><p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host, login and password.<br/>
+Used to read items and fields as authenticated user with given login and password from Sitecore site.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultLanguage">&nbsp;&nbsp;defaultLanguage</a></code>
+		<span class="tooltip"><p>The language used to request Sitecore items, default is &ldquo;en&rdquo;.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultDatabase">&nbsp;&nbsp;defaultDatabase</a></code>
+		<span class="tooltip"><p>The database used to request Sitecore items, default is &ldquo;web&rdquo;.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultLifeTimeInCache">&nbsp;&nbsp;defaultLifeTimeInCache</a></code>
+		<span class="tooltip"><p>The default life time in cache after which object in cache becames old. Default value is ten minutes</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultImagesLifeTimeInCache">&nbsp;&nbsp;defaultImagesLifeTimeInCache</a></code>
+		<span class="tooltip"><p>The default life time in cache after which object in cache becames old. Default value is one monce</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/systemLanguages">&nbsp;&nbsp;systemLanguages</a></code>
+		<span class="tooltip"><p>The Sitecore system languages, by default is nil.<br/>
+To read Sitecore system languages call <a href="#//api/name/systemLanguagesReader">[SCApiContext systemLanguagesReader]</a> method.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/systemLanguagesReader">&ndash;&nbsp;systemLanguagesReader</a></code>
+		<span class="tooltip"><p>Used to load Sitecore system languages from the backend.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemsReaderWithRequest:">&ndash;&nbsp;itemsReaderWithRequest:</a></code>
+		<span class="tooltip"><p>Used to load items from the backend according to the properties of <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> object</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemWithPath:">&ndash;&nbsp;itemWithPath:</a></code>
+		<span class="tooltip"><p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s path if such system item was loaded and still exists in the memory</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemWithId:">&ndash;&nbsp;itemWithId:</a></code>
+		<span class="tooltip"><p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s ID if such system item was loaded and still exists in the memory</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemReaderForItemId:">&ndash;&nbsp;itemReaderForItemId:</a></code>
+		<span class="tooltip"><p>Used to load item from the backend with a given system item ID</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemReaderForItemPath:">&ndash;&nbsp;itemReaderForItemPath:</a></code>
+		<span class="tooltip"><p>Used for the reading item from a backend with a given system item path</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fieldWithName:itemId:">&ndash;&nbsp;fieldWithName:itemId:</a></code>
+		<span class="tooltip"><p>Returns <a href="../Classes/SCField.html">SCField</a> object for the given items&rsquo;s ID and field&rsquo;s name if such field was loaded and the item has a field with such name</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/readFieldsByNameForItemId:">&ndash;&nbsp;readFieldsByNameForItemId:</a></code>
+		<span class="tooltip"><p>Returns loaded fields for the given item.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemReaderWithFieldsNames:itemId:">&ndash;&nbsp;itemReaderWithFieldsNames:itemId:</a></code>
+		<span class="tooltip"><p>Used to load item with fields by the system item id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemReaderWithFieldsNames:itemPath:">&ndash;&nbsp;itemReaderWithFieldsNames:itemPath:</a></code>
+		<span class="tooltip"><p>Used to load item with fields by the system item id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/itemCreatorWithRequest:">&ndash;&nbsp;itemCreatorWithRequest:</a></code>
+		<span class="tooltip"><p>Used to create item according to the properties of <a href="../Classes/SCCreateItemRequest.html">SCCreateItemRequest</a> object</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/editItemsWithRequest:">&ndash;&nbsp;editItemsWithRequest:</a></code>
+		<span class="tooltip"><p>Used to edit existing items according to the properties of <a href="../Classes/SCEditItemsRequest.html">SCEditItemsRequest</a> object</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeItemsWithRequest:">&ndash;&nbsp;removeItemsWithRequest:</a></code>
+		<span class="tooltip"><p>Used to remove existing items found with <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> request.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mediaItemCreatorWithRequest:">&ndash;&nbsp;mediaItemCreatorWithRequest:</a></code>
+		<span class="tooltip"><p>Used to create media item according to the properties of <a href="../Classes/SCCreateMediaItemRequest.html">SCCreateMediaItemRequest</a> object</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/childrenReaderWithItemId:">&ndash;&nbsp;childrenReaderWithItemId:</a></code>
+		<span class="tooltip"><p>Used to load item&rsquo;s children by the system item id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/childrenReaderWithItemPath:">&ndash;&nbsp;childrenReaderWithItemPath:</a></code>
+		<span class="tooltip"><p>Used to load item&rsquo;s children by the system item id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageLoaderForSCMediaPath:">&ndash;&nbsp;imageLoaderForSCMediaPath:</a></code>
+		<span class="tooltip"><p>Used to load image with the image path, see <a href="../Classes/SCImageField.html#//api/name/imagePath">[SCImageField imagePath]</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/renderingHTMLLoaderForRenderingWithId:sourceId:">&ndash;&nbsp;renderingHTMLLoaderForRenderingWithId:sourceId:</a></code>
+		<span class="tooltip"><p>Used to request rendering HTML for rendering with pointed id and item id presented using rendering.<br/>
+Usd defauld language and database of SCApiContext</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/triggerLoaderForRequest:">&ndash;&nbsp;triggerLoaderForRequest:</a></code>
+		<span class="tooltip"><p>  Used to trigger a goal or a campain with the given request</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultDatabase" title="defaultDatabase"></a>
+	<h3 class="subsubtitle method-title">defaultDatabase</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The database used to request Sitecore items, default is &ldquo;web&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSString *defaultDatabase</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The database used to request Sitecore items, default is &ldquo;web&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultImagesLifeTimeInCache" title="defaultImagesLifeTimeInCache"></a>
+	<h3 class="subsubtitle method-title">defaultImagesLifeTimeInCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The default life time in cache after which object in cache becames old. Default value is one monce</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSTimeInterval defaultImagesLifeTimeInCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default life time in cache after which object in cache becames old. Default value is one monce</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultLanguage" title="defaultLanguage"></a>
+	<h3 class="subsubtitle method-title">defaultLanguage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The language used to request Sitecore items, default is &ldquo;en&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSString *defaultLanguage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The language used to request Sitecore items, default is &ldquo;en&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultLifeTimeInCache" title="defaultLifeTimeInCache"></a>
+	<h3 class="subsubtitle method-title">defaultLifeTimeInCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The default life time in cache after which object in cache becames old. Default value is ten minutes</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSTimeInterval defaultLifeTimeInCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default life time in cache after which object in cache becames old. Default value is ten minutes</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/systemLanguages" title="systemLanguages"></a>
+	<h3 class="subsubtitle method-title">systemLanguages</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The Sitecore system languages, by default is nil.<br/>
+To read Sitecore system languages call <a href="#//api/name/systemLanguagesReader">[SCApiContext systemLanguagesReader]</a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSSet *systemLanguages</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The Sitecore system languages, by default is nil.<br/>
+To read Sitecore system languages call <a href="#//api/name/systemLanguagesReader">[SCApiContext systemLanguagesReader]</a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/contextWithHost:" title="contextWithHost:"></a>
+	<h3 class="subsubtitle method-title">contextWithHost:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host.<br/>
+Used to read items and fields as anonimous user from Sitecore site.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)contextWithHost:(NSString *)<em>host</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>host</em></dt>
+			<dd><p>the host of Sitecore Item Web Api, example: &ldquo;mobilesdk.sc-demo.net/-/item&rdquo;</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>existing SCApiContext object for the given host or new created one if it doesn&rsquo;t exist</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host.<br/>
+Used to read items and fields as anonimous user from Sitecore site.</p>
+
+<p>You can create the only one SCApiContext object for the one set of options host, login and password, it means that if you try to create another SCApiContext object with the same host, login and password, just previous created SCApiContext object for this host will be returned.</p>
+
+<p>It can be expressed this an example: [SCApiContext contextWithHost: someHost] == [SCApiContext contextWithHost: someHost] returns TRUE.</p>
+
+<p>But SCApiContext object is not a &ldquo;singleton&rdquo;, if you have no any <a href="../Classes/SCItem.html">SCItem</a>, <a href="../Classes/SCField.html">SCField</a> and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/contextWithHost:login:password:" title="contextWithHost:login:password:"></a>
+	<h3 class="subsubtitle method-title">contextWithHost:login:password:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host, login and password.<br/>
+Used to read items and fields as authenticated user with given login and password from Sitecore site.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)contextWithHost:(NSString *)<em>host</em> login:(NSString *)<em>login</em> password:(NSString *)<em>password</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>host</em></dt>
+			<dd><p>the host of Sitecore Item Web Api, example: &ldquo;mobilesdk.sc-demo.net/-/item&rdquo;</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>login</em></dt>
+			<dd><p>the login of user to the Sitecore site</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>the password of user to the Sitecore site</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns SCApiContext&rsquo;s instance with a Sitecore Item Web Api host, login and password.<br/>
+Used to read items and fields as authenticated user with given login and password from Sitecore site.</p>
+
+<p>You can create the only one SCApiContext object for the one set of options: host, login and password, it means that if you try to create another SCApiContext object with the same host, login and passwor, just previous created SCApiContext object for this host will be returned.</p>
+
+<p>It can be expressed this an example: [SCApiContext <a href="#//api/name/contextWithHost:">contextWithHost:</a> someHost] == [SCApiContext <a href="#//api/name/contextWithHost:">contextWithHost:</a> someHost] returns TRUE.</p>
+
+<p>But SCApiContext object is not a &ldquo;singleton&rdquo;, if you have no any <a href="../Classes/SCItem.html">SCItem</a>, <a href="../Classes/SCField.html">SCField</a> and SCReader object in memory and any other entity does not retain SCApiContext object - it will be released.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/childrenReaderWithItemId:" title="childrenReaderWithItemId:"></a>
+	<h3 class="subsubtitle method-title">childrenReaderWithItemId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load item&rsquo;s children by the system item id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)childrenReaderWithItemId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is NSArray of <a href="../Classes/SCItem.html">SCItem</a> objects or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load item&rsquo;s children by the system item id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/childrenReaderWithItemPath:" title="childrenReaderWithItemPath:"></a>
+	<h3 class="subsubtitle method-title">childrenReaderWithItemPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load item&rsquo;s children by the system item id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)childrenReaderWithItemPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>system item&rsquo;s path, <a href="../Classes/SCItem.html#//api/name/path">[SCItem path]</a> or string (for example &ldquo;/sitecore/content&rdquo;).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is NSArray of <a href="../Classes/SCItem.html">SCItem</a> objects or nil if error happens.</p>
+
+<p>SCAsyncOpResult handler may return such errors:</p>
+
+<ul>
+<li><p><a href="../Classes/SCInvalidPathError.html">SCInvalidPathError</a>           - invalid path argument was passed.</p></li>
+<li><p><a href="../Classes/SCNetworkError.html">SCNetworkError</a>               - if network error happens.</p></li>
+<li><p><a href="../Classes/SCInvalidResponseFormatError.html">SCInvalidResponseFormatError</a> - response can not be processed</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load item&rsquo;s children by the system item id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/editItemsWithRequest:" title="editItemsWithRequest:"></a>
+	<h3 class="subsubtitle method-title">editItemsWithRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to edit existing items according to the properties of <a href="../Classes/SCEditItemsRequest.html">SCEditItemsRequest</a> object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)editItemsWithRequest:(SCEditItemsRequest *)<em>editItemsRequest</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>editItemsRequest</em></dt>
+			<dd><p><a href="../Classes/SCEditItemsRequest.html">SCEditItemsRequest</a> object which provides a bunch of options to edit items</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to edit items. The SCAsyncOpResult handler&rsquo;s result is NSArray of edited <a href="../Classes/SCItem.html">SCItem</a> objects or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to edit existing items according to the properties of <a href="../Classes/SCEditItemsRequest.html">SCEditItemsRequest</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fieldWithName:itemId:" title="fieldWithName:itemId:"></a>
+	<h3 class="subsubtitle method-title">fieldWithName:itemId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <a href="../Classes/SCField.html">SCField</a> object for the given items&rsquo;s ID and field&rsquo;s name if such field was loaded and the item has a field with such name</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCField *)fieldWithName:(NSString *)<em>fieldName</em> itemId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fieldName</em></dt>
+			<dd><p>the name of item&rsquo;s field name, see <a href="../Classes/SCField.html#//api/name/name">[SCField name]</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/SCField.html">SCField</a> object or nil if such field does not exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <a href="../Classes/SCField.html">SCField</a> object for the given items&rsquo;s ID and field&rsquo;s name if such field was loaded and the item has a field with such name</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/imageLoaderForSCMediaPath:" title="imageLoaderForSCMediaPath:"></a>
+	<h3 class="subsubtitle method-title">imageLoaderForSCMediaPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load image with the image path, see <a href="../Classes/SCImageField.html#//api/name/imagePath">[SCImageField imagePath]</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>image&rsquo;s path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is UIImage object or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load image with the image path, see <a href="../Classes/SCImageField.html#//api/name/imagePath">[SCImageField imagePath]</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemCreatorWithRequest:" title="itemCreatorWithRequest:"></a>
+	<h3 class="subsubtitle method-title">itemCreatorWithRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to create item according to the properties of <a href="../Classes/SCCreateItemRequest.html">SCCreateItemRequest</a> object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemCreatorWithRequest:(SCCreateItemRequest *)<em>createItemRequest</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>createItemRequest</em></dt>
+			<dd><p><a href="../Classes/SCCreateItemRequest.html">SCCreateItemRequest</a> object which provides a bunch of options to create item</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to create item. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to create item according to the properties of <a href="../Classes/SCCreateItemRequest.html">SCCreateItemRequest</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemReaderForItemId:" title="itemReaderForItemId:"></a>
+	<h3 class="subsubtitle method-title">itemReaderForItemId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load item from the backend with a given system item ID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemReaderForItemId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+
+<p>If Sitecore Item Web Api(backend) does not return any item, <a href="../Classes/SCNoItemError.html">SCNoItemError</a> error will be returned by SCAsyncOpResult handler.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load item from the backend with a given system item ID</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemReaderForItemPath:" title="itemReaderForItemPath:"></a>
+	<h3 class="subsubtitle method-title">itemReaderForItemPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used for the reading item from a backend with a given system item path</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemReaderForItemPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>system item&rsquo;s path, <a href="../Classes/SCItem.html#//api/name/path">[SCItem path]</a> or string (for example &ldquo;/sitecore/content&rdquo;).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+
+<p>SCAsyncOpResult handler may return such errors:</p>
+
+<ul>
+<li><p><a href="../Classes/SCNoItemError.html">SCNoItemError</a>                - if Sitecore Item Web Api(backend) does not return any item.</p></li>
+<li><p><a href="../Classes/SCInvalidPathError.html">SCInvalidPathError</a>           - invalid path argument was passed.</p></li>
+<li><p><a href="../Classes/SCNetworkError.html">SCNetworkError</a>               - network error happens.</p></li>
+<li><p><a href="../Classes/SCInvalidResponseFormatError.html">SCInvalidResponseFormatError</a> - response can not be processed</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used for the reading item from a backend with a given system item path</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemReaderWithFieldsNames:itemId:" title="itemReaderWithFieldsNames:itemId:"></a>
+	<h3 class="subsubtitle method-title">itemReaderWithFieldsNames:itemId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load item with fields by the system item id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)<em>fieldNames</em> itemId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fieldNames</em></dt>
+			<dd><p>the set of field&rsquo;s names which will be read with the item. Each field&rsquo;s name in set should be a string.<br/>
+For reading all fields - pass nil or pass empty set if you don&rsquo;t need to read any field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+
+<p>SCAsyncOpResult handler may return such errors:</p>
+
+<ul>
+<li><p><a href="../Classes/SCNoItemError.html">SCNoItemError</a>                - if Sitecore Item Web Api(backend) does not return any item.</p></li>
+<li><p><a href="../Classes/SCNetworkError.html">SCNetworkError</a>               - if network error happens.</p></li>
+<li><p><a href="../Classes/SCInvalidResponseFormatError.html">SCInvalidResponseFormatError</a> - response can not be processed</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load item with fields by the system item id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemReaderWithFieldsNames:itemPath:" title="itemReaderWithFieldsNames:itemPath:"></a>
+	<h3 class="subsubtitle method-title">itemReaderWithFieldsNames:itemPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load item with fields by the system item id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)<em>fieldNames</em> itemPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fieldNames</em></dt>
+			<dd><p>the set of field&rsquo;s names which will be read with the item. Each field&rsquo;s name in set should be a string.<br/>
+For reading all fields - pass nil or pass empty set if you don&rsquo;t need to read any field</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>system item&rsquo;s path, <a href="../Classes/SCItem.html#//api/name/path">[SCItem path]</a> or string (for example &ldquo;/sitecore/content&rdquo;).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+
+<p>SCAsyncOpResult handler may return such errors:</p>
+
+<ul>
+<li><p><a href="../Classes/SCNoItemError.html">SCNoItemError</a>                - if Sitecore Item Web Api(backend) does not return any item.</p></li>
+<li><p><a href="../Classes/SCInvalidPathError.html">SCInvalidPathError</a>           - invalid path argument was passed.</p></li>
+<li><p><a href="../Classes/SCNetworkError.html">SCNetworkError</a>               - if network error happens.</p></li>
+<li><p><a href="../Classes/SCInvalidResponseFormatError.html">SCInvalidResponseFormatError</a> - response can not be processed</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load item with fields by the system item id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemWithId:" title="itemWithId:"></a>
+	<h3 class="subsubtitle method-title">itemWithId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s ID if such system item was loaded and still exists in the memory</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCItem *)itemWithId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/SCItem.html">SCItem</a> object or nil if such item does not exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s ID if such system item was loaded and still exists in the memory</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemWithPath:" title="itemWithPath:"></a>
+	<h3 class="subsubtitle method-title">itemWithPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s path if such system item was loaded and still exists in the memory</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCItem *)itemWithPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>system item&rsquo;s path, <a href="../Classes/SCItem.html#//api/name/path">[SCItem path]</a> or string (for example &ldquo;/sitecore/content&rdquo;).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/SCItem.html">SCItem</a> object or nil if such item does not exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <a href="../Classes/SCItem.html">SCItem</a> object with a given items&rsquo;s path if such system item was loaded and still exists in the memory</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemsReaderWithRequest:" title="itemsReaderWithRequest:"></a>
+	<h3 class="subsubtitle method-title">itemsReaderWithRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load items from the backend according to the properties of <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)itemsReaderWithRequest:(SCItemsReaderRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p><a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> object which provides a bunch of options to load items from the backend or getting already loaded items</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is NSArray of <a href="../Classes/SCItem.html">SCItem</a> objects or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load items from the backend according to the properties of <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mediaItemCreatorWithRequest:" title="mediaItemCreatorWithRequest:"></a>
+	<h3 class="subsubtitle method-title">mediaItemCreatorWithRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to create media item according to the properties of <a href="../Classes/SCCreateMediaItemRequest.html">SCCreateMediaItemRequest</a> object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)mediaItemCreatorWithRequest:(SCCreateMediaItemRequest *)<em>createMediaItemRequest</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>createMediaItemRequest</em></dt>
+			<dd><p><a href="../Classes/SCCreateMediaItemRequest.html">SCCreateMediaItemRequest</a> object which provides a bunch of options to create media item</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to create media item. The SCAsyncOpResult handler&rsquo;s result is <a href="../Classes/SCItem.html">SCItem</a> object or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to create media item according to the properties of <a href="../Classes/SCCreateMediaItemRequest.html">SCCreateMediaItemRequest</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/readFieldsByNameForItemId:" title="readFieldsByNameForItemId:"></a>
+	<h3 class="subsubtitle method-title">readFieldsByNameForItemId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns loaded fields for the given item.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)readFieldsByNameForItemId:(NSString *)<em>itemId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>itemId</em></dt>
+			<dd><p>system item&rsquo;s id, <a href="../Classes/SCItem.html#//api/name/itemId">[SCItem itemId]</a> can be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>loaded fields for the given item. It is a NSDictionary of <a href="../Classes/SCField.html">SCField</a> objects by field&rsquo;s names.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns loaded fields for the given item.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeItemsWithRequest:" title="removeItemsWithRequest:"></a>
+	<h3 class="subsubtitle method-title">removeItemsWithRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to remove existing items found with <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)removeItemsWithRequest:(SCItemsReaderRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p><a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> object which provides a bunch of options to find items to remove.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to edit items. The SCAsyncOpResult handler&rsquo;s result is NSArray of removed items ids or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to remove existing items found with <a href="../Classes/SCItemsReaderRequest.html">SCItemsReaderRequest</a> request.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/renderingHTMLLoaderForRenderingWithId:sourceId:" title="renderingHTMLLoaderForRenderingWithId:sourceId:"></a>
+	<h3 class="subsubtitle method-title">renderingHTMLLoaderForRenderingWithId:sourceId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to request rendering HTML for rendering with pointed id and item id presented using rendering.<br/>
+Usd defauld language and database of SCApiContext</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)<em>renderingId</em> sourceId:(NSString *)<em>sourceId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>renderingId</em></dt>
+			<dd><ul>
+<li>id of rendering which you want to request</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sourceId</em></dt>
+			<dd><ul>
+<li>item&rsquo;s id for render using rendering with renderingId</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is NSString object or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to request rendering HTML for rendering with pointed id and item id presented using rendering.<br/>
+Usd defauld language and database of SCApiContext</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/systemLanguagesReader" title="systemLanguagesReader"></a>
+	<h3 class="subsubtitle method-title">systemLanguagesReader</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to load Sitecore system languages from the backend.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)systemLanguagesReader</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler&rsquo;s result is NSSet of strings or nil if error happens.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Used to load Sitecore system languages from the backend.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/triggerLoaderForRequest:" title="triggerLoaderForRequest:"></a>
+	<h3 class="subsubtitle method-title">triggerLoaderForRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>  Used to trigger a goal or a campain with the given request</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SCAsyncOp)triggerLoaderForRequest:(SCTriggeringRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>A triggering request. See SCTrafficTriggeringRequest and <a href="../Classes/SCCampaignTriggeringRequest.html">SCCampaignTriggeringRequest</a> for details</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SCAsyncOp block. Call it to trigger either a goal or a campaign. The SCAsyncOpResult handler&rsquo;s result is an NSString that contains the rendering of the item (an HTML web page).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>  Used to trigger a goal or a campain with the given request</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCApiContext.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Sitecore. All rights reserved. (Last updated: 2013-04-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
