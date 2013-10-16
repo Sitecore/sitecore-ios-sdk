@@ -25,3 +25,9 @@
 [submodule "src/lib-third-party/JFFLibrary"]
 	path = src/lib-third-party/JFFLibrary
 	url = https://github.com/EmbeddedSources/iAsync.git
+[submodule "src/lib-third-party/fmdb"]
+	path = src/lib-third-party/fmdb
+	url = https://github.com/EmbeddedSources/fmdb.git
+[submodule "src/lib-third-party/ESDatabaseWrapper"]
+	path = src/lib-third-party/ESDatabaseWrapper
+	url = https://github.com/Sitecore/ESDatabaseWrapper.git
