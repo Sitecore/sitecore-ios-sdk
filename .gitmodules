@@ -31,3 +31,6 @@
 [submodule "src/lib-third-party/ESDatabaseWrapper"]
 	path = src/lib-third-party/ESDatabaseWrapper
 	url = https://github.com/Sitecore/ESDatabaseWrapper.git
+[submodule "src/lib-third-party/uri-parser"]
+	path = src/lib-third-party/uri-parser
+	url = https://github.com/EmbeddedSources/uri-parser.git
