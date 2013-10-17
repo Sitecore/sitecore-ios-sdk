@@ -1,8 +1,10 @@
 #import <SitecoreMobileSDK/SCApiContext.h>
-
+#import <SitecoreMobileSDK/SCWebApiVersion.h>
 
 @class SCRemoteApi;
 @class SCItemsCache;
+@class SCExtendedApiContext;
+@protocol SCItemRecordCacheRW;
 
 
 @interface SCApiContext (Init)
@@ -13,7 +15,8 @@
  This is a designated initializer that follows the "inversion of control" principle.
  */
 -(id)initWithRemoteApi:( SCRemoteApi* )api_
-            itemsCache:( SCItemsCache* )itemsCache_;
+            itemsCache:( id<SCItemRecordCacheRW> )itemsCache_
+    notificationCenter:( NSNotificationCenter* )notificationCenter;
 
 
 /**
@@ -26,7 +29,8 @@
  */
 -(id)initWithHost:( NSString* )host_
             login:( NSString* )login_
-         password:( NSString* )password_;
+         password:( NSString* )password_
+          version:( SCWebApiVersion )version_;
 
 /**
  Returns a new instance of SCApiContext for "anonymous" user.
@@ -37,8 +41,14 @@
 -(id)initWithHost:( NSString* )host_;
 
 
-@property ( nonatomic ) SCItemsCache* itemsCache;
-@property ( nonatomic ) SCRemoteApi * api;
+// legacy - for unit tests only
+-(id)initWithHost:( NSString* )host_
+            login:( NSString* )login_
+         password:( NSString* )password_;
 
+
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
+@property ( nonatomic ) SCRemoteApi * api;
+@property ( nonatomic ) SCExtendedApiContext *extendedApiContext;
 
 @end
