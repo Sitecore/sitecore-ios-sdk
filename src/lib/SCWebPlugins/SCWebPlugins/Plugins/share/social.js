@@ -2,10 +2,11 @@
 scmobile.share = scmobile.share || {}
 scmobile.share._constructSocial = function()
 {
-    function _genericSend( tweetThis, onSuccess, onError )
+    function _genericSend( socialThis, onSuccess, onError )
     {
         var urlArgs = '';
-        tweetThis.urls.forEach(
+        socialThis.urls.forEach(
+                                
         function( localUrl_ )
         {
             try
@@ -18,7 +19,7 @@ scmobile.share._constructSocial = function()
             }
         } );
         
-        tweetThis.imageUrls.forEach(
+        socialThis.imageUrls.forEach(
         function( localUrl_ )
         {
             try
@@ -33,9 +34,10 @@ scmobile.share._constructSocial = function()
         );
         
         //
-        var encodedText = encodeURIComponent( tweetThis.text ? tweetThis.text : '' );
+        var encodedText = encodeURIComponent( socialThis.text ? socialThis.text : '' );
+        
         var webSocket = new scmobile.utils.SCWebSocket( '/scmobile/share/generic_social'
-                                                       + '?social_engine=' + tweetThis.engineName
+                                                       + '?social_engine=' + socialThis.engineName
                                                        + '&text=' + encodedText
                                                        + urlArgs );
         
@@ -95,7 +97,6 @@ scmobile.share._constructSocial = function()
     }
     this.Facebook = _Facebook;
     
-    
     function _Weibo()
     {
         var weiboThis  = this;
@@ -112,5 +113,21 @@ scmobile.share._constructSocial = function()
         this.send = _send;
     }
     this.Weibo = _Weibo;
+    
+    function _Social()
+    {
+        var socialThis  = this;
+        
+        this.urls      = [];
+        this.imageUrls = [];
+        this.text      = '';
+        
+        function _send( onSuccess, onError )
+        {
+            _genericSend( socialThis, onSuccess, onError )
+        }
+        this.send = _send;
+    }
+    this.Social = _Social;
 }
 scmobile.share._constructSocial();
