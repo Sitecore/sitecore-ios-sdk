@@ -17,34 +17,32 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                        fieldsNames: nil ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            request_.request = path_;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                          login: SCWebApiAdminLogin
-                                                       password: SCWebApiAdminPassword ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                            fieldsNames: nil ];
+            request_.scope = scope_;
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_auth_ = result_items_;
-                didFinishCallback_();
+                items_ = result_items_;
+                request_.request = path_;
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                {
+                    items_auth_ = result_items_;
+                    didFinishCallback_();
+                } );
             } );
-        } );
 
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -89,34 +87,36 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                        fieldsNames: nil ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            request_.request = path_;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                  login: SCWebApiAdminLogin
-                                               password: SCWebApiAdminPassword ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                            fieldsNames: nil ];
+            request_.scope = scope_;
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_auth_ = result_items_;
-                didFinishCallback_();
+                items_ = result_items_;
+                request_.request = path_;
+                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                                 login: SCWebApiAdminLogin
+                                                              password: SCWebApiAdminPassword
+                                                               version: SCWebApiV1 ];
+                apiContext_ = strongContext_;
+                apiContext_.defaultSite = @"/sitecore/shell";
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                {
+                    items_auth_ = result_items_;
+                    didFinishCallback_();
+                } );
             } );
-        } );
+            
+        };
         
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -154,35 +154,37 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                        fieldsNames: nil ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            request_.request = path_;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                  login: SCWebApiAdminLogin
-                                               password: SCWebApiAdminPassword ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                            fieldsNames: nil ];
+            request_.scope = scope_;
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_auth_ = result_items_;
-                didFinishCallback_();
+                items_ = result_items_;
+                request_.request = path_;
+                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                                 login: SCWebApiAdminLogin
+                                                              password: SCWebApiAdminPassword
+                                                               version: SCWebApiV1 ];
+                apiContext_ = strongContext_;
+                apiContext_.defaultSite = @"/sitecore/shell";
+                
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                {
+                    items_auth_ = result_items_;
+                    didFinishCallback_();
+                } );
             } );
-        } );
+            
+        };
         
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );

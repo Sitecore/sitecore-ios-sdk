@@ -9,7 +9,7 @@
 -(SCPageEventTriggeringRequest*)homeLogout
 {
     SCPageEventTriggeringRequest *request_ =
-    [ [ SCPageEventTriggeringRequest alloc ] initWithPath: SCHomePath
+    [ [ SCPageEventTriggeringRequest alloc ] initWithPath: SCTriggeringPath
                                                 eventName: @"Logout" ];
     
     return request_;
@@ -17,7 +17,7 @@
 
 -(SCPageEventTriggeringRequest*)kodLogout:( NSInteger )itemNameIndex
 {
-    NSString* itemPath = [ NSString stringWithFormat: @"/sitecore/content/Home/Copy%d", itemNameIndex ];    
+    NSString* itemPath = [ NSString stringWithFormat: @"/sitecore/content/Triggering Events/Copy%d", itemNameIndex ];    
     
     SCPageEventTriggeringRequest *request_ =
     [ [ SCPageEventTriggeringRequest alloc ] initWithPath: itemPath
@@ -35,7 +35,7 @@
     SCAsyncOp triggerSecond = [ apiContext_ triggerLoaderForRequest: second ];
 
     NSArray* sequence = @[ triggerFirst, triggerSecond ];
-    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequenceOfAsyncOperations: sequence ];
+    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequence: sequence ];
 
     return trigger;
 }
@@ -49,7 +49,7 @@
     SCAsyncOp triggerSecond = [ apiContext_ triggerLoaderForRequest: second ];
     
     NSArray* sequence = @[ triggerFirst, triggerSecond ];
-    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequenceOfAsyncOperations: sequence ];
+    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequence: sequence ];
     
     return trigger;
 }
@@ -60,7 +60,7 @@
     SCAsyncOp triggerSecond = [ self asyncTrigger34WithContext: apiContext_ ];
     
     NSArray* sequence = @[ triggerFirst, triggerSecond ];
-    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequenceOfAsyncOperations: sequence ];
+    SCAsyncOp trigger = [ SCAsyncOpRelationsBuilder sequence: sequence ];
     
     return trigger;
 }

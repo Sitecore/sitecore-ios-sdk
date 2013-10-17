@@ -1,22 +1,21 @@
 #import "SCAsyncTestCase.h"
 
-@interface UploadMediaTest : SCAsyncTestCase
+@interface UploadMediaTest_Shell : SCAsyncTestCase
 @end
 
-@implementation UploadMediaTest
+@implementation UploadMediaTest_Shell
 
 
 
--(void)testCreateMediaItemInWeb
+-(void)testCreateMediaItemInWeb_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    __block NSError* createError = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                  login: SCExtranetAdminLogin
-                                               password: SCExtranetAdminPassword ];
+                                           login: SCWebApiAdminLogin
+                                        password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
-    apiContext_.defaultSite = @"";
+    apiContext_.defaultSite = @"/sitecore/shell";
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -32,7 +31,6 @@
 
         [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
-            createError = error_;
             media_item_ = item_;
             didFinishCallback_();
         } );
@@ -61,8 +59,8 @@
                                            selector: _cmd ];
     
     [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-        
+                                           selector: _cmd ];
+    
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
     //first item:
@@ -70,17 +68,17 @@
     NSLog( @"[ media_item_ displayName ]:%@", [ media_item_ displayName ] );
     GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaItem" ], @"OK" );
     GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-   }
+}
 
--(void)testCreateMediaItemWithFields
+-(void)testCreateMediaItemWithFields_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    __block NSError* createError = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -96,8 +94,6 @@
 
         [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
-            createError = error_;
-            
             media_item_ = item_;
             if ( item_ != nil ) 
             {
@@ -120,7 +116,7 @@
 
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", @"media", nil ];
+        NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", nil ];
         SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
@@ -141,44 +137,34 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
 
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
 
-        GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( apiContext_ != nil, @"OK" );
 
-        //first item:
-        GHAssertTrue( media_item_ != nil, @"OK" );
-        NSLog(@"displayName: %@", [ media_item_ displayName ] );
-        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaWithFields" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 3, @"OK" );
-        NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFieldsByName ]);
-        NSLog(@"Dimensions: %@", [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] );
-        GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"10 x 10"], @"OK" );
-        GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"Image Alt"], @"OK" );
-        NSLog(@"[ media_item_ readField ]: %@", [ [ media_item_ fieldWithName: @"Blob" ] fieldValue ] );
-        NSLog(@"[ media_item_ readField ]: %@", [ [ media_item_ fieldWithName: @"Media" ] fieldValue ] );
-        GHAssertTrue( [ [ media_item_ fieldWithName: @"Blob" ] fieldValue ] != nil, @"OK" );
-    }
-    else
-    {
-        GHAssertNil( media_item_, @"item should not be read" );
-        
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
-    }
+    //first item:
+    GHAssertTrue( media_item_ != nil, @"OK" );
+    NSLog(@"displayName: %@", [ media_item_ displayName ] );
+    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaWithFields" ], @"OK" );
+    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
+    GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 3, @"OK" );
+    NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFieldsByName ]);
+    NSLog(@"Dimensions: %@", [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] );
+    GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"10 x 10"], @"OK" );
+    GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"Image Alt"], @"OK" );
+    NSLog(@"[ media_item_ readField ]: %@", [ [ media_item_ fieldWithName: @"Blob" ] fieldValue ] );
+    GHAssertTrue( [ [ media_item_ fieldWithName: @"Blob" ] fieldValue ] != nil, @"OK" );
 }
 
--(void)testCreateAndEditMediaItem
+-(void)testCreateAndEditMediaItem_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+                                           login: SCWebApiAdminLogin
+                                        password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"master";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -191,18 +177,15 @@
         request_.fieldNames    = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
-        request_.site = @"/sitecore/shell";
+        //request_.site = @"/sitecore/shell";
         
         [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             media_item_ = item_;
-            GHAssertTrue(media_item_ != nil, @"item should be created");
             didFinishCallback_();
         } );
         
     };
-    
-    
     
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -259,8 +242,6 @@
     
     [ self performAsyncRequestOnMainThreadWithBlock: edit_block_
                                            selector: _cmd ];
-    GHAssertTrue( media_item_ != nil, @"Item Editing failed" );
-
     
     [ self performAsyncRequestOnMainThreadWithBlock: read_block_
                                            selector: _cmd ];
@@ -277,16 +258,15 @@
     GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"La-la-la"], @"OK" );
 }
 
--(void)testCreateNotMediaItemInWeb
+-(void)testCreateNotMediaItemInWeb_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    __block NSError* createError = nil;
-    
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -302,7 +282,6 @@
         
         [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
-            createError = error_;
             media_item_ = item_;
             didFinishCallback_();
         } );
@@ -330,46 +309,33 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-        
-        GHAssertTrue( apiContext_ != nil, @"OK" );
-        
-        //first item:
-        GHAssertTrue( media_item_ != nil, @"OK" );
-        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestNotAMediaItem" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/File" ], @"OK" );
-    }
-    else
-    {
-        GHAssertNil( media_item_, @"item should not be read" );
-        
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
-    }
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    
+    //first item:
+    GHAssertTrue( media_item_ != nil, @"OK" );
+    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestNotAMediaItem" ], @"OK" );
+    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/File" ], @"OK" );
 }
 
--(void)testCreateMediaItemInCore
+-(void)testCreateMediaItemInCore_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    __block NSError* createError = nil;
-    
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"core";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
-        request_.itemName      = @"TestCoreMediaItem";
+        request_.itemName      = @"TestCoreMediaItem shell";
         request_.itemTemplate  = @"System/Media/Unversioned/Image";
         request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: request_.fileName ] );
         request_.fieldNames    = [ NSSet new ];
@@ -378,7 +344,6 @@
         
         [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
-            createError = error_;
             media_item_ = item_;
             didFinishCallback_();
         } );
@@ -406,39 +371,25 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-        
-        GHAssertTrue( apiContext_ != nil, @"OK" );
-        
-        GHAssertTrue( media_item_ != nil, @"OK" );
-        GHAssertTrue( [ [ media_item_ displayName ] isEqualToString: @"TestCoreMediaItem" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-    }
-    else
-    {
-        GHAssertNil( media_item_, @"item should not be read" );
-        
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
-    }
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    
+    GHAssertTrue( media_item_ != nil, @"OK" );
+    GHAssertTrue( [ [ media_item_ displayName ] isEqualToString: @"TestCoreMediaItem shell" ], @"OK" );
+    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
 }
 
--(void)testCreateSeveralMediaItems
+-(void)testCreateSeveralMediaItems_Shell
 {
     __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
-    __block NSError* createError = nil;
-    
-    
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -458,7 +409,6 @@
             {
                 [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
                 {
-                    createError = error_;
                     media_item_ = item_;
                     didFinishCallback_();
                 } );
@@ -488,27 +438,16 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-        
-        GHAssertTrue( apiContext_ != nil, @"OK" );
-        
-        //first item:
-        GHAssertTrue( media_item_ != nil, @"OK" );
-        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestSeveralMediaItems" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-    }
-    else
-    {
-        GHAssertNil( media_item_, @"item should not be read" );
-        
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
-    }
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    
+    //first item:
+    GHAssertTrue( media_item_ != nil, @"OK" );
+    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestSeveralMediaItems" ], @"OK" );
+    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
 }
+
 
 @end

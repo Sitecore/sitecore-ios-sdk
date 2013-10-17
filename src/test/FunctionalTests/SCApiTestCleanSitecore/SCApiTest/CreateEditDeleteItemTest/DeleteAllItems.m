@@ -16,6 +16,7 @@
                                                login: SCWebApiAdminLogin
                                             password: SCWebApiAdminPassword ];
 
+        apiContext_.defaultSite = @"/sitecore/shell";
         apiContext_.defaultDatabase = @"master";
         SCItemsReaderRequest* request_ = 
             [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];

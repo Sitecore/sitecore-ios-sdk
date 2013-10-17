@@ -20,6 +20,7 @@
         apiContext_ = strongContext_;
         
         apiContext_.defaultDatabase = @"master";
+        apiContext_.defaultSite = @"/sitecore/shell";
 
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -64,30 +65,30 @@
                                                login: SCWebApiAdminLogin
                                             password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
-        
+        apiContext_.defaultSite = @"/sitecore/shell";
         apiContext_.defaultDatabase = @"web";
     
-    void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
-        
-        request_.itemName      = @"  _$";
-        request_.itemTemplate  = @"System/Media/Unversioned/Image";
-        request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
-        request_.fieldNames    = nil;
-        request_.contentType   = @"image/png";
-        request_.folder        = SCCreateMediaFolder;
-
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            media_item_ = item_;
-            response_error_ = error_;
-            didFinishCallback_();
-        } );
-    };
+            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            
+            request_.itemName      = @"  _$";
+            request_.itemTemplate  = @"System/Media/Unversioned/Image";
+            request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
+            request_.fieldNames    = nil;
+            request_.contentType   = @"image/png";
+            request_.folder        = SCCreateMediaFolder;
+
+            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            {
+                media_item_ = item_;
+                response_error_ = error_;
+                didFinishCallback_();
+            } );
+        };
     
-    [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: create_block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_   == nil, @"OK" );
@@ -110,31 +111,31 @@
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
         
+        apiContext_.defaultSite = @"/sitecore/shell";
+        apiContext_.defaultDatabase = @"web";
         
-    apiContext_.defaultDatabase = @"web";
-    
-    void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
-        
-        request_.itemName      = @"Invalid Template";
-        request_.itemTemplate  = @"System/Media/Unversioned/Invalid";
-        request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
-        request_.fieldNames    = nil;
-        request_.contentType   = @"image/png";
-        request_.folder        = SCCreateMediaFolder;
-        
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            media_item_ = item_;
-            response_error_ = error_;
-            didFinishCallback_();
-        } );
+            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            
+            request_.itemName      = @"Invalid Template";
+            request_.itemTemplate  = @"System/Media/Unversioned/Invalid";
+            request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
+            request_.fieldNames    = nil;
+            request_.contentType   = @"image/png";
+            request_.folder        = SCCreateMediaFolder;
+            
+            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            {
+                media_item_ = item_;
+                response_error_ = error_;
+                didFinishCallback_();
+            } );
+            
+        };
         
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: create_block_
+                                               selector: _cmd ];
     }
     
     
@@ -160,6 +161,7 @@
         
         
         apiContext_.defaultDatabase = @"web";
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -208,32 +210,32 @@
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
+        apiContext_.defaultSite = @"/sitecore/shell";
         
+        apiContext_.defaultDatabase = @"web";
         
-    apiContext_.defaultDatabase = @"web";
-    
-    void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
-        
-        request_.itemName      = @"Large Image";
-        request_.fileName      = @"large_image.jpg";
-        request_.itemTemplate  = @"System/Media/Unversioned/Image";
-        request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: request_.fileName ] );
-        request_.fieldNames    = nil;
-        request_.contentType   = @"image/jpg";
-        request_.folder        = SCCreateMediaFolder;
-        
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            media_item_ = item_;
-            response_error_ = error_;
-            didFinishCallback_();
-        } );
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];
+            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            
+            request_.itemName      = @"Large Image";
+            request_.fileName      = @"large_image.jpg";
+            request_.itemTemplate  = @"System/Media/Unversioned/Image";
+            request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: request_.fileName ] );
+            request_.fieldNames    = nil;
+            request_.contentType   = @"image/jpg";
+            request_.folder        = SCCreateMediaFolder;
+            
+            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            {
+                media_item_ = item_;
+                response_error_ = error_;
+                didFinishCallback_();
+            } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: create_block_
+                                               selector: _cmd ];
     }
     
     
@@ -249,7 +251,7 @@
 
 }
 
--(void)testCreateMediaWithInvalidUser
+-(void)testCreateMediaWithInvalidUser_shell
 {
     __weak __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
@@ -266,6 +268,7 @@
         
         
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -299,6 +302,56 @@
     GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
 }
 
+-(void)testCreateMediaWithInvalidUser
+{
+    __weak __block SCApiContext* apiContext_;
+    __block SCItem* media_item_ = nil;
+    __block NSError* response_error_ = nil;
+    
+    @autoreleasepool
+    {
+        __block SCApiContext* strongContext_ = nil;
+        
+        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                         login: @"notexisted"
+                                                      password: @"notexisted" ];
+        apiContext_ = strongContext_;
+        
+        
+        apiContext_.defaultDatabase = @"web";
+        apiContext_.defaultSite = nil;
+        
+        void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            
+            request_.itemName      = @"InvalidUserAdd";
+            request_.itemTemplate  = @"System/Media/Unversioned/Image";
+            request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
+            request_.fieldNames    = nil;
+            request_.contentType   = @"image/png";
+            request_.folder        = SCCreateMediaFolder;
+            
+            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+              {
+                  media_item_ = item_;
+                  response_error_ = error_;
+                  didFinishCallback_();
+              } );
+            
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: create_block_
+                                               selector: _cmd ];
+    }
+
+    NSLog( @"response_error_: %@", response_error_ );
+    NSLog( @"media_item_: %@", media_item_ );
+    GHAssertTrue( media_item_ == nil, @"OK" );
+    GHAssertTrue( response_error_ != nil, @"OK" );
+    GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
+}
+
 -(void)testCreateMediaWithLowPermissionUser
 {
     __weak __block SCApiContext* apiContext_;
@@ -315,6 +368,7 @@
         
         
         apiContext_.defaultDatabase = @"web";
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -340,67 +394,18 @@
                                                selector: _cmd ];
     }
     
-    // @adk : Why should the image upload succeed for such user?
     NSLog( @"response_error_: %@", response_error_ );
     NSLog( @"media_item_: %@", media_item_ );
-    GHAssertTrue( media_item_ != nil, @"OK" );
-    BOOL namePrefix = [ [ media_item_ displayName ] hasPrefix: @"LowPermissionUserAdd" ];
-    GHAssertTrue( namePrefix, @"item should has name prefix 'LowPermissionUserAdd'" );
-    GHAssertTrue( response_error_ == nil, @"OK" );
-}
+    GHAssertTrue( media_item_ == nil, @"OK" );
+    GHAssertTrue( response_error_ != nil, @"OK" );
+    GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
+    
+    SCResponseError* castedError = (SCResponseError*)response_error_;
+    GHAssertTrue( [ castedError statusCode ] == 403, @"error code mismatch" );
+    GHAssertTrue( [ [ castedError localizedDescription ] containsString: @"Access denied" ], @"OK" );
 
--(void)testCreateMediaWithAnonimusUser
-{
-    __weak __block SCApiContext* apiContext_;
-    __block SCItem* media_item_ = nil;
-    __block NSError* response_error_ = nil;
     
-    @autoreleasepool
-    {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        apiContext_.defaultDatabase = @"web";
-    
-    void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
-        
-        request_.itemName      = @"AnonimusUserAdd";
-        request_.itemTemplate  = @"System/Media/Unversioned/Image";
-        request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: @"auto tests.png" ] );
-        request_.fieldNames    = nil;
-        request_.contentType   = @"image/png";
-        request_.folder        = SCCreateMediaFolder;
-        
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
-        {
-            media_item_ = item_;
-            response_error_ = error_;
-            didFinishCallback_();
-        } );
-        
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];
-    }
-    
-    
-    NSLog( @"response_error_: %@", response_error_ );
-    NSLog( @"media_item_: %@", media_item_ );
-    
-    
-    //!!Bug: can't create media item as anonimus user - how we can do it?
-    // @alr : Item WEB API does not support this feature
-    /*
-    GHAssertTrue( media_item_ != nil, @"OK" );
-    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"LowPermissionUserAdd" ], @"OK" );
-    GHAssertTrue( response_error_ == nil, @"OK" );
-    */
 }
-
 
 -(void)testCreateMediaWithNotExitedFolder
 {
@@ -447,6 +452,17 @@
     GHAssertTrue( media_item_ == nil, @"OK" );
     GHAssertTrue( response_error_ != nil, @"OK" );
     GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
+
+    SCResponseError* castedError = (SCResponseError*)response_error_;
+    
+    if ( IS_ANONYMOUS_ACCESS_ENABLED )
+    {
+        GHAssertTrue( [ castedError statusCode ] == 400, @"error code mismatch" );
+    }
+    else
+    {
+        GHAssertTrue( [ castedError statusCode ] == 403, @"error code mismatch" );
+    }
 }
 
 @end

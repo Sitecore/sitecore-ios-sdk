@@ -15,57 +15,70 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword ];
-        apiContext_ = strongContext_;
-
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-        request_.requestType = SCItemReaderRequestItemPath;
-        request_.scope = SCItemReaderChildrenScope;
-        request_.request = SCHomePath;
-        request_.flags = SCItemReaderRequestReadFieldsValues;
-        request_.fieldNames = [ NSSet setWithObjects: @"Normal Text", nil ];
-        request_.pageSize = 2;
-
-        pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
-                                                      request: request_ ];
-        if ( !pagedItems_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            didFinishCallback_();
-            return;
-        }
-        [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
-        {
-            items_count_ = result_;
-            [ pagedItems_ itemReaderForIndex: 2 ]( ^( id result_, NSError* error_ )
+            strongContext_ =
+            [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                            login: SCWebApiAdminLogin
+                                         password: SCWebApiAdminPassword
+                                          version: SCWebApiV1 ];
+            apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
+            
+            
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            request_.requestType = SCItemReaderRequestItemPath;
+            request_.scope = SCItemReaderChildrenScope;
+            request_.request = SCHomePath;
+            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.fieldNames = [ NSSet setWithObjects: @"Normal Text", nil ];
+            request_.pageSize = 2;
+
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+                                                          request: request_ ];
+            if ( !pagedItems_ )
             {
                 didFinishCallback_();
+                return;
+            }
+            [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
+            {
+                items_count_ = result_;
+                [ pagedItems_ itemReaderForIndex: 2 ]( ^( id result_, NSError* error_ )
+                {
+                    didFinishCallback_();
+                } );
             } );
-        } );
-    };
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
+    
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    GHAssertTrue( [ items_count_ unsignedIntValue ] == 3, @"OK" );
+    
+    // @adk : 3 (iOS) + 1 (android sandbox)
+    GHAssertTrue( [ items_count_ unsignedIntValue ] == 4, @"Fields count mismatch : %@", items_count_ );
     NSLog( @"%@", [ pagedItems_ itemForIndex: 0 ]);
     NSLog( @"%@", [ pagedItems_ itemForIndex: 1 ]);
     NSLog( @"%@", [ pagedItems_ itemForIndex: 2 ]);
     //!!Bug: 1st and 2nd item should not be read!!
     //GHAssertTrue( [ pagedItems_ itemForIndex: 0 ] == nil, @"OK" );
     //GHAssertTrue( [ pagedItems_ itemForIndex: 1 ] == nil, @"OK" );
-    GHAssertTrue( [ pagedItems_ itemForIndex: 2 ] != nil, @"OK" );
-    SCItem* child_ = [ pagedItems_ itemForIndex: 2 ];
+    
+    
+    SCItem* testFieldsItem = [ pagedItems_ itemForIndex: 3 ];
+    SCItem* child_ = testFieldsItem;
+    GHAssertNotNil( child_, @"OK" );
 
-    GHAssertTrue( child_.parent  == nil, @"OK" );
-    GHAssertTrue( child_.readChildren  == nil, @"OK" );
+    GHAssertNil( child_.parent, @"parent item must exist" );
+    
+    NSArray* readChildren = child_.readChildren;
+    GHAssertNil( readChildren, @"no child items expected" );
 
-    GHAssertTrue( [ child_ fieldValueWithName: @"Normal Text" ] != nil, @"OK" );
+    NSString* receivedNormalText = [ child_ fieldValueWithName: @"Normal Text" ];
+    GHAssertNotNil( receivedNormalText, @"Normal Text mismatch" );
 }
 
 -(void)testPagedItemSCWithAllFields
@@ -78,40 +91,43 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-   void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-   {
-      strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                       login: SCWebApiAdminLogin
-                                                    password: SCWebApiAdminPassword ];
-       apiContext_ = strongContext_;
-      
-      SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-      request_.requestType = SCItemReaderRequestItemPath;
-      request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
-      request_.request     = SCHomePath;
-      request_.flags       = SCItemReaderRequestReadFieldsValues;
-      request_.fieldNames  = nil;
-      request_.pageSize    = 2;
+       void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+       {
+           strongContext_ =
+           [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                           login: SCWebApiAdminLogin
+                                        password: SCWebApiAdminPassword
+                                         version: SCWebApiV1 ];
+           apiContext_ = strongContext_;
+           apiContext_.defaultSite = @"/sitecore/shell";
+          
+          SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+          request_.requestType = SCItemReaderRequestItemPath;
+          request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+          request_.request     = SCHomePath;
+          request_.flags       = SCItemReaderRequestReadFieldsValues;
+          request_.fieldNames  = nil;
+          request_.pageSize    = 2;
 
-      pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
-                                                    request: request_ ];
-      [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
-      {
-         items_count_ = result_;
-         [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
-         {
-            didFinishCallback_();
-         } );
-      } );
-   };
+          pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+                                                        request: request_ ];
+          [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
+          {
+             items_count_ = result_;
+             [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
+             {
+                didFinishCallback_();
+             } );
+          } );
+       };
 
-   [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                          selector: _cmd ];
+       [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                              selector: _cmd ];
     }
     
    GHAssertTrue( apiContext_ != nil, @"OK" );
    NSLog( @"items_count_: %@", items_count_ );
-   GHAssertTrue( [ items_count_ unsignedIntValue ] == 4, @"OK" );
+   GHAssertTrue( [ items_count_ unsignedIntValue ] == 5, @"OK" );
 
    GHAssertTrue( [ pagedItems_ itemForIndex: 0 ] != nil, @"OK" );
    SCItem* parent_ = [ pagedItems_ itemForIndex: 0 ];
@@ -135,7 +151,6 @@
    
 }
 
-
 -(void)testPagedItemWithQueryWithoutFields
 {
     __block SCPagedItems* pagedItems_;
@@ -147,8 +162,14 @@
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ =
+        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                        login: SCWebApiAdminLogin
+                                     password: SCWebApiAdminPassword
+                                      version: SCWebApiV1 ];
         apiContext_ = strongContext_;
+        apiContext_.defaultSite = @"/sitecore/shell";
+        
         
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
         request_.requestType = SCItemReaderRequestQuery;

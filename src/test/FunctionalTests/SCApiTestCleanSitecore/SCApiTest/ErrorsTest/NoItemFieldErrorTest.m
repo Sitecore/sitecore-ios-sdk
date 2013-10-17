@@ -9,15 +9,18 @@
 {
     __block SCPagedItems* pagedItems_;
     __weak __block SCApiContext* apiContext_ = nil;
-    __block SCError* field_error_ = nil;
+    __block SCApiError* field_error_ = nil;
     
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                         login: SCWebApiAdminLogin
+                                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
         request_.requestType = SCItemReaderRequestItemPath;
@@ -36,7 +39,7 @@
             }
             [ result_ fieldValueReaderForFieldName: @"WrongField" ]( ^( id result_, NSError* error_ )
             {
-                field_error_ = (SCError*) error_;
+                field_error_ = (SCApiError*) error_;
                 didFinishCallback_();
             } );
         } );
@@ -66,8 +69,11 @@
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                         login: SCWebApiAdminLogin
+                                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
@@ -112,8 +118,11 @@
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                         login: SCWebApiAdminLogin
+                                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCHomePath

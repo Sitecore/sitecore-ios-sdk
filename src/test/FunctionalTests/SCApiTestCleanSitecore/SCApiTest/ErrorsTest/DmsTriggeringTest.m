@@ -21,7 +21,8 @@
             {
                 strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
                                                                  login: nil
-                                                              password: nil ];
+                                                              password: nil
+                                                               version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 
                 SCPageEventTriggeringRequest *request_ =
@@ -161,7 +162,8 @@
             {
                 strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
                                                                  login: nil
-                                                              password: nil ];
+                                                              password: nil
+                                                               version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 
                 SCPageEventTriggeringRequest *request_ =

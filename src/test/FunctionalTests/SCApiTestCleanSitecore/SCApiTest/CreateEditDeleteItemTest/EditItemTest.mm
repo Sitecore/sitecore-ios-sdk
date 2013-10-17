@@ -1,5 +1,9 @@
 #import "SCAsyncTestCase.h"
 
+#define MOCK_DOES_NOT_WORK
+
+static NSInteger asyncSaveItemInvocationCount = 0;
+
 @interface EditItemTest : SCAsyncTestCase
 @end
 
@@ -10,12 +14,27 @@
     __weak __block SCApiContext* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
+    asyncSaveItemInvocationCount = 0;
+#ifndef MOCK_DOES_NOT_WORK
+    JFFSimpleBlock disableMockGuardBlock = ^void()
+    {
+        [ [ self class ] unHookInstanceMethodForClass: [ SCItem class ]
+                                         withSelector: @selector(asyncSaveItemWithDirtyFields:)
+                              prototypeMethodSelector: @selector(mockAsyncSaveItemWithDirtyFields:)
+                                   hookMethodSelector: @selector(asyncSaveItemWithDirtyFields__OldImpl:) ];
+    };
+    
+    [ [ self class ] hookInstanceMethodForClass: [ SCItem class ]
+                                   withSelector: @selector(asyncSaveItemWithDirtyFields:)
+                        prototypeMethodSelector: @selector(mockAsyncSaveItemWithDirtyFields:)
+                             hookMethodSelector: @selector(asyncSaveItemWithDirtyFields__OldImpl:) ];
+    ::Utils::ObjcScopedGuard connectionMockGuard( disableMockGuardBlock );
+#endif
+    
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                        login: SCWebApiAdminLogin
-                                     password: SCWebApiAdminPassword ];
+        [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
     
         apiContext_.defaultDatabase = @"web";
@@ -70,6 +89,12 @@
                                                selector: _cmd ];
     }
     
+#ifndef MOCK_DOES_NOT_WORK
+    disableMockGuardBlock();
+    connectionMockGuard.Release();
+#endif
+
+    
     GHAssertTrue( apiContext_ != nil, @"OK" );
 
     GHAssertTrue( edited_item_ != nil, @"OK" );
@@ -79,6 +104,10 @@
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
     GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Editor" ] rawValue ] isEqualToString: @"Text2" ], @"OK" );
+    
+#ifndef MOCK_DOES_NOT_WORK
+    GHAssertTrue( 1 == asyncSaveItemInvocationCount, @"HTTP request count mismatch" );
+#endif
 }
 
 -(void)testCreateAndEditItemInMaster
@@ -89,9 +118,7 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                        login: SCWebApiAdminLogin
-                                     password: SCWebApiAdminPassword ];
+        [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"master";
 
@@ -190,9 +217,7 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                        login: SCWebApiAdminLogin
-                                     password: SCWebApiAdminPassword ];
+        [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
         apiContext_.defaultDatabase = @"web";
@@ -288,9 +313,7 @@
     
     @autoreleasepool
     {
-        SCApiContext* strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                                            login: SCWebApiAdminLogin
-                                                                         password: SCWebApiAdminPassword ];
+        SCApiContext* strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"web";
 
@@ -385,12 +408,9 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                        login: SCWebApiAdminLogin
-                                     password: SCWebApiAdminPassword ];
+        [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"core";
-
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -416,6 +436,8 @@
             {
                 if ( [ items_ count ] != 0 )
                 {
+                    apiContext_.defaultDatabase = @"web";
+                    
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
                     NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
                     SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Display name" ];
@@ -435,6 +457,12 @@
         
         [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                                selector: _cmd ];
+        if ( nil == edited_item_ )
+        {
+            GHFail( @"item not created" );
+            return;
+        }
+        
         
         [ self performAsyncRequestOnMainThreadWithBlock: edit_block_
                                                selector: _cmd ];
@@ -445,7 +473,8 @@
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
     GHAssertTrue( edited_item_ != nil, @"OK" );
-    GHAssertTrue( [ [ edited_item_ displayName ] hasPrefix: @"Text2" ], @"OK" );
+    NSString* edited_display_name_ = [ edited_item_ displayName ];
+    GHAssertTrue( [ edited_display_name_ hasPrefix: @"Text2" ], @"OK" );
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
     
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Display name" ] fieldValue ] );
@@ -464,9 +493,7 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                        login: SCWebApiAdminLogin
-                                     password: SCWebApiAdminPassword ];
+        [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
     
         apiContext_.defaultDatabase = @"web";
@@ -497,7 +524,7 @@
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
-            request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.scope = static_cast<SCItemReaderScopeType>( SCItemReaderSelfScope | SCItemReaderChildrenScope );
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
@@ -537,7 +564,7 @@
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
-            request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.scope = static_cast<SCItemReaderScopeType>( SCItemReaderSelfScope | SCItemReaderChildrenScope );
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
@@ -576,5 +603,130 @@
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"Iso" ] rawValue ] isEqualToString: @"en" ], @"OK" );
 }
 
+-(JFFAsyncOperation)mockAsyncSaveItemWithDirtyFields:( NSSet* )dirtyFields
+{
+    ++asyncSaveItemInvocationCount;
+    return [ self asyncSaveItemWithDirtyFields__OldImpl: dirtyFields ];
+}
+
+-(JFFAsyncOperation)asyncSaveItemWithDirtyFields__OldImpl:( NSSet* )dirtyFields
+{
+    // IDLE
+    return nil;
+}
+
+
+-(void)testSaveItemWithoutEditingDoesNotSendHttpRequest
+{
+    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCItem* edited_item_ = nil;
+    
+    __block NSString* originalItemField = nil;
+    __block NSString* savedItemField = nil;
+
+#ifndef MOCK_DOES_NOT_WORK
+    __block BOOL isConnectionStarted = NO;
+    
+    asyncSaveItemInvocationCount = 0;
+
+    JFFSimpleBlock disableMockGuardBlock = ^void()
+    {
+        [ [ self class ] unHookInstanceMethodForClass: [ SCItem class ]
+    withSelector: @selector(asyncSaveItemWithDirtyFields:)
+                              prototypeMethodSelector: @selector(mockAsyncSaveItemWithDirtyFields:)
+                                   hookMethodSelector: @selector(asyncSaveItemWithDirtyFields__OldImpl:) ];
+    };
+
+    [ [ self class ] hookInstanceMethodForClass: [ SCItem class ]
+                                   withSelector: @selector(asyncSaveItemWithDirtyFields:)
+                        prototypeMethodSelector: @selector(mockAsyncSaveItemWithDirtyFields:)
+                             hookMethodSelector: @selector(asyncSaveItemWithDirtyFields__OldImpl:) ];
+    ::Utils::ObjcScopedGuard connectionMockGuard( disableMockGuardBlock );
+#endif
+    
+    @autoreleasepool
+    {
+        __block SCApiContext* strongContext_ =
+        [ TestingRequestFactory getNewAdminContextWithShell ];
+        apiContext_ = strongContext_;
+        
+        apiContext_.defaultDatabase = @"web";
+        
+        
+        void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: SCCreateItemPath ];
+            
+            request_.itemName     = @"Tweet Item";
+            request_.itemTemplate = @"Common/Folder";
+            
+            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+             {
+                 edited_item_ = result;
+                 didFinishCallback_();
+             } );
+        };
+        
+        void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+                                                                          fieldsNames: fieldNames_ ];
+            
+            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+             {
+                 if ( [ items_ count ] != 0 )
+                 {
+                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
+                     NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+                     
+                     SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Editor" ];
+                     originalItemField = field_.rawValue;
+                     
+                     // @adk : no editing is performed before saving
+                     [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    {
+                        edited_item_ = editedItem_;
+                        savedItemField = [ [ edited_item_ fieldWithName: @"__Editor" ]  rawValue ];
+                        
+                        NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
+                        didFinishCallback_();
+                    } );
+                 }
+                 else 
+                 {
+                     didFinishCallback_();
+                 }
+             } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: create_block_
+                                               selector: _cmd ];
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: edit_block_
+                                               selector: _cmd ];
+    }
+    
+#ifndef MOCK_DOES_NOT_WORK
+    disableMockGuardBlock();
+    connectionMockGuard.Release();
+#endif
+
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    
+    GHAssertTrue( edited_item_ != nil, @"OK" );
+    GHAssertTrue( [ [ edited_item_ displayName ] hasPrefix: @"Tweet Item" ], @"OK" );
+    GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
+    
+    NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
+    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Editor" ] rawValue ] isEqualToString: originalItemField ], @"OK" );
+    
+#ifndef MOCK_DOES_NOT_WORK
+    isConnectionStarted = ( 0 != asyncSaveItemInvocationCount );
+    GHAssertFalse( isConnectionStarted, @"no HTTP request expected for unchanged object" );
+#endif
+}
 
 @end
