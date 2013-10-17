@@ -1,8 +1,16 @@
 #import "SCField.h"
 
 #import "SCItem.h"
+
 #import "SCItemRecord.h"
+#import "SCItemRecord+SCItemSource.h"
+
 #import "SCFieldRecord.h"
+#import "SCItemSourcePOD.h"
+#import "SCApiContext.h"
+#import "SCExtendedApiContext+Private.h"
+
+#import "SCApiMacro.h"
 
 @interface SCItem (SCField)
 
@@ -20,11 +28,11 @@
 
 @implementation SCField
 
-@dynamic fieldId
-, name
-, type
-, fieldValue
-, apiContext;
+@dynamic fieldId;
+@dynamic name;
+@dynamic type;
+@dynamic fieldValue;
+@dynamic itemSource;
 
 -(id)init
 {
@@ -36,22 +44,22 @@
 }
 
 -(id)initWithFieldRecord:( SCFieldRecord* )fieldRecord_
-               apiContext:( SCApiContext* )apiContext_
+              apiContext:( SCExtendedApiContext* )apiContext_
 {
     self = [ super init ];
 
     if ( self )
     {
         self.fieldRecord = fieldRecord_;
-
-        _rawValue = self.fieldRecord.rawValue;
+        self->_rawValue = self.fieldRecord.rawValue;
+        self->_apiContext = apiContext_;
     }
 
     return self;
 }
 
 +(id)fieldWithFieldRecord:( SCFieldRecord* )fieldRecord_
-               apiContext:( SCApiContext* )apiContext_
+               apiContext:( SCExtendedApiContext* )apiContext_
 {
     return [ [ self alloc ] initWithFieldRecord: fieldRecord_
                                      apiContext: apiContext_ ];
@@ -68,9 +76,25 @@
     return asyncOperationWithResult( self.fieldValue );
 }
 
+-(JFFAsyncOperation)fieldValueLoaderWithParms:( SCParams* )params
+{
+    [ self doesNotRecognizeSelector: _cmd ];
+    return nil;
+}
+
 -(SCAsyncOp)fieldValueReader
 {
     return asyncOpWithJAsyncOp( [ self fieldValueLoader ] );
+}
+
+-(SCExtendedAsyncOp)extendedFieldValueReader
+{
+    return [ self fieldValueLoader ];
+}
+
+-(SCAsyncOp)fieldValueReaderWithParams:( SCParams* )params
+{
+    return asyncOpWithJAsyncOp( [ self fieldValueLoaderWithParms: params ] );
 }
 
 -(NSString*)description
@@ -102,24 +126,52 @@
     return self.fieldRecord.itemRecord.item;
 }
 
--(void)setRawValue:( NSString* )rawValue_
+-(void)setRawValue:( NSString* )rawValue
 {
-    if ( _rawValue == rawValue_ )
+    if ( self->_rawValue == rawValue )
+    {
         return;
-
-    _rawValue = rawValue_;
-
-    if ( [ self.fieldRecord.rawValue isEqualToString: _rawValue ] )
-    {
-        [ self.item.fieldNamesToChange removeObject: self.name ];
     }
-    else
+
+    // @adk : order matters
+    self->_rawValue = rawValue;
+    [ self markFieldAsDirty ];
+
+    // @adk - otherwise items from cache may be inconsistent
+    self->_fieldRecord.rawValue = rawValue;
+}
+
+-(void)markFieldAsDirty
+{
+#if USE_IN_MEMORY_CACHE
     {
-        [ self.item.lazyFieldNamesToChange addObject: self.name ];
+        if ( [ self.fieldRecord.rawValue isEqualToString: self->_rawValue ] )
+        {
+            [ self.item.fieldNamesToChange removeObject: self.name ];
+        }
+        else
+        {
+            [ self.item.lazyFieldNamesToChange addObject: self.name ];
+        }
     }
+#else
+    // Persistent cache
+    {
+        id<SCItemRecordCacheRW> cache = self->_apiContext.itemsCache;
+        [ cache setRawValue: self->_rawValue
+                 forFieldId: self->_fieldRecord.fieldId
+                     itemId: self->_fieldRecord.itemId
+                 itemSource: self->_fieldRecord.itemSource ];
+    }
+#endif
 }
 
 //STODO!! add save to SCField
 //STODO add load image for media item
+
+-(id<SCItemSource>)itemSource
+{
+    return self.fieldRecord.itemSource;
+}
 
 @end
