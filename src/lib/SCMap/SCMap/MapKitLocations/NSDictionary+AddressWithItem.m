@@ -41,13 +41,13 @@
     NSDictionary* fields_ = [ item_ readFieldsByName ];
 
     NSDictionary* addressKeyByFieldName_ = @{
-    @"Street"  : (__bridge id)kABPersonAddressStreetKey ,
-    @"City"    : (__bridge id)kABPersonAddressCityKey   ,
-    @"State"   : (__bridge id)kABPersonAddressStateKey  ,
-    @"ZIP"     : (__bridge id)kABPersonAddressZIPKey    ,
-    @"Country" : (__bridge id)kABPersonAddressCountryKey,
-    @"Title"   : @"PlacemarkTitle",
-    @"Icon"    : @"PlacemarkIconReader",
+        @"Street"  : (__bridge id)kABPersonAddressStreetKey ,
+        @"City"    : (__bridge id)kABPersonAddressCityKey   ,
+        @"State"   : (__bridge id)kABPersonAddressStateKey  ,
+        @"ZIP"     : (__bridge id)kABPersonAddressZIPKey    ,
+        @"Country" : (__bridge id)kABPersonAddressCountryKey,
+        @"Title"   : @"PlacemarkTitle",
+        @"Icon"    : @"PlacemarkIconReader",
     };
 
     [ addressKeyByFieldName_ enumerateKeysAndObjectsUsingBlock: ^( id fieldName_, id addressKey_, BOOL *stop )
