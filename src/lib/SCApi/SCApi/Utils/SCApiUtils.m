@@ -17,7 +17,9 @@
 #import "SCSitecoreCredentials.h"
 #import "SCRemoteApi.h"
 
-@interface SCError (SCRemoteApi)
+
+
+@interface SCApiError (SCRemoteApi)
 
 +(id)errorWithDescription:( NSString* )description_;
 
@@ -116,13 +118,15 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
     headers_ = headers_ ?: @{};
     
     BOOL isAuthenticationRequired_ = [ credentials_.login hasSymbols ];
-    BOOL isSslUsed_ = ( NSOrderedSame == [ url_.scheme compare: @"https"
-                                                       options: NSCaseInsensitiveSearch ] );
+    
     
     NSDictionary* authHeaders_ = nil;
     
     if ( isAuthenticationRequired_ )
     {
+#if IS_ENCRYPTION_ENABLED
+        BOOL isSslUsed_ = ( NSOrderedSame == [ url_.scheme compare: @"https"
+                                                           options: NSCaseInsensitiveSearch ] );
         if ( isSslUsed_ )
         {
             authHeaders_ =
@@ -149,6 +153,13 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
                 @"X-Scitemwebapi-Encrypted" : @"1"
             };
         }
+#else
+    authHeaders_ =
+    @{
+      @"X-Scitemwebapi-Username" : credentials_.login,
+      @"X-Scitemwebapi-Password" : credentials_.password,
+    };
+#endif
     }
     headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
     
