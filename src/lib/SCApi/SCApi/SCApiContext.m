@@ -1,89 +1,41 @@
 #import "SCApiContext.h"
-#import "SCApiContext+Init.h"
-
-#import "SCItemInfo.h"
-#import "SCFieldRecord.h"
-#import "SCApiUtils.h"
-#import "SCRemoteApi.h"
-#import "SCItemRecordsPage.h"
-
-#import "SCEditItemsRequest.h"
-#import "SCCreateItemRequest.h"
+#import "SCExtendedApiContext.h"
+#import "SCExtendedApiContext+Private.h"
+#import "SCHTMLReaderRequest.h"
 
 #import "SCHostLoginAndPassword.h"
-
-#import "SCItemRecord.h"
-#import "NSString+DefaultSitecoreLanguage.h"
-#import "SCItemsReaderRequest+SCApiContext.h"
-#import "SCItemsReaderRequest+Factory.h"
-#import "SCItemsReaderRequest+SystemLanguages.h"
-#import "SCCreateMediaItemRequest+ToItemsReadRequest.h"
-#import "SCItemsCache+UnregisterItems.h"
-
-#import "SCApiAnalizers.h"
-#import "SCTriggeringRequest.h"
-
-#import "SCError.h"
+#import "SCApiContext+Init.h"
+#import "SCItemSource.h"
+#import "SCItemSourcePOD.h"
 
 @interface SCApiContext ()
 
-@property ( nonatomic ) SCItemsCache* itemsCache;
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
+@property ( nonatomic ) SCRemoteApi * api;
+
+@end
+
+@interface SCExtendedApiContext (CacheApi)
+
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 @property ( nonatomic ) SCRemoteApi * api;
 
 @end
 
 @implementation SCApiContext
 
--(id)init
-{
-    NSAssert( NO, @"don't call this method" );
-    return [ super init ];
-}
-
--(NSString*)defaultLanguage
-{
-    if ( !_defaultLanguage )
-    {
-        _defaultLanguage = [ NSString defaultSitecoreLanguage ];
-    }
-    return _defaultLanguage;
-}
-
--(NSString*)defaultDatabase
-{
-    if ( !_defaultDatabase )
-    {
-        _defaultDatabase = [ NSString defaultSitecoreDatabase ];
-    }
-    return _defaultDatabase;
-}
-
--(NSTimeInterval)defaultLifeTimeInCache
-{
-    if ( !_defaultLifeTimeInCache )
-    {
-        _defaultLifeTimeInCache = 10.*60.0;
-    }
-    return _defaultLifeTimeInCache;
-}
-
--(NSTimeInterval)defaultImagesLifeTimeInCache
-{
-    if ( !_defaultImagesLifeTimeInCache )
-    {
-        _defaultImagesLifeTimeInCache = 60*60*24*30;
-    }
-    return _defaultImagesLifeTimeInCache;
-}
+@dynamic itemsCache;
+@dynamic api;
 
 +(id)contextWithHost:( NSString* )host_
                login:( NSString* )login_
             password:( NSString* )password_
+             version:(SCWebApiVersion)webApiVersion
 {
     id key_ = [ [ SCHostLoginAndPassword alloc ] initWithHost: host_
                                                         login: login_
                                                      password: password_ ];
-
+    
     static JFFMutableAssignDictionary* contextByHost_ = nil;
     if ( !contextByHost_ )
     {
@@ -94,327 +46,369 @@
     {
         result_ = [ [ self alloc ] initWithHost: host_
                                           login: login_
-                                       password: password_ ];
-
+                                       password: password_
+                                        version: webApiVersion ];
+        
         contextByHost_[ key_ ] = result_;
     }
     return result_;
 }
 
 +(id)contextWithHost:( NSString* )host_
+             version:(SCWebApiVersion)webApiVersion
 {
     return [ self contextWithHost: host_
                             login: nil
-                         password: nil ];
+                         password: nil
+                          version: webApiVersion ];
 }
 
--(SCItem*)itemWithPath:( NSString* )path_
++(id)contextWithHost:(NSString*)host
 {
-    SCItemInfo* info_ = [ SCItemInfo new ];
-    info_.itemPath = path_;
-    info_.language = self.defaultLanguage;
-    SCItemRecord* itemRecord_ = [ self.itemsCache itemRecordWithItemInfo: info_ ];
-    return itemRecord_.item;
+    return [ self contextWithHost: host
+                          version: SCWebApiMaxSupportedVersion ];
 }
 
--(SCItem*)itemWithId:( NSString* )itemId_
++(id)contextWithHost:(NSString *)host
+               login:(NSString *)login
+            password:(NSString *)password
 {
-    SCItemInfo* info_ = [ SCItemInfo new ];
-    info_.itemId   = itemId_;
-    info_.language = self.defaultLanguage;
-    SCItemRecord* itemRecord_ = [ self.itemsCache itemRecordWithItemInfo: info_ ];
-    return itemRecord_.item;
+    return [ self contextWithHost: host
+                            login: login
+                         password: password
+                          version: SCWebApiMaxSupportedVersion ];
 }
 
--(JFFAsyncOperation)itemLoaderForItemId:( NSString* )itemId_
+-(void)setApi:(SCRemoteApi *)api
 {
-    return [ self itemLoaderWithFieldsNames: [ NSSet new ]
-                                     itemId: itemId_ ];
+    self.extendedApiContext.api = api;
 }
 
--(SCAsyncOp)itemReaderForItemId:( NSString* )itemId_
+-(SCRemoteApi *)api
 {
-    return [ self itemReaderWithFieldsNames: [ NSSet new ]
-                                     itemId: itemId_ ];
+    return self.extendedApiContext.api;
 }
 
--(SCAsyncOp)itemReaderForItemPath:( NSString* )path_
+-(void)setItemsCache:(id<SCItemRecordCacheRW>)itemsCache
 {
-    return [ self itemReaderWithFieldsNames: [ NSSet new ]
-                                   itemPath: path_ ];
+    self.extendedApiContext.itemsCache = itemsCache;
 }
 
--(JFFAsyncOperation)itemLoaderWithFieldsNames:( NSSet* )fieldNames_
-                                       itemId:( NSString* )itemId_
+-(id<SCItemRecordCacheRW>)itemsCache
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
-                                                                  fieldsNames: fieldNames_ ];
-    return firstItemFromArrayReader( [ self itemsLoaderWithRequest: request_ ] );
+    return self.extendedApiContext.itemsCache;
 }
 
--(SCAsyncOp)itemReaderWithFieldsNames:( NSSet* )fieldNames
-                               itemId:( NSString* )itemId
+-(void)setExtendedApiContext:(SCExtendedApiContext *)extendedApiContext
 {
-    return asyncOpWithJAsyncOp( [ self itemLoaderWithFieldsNames: fieldNames
-                                                          itemId: itemId ] );
+    self->_extendedApiContext = extendedApiContext;
 }
 
--(SCAsyncOp)itemReaderWithFieldsNames:( NSSet* )fieldNames_
-                             itemPath:( NSString* )path_
+-(void)setDefaultSite:(NSString *)defaultSite
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                    fieldsNames: fieldNames_ ];
-
-    JFFAsyncOperation loader_ = [ self itemsLoaderWithRequest: request_ ];
-    loader_ = firstItemFromArrayReader( loader_ );
-
-    return asyncOpWithJAsyncOp( loader_ );
+    self.extendedApiContext.defaultSite = defaultSite;
 }
 
--(SCAsyncOp)childrenReaderWithItemPath:( NSString* )path_
+-(void)setDefaultLanguage:(NSString *)defaultLanguage
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-    request_.request     = path_;
-    request_.requestType = SCItemReaderRequestItemPath;
-    request_.scope       = SCItemReaderChildrenScope;
-    request_.fieldNames  = [ NSSet new ];
-    return [ self itemsReaderWithRequest: request_ ];
+    self.extendedApiContext.defaultLanguage = defaultLanguage;
 }
 
-- (SCAsyncOp)childrenReaderWithItemId:( NSString* )itemId_
+-(void)setDefaultDatabase:(NSString *)defaultDatabase
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-    request_.request     = itemId_;
-    request_.requestType = SCItemReaderRequestItemId;
-    request_.scope       = SCItemReaderChildrenScope;
-    request_.fieldNames  = [ NSSet new ];
-    return [ self itemsReaderWithRequest: request_ ];
+    self.extendedApiContext.defaultDatabase = defaultDatabase;
 }
 
--(NSDictionary*)readFieldsByNameForItemId:( NSString* )itemId_
+-(void)setDefaultItemVersion:(NSString *)defaultItemVersion
 {
-    JFFMutableAssignDictionary* dict_ = [ self.itemsCache readFieldsByNameForItemId: itemId_
-                                                                           language: self.defaultLanguage ];
-    return [ dict_ map: ^( id key_, SCFieldRecord* fieldRecord_ )
-    {
-        return fieldRecord_.field;
-    } ];
+    self.extendedApiContext.defaultItemVersion = defaultItemVersion;
 }
 
--(SCField*)fieldWithName:( NSString* )fieldName_
-                  itemId:( NSString* )itemId_
-                language:( NSString* )language_
+-(void)setDefaultLifeTimeInCache:(NSTimeInterval)defaultLifeTimeInCache
 {
-    SCFieldRecord* fieldRecord_ = [ self.itemsCache fieldWithName: fieldName_
-                                                           itemId: itemId_
-                                                         language: language_ ];
-    return fieldRecord_.field;
+    self.extendedApiContext.defaultLifeTimeInCache = defaultLifeTimeInCache;
 }
 
--(SCField*)fieldWithName:( NSString* )fieldName_
-                  itemId:( NSString* )itemId_
+-(void)setDefaultImagesLifeTimeInCache:(NSTimeInterval)defaultImagesLifeTimeInCache
 {
-    return [ self fieldWithName: fieldName_
-                         itemId: itemId_
-                       language: self.defaultLanguage ];
+    self.extendedApiContext.defaultImagesLifeTimeInCache = defaultImagesLifeTimeInCache;
 }
 
--(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_
+-(void)setSystemLanguages:(NSSet *)systemLanguages
 {
-    return [ _api imageLoaderForSCMediaPath: path_
-                              cacheLifeTime: self.defaultImagesLifeTimeInCache ];
+    self.extendedApiContext.systemLanguages = systemLanguages;
 }
 
--(SCAsyncOp)imageLoaderForSCMediaPath:( NSString* )path_
+-(NSString *)defaultSite
 {
-    return asyncOpWithJAsyncOp( [ self privateImageLoaderForSCMediaPath: path_ ] );
+    return self.extendedApiContext.defaultSite;
 }
 
--(JFFAsyncOperation)cachedItemsPageLoader:( JFFAsyncOperation )loader_
-                                  request:( SCItemsReaderRequest* )request_
+-(NSString *)defaultLanguage
 {
-    JFFAnalyzer analyzer_ = ^id( SCItemRecordsPage* result_, NSError **error_ )
-    {
-        if ( result_ )
-        {
-            [ self.itemsCache cacheResponseItems: result_.itemRecords
-                                      forRequest: request_
-                                      apiContext: self ];
-        };
-        return result_;
-    };
-    JFFAsyncOperationBinder cacher_ = asyncOperationBinderWithAnalyzer( analyzer_ );
-
-    return bindSequenceOfAsyncOperations( loader_, cacher_, nil );
+    return self.extendedApiContext.defaultLanguage;
 }
 
--(JFFAsyncOperation)itemRecordLoaderForRequest:( SCItemsReaderRequest* )request_
+-(NSString *)defaultDatabase
 {
-    JFFAsyncOperation loader_ = [ self->_api itemsReaderWithRequest: request_
-                                                         apiContext: self ];
-    return [ self cachedItemsPageLoader: loader_
-                                request: request_ ];
+    return self.extendedApiContext.defaultDatabase;
 }
 
-static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation loader_
-                                                            , SCItemsReaderRequest* request_ )
+-(NSString *)defaultItemVersion
 {
-    loader_ = itemRecordsPageToItemsPage( loader_ );
-    loader_ = [ request_ asyncOpWithFieldsForAsyncOp: loader_ ];
-    return [ request_ validatedLoader: loader_ ];
+    return self.extendedApiContext.defaultItemVersion;
 }
 
--(JFFAsyncOperation)privateItemsPageLoaderWithRequest:( SCItemsReaderRequest* )request_
+-(NSTimeInterval)defaultLifeTimeInCache
 {
-    request_ = [ request_ itemsReaderRequestWithApiContext: self ];
-
-    JFFAsyncOperation loader_ = [ self itemRecordLoaderForRequest: request_ ];
-
-    loader_ = validatedItemsPageLoaderWithFields( loader_, request_ );
-
-    return [ self asyncOperationMergeLoaders: loader_
-                                withArgument: request_ ];
+    return self.extendedApiContext.defaultLifeTimeInCache;
 }
 
--(SCAsyncOp)itemCreatorWithRequest:( SCCreateItemRequest* )request_
+-(NSTimeInterval)defaultImagesLifeTimeInCache
 {
-    request_ = ( SCCreateItemRequest* )[ request_ itemsReaderRequestWithApiContext: self ];
+    return self.extendedApiContext.defaultImagesLifeTimeInCache;
+}
 
-    JFFAsyncOperation loader_ = [ self->_api itemCreatorWithRequest: request_
-                                                         apiContext: self ];
-    loader_ = [ self cachedItemsPageLoader: loader_
-                                   request: request_ ];
+-(NSSet *)systemLanguages
+{
+    return self.extendedApiContext.systemLanguages;
+}
 
-    loader_ = validatedItemsPageLoaderWithFields( loader_, request_ );
+- (SCAsyncOp)credentialsCheckerForSite:( NSString* )site
+{
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext credentialsCheckerForSite: site ] );
+}
 
-    loader_ = itemPageToItems( loader_ );
-    loader_ = firstItemFromArrayReader( loader_ );
+- (SCAsyncOp)systemLanguagesReader
+{
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext systemLanguagesReader ] );
+}
 
-    loader_ = asyncOperationWithChangedError( loader_, ^NSError *(NSError *error)
-    {
-        SCCreateItemError* newError =
-        [ [ SCCreateItemError alloc ] initWithDescription: @"Item not created"
-                                                     code: 1 ];
-        newError.underlyingError = error;
-        
-        return newError;
-    });
+- (SCAsyncOp)itemsReaderWithRequest:(SCItemsReaderRequest *)request
+{
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext itemsReaderWithRequest: request ] );
+}
+
+- (SCAsyncOp)itemReaderForItemId:(NSString *)itemId
+{
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext itemReaderForItemId: itemId
+                                                                   itemSource: [ self contextSource ] ] );
+}
+
+- (SCAsyncOp)itemReaderForItemPath:(NSString *)path
+{
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext itemReaderForItemPath: path
+                                         itemSource: [ self contextSource ] ];
     
-    return asyncOpWithJAsyncOp( loader_ );
+    return asyncOpWithJAsyncOp( result );
 }
 
--(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )request_
+- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+                                itemId:(NSString *)itemId
 {
-    request_ = ( SCEditItemsRequest* )[ request_ itemsReaderRequestWithApiContext: self ];
-
-    JFFAsyncOperation loader_ = [ _api editItemsLoaderWithRequest: request_
-                                                       apiContext: self ];
-
-    loader_ = [ self cachedItemsPageLoader: loader_
-                                   request: request_ ];
-
-    loader_ = validatedItemsPageLoaderWithFields( loader_, request_ );
-
-    return itemPageToItems( loader_ );
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext itemReaderWithFieldsNames: fieldNames
+                                                 itemId: itemId
+                                             itemSource: [ self contextSource ] ];
+    
+    return asyncOpWithJAsyncOp( result );
 }
 
--(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCItemsReaderRequest* )request_
+- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+                            itemSource:(id<SCItemSource>)itemSource
+                                itemId:(NSString *)itemId
 {
-    request_ = [ request_ itemsReaderRequestWithApiContext: self ];
-
-    JFFAsyncOperation loader_ = [ self->_api removeItemsLoaderWithRequest: request_
-                                                               apiContext: self ];
-
-    loader_ = [ self.itemsCache unregisterItemsWithItemsIdsArrayLoader: loader_ ];
-
-    loader_ = [ self asyncOperationMergeLoaders: loader_
-                                   withArgument: request_ ];
-
-    return [ request_ validatedLoader: loader_ ];
+    SCExtendedAsyncOp result = [ self.extendedApiContext itemReaderWithFieldsNames: fieldNames
+                                                                            itemId: itemId
+                                                                        itemSource: itemSource ];
+    return asyncOpWithJAsyncOp( result );
 }
 
--(SCAsyncOp)removeItemsWithRequest:( SCItemsReaderRequest* )request_
+- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+                              itemPath:(NSString *)path
 {
-    return asyncOpWithJAsyncOp( [ self removeItemsLoaderWithRequest: request_ ] );
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext itemReaderWithFieldsNames: fieldNames
+                                               itemPath: path
+                                             itemSource: [ self contextSource ] ];
+    
+    return asyncOpWithJAsyncOp( result );
 }
 
--(JFFAsyncOperation)mediaItemCreatLoaderWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_
+- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+                         itemSourcePOD:(SCItemSourcePOD *)itemSourcePOD
+                              itemPath:(NSString *)path
 {
-    JFFAsyncOperation loader_ = [ self->_api mediaItemCreatorWithRequest: createMediaItemRequest_
-                                                              apiContext: self ];
-
-    SCItemsReaderRequest* request_ = [ createMediaItemRequest_ toItemsReadRequestWithApiContext: self ];
-    loader_ = [ self cachedItemsPageLoader: loader_
-                                   request: request_ ];
-
-    loader_ = itemRecordsPageToItemsPage( loader_ );
-    loader_ = itemPageToItems( loader_ );
-    return firstItemFromArrayReader( loader_ );
+    SCExtendedAsyncOp result = [ self.extendedApiContext itemReaderWithFieldsNames: fieldNames
+                                                                          itemPath: path
+                                                                        itemSource: [ self contextSource ] ];
+    return asyncOpWithJAsyncOp( result );
 }
 
--(SCAsyncOp)mediaItemCreatorWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_
+- (SCAsyncOp)itemCreatorWithRequest:(SCCreateItemRequest *)createItemRequest
 {
-    JFFAsyncOperation loader_ = [ self mediaItemCreatLoaderWithRequest: createMediaItemRequest_ ];
-    return asyncOpWithJAsyncOp( loader_ );
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext itemCreatorWithRequest: createItemRequest ] );
 }
 
--(SCAsyncOp)editItemsWithRequest:( SCEditItemsRequest* )request_
+- (SCAsyncOp)editItemsWithRequest:(SCEditItemsRequest *)editItemsRequest
 {
-    JFFAsyncOperation loader_ = [ self editItemsLoaderWithRequest: request_ ];
-    return asyncOpWithJAsyncOp( loader_ );
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext editItemsWithRequest: editItemsRequest ] );
 }
 
--(JFFAsyncOperation)itemsLoaderWithRequest:( SCItemsReaderRequest* )request_
+- (SCAsyncOp)removeItemsWithRequest:(SCItemsReaderRequest *)request
 {
-    JFFAsyncOperation loader_ = [ self privateItemsPageLoaderWithRequest: request_ ];
-    return itemPageToItems( loader_ );
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext removeItemsWithRequest: request ] );
 }
 
--(SCAsyncOp)itemsReaderWithRequest:( SCItemsReaderRequest* )request_
+- (SCAsyncOp)mediaItemCreatorWithRequest:(SCCreateMediaItemRequest *)createMediaItemRequest
 {
-    return asyncOpWithJAsyncOp( [ self itemsLoaderWithRequest: request_ ] );
+    return asyncOpWithJAsyncOp( [ self.extendedApiContext mediaItemCreatorWithRequest: createMediaItemRequest ] );
 }
 
--(SCAsyncOp)systemLanguagesReader
+- (SCAsyncOp)childrenReaderWithItemId:(NSString *)itemId
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest systemLanguagesItemsReader ];
-
-    JFFAsyncOperationBinder analyzeLanguagesBinder_ = itemRecordsPageToLanguageSet();
-
-    JFFAsyncOperation loader_ = [ self itemRecordLoaderForRequest: request_ ];
-    loader_ = bindSequenceOfAsyncOperations( loader_, analyzeLanguagesBinder_, nil );
-    loader_ = [ self asyncOperationForPropertyWithName: @"systemLanguages"
-                                        asyncOperation: loader_ ];
-
-    return asyncOpWithJAsyncOp( loader_ );
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext childrenReaderWithItemId: itemId
+                                            itemSource: [ self contextSource ] ];
+    return asyncOpWithJAsyncOp( result );
 }
 
--(SCAsyncOp)renderingHTMLLoaderForRenderingWithId:( NSString* )renderingId_
-                                         sourceId:( NSString* )sourceId_
+- (SCAsyncOp)childrenReaderWithItemPath:(NSString *)path
 {
-    JFFAsyncOperation loader_ = [ self->_api renderingHTMLLoaderForRenderingId: renderingId_
-                                                                      sourceId: sourceId_
-                                                                    apiContext: self ];
-
-    JFFAsyncOperationBinder binder_ = ^JFFAsyncOperation( NSArray* ids_ )
-    {
-        return loader_;
-    };
-
-    NSArray* ids_ = @[ renderingId_?:@"", sourceId_?:@"" ];
-    loader_ = asyncOpWithValidIds( binder_, ids_ );
-
-    return asyncOpWithJAsyncOp( loader_ );
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext childrenReaderWithItemPath: path
+                                              itemSource: [ self contextSource ] ];
+    
+    return asyncOpWithJAsyncOp( result );
 }
 
--(JFFAsyncOperation)privateTriggerLoaderForRequest:( SCTriggeringRequest* )request_
+- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
 {
-    return [ _api triggerLoaderWithRequest: request_ ];
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext imageLoaderForSCMediaPath: path
+                                            imageParams: nil ];
+    
+    return asyncOpWithJAsyncOp( result );
 }
 
--(SCAsyncOp)triggerLoaderForRequest:( SCTriggeringRequest* )request_
+- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
+                           imageParams:( SCFieldImageParams* )params
 {
-    return asyncOpWithJAsyncOp( [ self privateTriggerLoaderForRequest: request_ ] );
+    SCExtendedAsyncOp result = [ self.extendedApiContext imageLoaderForSCMediaPath: path
+                                                                       imageParams: params ];
+    return asyncOpWithJAsyncOp( result );
 }
+
+- (SCAsyncOp)renderingHTMLReaderWithRequest:(SCHTMLReaderRequest *)request
+{
+    SCExtendedAsyncOp result = [ self.extendedApiContext renderingHTMLReaderWithRequest: request ];
+    
+    return asyncOpWithJAsyncOp( result );
+}
+
+- (SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
+                                          sourceId:(NSString *)sourceId
+{
+    SCHTMLReaderRequest * request = [ SCHTMLReaderRequest new ];
+    request.renderingId = renderingId;
+    request.sourceId = sourceId;
+    
+    SCExtendedAsyncOp result =
+    [ self.extendedApiContext renderingHTMLReaderWithRequest: request ];
+    
+    return asyncOpWithJAsyncOp( result );
+}
+
+
+- (SCAsyncOp)triggerLoaderForRequest:( SCTriggeringRequest* )request
+{
+    SCExtendedAsyncOp result = [ self.extendedApiContext triggerLoaderForRequest: request ];
+    return asyncOpWithJAsyncOp( result );
+}
+
+
+#pragma mark -
+#pragma mark Cache
+- (SCItem *)itemWithPath:(NSString *)path
+{
+    return [ self itemWithPath: path
+                        source: [ self contextSource ] ];    
+}
+
+- (SCItem *)itemWithId:(NSString *)itemId
+{
+    return [ self itemWithId: itemId
+                      source: [ self contextSource ] ];
+}
+
+- (SCItem *)itemWithPath:(NSString *)path
+                  source:( id<SCItemSource> )itemSource
+{
+    return [ self.extendedApiContext itemWithPath: path
+                                       itemSource: itemSource ];
+}
+
+- (SCItem *)itemWithId:(NSString *)itemId
+                source:( id<SCItemSource> )itemSource
+{
+    return [ self.extendedApiContext itemWithId: itemId
+                                     itemSource: itemSource ];
+}
+
+- (SCField*)fieldWithName:(NSString *)fieldName
+                   itemId:(NSString *)itemId
+{
+    return [ self fieldWithName: fieldName
+                         itemId: itemId
+                         source: [ self contextSource ] ];
+}
+
+
+- (SCField*)fieldWithName:(NSString *)fieldName
+                   itemId:(NSString *)itemId
+                   source:( id<SCItemSource> )itemSource
+{
+    return [ self.extendedApiContext fieldWithName: fieldName
+                                            itemId: itemId
+                                        itemSource: itemSource ];
+}
+
+- (NSDictionary*)readFieldsByNameForItemId:(NSString *)itemId
+{
+    return [ self readFieldsByNameForItemId: itemId
+                                     source: [ self contextSource ] ];
+}
+
+
+- (NSDictionary*)readFieldsByNameForItemId:(NSString *)itemId
+                                    source:( id<SCItemSource> )itemSource
+{
+    return [ self.extendedApiContext readFieldsByNameForItemId: itemId
+                                                    itemSource: itemSource ];
+}
+
+-(SCItemSourcePOD*)contextSource
+{
+    return [ self.extendedApiContext contextSource ];
+}
+
+
+// @igk hack to use NSString lowercaseStringWithLocale: method in ios 5.x
+
+- (NSString *)lowercaseStringWithLocale:(NSLocale *)locale
+{
+    NSAssert([self isKindOfClass:[NSString class]], @"wrong instance class");
+    
+    return [(NSString *)self lowercaseString];
+}
+
++(void)load
+{
+    //for ios 5.x only
+    [ self addInstanceMethodIfNeedWithSelector: @selector( lowercaseStringWithLocale: )
+                                       toClass: [ NSString class ] ];
+}
+
 
 @end
