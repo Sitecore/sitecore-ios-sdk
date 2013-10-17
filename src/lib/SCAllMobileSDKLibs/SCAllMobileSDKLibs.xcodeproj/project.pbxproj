@@ -32,6 +32,8 @@
 		7E046219170C23B400AB6873 /* libiFeatureAvailability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */; };
 		7E16FC0E16EF1D8C00031889 /* libCocoaHTTPServerCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */; };
 		7E16FC4216EF22C300031889 /* libDeviceUniqueIdentifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */; };
+		7E340AA01803F62A0053832D /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
+		7E340AA11803F62E0053832D /* libESDatabaseWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */; };
 		7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
@@ -459,6 +461,55 @@
 			remoteGlobalIDString = 7E16FC2316EF1F3900031889;
 			remoteInfo = DeviceUniqueIdentifier;
 		};
+		7E340A771803F6170053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A701803F6170053832D /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
+			remoteInfo = "fmdb-demo";
+		};
+		7E340A791803F6170053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A701803F6170053832D /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE4290EF12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+		7E340A8D1803F6170053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EBF991117B3C13B00A142B7;
+			remoteInfo = SCApiTest;
+		};
+		7E340A8F1803F6170053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EA5B60F17B8DA1D008F3A2A;
+			remoteInfo = "SCApiTest-CI";
+		};
+		7E340A9E1803F61D0053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E6A36BD160084F000F4CE84;
+			remoteInfo = ESDatabaseWrapper;
+		};
+		7E340AA21803F6390053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A701803F6170053832D /* fmdb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4290EE12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+		7E340AA41803F6410053832D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E6A36BC160084F000F4CE84;
+			remoteInfo = ESDatabaseWrapper;
+		};
 		7E3A5C4615E67C7B008BA4D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
@@ -581,6 +632,8 @@
 		7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iFeatureAvailability.xcodeproj; path = "../../lib-third-party/iFeatureAvailability/iFeatureAvailability.xcodeproj"; sourceTree = "<group>"; };
 		7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocoahttpserver.xcodeproj; path = "../../lib-third-party/cocoahttpserver/cocoahttpserver.xcodeproj"; sourceTree = "<group>"; };
 		7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeviceUniqueIdentifier.xcodeproj; path = "../../lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5/DeviceUniqueIdentifier/DeviceUniqueIdentifier.xcodeproj"; sourceTree = "<group>"; };
+		7E340A701803F6170053832D /* fmdb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fmdb.xcodeproj; path = "../../lib-third-party/fmdb/fmdb.xcodeproj"; sourceTree = "<group>"; };
+		7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ESDatabaseWrapper.xcodeproj; path = "../../lib-third-party/ESDatabaseWrapper/ESDatabaseWrapper.xcodeproj"; sourceTree = "<group>"; };
 		7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AmberFoundation.xcodeproj; path = "../../lib-third-party/AmberFramework-lite/AmberFoundation/AmberFoundation.xcodeproj"; sourceTree = "<group>"; };
 		7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjcScopedGuard.xcodeproj; path = "../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
@@ -592,6 +645,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E340AA11803F62E0053832D /* libESDatabaseWrapper.a in Frameworks */,
+				7E340AA01803F62A0053832D /* libFMDB.a in Frameworks */,
 				7E046219170C23B400AB6873 /* libiFeatureAvailability.a in Frameworks */,
 				7E16FC4216EF22C300031889 /* libDeviceUniqueIdentifier.a in Frameworks */,
 				7E16FC0E16EF1D8C00031889 /* libCocoaHTTPServerCore-iOS.a in Frameworks */,
@@ -659,7 +714,7 @@
 			isa = PBXGroup;
 			children = (
 				0688E26D1518CFBF00437842 /* libJFFUI.a */,
-				0688E26F1518CFBF00437842 /* libJFFUI copy.a */,
+				0688E26F1518CFBF00437842 /* libJFFUI-clang.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -799,6 +854,8 @@
 			isa = PBXGroup;
 			children = (
 				1B33DF1F1518C78A00EEA9BA /* libSCApi.a */,
+				7E340A8E1803F6170053832D /* SCApiTest.octest */,
+				7E340A901803F6170053832D /* SCApiTest copy.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -872,6 +929,8 @@
 		7E016663170458A40073298E /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */,
+				7E340A701803F6170053832D /* fmdb.xcodeproj */,
 				7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */,
 				7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */,
 				7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */,
@@ -904,6 +963,23 @@
 			isa = PBXGroup;
 			children = (
 				7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E340A711803F6170053832D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E340A781803F6170053832D /* fmdb */,
+				7E340A7A1803F6170053832D /* libFMDB.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E340A9B1803F61D0053832D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -969,6 +1045,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E340AA51803F6410053832D /* PBXTargetDependency */,
+				7E340AA31803F6390053832D /* PBXTargetDependency */,
 				7E04621B170C23BB00AB6873 /* PBXTargetDependency */,
 				7E16FC4416EF22CE00031889 /* PBXTargetDependency */,
 				7E16FBF116EF1D8200031889 /* PBXTargetDependency */,
@@ -1033,6 +1111,14 @@
 				{
 					ProductGroup = 7E16FC3D16EF229100031889 /* Products */;
 					ProjectRef = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E340A9B1803F61D0053832D /* Products */;
+					ProjectRef = 7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E340A711803F6170053832D /* Products */;
+					ProjectRef = 7E340A701803F6170053832D /* fmdb.xcodeproj */;
 				},
 				{
 					ProductGroup = 7E0461F9170C236B00AB6873 /* Products */;
@@ -1165,10 +1251,9 @@
 			remoteRef = 0688E26C1518CFBF00437842 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0688E26F1518CFBF00437842 /* libJFFUI copy.a */ = {
+		0688E26F1518CFBF00437842 /* libJFFUI-clang.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = "libJFFUI copy.a";
 			path = "libJFFUI-clang.a";
 			remoteRef = 0688E26E1518CFBF00437842 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -1404,6 +1489,41 @@
 			remoteRef = 7E16FC4016EF229100031889 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7E340A781803F6170053832D /* fmdb */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fmdb;
+			remoteRef = 7E340A771803F6170053832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E340A7A1803F6170053832D /* libFMDB.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFMDB.a;
+			remoteRef = 7E340A791803F6170053832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E340A8E1803F6170053832D /* SCApiTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SCApiTest.octest;
+			remoteRef = 7E340A8D1803F6170053832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E340A901803F6170053832D /* SCApiTest copy.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SCApiTest copy.octest";
+			remoteRef = 7E340A8F1803F6170053832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libESDatabaseWrapper.a;
+			remoteRef = 7E340A9E1803F61D0053832D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1580,6 +1700,16 @@
 			isa = PBXTargetDependency;
 			name = DeviceUniqueIdentifier;
 			targetProxy = 7E16FC4316EF22CE00031889 /* PBXContainerItemProxy */;
+		};
+		7E340AA31803F6390053832D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			targetProxy = 7E340AA21803F6390053832D /* PBXContainerItemProxy */;
+		};
+		7E340AA51803F6410053832D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ESDatabaseWrapper;
+			targetProxy = 7E340AA41803F6410053832D /* PBXContainerItemProxy */;
 		};
 		7E3A5C6415E67C87008BA4D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
