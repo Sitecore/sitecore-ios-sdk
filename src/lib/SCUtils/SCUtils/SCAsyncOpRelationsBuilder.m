@@ -20,26 +20,52 @@
     };
 }
 
-+(SCAsyncOp)groupOfAsyncOperations:( NSArray* )operations_
-{
-    NSArray* lowLevelOps_ = [ operations_ map: ^id( id operation_ )
-    {
-        return [ self jOperationFromSCAsyncOp: operation_ ];
-    } ];
-
-    JFFAsyncOperation group_ = groupOfAsyncOperationsArray( lowLevelOps_ );
-    return asyncOpWithJAsyncOp( group_ );    
-}
-
-+(SCAsyncOp)sequenceOfAsyncOperations:( NSArray* )operations_
++(NSArray*)operationsToLowLevelOperations:( NSArray* )operations_
 {
     NSArray* lowLevelOps_ = [ operations_ map: ^id( id operation_ )
     {
         return [ self jOperationFromSCAsyncOp: operation_ ];
     } ];
     
-    JFFAsyncOperation group_ = sequenceOfAsyncOperationsArray( lowLevelOps_ );
-    return asyncOpWithJAsyncOp( group_ );
+    return lowLevelOps_;
 }
+
++(SCAsyncOp)group:( NSArray* )operations_
+{
+    NSArray* lowLevelOps_ = [ self operationsToLowLevelOperations: operations_ ];
+
+    JFFAsyncOperation group_ = groupOfAsyncOperationsArray( lowLevelOps_ );
+    return asyncOpWithJAsyncOp( group_ );    
+}
+
++(SCAsyncOp)sequence:( NSArray* )operations_
+{
+    NSArray* lowLevelOps_ = [ self operationsToLowLevelOperations: operations_ ];
+    
+    JFFAsyncOperation group_ = sequenceOfAsyncOperationsArray( lowLevelOps_ );
+    return  asyncOpWithJAsyncOp ( group_ );
+}
+
++(SCAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations
+{
+    NSArray* lowLevelOps = [ self operationsToLowLevelOperations: operations ];
+    JFFAsyncOperation result = trySequenceOfAsyncOperationsArray( lowLevelOps );
+    
+    return asyncOpWithJAsyncOp( result );
+}
+
++(SCAsyncOp)stopOnFirstErrorInGroup:( NSArray* )operations
+{
+    NSArray* lowLevelOps = [ self operationsToLowLevelOperations: operations ];
+    JFFAsyncOperation result = failOnFirstErrorGroupOfAsyncOperationsArray( lowLevelOps );
+    
+    return asyncOpWithJAsyncOp( result );
+}
+
++(SCAsyncOp)operationFromExtendedOperation:( SCExtendedAsyncOp )extendedOperation
+{
+    return asyncOpWithJAsyncOp( extendedOperation );
+}
+
 
 @end
