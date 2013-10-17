@@ -6,7 +6,8 @@
 
 @property ( nonatomic ) CLLocationDistance regionRadius;
 @property ( nonatomic ) BOOL drawRouteToNearestAddress;
-
+@property ( nonatomic ) BOOL regionIsAdjusted;
+    
 -(id)initWithMapView:( MKMapView* )mapView_;
 
 -(void)addItemsAnnotationsForQuery:( NSString* )query_

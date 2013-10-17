@@ -4,6 +4,8 @@
 #import "SCMapKitLocationUtils.h"
 #import "SCGoogleAPI.h"
 
+#import <MapKit/MapKit.h>
+
 @interface NSObject (SCMapViewLogic)
 
 -(MKAnnotationView*)annotationViewForMapView:( MKMapView* )mapView_;
@@ -47,61 +49,105 @@
 
 -(void)initialize
 {
-    self.regionRadius = 100000000.;
+    self.regionIsAdjusted = NO;
+    self.regionRadius = 10000.;
 }
 
 -(void)adjustRegion
 {
-    ///eul algorith is correct please see
-    // http://stackoverflow.com/questions/1336370/positioning-mkmapview-to-show-multiple-annotations-at-once
-
-    CLLocation* startLocation_;
-    CLLocation* endLocation_;
-
-    if ( [ self->_placeMarks count ] > 0 )
+    if ( !self.regionIsAdjusted )
     {
+        CLLocation* startLocation_;
+        CLLocation* endLocation_;
+        CLLocationCoordinate2D center_;
+        MKCoordinateSpan span_;
+        MKCoordinateRegion viewRegion_;
+
         if ( !self->_selfLocation )
         {
-            SCPlacemark* firstPlaceMark_ = self->_placeMarks[ 0 ];
-
-            CLLocationDegrees minLat_  = firstPlaceMark_.location.coordinate.latitude;
-            CLLocationDegrees maxLat_  = firstPlaceMark_.location.coordinate.latitude;
-            CLLocationDegrees minLong_ = firstPlaceMark_.location.coordinate.longitude;
-            CLLocationDegrees maxLong_ = firstPlaceMark_.location.coordinate.longitude;
-
-            for ( SCPlacemark* placeMark_ in self->_placeMarks )
-            {
-                minLat_  = fmin( minLat_ , placeMark_.location.coordinate.latitude  );
-                maxLat_  = fmax( maxLat_ , placeMark_.location.coordinate.latitude  );
-                minLong_ = fmin( minLong_, placeMark_.location.coordinate.longitude );
-                maxLong_ = fmax( maxLong_, placeMark_.location.coordinate.longitude );
-            }
-
-            startLocation_ = [ [ CLLocation alloc ] initWithLatitude: minLat_ longitude: minLong_ ];
-            endLocation_   = [ [ CLLocation alloc ] initWithLatitude: maxLat_ longitude: maxLong_ ];
+            [ self adjustRegionJustForAdresses ];
+            return;
         }
-        else if ( self->_drawRouteToNearestAddress )
+
+        if ( [ self->_placeMarks count ] > 0 && ( self->_drawRouteToNearestAddress ))
         {
+            
             startLocation_ = self->_selfLocation;
             endLocation_   = [ self nearestPlaceMarkLocationFromLocation: self->_selfLocation ];
+            
+            center_ = CLLocationCoordinate2DMake( (  startLocation_.coordinate.latitude  + endLocation_.coordinate.latitude  ) / 2.0
+                                                 , ( startLocation_.coordinate.longitude + endLocation_.coordinate.longitude ) / 2.0 );
+            
+            span_ = MKCoordinateSpanMake( fabs( startLocation_.coordinate.latitude  - endLocation_.coordinate.latitude  ) * 1.04
+                                         ,fabs( startLocation_.coordinate.longitude - endLocation_.coordinate.longitude ) * 1.04 );
+            
+            viewRegion_ = MKCoordinateRegionMake( center_, span_ );
+        }
+        else
+        {
+            center_ = self->_selfLocation.coordinate;
+            viewRegion_ = MKCoordinateRegionMakeWithDistance(
+                                                            self->_selfLocation.coordinate
+                                                            , self->_regionRadius, self->_regionRadius
+                                                            );
+        }
+
+        BOOL centerCoordsIsValid = CLLocationCoordinate2DIsValid( viewRegion_.center );
+
+        BOOL spanIsValid =   viewRegion_.span.latitudeDelta > 0.0f
+                          && viewRegion_.span.longitudeDelta > 0.0f;
+
+        if ( spanIsValid && centerCoordsIsValid )
+        {
+            [ self->_mapView setRegion: viewRegion_ animated: YES ];
         }
     }
+}
 
-    CLLocationCoordinate2D center_ = CLLocationCoordinate2DMake( (  startLocation_.coordinate.latitude  + endLocation_.coordinate.latitude  ) / 2.0
-                                                                , ( startLocation_.coordinate.longitude + endLocation_.coordinate.longitude ) / 2.0 );
-
-    MKCoordinateSpan span_ = MKCoordinateSpanMake( fabs( startLocation_.coordinate.latitude  - endLocation_.coordinate.latitude  ) * 1.02
-                                                  ,fabs( startLocation_.coordinate.longitude - endLocation_.coordinate.longitude ) * 1.02 );
-
-    MKCoordinateRegion viewRegion_     = MKCoordinateRegionMake( center_, span_ );
-    MKCoordinateRegion adjustedRegion_ = [ self->_mapView regionThatFits: viewRegion_ ];
-
-    [ self->_mapView setRegion: adjustedRegion_ animated: YES ];
-
-    ///eul alternative algorith to cheack result
-    //    CLLocationCoordinate2D points[2] = {startLocation_.coordinate, endLocation_.coordinate};
-    //    MKPolygon *poly = [MKPolygon polygonWithCoordinates:points count:2];
-    //    [_mapView setRegion:MKCoordinateRegionForMapRect([poly boundingMapRect])];
+-(void)adjustRegionJustForAdresses
+{
+    CLLocation* startLocation_;
+    CLLocation* endLocation_;
+    CLLocationCoordinate2D center_;
+    MKCoordinateSpan span_;
+    MKCoordinateRegion viewRegion_;
+    
+    if ( [ self->_placeMarks count ] )
+    {
+        SCPlacemark* firstPlaceMark_ = self->_placeMarks[ 0 ];
+        
+        CLLocationDegrees minLat_  = firstPlaceMark_.location.coordinate.latitude;
+        CLLocationDegrees maxLat_  = firstPlaceMark_.location.coordinate.latitude;
+        CLLocationDegrees minLong_ = firstPlaceMark_.location.coordinate.longitude;
+        CLLocationDegrees maxLong_ = firstPlaceMark_.location.coordinate.longitude;
+        
+        for ( SCPlacemark* placeMark_ in self->_placeMarks )
+        {
+            minLat_  = fmin( minLat_ , placeMark_.location.coordinate.latitude  );
+            maxLat_  = fmax( maxLat_ , placeMark_.location.coordinate.latitude  );
+            minLong_ = fmin( minLong_, placeMark_.location.coordinate.longitude );
+            maxLong_ = fmax( maxLong_, placeMark_.location.coordinate.longitude );
+        }
+        
+        startLocation_ = [ [ CLLocation alloc ] initWithLatitude: minLat_ longitude: minLong_ ];
+        endLocation_   = [ [ CLLocation alloc ] initWithLatitude: maxLat_ longitude: maxLong_ ];
+        
+        center_ = CLLocationCoordinate2DMake( (  startLocation_.coordinate.latitude  + endLocation_.coordinate.latitude  ) / 2.0
+                                             , ( startLocation_.coordinate.longitude + endLocation_.coordinate.longitude ) / 2.0 );
+        
+        span_ = MKCoordinateSpanMake( fabs( startLocation_.coordinate.latitude  - endLocation_.coordinate.latitude  ) * 1.02
+                                     ,fabs( startLocation_.coordinate.longitude - endLocation_.coordinate.longitude ) * 1.02 );
+        
+        viewRegion_ = MKCoordinateRegionMake( center_, span_ );
+        
+        MKCoordinateRegion adjustedRegion_ = [ self->_mapView regionThatFits: viewRegion_ ];
+        
+        [ self->_mapView setRegion: adjustedRegion_ animated: YES ];
+    }
+    else
+    {
+        NSLog(@"Addresses are not available!!!");
+    }
 }
 
 -(void)setRegionRadius:( CLLocationDistance )regionRadius_
@@ -152,23 +198,31 @@
 
 -(CLLocation*)nearestPlaceMarkLocationFromLocation:( CLLocation* )location_
 {
-    CLLocation* placeMarksLocation_ = [ self->_placeMarks[ 0 ] location ];
+    SCPlacemark *nearestPlacemark = [ self nearestPlaceMarkFromLocation: location_ ];
 
+    return nearestPlacemark.location;
+}
+
+-(SCPlacemark*)nearestPlaceMarkFromLocation:( CLLocation* )location_
+{
+    CLLocation* placeMarksLocation_ = [  (SCPlacemark*)self->_placeMarks[ 0 ] location ];
+    
     CLLocationDistance minDistance_ = [ location_ distanceFromLocation: placeMarksLocation_ ];
-    CLLocation* nearestLoacation_   = [ self->_placeMarks[ 0 ] location ];
-
+    SCPlacemark* nearestPlacemark   = (SCPlacemark*)self->_placeMarks[ 0 ];
+    
     for ( SCPlacemark* placeMark_ in self->_placeMarks )
     {
         CLLocationDistance distance_ = [ location_ distanceFromLocation: placeMark_.location ];
         if ( distance_ < minDistance_ )
         {
             minDistance_      = distance_;
-            nearestLoacation_ = placeMark_.location;
+            nearestPlacemark = placeMark_;
         }
     }
-
-    return nearestLoacation_;
+    
+    return nearestPlacemark;
 }
+
 
 -(void)hideRouteLineView
 {
@@ -183,35 +237,80 @@
 {
     if ( [ self->_placeMarks count ] == 0
         || !self->_selfLocation
-        /*|| !self->_drawRouteToNearestAddress*/ )
+        || !self->_drawRouteToNearestAddress )
         return;
+    
+    BOOL nativePAthBuilderIsAvalable = [ ESFeatureAvailabilityChecker isPathBuilderAvailable ];
+    
+    if ( nativePAthBuilderIsAvalable )
+        [ self buildRouteWithNativeAPI ];
+    else
+        [ self buildRouteWithGoogleAPI ];
+    
+}
 
+-(void)buildRouteWithGoogleAPI
+{
     CLLocation* closestMarkPlace_ = [ self nearestPlaceMarkLocationFromLocation: _selfLocation ];
-
+    
     JFFDidFinishAsyncOperationHandler doneCallback_ = ^( NSArray* points_, NSError* error_ )
     {
         CLLocationCoordinate2D coordinates_[ points_.count ];
-
+        
         for ( NSUInteger index_ = 0; index_ < points_.count; ++index_ )
         {
             CLLocation* location_  = points_[ index_ ];
             coordinates_[ index_ ] = location_.coordinate;
         }
-
+        
         [ self hideRouteLineView ];
-
+        
         self->_routeLine = [ MKPolyline polylineWithCoordinates: coordinates_ count: points_.count ];
-
+        
         if ( self->_routeLine )
         {
             [ self->_mapView addOverlay: self->_routeLine ];
         }
     };
-
+    
     CLLocationCoordinate2D destination_ = closestMarkPlace_.coordinate;
-    JFFAsyncOperation loader_ = [ SCGoogleAPI routePointsReaderForStartLocation: _selfLocation.coordinate 
+    JFFAsyncOperation loader_ = [ SCGoogleAPI routePointsReaderForStartLocation: _selfLocation.coordinate
                                                                     destination: destination_ ];
     loader_( nil, nil, doneCallback_ );
+
+}
+
+-(void)buildRouteWithNativeAPI
+{
+    
+    MKPlacemark *currentLocationPlacemark = [ [MKPlacemark alloc] initWithCoordinate: self->_selfLocation.coordinate
+                                                                   addressDictionary: nil ];
+    SCPlacemark *destinationPlacemark = [ self nearestPlaceMarkFromLocation: self->_selfLocation ];
+    
+    MKMapItem *sourceItem = [ [MKMapItem alloc] initWithPlacemark: currentLocationPlacemark ];
+    MKMapItem *destinationItem = [ [MKMapItem alloc] initWithPlacemark :destinationPlacemark ];
+    
+    
+    MKDirectionsRequest *request = [ [MKDirectionsRequest alloc] init ];
+    
+    request.source = sourceItem;
+    request.destination = destinationItem;
+    
+    request.requestsAlternateRoutes = NO;
+    MKDirections *directions = [ [MKDirections alloc] initWithRequest:request ];
+    
+    [ directions calculateDirectionsWithCompletionHandler:
+     ^( MKDirectionsResponse *response, NSError *error )
+    {
+         if ( !error && [ response.routes count ] > 0 )
+         {
+             [ self hideRouteLineView ];
+             MKRoute *route = response.routes[0];
+             self->_routeLine = route.polyline;
+             [ self->_mapView addOverlay: self->_routeLine
+                                   level: MKOverlayLevelAboveRoads ];
+         }
+    }];
 }
 
 -(void)setDrawRouteToNearestItemAddress:( BOOL )drawRouteToNearestAddress_
@@ -254,10 +353,15 @@
 -(void)didUpdateUserLocation:( MKUserLocation* )userLocation_
 {
     _selfLocation = userLocation_.location;
-
-    [ self adjustRegion ];    
-
-    [ self drawRouteToClosestPlaceMark ];
+    
+    if ( self->_placeMarks && !self.regionIsAdjusted)
+    {
+        [ self adjustRegion ];
+        
+        self.regionIsAdjusted = YES;
+        
+        [ self drawRouteToClosestPlaceMark ];
+    }
 }
 
 -(MKAnnotationView*)viewForAnnotation:( id< MKAnnotation > )annotation_
