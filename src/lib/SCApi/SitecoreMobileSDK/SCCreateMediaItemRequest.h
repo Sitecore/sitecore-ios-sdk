@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SCBaseItemRequest.h"
+
 /**
  The SCCreateMediaItemRequest contains the set of params of the creating media item.
  It used for [SCApiContext mediaItemCreatorWithRequest:] method.
  */
-@interface SCCreateMediaItemRequest : NSObject < NSCopying >
+@interface SCCreateMediaItemRequest : SCBaseItemRequest < NSCopying >
 
 /**
  The display name of creating media item ( obligatory parameter ).

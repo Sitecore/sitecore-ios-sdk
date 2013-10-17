@@ -6,7 +6,7 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#include "SitecoreMobileSDK/SCAsyncOpDefinitions.h"
+#include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
 
 #import <Foundation/Foundation.h>
 
@@ -71,6 +71,8 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)itemsTotalCountReader;
+- (SCExtendedAsyncOp)extendedItemsTotalCountReader;
+
 /**
  Used to load item for the given index.
  @param index item's position index.
@@ -83,5 +85,6 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)itemReaderForIndex:(NSUInteger)index;
+- (SCExtendedAsyncOp)extendedItemReaderForIndex:(NSUInteger)index;
 
 @end
