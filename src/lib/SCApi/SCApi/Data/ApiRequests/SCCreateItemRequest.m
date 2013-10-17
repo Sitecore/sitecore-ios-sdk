@@ -1,6 +1,6 @@
 #import "SCCreateItemRequest.h"
 
-#import "SCApiContext.h"
+#import "SCExtendedApiContext.h"
 #import "SCItemsReaderRequest+Factory.h"
 
 @interface SCItemsReaderRequest (SCCreateItemRequest)
@@ -11,7 +11,7 @@
 
 @implementation SCCreateItemRequest
 
--(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_
+-(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCExtendedApiContext* )context_
 {
     SCCreateItemRequest* result_ = (SCCreateItemRequest*)[ super itemsReaderRequestWithApiContext: context_ ];
 
