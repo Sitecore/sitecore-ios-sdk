@@ -1,6 +1,9 @@
 #import "SCItemRecord+Parser.h"
 
 #import "SCFieldRecord+Parser.h"
+#import "SCItemRecord+SCItemSource.h"
+
+#import "SCItemSourcePOD.h"
 
 @implementation NSDictionary (SCItemRecord_Parser)
 
@@ -16,7 +19,8 @@
 
 @implementation SCItemRecord (Parser)
 
-+(JFFAsyncOperationBinder)itemRecordWithApiContext:( SCApiContext* )apiContext_
++(JFFAsyncOperationBinder)itemRecordWithApiContext:( SCExtendedApiContext* )apiContext_
+                                forRequestedSource:( id<SCItemSource> )requestedSource_
 {
     return ^JFFAsyncOperation( id json_ )
     {
@@ -36,6 +40,20 @@
                 result_.longID       = json_[ @"LongID"   ];
                 result_.language     = json_[ @"Language" ];
 
+                
+                // @adk : TODO : extract a parser
+                SCItemSourcePOD* itemSource = [ SCItemSourcePOD new ];
+                {
+                    itemSource.database = json_[ @"Database" ];
+                    itemSource.database =
+                    
+                    itemSource.language    = json_[ @"Language" ];
+                    itemSource.database    = json_[ @"Database" ];
+                    itemSource.site        = [ requestedSource_ site ];
+                    itemSource.itemVersion = [ json_[ @"Version" ] stringValue ];
+                }
+                result_.itemSource = itemSource;
+                
                 result_.fieldsByName = [ allFieldsByName_ fieldsByNameDictionary ];
 
                 return result_;

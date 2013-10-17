@@ -2,11 +2,14 @@
 
 #import "SCItemRecordsPage.h"
 
-@class SCApiContext;
+@class SCExtendedApiContext;
+@protocol SCItemSource;
+
 
 @interface SCItemRecordsPage (JsonParser)
 
 +(JFFAsyncOperationBinder)itemRecordsWithResponseData:( NSData* )responseData_
-                                           apiContext:( SCApiContext* )apiContext_;
+                                           apiContext:( SCExtendedApiContext* )apiContext_
+                                   forRequestedSource:( id<SCItemSource> )requestedSource_;
 
 @end
