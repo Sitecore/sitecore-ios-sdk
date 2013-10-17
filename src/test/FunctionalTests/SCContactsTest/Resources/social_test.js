@@ -98,3 +98,51 @@ function testFacebook()
     }
 }
 
+function testSocial()
+{
+    try
+    {
+        function onDeviceReady()
+        {
+            scmobile.console.log( '[BEGIN] testSocial... ' );
+            
+            function onSuccess()
+            {
+                scmobile.console.log( '[onSuccess] testSocial.' )
+                resultCallback( "OK" );
+            }
+            function onError( error )
+            {
+                scmobile.console.log( '[onError] testSocial.' )
+                resultCallback( error.error );
+            }
+            
+            
+            try
+            {
+                scmobile.console.log( 'Creating social instance...' );
+                var social_ = new scmobile.share.Social();
+                social_.text = 'Mobile SDK test post';
+                social_.engineName = 'Twitter';
+                scmobile.console.log( 'Done.' );
+                
+                scmobile.console.log( 'Sending post...' );
+                social_.send( onSuccess, onError );
+                scmobile.console.log( 'Done.' );
+            }
+            catch (socialException)
+            {
+                scmobile.console.log( 'testSocial   : ' );
+                scmobile.console.log( 'testSocial   : ' + socialException );
+            }
+        }
+        document.addEventListener('scmobileReady', onDeviceReady, false);
+        return 'testSocial - JS';
+    }
+    catch( exception )
+    {
+        // scmobile.console.log( '[EXCEPTION] testSocial.' )
+        resultCallback( "EXCEPTION" );
+    }
+}
+
