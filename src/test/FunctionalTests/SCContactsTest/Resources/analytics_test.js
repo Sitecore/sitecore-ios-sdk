@@ -22,7 +22,7 @@ function testTriggerHomeGoal()
             
             triggerInfo =
             {
-                itemRenderingUrl : 'http://ws-alr1.dk.sitecore.net:33/',
+                itemRenderingUrl : 'http://mobiledev1ua1.dk.sitecore.net:9999/',
                 pageEventName    : 'Page Visited'
             }
             
@@ -61,7 +61,7 @@ function testTriggerHomeCampaign()
             
             triggerInfo =
             {
-                itemRenderingUrl : 'http://ws-alr1.dk.sitecore.net:33/',
+                itemRenderingUrl : 'http://mobiledev1ua1.dk.sitecore.net:9999/',
                 campaignId       : '94FD1606-139E-46EE-86FF-BC5BF3C79804'
             }
             

@@ -13,9 +13,10 @@ function testCreateMediaItem()
             scmobile.console.log('test_create_media_item');
 
             var createItemInfo = {};
-            createItemInfo.imageUrl   = 'http://mytutorblog.org/wp-content/uploads/2011/05/Prepare-for-a-test.jpg';
+            createItemInfo.imageUrl   = 'https://d1yow6fhovqcc2.cloudfront.net/~/media/Icons/Flags/flag_ukraine.ashx?ts=042610023139802';
             createItemInfo.login      = 'admin';
             createItemInfo.password   = 'b';
+            createItemInfo.site       = '/sitecore/shell';
             createItemInfo.database   = 'web';
             createItemInfo.path       = 'Test Data';
             createItemInfo.itemName   = 'mediaItem name';
@@ -59,6 +60,7 @@ function testCreateLargeMediaItem()
             createItemInfo.imageUrl   = 'http://newevolutiondesigns.com/images/freebies/flowers-wallpaper-2.jpg';
             createItemInfo.login      = 'admin';
             createItemInfo.password   = 'b';
+            createItemInfo.site       = '/sitecore/shell';
             createItemInfo.database   = 'core';
             createItemInfo.path       = 'Test Data';
             createItemInfo.itemName   = 'largeMediaItem name';

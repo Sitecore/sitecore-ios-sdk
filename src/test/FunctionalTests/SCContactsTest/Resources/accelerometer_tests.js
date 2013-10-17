@@ -14,7 +14,7 @@ function testAccelerometer()
 
             var failOnAcceleration = false;
 
-            accelerometer.onAcceleration = function( accelerData )
+            var onAcceleration = function( accelerData )
             {
                 if ( failOnAcceleration )
                 {
@@ -31,6 +31,13 @@ function testAccelerometer()
                     setTimeout(function() { resultCallback( 'OK' ) }, 1000 );
                 }
             }
+            
+            var onError = function()
+            {
+                //error
+            }
+            
+            accelerometer.start(onAcceleration, onError);
         }
 
         // Wait for Device2Web to load
