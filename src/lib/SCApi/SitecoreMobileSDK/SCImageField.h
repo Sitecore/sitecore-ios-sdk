@@ -8,6 +8,8 @@
 
 #import "SitecoreMobileSDK/SCField.h"
 
+@class SCFieldImageParams;
+
 /**
  The SCImageField object identifies a Sitecore system item's image field.
  The field with [SCField type] is equal to "Image" has the SCImageField type.
@@ -26,6 +28,12 @@
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 - (SCAsyncOp)fieldValueReader;
+
+/**
+Used for loading the field value which is a UIImage object with additional parameters.
+ @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
+ */
+-(SCAsyncOp)fieldValueReaderWithImageParams:( SCFieldImageParams* )params;
 
 /**
  The value of the field. [SCImageField fieldValue] is UIImage object. It is nil by default, so use [SCImageField fieldValueReader] to load UIImage of this field.
