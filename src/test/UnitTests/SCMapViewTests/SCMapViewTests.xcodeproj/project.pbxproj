@@ -38,6 +38,9 @@
 		1BD6AB421518CE2C00D2FC84 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB411518CE2C00D2FC84 /* MessageUI.framework */; };
 		1BD6AB441518CE3C00D2FC84 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB431518CE3C00D2FC84 /* AudioToolbox.framework */; };
 		7E0B4366171594A50094A79E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0B4365171594A40094A79E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E12F50717FAC6DD00ABE54E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E12F50617FAC6DD00ABE54E /* EventKitUI.framework */; };
+		7E12F50917FAC6EF00ABE54E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E12F50817FAC6EF00ABE54E /* EventKit.framework */; };
+		7E72CA9817FBFF380081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CA9717FBFF380081F306 /* QuartzCore.framework */; };
 		7EDE003F1701F6C300938D80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE003E1701F6C300938D80 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,9 @@
 		1BD6AB411518CE2C00D2FC84 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1BD6AB431518CE3C00D2FC84 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7E0B4365171594A40094A79E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7E12F50617FAC6DD00ABE54E /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		7E12F50817FAC6EF00ABE54E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E72CA9717FBFF380081F306 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7EDE003E1701F6C300938D80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E72CA9817FBFF380081F306 /* QuartzCore.framework in Frameworks */,
+				7E12F50917FAC6EF00ABE54E /* EventKit.framework in Frameworks */,
+				7E12F50717FAC6DD00ABE54E /* EventKitUI.framework in Frameworks */,
 				7E0B4366171594A50094A79E /* Social.framework in Frameworks */,
 				1BACF67115E25C110084B334 /* libsqlite3.dylib in Frameworks */,
 				1BACF66F15E25BFF0084B334 /* libc++.dylib in Frameworks */,
@@ -159,6 +168,9 @@
 		06D8FAE91518ADF40052ABA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E72CA9717FBFF380081F306 /* QuartzCore.framework */,
+				7E12F50817FAC6EF00ABE54E /* EventKit.framework */,
+				7E12F50617FAC6DD00ABE54E /* EventKitUI.framework */,
 				1BACF67015E25C110084B334 /* libsqlite3.dylib */,
 				1BACF66E15E25BFF0084B334 /* libc++.dylib */,
 				1BACF66C15E25BD90084B334 /* libstdc++.dylib */,
