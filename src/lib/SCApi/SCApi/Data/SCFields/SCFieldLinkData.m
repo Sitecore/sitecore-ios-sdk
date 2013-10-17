@@ -1,17 +1,20 @@
 #import "SCFieldLinkData.h"
 
 #import "SCApiContext.h"
+#import "SCExtendedApiContext.h"
+#import "SCItemSourcePOD.h"
 
-@interface SCApiContext (SCGeneralLinkField)
+@interface SCExtendedApiContext (SCGeneralLinkField)
 
 -(JFFAsyncOperation)itemLoaderWithFieldsNames:( NSSet* )fieldNames
-                                       itemId:( NSString* )itemId;
+                                       itemId:( NSString* )itemId
+                                   itemSource:( id<SCItemSource> )itemSource;
 
 @end
 
 @interface SCFieldLinkData ()
 
-@property ( nonatomic ) SCApiContext* apiContext;
+@property ( nonatomic ) SCExtendedApiContext* apiContext;
 @property ( nonatomic ) NSString* linkDescription;
 @property ( nonatomic ) NSString* linkType;
 @property ( nonatomic ) NSString* alternateText;
@@ -55,8 +58,10 @@
 
 -(SCAsyncOp)itemReader
 {
+    //TODO: igk !!!! need itemSourcePOD here
     return asyncOpWithJAsyncOp( [ self.apiContext itemLoaderWithFieldsNames: [ NSSet new ]
-                                                                     itemId: self.itemId ] );
+                                                                     itemId: self.itemId
+                                                                 itemSource: nil ] );
 }
 
 -(NSString*)otherFieldsDescription
@@ -79,10 +84,19 @@
 
 @synthesize itemId;
 
+//TOFO: @igk merge imageReader and extendedImageReader
 -(SCAsyncOp)imageReader
 {
-    return [ self.apiContext imageLoaderForSCMediaPath: self.url ];
+    return asyncOpWithJAsyncOp( [ self.apiContext imageLoaderForSCMediaPath: self.url
+                                                                imageParams: nil ] );
 }
+
+-(SCExtendedAsyncOp)extendedImageReader
+{
+    return [ self.apiContext imageLoaderForSCMediaPath: self.url
+                                           imageParams: nil ];
+}
+
 
 -(NSString*)otherFieldsDescription
 {

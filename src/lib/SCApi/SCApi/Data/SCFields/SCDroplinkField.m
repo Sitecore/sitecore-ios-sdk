@@ -1,20 +1,15 @@
 #import "SCDroplinkField.h"
 
 #import "SCError.h"
-#import "SCApiContext.h"
-
-@interface SCApiContext (SCDroplinkField)
-
--(JFFAsyncOperation)itemLoaderWithFieldsNames:( NSSet* )fieldNames
-                                       itemId:( NSString* )itemId;
-
-@end
+#import "SCExtendedApiContext.h"
+#import "SCItemSourcePOD.h"
 
 @implementation SCDroplinkField
 
 -(id)fieldValue
 {
-    return [ self.apiContext itemWithId: self.rawValue ];
+    return [ self.apiContext itemWithId: self.rawValue
+                             itemSource: self.itemSource ];
 }
 
 -(void)setFieldValue:( id )fieldValue_
@@ -23,8 +18,9 @@
 
 -(JFFAsyncOperation)fieldValueLoader
 {
-    JFFAsyncOperation loader_ = [ self.apiContext itemLoaderWithFieldsNames: [ NSSet new ]
-                                                                     itemId: self.rawValue ];
+    JFFAsyncOperation loader_ = [ self.apiContext itemReaderWithFieldsNames: [ NSSet new ]
+                                                                     itemId: self.rawValue
+                                                                 itemSource: self.itemSource ];
     return [ self asyncOperationForPropertyWithName: @"fieldValue"
                                      asyncOperation: loader_ ];
 }
