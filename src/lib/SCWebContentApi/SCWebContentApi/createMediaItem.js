@@ -6,30 +6,55 @@ scmobile.contentapi._construct = function()
     {
         var createArgs = '';
         if ( mediaItemInfo.imageUrl != undefined )
+        {
             createArgs = createArgs + '&imageUrl=' + encodeURIComponent( mediaItemInfo.imageUrl );
+        }
 
         if ( mediaItemInfo.login != undefined )
+        {
             createArgs = createArgs + '&login=' + encodeURIComponent( mediaItemInfo.login );
+        }
 
         if ( mediaItemInfo.password != undefined )
+        {
             createArgs = createArgs + '&password=' + encodeURIComponent( mediaItemInfo.password );
+        }
 
         if ( mediaItemInfo.database != undefined )
+        {
             createArgs = createArgs + '&database=' + encodeURIComponent( mediaItemInfo.database );
+        }
 
         if ( mediaItemInfo.path != undefined )
+        {
             createArgs = createArgs + '&path=' + encodeURIComponent( mediaItemInfo.path );
+        }
 
         if ( mediaItemInfo.itemName != undefined )
+        {
             createArgs = createArgs + '&itemName=' + encodeURIComponent( mediaItemInfo.itemName );
+        }
 
+        if ( mediaItemInfo.site != undefined )
+        {
+            createArgs = createArgs + '&site=' + encodeURIComponent( mediaItemInfo.site );
+        }
+        
+        if ( mediaItemInfo.language != undefined )
+        {
+            createArgs = createArgs + '&language=' + encodeURIComponent( mediaItemInfo.language );
+        }
+        
         if ( mediaItemInfo.compressionQuality != undefined )
+        {
             createArgs = createArgs + '&compressionQuality=' + encodeURIComponent( mediaItemInfo.compressionQuality );
+        }
 
         if ( mediaItemInfo.fields != undefined )
         {
             createArgs = createArgs + '&fields=' + encodeURIComponent( JSON.stringify(mediaItemInfo.fields) );
         }
+        
 
         var protocolAndHost_ = window.location.protocol + '//' + window.location.host;
         createArgs = createArgs + '&location=' + encodeURIComponent( protocolAndHost_ );
