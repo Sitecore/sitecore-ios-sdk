@@ -31,16 +31,7 @@
 
 // If you are using the framework
 #import <GHUnitIOS/GHUnit.h>
-// If you are using the static library and importing header files manually
-//#import "GHUnit.h"
 
-void exceptionHandler(NSException *exception);
-
-// Default exception handler
-void exceptionHandler(NSException *exception)
-{ 
-    NSLog(@"%@\n%@", [exception reason], GHUStackTraceFromException(exception));
-}
 
 int main(int argc, char *argv[]) 
 {
@@ -68,7 +59,6 @@ int main(int argc, char *argv[])
     setenv( "GHUNIT_AUTORUN" , "YES", 1 );
     setenv( "WRITE_JUNIT_XML", "YES", 1 );
     setenv( "GHUNIT_AUTOEXIT" , "YES", 1 );
-    NSSetUncaughtExceptionHandler(&exceptionHandler);
 
     @autoreleasepool
     {
@@ -84,7 +74,7 @@ int main(int argc, char *argv[])
         } 
         else 
         {
-            retVal = UIApplicationMain(argc, argv, nil, @"GHUnitIPhoneAppDelegate");
+            retVal = UIApplicationMain(argc, argv, nil, @"GHUnitIOSAppDelegate");
         }
 
         return retVal;
