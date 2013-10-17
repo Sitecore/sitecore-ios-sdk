@@ -1,6 +1,7 @@
 #import "SCContactAddress.h"
 
 #import "NSDictionary+ContactAddressExtensions.h"
+#import "GTMNSString+HTML.h"
 
 #import <AddressBook/AddressBook.h>
 
@@ -12,11 +13,11 @@
 
     if ( result_ )
     {
-        result_->_street  = [ fields_[ @"street"  ] description ];
-        result_->_city    = [ fields_[ @"city"    ] description ];
-        result_->_state   = [ fields_[ @"state"   ] description ];
-        result_->_ZIP     = [ fields_[ @"zip"     ] description ];
-        result_->_country = [ fields_[ @"country" ] description ];
+        result_->_street  = [[ fields_[ @"street"  ] description ] gtm_stringByUnescapingFromHTML];
+        result_->_city    = [[ fields_[ @"city"    ] description ] gtm_stringByUnescapingFromHTML];
+        result_->_state   = [[ fields_[ @"state"   ] description ] gtm_stringByUnescapingFromHTML];
+        result_->_ZIP     = [[ fields_[ @"zip"     ] description ] gtm_stringByUnescapingFromHTML];
+        result_->_country = [[ fields_[ @"country" ] description ] gtm_stringByUnescapingFromHTML];
     }
 
     return result_;

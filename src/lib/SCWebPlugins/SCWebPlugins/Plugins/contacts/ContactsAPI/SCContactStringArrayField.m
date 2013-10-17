@@ -1,4 +1,5 @@
 #import "SCContactStringArrayField.h"
+#import "GTMNSString+HTML.h"
 
 #import "NSArray+kABMultiValue.h"
 
@@ -8,11 +9,14 @@ static ABMutableMultiValueRef createMutableMultiValueWithArray( NSArray* element
     ABMutableMultiValueRef result = ABMultiValueCreateMutable( kABMultiStringPropertyType );
 
     NSUInteger index_ = 0;
-    for ( NSString* element_ in elements_ )
+    for ( NSString* rawElement_ in elements_ )
     {
+        NSString *element_ = [ rawElement_ gtm_stringByUnescapingFromHTML ];
         id label_ = [ labels_ noThrowObjectAtIndex: index_ ];
         if ( ![ label_ isKindOfClass: [ NSString class ] ] )
+        {
             label_ = nil;
+        }
 
         ABMultiValueAddValueAndLabel( result
                                      , (__bridge CFTypeRef)element_
