@@ -129,15 +129,24 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item" ];
-        NSString* path_ = @"/sitecore/content/Test Data/Maps";
+        SCApiContext* context_ = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:9999"
+                                                          login: @"sitecore\\admin"
+                                                       password: @"b"
+                                                        version: SCWebApiMaxSupportedVersion ];
+        context_.defaultSite = @"/sitecore/shell";
+        
+        NSString* path_ = @"/sitecore/content/UIFeatures/Test Data/Map";
         itemAddressesGeocoderWithPath( context_, path_ )( nil, nil, ^( id result_, NSError* error_ )
         {
             if ( error_ )
+            {
                 NSLog( @"failed: %@", error_ );
-            else 
+            }
+            else
+            {
                 NSLog( @"addresses: %@", result_ );
-            resultOk_ = [ result_ count ] == 6;
+            }
+            resultOk_ = [ result_ count ] == 23;
             didFinishCallback_();
         } );
     };
