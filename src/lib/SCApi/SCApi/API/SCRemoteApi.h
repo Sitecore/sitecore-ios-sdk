@@ -4,12 +4,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class SCApiContext;
+@class SCExtendedApiContext;
 @class SCEditItemsRequest;
 @class SCCreateItemRequest;
 @class SCItemsReaderRequest;
 @class SCCreateMediaItemRequest;
 @class SCTriggeringRequest;
+@class SCHTMLReaderRequest;
+
+@class SCWebApiUrlBuilder;
+@class SCParams;
 
 // TODO : store password securely.
 // Password ivar is a potential exploit
@@ -18,29 +22,38 @@
 
 -(id)initWithHost:( NSString* )host_
             login:( NSString* )login_
-         password:( NSString* )password_;
+         password:( NSString* )password_
+       urlBuilder:( SCWebApiUrlBuilder* )urlBuilder_;
+
+-(NSString*)host;
+-(NSString*)login;
+
+-(JFFAsyncOperation)credentialsCheckerForSite:( NSString* )site;
 
 -(JFFAsyncOperation)imageLoaderForSCMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_;
 
+-(JFFAsyncOperation)imageLoaderForSCMediaPath:( NSString* )path_
+                                cacheLifeTime:( NSTimeInterval )cacheLifeTime_
+                                       params:( SCParams* )params_;
+
 -(JFFAsyncOperation)itemsReaderWithRequest:( SCItemsReaderRequest* )request_
-                                apiContext:( SCApiContext* )apiContext_;
+                                apiContext:( SCExtendedApiContext* )apiContext_;
 
 -(JFFAsyncOperation)itemCreatorWithRequest:( SCCreateItemRequest* )createItemRequest_
-                                apiContext:( SCApiContext* )apiContext_;
+                                apiContext:( SCExtendedApiContext* )apiContext_;
 
 -(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )editItemsRequest_
-                                    apiContext:( SCApiContext* )apiContext_;
+                                    apiContext:( SCExtendedApiContext* )apiContext_;
 
 -(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCItemsReaderRequest* )removeItemsRequest_
-                                      apiContext:( SCApiContext* )apiContext_;
+                                      apiContext:( SCExtendedApiContext* )apiContext_;
 
 -(JFFAsyncOperation)mediaItemCreatorWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_
-                                     apiContext:( SCApiContext* )apiContext_;
+                                     apiContext:( SCExtendedApiContext* )apiContext_;
 
--(JFFAsyncOperation)renderingHTMLLoaderForRenderingId:( NSString* )rendereringId_
-                                             sourceId:( NSString* )sourceId_
-                                           apiContext:( SCApiContext* )apiContext_;
+-(JFFAsyncOperation)renderingHTMLLoaderForRequest:( SCHTMLReaderRequest* )request_
+                                       apiContext:( SCExtendedApiContext* )apiContext_;
 
 -(JFFAsyncOperation)triggerLoaderWithRequest:( SCTriggeringRequest* )request_;
 @end
