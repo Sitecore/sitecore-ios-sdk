@@ -1,0 +1,57 @@
+//
+// Prefix header for all source files of the 'SCApiTest' target in the 'SCApiTest' project
+//
+
+#ifdef __OBJC__
+    #import "SCItemRecordComparator.h"
+    #import "SCCacheSettings.h"
+    #import "SCPersistentStorageBuilder.h"
+    #import "SCPersistentRecordStorage.h"
+
+    #import "SCWebApiConfig.h"
+    #import "SCActionsUrlBuilder.h"
+
+    #import "SCRichTextField.h"
+    #import "SCApiContext+Init.h"
+
+    #import "SCItemRecordPropertyFactory.h"
+    #import "SCItemStorageKinds.h"
+
+    #import "SCRemoteApi.h"
+    #import "SCExtendedApiContext.h"
+    #import "SCExtendedApiContext+Init.h"
+    #import "SCExtendedApiContext+Private.h"
+
+    #import "SCGenericRecordCache+PrivateFields.h"
+
+    #import "SCWebApiUrlBuilder.h"
+    #import "SCItemAndFields.h"
+    #import "SCFieldRecord.h"
+    #import "SCFieldRecord+Parser.h"
+
+    #import "SCItemRecord.h"
+    #import "SCItemRecord+SCItemSource.h"
+
+    #import "SCItemSourcePOD.h"
+
+    #import "SCGenericRecordCache.h"
+    #import "SCItemRecordStorageBuilder.h"
+    #import "SCInMemoryRecordStorageBuilder.h"
+
+    #import "SCInMemoryRecordStorage.h"
+    #import "SCInMemoryRecordStorage+UnitTesting.h"
+    #import "SCInMemoryRecordStorage+PrivateFunctions.h"
+
+    #import <SitecoreMobileSDK/SCApi.h>
+
+    #import <ESDatabaseWrapper/ESDatabaseWrapper.h>
+    #import <FMDatabase.h>
+
+    #import <SenTestingKit/SenTestingKit.h>
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    #import <objc/message.h>
+    #import <objc/runtime.h>
+#endif
