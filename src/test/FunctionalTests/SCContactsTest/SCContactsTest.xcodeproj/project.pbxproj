@@ -101,6 +101,12 @@
 		7E0166AC17048BAE0073298E /* WebViewDmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */; };
 		7E0166AF17048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
 		7E0166B017048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7E36C06417FAFE2F000E3083 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06217FAFE2F000E3083 /* EventKit.framework */; };
+		7E36C06517FAFE2F000E3083 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06317FAFE2F000E3083 /* EventKitUI.framework */; };
+		7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06217FAFE2F000E3083 /* EventKit.framework */; };
+		7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06317FAFE2F000E3083 /* EventKitUI.framework */; };
+		7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CA6317FBF8990081F306 /* QuartzCore.framework */; };
+		7E72CA6517FBF89F0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CA6317FBF8990081F306 /* QuartzCore.framework */; };
 		7EA15B9E170AD9D6003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -215,6 +221,9 @@
 		789D6BFA17140E1000074ED5 /* JSInjectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSInjectionTest.m; sourceTree = "<group>"; };
 		7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDmsTriggeringTest.m; sourceTree = "<group>"; };
 		7E0166AE17048EDB0073298E /* analytics_test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = analytics_test.js; sourceTree = "<group>"; };
+		7E36C06217FAFE2F000E3083 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E36C06317FAFE2F000E3083 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		7E72CA6317FBF8990081F306 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
 		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
 		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -226,6 +235,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E72CA6517FBF89F0081F306 /* QuartzCore.framework in Frameworks */,
+				7E36C06417FAFE2F000E3083 /* EventKit.framework in Frameworks */,
+				7E36C06517FAFE2F000E3083 /* EventKitUI.framework in Frameworks */,
 				7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */,
 				1BD5614E157F8137002BA8B0 /* libc++.dylib in Frameworks */,
 				1B0BFBDF15612F1F00853028 /* libJFFTestTools.a in Frameworks */,
@@ -258,6 +270,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */,
+				7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */,
+				7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */,
 				7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */,
 				1BD5614F157F813E002BA8B0 /* libc++.dylib in Frameworks */,
 				1B0BFBE215612F2700853028 /* libJFFTestTools.a in Frameworks */,
@@ -353,6 +368,9 @@
 		25913CAD146D57920099177E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E72CA6317FBF8990081F306 /* QuartzCore.framework */,
+				7E36C06217FAFE2F000E3083 /* EventKit.framework */,
+				7E36C06317FAFE2F000E3083 /* EventKitUI.framework */,
 				7EA3AD8C170B1CD200E53489 /* Social.framework */,
 				1BD5614D157F8137002BA8B0 /* libc++.dylib */,
 				1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */,
