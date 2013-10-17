@@ -37,7 +37,7 @@
 
 +(BOOL)canInitWithRequest:( NSURLRequest* )request_
 {
-    return [ request_.URL.path isEqualToString: @"/scmobile/motion_manager/accelerometer" ];
+    return ([ request_.URL.path isEqualToString: @"/scmobile/motion_manager/start" ]);
 }
 
 +(NSString*)pluginJavascript
