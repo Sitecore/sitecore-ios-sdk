@@ -1,24 +1,22 @@
 #import "SCItemRecord+Ownerships.h"
 
+#import "SCItemRecord+SCItemSource.h"
+#import "SCItemSourcePOD.h"
+
 #import "SCItemInfo.h"
 #import "SCApiContext.h"
-#import "SCItemsCache.h"
+#import "SCItemRecordCacheRW.h"
+#import "SCExtendedApiContext.h"
 
-@interface SCItemsCache (SCItemRecordOwnerships)
+@interface SCExtendedApiContext (SCItemRecordOwnerships)
 
--(SCItemRecord*)existedItemRecordWithItemInfo:( SCItemInfo* )itemInfo_;
-
-@end
-
-@interface SCApiContext (SCItemRecordOwnerships)
-
-@property ( nonatomic ) SCItemsCache* itemsCache;
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
 @end
 
 @implementation SCItemRecord (Ownerships)
 
--(SCItemsCache*)itemsCache
+-(id<SCItemRecordCacheRW>)itemsCache
 {
     return self.apiContext.itemsCache;
 }
@@ -27,14 +25,17 @@
 {
     NSString* parentLongId_ = [ self.longID stringByDeletingLastPathComponent ];
     NSString* parentId_     = [ parentLongId_ lastPathComponent ];
+    
+    SCItemSourcePOD* itemSource = self.itemSource;
+    
     while ( [ parentId_ length ] != 0 && ![ parentId_ isEqualToString: @"/" ] )
     {
-        SCItemInfo* itemInfo_ = [ SCItemInfo new ];
-        itemInfo_.itemId = parentId_;
-        itemInfo_.language = self.language;
-        SCItemRecord* parent_ = [ self.itemsCache existedItemRecordWithItemInfo: itemInfo_ ];
+        SCItemRecord* parent_ = [ self.itemsCache itemRecordForItemWithId: parentId_
+                                                               itemSource: itemSource ];
         if ( parent_ )
+        {
             return parent_;
+        }
         parentLongId_ = [ parentLongId_ stringByDeletingLastPathComponent ];
         parentId_     = [ parentLongId_ lastPathComponent ];
     }
@@ -46,7 +47,7 @@
     SCItemRecord* parent_ = [ self findNearestParent ];
     while ( parent_ )
     {
-        [ parent_ addOwnedObject: self ];
+        [ parent_ removeOwnedObject: self ];
         parent_ = [ parent_ findNearestParent ];
     }
 }
@@ -60,11 +61,9 @@
 -(void)setOwnershipsForChildren
 {
     //STODO to slow method
-    NSArray* arrayOfArrays_ = [ self.itemsCache.itemRecordsById allValues ];
-    NSArray* allItemReceords_ = [ arrayOfArrays_ flatten: ^NSArray*(JFFMutableAssignArray* object_)
-    {
-        return [ object_ array ];
-    } ];
+    SCItemSourcePOD* itemSource = self.itemSource;
+    
+    NSArray* allItemReceords_ = [ self.itemsCache allCachedItemsForItemSource: itemSource ];
     for ( SCItemRecord* itemRecord_ in allItemReceords_ )
     {
         if ( itemRecord_ != self
@@ -81,11 +80,15 @@
     [ self setOwnershipsForParent ];
     [ self setOwnershipsForChildren ];
 
-    SCItemInfo* itemInfo_ = [ SCItemInfo new ];
-    itemInfo_.itemId   = self.itemId;
-    itemInfo_.language = self.language;
-    SCItemRecord* previousItem_ = [ self.itemsCache existedItemRecordWithItemInfo: itemInfo_ ];
-    [ previousItem_ removeOwnershipRelations ];
+    
+    SCItemSourcePOD* itemSource = self.itemSource;
+    SCItemRecord* previousItem_ = [ self.itemsCache itemRecordForItemWithId: self.itemId
+                                                                 itemSource: itemSource ];
+
+    if ( self != previousItem_ )
+    {
+        [ previousItem_ removeOwnershipRelations ];
+    }
 }
 
 @end
