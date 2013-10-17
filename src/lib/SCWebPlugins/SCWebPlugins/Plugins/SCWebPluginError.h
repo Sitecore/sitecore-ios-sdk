@@ -1,4 +1,4 @@
 #import <SitecoreMobileSDK/SCError.h>
 
-@interface SCWebPluginError : SCError
+@interface SCWebPluginError : SCApiError
 @end
