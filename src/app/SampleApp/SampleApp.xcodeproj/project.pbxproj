@@ -35,6 +35,8 @@
 		1BBCAB1B1510CF1800199B37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCAB1A1510CF1800199B37 /* CoreMedia.framework */; };
 		25995B2A159359AC0081B5DA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25995B29159359AC0081B5DA /* libc++.dylib */; };
 		7E0B43E617159A130094A79E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0B43E517159A130094A79E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E93411F180FCF0C00ADD21C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93411D180FCF0C00ADD21C /* EventKit.framework */; };
+		7E934120180FCF0C00ADD21C /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93411E180FCF0C00ADD21C /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		1BBCAB1A1510CF1800199B37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		25995B29159359AC0081B5DA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		7E0B43E517159A130094A79E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7E93411D180FCF0C00ADD21C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E93411E180FCF0C00ADD21C /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E93411F180FCF0C00ADD21C /* EventKit.framework in Frameworks */,
+				7E934120180FCF0C00ADD21C /* EventKitUI.framework in Frameworks */,
 				7E0B43E617159A130094A79E /* Social.framework in Frameworks */,
 				25995B2A159359AC0081B5DA /* libc++.dylib in Frameworks */,
 				1B2C80461532B49000A087D1 /* libsqlite3.dylib in Frameworks */,
@@ -126,6 +132,8 @@
 		1B1167B414C6CE76000AD289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E93411D180FCF0C00ADD21C /* EventKit.framework */,
+				7E93411E180FCF0C00ADD21C /* EventKitUI.framework */,
 				7E0B43E517159A130094A79E /* Social.framework */,
 				1B0D872D1519E44300EC4A92 /* CoreLocation.framework */,
 				1B0D872B1519E43500EC4A92 /* MapKit.framework */,
@@ -326,7 +334,10 @@
 		1B1167D314C6CE76000AD289 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/SampleApp",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
@@ -342,7 +353,10 @@
 		1B1167D414C6CE76000AD289 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/app/SampleApp",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
