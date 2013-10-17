@@ -5,7 +5,8 @@
 //  Created on 2/29/2012.
 //  Copyright 2012. Sitecore. All rights reserved.
 //
-#include "SitecoreMobileSDK/SCAsyncOpDefinitions.h"
+#include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
+//#include <SitecoreMobileSDK/SCExtendedOperations.h>
 
 #import <Foundation/Foundation.h>
 
@@ -54,7 +55,9 @@
  Used to load linked image.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
+
 -(SCAsyncOp)imageReader;
+-(SCExtendedAsyncOp)extendedImageReader;
 
 @end
 
