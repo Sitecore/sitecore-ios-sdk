@@ -4,6 +4,10 @@
 
 #import <SCApi/Utils/JSBlocksDefinitions.h>
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 JFFAsyncOperation scSmartDataLoader( NSURL*(^urlBuilder_)(void)
                                     , JFFAsyncOperationBinder dataLoaderForURL_
                                     , SCAsyncBinderForURL analyzerForData_ );
@@ -19,3 +23,6 @@ JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
                                           , NSTimeInterval cacheLifeTime_ );
 SCAsyncOp imageReaderForURLString( NSString* urlString_
                                   , NSTimeInterval cacheLifeTime_ );
+#ifdef __cplusplus
+}
+#endif
