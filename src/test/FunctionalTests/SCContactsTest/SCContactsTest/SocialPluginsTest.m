@@ -18,4 +18,11 @@
                      javasript: @"testFacebook()" ];
 }
 
+-(void)testSocial
+{
+    [ self runTestWithSelector: _cmd
+                     testsPath: @"social_test"
+                     javasript: @"testSocial()" ];
+}
+
 @end
