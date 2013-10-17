@@ -62,7 +62,7 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
         {
             if ( [ error_ isMemberOfClass: [ JFFRestKitError class ] ] )
             {
-                return [ SCError new ];
+                return [ SCApiError new ];
             }
 
             return error_;
@@ -130,7 +130,7 @@ JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
 
     JFFChangedErrorBuilder errorBuilder_ = ^NSError*(NSError* error_)
     {
-        if ( [ error_ isMemberOfClass: [ SCError class ] ] )
+        if ( [ error_ isMemberOfClass: [ SCApiError class ] ] )
             return [ SCInvalidPathError new ];
 
         return error_;
