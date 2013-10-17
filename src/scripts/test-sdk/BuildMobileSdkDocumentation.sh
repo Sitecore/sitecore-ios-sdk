@@ -32,9 +32,11 @@ cd "$DEPLOYMENT_DIR"
 		"$SDK_LIBRARIES_ROOT/SCMap/SitecoreMobileSDK" \
 		"$SDK_LIBRARIES_ROOT/SCQRCodeReader/SitecoreMobileSDK" \
 		"$SDK_LIBRARIES_ROOT/SCUI/SitecoreMobileSDK" \
-#		"$SDK_LIBRARIES_ROOT/SCWebContentApi" \
-#		"$SDK_LIBRARIES_ROOT/SCWebPlugins" \
+		"$SDK_LIBRARIES_ROOT/SCUtils/SitecoreMobileSDK" \
 		"$SDK_LIBRARIES_ROOT/SCWebView/SitecoreMobileSDK"
+#		"$SDK_LIBRARIES_ROOT/SCWebContentApi" \
+		"$SDK_LIBRARIES_ROOT/SCWebPlugins" \
+
 
 
 	DOCUMENTATION_PATH=$( cat docset-installed.txt | grep Path: | awk 'BEGIN { FS = " " } ; { print $2 }' )
