@@ -3,9 +3,10 @@
 #import "SCError.h"
 #import "SCItemsPage.h"
 #import "SCApiContext.h"
+#import "SCExtendedApiContext.h"
 #import "SCItemsReaderRequest.h"
 
-@interface SCApiContext (SCPagedItems)
+@interface SCExtendedApiContext (SCPagedItems)
 
 -(JFFAsyncOperation)privateItemsPageLoaderWithRequest:( SCItemsReaderRequest* )request_;
 
@@ -77,7 +78,7 @@
                                   , JFFCancelAsyncOperationHandler cancelCallback_
                                   , JFFDidFinishAsyncOperationHandler doneCallback_ )
     {
-        JFFAsyncOperation loader_ = [ _apiContext privateItemsPageLoaderWithRequest: request_ ];
+        JFFAsyncOperation loader_ = [ _apiContext.extendedApiContext privateItemsPageLoaderWithRequest: request_ ];
 
         JFFAsyncOperationBinder totalCountBinder_ = asyncOperationBinderWithAnalyzer( ^id( SCItemsPage* page_
                                                                                           , NSError **error_)
@@ -102,6 +103,12 @@
 
 -(SCItem*)itemForIndex:( NSUInteger )index_
 {
+    if ( 0 == self.pageSize )
+    {
+        NSLog( @"[!!!WARNING!!!] : [SCPagedItems itemForIndex:] - division by zero" );
+        return nil;
+    }
+    
     NSNumber* page_       = @( index_ / self.pageSize );
     NSArray* itemsPage_   = self->_itemsByPageNumber[ page_ ];
     NSUInteger pageIndex_ = index_ % self.pageSize;
@@ -118,14 +125,22 @@
 
     JFFAnalyzer analyzer_ = ^id( NSArray* items_, NSError **error_ )
     {
-        NSUInteger pageIndex_ = index_ % self.pageSize;
+        if ( 0 != self.pageSize )
+        {
+            NSUInteger pageIndex_ = index_ % self.pageSize;
 
-        if ( [ items_ count ] > pageIndex_ )
-            return items_[ pageIndex_ ];
-
-        if ( error_ )
-            *error_ = [ SCNoItemError new ];
-
+            if ( [ items_ count ] > pageIndex_ )
+            {
+                return items_[ pageIndex_ ];
+            }
+        }
+        else
+        {
+            NSLog( @"[!!!WARNING!!!] : [SCPagedItems itemLoaderForIndex:] - division by zero" );
+            return nil;
+        }
+        
+        [ [ SCNoItemError new ] setToPointer: error_ ];
         return nil;
     };
 
@@ -136,14 +151,25 @@
 
 -(SCAsyncOp)itemsTotalCountReader
 {
+    return asyncOpWithJAsyncOp( [ self extendedItemsTotalCountReader ] );
+}
+
+-(SCExtendedAsyncOp)extendedItemsTotalCountReader
+{
     JFFAsyncOperation loader_ = [ self itemLoaderForIndex: 0 ];
     loader_ = asyncOperationWithChangedResult( loader_, ^id( id result_ ) { return _totalItemsCount; } );
-    return asyncOpWithJAsyncOp( loader_ );
+    return loader_;
 }
+
 
 -(SCAsyncOp)itemReaderForIndex:( NSUInteger )index_
 {
     return asyncOpWithJAsyncOp( [ self itemLoaderForIndex: index_ ] );
+}
+
+-(SCExtendedAsyncOp)extendedItemReaderForIndex:( NSUInteger )index_
+{
+    return [ self itemLoaderForIndex: index_ ];
 }
 
 @end
