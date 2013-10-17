@@ -108,31 +108,23 @@
 
             NSDictionary* route_ = [ routes_ noThrowObjectAtIndex: 0 ];
 
-            if ( ![ route_ isKindOfClass: [ NSDictionary class ] ]  )
+            NSArray* steps = route_[@"legs"][0][@"steps"];
+            
+            NSMutableArray *result = [NSMutableArray new];
+            for (NSDictionary *elem in steps)
             {
-                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
-                [ error_ setToPointer: outError_ ];
-                return nil;
+                [result addObjectsFromArray:[ self decodePolyLine: elem[@"polyline"][@"points"] ]];
             }
 
-            NSDictionary* overviewPolyline_ = route_[ @"overview_polyline" ];
-            if ( ![ overviewPolyline_ isKindOfClass: [ NSDictionary class ] ]  )
-            {
-                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
-                [ error_ setToPointer: outError_ ];
-                return nil;
-            }
-
-            NSString* codedPoints_ = overviewPolyline_[ @"points" ];
-
-            if ( !codedPoints_ )
+            
+            if ( !result || [ result count ] == 0 )
             {
                 NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: no information about overview_polyline->points in [directions response from google API]" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
 
-            return [ self decodePolyLine: codedPoints_ ];
+            return result;
         };
 
         return asyncOperationWithSyncOperation( loadDataBlock_ );
