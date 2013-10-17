@@ -7,6 +7,10 @@
 @class SCSitecoreCredentials;
 @class SCCreateMediaItemRequest;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 JFFAsyncOperation firstItemFromArrayReader( JFFAsyncOperation loader_ );
 
 JFFAsyncOperation asyncOpWithValidPath( JFFAsyncOperationBinder binder_, NSString* path_ );
@@ -21,3 +25,7 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
                                           , NSData* httpBody_
                                           , NSString* httpMethod_
                                           , NSDictionary* headers_ );
+#ifdef __cplusplus
+}
+#endif
+
