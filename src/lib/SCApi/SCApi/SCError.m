@@ -1,7 +1,7 @@
 #import "SCError.h"
 #import "SCTriggeringImplRequest.h"
 
-@implementation SCError
+@implementation SCApiError
 
 @synthesize underlyingError = _underlyingError;
 
@@ -126,6 +126,22 @@
     }
 
     return result_;
+}
+
+-(NSString *)localizedDescription
+{
+    if ( self->_message != nil )
+        return NSLocalizedString( self->_message, nil );
+    
+    return [ super localizedDescription ];
+}
+
+-(NSString *)description
+{
+    if ( self->_message != nil )
+        return [ NSString stringWithFormat:@"%@ %@", [ super description ], self->_message ];
+    
+    return [ super description ];
 }
 
 @end
