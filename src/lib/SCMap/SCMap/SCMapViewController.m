@@ -47,6 +47,24 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     self.mapView.drawRouteToNearestAddress = self.drawRoute;
     if ( self.regionRadius > 100. )
         self.mapView.regionRadius = self.regionRadius;
+    
+#ifdef __IPHONE_7_0
+    
+    BOOL perspectiveParamsAreValid =
+           CLLocationCoordinate2DIsValid( self.viewPointPosition )
+        && CLLocationCoordinate2DIsValid( self.cameraPosition )
+        && ( self.cameraHeight > 0 );
+    
+    if ( perspectiveParamsAreValid )
+    {
+        MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate: self.viewPointPosition
+                                                         fromEyeCoordinate: self.cameraPosition
+                                                               eyeAltitude: self.cameraHeight ];
+        self.mapView.camera = camera;
+    }
+    
+#endif
+    
 }
 
 -(void)addTapRecognizer

@@ -11,6 +11,9 @@
 @property ( nonatomic ) NSArray* addresses;
 @property ( nonatomic ) BOOL drawRoute;
 @property ( nonatomic ) CLLocationDistance regionRadius;
+@property ( nonatomic ) CLLocationCoordinate2D cameraPosition;
+@property ( nonatomic ) CGFloat cameraHeight;
+@property ( nonatomic ) CLLocationCoordinate2D viewPointPosition;
 
 -(void)hideMapViewController;
 
