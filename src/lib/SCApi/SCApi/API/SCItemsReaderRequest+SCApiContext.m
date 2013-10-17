@@ -6,7 +6,6 @@
 #import "SCApiUtils.h"
 #import "SCItemRecord.h"
 #import "SCApiContext.h"
-#import "SCItemsCache.h"
 #import "SCItemsPage.h"
 
 #import "SCApiAnalizers.h"
@@ -19,7 +18,7 @@
 
 @interface SCApiContext (SCItemsReaderRequestCategory)
 
-@property ( nonatomic ) SCItemsCache* itemsCache;
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
 @end
 
@@ -27,8 +26,11 @@
 
 -(JFFAsyncOperation)asyncOpWithFieldsForAsyncOp:( JFFAsyncOperation )loader_
 {
-    if ( !( self.flags & SCItemReaderRequestReadFieldsValues ) )
+    BOOL isReadFieldsFlagSet = ( self.flags & SCItemReaderRequestReadFieldsValues );
+    if ( !isReadFieldsFlagSet )
+    {
         return loader_;
+    }
 
     JFFAsyncOperationBinder secondLoaderBinder_ = ^JFFAsyncOperation( SCItemsPage* page_ )
     {
