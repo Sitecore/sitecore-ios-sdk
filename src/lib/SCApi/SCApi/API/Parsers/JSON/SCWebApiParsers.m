@@ -4,6 +4,8 @@
 
 #import "SCItemRecordsPage+JsonParser.h"
 
+#define IS_RESPONSE_LOGS_ENABLED 0
+
 static JFFAsyncOperation invalidResponseFormatLoader( NSData* data_ )
 {
     SCInvalidResponseFormatError* error_ = [ SCInvalidResponseFormatError new ];
@@ -16,9 +18,11 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ )
     return asyncOperationWithAnalyzer( data_, ^id( id data_, NSError** outError_ )
     {
         //TODO test logs, just uncomment
+#if IS_RESPONSE_LOGS_ENABLED
         NSString* responseStr_ = [ [ NSString alloc ] initWithData: data_
                                                           encoding: NSUTF8StringEncoding ];
         NSLog( @"response: %@ for url: %@", responseStr_, url_ );
+#endif
 
         NSError* localError_ = nil;
         //STODO parse in separate thread

@@ -17,6 +17,9 @@
         result_->_fieldNames    = [ self.fieldNames    copyWithZone: zone_ ];
         
         result_.itemSource = [ self.itemSource copyWithZone: zone_ ];
+//        result_->_language  = [ self.language copyWithZone: zone_ ];
+//        result_->_site      = [ self.site     copyWithZone: zone_ ];
+//        result_->_database  = [ self.database copyWithZone: zone_ ];
     }
 
     return result_;

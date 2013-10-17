@@ -6,8 +6,6 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 #include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
-//#include <SitecoreMobileSDK/SCExtendedOperations.h>
-
 #import <Foundation/Foundation.h>
 
 @class SCItem;
