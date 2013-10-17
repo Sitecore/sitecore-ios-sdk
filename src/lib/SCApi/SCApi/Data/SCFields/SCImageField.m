@@ -1,11 +1,15 @@
 #import "SCImageField.h"
 
-#import "SCApiContext.h"
+#import "SCExtendedApiContext.h"
+#import "SCParams.h"
+#import "SCField+Private.h"
+#import "SCExtendedApiContext+Private.h"
 
-@interface SCApiContext ()
+@interface SCExtendedApiContext ()
 
 -(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_;
-
+//-(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_
+//                                              params:( SCParams* )params;
 @end
 
 @implementation SCImageField
@@ -24,17 +28,22 @@
 
 -(JFFAsyncOperation)fieldValueLoader
 {
+   return [ self fieldValueLoaderWithParms: nil ];
+}
+
+-(JFFAsyncOperation)fieldValueLoaderWithParms:( SCFieldImageParams* )params
+{
     NSString *imagePath_ = self.imagePath;
     if (imagePath_)
     {
-        JFFAsyncOperation loader_ = [ self.apiContext privateImageLoaderForSCMediaPath: imagePath_ ];
+        JFFAsyncOperation loader_ = [ self.apiContext privateImageLoaderForSCMediaPath: imagePath_
+                                                                                params: params ];
+        
         return [ self asyncOperationForPropertyWithName: @"fieldValue"
                                          asyncOperation: loader_ ];
     }
     
     return NULL;
-    
-    
 }
 
 -(NSString*)imagePath
@@ -56,7 +65,12 @@
 
 -(SCAsyncOp)fieldValueReader
 {
-    return [ super fieldValueReader ];
+    return [ self fieldValueReaderWithImageParams: nil ];
+}
+
+-(SCAsyncOp)fieldValueReaderWithImageParams:( SCParams* )params;
+{
+    return [ super fieldValueReaderWithParams: params ];
 }
 
 @end
