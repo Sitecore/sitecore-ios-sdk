@@ -2,21 +2,17 @@
 
 #import "SCApiContext.h"
 #import "SCEditItemsRequest.h"
-
-@interface SCItemsReaderRequest (FactoryPrivate)
-
-@property ( nonatomic ) NSString* database;
-
-@end
+#import "SCExtendedApiContext.h"
 
 @implementation SCItemsReaderRequest (Factory)
 
--(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_
+-(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCExtendedApiContext* )context_
 {
     SCItemsReaderRequest* result_ = [ self copy ];
  
     result_.language        = result_.language ?: context_.defaultLanguage;
-    result_.database        = context_.defaultDatabase;
+    result_.database        = result_.database ?: context_.defaultDatabase;
+    result_.site            = result_.site     ?: context_.defaultSite    ;
     
     result_.lifeTimeInCache = self.lifeTimeInCache;
     
@@ -32,7 +28,7 @@
 
 @implementation SCEditItemsRequest (Factory)
 
--(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_
+-(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCExtendedApiContext* )context_
 {
     SCEditItemsRequest* result_ = (SCEditItemsRequest*)[ super itemsReaderRequestWithApiContext: context_ ];
 
