@@ -7,7 +7,7 @@
 
 @interface SCFieldLinkData (SCGeneralLinkField)
 
-@property ( nonatomic ) SCApiContext *apiContext;
+@property ( nonatomic ) SCExtendedApiContext *apiContext;
 
 @end
 
@@ -23,17 +23,19 @@
 
 -(SCFieldLinkData*)linkData
 {
-    if ( !_linkData )
+    if ( !self->_linkData )
     {
         NSData* data_ = [ self.rawValue dataUsingEncoding: NSUTF8StringEncoding ];
-        _linkData = [ SCFieldLinkData fieldLinkDataWithXMLData: data_
+        self->_linkData = [ SCFieldLinkData fieldLinkDataWithXMLData: data_
                                                          error: nil ];
-        if ( !_linkData )
-            _linkData = [ SCFieldLinkData new ];
+        if ( !self->_linkData )
+        {
+            self->_linkData = [ SCFieldLinkData new ];
+        }
 
-        _linkData.apiContext = self.apiContext;
+        self->_linkData.apiContext = self.apiContext;
     }
-    return _linkData;
+    return self->_linkData;
 }
 
 -(id)createFieldValue
