@@ -6,12 +6,15 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#include "SitecoreMobileSDK/SCAsyncOpDefinitions.h"
-
+#include <SitecoreMobileSDK/SCAsyncOpDefinitions.h>
+#include <SitecoreMobileSDK/SCExtendedOperations.h>
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCApiContext;
+@class SCExtendedApiContext;
+@class SCParams;
+@protocol SCItemSource;
+
 
 /**
  The SCField object identifies a Sitecore system item's field.
@@ -26,7 +29,7 @@
  The SCApiContext object this field was created/loaded from.
  Can be used to load the necessary data.
  */
-@property(nonatomic,readonly) SCApiContext *apiContext;
+@property(nonatomic,readonly) SCExtendedApiContext *apiContext;
 /**
  The system field's id.
  */
@@ -58,6 +61,8 @@
  */
 @property(nonatomic,readonly) id fieldValue;
 
+@property(nonatomic, readonly) id<SCItemSource> itemSource;
+
 /**
  Used for the loading field value.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is [SCField rawValue] by default but can be different for other fields types.
@@ -65,5 +70,6 @@
  See SCField inheritor class: [SCImageField fieldValueReader] for details.
  */
 - (SCAsyncOp)fieldValueReader;
+- (SCExtendedAsyncOp)extendedFieldValueReader;
 
 @end
