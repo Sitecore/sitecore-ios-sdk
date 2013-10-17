@@ -135,6 +135,9 @@
 @property ( nonatomic ) NSURLRequest* request;
 @property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
+@property ( nonatomic, assign ) BOOL isImagePickerPresented;
+@property ( nonatomic, assign ) BOOL isImagePickerHideRequested;
+
 @end
 
 @implementation SCGetPicturePlugin
@@ -210,7 +213,8 @@
         return;
     }
 
-    self->_imagePickerController = [ UIImagePickerController new ];
+    UIImagePickerController* imagePicker = [ UIImagePickerController new ];
+    self->_imagePickerController = imagePicker;
     self->_imagePickerController.delegate = self;
 
     if ( sourceType_ > UIImagePickerControllerSourceTypeSavedPhotosAlbum )
@@ -227,10 +231,22 @@
 #endif //TARGET_IPHONE_SIMULATOR
 
     self->_imagePickerController.sourceType = sourceType_;
-
+    
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
     {
-        [ rootController_ presentTopViewController: self->_imagePickerController ];
+        JFFSimpleBlock onImagePickerPresented = ^void( void )
+        {
+            self.isImagePickerPresented = YES;
+            if ( self.isImagePickerHideRequested )
+            {
+                [ imagePicker dismissViewControllerAnimated: NO
+                                                 completion: nil ];
+            }
+        };
+        
+        [ rootController_ presentTopViewController: self->_imagePickerController
+                                          animated: YES
+                                        completion: onImagePickerPresented ];
     }
     else
     {
@@ -252,11 +268,30 @@
 {
     if ( self.popover )
     {
+        self->_isImagePickerPresented = NO;
         [ self.popover dismissPopoverAnimated: YES ];
     }
     else
     {
-        [ self.imagePickerController dismissViewControllerAnimated: NO completion: nil ];
+        UIImagePickerController* imagePicker = self.imagePickerController;
+        JFFSimpleBlock onImagePickerDismissed = ^void( void )
+        {
+            self.isImagePickerPresented = NO;
+        };
+        JFFSimpleBlock doDismissImagePicker = ^void( void )
+        {
+            [ imagePicker dismissViewControllerAnimated: NO
+                                             completion: onImagePickerDismissed ];
+        };
+        
+        if ( self.isImagePickerPresented )
+        {
+            doDismissImagePicker();
+        }
+        else
+        {
+            self->_isImagePickerHideRequested = YES;
+        }
     }
 
     self.popover = nil;
