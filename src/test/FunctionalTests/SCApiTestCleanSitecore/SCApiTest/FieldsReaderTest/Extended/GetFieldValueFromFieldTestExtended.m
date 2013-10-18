@@ -734,6 +734,7 @@
 
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
+        [ [ apiContext_.extendedApiContext itemsCache ] cleanupAll ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
