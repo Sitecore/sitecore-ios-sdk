@@ -19,9 +19,6 @@
 [submodule "src/lib-third-party/ios-openssl"]
 	path = src/lib-third-party/ios-openssl
 	url = https://github.com/Sitecore/ios-openssl.git
-[submodule "src/lib-third-party/iFeatureAvailability"]
-	path = src/lib-third-party/iFeatureAvailability
-	url = https://github.com/Sitecore/iFeatureAvailability.git
 [submodule "src/lib-third-party/JFFLibrary"]
 	path = src/lib-third-party/JFFLibrary
 	url = https://github.com/EmbeddedSources/iAsync.git
@@ -34,3 +31,6 @@
 [submodule "src/lib-third-party/uri-parser"]
 	path = src/lib-third-party/uri-parser
 	url = https://github.com/EmbeddedSources/uri-parser.git
+[submodule "src/lib-third-party/iFeatureAvailability"]
+	path = src/lib-third-party/iFeatureAvailability
+	url = https://github.com/Sitecore/iFeatureAvailability.git
