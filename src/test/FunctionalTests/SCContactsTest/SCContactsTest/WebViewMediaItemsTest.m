@@ -9,7 +9,8 @@
 -(void)testCreateMediaItem
 {
     __block NSString* failDescription_;
-
+    NSString* host = [ TestHostConfig testInstance ];
+    
     void (^afterTest_)( NSDictionary* ) = ^( NSDictionary* result_ )
     {
         NSString* itemId_ = [ [ result_ objectForKey: @"itemId" ] lastObject ];
@@ -22,7 +23,7 @@
 
         [ self prepare ];
 
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:89"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultSite = @"/sitecore/shell";
@@ -57,6 +58,7 @@
 -(void)testCreateLargeMediaItem
 {
     __block NSString* failDescription_;
+    NSString* host = [ TestHostConfig testInstance ];
     
     void (^afterTest_)( NSDictionary* ) = ^( NSDictionary* result_ )
     {
@@ -70,7 +72,7 @@
         
         [ self prepare ];
         
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:89"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultDatabase = @"core";

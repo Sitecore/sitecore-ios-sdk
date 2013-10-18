@@ -40,7 +40,8 @@
 
 -(void)runJavascript
 {
-    [ self->_webView loadURLWithString: @"http://mobiledev1ua1.dk.sitecore.net:89/mobilesdk-test-path" ];
+    NSString* testPath = [ TestHostConfig mobileSdkTestPath ];
+    [ self->_webView loadURLWithString: testPath ];
 }
 
 #pragma mark SCWebViewDelegate
