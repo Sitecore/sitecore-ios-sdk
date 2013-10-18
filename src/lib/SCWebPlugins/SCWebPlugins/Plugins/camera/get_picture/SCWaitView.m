@@ -1,53 +1,53 @@
 #import "SCWaitView.h"
 
-@interface SCWaitView ()
-
-@property ( nonatomic ) UIAlertView* alert;
-
-@end
-
-//STODO create beautiful wait screen
 @implementation SCWaitView
-
--(id)init
 {
-    self = [ super init ];
-
-    if ( self )
-    {
-       //STODO use JFFAlertView insted of UIAlertView
-        self->_alert = [ [ UIAlertView alloc ] initWithTitle: @"\n"
-                                                     message: nil
-                                                    delegate: self
-                                           cancelButtonTitle: nil
-                                           otherButtonTitles: nil ];
-    }
-
-    return self;
+    __weak UIView* _superview;
+    __weak UIActivityIndicatorView* _activity;
+    CGFloat _cornerRadius;
 }
 
-+(id)waitView
+-(instancetype)initWithFrame:( CGRect )frame
+                cornerRadius:( CGFloat )cornerRadius
+                   superview:( UIView* )superview
 {
-    return [ self new ];
+    self = [ super initWithFrame: frame ];
+    if ( nil == self )
+    {
+        return nil;
+    }
+    
+    self->_cornerRadius = cornerRadius;
+    self->_superview = superview;
+    self.backgroundColor = [ UIColor grayColor ];
+    
+    return self;
 }
 
 -(void)show
 {
-    [ self.alert show ];
+    CGRect superviewFrame = self->_superview.frame;
+    CGSize superviewSize = superviewFrame.size;
+    
+    self.center = CGPointMake( superviewSize.width / 2, superviewSize.height / 2 );
+    self.layer.cornerRadius = self->_cornerRadius;
 
-    UIActivityIndicatorView* indicator_ = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge ];
+    if ( nil == self->_activity )
+    {
+        UIActivityIndicatorView* activity = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge ];
 
-    // Adjust the indicator so it is up a few pixels from the bottom of the alert
-    indicator_.center = CGPointMake( self.alert.bounds.size.width / 2
-                                    , self.alert.bounds.size.height - 50);
-    [ indicator_ startAnimating ];
-    [ self.alert addSubview: indicator_ ];
+        [ self addSubviewAndScale: activity ];
+        self->_activity = activity;
+    }
+    
+    [ self->_activity startAnimating ];
+    [ self->_superview addSubview: self ];
 }
 
 -(void)hide
 {
-    [ self.alert dismissWithClickedButtonIndex: [ self.alert cancelButtonIndex ]
-                                      animated: NO ];
+    [ self->_activity stopAnimating ];
+    [ self removeFromSuperview ];
 }
 
 @end

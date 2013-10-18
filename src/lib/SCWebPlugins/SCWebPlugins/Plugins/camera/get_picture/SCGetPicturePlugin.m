@@ -138,6 +138,9 @@
 @end
 
 @implementation SCGetPicturePlugin
+{
+    __weak UIView* _webView;
+}
 
 -(id)initWithRequest:( NSURLRequest* )request_
 {
@@ -244,6 +247,8 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
+    self->_webView = webView_;
+    
     NSDictionary* components_ = [ self.request.URL queryComponents ];
     NSString* sourceType_     = [ components_ firstValueIfExsistsForKey: @"sourceType" ];
 
@@ -293,7 +298,12 @@ didFinishPickingMediaWithInfo:( NSDictionary* )info_
         return [ image_ tmpPathToPNGImage ];
     } );
 
-    SCWaitView* waitView_ = [ SCWaitView waitView ];
+    static const CGRect PROGRESS_VIEW_DIMENSIONS = { {0.f, 0.f}, {300.f, 100.f} };
+    
+    SCWaitView* waitView_ =
+    [ [ SCWaitView alloc ] initWithFrame: PROGRESS_VIEW_DIMENSIONS
+                            cornerRadius: 15.f
+                               superview: self->_webView ];
     [ waitView_ show ];
 
     loader_( nil, nil, ^( id path_, NSError* error_ )
