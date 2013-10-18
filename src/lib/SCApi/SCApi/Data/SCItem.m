@@ -399,7 +399,6 @@
     ^void(NSArray* itemsIds, NSError *error, JFFDidFinishAsyncOperationHandler doneCallback )
     {
         NSParameterAssert( nil == itemsIds || [ itemsIds isKindOfClass: [ NSArray class ] ] );
-        NSParameterAssert( nil != doneCallback );
         
         BOOL isNoError = ( nil == error );
         BOOL isNothingDeleted = ( 0 == [ itemsIds count ] );
@@ -415,7 +414,10 @@
             blockResult = nil;
         }
 
-        doneCallback( blockResult, error );
+        if ( nil != doneCallback )
+        {
+            doneCallback( blockResult, error );
+        }
     };
     
     SCExtendedAsyncOp result = nil;
