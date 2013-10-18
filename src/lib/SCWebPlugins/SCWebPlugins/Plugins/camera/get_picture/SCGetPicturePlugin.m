@@ -135,9 +135,6 @@
 @property ( nonatomic ) NSURLRequest* request;
 @property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
-@property ( nonatomic, assign ) BOOL isImagePickerPresented;
-@property ( nonatomic, assign ) BOOL isImagePickerHideRequested;
-
 @end
 
 @implementation SCGetPicturePlugin
@@ -234,19 +231,9 @@
     
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
     {
-        JFFSimpleBlock onImagePickerPresented = ^void( void )
-        {
-            self.isImagePickerPresented = YES;
-            if ( self.isImagePickerHideRequested )
-            {
-                [ imagePicker dismissViewControllerAnimated: NO
-                                                 completion: nil ];
-            }
-        };
-        
         [ rootController_ presentTopViewController: self->_imagePickerController
                                           animated: YES
-                                        completion: onImagePickerPresented ];
+                                        completion: nil ];
     }
     else
     {
@@ -268,30 +255,13 @@
 {
     if ( self.popover )
     {
-        self->_isImagePickerPresented = NO;
         [ self.popover dismissPopoverAnimated: YES ];
     }
     else
     {
         UIImagePickerController* imagePicker = self.imagePickerController;
-        JFFSimpleBlock onImagePickerDismissed = ^void( void )
-        {
-            self.isImagePickerPresented = NO;
-        };
-        JFFSimpleBlock doDismissImagePicker = ^void( void )
-        {
-            [ imagePicker dismissViewControllerAnimated: NO
-                                             completion: onImagePickerDismissed ];
-        };
-        
-        if ( self.isImagePickerPresented )
-        {
-            doDismissImagePicker();
-        }
-        else
-        {
-            self->_isImagePickerHideRequested = YES;
-        }
+        [ imagePicker dismissViewControllerAnimated: NO
+                                         completion: nil ];
     }
 
     self.popover = nil;
