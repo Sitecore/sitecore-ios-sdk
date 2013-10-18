@@ -85,7 +85,7 @@
     UIApplication* application_ = [ UIApplication sharedApplication ];
     [ [ NSNotificationCenter defaultCenter ] addObserver: self
                                                 selector: @selector( autoHidePopoverWillResignActive: )
-                                                    name: UIApplicationWillResignActiveNotification
+                                                    name: UIApplicationDidEnterBackgroundNotification
                                                   object: application_ ];
 
     _alertView = [ [ UIAlertView alloc ] initWithTitle: title_

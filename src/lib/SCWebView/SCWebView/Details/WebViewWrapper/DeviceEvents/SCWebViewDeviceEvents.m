@@ -26,7 +26,7 @@
                                    object: application_ ];
         [ notificationCenter_ addObserver: self
                                  selector: @selector( willResignActive: )
-                                     name: UIApplicationWillResignActiveNotification
+                                     name: UIApplicationDidEnterBackgroundNotification
                                    object: application_ ];
     }
 
