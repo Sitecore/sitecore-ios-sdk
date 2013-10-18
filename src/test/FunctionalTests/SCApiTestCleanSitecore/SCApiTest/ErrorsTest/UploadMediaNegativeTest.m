@@ -354,6 +354,11 @@
 
 -(void)testCreateMediaWithLowPermissionUser
 {
+    // ===========COMPATIBILITY===========
+    // @adk - item web api fixed in CMS 7.1.
+    // https://support.sitecore.net/client/ViewItem.aspx?type=defects&id=393416
+    // The test will fail for older releases
+    
     __weak __block SCApiContext* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
