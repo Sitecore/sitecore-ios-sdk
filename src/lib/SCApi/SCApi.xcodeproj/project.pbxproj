@@ -147,7 +147,6 @@
 		78BDD65817BE51FD00DBEB62 /* SCExtendedApiContext+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BDD65617BE51FD00DBEB62 /* SCExtendedApiContext+Init.m */; };
 		7E11ED3517E2FA330027B6C6 /* 2-RichTextField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E11ED1C17E2F8980027B6C6 /* 2-RichTextField.json */; };
 		7E11ED3617E2FA330027B6C6 /* 2-RichTextField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E11ED1C17E2F8980027B6C6 /* 2-RichTextField.json */; };
-		7E11ED3917E2FC370027B6C6 /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E11ED3717E2FC370027B6C6 /* SCRichTextField.h */; };
 		7E11ED3A17E2FC370027B6C6 /* SCRichTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E11ED3817E2FC370027B6C6 /* SCRichTextField.m */; };
 		7E11ED3C17E3003A0027B6C6 /* 2-RichText-OnlyField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E11ED3B17E3003A0027B6C6 /* 2-RichText-OnlyField.json */; };
 		7E11ED3D17E3003A0027B6C6 /* 2-RichText-OnlyField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E11ED3B17E3003A0027B6C6 /* 2-RichText-OnlyField.json */; };
@@ -233,6 +232,7 @@
 		7E8CB90E17CCBF7E006186E2 /* SCItemRecord+SCItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CB90C17CCBF7E006186E2 /* SCItemRecord+SCItemSource.m */; };
 		7E921ABC1705C4610006747C /* SCTriggerExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E921ABA1705C4600006747C /* SCTriggerExecutor.h */; };
 		7E921ABD1705C4610006747C /* SCTriggerExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921ABB1705C4600006747C /* SCTriggerExecutor.m */; };
+		7E96BB141816553F002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB131816553F002AF8FB /* SCRichTextField.h */; };
 		7E98C83A170EA8D100DA3AD8 /* SCApiContext+Init.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E98C838170EA8D100DA3AD8 /* SCApiContext+Init.h */; };
 		7E98C83B170EA8D100DA3AD8 /* SCApiContext+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98C839170EA8D100DA3AD8 /* SCApiContext+Init.m */; };
 		7EA5B5E917B8DA1D008F3A2A /* ImageParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B07DEF17B506CD00EEB890 /* ImageParamsTest.m */; };
@@ -1009,7 +1009,6 @@
 		78BDD65517BE51FD00DBEB62 /* SCExtendedApiContext+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCExtendedApiContext+Init.h"; sourceTree = "<group>"; };
 		78BDD65617BE51FD00DBEB62 /* SCExtendedApiContext+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCExtendedApiContext+Init.m"; sourceTree = "<group>"; };
 		7E11ED1C17E2F8980027B6C6 /* 2-RichTextField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2-RichTextField.json"; sourceTree = "<group>"; };
-		7E11ED3717E2FC370027B6C6 /* SCRichTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRichTextField.h; sourceTree = "<group>"; };
 		7E11ED3817E2FC370027B6C6 /* SCRichTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRichTextField.m; sourceTree = "<group>"; };
 		7E11ED3B17E3003A0027B6C6 /* 2-RichText-OnlyField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2-RichText-OnlyField.json"; sourceTree = "<group>"; };
 		7E11ED3F17E301B80027B6C6 /* RichTextFieldTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextFieldTest.m; sourceTree = "<group>"; };
@@ -1099,6 +1098,7 @@
 		7E90B42717CF8D9C00E36D17 /* SCItemRecordCacheRW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemRecordCacheRW.h; sourceTree = "<group>"; };
 		7E921ABA1705C4600006747C /* SCTriggerExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTriggerExecutor.h; sourceTree = "<group>"; };
 		7E921ABB1705C4600006747C /* SCTriggerExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTriggerExecutor.m; sourceTree = "<group>"; };
+		7E96BB131816553F002AF8FB /* SCRichTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRichTextField.h; path = SitecoreMobileSDK/SCRichTextField.h; sourceTree = SOURCE_ROOT; };
 		7E98C838170EA8D100DA3AD8 /* SCApiContext+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCApiContext+Init.h"; sourceTree = "<group>"; };
 		7E98C839170EA8D100DA3AD8 /* SCApiContext+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCApiContext+Init.m"; sourceTree = "<group>"; };
 		7EA5B5BE17B8B0C6008F3A2A /* WebApiUrlBuilrerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebApiUrlBuilrerTest.m; sourceTree = "<group>"; };
@@ -1585,7 +1585,7 @@
 				1B597D9D14FE6B0900B10F1E /* SCFieldLinkData.m */,
 				1B28D67814FF665B00673110 /* SCGeneralLinkField.h */,
 				1B597DA114FE6CF900B10F1E /* SCGeneralLinkField.m */,
-				7E11ED3717E2FC370027B6C6 /* SCRichTextField.h */,
+				7E96BB131816553F002AF8FB /* SCRichTextField.h */,
 				7E11ED3817E2FC370027B6C6 /* SCRichTextField.m */,
 			);
 			path = SCFields;
@@ -2090,6 +2090,7 @@
 				1B8D3F0C1523638A00CAF9C3 /* NSString+IsSCPathValid.h in Headers */,
 				1B24574415245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h in Headers */,
 				1B245873152472E600FBB6C2 /* SCWebApiParsers.h in Headers */,
+				7E96BB141816553F002AF8FB /* SCRichTextField.h in Headers */,
 				1B195B6F152490B700E80FFB /* NSString+MultipartFormDataBoundary.h in Headers */,
 				7E475E8317FEEB9F00553A6D /* SCRecordStorageBase.h in Headers */,
 				1BBD97DB1524943500A34E64 /* NSData+MultipartFormDataWithBoundary.h in Headers */,
@@ -2154,7 +2155,6 @@
 				7EC9381817CE22FE00965E2A /* SCItemRecordPropertyFactory.h in Headers */,
 				7EA66F7717CF9DAC00CD07C6 /* SCItemsCacheOperationsFactory.h in Headers */,
 				7E53CDF317D769130015DE5A /* SCItemRecord+IsCacheStub.h in Headers */,
-				7E11ED3917E2FC370027B6C6 /* SCRichTextField.h in Headers */,
 				7E59470117E72A2C00653196 /* SCItemSource.h in Headers */,
 				7E59470217E72A2C00653196 /* SCItemSourcePOD.h in Headers */,
 				78B3344117FF062A009D8C24 /* SCHTMLRenderingRequestUrlBuilder.h in Headers */,

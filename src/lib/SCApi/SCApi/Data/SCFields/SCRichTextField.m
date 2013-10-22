@@ -6,6 +6,8 @@
 
 @implementation SCRichTextField
 
+@dynamic fieldValue;
+
 -(id)createFieldValue
 {
     NSString* rawValue = self.rawValue;
