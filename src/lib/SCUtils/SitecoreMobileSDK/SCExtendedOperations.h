@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import <SitecoreMobileSDK/SCUploadProgress.h>
+
 @class NSError;
 
 #pragma clang diagnostic push
@@ -8,7 +10,7 @@
  This block will be called each time the asynchronous operation completes some of its parts.
  @param progressInfo - some operation dependent progress information. For example, it can be completeness percentage or downloaded data amount.
  */
-typedef void (^SCAsyncOperationProgressHandler)(id progressInfo);
+typedef void (^SCAsyncOperationProgressHandler)(id<SCUploadProgress> progressInfo);
 
 /**
  This will be called after the operation is completed. It is same as SCAsyncOpResult.

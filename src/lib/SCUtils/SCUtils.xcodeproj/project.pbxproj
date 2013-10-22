@@ -16,6 +16,7 @@
 		1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */; };
 		1BB2B860149F523200A9D332 /* SCAsyncOpUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */; };
 		78A6184217BA2B5100D43837 /* SCExtendedOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A6184117BA2B5100D43837 /* SCExtendedOperations.h */; };
+		78B0B09418151B6D0091D1F3 /* SCUploadProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B0B09318151B6D0091D1F3 /* SCUploadProgress.h */; };
 		7E1792B817E73F6D007AABFD /* SCExtendedAsyncOpRelationsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1792B617E73F6D007AABFD /* SCExtendedAsyncOpRelationsBuilder.m */; };
 		7E1792BA17E73FA4007AABFD /* SCExtendedAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1792B917E73FA4007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */; };
 		7EF7805316D767140043168A /* SCAsyncOpRelationsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7805116D767140043168A /* SCAsyncOpRelationsBuilder.m */; };
@@ -100,6 +101,7 @@
 		1BB2B85D149F523200A9D332 /* SCAsyncOpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpUtils.h; sourceTree = "<group>"; };
 		1BB2B85E149F523200A9D332 /* SCAsyncOpUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncOpUtils.m; sourceTree = "<group>"; };
 		78A6184117BA2B5100D43837 /* SCExtendedOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCExtendedOperations.h; sourceTree = "<group>"; };
+		78B0B09318151B6D0091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUploadProgress.h; sourceTree = "<group>"; };
 		7E1792B617E73F6D007AABFD /* SCExtendedAsyncOpRelationsBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCExtendedAsyncOpRelationsBuilder.m; sourceTree = "<group>"; };
 		7E1792B917E73FA4007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCExtendedAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 		7E17940617E74C0C007AABFD /* JFFAsyncOperations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFAsyncOperations.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFAsyncOperations/JFFAsyncOperations.xcodeproj"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				1B3EDBA814863B0800BA6680 /* SCAsyncOpDefinitions.h */,
 				78A6184117BA2B5100D43837 /* SCExtendedOperations.h */,
 				1B3EDB64148639A800BA6680 /* SCUtils.h */,
+				78B0B09318151B6D0091D1F3 /* SCUploadProgress.h */,
 			);
 			path = SitecoreMobileSDK;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				1B3EDBA914863B0800BA6680 /* SCAsyncOpDefinitions.h in Headers */,
 				1BB2B85F149F523200A9D332 /* SCAsyncOpUtils.h in Headers */,
 				7EF7805516D7674E0043168A /* SCAsyncOpRelationsBuilder.h in Headers */,
+				78B0B09418151B6D0091D1F3 /* SCUploadProgress.h in Headers */,
 				78A6184217BA2B5100D43837 /* SCExtendedOperations.h in Headers */,
 				7E1792BA17E73FA4007AABFD /* SCExtendedAsyncOpRelationsBuilder.h in Headers */,
 			);
