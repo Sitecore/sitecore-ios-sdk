@@ -57,11 +57,13 @@
 		788DE11317D774A500AB3D8C /* SCExtendedApiContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DE11217D774A500AB3D8C /* SCExtendedApiContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		788DE11617D774E300AB3D8C /* SCFieldImageParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DE11417D774E300AB3D8C /* SCFieldImageParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		788DE11717D774E300AB3D8C /* SCParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DE11517D774E300AB3D8C /* SCParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E1792EB17E7424D007AABFD /* SCExtendedAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E2579D217B276E000FEFFDE /* SCWebApiVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E59469A17E71F0700653196 /* SCAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FD17E72A1500653196 /* SCItemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FB17E72A0D00653196 /* SCItemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FE17E72A1700653196 /* SCItemSourcePOD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB4A18165563002AF8FB /* SCRichTextField.h */; };
 		7EB71F2D172164BD00C5A80C /* SCTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2A172164BD00C5A80C /* SCTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2E172164BD00C5A80C /* SCPageEventTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2B172164BD00C5A80C /* SCPageEventTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -135,17 +137,19 @@
 		1BED0569144ED9E400B8DC2A /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../../SCUI/SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
 		1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileSDK.h; sourceTree = "<group>"; };
 		781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B351806D1A400035AC3 /* SCHTMLReaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = SCHTMLReaderRequest.h; path = ../SCApi/SitecoreMobileSDK/SCHTMLReaderRequest.h; sourceTree = "<group>"; };
+		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
+		781F4B351806D1A400035AC3 /* SCHTMLReaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCHTMLReaderRequest.h; path = ../SCApi/SitecoreMobileSDK/SCHTMLReaderRequest.h; sourceTree = "<group>"; };
 		78701B7817D756FD00CA9D2F /* SCExtendedOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCExtendedOperations.h; path = ../../SCUtils/SitecoreMobileSDK/SCExtendedOperations.h; sourceTree = "<group>"; };
 		788DE11217D774A500AB3D8C /* SCExtendedApiContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCExtendedApiContext.h; path = ../../SCApi/SitecoreMobileSDK/SCExtendedApiContext.h; sourceTree = "<group>"; };
 		788DE11417D774E300AB3D8C /* SCFieldImageParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCFieldImageParams.h; path = ../../SCApi/SitecoreMobileSDK/SCFieldImageParams.h; sourceTree = "<group>"; };
 		788DE11517D774E300AB3D8C /* SCParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCParams.h; path = ../../SCApi/SitecoreMobileSDK/SCParams.h; sourceTree = "<group>"; };
+		78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUploadProgress.h; path = ../SCUtils/SitecoreMobileSDK/SCUploadProgress.h; sourceTree = "<group>"; };
 		7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCExtendedAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 		7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebApiVersion.h; path = ../../SCApi/SitecoreMobileSDK/SCWebApiVersion.h; sourceTree = "<group>"; };
 		7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 		7E5946FB17E72A0D00653196 /* SCItemSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCItemSource.h; path = ../../SCApi/SitecoreMobileSDK/SCItemSource.h; sourceTree = "<group>"; };
 		7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCItemSourcePOD.h; path = ../../SCApi/SitecoreMobileSDK/SCItemSourcePOD.h; sourceTree = "<group>"; };
+		7E96BB4A18165563002AF8FB /* SCRichTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCRichTextField.h; path = ../../SCApi/SitecoreMobileSDK/SCRichTextField.h; sourceTree = "<group>"; };
 		7EB71F2A172164BD00C5A80C /* SCTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCTriggeringRequest.h; sourceTree = "<group>"; };
 		7EB71F2B172164BD00C5A80C /* SCPageEventTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCPageEventTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCPageEventTriggeringRequest.h; sourceTree = "<group>"; };
 		7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCampaignTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCCampaignTriggeringRequest.h; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		1B13992F1446E84E0015C191 = {
 			isa = PBXGroup;
 			children = (
+				78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */,
 				781F4B351806D1A400035AC3 /* SCHTMLReaderRequest.h */,
 				781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */,
 				781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */,
@@ -245,6 +250,7 @@
 		1B68C4C1144C67B4005CC74B /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				7E96BB4A18165563002AF8FB /* SCRichTextField.h */,
 				7E5946FB17E72A0D00653196 /* SCItemSource.h */,
 				7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */,
 				788DE11417D774E300AB3D8C /* SCFieldImageParams.h */,
@@ -386,7 +392,9 @@
 				788DE11317D774A500AB3D8C /* SCExtendedApiContext.h in Headers */,
 				1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */,
 				1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */,
+				7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */,
 				78701B7917D756FD00CA9D2F /* SCExtendedOperations.h in Headers */,
+				78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */,
 				788DE11617D774E300AB3D8C /* SCFieldImageParams.h in Headers */,
 				788DE11717D774E300AB3D8C /* SCParams.h in Headers */,
 				1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */,
