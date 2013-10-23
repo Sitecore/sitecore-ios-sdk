@@ -494,7 +494,8 @@ function testFindContactWithBirthday( birthday )
                 }
                 else
                 {
-                    resultCallback( "FAIL_BIRTHDAY_ACCOUNTS_COUNT_" + contacts.length );
+                    resultCallback( "FAIL_BIRTHDAY_ACCOUNTS_COUNT_" + encodeURIComponent( JSON.stringify(contacts) ) );
+                    //resultCallback( "FAIL_BIRTHDAY_ACCOUNTS_COUNT_" + contacts.length );
                 }
             }
             var onError = function( error )
@@ -519,6 +520,8 @@ function testFindContactWithBirthday( birthday )
 
 function testCreateContactWithBirthday( birthday )
 {
+    //alert('testCreateContactWithBirthday');
+    
     try
     {
         function onDeviceReady()
