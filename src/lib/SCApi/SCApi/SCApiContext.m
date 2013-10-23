@@ -174,6 +174,11 @@
     return self.extendedApiContext.systemLanguages;
 }
 
+-(void)cleanupItemsCache
+{
+    return [ self->_extendedApiContext cleanupItemsCache ];
+}
+
 - (SCAsyncOp)credentialsCheckerForSite:( NSString* )site
 {
     return asyncOpWithJAsyncOp( [ self.extendedApiContext credentialsCheckerForSite: site ] );

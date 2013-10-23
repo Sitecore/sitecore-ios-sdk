@@ -130,6 +130,12 @@
 
 
 /**
+ This method wipes out all cached items. Cached requests won't be affected though.
+ Use this method if you need to perform a memory intensive operation efficiently. It should help you avoiding unwanted memory warning interrupts.
+ */
+-(void)cleanupItemsCache;
+
+/**
  Used to check if a user with given name and password exists on the instance.
  The callback gets NSNull on success and nil on error.
  

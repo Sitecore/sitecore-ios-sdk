@@ -99,6 +99,11 @@
     return _defaultImagesLifeTimeInCache;
 }
 
+-(void)cleanupItemsCache
+{
+    [ self->_itemsCache cleanupAll ];
+}
+
 -(SCItemSourcePOD*)contextSource
 {
     SCItemSourcePOD* result = [ SCItemSourcePOD new ];
