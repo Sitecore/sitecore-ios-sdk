@@ -31,6 +31,8 @@
     MKMapView* _mapView;
 }
 
+static const double DEFAULT_REGION_RADIUS = 10000.;
+
 -(id)initWithMapView:( MKMapView* )mapView_
 {
     self = [ super init ];
@@ -50,7 +52,7 @@
 -(void)initialize
 {
     self.regionIsAdjusted = NO;
-    self.regionRadius = 10000.;
+    self.regionRadius = DEFAULT_REGION_RADIUS;
 }
 
 -(void)adjustRegion
@@ -87,21 +89,50 @@
         {
             center_ = self->_selfLocation.coordinate;
             viewRegion_ = MKCoordinateRegionMakeWithDistance(
-                                                            self->_selfLocation.coordinate
-                                                            , self->_regionRadius, self->_regionRadius
+                                                            center_,
+                                                             self->_regionRadius, self->_regionRadius
                                                             );
         }
 
-        BOOL centerCoordsIsValid = CLLocationCoordinate2DIsValid( viewRegion_.center );
+        MKCoordinateRegion adjustedRegion = [ self->_mapView regionThatFits:viewRegion_ ];
 
-        BOOL spanIsValid =   viewRegion_.span.latitudeDelta > 0.0f
-                          && viewRegion_.span.longitudeDelta > 0.0f;
-
-        if ( spanIsValid && centerCoordsIsValid )
+        if ( [ self isRegionValid: adjustedRegion ] )
         {
-            [ self->_mapView setRegion: viewRegion_ animated: YES ];
+            [ self->_mapView setRegion: adjustedRegion animated: YES ];
         }
+        else
+        {
+            [ self adjustDefaultRegion ];
+        }
+        
     }
+}
+
+-(void)adjustDefaultRegion
+{
+    CLLocationCoordinate2D center_ = self->_mapView.userLocation.coordinate;
+    
+    MKCoordinateRegion viewRegion_ = MKCoordinateRegionMakeWithDistance(
+                                                     center_,
+                                                     DEFAULT_REGION_RADIUS, DEFAULT_REGION_RADIUS
+                                                     );
+    
+    MKCoordinateRegion adjustedRegion = [ self->_mapView regionThatFits:viewRegion_ ];
+
+    if ( [ self isRegionValid: adjustedRegion ] )
+    {
+        [ self->_mapView setRegion: adjustedRegion animated: YES ];
+    }
+}
+
+-(BOOL)isRegionValid:(MKCoordinateRegion)region
+{
+    BOOL centerCoordsIsValid = CLLocationCoordinate2DIsValid( region.center );
+    
+    BOOL spanIsValid =   region.span.latitudeDelta > 0.0f
+                      && region.span.longitudeDelta > 0.0f;
+    
+    return spanIsValid && centerCoordsIsValid;
 }
 
 -(void)adjustRegionJustForAdresses
