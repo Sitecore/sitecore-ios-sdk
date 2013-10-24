@@ -15,6 +15,8 @@
 
    __strong NSString* _JSToTest;
    __strong NSString* _javascript;
+    
+    NSInteger _finishLoadInvocationCount;
 }
 
 -(id)initWithJSResourcePath:( NSString* )path_
@@ -40,19 +42,31 @@
 
 -(void)runJavascript
 {
-    [ self->_webView loadURLWithString: @"http://ws-alr1.dk.sitecore.net/mobilesdk-test-path" ];
+    NSString* testPath = [ TestHostConfig mobileSdkTestPath ];
+    [ self->_webView loadURLWithString: testPath ];
 }
 
 #pragma mark SCWebViewDelegate
 
 -(void)webViewDidFinishLoad:( SCWebView* )webView_
 {
-    NSString* jsResult_ = nil;
-    jsResult_ = [ _webView stringByEvaluatingJavaScriptFromString: self->_javascript ];
-    NSLog(@"webViewDidFinishLoad1 - Result : %@", jsResult_ );
+    // First time we come here after [ SCWebView new ]
+    // Then we come here after [ self->_webView loadURLWithString: testPath ] and should execute JavaScript
+    // We may come here after javascript is executed but we should not run it again
     
-    jsResult_ = [ webView_ stringByEvaluatingJavaScriptFromString: self->_JSToTest ];
-    NSLog(@"webViewDidFinishLoad2 - Result : %@", jsResult_ );    
+    if ( 1 == self->_finishLoadInvocationCount )
+    {
+        // NSLog( @"---===webViewDidFinishLoad : %d", self->_finishLoadInvocationCount );
+        
+        NSString* jsResult_ = nil;
+        jsResult_ = [ _webView stringByEvaluatingJavaScriptFromString: self->_javascript ];
+        NSLog(@"webViewDidFinishLoad1 - Result : %@", jsResult_ );
+        
+        jsResult_ = [ webView_ stringByEvaluatingJavaScriptFromString: self->_JSToTest ];
+        NSLog(@"webViewDidFinishLoad2 - Result : %@", jsResult_ );
+    }
+    
+    ++self->_finishLoadInvocationCount;
 }
 
 - (BOOL)webView:(SCWebView *)webView

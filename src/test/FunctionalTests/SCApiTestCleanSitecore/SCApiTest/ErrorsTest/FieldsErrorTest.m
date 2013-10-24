@@ -10,41 +10,41 @@
     __block SCPagedItems* pagedItems_;
     __weak __block SCApiContext* apiContext_ = nil;
     __block SCItem* result_field_ = nil;
-    __block SCError* field_error_ = nil;
+    __block SCApiError* field_error_ = nil;
 
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-        request_.requestType = SCItemReaderRequestItemPath;
-        request_.request     = SCHomePath;
-        request_.pageSize    = 2;
-
-        pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
-                                                      request: request_ ];
-        [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
         {
-            if ( !result_ )
-            {
-                did_finish_callback_();
-                return;
-            }
-            [ result_ fieldValueReaderForFieldName: @"WrongField" ]( ^( id result_, NSError* error_ )
-            {
-                result_field_ = result_;
-                field_error_ = (SCError*)error_;
-                did_finish_callback_();
-            } );
-        } );
-    };
+            strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+            apiContext_ = strongContext_;
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            request_.requestType = SCItemReaderRequestItemPath;
+            request_.request     = SCHomePath;
+            request_.pageSize    = 2;
+
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+                                                          request: request_ ];
+            [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
+            {
+                if ( !result_ )
+                {
+                    did_finish_callback_();
+                    return;
+                }
+                [ result_ fieldValueReaderForFieldName: @"WrongField" ]( ^( id result_, NSError* error_ )
+                {
+                    result_field_ = result_;
+                    field_error_ = (SCApiError*)error_;
+                    did_finish_callback_();
+                } );
+            } );
+        };
+
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     
@@ -67,9 +67,7 @@
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
@@ -98,7 +96,7 @@
                                            selector: _cmd ];
     }
     
-    
+    // Old fields from SQLite. rm -rf Cache.db will help
     NSLog( @"products_items_: %@", items_ );
     NSLog( @"result_fields_: %@", result_fields_ );
     GHAssertTrue( apiContext_ != nil, @"session should be deallocated" );
@@ -118,7 +116,7 @@
         __block SCApiContext* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
@@ -146,7 +144,7 @@
     }
     
     
-    GHAssertTrue( apiContext_ != nil, @"session should be deallocated" );
+    GHAssertTrue( apiContext_ != nil, @"session should be retained" );
     GHAssertTrue( result_items_ != nil, @"OK" );
 
     GHAssertTrue( result_fields_ != nil, @"OK" );
@@ -167,7 +165,7 @@
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
             [ apiContext_ itemReaderForItemPath:  SCHomePath ]( ^( id result_, NSError* error_ )

@@ -10,25 +10,21 @@
 
 static NSTimeInterval imageCachePeriod_ = 60*60*24.;
 
-@interface SCApiContext (SCContentApiCreateItem)
-
--(JFFAsyncOperation)mediaItemCreatLoaderWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_;
--(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )request_;
-
-@end
 
 @implementation SCContentApiCreateItem
 {
-    NSURLRequest* _request;
-    NSString    * _location;
-    NSString    * _login;
-    NSString    * _password;
-    NSString    * _database;
-    NSString    * _folder;
-    NSString    * _itemName;
-    NSURL       * _imageUrl;
+    NSURLRequest* _request           ;
+    NSString    * _location          ;
+    NSString    * _login             ;
+    NSString    * _password          ;
+    NSString    * _database          ;
+    NSString    * _site              ;
+    NSString    * _language          ;
+    NSString    * _folder            ;
+    NSString    * _itemName          ;
+    NSURL       * _imageUrl          ;
     CGFloat       _compressionQuality;
-    NSDictionary* _fields;
+    NSDictionary* _fields            ;
 }
 
 +(BOOL)canInitWithRequest:( NSURLRequest* )request_
@@ -60,16 +56,24 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     return imageLoaderForURLString( urlString_, imageCachePeriod_ );
 }
 
+-(SCApiContext*)createContext
+{
+    SCApiContext* context_ = [ SCApiContext contextWithHost: self->_location
+                                                      login: self->_login
+                                                   password: self->_password ];
+    context_.defaultDatabase = self->_database;
+    context_.defaultSite     = self->_site    ;
+    context_.defaultLanguage = self->_language;
+    
+    return context_;
+}
+
 -(JFFAsyncOperationBinder)createItemWithImage
 {
     return ^JFFAsyncOperation( id image_ )
     {
-        SCApiContext* context_ = [ SCApiContext contextWithHost: self->_location
-                                                          login: self->_login
-                                                       password: self->_password ];
-
-        context_.defaultDatabase = self->_database;
-
+        SCApiContext* context_ = [ self createContext ];
+        
         SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
         request_.itemName     = self->_itemName;
         request_.itemTemplate = @"System/Media/Unversioned/Image";
@@ -83,7 +87,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
         request_.folder      = self->_folder;
         request_.fieldNames  = [ NSSet new ];
 
-        return [ context_ mediaItemCreatLoaderWithRequest: request_ ];
+        return [ context_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
     };
 }
 
@@ -99,15 +103,12 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
 
         SCItem* item_ = itemPtr_;
 
-        SCApiContext* context_ = [ SCApiContext contextWithHost: self->_location
-                                                          login: self->_login
-                                                       password: self->_password ];
-
+        SCApiContext* context_ = [ self createContext ];
         SCEditItemsRequest* request_ = [ SCEditItemsRequest requestWithItemId: item_.itemId ];
 
         request_.fieldsRawValuesByName = self->_fields;
 
-        return [ context_ editItemsLoaderWithRequest: request_ ];
+        return [ context_.extendedApiContext editItemsWithRequest: request_ ];
     };
 }
 
@@ -169,14 +170,16 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSDictionary* args_  = [ self->_request.URL queryComponents ];
     NSString* imagePath_ = [ args_ firstValueIfExsistsForKey: @"imageUrl" ];
 
-    NSString* location_  = [ args_ firstValueIfExsistsForKey: @"location" ];
-    self->_location = [ [ NSString alloc ] initWithFormat: @"%@/-/item", location_ ];
 
+    self->_location = [ args_ firstValueIfExsistsForKey: @"location" ];
     self->_login    = [ args_ firstValueIfExsistsForKey: @"login"    ];
     self->_password = [ args_ firstValueIfExsistsForKey: @"password" ];
     self->_database = [ args_ firstValueIfExsistsForKey: @"database" ];
+    self->_site     = [ args_ firstValueIfExsistsForKey: @"site"     ];
+    self->_language = [ args_ firstValueIfExsistsForKey: @"language" ];
     self->_folder   = [ args_ firstValueIfExsistsForKey: @"path"     ];
     self->_itemName = [ args_ firstValueIfExsistsForKey: @"itemName" ];
+
 
     [ self setCompressionQualityForArgs: args_ ];
 

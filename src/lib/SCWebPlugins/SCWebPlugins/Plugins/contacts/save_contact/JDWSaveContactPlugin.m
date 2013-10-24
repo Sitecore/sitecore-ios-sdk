@@ -7,28 +7,7 @@
 
 #import "UIPopoverController+PresentPopoverInWebView.h"
 
-#import <AddressBookUI/AddressBookUI.h>
 
-@interface SCPluginABNewPersonViewController : ABNewPersonViewController
-@end
-
-@implementation SCPluginABNewPersonViewController
-
--(void)viewDidLoad
-{
-    [ super viewDidLoad ];
-
-    UIBarButtonItem* rightBarButtonItem_ = self.navigationItem.rightBarButtonItem;
-
-    UIBarButtonItem* newRightBarButtonItem_ = [ [ UIBarButtonItem alloc ]
-                                               initWithBarButtonSystemItem: UIBarButtonSystemItemSave
-                                                                    target: rightBarButtonItem_.target
-                                                                    action: rightBarButtonItem_.action ];
-
-    self.navigationItem.rightBarButtonItem = newRightBarButtonItem_;
-}
-
-@end
 
 @interface JDWSaveContactPlugin : NSObject
 <
@@ -47,6 +26,7 @@
     NSURLRequest* _request;
     UINavigationController* _navigationController;
     UIPopoverController* _popover;
+    ABNewPersonViewController* _newPersonController;
 }
 
 -(id)initWithRequest:( NSURLRequest* )request_
@@ -85,6 +65,7 @@
                    webView:( UIWebView* )webView_
 {
     UIViewController* rootController_ = webView_.window.rootViewController;
+    
     if ( !rootController_ )
     {
         SCContactsPluginError* error_ = [ SCContactsPluginError noRootViewControllerError ];
@@ -94,23 +75,28 @@
         return;
     }
 
-    ABNewPersonViewController* controller_ = [ SCPluginABNewPersonViewController new ];
-    controller_.newPersonViewDelegate = self;
-
-    controller_.displayedPerson = contact_.person;
-    controller_.addressBook     = contact_.addressBook;
-
-    _navigationController = [ [ UINavigationController alloc ] initWithRootViewController: controller_ ];
-
-    if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
-    {
-        [ rootController_ presentTopViewController: _navigationController ];
-    }
-    else
-    {
-        [ self showPopoverWithController: _navigationController
-                                    view: webView_ ];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        self->_newPersonController = [ ABNewPersonViewController new ];
+        self->_newPersonController.newPersonViewDelegate = self;
+        
+        self->_newPersonController.displayedPerson = contact_.person;
+        self->_newPersonController.addressBook     = contact_.addressBook;
+        
+        
+        _navigationController = [ [ UINavigationController alloc ] initWithRootViewController: self->_newPersonController ];
+        
+        if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )
+        {
+            [ rootController_ presentTopViewController: _navigationController ];
+        }
+        else
+        {
+            [ self showPopoverWithController: _navigationController
+                                        view: webView_ ];
+        }
+        
+    });
 }
 
 -(void)didOpenInWebView:( UIWebView* )webView_
@@ -212,6 +198,12 @@
 -(void)popoverControllerDidDismissPopover:( UIPopoverController* )popoverController_
 {
     [ self onStopWithPerson: NULL ];
+}
+
+-(void)unknownPersonViewController:(ABUnknownPersonViewController *)unknownCardViewController didResolveToPerson:(ABRecordRef)person_
+{
+    [ self hideControllers ];
+    [ self onStopWithPerson: person_ ];
 }
 
 @end

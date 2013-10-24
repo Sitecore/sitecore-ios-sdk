@@ -2,12 +2,6 @@
 
 //add connection network latency options
 
-@interface SCItemsReaderRequest ()
-
-@property ( nonatomic ) NSString* database;
-
-@end
-
 @implementation SCItemsReaderRequest
 
 -(id)initWithRequest:( NSString* )request_
@@ -30,7 +24,8 @@
 
 -(NSString*)request
 {
-    NSString* request_ = _request ?: @"";
+    NSString* request_ = self->_request ?: @"";
+
     return self.requestType == SCItemReaderRequestItemPath
         ? [ request_ lowercaseString ]
         : request_;
@@ -39,6 +34,8 @@
 +(id)requestWithItemId:( NSString* )itemId
            fieldsNames:( NSSet* )fieldNames
 {
+    NSParameterAssert( nil != itemId );
+    
     return [ [ self alloc ] initWithRequest: itemId
                                 requestType: SCItemReaderRequestItemId
                                 fieldsNames: fieldNames
@@ -49,6 +46,8 @@
            fieldsNames:( NSSet* )fieldNames
                  scope:( SCItemReaderScopeType )scope
 {
+    NSParameterAssert( nil != itemId );
+    
     return [ [ self alloc ] initWithRequest: itemId
                                 requestType: SCItemReaderRequestItemId
                                 fieldsNames: fieldNames
@@ -82,15 +81,20 @@
 
 +(id)requestWithItemId:( NSString* )itemId_
 {
+    NSParameterAssert( nil != itemId_ );
+    
     return [ self requestWithItemId: itemId_
                         fieldsNames: [ NSSet new ] ];
 }
 
 -(SCItemReaderScopeType)scope
 {
-    if ( 0 == _scope )
+    if ( 0 == self->_scope )
+    {
         return SCItemReaderSelfScope;
-    return _scope;
+    }
+    
+    return self->_scope;
 }
 
 -(id)copyWithZone:( NSZone* )zone_
@@ -105,6 +109,9 @@
     result_.page        = self.page;
     result_.pageSize    = self.pageSize;
     result_.language    = [ self.language copyWithZone: zone_ ];
+    result_.database    = [ self.database copyWithZone: zone_ ];
+    result_.site        = [ self.site copyWithZone: zone_ ];
+    result_.itemVersion = [ self.itemVersion copyWithZone: zone_ ];
 
     return result_;
 }
@@ -112,10 +119,14 @@
 -(BOOL)isEqual:( SCItemsReaderRequest* )other_
 {
     if ( other_ == self )
+    {
         return YES;
+    }
 
     if ( !other_ || ![ other_ isKindOfClass: [ self class ] ] )
+    {
         return NO;
+    }
 
     return [ self isEqualToItemsReaderRequest: other_ ];
 }
@@ -123,20 +134,26 @@
 -(BOOL)isEqualToItemsReaderRequest:( SCItemsReaderRequest* )other_
 {
     if ( self == other_ )
+    {
         return YES;
+    }
 
     return self.scope       == other_.scope
         && self.requestType == other_.requestType
         && self.flags       == other_.flags
         && self.page        == other_.page
         && self.pageSize    == other_.pageSize
-        && [ NSObject object: self.request    isEqualTo: other_.request    ]
-        && [ NSObject object: self.fieldNames isEqualTo: other_.fieldNames ];
+        && [ NSObject object: self.request     isEqualTo: other_.request     ]
+        && [ NSObject object: self.fieldNames  isEqualTo: other_.fieldNames  ]
+        && [ NSObject object: self.language    isEqualTo: other_.language    ]
+        && [ NSObject object: self.database    isEqualTo: other_.database    ]
+        && [ NSObject object: self.site        isEqualTo: other_.site        ]
+        && [ NSObject object: self.itemVersion isEqualTo: other_.itemVersion ];
 }
 
 -(NSUInteger)hash
 {
-    return [ _request hash ];
+    return [ self->_request hash ];
 }
 
 @end

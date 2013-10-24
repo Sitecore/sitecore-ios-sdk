@@ -5,7 +5,7 @@
 
 @implementation SCCreateMediaItemRequest (ToItemsReadRequest)
 
--(SCItemsReaderRequest*)toItemsReadRequestWithApiContext:( SCApiContext* )apiContext_
+-(SCItemsReaderRequest*)toItemsReadRequestWithApiContext:( SCExtendedApiContext* )apiContext_
 {
     SCItemsReaderRequest* result_ = [ SCItemsReaderRequest new ];
     result_ = [ result_ itemsReaderRequestWithApiContext: apiContext_ ];

@@ -25,7 +25,7 @@
         
         JFFDidFinishAsyncOperationHandler doneCallBack_ = ^( NSArray* points_, NSError* error_ )
         {
-            NSUInteger expectedPointsCount_ = 357;
+            NSUInteger expectedPointsCount_ = 1503;
 
             if ( points_.count != expectedPointsCount_ )
             {

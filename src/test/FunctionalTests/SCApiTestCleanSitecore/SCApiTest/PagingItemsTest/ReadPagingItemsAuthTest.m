@@ -14,7 +14,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
 
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -40,13 +40,14 @@
                                            selector: _cmd ];
 
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    GHAssertTrue( [ items_count_ unsignedIntValue ] == 3, @"OK" );
+    GHAssertTrue( [ items_count_ unsignedIntValue ] == 4, @"OK" );
 
     GHAssertTrue( [ pagedItems_ itemForIndex: 0 ] != nil, @"OK" );
     SCItem* parent_ = [ pagedItems_ itemForIndex: 0 ];
     GHAssertTrue( [ parent_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-    GHAssertTrue( parent_.allFieldsByName != nil, @"OK" );
-    GHAssertTrue( [ parent_.allFieldsByName count ] == [ parent_.readFieldsByName count ], @"OK" );
+    NSDictionary *dic = parent_.allFieldsByName;
+    GHAssertTrue( dic != nil, @"OK" );
+    GHAssertTrue( [ dic count ] == [ parent_.readFieldsByName count ], @"OK" );
 
     GHAssertTrue( [ parent_.readChildren count ] == 1, @"OK" );
     GHAssertTrue( parent_.parent == nil, @"OK" );

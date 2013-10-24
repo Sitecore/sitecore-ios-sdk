@@ -136,15 +136,14 @@
         return;
     }
 
-    
-    
-    
     NSDictionary* components_ = [ self->_request.URL queryComponents ];
 
     NSString* text_      = [ components_ firstValueIfExsistsForKey: @"text" ];
     NSArray*  urls_      = components_[ @"url" ];
     NSArray*  imageUrls_ = components_[ @"image_url" ];
-    NSString* socialEngine = [ components_ firstValueIfExsistsForKey: @"social_engine" ];
+    
+    NSLocale *posixLocale = [ [NSLocale alloc] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    NSString* socialEngine = [ [ components_ firstValueIfExsistsForKey: @"social_engine" ] lowercaseStringWithLocale:posixLocale ];
     
     self->_poster = [ SCSocialFactory newPosterNamed: socialEngine ];
     if ( nil == self->_poster )

@@ -23,7 +23,7 @@
 
 @end
 
-@interface SCApiContext (SCMapKitLocationUtils)
+@interface SCExtendedApiContext (SCMapKitLocationUtils)
 
 -(JFFAsyncOperation)itemsLoaderWithRequest:( SCItemsReaderRequest* )request_;
 
@@ -71,11 +71,12 @@ JFFAsyncOperationBinder addressDictionariesGeocoder()
 {
     return ^JFFAsyncOperation( NSArray* addressDictionaries_ )
     {
-        JFFAsyncOperationBinder block_ = ^JFFAsyncOperation( NSDictionary* addressDictionary_ )
+        JFFMappingBlock block_ = ^id( NSDictionary* addressDictionary_ )
         {
             return addressDictionaryGeocoderLoader( addressDictionary_ );                             
         };
-        JFFAsyncOperation loader_ = [ addressDictionaries_ tolerantFaultAsyncMap: block_ ];
+        NSArray* geocoderOprations_ = [ addressDictionaries_ map: block_ ];
+        JFFAsyncOperation loader_ = sequenceOfAsyncOperationsWithSuccessfullResults( geocoderOprations_ );
 
         JFFChangedResultBuilder resultBuilder_ = ^id( NSArray* result_ )
         {
@@ -95,7 +96,7 @@ static JFFAsyncOperation itemsLoaderForQuery( SCApiContext* apiContext_, NSStrin
     request_.requestType = SCItemReaderRequestQuery;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
-    return [ apiContext_ itemsLoaderWithRequest: request_ ];
+    return [ apiContext_.extendedApiContext itemsLoaderWithRequest: request_ ];
 }
 
 static JFFAsyncOperation itemsLoaderForPath( SCApiContext* apiContext_, NSString* path_ )
@@ -106,7 +107,7 @@ static JFFAsyncOperation itemsLoaderForPath( SCApiContext* apiContext_, NSString
     request_.scope       = SCItemReaderChildrenScope;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
-    return [ apiContext_ itemsLoaderWithRequest: request_ ];
+    return [ apiContext_.extendedApiContext itemsLoaderWithRequest: request_ ];
 }
 
 static JFFAsyncOperation itemAddressesGeocoderWithLoader( SCApiContext* apiContext_

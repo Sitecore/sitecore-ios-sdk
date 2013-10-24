@@ -335,7 +335,12 @@
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -359,7 +364,12 @@
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -376,6 +386,7 @@
 					../SCApi,
 					"../../lib-third-party/JFFLibrary/lib",
 					../SCUI,
+					"../../lib-third-party/iFeatureAvailability",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -395,6 +406,7 @@
 					../SCApi,
 					"../../lib-third-party/JFFLibrary/lib",
 					../SCUI,
+					"../../lib-third-party/iFeatureAvailability",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";

@@ -1,15 +1,5 @@
 #import "SCSitecoreCredentials.h"
 
-#include <openssl/crypto.h>
-#include <openssl/bn.h>
-#include <openssl/rsa.h>
-
-#import <AmberFoundation/AmberFoundation.h>
-
-#include <vector>
-#include <algorithm>
-#import <ObjcScopedGuard/ObjcScopedGuard.h>
-
 using namespace ::Utils;
 
 @interface SCSitecoreCredentials ()
@@ -30,8 +20,6 @@ using namespace ::Utils;
 {
     return self->_password ?: @"";
 }
-
-
 
 -(NSString*)RSA_encryptString:( NSString* )plainText_
 {

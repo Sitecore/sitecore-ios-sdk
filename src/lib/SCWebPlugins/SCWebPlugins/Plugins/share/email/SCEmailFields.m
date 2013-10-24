@@ -1,5 +1,6 @@
 #import "SCEmailFields.h"
 
+
 //STODO remove
 @interface NSArray (ArrayWithEmailOnly_JDWTwitterPlugin)
 
@@ -32,6 +33,8 @@
     result_.body           = [ components_ firstValueIfExsistsForKey: @"body" ];
     result_.isHTML         = [ [ components_ firstValueIfExsistsForKey: @"isHTML" ] boolValue ];
 
+    result_.subject = [ result_.subject gtm_stringByUnescapingFromHTML ];
+    
     return result_;
 }
 

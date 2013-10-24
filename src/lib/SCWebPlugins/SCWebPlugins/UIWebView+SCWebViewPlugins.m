@@ -77,8 +77,8 @@
                                                   systemVersion: systemVersion
                                                      socketPort: port ];
         
-        NSString *result = [ self stringByEvaluatingJavaScriptFromString: js_ ];
-        NSLog(@"result: %@", result);
+        [ self stringByEvaluatingJavaScriptFromString: js_ ];
+     
     }
 
     [ self addSCHookTouchesView ];

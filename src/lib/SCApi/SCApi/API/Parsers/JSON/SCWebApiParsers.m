@@ -4,6 +4,8 @@
 
 #import "SCItemRecordsPage+JsonParser.h"
 
+#define IS_RESPONSE_LOGS_ENABLED 0
+
 static JFFAsyncOperation invalidResponseFormatLoader( NSData* data_ )
 {
     SCInvalidResponseFormatError* error_ = [ SCInvalidResponseFormatError new ];
@@ -16,9 +18,11 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ )
     return asyncOperationWithAnalyzer( data_, ^id( id data_, NSError** outError_ )
     {
         //TODO test logs, just uncomment
-        //NSString* responseStr_ = [ [ NSString alloc ] initWithData: data_
-        //                                                  encoding: NSUTF8StringEncoding ];
-        //NSLog( @"response: %@ for url: %@", responseStr_, url_ );
+#if IS_RESPONSE_LOGS_ENABLED
+        NSString* responseStr_ = [ [ NSString alloc ] initWithData: data_
+                                                          encoding: NSUTF8StringEncoding ];
+        NSLog( @"response: %@ for url: %@", responseStr_, url_ );
+#endif
 
         NSError* localError_ = nil;
         //STODO parse in separate thread
@@ -86,7 +90,7 @@ JFFAsyncOperationBinder deleteItemsJSONResponseParser( NSData* responseData_ )
     };
 }
 
-SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiCntext( SCApiContext* apiContext_ )
+SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiContextAndRequest( SCExtendedApiContext* apiContext_, id<SCItemSource> requestedSource_ )
 {
     return ^JFFAsyncOperationBinder( NSURL* url_ )
     {
@@ -96,7 +100,8 @@ SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiCntext( SCApiContext* apiCon
 
             JFFAsyncOperationBinder parseItemsBinder_ =
             [ SCItemRecordsPage itemRecordsWithResponseData: responseData_
-                                                 apiContext: apiContext_ ];
+                                                 apiContext: apiContext_
+                                         forRequestedSource: requestedSource_ ];
             return bindSequenceOfAsyncOperations( loader_, parseItemsBinder_, nil );
         };
     };

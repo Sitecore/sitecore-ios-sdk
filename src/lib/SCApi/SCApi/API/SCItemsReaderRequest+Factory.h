@@ -1,9 +1,9 @@
 #import "SCItemsReaderRequest.h"
 
-@class SCApiContext;
+@class SCExtendedApiContext;
 
 @interface SCItemsReaderRequest (Factory)
 
--(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCApiContext* )context_;
+-(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCExtendedApiContext* )context_;
 
 @end

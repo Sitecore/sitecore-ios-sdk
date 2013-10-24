@@ -19,8 +19,9 @@
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
+                
                 
                 [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ](
                 ^( id result_, NSError* error_ )
@@ -45,6 +46,14 @@
                                                selector: _cmd ];
     }
 
+//    {"statusCode":200,"result":{"totalCount":1,"resultCount":1,"items":[{"Database":"web",
+//        
+// >>>>>
+//        "DisplayName":"$name",
+// >>>>>
+//        "HasChildren":false,"ID":"{00CB2AC4-70DB-482C-85B4-B1F3A4CFE643}","Language":"en","LongID":"/{11111111-1111-1111-1111-111111111111}/{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}/{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}/{00CB2AC4-70DB-482C-85B4-B1F3A4CFE643}","Path":"/sitecore/content/Home/Test Fields","Template":"Test Templates/Sample fields","Version":1,"Fields":{}}]}}
+    
+    
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( result_item_ != nil, @"OK" );
     NSLog( @"result_item_.displayName: %@", result_item_.displayName );
@@ -68,7 +77,7 @@
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
                 
                 [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
@@ -114,7 +123,7 @@
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
             
                 SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -178,7 +187,7 @@
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -245,7 +254,7 @@
             @autoreleasepool
             {
                 NSString* path_ = SCTestFieldsItemPath;
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
                 
                 SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];

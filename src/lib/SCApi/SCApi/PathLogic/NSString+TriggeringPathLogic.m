@@ -4,15 +4,13 @@
 
 -(NSString *)triggeringPathWithHost:(NSString *)host_
 {
-    NSArray *hostComponents_ = [ host_ componentsSeparatedByString:@"/"];
-    NSString *baseHost_ = [ hostComponents_ objectAtIndex:0 ];
     NSString *postfix = @"";
     if ( [ self hasSymbols ] )
     {
         postfix = @".aspx";
     }
 
-    return [ NSString stringWithFormat:@"http://%@/%@%@", baseHost_, self, postfix ];
+    return [ NSString stringWithFormat:@"%@/%@%@", host_, self, postfix ];
 }
 
 @end

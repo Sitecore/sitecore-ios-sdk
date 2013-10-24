@@ -3,6 +3,8 @@
 //
 
 #ifdef __OBJC__
+    #import "GTMNSString+HTML.h"
+
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFAsyncOperations/JFFAsyncOperations.h>
     #import <JFFUI/JFFUI.h>
@@ -11,6 +13,7 @@
 
     #import <iFeatureAvailability/iFeatureAvailability.h>
 
+    #import <AddressBookUI/AddressBookUI.h>
     #import <UIKit/UIKit.h>
     #import <Social/Social.h>
     #import <Twitter/Twitter.h>

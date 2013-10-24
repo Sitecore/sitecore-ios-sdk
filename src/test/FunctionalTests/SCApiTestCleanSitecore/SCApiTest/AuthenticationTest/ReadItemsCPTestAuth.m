@@ -18,7 +18,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
@@ -30,9 +30,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
             items_ = result_items_;
             request_.request = path_;
             strongContext_ = [[SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                  login: SCWebApiAdminLogin
-                                               password: SCWebApiAdminPassword ];
+                                                           login: SCWebApiAdminLogin
+                                                        password: SCWebApiAdminPassword
+                                                         version: SCWebApiV1 ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
             
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
@@ -58,8 +60,8 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
     //test item relations
     for (SCItem* item_ in items_ )
     { 
-        GHAssertTrue( item_.readChildren == nil, @"OK" );
-        GHAssertTrue( item_.parent == nil, @"OK" );
+        GHAssertNil( item_.readChildren, @"OK" );
+        GHAssertNil( item_.parent      , @"OK" );
     }
     
     //test get items (with auth)
@@ -67,9 +69,12 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
     GHAssertTrue( [ items_auth_ count ] == 3, @"OK" );
     //test item relations
     for (SCItem* item_ in items_auth_ )
-    {    
-        GHAssertTrue( item_.readChildren == nil, @"OK" );
-        GHAssertTrue( item_.parent == nil, @"OK" );
+    {
+        NSArray* readChildren = item_.readChildren;
+        SCItem* parent = item_.parent;
+        
+        GHAssertNil( readChildren, @"OK" );
+        GHAssertNil( parent      , @"OK" );
     }
 }
 
@@ -84,7 +89,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
         SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
@@ -96,9 +101,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
             items_ = result_items_;
             request_.request = path_;
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                  login: SCWebApiAdminLogin
-                                               password: SCWebApiAdminPassword ];
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword
+                                                           version: SCWebApiV1 ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
             
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
@@ -158,20 +165,20 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
         {
             @autoreleasepool
             {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-            apiContext_ = strongContext_;
-            
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                            fieldsNames: [ NSSet new ] ];
-            request_.scope = scope_;
-            request_.flags = SCItemReaderRequestIngnoreCache;
-            
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
-             {
-                 items_ = result_items_;
-                 request_.request = path_;
-                 didFinishCallback_();
-             } );
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
+                apiContext_ = strongContext_;
+                
+                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                                fieldsNames: [ NSSet new ] ];
+                request_.scope = scope_;
+                request_.flags = SCItemReaderRequestIngnoreCache;
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                 {
+                     items_ = result_items_;
+                     request_.request = path_;
+                     didFinishCallback_();
+                 } );
             }
         };
         

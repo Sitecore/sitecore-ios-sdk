@@ -9,20 +9,34 @@
 #endif
 
 #ifdef __OBJC__
+    #import "SCTestPath.h"
+    #import "SCGlobalSettings.h"
+    #import "SCTestUsers.h"
+
+    #import "TestingRequestFactory.h"
     #import "SCAsyncTestCase.h"
 
+    #import <SCApi/Cache/RecordCache/SCItemRecordCacheRW.h>
+    #import <SCApi/API/ItemSource/SCItemsReaderRequest+SCItemSource.h>
+    #import <SitecoreMobileSDK/SCItemSourcePOD.h>
+    #import <SCApi/SCExtendedApiContext+Private.h>
     #import <SCApi/SCApiContext+Init.h>
 
     #import <SitecoreMobileSDK/SCApi.h>
-    #import "SCGlobalSettings.h"
 
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFNetwork/Mock/JNConnectionMock.h>
 
     #import <JFFUtils/JFFUtils.h>
+    #import <JFFUtils/NSObject/NSObject+RuntimeExtensions.h>
+
     #import <SitecoreMobileSDK/SCApi.h>
 
     #import <GHUnitIOS/GHUnit.h>
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#endif
+
+    #ifdef __cplusplus
+        #import <ObjcScopedGuard/ObjcScopedGuard.h>
+    #endif // *.mm
+#endif // *.m

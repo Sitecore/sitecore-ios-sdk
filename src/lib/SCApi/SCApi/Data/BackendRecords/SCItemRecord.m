@@ -2,39 +2,55 @@
 
 #import "SCItem.h"
 #import "SCItemInfo.h"
-#import "SCApiContext.h"
-#import "SCItemsCache.h"
+#import "SCExtendedApiContext.h"
 
 #import "NSString+ItemPathLogic.h"
 #import "SCItemRecord+Ownerships.h"
 
-@interface SCItemsCache (SCItemRecord)
+#import "SCItemRecordCacheRW.h"
+#import "SCItemRecord+SCItemSource.h"
+#import "SCItemRecordCacheRW.h"
+#import "SCItemSourcePOD.h"
 
--(SCItemRecord*)existedItemRecordWithItemInfo:( SCItemInfo* )itemInfo_;
+@interface SCExtendedApiContext (SCItemRecord)
 
-@end
-
-@interface SCApiContext (SCItemRecord)
-
-@property ( nonatomic ) SCItemsCache* itemsCache;
+@property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
 @end
 
 @interface SCItem (SCApiContextPrivate)
 
 +(id)itemWithRecord:( SCItemRecord* )record_
-         apiContext:( SCApiContext* )apiContext_;
+         apiContext:( SCExtendedApiContext* )apiContext_;
+
+@end
+
+
+@interface SCItemRecord ()
+
+@property ( nonatomic ) SCItemSourcePOD* itemSource;
 
 @end
 
 @implementation SCItemRecord
 
+@dynamic parentId;
+@dynamic parentLongId;
+@dynamic parentPath;
+@dynamic allChildrenRecords;
+@dynamic readChildrenRecords;
+@dynamic parent;
+@dynamic item;
+
 -(void)dealloc
 {
-    [ self unregisterFromCacheItemAndChildren: NO ];
+    // @adk - uncomment this if cache does not retain stored items
+    // Otherwise this code will be either unreachable or unwanted.
+    
+    // [ self unregisterFromCacheItemAndChildren: NO ];
 }
 
-+(id)rootRecord
++(instancetype)rootRecord
 {
     SCItemRecord* result_ = [ self new ];
 
@@ -54,7 +70,7 @@
             , self.hasChildren ];
 }
 
-+(id)itemRecord
++(instancetype)itemRecord
 {
     return [ self new ];
 }
@@ -70,13 +86,18 @@
 }
 
 -(NSString*)parentId
-{
-    return [ self.longID parentIdOfLongId ];
+{    
+    return [ self.parentLongId lastPathComponent ];
 }
 
 -(NSString*)parentPath
 {
     return [ self.path stringByDeletingLastPathComponent ];
+}
+
+-(NSString*)parentLongId
+{
+    return [ self.longID stringByDeletingLastPathComponent ];
 }
 
 -(NSArray*)allChildrenRecords
@@ -86,17 +107,13 @@
         return [ NSArray new ];
     }
 
-    SCItemInfo* info_ = [ SCItemInfo new ];
-    info_.itemId   = self.itemId;
-    info_.itemPath = self.path;
-    info_.language = self.language;
-    return [ _apiContext.itemsCache allChildrenForItemWithItemInfo: info_ ];
+    return [ self->_apiContext.itemsCache allChildrenForItemWithItemWithId: self.itemId     itemSource: self.itemSource ];
 }
 
 -(NSArray*)readChildrenRecords
 {
     return [ self->_apiContext.itemsCache cachedChildrenForItemWithId: self.itemId
-                                                             language: self.language ];
+                                                           itemSource: self.itemSource ];
 }
 
 -(SCItem*)item
@@ -113,10 +130,8 @@
 
 -(SCItem*)parent
 {
-    SCItemInfo* itemInfo_ = [ SCItemInfo new ];
-    itemInfo_.itemId   = self.parentId;
-    itemInfo_.language = self.language;
-    SCItemRecord* record_ = [ self->_apiContext.itemsCache existedItemRecordWithItemInfo: itemInfo_ ];
+    SCItemRecord* record_ = [ self->_apiContext.itemsCache itemRecordForItemWithId: self.parentId
+                                                                        itemSource: self.itemSource ];
     return record_.item;
 }
 
@@ -135,6 +150,12 @@
         [ self->_apiContext.itemsCache didRemovedItemRecord: self ];
         self.itemId = nil;
     }
+}
+
+-(void)setApiContext:(SCExtendedApiContext *)apiContext
+{
+    self->_apiContext = apiContext;
+    self->_mainApiContext = apiContext.mainContext;
 }
 
 @end

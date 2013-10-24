@@ -14,34 +14,34 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                   login: SCWebApiAdminLogin
-                                                password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                [ item_ fieldValueReaderForFieldName: @"Image" ]( ^( id result_, NSError* error_ )
-                {
-                    fieldValue_ = [ item_ fieldValueWithName: @"Image" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    
+                    apiContext_.defaultSite = nil;
+                    [ item_ fieldValueReaderForFieldName: @"Image" ]( ^( id result_, NSError* error_ )
+                    {
+                        fieldValue_ = [ item_ fieldValueWithName: @"Image" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
 
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -60,36 +60,34 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObject: @"CheckBoxField" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
-                {
-                    field_ = [ item_ fieldWithName: @"CheckBoxField" ];
-                    field_value_ = [ item_ fieldValueWithName: @"CheckBoxField" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    NSSet* fields_ = [ NSSet setWithObject: @"CheckBoxField" ];
+                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    {
+                        field_ = [ item_ fieldWithName: @"CheckBoxField" ];
+                        field_value_ = [ item_ fieldValueWithName: @"CheckBoxField" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     GHAssertTrue( apiContext_ != nil, @"api context is nil" );
     GHAssertTrue( item_ != nil, @"OK" );
@@ -99,6 +97,8 @@
 
     GHAssertEqualStrings( [ field_ type ], @"Checkbox", @"checkbox field type expected %@", [ field_ type ] );
 
+    
+    // item from SQL is now not equal to item from DB
     GHAssertTrue( [ field_ item ] == item_, @"OK" );
     GHAssertTrue( field_value_ != nil, @"OK" );
     GHAssertTrue( [ (NSNumber*)field_value_ intValue ] == 1, @"OK" );
@@ -117,38 +117,38 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObjects: @"DateField", @"DateTimeField", nil ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
-                {
-                    dateField_     = [ item_ fieldWithName: @"DateField" ];
-                    dateValue_     = [ item_ fieldValueWithName: @"DateField" ];
-                    datetimeField_ = [ item_ fieldWithName: @"DateTimeField" ];
-                    datetimeValue_ = [ item_ fieldValueWithName: @"DateTimeField" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    NSSet* fields_ = [ NSSet setWithObjects: @"DateField", @"DateTimeField", nil ];
+                    apiContext_.defaultSite = nil;
+                    
+                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    {
+                        dateField_     = [ item_ fieldWithName: @"DateField" ];
+                        dateValue_     = [ item_ fieldValueWithName: @"DateField" ];
+                        datetimeField_ = [ item_ fieldWithName: @"DateTimeField" ];
+                        datetimeValue_ = [ item_ fieldValueWithName: @"DateTimeField" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
@@ -187,35 +187,35 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                item_ = result_;
-                [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ]( ^( id result_, NSError* error_ )
-                {
-                    field_ = [ item_ fieldWithName: @"MultiListField" ];
-                    field_value_ = [ item_ fieldValueWithName: @"MultiListField" ];
-                    didFinishCallback_();
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = result_;
+                    
+                    apiContext_.defaultSite = nil;
+                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ]( ^( id result_, NSError* error_ )
+                    {
+                        field_ = [ item_ fieldWithName: @"MultiListField" ];
+                        field_value_ = [ item_ fieldValueWithName: @"MultiListField" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
@@ -238,35 +238,35 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                   login: SCWebApiAdminLogin
-                                                password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                item_ = result_;
-                [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ]( ^( id result_, NSError* error_ )
-                {
-                    field_ = [ item_ fieldWithName: @"TreeListField" ];
-                    fieldValue_ = [ item_ fieldValueWithName: @"TreeListField" ];
-                    didFinishCallback_();
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = result_;
+                    
+                    apiContext_.defaultSite = nil;
+                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ]( ^( id result_, NSError* error_ )
+                    {
+                        field_ = [ item_ fieldWithName: @"TreeListField" ];
+                        fieldValue_ = [ item_ fieldValueWithName: @"TreeListField" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
@@ -290,27 +290,25 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                field_ = [ item_ fieldWithName: @"Text" ];
-                field_value_ = [ item_ fieldValueWithName: @"Text" ];
-                didFinishCallback_();
-            } );
-        }
-    };
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                {
+                    item_ = result_;
+                    field_ = [ item_ fieldWithName: @"Text" ];
+                    field_value_ = [ item_ fieldValueWithName: @"Text" ];
+                    didFinishCallback_();
+                } );
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -329,36 +327,36 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                item_ = result_;
-                NSSet* fieldNames_ = [ NSSet setWithObjects: @"MultiListField", @"CheckListField", nil ];
-                [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
-                {
-                    checklistValue_ = [ item_ fieldValueWithName: @"CheckListField" ];
-                    multilistValue_ = [ item_ fieldValueWithName: @"MultiListField" ];
-                    didFinishCallback_();
-                } );
-            } );
-        }
-    };
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = result_;
+                    NSSet* fieldNames_ = [ NSSet setWithObjects: @"MultiListField", @"CheckListField", nil ];
+                    apiContext_.defaultSite = nil;
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                    [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
+                    {
+                        checklistValue_ = [ item_ fieldValueWithName: @"CheckListField" ];
+                        multilistValue_ = [ item_ fieldValueWithName: @"MultiListField" ];
+                        didFinishCallback_();
+                    } );
+                } );
+            }
+        };
+
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -390,36 +388,36 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                item_ = result_;
-                NSSet* fieldNames_ = [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ];
-                [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
-                {
-                    droplink_value_ = [ item_ fieldValueWithName: @"DropLinkFieldEmpty" ];
-                    droptree_value_ = [ item_ fieldValueWithName: @"DropTreeFieldNormal" ];
-                    didFinishCallback_();
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = result_;
+                    NSSet* fieldNames_ = [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ];
+                    apiContext_.defaultSite = nil;
+                    
+                    [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
+                    {
+                        droplink_value_ = [ item_ fieldValueWithName: @"DropLinkFieldEmpty" ];
+                        droptree_value_ = [ item_ fieldValueWithName: @"DropTreeFieldNormal" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -442,25 +440,23 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ imageLoaderForSCMediaPath:  @"~/media/Images/test image" ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                value_ = result_;
-                didFinishCallback_();
-            } );
-        }
-    };
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ imageLoaderForSCMediaPath:  @"~/media/Images/test image" ]( ^( id result_, NSError* error_ )
+                {
+                    value_ = result_;
+                    didFinishCallback_();
+                } );
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     //GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -478,47 +474,46 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                   login: SCWebApiAdminLogin
-                                                password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                NSLog( @"item: %@", item_ );
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldMediaNormal" ] ;
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
-                {
-                    field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldMediaNormal" ];
-                    if ( ![ field_ linkData ] )
+                    NSLog( @"item: %@", item_ );
+                    item_ = result_;
+                    if ( error_ )
                     {
                         didFinishCallback_();
                         return;
                     }
-
-                    SCMediaFieldLinkData* linkData_ = (SCMediaFieldLinkData*)[ field_ linkData ];
-                    [ linkData_ imageReader ]( ^( id result_, NSError* error_ )
+                    NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldMediaNormal" ] ;
+                    apiContext_.defaultSite = nil;
+                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
                     {
-                        mediaValue_ = result_;
-                        didFinishCallback_();
+                        field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldMediaNormal" ];
+                        if ( ![ field_ linkData ] )
+                        {
+                            didFinishCallback_();
+                            return;
+                        }
+
+                        SCMediaFieldLinkData* linkData_ = (SCMediaFieldLinkData*)[ field_ linkData ];
+                        [ linkData_ imageReader ]( ^( id result_, NSError* error_ )
+                        {
+                            mediaValue_ = result_;
+                            didFinishCallback_();
+                        } );
                     } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -555,34 +550,34 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ]( ^( id field_result_, NSError* error_ )
-                {
-                    field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldLinkEmpty" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    
+                    apiContext_.defaultSite = nil;
+                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ]( ^( id field_result_, NSError* error_ )
+                    {
+                        field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldLinkEmpty" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -613,33 +608,35 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ]( ^( id field_result_, NSError* error_ )
-                {
-                    field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldExtLinkInvalid" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    apiContext_.defaultSite = nil;
+                    
+                    
+                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ]( ^( id field_result_, NSError* error_ )
+                    {
+                        field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldExtLinkInvalid" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -670,35 +667,36 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldEmail" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
-                {
-                    field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldEmail" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    
+                    NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldEmail" ];
+                    apiContext_.defaultSite = nil;
+                    
+                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
+                    {
+                        field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldEmail" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -730,35 +728,36 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiAdminLogin
-                                                          password: SCWebApiAdminPassword ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldJavascript" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
-                {
-                    field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldJavascript" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    
+                    NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldJavascript" ];
+                    apiContext_.defaultSite = @"/sitecore/shell";
+                    
+                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    {
+                        field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldJavascript" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -781,7 +780,7 @@
     GHAssertTrue( [ value_item_ isEqual: link_data_ ], @"OK" );
 }
 
-/*
+
  //STODO: uncomment for payload testing
 -(void)testGetStandardField
 {
@@ -789,41 +788,52 @@
     __block SCItem* item_ = nil;
     __block SCField* field_ = nil;
     
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    @autoreleasepool
     {
-        @autoreleasepool
+        __block SCApiContext* strongContext = nil;
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                   login: SCWebApiAdminLogin
-                                                password: SCWebApiAdminPassword ];
-            [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            @autoreleasepool
             {
-                item_ = result_;
-                if ( error_ )
+                strongContext =
+                [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext;
+                
+                [ apiContext_ itemReaderForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                NSSet* fields_ = [ NSSet setWithObject: @"__Display name" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
-                {
-                    field_ = [ item_ fieldWithName:  @"__Display name" ];
-                    didFinishCallback_();
+                    item_ = result_;
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    
+                    NSSet* fields_ = [ NSSet setWithObject: @"__Display name" ];
+                    apiContext_.defaultSite = nil;
+                    
+                    [ item_ fieldsValuesReaderForFieldsNames:fields_]( ^( id result_, NSError* error_ )
+                    {
+                        field_ = [ item_ fieldWithName:  @"__Display name" ];
+                        didFinishCallback_();
+                    } );
                 } );
-            } );
-        }
-    };
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
+    }
     
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
     //field_ test
     GHAssertTrue( field_ != nil, @"OK" );
     GHAssertTrue( [ field_ rawValue ] != nil, @"OK" );
-    GHAssertTrue( [ field_ rawValue ] == [ item_ displayName ], @"OK" );
     
+    NSString* fieldValue = [ field_ rawValue ];
+    GHAssertEqualObjects( fieldValue, @"Test Fields", @"OK" );
+
 }
-*/
+
 @end

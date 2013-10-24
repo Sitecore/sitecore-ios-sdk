@@ -17,33 +17,32 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
  
     @autoreleasepool
     {
-    __block SCApiContext* strongContext_  = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: not_allowed_path_
-                                                                        fieldsNames: nil ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        __block SCApiContext* strongContext_  = nil;
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_auth_ = result_items_;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: not_allowed_path_
+                                                                            fieldsNames: nil ];
+            request_.scope = scope_;
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_ = result_items_;
-                didFinishCallback_();
-            });
-        } );
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                items_auth_ = result_items_;
+                strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
+                
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                {
+                    items_ = result_items_;
+                    didFinishCallback_();
+                });
+            } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     NSLog( @"items_: %@", items_ );
@@ -82,34 +81,32 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
  
     @autoreleasepool
     {
-    __block SCApiContext* strongContext_  = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword ];
-        apiContext_ = strongContext_;
-        
-        NSSet* field_names_ = [ NSSet setWithObjects: @"Title", nil];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: allowed_path_
-                                                                        fieldsNames: field_names_ ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        __block SCApiContext* strongContext_  = nil;
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_auth_ = result_items_;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
+            NSSet* field_names_ = [ NSSet setWithObjects: @"Title", nil];
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: allowed_path_
+                                                                            fieldsNames: field_names_ ];
+            request_.scope = scope_;
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_ = result_items_;
-                didFinishCallback_();
-            });
-        } );
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                items_auth_ = result_items_;
+                strongContext_ =  [ TestingRequestFactory getNewAnonymousContext ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                {
+                    items_ = result_items_;
+                    didFinishCallback_();
+                });
+            } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     NSLog( @"items_: %@", items_ );
@@ -152,29 +149,29 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
     @autoreleasepool
     {
         __block SCApiContext* strongContext_  = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
-                                                                        fieldsNames: [ NSSet new ] ];
-        request_.scope = scope_;
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            SCItemsReaderRequest* parent_request_ = [ SCItemsReaderRequest requestWithItemPath: not_allowed_path_
-                                                                                   fieldsNames: [ NSSet new ] ];
-            [ apiContext_ itemsReaderWithRequest: parent_request_ ]( ^( NSArray* result_items_parent_, NSError* error_ )
+            strongContext_ =  [ TestingRequestFactory getNewAnonymousContext ];
+            apiContext_ = strongContext_;
+            
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                            fieldsNames: [ NSSet new ] ];
+            request_.scope = scope_;
+            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
-                items_parent_ = result_items_parent_;
-                didFinishCallback_();
-            });
-        } );
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                items_ = result_items_;
+                SCItemsReaderRequest* parent_request_ = [ SCItemsReaderRequest requestWithItemPath: not_allowed_path_
+                                                                                       fieldsNames: [ NSSet new ] ];
+                [ apiContext_ itemsReaderWithRequest: parent_request_ ]( ^( NSArray* result_items_parent_, NSError* error_ )
+                {
+                    items_parent_ = result_items_parent_;
+                    didFinishCallback_();
+                });
+            } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     NSLog( @"items_: %@", items_ );
@@ -211,25 +208,25 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
     @autoreleasepool
     {
         __block SCApiContext* strongContext_  = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-        apiContext_ = strongContext_;
-        
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
-        request_.scope       = scope_;
-        request_.fieldNames  = [ NSSet new ];
-        request_.requestType = SCItemReaderRequestQuery;
-        request_.request = @"/sitecore/content/descendant::*[@@key='allowed_parent']";
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            didFinishCallback_();
-        } );
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+            strongContext_ =  [ TestingRequestFactory getNewAnonymousContext ];
+            apiContext_ = strongContext_;
+            
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            request_.scope       = scope_;
+            request_.fieldNames  = [ NSSet new ];
+            request_.requestType = SCItemReaderRequestQuery;
+            request_.request = @"/sitecore/content/descendant::*[@@key='allowed_parent']";
+            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            {
+                items_ = result_items_;
+                didFinishCallback_();
+            } );
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     NSLog( @"items_: %@", items_ );

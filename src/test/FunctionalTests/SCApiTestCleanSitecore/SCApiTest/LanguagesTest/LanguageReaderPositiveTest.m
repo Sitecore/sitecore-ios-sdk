@@ -1,5 +1,6 @@
 #import "SCAsyncTestCase.h"
 
+
 @interface LanguageReaderPositiveTest : SCAsyncTestCase
 @end
 
@@ -13,24 +14,29 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-            apiContext_ = strongContext_;
-            
-            [ apiContext_ systemLanguagesReader ]( ^( NSSet *languages_, NSError *error_ )
+            @autoreleasepool
             {
-                resultLanguages_ = languages_;
-                didFinishCallback_();
-            } );         
-        }
+                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                                 login: SCWebApiAdminLogin
+                                                              password: SCWebApiAdminPassword ];
+                apiContext_ = strongContext_;
+                apiContext_.defaultSite = @"/sitecore/shell";
+                
+                [ apiContext_ systemLanguagesReader ]( ^( NSSet *languages_, NSError *error_ )
+                {
+                    resultLanguages_ = languages_;
+                    didFinishCallback_();
+                } );         
+            }
 
-    };
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
+        
+        [ [ apiContext_.extendedApiContext itemsCache ] cleanupAll ];
     }
     
     
@@ -51,39 +57,42 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-            apiContext_ = strongContext_;
-            
-            apiContext_.defaultLanguage = @"da";
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
-                                                                            fieldsNames: [ NSSet setWithObject: @"Title" ] ];
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( [ da_result_ count ] == 0 )
+                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                                 login: SCWebApiAdminLogin
+                                                              password: SCWebApiAdminPassword ];
+                apiContext_ = strongContext_;
+                apiContext_.defaultSite = @"/sitecore/shell";
+                
+                apiContext_.defaultLanguage = @"da";
+                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+                                                                                fieldsNames: [ NSSet setWithObject: @"Title" ] ];
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                item_ = da_result_[ 0 ];
-                SCField* field_ = [ item_ fieldWithName: @"Title" ];
-                isDanishItem_ = [ field_.rawValue isEqualToString: @"Danish" ];
-                apiContext_.defaultLanguage = @"en";
-                [ apiContext_ itemReaderWithFieldsNames: [ NSSet setWithObject: @"Title" ]
-                                               itemPath: SCLanguageItemPath ]( ^( id en_result_, NSError* error_ )
-                {
-                    item_ = en_result_;
-                    didFinishCallback_();
-                });
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                    if ( [ da_result_ count ] == 0 )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = da_result_[ 0 ];
+                    SCField* field_ = [ item_ fieldWithName: @"Title" ];
+                    isDanishItem_ = [ field_.rawValue isEqualToString: @"Danish" ];
+                    apiContext_.defaultLanguage = @"en";
+                    [ apiContext_ itemReaderWithFieldsNames: [ NSSet setWithObject: @"Title" ]
+                                                   itemPath: SCLanguageItemPath ]( ^( id en_result_, NSError* error_ )
+                    {
+                        item_ = en_result_;
+                        didFinishCallback_();
+                    });
+                } );
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -108,37 +117,41 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        @autoreleasepool
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
-            apiContext_ = strongContext_;
-            
-            apiContext_.defaultLanguage = @"da";
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
-                                                                            fieldsNames: field_names_ ];
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
+            @autoreleasepool
             {
-                if ( [ da_result_ count ] == 0 )
+                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                                 login: SCWebApiAdminLogin
+                                                              password: SCWebApiAdminPassword ];
+                apiContext_ = strongContext_;
+                apiContext_.defaultSite = @"/sitecore/shell";
+                
+                
+                apiContext_.defaultLanguage = @"da";
+                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+                                                                                fieldsNames: field_names_ ];
+                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
                 {
-                    didFinishCallback_();
-                    return;
-                }
-                da_item_ = da_result_[ 0 ];
-                apiContext_.defaultLanguage = @"en";
-                [ apiContext_ itemReaderWithFieldsNames: field_names_
-                                               itemPath: SCHomePath ]( ^( id en_result_, NSError* error_ )
-                {
-                    en_item_ = en_result_;
-                    didFinishCallback_();
-                });
-            } );
-        }
-    };
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+                    if ( [ da_result_ count ] == 0 )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    da_item_ = da_result_[ 0 ];
+                    apiContext_.defaultLanguage = @"en";
+                    [ apiContext_ itemReaderWithFieldsNames: field_names_
+                                                   itemPath: @"/sitecore/content/Language Test/Language Item 2" ]( ^( id en_result_, NSError* error_ )
+                    {
+                        en_item_ = en_result_;
+                        didFinishCallback_();
+                    });
+                } );
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
@@ -150,7 +163,7 @@
     //Test english item
     GHAssertTrue( en_item_ != nil, @"OK" );
     field_ = [ en_item_ fieldWithName: @"Title" ];
-    GHAssertTrue( [ field_.rawValue isEqualToString: @"Sitecore" ] == TRUE, @"OK" );
+    GHAssertTrue( [ field_.rawValue isEqualToString: @"Language Item 2" ] == TRUE, @"OK" );
     GHAssertTrue( field_.item == en_item_, @"OK" );
 }
 
@@ -169,8 +182,12 @@
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
+            
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
                                                                             fieldsNames: field_names_ ];
@@ -185,7 +202,7 @@
                 }
                 da_item_ = da_result_[ 0 ];
                 [ apiContext_ itemReaderWithFieldsNames: field_names_
-                                                itemPath: SCHomePath ]( ^( id en_result_, NSError* error_ )
+                                               itemPath: SCLanguageItemPath ]( ^( id en_result_, NSError* error_ )
                 {
                     en_item_ = en_result_;
                     didFinishCallback_();
@@ -207,7 +224,7 @@
     GHAssertTrue( en_item_ != nil, @"OK" );
     field_ = [ en_item_ fieldWithName: @"Title" ];
     NSLog( @"field_.rawValue: %@", field_.rawValue );
-    GHAssertTrue( [ field_.rawValue isEqualToString: @"Sitecore" ] == TRUE, @"OK" );
+    GHAssertTrue( [ field_.rawValue isEqualToString: @"Title" ] == TRUE, @"OK" );
 }
 
 @end

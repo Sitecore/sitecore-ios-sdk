@@ -9,7 +9,7 @@
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* items_ = nil;
-    __block SCError* error_ = nil;
+    __block SCApiError* error_ = nil;
 
     NSString* path_ = @"/sitecore/content/home";
 
@@ -18,7 +18,7 @@
         __block SCApiContext* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
 
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: path_
@@ -26,7 +26,7 @@
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* resultItems_, NSError* result_error_ )
             {
                 items_ = resultItems_;
-                error_ = (SCError*)result_error_;
+                error_ = (SCApiError*)result_error_;
                 didFinishCallback_();
             } );
         };
@@ -46,7 +46,7 @@
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* items_ = nil;
-    __block SCError* error_ = nil;
+    __block SCApiError* error_ = nil;
 
     NSString* path_ = @"/sitecore/content/*[@@key='home']";
 
@@ -55,15 +55,19 @@
         __block SCApiContext* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
+            
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
                                                                             fieldsNames: [ NSSet new ] ];
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* resultItems_, NSError* resultError_ )
             {
                 items_ = resultItems_;
-                error_ = (SCError*)resultError_;
+                error_ = (SCApiError*)resultError_;
                 didFinishCallback_();
             } );
         };
@@ -82,7 +86,7 @@
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* items_ = nil;
-    __block SCError* error_ = nil;
+    __block SCApiError* error_ = nil;
 
     NSString* path_ = @"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}";
 
@@ -91,7 +95,7 @@
         __block SCApiContext* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
@@ -100,7 +104,7 @@
                                                                 , NSError* resultError_ )
             {
                 items_ = resultItems_;
-                error_ = (SCError*)resultError_;
+                error_ = (SCApiError*)resultError_;
                 didFinishCallback_();
             } );
         };
@@ -119,7 +123,7 @@
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* items_ = nil;
-    __block SCError* error_ = nil;
+    __block SCApiError* error_ = nil;
 
     NSString* path_ = @"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}";
 
@@ -128,8 +132,12 @@
         __block SCApiContext* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
+            
             
             SCItemsReaderRequest* request_ = [SCItemsReaderRequest new ];
             request_.request = path_;
@@ -138,7 +146,7 @@
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* resultItems_, NSError* resultError_ )
             {
                 items_ = resultItems_;
-                error_ = (SCError*)resultError_;
+                error_ = (SCApiError*)resultError_;
                 didFinishCallback_();
             } );
         };
@@ -156,7 +164,7 @@
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* items_ = nil;
-    __block SCError* error_ = nil;
+    __block SCApiError* error_ = nil;
     
     NSString* path_ = @"/sitecore/content/home";
     
@@ -165,15 +173,19 @@
         __block SCApiContext* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
+            apiContext_.defaultSite = @"/sitecore/shell";
+            
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: path_
                                                                           fieldsNames: [ NSSet new ] ];
             [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* resultItems_, NSError* resultError_ )
             {
                 items_ = resultItems_;
-                error_ = (SCError*)resultError_;
+                error_ = (SCApiError*)resultError_;
                 didFinishCallback_();
             } );
         };

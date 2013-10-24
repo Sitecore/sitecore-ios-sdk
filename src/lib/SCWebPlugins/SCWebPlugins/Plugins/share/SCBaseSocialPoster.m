@@ -1,6 +1,7 @@
 #import "SCBaseSocialPoster.h"
 
 #import "SCSocialNetworkPluginError.h"
+#import "GTMNSString+HTML.h"
 
 @implementation SCBaseSocialPoster
 
@@ -22,6 +23,11 @@
     }
     
     [ self postImplWithCompletion: handler ];
+}
+
+-(void)setText:(NSString *)text
+{
+    self->_text = [ text gtm_stringByUnescapingFromHTML ];
 }
 
 -(BOOL)isIosSupportsPoster

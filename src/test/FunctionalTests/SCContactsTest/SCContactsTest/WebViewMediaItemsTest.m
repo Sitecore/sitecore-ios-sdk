@@ -9,7 +9,8 @@
 -(void)testCreateMediaItem
 {
     __block NSString* failDescription_;
-
+    NSString* host = [ TestHostConfig testInstance ];
+    
     void (^afterTest_)( NSDictionary* ) = ^( NSDictionary* result_ )
     {
         NSString* itemId_ = [ [ result_ objectForKey: @"itemId" ] lastObject ];
@@ -22,15 +23,18 @@
 
         [ self prepare ];
 
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
+        apiContext_.defaultSite = @"/sitecore/shell";
 
         //STODO test fields
         [ apiContext_ itemReaderForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
         {
             if ( result_ )
+            {
                 [ result_ removeItem ]( nil );
+            }
             failDescription_ = [ error_ description ];
 
             [ self notify: kGHUnitWaitStatusSuccess forSelector: _cmd ];
@@ -54,6 +58,7 @@
 -(void)testCreateLargeMediaItem
 {
     __block NSString* failDescription_;
+    NSString* host = [ TestHostConfig testInstance ];
     
     void (^afterTest_)( NSDictionary* ) = ^( NSDictionary* result_ )
     {
@@ -67,22 +72,23 @@
         
         [ self prepare ];
         
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultDatabase = @"core";
+        apiContext_.defaultSite = @"/sitecore/shell";
         
         //STODO test fields
         [ apiContext_ itemReaderForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
-                                                     {
-                                                         if ( result_ )
-                                                         {
-                                                             [ result_ removeItem ]( nil );
-                                                             failDescription_ = [ error_ description ];
-                                                         }
-                                                         [ self notify: kGHUnitWaitStatusSuccess forSelector: _cmd ];
-                                                         
-                                                     } );
+         {
+             if ( result_ )
+             {
+                 [ result_ removeItem ]( nil );
+                 failDescription_ = [ error_ description ];
+             }
+             [ self notify: kGHUnitWaitStatusSuccess forSelector: _cmd ];
+             
+         } );
         
         [ self waitForStatus: kGHUnitWaitStatusSuccess
                      timeout: 300. ];

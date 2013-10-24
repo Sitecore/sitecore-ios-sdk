@@ -47,16 +47,33 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     self.mapView.drawRouteToNearestAddress = self.drawRoute;
     if ( self.regionRadius > 100. )
         self.mapView.regionRadius = self.regionRadius;
+    
+#ifdef __IPHONE_7_0
+    
+    BOOL perspectiveParamsAreValid =
+           CLLocationCoordinate2DIsValid( self.viewPointPosition )
+        && CLLocationCoordinate2DIsValid( self.cameraPosition )
+        && ( self.cameraHeight > 0 );
+    
+    if ( perspectiveParamsAreValid )
+    {
+        MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate: self.viewPointPosition
+                                                         fromEyeCoordinate: self.cameraPosition
+                                                               eyeAltitude: self.cameraHeight ];
+        self.mapView.camera = camera;
+    }
+    
+#endif
+    
 }
 
 -(void)addTapRecognizer
 {
-    _recognizer =  [ SCGestureRecognizer recognizerWithView: self.view
-                                        viewToIgnoreTouches: _toolBar ];
-    _recognizer.scDelegate = self;
-
-    [ _recognizer addTarget: self
-                     action: @selector( tapAction ) ];
+    
+    UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tapRecognizer];
+    
 }
 
 -(void)viewDidLoad
@@ -96,11 +113,12 @@ static void(^presentControllerHandler_)( SCMapViewController* );
 
     [ _toolBar sizeToFit ];    
 
-    UIBarButtonItem* doneButton_ = [ [ UIBarButtonItem alloc ] initWithTitle: @"Done"
-                                                                       style: UIBarButtonItemStyleDone 
-                                                                      target: self
-                                                                      action: @selector( doneAction ) ];
-
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 70, _toolBar.frame.size.height)];
+    [button setTitle:@"Done" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector( doneAction ) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* doneButton_ = [[ UIBarButtonItem alloc ] initWithCustomView:button];
+    
     [ _toolBar setItems: [ NSArray arrayWithObject: doneButton_ ] animated: NO ];
 
     _toolBar.hidden = YES;

@@ -19,9 +19,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword ];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCHomePath;
@@ -71,9 +69,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_ = SCHomeID;
@@ -123,9 +119,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword ];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCHomePath;
@@ -174,9 +168,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCHomePath;
@@ -221,9 +213,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_   = SCHomeID;
@@ -267,9 +257,7 @@
 
    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
    {
-       strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                              login: SCWebApiAdminLogin
-                                           password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
        apiContext_ = strongContext_;
 
       NSString* path_ = SCHomePath;
@@ -315,9 +303,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -367,9 +353,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_ = SCAllowedParentID;
@@ -420,9 +404,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -473,9 +455,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCHomePath;
@@ -537,9 +517,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_   = SCHomeID;
@@ -599,9 +577,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCHomePath;
@@ -664,9 +640,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -740,9 +714,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_ = SCAllowedParentID;
@@ -818,9 +790,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -893,9 +863,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -968,9 +936,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_ = SCAllowedParentID;
@@ -1041,9 +1007,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -1113,9 +1077,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword ];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;
@@ -1193,9 +1155,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                               login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* itemId_ = SCAllowedParentID;
@@ -1277,9 +1237,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword];
+        strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
 
         NSString* path_ = SCAllowedParentPath;

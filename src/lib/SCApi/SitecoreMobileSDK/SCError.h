@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- Any SitecoreMobileSDK error has a type inherited from SCError class, see SCError inheritors for details.
- If Sitecore Mobile SDK error type is SCError ( [ error isMemberOfClass: [ SCError class ] ] == YES ), this is invalid behaviour, please contact Sitecore support team in such case to fix problem.
+ Any SitecoreMobileSDK error has a type inherited from SCApiError class, see SCApiError inheritors for details.
+ If Sitecore Mobile SDK error type is SCApiError ( [ error isMemberOfClass: [ SCApiError class ] ] == YES ), this is invalid behaviour, please contact Sitecore support team in such case to fix problem.
  */
-@interface SCError : NSError
+@interface SCApiError : NSError
 
 -(id)initWithDescription:( NSString* )description_;
 -(id)initWithDescription:( NSString* )description_
@@ -22,32 +22,32 @@
 /**
  The SCNoItemError error may happens with calling such method as [SCApiContext itemReaderForItemId:] when Sitecore Item Web Api does not return any item
  */
-@interface SCNoItemError : SCError
+@interface SCNoItemError : SCApiError
 @end
 
 
 /**
  The SCCreateItemError error is returned by [SCApiContext itemCreatorWithRequest:] method in case of insufficient permissions or connectivity issues. Sitecore Item Web Api does not return any item
  */
-@interface SCCreateItemError : SCError
+@interface SCCreateItemError : SCApiError
 @end
 
 /**
  The SCNoFieldError error may happens when some field does not exist, see [SCItem fieldsValuesReaderForFieldsNames:] method for details
  */
-@interface SCNoFieldError : SCError
+@interface SCNoFieldError : SCApiError
 @end
 
 /**
  The SCInvalidPathError error may happens at passing an invalid path argument to the method like: [SCApiContext itemReaderForItemPath:]
  */
-@interface SCInvalidPathError : SCError
+@interface SCInvalidPathError : SCApiError
 @end
 
 /**
  The SCInvalidItemIdError error may happens at passing an invalid item it argument to the method like: [SCApiContext itemReaderForItemId:]
  */
-@interface SCInvalidItemIdError : SCError
+@interface SCInvalidItemIdError : SCApiError
 
 @property(nonatomic) NSString *itemId;
 
@@ -56,20 +56,20 @@
 /**
  The SCNetworkError error may happens if network errors occurs while a data loading
  */
-@interface SCNetworkError : SCError
+@interface SCNetworkError : SCApiError
 @end
 
 
 /**
  The SCEncryptionError error occurs if the encryption data provider is not properly configured on the server side. See "Sitecore Item Web API 1.0 Developer's Guide" document for details
 */
-@interface SCEncryptionError : SCError
+@interface SCEncryptionError : SCApiError
 @end
 
 /**
  Any Backend error ( invalid response format or Sitecore Item Web Api error ) has type like SCBackendError, see SCBackendError inheritors for details.
  */
-@interface SCBackendError : SCError
+@interface SCBackendError : SCApiError
 @end
 
 /**

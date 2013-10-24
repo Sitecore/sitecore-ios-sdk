@@ -14,25 +14,24 @@
     @autoreleasepool
     {
         __block SCApiContext* strongContext_ = nil;
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword ];
-        apiContext_ = strongContext_;
-        
-        NSSet* field_names_ = [ NSSet setWithObjects: @"Title", nil];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCHomePath
-                                                                        fieldsNames: field_names_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            items_ = result_items_;
-            didFinishCallback_();
-        } );
-    };
+            strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+            apiContext_ = strongContext_;
+            
+            NSSet* field_names_ = [ NSSet setWithObjects: @"Normal Text", nil];
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCTestFieldsItemPath
+                                                                            fieldsNames: field_names_ ];
+            request_.flags = SCItemReaderRequestReadFieldsValues;
+            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            {
+                items_ = result_items_;
+                didFinishCallback_();
+            } );
+        };
 
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
     }
     NSLog( @"items_: %@", items_ );
     NSLog( @"items_fields_: %@", [ items_[ 0 ] readFieldsByName ]);
@@ -44,14 +43,17 @@
     SCItem* item_ = nil;
     //test product item
     {
+        // adk : issues with test instance configuration
+        // http://mobiledev1ua1.dk.sitecore.net:89
+        
         item_ = items_[ 0 ];
         GHAssertTrue( item_.parent == nil, @"OK" );
-        GHAssertTrue( [ item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
+        GHAssertTrue( [ item_.displayName isEqualToString: @"Test Fields" ], @"OK" );
         NSLog( @"item_children: %@", [ item_ allChildren ] );
         GHAssertTrue( [ item_.allChildren count ]      == 0, @"OK" );
         GHAssertTrue( [ item_.readChildren count ]     == 0, @"OK" );
         GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
-        GHAssertTrue( [ [ item_ fieldWithName: @"Title" ] rawValue ] != nil, @"OK" );
+        GHAssertTrue( [ [ item_ fieldWithName: @"Normal Text" ] rawValue ] != nil, @"OK" );
     }
 }
 

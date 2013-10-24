@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
+@class SCExtendedApiContext;
 @class SCApiContext;
 
 @interface SCItemRecord : NSObject
@@ -14,21 +15,22 @@
 @property ( nonatomic ) NSString* language;
 
 @property ( nonatomic, readonly ) NSString* parentId;
+@property ( nonatomic, readonly ) NSString* parentLongId;
 @property ( nonatomic, readonly ) NSString* parentPath;
 
 @property ( nonatomic, readonly ) NSArray* allChildrenRecords;
 @property ( nonatomic, readonly ) NSArray* readChildrenRecords;
 
 @property ( nonatomic ) NSDictionary *fieldsByName;
-@property ( nonatomic ) BOOL hasAllFields;
 
 @property ( nonatomic, weak ) SCItem* itemRef;
 @property ( nonatomic, weak, readonly ) SCItem* parent;
 @property ( nonatomic, weak, readonly ) SCItem* item;
-@property ( nonatomic ) SCApiContext* apiContext;
+@property ( nonatomic ) SCExtendedApiContext* apiContext;
+@property ( nonatomic ) SCApiContext* mainApiContext;
 
-+(id)itemRecord;
-+(id)rootRecord;
++(instancetype)itemRecord;
++(instancetype)rootRecord;
 
 +(NSString*)rootItemId;
 +(NSString*)rootItemPath;

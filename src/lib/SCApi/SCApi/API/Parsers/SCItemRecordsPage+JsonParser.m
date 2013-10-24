@@ -7,7 +7,8 @@
 @implementation SCItemRecordsPage (JsonParser)
 
 +(JFFAsyncOperationBinder)itemRecordsWithResponseData:( NSData* )responseData_
-                                           apiContext:( SCApiContext* )apiContext_
+                                           apiContext:( SCExtendedApiContext* )apiContext_
+                                   forRequestedSource:( id<SCItemSource> )requestedSource_
 {
     return ^JFFAsyncOperation( id json_ )
     {
@@ -18,6 +19,9 @@
             NSDictionary* resultJson_ = json_[ @"result" ];
 
             NSNumber* totalCount_ = resultJson_[ @"totalCount" ];
+            
+            NSAssert(![totalCount_ isKindOfClass:[NSNull class]], @"count value uncorrect");
+            
             NSArray* itemsJson_   = resultJson_[ @"items" ];
 
             if ( !totalCount_ || !itemsJson_ )
@@ -31,7 +35,8 @@
 
             JFFAsyncOperation loader_ = [ itemsJson_ asyncMap: ^JFFAsyncOperation( id object_ )
             {
-                return [ SCItemRecord itemRecordWithApiContext: apiContext_ ]( object_ );
+                return [ SCItemRecord itemRecordWithApiContext: apiContext_
+                                            forRequestedSource: requestedSource_]( object_ );
             } ];
 
             JFFChangedResultBuilder resultBuilder_ = ^id( id localResult_ )

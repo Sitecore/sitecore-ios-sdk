@@ -1,4 +1,5 @@
 #import "SCContactStringField.h"
+#import "GTMNSString+HTML.h"
 
 @implementation SCContactStringField
 
@@ -11,7 +12,8 @@
 -(void)setPropertyFromValues:( NSDictionary* )components_
                     toRecord:( ABRecordRef )record_
 {
-    self.value = [ components_ firstValueIfExsistsForKey: self.name ];
+    NSString *rawValue = [ components_ firstValueIfExsistsForKey: self.name ];
+    self.value = [ rawValue gtm_stringByUnescapingFromHTML ];
 
     CFErrorRef error_ = NULL;
     bool didSet = ABRecordSetValue( record_

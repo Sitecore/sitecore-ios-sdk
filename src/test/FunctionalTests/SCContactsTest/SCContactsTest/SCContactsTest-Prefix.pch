@@ -9,6 +9,7 @@
 #endif
 
 #ifdef __OBJC__
+    #import "TestHostConfig.h"
     #import "SCAsyncTestCase.h"
 
     #import <JFFNetwork/JFFNetwork.h>

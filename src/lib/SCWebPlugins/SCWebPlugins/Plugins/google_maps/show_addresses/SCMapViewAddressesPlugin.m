@@ -47,6 +47,9 @@
                           webView:( UIWebView* )webView_
                         drawRoute:( BOOL )drawRoute_
                      regionRadius:( CLLocationDistance )regionRadius_
+                   cameraPosition:( CLLocationCoordinate2D )cameraPosition_
+                     cameraHeight:( CLLocationDistance )cameraHeight_
+                viewPointPosition:( CLLocationCoordinate2D )viewPoitnPosition_
 {
     if ( !webView_.window )
     {
@@ -64,7 +67,10 @@
     mapController_.addresses    = addresses_;
     mapController_.drawRoute    = drawRoute_;
     mapController_.regionRadius = regionRadius_;
-
+    mapController_.cameraPosition = cameraPosition_;
+    mapController_.cameraHeight = cameraHeight_;
+    mapController_.viewPointPosition = viewPoitnPosition_;
+    
     if ( rootController_ )
     {
         [ rootController_ presentTopViewController: mapController_ ];
@@ -84,11 +90,25 @@
 
     BOOL drawRoute_                  = [ [ components_ firstValueIfExsistsForKey: @"drawRoute" ] boolValue ];
     CLLocationDistance regionRadius_ = [ [ components_ firstValueIfExsistsForKey: @"regionRadius" ] doubleValue ];
-
+    
+    CLLocationDistance cameraLatitude = [ [ components_ firstValueIfExsistsForKey: @"cameraLatitude" ] doubleValue ];
+    CLLocationDistance cameraLongitude = [ [ components_ firstValueIfExsistsForKey: @"cameraLongitude" ] doubleValue ];
+    CLLocationDistance cameraHeight = [ [ components_ firstValueIfExsistsForKey: @"cameraHeight" ] doubleValue ];
+    CLLocationDistance viewPointLatitude = [ [ components_ firstValueIfExsistsForKey: @"viewPointLatitude" ] doubleValue ];
+    CLLocationDistance viewPointLongitude = [ [ components_ firstValueIfExsistsForKey: @"viewPointLongitude" ] doubleValue ];
+    
+    
+    CLLocationCoordinate2D cameraPosition = CLLocationCoordinate2DMake(cameraLatitude, cameraLongitude);
+    CLLocationCoordinate2D viewPosition = CLLocationCoordinate2DMake(viewPointLatitude, viewPointLongitude);
+    
+    
     [ self showGoogleMapWithAddresses: addresses_
                               webView: webView_
                             drawRoute: drawRoute_
-                         regionRadius: regionRadius_ ];
+                         regionRadius: regionRadius_
+                       cameraPosition: cameraPosition
+                         cameraHeight: cameraHeight
+                    viewPointPosition: viewPosition ];
 
     [ self.delegate close ];
 }

@@ -21,10 +21,12 @@
     scTouchView_.alpha = 0.f;
     [ webView_.scrollView addSubview: scTouchView_ ];
 
-    [ self presentPopoverFromRect: CGRectMake( 0.f, 0.f, 400.f, 600.f )
-                           inView: scTouchView_
-         permittedArrowDirections: UIPopoverArrowDirectionAny
-                         animated: YES ];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [ self presentPopoverFromRect: scTouchView_.frame
+                               inView: webView_
+             permittedArrowDirections: UIPopoverArrowDirectionAny
+                             animated: YES ];
+    });
 
     __weak UIView* weakTouchView_ = scTouchView_;
     [ self addOnDeallocBlock: ^

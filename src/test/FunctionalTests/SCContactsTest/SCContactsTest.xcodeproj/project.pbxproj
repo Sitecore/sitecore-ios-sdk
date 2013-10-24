@@ -101,6 +101,14 @@
 		7E0166AC17048BAE0073298E /* WebViewDmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */; };
 		7E0166AF17048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
 		7E0166B017048EDB0073298E /* analytics_test.js in Sources */ = {isa = PBXBuildFile; fileRef = 7E0166AE17048EDB0073298E /* analytics_test.js */; };
+		7E2B5AE51811955900B89E97 /* TestHostConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B5AE41811955900B89E97 /* TestHostConfig.m */; };
+		7E2B5AE61811955900B89E97 /* TestHostConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B5AE41811955900B89E97 /* TestHostConfig.m */; };
+		7E36C06417FAFE2F000E3083 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06217FAFE2F000E3083 /* EventKit.framework */; };
+		7E36C06517FAFE2F000E3083 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06317FAFE2F000E3083 /* EventKitUI.framework */; };
+		7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06217FAFE2F000E3083 /* EventKit.framework */; };
+		7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36C06317FAFE2F000E3083 /* EventKitUI.framework */; };
+		7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CA6317FBF8990081F306 /* QuartzCore.framework */; };
+		7E72CA6517FBF89F0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CA6317FBF8990081F306 /* QuartzCore.framework */; };
 		7EA15B9E170AD9D6003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -215,6 +223,11 @@
 		789D6BFA17140E1000074ED5 /* JSInjectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSInjectionTest.m; sourceTree = "<group>"; };
 		7E0166AB17048BAE0073298E /* WebViewDmsTriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDmsTriggeringTest.m; sourceTree = "<group>"; };
 		7E0166AE17048EDB0073298E /* analytics_test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = analytics_test.js; sourceTree = "<group>"; };
+		7E2B5AE31811955900B89E97 /* TestHostConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHostConfig.h; sourceTree = "<group>"; };
+		7E2B5AE41811955900B89E97 /* TestHostConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHostConfig.m; sourceTree = "<group>"; };
+		7E36C06217FAFE2F000E3083 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E36C06317FAFE2F000E3083 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		7E72CA6317FBF8990081F306 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
 		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
 		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -226,6 +239,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E72CA6517FBF89F0081F306 /* QuartzCore.framework in Frameworks */,
+				7E36C06417FAFE2F000E3083 /* EventKit.framework in Frameworks */,
+				7E36C06517FAFE2F000E3083 /* EventKitUI.framework in Frameworks */,
 				7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */,
 				1BD5614E157F8137002BA8B0 /* libc++.dylib in Frameworks */,
 				1B0BFBDF15612F1F00853028 /* libJFFTestTools.a in Frameworks */,
@@ -258,6 +274,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */,
+				7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */,
+				7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */,
 				7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */,
 				1BD5614F157F813E002BA8B0 /* libc++.dylib in Frameworks */,
 				1B0BFBE215612F2700853028 /* libJFFTestTools.a in Frameworks */,
@@ -321,6 +340,8 @@
 				258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */,
 				6568491B1472F9AD0064CDE4 /* SCWebViewContainer.h */,
 				6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */,
+				7E2B5AE31811955900B89E97 /* TestHostConfig.h */,
+				7E2B5AE41811955900B89E97 /* TestHostConfig.m */,
 				1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */,
 				1B3CDF33156118E500949EA6 /* NSURLRequest+isTestDomain.h */,
 				1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */,
@@ -353,6 +374,9 @@
 		25913CAD146D57920099177E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E72CA6317FBF8990081F306 /* QuartzCore.framework */,
+				7E36C06217FAFE2F000E3083 /* EventKit.framework */,
+				7E36C06317FAFE2F000E3083 /* EventKitUI.framework */,
 				7EA3AD8C170B1CD200E53489 /* Social.framework */,
 				1BD5614D157F8137002BA8B0 /* libc++.dylib */,
 				1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */,
@@ -627,6 +651,7 @@
 				1BAFB71A1511E8B30007A91D /* SCWebViewContainer.m in Sources */,
 				1BAFB71B1511E8B30007A91D /* SCAlerPlugin.m in Sources */,
 				1B3CDF32156116F500949EA6 /* SCTestServerDomainHook.m in Sources */,
+				7E2B5AE61811955900B89E97 /* TestHostConfig.m in Sources */,
 				1B3CDF361561195300949EA6 /* NSURLRequest+isTestDomain.m in Sources */,
 				7E0166B017048EDB0073298E /* analytics_test.js in Sources */,
 				789D6BFE1714137B00074ED5 /* JSInjectionTest.m in Sources */,
@@ -648,6 +673,7 @@
 				6568491D1472F9AD0064CDE4 /* SCWebViewContainer.m in Sources */,
 				1B3A37BB1476828E007D8C10 /* SCAlerPlugin.m in Sources */,
 				1B2122F61560FB67008779F9 /* WebViewMediaItemsTest.m in Sources */,
+				7E2B5AE51811955900B89E97 /* TestHostConfig.m in Sources */,
 				1B3CDF2D1561124E00949EA6 /* SCTestServerDomainHook.m in Sources */,
 				1B3CDF35156118E500949EA6 /* NSURLRequest+isTestDomain.m in Sources */,
 				1B0BFBE31561316500853028 /* WebViewAccountsTest.m in Sources */,

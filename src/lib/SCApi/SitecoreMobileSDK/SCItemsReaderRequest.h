@@ -6,17 +6,19 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#include "SitecoreMobileSDK/SCItemReaderScopeType.h"
-#include "SitecoreMobileSDK/SCItemReaderRequestType.h"
-#include "SitecoreMobileSDK/SCItemReaderRequestFlags.h"
+#include <SitecoreMobileSDK/SCItemReaderScopeType.h>
+#include <SitecoreMobileSDK/SCItemReaderRequestType.h>
+#include <SitecoreMobileSDK/SCItemReaderRequestFlags.h>
 
 #import <Foundation/Foundation.h>
+
+#import "SCBaseItemRequest.h"
 
 /**
  The SCItemsReaderRequest contains the set of params for the requested items from the backend.
  It used for [SCApiContext itemsReaderWithRequest:] method. All other loaders based on this method.
  */
-@interface SCItemsReaderRequest : NSObject < NSCopying >
+@interface SCItemsReaderRequest : SCBaseItemRequest < NSCopying >
 
 /**
  Specifies the set of the items which will be loaded.
@@ -25,6 +27,7 @@
  This argument is ignored when [SCItemsReaderRequest requestType] is SCItemReaderRequestQuery
  */
 @property(nonatomic) SCItemReaderScopeType scope;
+
 /**
  Request string of the items.
  Has a different meaning depends on [SCItemsReaderRequest requestType]
@@ -38,16 +41,19 @@
  - SCItemReaderRequestQuery    - request is the Sitecore query, example: "/sitecore/content/nicam/child::*[@@templatename='Site Section']"
  */
 @property(nonatomic,strong) NSString *request;
+
 /**
  Specifies the type of [SCItemsReaderRequest request] option, see [SCItemsReaderRequest request] for details.
  If [SCItemsReaderRequest requestType] is a SCItemReaderRequestQuery, it is a similar to [SCItemsReaderRequest flags] is setted to SCItemReaderRequestIngnoreCache.
  */
 @property(nonatomic) SCItemReaderRequestType requestType;
+
 /**
  The set of the field's names which will be read with each item. Each field's name in the set should be a string.
  For reading all fields - pass nil or pass empty set if you don't need to read any field
  */
 @property(nonatomic,strong) NSSet *fieldNames;
+
 /**
  Additional request flags:
  
@@ -56,19 +62,16 @@
  - SCItemReaderRequestReadFieldsValues - for each field specified in fieldNames set - [SCField fieldValue] will be loaded before you've got a result with the items.
  */
 @property(nonatomic) SCItemReaderRequestFlags flags;
+
 /**
  The number of paged, used only if [SCItemsReaderRequest pageSize] is specified. Indexing starts from zero.
  */
 @property(nonatomic) NSUInteger page;
+
 /**
  The page size of items, used for paged items loading. For example if you need to read only a second item for the given request, specify [SCItemsReaderRequest pageSize] as 1 and [SCItemsReaderRequest page] is 1.
  */
 @property(nonatomic) NSUInteger pageSize;
-
-/**
- The language used to request Sitecore items, if not set -[SCApiContext defaultLanguage] will be used.
- */
-@property(nonatomic,strong) NSString* language;
 
 /**
  The life time in cache after which object in cache becames old

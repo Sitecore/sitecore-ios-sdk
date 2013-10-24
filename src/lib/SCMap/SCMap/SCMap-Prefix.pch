@@ -11,6 +11,8 @@
     #import <SitecoreMobileSDK/SCImageView.h>
     #import <SitecoreMobileSDK/SCApi.h>
 
+    #import <iFeatureAvailability/iFeatureAvailability.h>
+
     #import <MapKit/MapKit.h>
     #import <Foundation/Foundation.h>
 #endif

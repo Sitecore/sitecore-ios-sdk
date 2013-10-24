@@ -1,0 +1,32 @@
+{
+    "statusCode":200,
+    "result":{
+        "totalCount":1,
+        "resultCount":1,
+        "items":[
+                 {
+                 "Database":"master",
+                 "DisplayName":"Home",
+                 "HasChildren":true,
+                 "ID":"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}",
+                 "Language":"en",
+                 "LongID":"/{11111111-1111-1111-1111-111111111111}/{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}/{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}",
+                 "Path":"/sitecore/content/Home",
+                 "Template":"Sample/Sample Item",
+                 "Version":1,
+                 "Fields":{
+                 "{75577384-3C97-45DA-A847-81B00500E250}":{
+                 "Name":"Title",
+                 "Type":"text",
+                 "Value":"Sitecore"
+                 },
+                 "{A60ACD61-A6DB-4182-8329-C957982CEC74}":{
+                 "Name":"Text",
+                 "Type":"Rich Text",
+                 "Value":"\u003cp\u003eWelcome to Sitecore\u003c/p\u003e\n\u003cp\u003e\u003cbr /\u003e\n\u003c/p\u003e\n\u003cp\u003e\u003cimg alt=\"\" height=\"100\" width=\"100\" src=\"~/media/4F20B519D5654472B01891CB6103C667.ashx\" /\u003e\u003c/p\u003e"
+                 }
+                 }
+                 }
+                 ]
+    }
+}

@@ -11,10 +11,12 @@
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                           login: SCWebApiAdminLogin
-                                        password: SCWebApiAdminPassword ];
+                                                  login: SCWebApiAdminLogin
+                                               password: SCWebApiAdminPassword
+                                                version: SCWebApiV1 ];
     
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -93,6 +95,11 @@
                     });
                 });
             }
+            else
+            {
+                response_error_ = read_error_;
+                didFinishCallback_();
+            }
         } );
     };
 
@@ -112,6 +119,12 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
 
+    if ( nil == item_ )
+    {
+        GHFail( @"item not created" );
+        return;
+    }
+    
     [ self performAsyncRequestOnMainThreadWithBlock: edit_block_
                                            selector: _cmd ];
 
@@ -162,13 +175,15 @@
     __block SCApiContext* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* read_item_ = nil;
-    __block SCError* response_error_ = nil;
+    __block SCApiError* response_error_ = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                           login: SCWebApiAdminLogin
-                                        password: SCWebApiAdminPassword ];
+                                                  login: SCWebApiAdminLogin
+                                               password: SCWebApiAdminPassword
+                                                version: SCWebApiV1 ];
 
     apiContext_.defaultDatabase = @"web";
-
+    apiContext_.defaultSite = @"/sitecore/shell";
+    
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: SCCreateItemPath ];
@@ -179,7 +194,7 @@
         [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
-            response_error_ = (SCError*)error_;
+            response_error_ = (SCApiError*)error_;
             didFinishCallback_();
         } );
     };
@@ -187,9 +202,10 @@
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                               login: SCWebApiNocreateLogin
-                                            password: SCWebApiNocreatePassword ];
-
+                                                      login: SCWebApiNocreateLogin
+                                                   password: SCWebApiNocreatePassword
+                                                    version: SCWebApiV1 ];
+        apiContext_.defaultSite = @"/sitecore/shell";
         apiContext_.defaultDatabase = @"web";
         SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
                                                                              fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
@@ -206,7 +222,7 @@
                 [ item_to_edit_ saveItem ]( ^( id edit_item_result_, NSError* error_ )
                 {
                     item_ = edit_item_result_;
-                    response_error_ = (SCError*)error_;
+                    response_error_ = (SCApiError*)error_;
                     didFinishCallback_(); 
                 } );
             }
@@ -244,9 +260,11 @@
     __block NSString* delete_response_ = @"";
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
-                                        password: SCWebApiAdminPassword ];
+                                        password: SCWebApiAdminPassword
+                                                version: SCWebApiV1 ];
     
     apiContext_.defaultDatabase = @"web";
+    apiContext_.defaultSite = @"/sitecore/shell";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -266,9 +284,11 @@
     {
         apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
                                                login: @"sitecore\\nocreate"
-                                            password: @"nocreate" ];
+                                            password: @"nocreate"
+                                                    version: SCWebApiV1 ];
         
         apiContext_.defaultDatabase = @"web";
+        apiContext_.defaultSite = @"/sitecore/shell";        
         SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
         [ apiContext_ removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* error_ )

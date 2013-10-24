@@ -2,7 +2,7 @@
 
 #import "SCError.h"
 
-@interface SCError (SCField)
+@interface SCApiError (SCField)
 
 +(id)errorWithDescription:( NSString* )description_;
 

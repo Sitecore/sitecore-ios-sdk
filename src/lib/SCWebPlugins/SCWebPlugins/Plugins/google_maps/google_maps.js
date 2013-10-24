@@ -6,7 +6,7 @@ scmobile.google_maps._construct = function()
     {
         this.addresses    = [];
         this.drawRoute    = false;
-        this.regionRadius = 100000000.;
+        this.regionRadius = 100000.;
 
         var googleMapsThis_ = this;
 
@@ -20,9 +20,21 @@ scmobile.google_maps._construct = function()
                 urlArgs_ = urlArgs_ + '&addresses=' + encodeURIComponent( JSON.stringify( googleMapsThis_.addresses ) );
             }
 
+            scmobile.console.log( 'region radius: ' + googleMapsThis_.regionRadius )
+            for (var key in googleMapsThis_) {
+                if (googleMapsThis_.hasOwnProperty(key)) {
+                    scmobile.console.log( 'googleMapsThis_ key : ' + key )
+                }
+            }
+            
             urlArgs_ = urlArgs_ + '&drawRoute='    + googleMapsThis_.drawRoute;
             urlArgs_ = urlArgs_ + '&regionRadius=' + googleMapsThis_.regionRadius;
-
+            urlArgs_ = urlArgs_ + '&cameraLatitude=' + googleMapsThis_.cameraLatitude;
+            urlArgs_ = urlArgs_ + '&cameraLongitude=' + googleMapsThis_.cameraLongitude;
+            urlArgs_ = urlArgs_ + '&cameraHeight=' + googleMapsThis_.cameraHeight;
+            urlArgs_ = urlArgs_ + '&viewPointLatitude=' + googleMapsThis_.viewPointLatitude;
+            urlArgs_ = urlArgs_ + '&viewPointLongitude=' + googleMapsThis_.viewPointLongitude;
+            
             var webSocket = new scmobile.utils.SCWebSocket( '/scmobile/google_maps/showAdresses?1=1'
                                                            + urlArgs_ );
 

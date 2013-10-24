@@ -2,7 +2,16 @@
 // Prefix header for all source files of the 'SCApi' target in the 'SCApi' project
 //
 
+#import "SCApiDefines.h"
+
 #ifdef __OBJC__
+    #import "SCFieldRecord.h"
+    #import "SCItemRecord.h"
+
+    #import "SCItemRecordCacheRW.h"
+    #import "SCItemSourcePOD.h"
+
+
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFAsyncOperations/JFFAsyncOperations.h>
     #import <JFFUtils/JFFUtils.h>
@@ -13,5 +22,35 @@
     #import <TouchXmlHelper/TouchXmlHelper.h>
     #import <TouchXML/TouchXML.h>
 
+    #import <AmberFoundation/AmberFoundation.h>
+    #import <ESDatabaseWrapper/ESDatabaseWrapper.h>
+    #import <FMDatabase.h>
+
     #import <Foundation/Foundation.h>
-#endif
+    #import <objc/message.h>
+
+    #import <SitecoreMobileSDK/SCExtendedOperations.h>
+
+    #ifdef __cplusplus
+        #import <JFFUtils/JFFCastFunctions.hpp>
+        #import <JFFUtils/NSString/NSString+CPlusPlus.h>
+        #import <ObjcScopedGuard/ObjcScopedGuard.h>
+    #endif // *.mm
+#endif // *.m
+
+
+
+
+#ifdef __cplusplus
+    #include <uri-parser/UriParser.hpp>
+    #include <vector>
+    #include <algorithm>
+#endif // *.cpp
+
+
+#include <math.h>
+
+#include <openssl/crypto.h>
+#include <openssl/bn.h>
+#include <openssl/rsa.h>
+// *.c

@@ -13,7 +13,8 @@
     {
         apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
                                                login: SCWebApiAdminLogin
-                                            password: SCWebApiAdminPassword ];
+                                            password: SCWebApiAdminPassword
+                       version: SCWebApiV1 ];
         
         apiContext_.defaultDatabase = @"master";
         SCItemsReaderRequest* request_ =

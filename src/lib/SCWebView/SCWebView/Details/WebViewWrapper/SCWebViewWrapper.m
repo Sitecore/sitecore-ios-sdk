@@ -259,7 +259,9 @@ navigationType:( UIWebViewNavigationType )navigation_type_
 -(void)webViewDidStartLoad:( UIWebView* )webView_
 {
     if ( [ self->_delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+    {
         [ self->_delegate webViewDidStartLoad: self ];
+    }
 }
 
 -(void)webViewDidFinishLoad:( UIWebView* )webView_
@@ -267,9 +269,15 @@ navigationType:( UIWebViewNavigationType )navigation_type_
     [ self->_activityIndicator stopAnimating ];
     
     if ( [ self->_delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+    {
         [ self->_delegate webViewDidFinishLoad: self ];
+    }
 
     [ [ self class ] enableSCJavascriptForWevView: webView_ ];
+    
+    //TODO: !!!uncomment this to see HTML source!!!
+//    NSString *yourHTMLSourceCodeString = [webView_ stringByEvaluatingJavaScriptFromString:@"document.documentElement.outerHTML"];
+//    NSLog(@"yourHTMLSourceCodeString: %@", yourHTMLSourceCodeString);
 }
 
 -(void)webView:( UIWebView* )web_view_
@@ -278,7 +286,9 @@ didFailLoadWithError:( NSError* )error_
     [ self->_activityIndicator stopAnimating ];
 
     if ( [ self->_delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
+    {
         [ self->_delegate webView: self didFailLoadWithError: error_ ];
+    }
 }
 
 @end

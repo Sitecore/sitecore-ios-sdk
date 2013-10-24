@@ -33,9 +33,7 @@
 		1BBCABF01510E87600199B37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
 		1BBCABF11510E87600199B37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
 		1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
-		1BC086BB147BA5A50066CFB3 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC086BA147BA5A50066CFB3 /* GHUnitIOS.framework */; };
 		1BCC930C1511E11B00271BFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
-		1BCC930D1511E11B00271BFD /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
 		1BCC930E1511E11B00271BFD /* SCGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AC4B11491036300DDD31D /* SCGlobalSettings.m */; };
 		1BCC93361511E11B00271BFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
 		1BCC93371511E11B00271BFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
@@ -54,7 +52,6 @@
 		1BCC93451511E11B00271BFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA014615C7D00C9FC49 /* UIKit.framework */; };
 		1BCC93461511E11B00271BFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA214615C7D00C9FC49 /* Foundation.framework */; };
 		1BCC93471511E11B00271BFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
-		1BCC93481511E11B00271BFD /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC086BA147BA5A50066CFB3 /* GHUnitIOS.framework */; };
 		1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		1BCC934C1511E11B00271BFD /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
 		1BCC938C1511E11B00271BFD /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
@@ -62,6 +59,18 @@
 		1BD6A9D31518CAC300D2FC84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
 		1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		1BF4D970156680F6007D8CBF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
+		2545B3D91803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
+		2545B3DA1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
+		2545B3DB1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
+		2545B3DC1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
+		2545B3DD1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */; };
+		2545B3DE1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */; };
+		2545B3DF1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */; };
+		2545B3E01803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */; };
+		2545B3E31803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */; };
+		2545B3E41803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */; };
+		2545B3E51803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */; };
+		2545B3E61803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */; };
 		2560DB5E1532DECA0096DC59 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		2560DB5F1532DECA0096DC59 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		2562B0921716DA15000C1985 /* DmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2562B0911716DA15000C1985 /* DmsTriggeringTest.m */; };
@@ -85,7 +94,6 @@
 		2562B0B61716F591000C1985 /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */; };
 		2562B0B71716F591000C1985 /* LanguageReaderPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */; };
 		2562B0BA1716F596000C1985 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */; };
-		2562B0BB1716F596000C1985 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
 		2562B0BC1716F596000C1985 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC3163941E200738376 /* CreateItemNegativeTest.m */; };
 		2562B0BD1716F596000C1985 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC4163941E200738376 /* EditItemNegativeTest.m */; };
 		2562B0BE1716F596000C1985 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC5163941E200738376 /* FieldsErrorTest.m */; };
@@ -96,37 +104,441 @@
 		2562B0C31716F596000C1985 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECA163941E200738376 /* ResponseErrorTest.m */; };
 		2562B0C41716F596000C1985 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */; };
 		2562B0C51716F596000C1985 /* ZRemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */; };
-		2562B0D21716F59A000C1985 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
-		2562B0D31716F59A000C1985 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
-		2562B0D41716F59A000C1985 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
-		2562B0D51716F59A000C1985 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
-		2562B0D61716F59A000C1985 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
-		2562B0D71716F59A000C1985 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		2565FFB817F3067C009366E9 /* AuthErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */; };
+		2565FFB917F3067C009366E9 /* AuthErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */; };
+		2565FFBA17F3067D009366E9 /* AuthErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */; };
+		2565FFBC17F30682009366E9 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
+		2565FFBD17F30682009366E9 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
+		2565FFBE17F30682009366E9 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
+		2565FFC017F32185009366E9 /* ReadItemsCacheTestExtended.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */; };
+		2565FFC117F32185009366E9 /* ReadItemsIgnoreCacheTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */; };
+		2565FFC217F32185009366E9 /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */; };
+		2565FFC317F32185009366E9 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */; };
 		258A14F614E537E600DA4DE5 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
 		258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
-		259D61EE15E5136600853791 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D61ED15E5136600853791 /* SitecoreMobileSDK.framework */; };
+		2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
+		2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
+		2598AAAC17F42D0F00252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
+		2598AAAD17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
+		2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
+		2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
+		2598AAB017F42D1300252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
+		2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
+		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
+		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
+		2598AB1317F42DBE00252AA4 /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
+		2598AB1417F42DBE00252AA4 /* EditItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */; };
+		2598AB1517F42DBE00252AA4 /* UploadMediaTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */; };
+		2598AB1617F42DBE00252AA4 /* DeleteItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */; };
+		2598AB1717F42DBE00252AA4 /* DeleteItemTest_shellExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */; };
+		2598AB1817F42DBE00252AA4 /* DeleteAllItemsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */; };
+		2598AB1A17F42DBE00252AA4 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		2598AB1B17F42DBE00252AA4 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		2598AB1C17F42DBE00252AA4 /* CreateItemPositiveTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */; };
+		2598AB1D17F42DBE00252AA4 /* EditItemTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.mm */; };
+		2598AB1E17F42DBE00252AA4 /* EditItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */; };
+		2598AB1F17F42DBE00252AA4 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		2598AB2017F42DBE00252AA4 /* UploadMediaTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */; };
+		2598AB2117F42DBE00252AA4 /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
+		2598AB2217F42DBE00252AA4 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		2598AB2317F42DBE00252AA4 /* DeleteItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */; };
+		2598AB2417F42DBE00252AA4 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		2598AB2617F42DBF00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
+		2598AB2717F42DBF00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
+		2598AB2917F42DBF00252AA4 /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
+		2598AB2A17F42DBF00252AA4 /* EditItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */; };
+		2598AB2B17F42DBF00252AA4 /* UploadMediaTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */; };
+		2598AB2C17F42DBF00252AA4 /* DeleteItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */; };
+		2598AB2D17F42DBF00252AA4 /* DeleteItemTest_shellExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */; };
+		2598AB2E17F42DBF00252AA4 /* DeleteAllItemsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */; };
+		2598AB3017F42DBF00252AA4 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		2598AB3117F42DBF00252AA4 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		2598AB3217F42DBF00252AA4 /* CreateItemPositiveTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */; };
+		2598AB3317F42DBF00252AA4 /* EditItemTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.mm */; };
+		2598AB3417F42DBF00252AA4 /* EditItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */; };
+		2598AB3517F42DBF00252AA4 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		2598AB3617F42DBF00252AA4 /* UploadMediaTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */; };
+		2598AB3717F42DBF00252AA4 /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
+		2598AB3817F42DBF00252AA4 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		2598AB3917F42DBF00252AA4 /* DeleteItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */; };
+		2598AB3A17F42DBF00252AA4 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		25E177A91806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */; };
+		25E177AA1806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */; };
+		25E177AC1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
+		25E177AD1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
+		25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
+		25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
+		25E177B11806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
+		25E177B21806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
+		25E177B31806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
+		25E177B41806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
+		78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
+		78769DB717B51D5500E5836B /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
+		78911DB017C21CF900C680AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
+		78911DB117C21E6900C680AE /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
+		78A6181617BA142400D43837 /* big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78A6181517BA142400D43837 /* big.jpg */; };
+		78A6181717BA142400D43837 /* big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78A6181517BA142400D43837 /* big.jpg */; };
+		78A6183D17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */; };
+		78A6183F17BA2A8100D43837 /* TriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */; };
+		78AFAD441802D05000B1FEFE /* TriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */; };
+		78AFAD451802D05000B1FEFE /* MultipleItemsTriggerTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */; };
+		78AFAD461802D05000B1FEFE /* TriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4D591170580F70035D5DA /* TriggeringTest.m */; };
+		78AFAD471802D05000B1FEFE /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
+		78AFAD481802D05000B1FEFE /* ReadItemsCacheTestExtended.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */; };
+		78AFAD491802D05000B1FEFE /* ReadItemsIgnoreCacheTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */; };
+		78AFAD4A1802D05000B1FEFE /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */; };
+		78AFAD4B1802D05000B1FEFE /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */; };
+		78AFAD4C1802D05000B1FEFE /* GetFieldFromItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */; };
+		78AFAD4D1802D05000B1FEFE /* GetFieldsFromItemReaderTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */; };
+		78AFAD4E1802D05000B1FEFE /* GetFieldValueFromFieldTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */; };
+		78AFAD4F1802D05000B1FEFE /* ReadFieldsWithSecurityTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */; };
+		78AFAD501802D05000B1FEFE /* GetFieldFromItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE21636AA6B00F87911 /* GetFieldFromItemTest.m */; };
+		78AFAD511802D05000B1FEFE /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE31636AA6B00F87911 /* GetFieldsFromItemReaderTest.m */; };
+		78AFAD521802D05000B1FEFE /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE41636AA6B00F87911 /* GetFieldValueFromFieldTest.m */; };
+		78AFAD531802D05000B1FEFE /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE51636AA6B00F87911 /* ReadFieldsWithSecurityTest.m */; };
+		78AFAD541802D05000B1FEFE /* ReadFieldsWithAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */; };
+		78AFAD551802D05000B1FEFE /* ReadItemsCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */; };
+		78AFAD561802D05000B1FEFE /* ReadItemsCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */; };
+		78AFAD571802D05000B1FEFE /* ReadItemsPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */; };
+		78AFAD581802D05000B1FEFE /* REadItemsSCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */; };
+		78AFAD591802D05000B1FEFE /* ReadItemsSCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */; };
+		78AFAD5A1802D05000B1FEFE /* ReadItemsSPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */; };
+		78AFAD5B1802D05000B1FEFE /* ReadItemsSTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */; };
+		78AFAD5C1802D05000B1FEFE /* ReadFieldsWithAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA8163187EC00D5D4FC /* ReadFieldsWithAuth.m */; };
+		78AFAD5D1802D05000B1FEFE /* ReadItemsSTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAF163187EC00D5D4FC /* ReadItemsSTestAuth.m */; };
+		78AFAD5E1802D05000B1FEFE /* ReadItemsCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAA163187EC00D5D4FC /* ReadItemsCTestAuth.m */; };
+		78AFAD5F1802D05000B1FEFE /* ReadItemsPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAB163187EC00D5D4FC /* ReadItemsPTestAuth.m */; };
+		78AFAD601802D05000B1FEFE /* ReadItemsCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA9163187EC00D5D4FC /* ReadItemsCPTestAuth.m */; };
+		78AFAD611802D05000B1FEFE /* ReadItemsSCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAD163187EC00D5D4FC /* ReadItemsSCTestAuth.m */; };
+		78AFAD621802D05000B1FEFE /* ReadItemsSPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAE163187EC00D5D4FC /* ReadItemsSPTestAuth.m */; };
+		78AFAD631802D05000B1FEFE /* REadItemsSCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAC163187EC00D5D4FC /* REadItemsSCPTestAuth.m */; };
+		78AFAD641802D05000B1FEFE /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
+		78AFAD651802D05000B1FEFE /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
+		78AFAD661802D05000B1FEFE /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
+		78AFAD671802D05000B1FEFE /* ExtranetUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */; };
+		78AFAD681802D05000B1FEFE /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
+		78AFAD691802D05000B1FEFE /* PagingItemsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */; };
+		78AFAD6A1802D05000B1FEFE /* ReadPagingItemsAuthTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */; };
+		78AFAD6B1802D05000B1FEFE /* PagingItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE8163958D200738376 /* PagingItemsTest.m */; };
+		78AFAD6C1802D05000B1FEFE /* ReadPagingItemsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE9163958D200738376 /* ReadPagingItemsAuthTest.m */; };
+		78AFAD6D1802D05000B1FEFE /* LanguageReaderNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */; };
+		78AFAD6E1802D05000B1FEFE /* LanguageReaderPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */; };
+		78AFAD6F1802D05000B1FEFE /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */; };
+		78AFAD701802D05000B1FEFE /* LanguageReaderPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */; };
+		78AFAD711802D05000B1FEFE /* AllNegativeItemsRemoveFirstExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */; };
+		78AFAD721802D05000B1FEFE /* AuthErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */; };
+		78AFAD731802D05000B1FEFE /* CreateItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */; };
+		78AFAD741802D05000B1FEFE /* DmsTriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */; };
+		78AFAD751802D05000B1FEFE /* EditItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */; };
+		78AFAD761802D05000B1FEFE /* FieldsErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */; };
+		78AFAD771802D05000B1FEFE /* InvalidPathErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */; };
+		78AFAD781802D05000B1FEFE /* InvalidRequestErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */; };
+		78AFAD791802D05000B1FEFE /* NoItemErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */; };
+		78AFAD7A1802D05000B1FEFE /* NoItemFieldErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */; };
+		78AFAD7B1802D05000B1FEFE /* RemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */; };
+		78AFAD7C1802D05000B1FEFE /* ResponseErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */; };
+		78AFAD7D1802D05000B1FEFE /* UploadMediaNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */; };
+		78AFAD7E1802D05000B1FEFE /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
+		78AFAD7F1802D05000B1FEFE /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */; };
+		78AFAD801802D05000B1FEFE /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
+		78AFAD811802D05000B1FEFE /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC3163941E200738376 /* CreateItemNegativeTest.m */; };
+		78AFAD821802D05000B1FEFE /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC4163941E200738376 /* EditItemNegativeTest.m */; };
+		78AFAD831802D05000B1FEFE /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC5163941E200738376 /* FieldsErrorTest.m */; };
+		78AFAD841802D05000B1FEFE /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC6163941E200738376 /* InvalidPathErrorTest.m */; };
+		78AFAD851802D05000B1FEFE /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC7163941E200738376 /* InvalidRequestErrorTest.m */; };
+		78AFAD861802D05000B1FEFE /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC8163941E200738376 /* NoItemErrorTest.m */; };
+		78AFAD871802D05000B1FEFE /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */; };
+		78AFAD881802D05000B1FEFE /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECA163941E200738376 /* ResponseErrorTest.m */; };
+		78AFAD891802D05000B1FEFE /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */; };
+		78AFAD8A1802D05000B1FEFE /* ZRemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */; };
+		78AFAD8B1802D05000B1FEFE /* DmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2562B0911716DA15000C1985 /* DmsTriggeringTest.m */; };
+		78AFAD8C1802D05000B1FEFE /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
+		78AFAD8D1802D05000B1FEFE /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
+		78AFAD8F1802D05000B1FEFE /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
+		78AFAD901802D05000B1FEFE /* EditItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */; };
+		78AFAD911802D05000B1FEFE /* UploadMediaTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */; };
+		78AFAD921802D05000B1FEFE /* DeleteItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */; };
+		78AFAD931802D05000B1FEFE /* DeleteItemTest_shellExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */; };
+		78AFAD941802D05000B1FEFE /* DeleteAllItemsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */; };
+		78AFAD961802D05000B1FEFE /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		78AFAD971802D05000B1FEFE /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		78AFAD981802D05000B1FEFE /* CreateItemPositiveTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */; };
+		78AFAD991802D05000B1FEFE /* EditItemTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.mm */; };
+		78AFAD9A1802D05000B1FEFE /* EditItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */; };
+		78AFAD9B1802D05000B1FEFE /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		78AFAD9C1802D05000B1FEFE /* UploadMediaTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */; };
+		78AFAD9D1802D05000B1FEFE /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
+		78AFAD9E1802D05000B1FEFE /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		78AFAD9F1802D05000B1FEFE /* DeleteItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */; };
+		78AFADA01802D05000B1FEFE /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		78B0765E17C39DF200D0F905 /* TriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */; };
+		78B0765F17C39DF200D0F905 /* MultipleItemsTriggerTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */; };
+		78B0766017C39DF200D0F905 /* TriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4D591170580F70035D5DA /* TriggeringTest.m */; };
+		78B0766117C39DF200D0F905 /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
+		78B0766217C39DF500D0F905 /* ReadItemsCacheTestExtended.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */; };
+		78B0766317C39DF500D0F905 /* ReadItemsIgnoreCacheTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */; };
+		78B0766417C39DF500D0F905 /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */; };
+		78B0766517C39DF500D0F905 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */; };
+		78B0766C17C39DFC00D0F905 /* GetFieldFromItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */; };
+		78B0766D17C39DFC00D0F905 /* GetFieldsFromItemReaderTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */; };
+		78B0766E17C39DFC00D0F905 /* GetFieldValueFromFieldTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */; };
+		78B0766F17C39DFC00D0F905 /* ReadFieldsWithSecurityTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */; };
+		78B0767017C39DFC00D0F905 /* GetFieldFromItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE21636AA6B00F87911 /* GetFieldFromItemTest.m */; };
+		78B0767117C39DFC00D0F905 /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE31636AA6B00F87911 /* GetFieldsFromItemReaderTest.m */; };
+		78B0767217C39DFC00D0F905 /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE41636AA6B00F87911 /* GetFieldValueFromFieldTest.m */; };
+		78B0767317C39DFC00D0F905 /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE51636AA6B00F87911 /* ReadFieldsWithSecurityTest.m */; };
+		78B0767417C39E0300D0F905 /* ReadFieldsWithAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */; };
+		78B0767517C39E0300D0F905 /* ReadItemsCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */; };
+		78B0767617C39E0300D0F905 /* ReadItemsCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */; };
+		78B0767717C39E0300D0F905 /* ReadItemsPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */; };
+		78B0767817C39E0300D0F905 /* REadItemsSCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */; };
+		78B0767917C39E0300D0F905 /* ReadItemsSCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */; };
+		78B0767A17C39E0300D0F905 /* ReadItemsSPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */; };
+		78B0767B17C39E0300D0F905 /* ReadItemsSTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */; };
+		78B0767C17C39E0300D0F905 /* ReadFieldsWithAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA8163187EC00D5D4FC /* ReadFieldsWithAuth.m */; };
+		78B0767D17C39E0300D0F905 /* ReadItemsSTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAF163187EC00D5D4FC /* ReadItemsSTestAuth.m */; };
+		78B0767E17C39E0300D0F905 /* ReadItemsCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAA163187EC00D5D4FC /* ReadItemsCTestAuth.m */; };
+		78B0767F17C39E0300D0F905 /* ReadItemsPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAB163187EC00D5D4FC /* ReadItemsPTestAuth.m */; };
+		78B0768017C39E0300D0F905 /* ReadItemsCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA9163187EC00D5D4FC /* ReadItemsCPTestAuth.m */; };
+		78B0768117C39E0300D0F905 /* ReadItemsSCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAD163187EC00D5D4FC /* ReadItemsSCTestAuth.m */; };
+		78B0768217C39E0300D0F905 /* ReadItemsSPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAE163187EC00D5D4FC /* ReadItemsSPTestAuth.m */; };
+		78B0768317C39E0300D0F905 /* REadItemsSCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAC163187EC00D5D4FC /* REadItemsSCPTestAuth.m */; };
+		78B0768417C39E0F00D0F905 /* TriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */; };
+		78B0768517C39E0F00D0F905 /* MultipleItemsTriggerTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */; };
+		78B0768C17C39E1A00D0F905 /* GetFieldFromItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */; };
+		78B0768D17C39E1A00D0F905 /* GetFieldsFromItemReaderTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */; };
+		78B0768E17C39E1A00D0F905 /* GetFieldValueFromFieldTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */; };
+		78B0768F17C39E1A00D0F905 /* ReadFieldsWithSecurityTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */; };
+		78B0769417C39E1E00D0F905 /* ReadFieldsWithAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */; };
+		78B0769517C39E1E00D0F905 /* ReadItemsCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */; };
+		78B0769617C39E1E00D0F905 /* ReadItemsCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */; };
+		78B0769717C39E1E00D0F905 /* ReadItemsPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */; };
+		78B0769817C39E1E00D0F905 /* REadItemsSCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */; };
+		78B0769917C39E1E00D0F905 /* ReadItemsSCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */; };
+		78B0769A17C39E1E00D0F905 /* ReadItemsSPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */; };
+		78B0769B17C39E1E00D0F905 /* ReadItemsSTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */; };
+		78B076A417C39E2200D0F905 /* PagingItemsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */; };
+		78B076A517C39E2200D0F905 /* ReadPagingItemsAuthTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */; };
+		78B076A617C39E2200D0F905 /* PagingItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE8163958D200738376 /* PagingItemsTest.m */; };
+		78B076A717C39E2200D0F905 /* ReadPagingItemsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE9163958D200738376 /* ReadPagingItemsAuthTest.m */; };
+		78B076A817C39E2200D0F905 /* PagingItemsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */; };
+		78B076A917C39E2200D0F905 /* ReadPagingItemsAuthTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */; };
+		78B076AC17C39E2700D0F905 /* LanguageReaderNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */; };
+		78B076AD17C39E2700D0F905 /* LanguageReaderPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */; };
+		78B076AE17C39E2700D0F905 /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */; };
+		78B076AF17C39E2700D0F905 /* LanguageReaderPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */; };
+		78B076B017C39E2800D0F905 /* LanguageReaderNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */; };
+		78B076B117C39E2800D0F905 /* LanguageReaderPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */; };
+		78B076B417C39E2D00D0F905 /* AllNegativeItemsRemoveFirstExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */; };
+		78B076B617C39E2D00D0F905 /* CreateItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */; };
+		78B076B717C39E2D00D0F905 /* DmsTriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */; };
+		78B076B817C39E2D00D0F905 /* EditItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */; };
+		78B076B917C39E2D00D0F905 /* FieldsErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */; };
+		78B076BA17C39E2D00D0F905 /* InvalidPathErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */; };
+		78B076BB17C39E2D00D0F905 /* InvalidRequestErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */; };
+		78B076BC17C39E2D00D0F905 /* NoItemErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */; };
+		78B076BD17C39E2D00D0F905 /* NoItemFieldErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */; };
+		78B076BE17C39E2D00D0F905 /* RemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */; };
+		78B076BF17C39E2D00D0F905 /* ResponseErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */; };
+		78B076C017C39E2D00D0F905 /* UploadMediaNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */; };
+		78B076C117C39E2D00D0F905 /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
+		78B076C217C39E2D00D0F905 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */; };
+		78B076C417C39E2D00D0F905 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC3163941E200738376 /* CreateItemNegativeTest.m */; };
+		78B076C517C39E2D00D0F905 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC4163941E200738376 /* EditItemNegativeTest.m */; };
+		78B076C617C39E2D00D0F905 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC5163941E200738376 /* FieldsErrorTest.m */; };
+		78B076C717C39E2D00D0F905 /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC6163941E200738376 /* InvalidPathErrorTest.m */; };
+		78B076C817C39E2D00D0F905 /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC7163941E200738376 /* InvalidRequestErrorTest.m */; };
+		78B076C917C39E2D00D0F905 /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC8163941E200738376 /* NoItemErrorTest.m */; };
+		78B076CA17C39E2D00D0F905 /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */; };
+		78B076CB17C39E2D00D0F905 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECA163941E200738376 /* ResponseErrorTest.m */; };
+		78B076CC17C39E2D00D0F905 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */; };
+		78B076CD17C39E2D00D0F905 /* ZRemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */; };
+		78B076CE17C39E2D00D0F905 /* DmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2562B0911716DA15000C1985 /* DmsTriggeringTest.m */; };
+		78B076CF17C39E2D00D0F905 /* AllNegativeItemsRemoveFirstExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */; };
+		78B076D117C39E2D00D0F905 /* CreateItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */; };
+		78B076D217C39E2D00D0F905 /* DmsTriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */; };
+		78B076D317C39E2D00D0F905 /* EditItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */; };
+		78B076D417C39E2D00D0F905 /* FieldsErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */; };
+		78B076D517C39E2D00D0F905 /* InvalidPathErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */; };
+		78B076D617C39E2D00D0F905 /* InvalidRequestErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */; };
+		78B076D717C39E2D00D0F905 /* NoItemErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */; };
+		78B076D817C39E2D00D0F905 /* NoItemFieldErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */; };
+		78B076D917C39E2D00D0F905 /* RemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */; };
+		78B076DA17C39E2D00D0F905 /* ResponseErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */; };
+		78B076DB17C39E2D00D0F905 /* UploadMediaNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */; };
+		78B076DC17C39E2D00D0F905 /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
+		78B076FF17C39E3400D0F905 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
+		78B0770017C39E3400D0F905 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
+		78B0770217C39E3400D0F905 /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
+		78B0770317C39E3400D0F905 /* EditItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */; };
+		78B0770417C39E3400D0F905 /* UploadMediaTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */; };
+		78B0770517C39E3400D0F905 /* DeleteItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */; };
+		78B0770617C39E3400D0F905 /* DeleteItemTest_shellExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */; };
+		78B0770717C39E3400D0F905 /* DeleteAllItemsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */; };
+		78B0BAAD17BB856D00ED739A /* GetFieldFromItemTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */; };
+		78B0BAAF17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */; };
+		78B0BAB117BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */; };
+		78B0BAB317BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */; };
+		78B0BD8D17BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */; };
+		78B0BD8F17BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */; };
+		78B0BD9117BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */; };
+		78B0BD9317BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */; };
+		78B0BD9517BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */; };
+		78B0BD9717BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */; };
+		78B0BD9917BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */; };
+		78B0BD9B17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */; };
+		78B0BDA017BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */; };
+		78B0BDA217BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */; };
+		78B0BDA717BD075E0013B6DC /* PagingItemsTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */; };
+		78B0BDA917BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */; };
+		78B0BDAE17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */; };
+		78B0BDB017BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */; };
+		78B0BDC117BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */; };
+		78B0BDC517BD0E680013B6DC /* CreateItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */; };
+		78B0BDC717BD0E680013B6DC /* DmsTriggeringTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */; };
+		78B0BDC917BD0E680013B6DC /* EditItemNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */; };
+		78B0BDCB17BD0E680013B6DC /* FieldsErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */; };
+		78B0BDCD17BD0E680013B6DC /* InvalidPathErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */; };
+		78B0BDCF17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */; };
+		78B0BDD117BD0E680013B6DC /* NoItemErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */; };
+		78B0BDD317BD0E680013B6DC /* NoItemFieldErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */; };
+		78B0BDD517BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */; };
+		78B0BDD717BD0E680013B6DC /* ResponseErrorTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */; };
+		78B0BDD917BD0E680013B6DC /* UploadMediaNegativeTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */; };
+		78B0BDDB17BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
+		78B28A5317C747FF00942D26 /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
+		78BDD60717BE15DA00DBEB62 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
 		7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		7E3B1BE01727D5C70069E6F2 /* TriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4D591170580F70035D5DA /* TriggeringTest.m */; };
-		7E3B1BF31727D5D00069E6F2 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */; };
-		7E3B1BF41727D5D00069E6F2 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC2163941E200738376 /* AuthErrorTest.m */; };
-		7E3B1BF51727D5D00069E6F2 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC3163941E200738376 /* CreateItemNegativeTest.m */; };
-		7E3B1BF61727D5D00069E6F2 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC4163941E200738376 /* EditItemNegativeTest.m */; };
-		7E3B1BF71727D5D00069E6F2 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC5163941E200738376 /* FieldsErrorTest.m */; };
-		7E3B1BF81727D5D00069E6F2 /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC6163941E200738376 /* InvalidPathErrorTest.m */; };
-		7E3B1BF91727D5D00069E6F2 /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC7163941E200738376 /* InvalidRequestErrorTest.m */; };
-		7E3B1BFA1727D5D00069E6F2 /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC8163941E200738376 /* NoItemErrorTest.m */; };
-		7E3B1BFB1727D5D00069E6F2 /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */; };
-		7E3B1BFC1727D5D00069E6F2 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECA163941E200738376 /* ResponseErrorTest.m */; };
-		7E3B1BFD1727D5D00069E6F2 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */; };
-		7E3B1BFE1727D5D00069E6F2 /* ZRemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */; };
-		7E3B1BFF1727D5D00069E6F2 /* DmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2562B0911716DA15000C1985 /* DmsTriggeringTest.m */; };
-		7E3B1C001727D5D00069E6F2 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
-		7E3B1C011727D5D00069E6F2 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
-		7E3B1C021727D5D00069E6F2 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
-		7E3B1C031727D5D00069E6F2 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
-		7E3B1C041727D5D00069E6F2 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
-		7E3B1C051727D5D00069E6F2 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		7E17DDFA17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
+		7E17DDFB17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
+		7E17DDFC17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
+		7E18F8CD17C2157700006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
+		7E18F8CE17C2157700006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
+		7E18F8D117C2163300006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
+		7E18F8D217C2163300006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
+		7E18F8D517C217B400006465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
+		7E18F8D617C217B400006465 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
+		7E18F8D817C217B400006465 /* DmsTriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2562B0911716DA15000C1985 /* DmsTriggeringTest.m */; };
+		7E18F8D917C217B400006465 /* TriggeringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4D591170580F70035D5DA /* TriggeringTest.m */; };
+		7E18F8DC17C217B400006465 /* GetFieldFromItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE21636AA6B00F87911 /* GetFieldFromItemTest.m */; };
+		7E18F8DD17C217B400006465 /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE31636AA6B00F87911 /* GetFieldsFromItemReaderTest.m */; };
+		7E18F8DE17C217B400006465 /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE41636AA6B00F87911 /* GetFieldValueFromFieldTest.m */; };
+		7E18F8DF17C217B400006465 /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D2CE51636AA6B00F87911 /* ReadFieldsWithSecurityTest.m */; };
+		7E18F8E017C217B400006465 /* ReadFieldsWithAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA8163187EC00D5D4FC /* ReadFieldsWithAuth.m */; };
+		7E18F8E117C217B400006465 /* ReadItemsSTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAF163187EC00D5D4FC /* ReadItemsSTestAuth.m */; };
+		7E18F8E217C217B400006465 /* ReadItemsCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAA163187EC00D5D4FC /* ReadItemsCTestAuth.m */; };
+		7E18F8E317C217B400006465 /* ReadItemsPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAB163187EC00D5D4FC /* ReadItemsPTestAuth.m */; };
+		7E18F8E417C217B400006465 /* ReadItemsCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AA9163187EC00D5D4FC /* ReadItemsCPTestAuth.m */; };
+		7E18F8E517C217B400006465 /* ReadItemsSCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAD163187EC00D5D4FC /* ReadItemsSCTestAuth.m */; };
+		7E18F8E617C217B400006465 /* ReadItemsSPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAE163187EC00D5D4FC /* ReadItemsSPTestAuth.m */; };
+		7E18F8E717C217B400006465 /* REadItemsSCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 25696AAC163187EC00D5D4FC /* REadItemsSCPTestAuth.m */; };
+		7E18F8E817C217B400006465 /* PagingItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE8163958D200738376 /* PagingItemsTest.m */; };
+		7E18F8E917C217B400006465 /* ReadPagingItemsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EE9163958D200738376 /* ReadPagingItemsAuthTest.m */; };
+		7E18F8EA17C217B400006465 /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */; };
+		7E18F8EB17C217B400006465 /* LanguageReaderPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */; };
+		7E18F8EC17C217B400006465 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */; };
+		7E18F8EE17C217B400006465 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC3163941E200738376 /* CreateItemNegativeTest.m */; };
+		7E18F8EF17C217B400006465 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC4163941E200738376 /* EditItemNegativeTest.m */; };
+		7E18F8F017C217B400006465 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC5163941E200738376 /* FieldsErrorTest.m */; };
+		7E18F8F117C217B400006465 /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC6163941E200738376 /* InvalidPathErrorTest.m */; };
+		7E18F8F217C217B400006465 /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC7163941E200738376 /* InvalidRequestErrorTest.m */; };
+		7E18F8F317C217B400006465 /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC8163941E200738376 /* NoItemErrorTest.m */; };
+		7E18F8F417C217B400006465 /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */; };
+		7E18F8F517C217B400006465 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECA163941E200738376 /* ResponseErrorTest.m */; };
+		7E18F8F617C217B400006465 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */; };
+		7E18F8F717C217B400006465 /* ZRemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */; };
+		7E18F8F817C217B400006465 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		7E18F8F917C217B400006465 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		7E18F8FA17C217B400006465 /* EditItemTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.mm */; };
+		7E18F8FB17C217B400006465 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		7E18F8FC17C217B400006465 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		7E18F8FD17C217B400006465 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		7E18F8FF17C217B400006465 /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
+		7E18F90017C217B400006465 /* DeleteItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */; };
+		7E18F90117C217B400006465 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
+		7E18F90217C217B400006465 /* EditItemTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */; };
+		7E18F90317C217B400006465 /* UploadMediaTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */; };
+		7E18F90417C217B400006465 /* CreateItemPositiveTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */; };
+		7E18F90517C217B400006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
+		7E18F90617C217B400006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
+		7E18F90817C217B400006465 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E18F90917C217B400006465 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
+		7E18F90A17C217B400006465 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
+		7E18F90B17C217B400006465 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
+		7E18F90C17C217B400006465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
+		7E18F90D17C217B400006465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
+		7E18F90E17C217B400006465 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
+		7E18F90F17C217B400006465 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
+		7E18F91017C217B400006465 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
+		7E18F91117C217B400006465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
+		7E18F91217C217B400006465 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
+		7E18F91317C217B400006465 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
+		7E18F91417C217B400006465 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
+		7E18F91517C217B400006465 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
+		7E18F91617C217B400006465 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
+		7E18F91717C217B400006465 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
+		7E18F91817C217B400006465 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBF1461611B00C9FC49 /* CFNetwork.framework */; };
+		7E18F91917C217B400006465 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBD1461611200C9FC49 /* libsqlite3.dylib */; };
+		7E18F91A17C217B400006465 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBB1461610900C9FC49 /* libz.dylib */; };
+		7E18F91B17C217B400006465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA014615C7D00C9FC49 /* UIKit.framework */; };
+		7E18F91C17C217B400006465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA214615C7D00C9FC49 /* Foundation.framework */; };
+		7E18F91D17C217B400006465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
+		7E18F92117C217B400006465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
+		7E18F92217C217B400006465 /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
+		7E18F92317C217B400006465 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		7E18F92417C217B400006465 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
+		7E18F92F17C217C700006465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
+		7E18F93017C217C700006465 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
+		7E18F95B17C217C700006465 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
+		7E18F95F17C217C700006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
+		7E18F96017C217C700006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
+		7E18F96217C217C700006465 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E18F96317C217C700006465 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
+		7E18F96417C217C700006465 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
+		7E18F96517C217C700006465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
+		7E18F96617C217C700006465 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
+		7E18F96717C217C700006465 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D82B31519CD3C00EC4A92 /* libSCAllMobileSDKLibs.a */; };
+		7E18F96817C217C700006465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
+		7E18F96917C217C700006465 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
+		7E18F96A17C217C700006465 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
+		7E18F96B17C217C700006465 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
+		7E18F96C17C217C700006465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
+		7E18F96D17C217C700006465 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
+		7E18F96E17C217C700006465 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
+		7E18F96F17C217C700006465 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
+		7E18F97017C217C700006465 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
+		7E18F97117C217C700006465 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
+		7E18F97217C217C700006465 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
+		7E18F97317C217C700006465 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBF1461611B00C9FC49 /* CFNetwork.framework */; };
+		7E18F97417C217C700006465 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBD1461611200C9FC49 /* libsqlite3.dylib */; };
+		7E18F97517C217C700006465 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBB1461610900C9FC49 /* libz.dylib */; };
+		7E18F97617C217C700006465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA014615C7D00C9FC49 /* UIKit.framework */; };
+		7E18F97717C217C700006465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA214615C7D00C9FC49 /* Foundation.framework */; };
+		7E18F97817C217C700006465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
+		7E18F97B17C217C700006465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
+		7E18F97C17C217C700006465 /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
+		7E18F97D17C217C700006465 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		7E18F97E17C217C700006465 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
+		7E18F98517C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */; };
+		7E18F98617C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */; };
+		7E286C6317EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
+		7E286C6417EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
+		7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
+		7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
+		7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
+		7E72CB0117FC02710081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
+		7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
+		7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
+		7E80E6A817EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
+		7E80E6A917EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
+		7E80E6AB17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */; };
+		7E80E6AC17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */; };
+		7E80E6AD17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */; };
+		7E80E6AF17EC823200E1921A /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
+		7E80E6B017EC823200E1921A /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
+		7E80E6B117EC823200E1921A /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
+		7EB739D617BBA40F00406C59 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +550,13 @@
 			remoteInfo = SCAllMobileSDKLibs;
 		};
 		1B0D82C01519CD4900EC4A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+		7E18F92D17C217C700006465 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
@@ -180,13 +599,15 @@
 		1BBCABEC1510E87600199B37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1BBCABED1510E87600199B37 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1BBCABEE1510E87600199B37 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		1BC086BA147BA5A50066CFB3 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
 		1BCC93901511E11B00271BFD /* SCApiTestLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCApiTestLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1BD6A9D21518CAC300D2FC84 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1BF4D958156680AE007D8CBF /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		251C3DA215246DA000E7AE0D /* EditItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemTest.m; sourceTree = "<group>"; };
+		251C3DA215246DA000E7AE0D /* EditItemTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditItemTest.mm; sourceTree = "<group>"; };
 		251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaTest.m; sourceTree = "<group>"; };
+		2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadImageWithParamsTest.m; sourceTree = "<group>"; };
+		2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadImageWithParamsTestExtended.m; sourceTree = "<group>"; };
+		2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadHTMLRenderingTest.m; sourceTree = "<group>"; };
 		2560DB5D1532DECA0096DC59 /* large_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = large_image.jpg; sourceTree = "<group>"; };
 		2562B0911716DA15000C1985 /* DmsTriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmsTriggeringTest.m; sourceTree = "<group>"; };
 		25696AA8163187EC00D5D4FC /* ReadFieldsWithAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFieldsWithAuth.m; sourceTree = "<group>"; };
@@ -207,7 +628,8 @@
 		258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsIgnoreCacheTest.m; sourceTree = "<group>"; };
 		258F6E661525A50000A0E959 /* DeleteItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTest.m; sourceTree = "<group>"; };
 		259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFisrtRemoveAll.m; sourceTree = "<group>"; };
-		259D61ED15E5136600853791 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		2598AAA817F42CD900252AA4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		2598AAA917F42CD900252AA4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNegativeItemsRemoveFirst.m; sourceTree = "<group>"; };
 		25A56EC2163941E200738376 /* AuthErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthErrorTest.m; sourceTree = "<group>"; };
 		25A56EC3163941E200738376 /* CreateItemNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemNegativeTest.m; sourceTree = "<group>"; };
@@ -224,8 +646,77 @@
 		25A56EE9163958D200738376 /* ReadPagingItemsAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPagingItemsAuthTest.m; sourceTree = "<group>"; };
 		25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderNegativeTest.m; sourceTree = "<group>"; };
 		25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTest.m; sourceTree = "<group>"; };
+		25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SCApiTest copy-Info.plist"; sourceTree = "<group>"; };
+		25E177B01806CD4200201DC6 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
+		78911DAF17C21CF900C680AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78A4D591170580F70035D5DA /* TriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggeringTest.m; sourceTree = "<group>"; };
+		78A6181517BA142400D43837 /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
+		78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleItemsTriggerTestExtended.m; sourceTree = "<group>"; };
+		78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggeringTestExtended.m; sourceTree = "<group>"; };
+		78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemPositiveTestExtended.m; sourceTree = "<group>"; };
+		78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedApiContextTest.m; sourceTree = "<group>"; };
+		78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemTestExtended.m; sourceTree = "<group>"; };
+		78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaTestExtended.m; sourceTree = "<group>"; };
+		78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTestExtended.m; sourceTree = "<group>"; };
+		78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFisrtRemoveAllExtended.m; sourceTree = "<group>"; };
+		78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTest_shellExtended.m; sourceTree = "<group>"; };
+		78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAllItemsExtended.m; sourceTree = "<group>"; };
+		78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldFromItemTestExtended.m; sourceTree = "<group>"; };
+		78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldsFromItemReaderTestExtended.m; sourceTree = "<group>"; };
+		78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldValueFromFieldTestExtended.m; sourceTree = "<group>"; };
+		78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFieldsWithSecurityTestExtended.m; sourceTree = "<group>"; };
+		78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFieldsWithAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsCPTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsCTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsPTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REadItemsSCPTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsSCTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsSPTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsSTestAuthExtended.m; sourceTree = "<group>"; };
+		78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReadItemsCacheTestExtended.mm; sourceTree = "<group>"; };
+		78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsIgnoreCacheTestExtended.m; sourceTree = "<group>"; };
+		78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingItemsTestExtended.m; sourceTree = "<group>"; };
+		78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPagingItemsAuthTestExtended.m; sourceTree = "<group>"; };
+		78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNegativeItemsRemoveFirstExtended.m; sourceTree = "<group>"; };
+		78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmsTriggeringTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldsErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidPathErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidRequestErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemFieldErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoveAllNegativeTestsExtended.m; sourceTree = "<group>"; };
+		78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRemoveAllNegativeTestsExtended.m; sourceTree = "<group>"; };
+		78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaWithoutAccessTest.m; sourceTree = "<group>"; };
 		7E08ACB9170D65AE007413D6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SitecoreAdminAuthTest.m; sourceTree = "<group>"; };
+		7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SCGlobalSettings-NoAccess.m"; sourceTree = "<group>"; };
+		7E18F8CB17C2157700006465 /* SCTestUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTestUsers.h; sourceTree = "<group>"; };
+		7E18F8CC17C2157700006465 /* SCTestUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTestUsers.m; sourceTree = "<group>"; };
+		7E18F8CF17C2163300006465 /* SCTestPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTestPath.h; sourceTree = "<group>"; };
+		7E18F8D017C2163300006465 /* SCTestPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTestPath.m; sourceTree = "<group>"; };
+		7E18F92917C217B400006465 /* SCApiTest-NoAnonymous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCApiTest-NoAnonymous.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E18F92A17C217B400006465 /* SCApiTest copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SCApiTest copy2-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/test/FunctionalTests/SCApiTestCleanSitecore/SCApiTest copy2-Info.plist"; sourceTree = "<absolute>"; };
+		7E18F98317C217C700006465 /* SCApiTestLibs-NoAnonymous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCApiTestLibs-NoAnonymous.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E18F98417C217C700006465 /* SCApiTestLibs copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SCApiTestLibs copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/test/FunctionalTests/SCApiTestCleanSitecore/SCApiTestLibs copy-Info.plist"; sourceTree = "<absolute>"; };
+		7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadCredentialsAuthTest.m; sourceTree = "<group>"; };
+		7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateItemPositiveTest-shell.m"; sourceTree = "<group>"; };
+		7E72CAFE17FC02670081F306 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtranetAdminAuthTest.m; sourceTree = "<group>"; };
+		7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtranetUserAuthTest.m; sourceTree = "<group>"; };
+		7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellUserAuthTest.m; sourceTree = "<group>"; };
+		7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DeleteItemTest-shell.m"; sourceTree = "<group>"; };
+		7EB739D417BBA40F00406C59 /* TestingRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingRequestFactory.h; sourceTree = "<group>"; };
+		7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingRequestFactory.m; sourceTree = "<group>"; };
+		7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditItemTest-shell.m"; sourceTree = "<group>"; };
+		7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UploadMediaTest-shell.m"; sourceTree = "<group>"; };
 		7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleItemsTriggerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +725,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E177B11806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
+				7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */,
+				2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */,
 				7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */,
 				258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */,
 				1B33953715663B0B00E935E9 /* libc++.dylib in Frameworks */,
@@ -244,7 +738,9 @@
 				1BBCABF11510E87600199B37 /* CoreVideo.framework in Frameworks */,
 				1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */,
 				1B11672214C6C60F000AD289 /* AudioToolbox.framework in Frameworks */,
+				25E177A91806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
 				1B11671C14C6C5F6000AD289 /* AddressBook.framework in Frameworks */,
+				2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */,
 				1B11671D14C6C5F6000AD289 /* AddressBookUI.framework in Frameworks */,
 				1B11671E14C6C5F6000AD289 /* CoreMotion.framework in Frameworks */,
 				1B11671F14C6C5F6000AD289 /* MessageUI.framework in Frameworks */,
@@ -256,8 +752,6 @@
 				1B925BA114615C7D00C9FC49 /* UIKit.framework in Frameworks */,
 				1B925BA314615C7D00C9FC49 /* Foundation.framework in Frameworks */,
 				1B925BA514615C7D00C9FC49 /* CoreGraphics.framework in Frameworks */,
-				1BC086BB147BA5A50066CFB3 /* GHUnitIOS.framework in Frameworks */,
-				259D61EE15E5136600853791 /* SitecoreMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +759,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E177B21806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
+				7E72CB0117FC02710081F306 /* QuartzCore.framework in Frameworks */,
+				2598AAB017F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
 				7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */,
 				1BF4D970156680F6007D8CBF /* libc++.dylib in Frameworks */,
 				1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */,
@@ -276,6 +773,7 @@
 				1BCC93381511E11B00271BFD /* CoreVideo.framework in Frameworks */,
 				1BCC93391511E11B00271BFD /* libiconv.dylib in Frameworks */,
 				1BCC933B1511E11B00271BFD /* AudioToolbox.framework in Frameworks */,
+				2598AAAD17F42D1000252AA4 /* EventKit.framework in Frameworks */,
 				1BCC933C1511E11B00271BFD /* AddressBook.framework in Frameworks */,
 				1BCC933D1511E11B00271BFD /* AddressBookUI.framework in Frameworks */,
 				1BCC933E1511E11B00271BFD /* CoreMotion.framework in Frameworks */,
@@ -288,7 +786,74 @@
 				1BCC93451511E11B00271BFD /* UIKit.framework in Frameworks */,
 				1BCC93461511E11B00271BFD /* Foundation.framework in Frameworks */,
 				1BCC93471511E11B00271BFD /* CoreGraphics.framework in Frameworks */,
-				1BCC93481511E11B00271BFD /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F90717C217B400006465 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25E177B31806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
+				7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */,
+				2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */,
+				2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */,
+				7E18F90817C217B400006465 /* Social.framework in Frameworks */,
+				7E18F90917C217B400006465 /* libstdc++.dylib in Frameworks */,
+				7E18F90A17C217B400006465 /* libc++.dylib in Frameworks */,
+				7E18F90B17C217B400006465 /* MapKit.framework in Frameworks */,
+				7E18F90C17C217B400006465 /* CoreLocation.framework in Frameworks */,
+				7E18F90D17C217B400006465 /* AVFoundation.framework in Frameworks */,
+				7E18F90E17C217B400006465 /* CoreMedia.framework in Frameworks */,
+				7E18F90F17C217B400006465 /* CoreVideo.framework in Frameworks */,
+				7E18F91017C217B400006465 /* libiconv.dylib in Frameworks */,
+				25E177AA1806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
+				7E18F91117C217B400006465 /* AudioToolbox.framework in Frameworks */,
+				7E18F91217C217B400006465 /* AddressBook.framework in Frameworks */,
+				7E18F91317C217B400006465 /* AddressBookUI.framework in Frameworks */,
+				7E18F91417C217B400006465 /* CoreMotion.framework in Frameworks */,
+				7E18F91517C217B400006465 /* MessageUI.framework in Frameworks */,
+				7E18F91617C217B400006465 /* Twitter.framework in Frameworks */,
+				7E18F91717C217B400006465 /* libxml2.dylib in Frameworks */,
+				7E18F91817C217B400006465 /* CFNetwork.framework in Frameworks */,
+				7E18F91917C217B400006465 /* libsqlite3.dylib in Frameworks */,
+				7E18F91A17C217B400006465 /* libz.dylib in Frameworks */,
+				7E18F91B17C217B400006465 /* UIKit.framework in Frameworks */,
+				7E18F91C17C217B400006465 /* Foundation.framework in Frameworks */,
+				7E18F91D17C217B400006465 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F96117C217C700006465 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25E177B41806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
+				7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */,
+				2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
+				7E18F96217C217C700006465 /* Social.framework in Frameworks */,
+				7E18F96317C217C700006465 /* libc++.dylib in Frameworks */,
+				7E18F96417C217C700006465 /* libstdc++.dylib in Frameworks */,
+				7E18F96517C217C700006465 /* CoreLocation.framework in Frameworks */,
+				7E18F96617C217C700006465 /* MapKit.framework in Frameworks */,
+				7E18F96717C217C700006465 /* libSCAllMobileSDKLibs.a in Frameworks */,
+				7E18F96817C217C700006465 /* AVFoundation.framework in Frameworks */,
+				7E18F96917C217C700006465 /* CoreMedia.framework in Frameworks */,
+				7E18F96A17C217C700006465 /* CoreVideo.framework in Frameworks */,
+				7E18F96B17C217C700006465 /* libiconv.dylib in Frameworks */,
+				7E18F96C17C217C700006465 /* AudioToolbox.framework in Frameworks */,
+				2598AAAC17F42D0F00252AA4 /* EventKit.framework in Frameworks */,
+				7E18F96D17C217C700006465 /* AddressBook.framework in Frameworks */,
+				7E18F96E17C217C700006465 /* AddressBookUI.framework in Frameworks */,
+				7E18F96F17C217C700006465 /* CoreMotion.framework in Frameworks */,
+				7E18F97017C217C700006465 /* MessageUI.framework in Frameworks */,
+				7E18F97117C217C700006465 /* Twitter.framework in Frameworks */,
+				7E18F97217C217C700006465 /* libxml2.dylib in Frameworks */,
+				7E18F97317C217C700006465 /* CFNetwork.framework in Frameworks */,
+				7E18F97417C217C700006465 /* libsqlite3.dylib in Frameworks */,
+				7E18F97517C217C700006465 /* libz.dylib in Frameworks */,
+				7E18F97617C217C700006465 /* UIKit.framework in Frameworks */,
+				7E18F97717C217C700006465 /* Foundation.framework in Frameworks */,
+				7E18F97817C217C700006465 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,14 +871,19 @@
 		1B925B9114615C7D00C9FC49 = {
 			isa = PBXGroup;
 			children = (
+				78911DAF17C21CF900C680AE /* Default-568h@2x.png */,
 				258A14F514E537E600DA4DE5 /* auto tests.png */,
 				2560DB5D1532DECA0096DC59 /* large_image.jpg */,
+				78A6181517BA142400D43837 /* big.jpg */,
 				1B925D5114616AA400C9FC49 /* HttpServer */,
 				1B925D5214616AA400C9FC49 /* Resources */,
 				1B925BA614615C7E00C9FC49 /* SCApiTest */,
 				1B925C8A146160B300C9FC49 /* Dependencies */,
 				1B925B9F14615C7D00C9FC49 /* Frameworks */,
 				1B925B9D14615C7D00C9FC49 /* Products */,
+				7E18F92A17C217B400006465 /* SCApiTest copy2-Info.plist */,
+				7E18F98417C217C700006465 /* SCApiTestLibs copy-Info.plist */,
+				25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,6 +892,8 @@
 			children = (
 				1B925B9C14615C7D00C9FC49 /* SCApiTest.app */,
 				1BCC93901511E11B00271BFD /* SCApiTestLibs.app */,
+				7E18F92917C217B400006465 /* SCApiTest-NoAnonymous.app */,
+				7E18F98317C217C700006465 /* SCApiTestLibs-NoAnonymous.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,8 +901,12 @@
 		1B925B9F14615C7D00C9FC49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25E177B01806CD4200201DC6 /* GHUnitIOS.framework */,
+				25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */,
+				7E72CAFE17FC02670081F306 /* QuartzCore.framework */,
+				2598AAA817F42CD900252AA4 /* EventKit.framework */,
+				2598AAA917F42CD900252AA4 /* EventKitUI.framework */,
 				7E08ACB9170D65AE007413D6 /* Social.framework */,
-				259D61ED15E5136600853791 /* SitecoreMobileSDK.framework */,
 				1BF4D958156680AE007D8CBF /* libstdc++.dylib */,
 				1B33956015663E3400E935E9 /* GHUnitIOS.framework */,
 				1B33953615663B0B00E935E9 /* libc++.dylib */,
@@ -346,7 +922,6 @@
 				1B11671914C6C5F6000AD289 /* CoreMotion.framework */,
 				1B11671A14C6C5F6000AD289 /* MessageUI.framework */,
 				1B11671B14C6C5F6000AD289 /* Twitter.framework */,
-				1BC086BA147BA5A50066CFB3 /* GHUnitIOS.framework */,
 				1B925CBF1461611B00C9FC49 /* CFNetwork.framework */,
 				1B925CC11461612900C9FC49 /* libxml2.dylib */,
 				1B925CBD1461611200C9FC49 /* libsqlite3.dylib */,
@@ -365,14 +940,24 @@
 				258E626C163A9A5000BCDCA6 /* Cache */,
 				258D2CE11636AA6B00F87911 /* FieldsReaderTest */,
 				25696AA7163187EC00D5D4FC /* AuthenticationTest */,
+				7E17DDF817EC495E001B9D7E /* AuthenticationRequestTest */,
 				25A56EE7163958D200738376 /* PagingItemsTest */,
 				25A56EF016396BDA00738376 /* LanguagesTest */,
 				2589D3281529F3510010E0B9 /* ErrorsTest */,
 				251C3D9B15246CEB00E7AE0D /* CreateEditDeleteItemTest */,
+				2545B3D61803F4E60062481B /* GetMediaWithParamsTest */,
+				2545B3E11803F4FE0062481B /* GetRenderingHTMLTest */,
 				1B925D9A146197F200C9FC49 /* Details */,
 				1B925BA714615C7E00C9FC49 /* Supporting Files */,
 				1B7AC4B01491036300DDD31D /* SCGlobalSettings.h */,
 				1B7AC4B11491036300DDD31D /* SCGlobalSettings.m */,
+				7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */,
+				7E18F8CB17C2157700006465 /* SCTestUsers.h */,
+				7E18F8CC17C2157700006465 /* SCTestUsers.m */,
+				7E18F8CF17C2163300006465 /* SCTestPath.h */,
+				7E18F8D017C2163300006465 /* SCTestPath.m */,
+				7EB739D417BBA40F00406C59 /* TestingRequestFactory.h */,
+				7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */,
 			);
 			path = SCApiTest;
 			sourceTree = "<group>";
@@ -425,19 +1010,44 @@
 		251C3D9B15246CEB00E7AE0D /* CreateEditDeleteItemTest */ = {
 			isa = PBXGroup;
 			children = (
+				78A6184317BA54FC00D43837 /* Extended */,
 				259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */,
 				1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */,
-				251C3DA215246DA000E7AE0D /* EditItemTest.m */,
+				7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */,
+				251C3DA215246DA000E7AE0D /* EditItemTest.mm */,
+				7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */,
 				251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */,
+				7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */,
+				78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */,
 				258F6E661525A50000A0E959 /* DeleteItemTest.m */,
+				7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */,
 				2589D3611529F46D0010E0B9 /* DeleteAllItems.m */,
 			);
 			path = CreateEditDeleteItemTest;
 			sourceTree = "<group>";
 		};
+		2545B3D61803F4E60062481B /* GetMediaWithParamsTest */ = {
+			isa = PBXGroup;
+			children = (
+				2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */,
+				2545B3D81803F4E60062481B /* ReadImageWithParamsTestExtended.m */,
+			);
+			name = GetMediaWithParamsTest;
+			path = SCApiTest/GetMediaWithParamsTest;
+			sourceTree = SOURCE_ROOT;
+		};
+		2545B3E11803F4FE0062481B /* GetRenderingHTMLTest */ = {
+			isa = PBXGroup;
+			children = (
+				2545B3E21803F4FE0062481B /* ReadHTMLRenderingTest.m */,
+			);
+			path = GetRenderingHTMLTest;
+			sourceTree = "<group>";
+		};
 		25696AA7163187EC00D5D4FC /* AuthenticationTest */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BD8417BCD1BA0013B6DC /* Extended */,
 				25696AA8163187EC00D5D4FC /* ReadFieldsWithAuth.m */,
 				25696AAF163187EC00D5D4FC /* ReadItemsSTestAuth.m */,
 				25696AAA163187EC00D5D4FC /* ReadItemsCTestAuth.m */,
@@ -453,6 +1063,7 @@
 		2589D3281529F3510010E0B9 /* ErrorsTest */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BDB217BD0E680013B6DC /* Extended */,
 				25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */,
 				25A56EC2163941E200738376 /* AuthErrorTest.m */,
 				25A56EC3163941E200738376 /* CreateItemNegativeTest.m */,
@@ -473,6 +1084,7 @@
 		258D2CE11636AA6B00F87911 /* FieldsReaderTest */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BAA817BB856D00ED739A /* Extended */,
 				258D2CE21636AA6B00F87911 /* GetFieldFromItemTest.m */,
 				258D2CE31636AA6B00F87911 /* GetFieldsFromItemReaderTest.m */,
 				258D2CE41636AA6B00F87911 /* GetFieldValueFromFieldTest.m */,
@@ -484,6 +1096,7 @@
 		258E626C163A9A5000BCDCA6 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BD9D17BCFEAC0013B6DC /* Extended */,
 				258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */,
 				258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */,
 			);
@@ -493,6 +1106,7 @@
 		25A56EE7163958D200738376 /* PagingItemsTest */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BDA417BD075E0013B6DC /* Extended */,
 				25A56EE8163958D200738376 /* PagingItemsTest.m */,
 				25A56EE9163958D200738376 /* ReadPagingItemsAuthTest.m */,
 			);
@@ -502,6 +1116,7 @@
 		25A56EF016396BDA00738376 /* LanguagesTest */ = {
 			isa = PBXGroup;
 			children = (
+				78B0BDAB17BD0BBC0013B6DC /* Extended */,
 				25A56EF116396BDA00738376 /* LanguageReaderNegativeTest.m */,
 				25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */,
 			);
@@ -511,10 +1126,121 @@
 		78A4D590170580A30035D5DA /* TriggeringRequestTest */ = {
 			isa = PBXGroup;
 			children = (
+				78A6183A17BA2A8100D43837 /* Extended */,
 				78A4D591170580F70035D5DA /* TriggeringTest.m */,
 				7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */,
 			);
 			path = TriggeringRequestTest;
+			sourceTree = "<group>";
+		};
+		78A6183A17BA2A8100D43837 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */,
+				78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78A6184317BA54FC00D43837 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */,
+				78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */,
+				78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */,
+				78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */,
+				78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */,
+				78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */,
+				78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */,
+				78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BAA817BB856D00ED739A /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */,
+				78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */,
+				78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */,
+				78B0BAAC17BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BD8417BCD1BA0013B6DC /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BD8517BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m */,
+				78B0BD8617BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m */,
+				78B0BD8717BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m */,
+				78B0BD8817BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m */,
+				78B0BD8917BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m */,
+				78B0BD8A17BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m */,
+				78B0BD8B17BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m */,
+				78B0BD8C17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BD9D17BCFEAC0013B6DC /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BD9E17BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm */,
+				78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BDA417BD075E0013B6DC /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */,
+				78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BDAB17BD0BBC0013B6DC /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */,
+				78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		78B0BDB217BD0E680013B6DC /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */,
+				78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */,
+				78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */,
+				78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */,
+				78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */,
+				78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */,
+				78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */,
+				78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */,
+				78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */,
+				78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */,
+				78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */,
+				78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */,
+				78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */,
+				78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		7E17DDF817EC495E001B9D7E /* AuthenticationRequestTest */ = {
+			isa = PBXGroup;
+			children = (
+				7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */,
+				7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */,
+				7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */,
+				7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */,
+				7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */,
+			);
+			path = AuthenticationRequestTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +1283,43 @@
 			productReference = 1BCC93901511E11B00271BFD /* SCApiTestLibs.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7E18F8D317C217B400006465 /* SCApiTest-NoAnonymous */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E18F92617C217B400006465 /* Build configuration list for PBXNativeTarget "SCApiTest-NoAnonymous" */;
+			buildPhases = (
+				7E18F8D417C217B400006465 /* Sources */,
+				7E18F90717C217B400006465 /* Frameworks */,
+				7E18F92017C217B400006465 /* Resources */,
+				7E18F92517C217B400006465 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SCApiTest-NoAnonymous";
+			productName = SCApiTest;
+			productReference = 7E18F92917C217B400006465 /* SCApiTest-NoAnonymous.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E18F92B17C217C700006465 /* SCApiTestLibs-NoAnonymous */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E18F98017C217C700006465 /* Build configuration list for PBXNativeTarget "SCApiTestLibs-NoAnonymous" */;
+			buildPhases = (
+				7E18F92E17C217C700006465 /* Sources */,
+				7E18F96117C217C700006465 /* Frameworks */,
+				7E18F97A17C217C700006465 /* Resources */,
+				7E18F97F17C217C700006465 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E18F92C17C217C700006465 /* PBXTargetDependency */,
+			);
+			name = "SCApiTestLibs-NoAnonymous";
+			productName = SCApiTest;
+			productReference = 7E18F98317C217C700006465 /* SCApiTestLibs-NoAnonymous.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -564,6 +1327,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					7E18F8D317C217B400006465 = {
+						DevelopmentTeam = AJ2XRRY985;
+					};
+					7E18F92B17C217C700006465 = {
+						DevelopmentTeam = AJ2XRRY985;
+					};
+				};
 			};
 			buildConfigurationList = 1B925B9614615C7D00C9FC49 /* Build configuration list for PBXProject "SCApiTestCleanSitecore" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -585,6 +1356,8 @@
 			targets = (
 				1B925B9B14615C7D00C9FC49 /* SCApiTest */,
 				1BCC930A1511E11B00271BFD /* SCApiTestLibs */,
+				7E18F8D317C217B400006465 /* SCApiTest-NoAnonymous */,
+				7E18F92B17C217C700006465 /* SCApiTestLibs-NoAnonymous */,
 			);
 		};
 /* End PBXProject section */
@@ -608,6 +1381,8 @@
 				1B925D6D14616E6B00C9FC49 /* auth.xml in Resources */,
 				258A14F614E537E600DA4DE5 /* auto tests.png in Resources */,
 				2560DB5E1532DECA0096DC59 /* large_image.jpg in Resources */,
+				78A6181617BA142400D43837 /* big.jpg in Resources */,
+				25E177AC1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,13 +1393,69 @@
 				1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */,
 				1BCC934C1511E11B00271BFD /* auth.xml in Resources */,
 				1BCC938C1511E11B00271BFD /* auto tests.png in Resources */,
+				25E177AD1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
 				2560DB5F1532DECA0096DC59 /* large_image.jpg in Resources */,
+				78A6181717BA142400D43837 /* big.jpg in Resources */,
+				78911DB017C21CF900C680AE /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F92017C217B400006465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E18F92117C217B400006465 /* InfoPlist.strings in Resources */,
+				7E18F92217C217B400006465 /* auth.xml in Resources */,
+				7E18F92317C217B400006465 /* auto tests.png in Resources */,
+				7E18F92417C217B400006465 /* large_image.jpg in Resources */,
+				25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F97A17C217C700006465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E18F97B17C217C700006465 /* InfoPlist.strings in Resources */,
+				7E18F97C17C217C700006465 /* auth.xml in Resources */,
+				7E18F97D17C217C700006465 /* auto tests.png in Resources */,
+				7E18F97E17C217C700006465 /* large_image.jpg in Resources */,
+				78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */,
+				25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7E18F92517C217B400006465 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n#/bin/bash\n#\n## Dump XCode variables\n\n\nXCODE_DUMP_DIR=/tmp/${PRODUCT_NAME}Build\nmkdir -p \"$XCODE_DUMP_DIR\"\nCI_TEST_PRODUCT_DIR_FILE=$XCODE_DUMP_DIR/PRODUCT_DIR.txt\n\ncd \"$BUILT_PRODUCTS_DIR\"\ncd ..\necho $PWD > \"$CI_TEST_PRODUCT_DIR_FILE\"\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+		7E18F97F17C217C700006465 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n#/bin/bash\n#\n## Dump XCode variables\n\n\nXCODE_DUMP_DIR=/tmp/${PRODUCT_NAME}Build\nmkdir -p \"$XCODE_DUMP_DIR\"\nCI_TEST_PRODUCT_DIR_FILE=$XCODE_DUMP_DIR/PRODUCT_DIR.txt\n\ncd \"$BUILT_PRODUCTS_DIR\"\ncd ..\necho $PWD > \"$CI_TEST_PRODUCT_DIR_FILE\"\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
 		7E7F1F6E15F0CB2F00066C7B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,44 +1494,103 @@
 				1B925BAD14615C7E00C9FC49 /* main.m in Sources */,
 				1B925D9D146197FF00C9FC49 /* SCAsyncTestCase.m in Sources */,
 				1B7AC4B21491036300DDD31D /* SCGlobalSettings.m in Sources */,
+				2598AB3217F42DBF00252AA4 /* CreateItemPositiveTest-shell.m in Sources */,
+				2598AB3717F42DBF00252AA4 /* UploadMediaWithoutAccessTest.m in Sources */,
+				2598AB2717F42DBF00252AA4 /* ExtendedApiContextTest.m in Sources */,
 				2562B0921716DA15000C1985 /* DmsTriggeringTest.m in Sources */,
 				2562B0941716F349000C1985 /* TriggeringTest.m in Sources */,
+				2598AB2C17F42DBF00252AA4 /* DeleteItemTestExtended.m in Sources */,
 				2562B0961716F580000C1985 /* ReadItemsCacheTest.mm in Sources */,
+				2598AB3817F42DBF00252AA4 /* DeleteItemTest.m in Sources */,
 				2562B0971716F580000C1985 /* ReadItemsIgnoreCacheTest.m in Sources */,
 				2562B09A1716F586000C1985 /* GetFieldFromItemTest.m in Sources */,
 				2562B09B1716F586000C1985 /* GetFieldsFromItemReaderTest.m in Sources */,
+				2598AB2A17F42DBF00252AA4 /* EditItemTestExtended.m in Sources */,
 				2562B09C1716F586000C1985 /* GetFieldValueFromFieldTest.m in Sources */,
+				7E286C6317EC91780022F621 /* BadCredentialsAuthTest.m in Sources */,
 				2562B09D1716F586000C1985 /* ReadFieldsWithSecurityTest.m in Sources */,
 				2562B0A21716F58A000C1985 /* ReadFieldsWithAuth.m in Sources */,
 				2562B0A31716F58A000C1985 /* ReadItemsSTestAuth.m in Sources */,
 				2562B0A41716F58A000C1985 /* ReadItemsCTestAuth.m in Sources */,
 				2562B0A51716F58A000C1985 /* ReadItemsPTestAuth.m in Sources */,
 				2562B0A61716F58A000C1985 /* ReadItemsCPTestAuth.m in Sources */,
+				2598AB3017F42DBF00252AA4 /* AFisrtRemoveAll.m in Sources */,
+				2598AB2917F42DBF00252AA4 /* CreateItemPositiveTestExtended.m in Sources */,
+				2598AB3617F42DBF00252AA4 /* UploadMediaTest-shell.m in Sources */,
 				2562B0A71716F58A000C1985 /* ReadItemsSCTestAuth.m in Sources */,
+				2545B3D91803F4E60062481B /* ReadImageWithParamsTest.m in Sources */,
 				2562B0A81716F58A000C1985 /* ReadItemsSPTestAuth.m in Sources */,
+				2545B3DD1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */,
 				2562B0A91716F58A000C1985 /* REadItemsSCPTestAuth.m in Sources */,
 				2562B0B21716F58D000C1985 /* PagingItemsTest.m in Sources */,
 				2562B0B31716F58D000C1985 /* ReadPagingItemsAuthTest.m in Sources */,
 				2562B0B61716F591000C1985 /* LanguageReaderNegativeTest.m in Sources */,
 				2562B0B71716F591000C1985 /* LanguageReaderPositiveTest.m in Sources */,
 				2562B0BA1716F596000C1985 /* AllNegativeItemsRemoveFirst.m in Sources */,
-				2562B0BB1716F596000C1985 /* AuthErrorTest.m in Sources */,
+				2598AB2D17F42DBF00252AA4 /* DeleteItemTest_shellExtended.m in Sources */,
 				2562B0BC1716F596000C1985 /* CreateItemNegativeTest.m in Sources */,
 				2562B0BD1716F596000C1985 /* EditItemNegativeTest.m in Sources */,
 				2562B0BE1716F596000C1985 /* FieldsErrorTest.m in Sources */,
+				2598AB3517F42DBF00252AA4 /* UploadMediaTest.m in Sources */,
 				2562B0BF1716F596000C1985 /* InvalidPathErrorTest.m in Sources */,
 				2562B0C01716F596000C1985 /* InvalidRequestErrorTest.m in Sources */,
 				2562B0C11716F596000C1985 /* NoItemErrorTest.m in Sources */,
+				2565FFB817F3067C009366E9 /* AuthErrorTestExtended.m in Sources */,
+				2545B3E31803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */,
 				2562B0C21716F596000C1985 /* NoItemFieldErrorTest.m in Sources */,
 				2562B0C31716F596000C1985 /* ResponseErrorTest.m in Sources */,
 				2562B0C41716F596000C1985 /* UploadMediaNegativeTest.m in Sources */,
+				2598AB2617F42DBF00252AA4 /* AFisrtRemoveAllExtended.m in Sources */,
 				2562B0C51716F596000C1985 /* ZRemoveAllNegativeTests.m in Sources */,
-				2562B0D21716F59A000C1985 /* AFisrtRemoveAll.m in Sources */,
-				2562B0D31716F59A000C1985 /* CreateItemPositiveTest.m in Sources */,
-				2562B0D41716F59A000C1985 /* EditItemTest.m in Sources */,
-				2562B0D51716F59A000C1985 /* UploadMediaTest.m in Sources */,
-				2562B0D61716F59A000C1985 /* DeleteItemTest.m in Sources */,
-				2562B0D71716F59A000C1985 /* DeleteAllItems.m in Sources */,
+				2598AB3917F42DBF00252AA4 /* DeleteItemTest-shell.m in Sources */,
+				7E80E6AF17EC823200E1921A /* ShellUserAuthTest.m in Sources */,
+				78769DB717B51D5500E5836B /* MultipleItemsTriggerTest.m in Sources */,
+				78A6183D17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m in Sources */,
+				78A6183F17BA2A8100D43837 /* TriggeringTestExtended.m in Sources */,
+				2565FFBC17F30682009366E9 /* AuthErrorTest.m in Sources */,
+				78B0BAAD17BB856D00ED739A /* GetFieldFromItemTestExtended.m in Sources */,
+				78B0BAAF17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m in Sources */,
+				7E17DDFA17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */,
+				78B0BAB117BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m in Sources */,
+				78B0BAB317BB856D00ED739A /* ReadFieldsWithSecurityTestExtended.m in Sources */,
+				2598AB2B17F42DBF00252AA4 /* UploadMediaTestExtended.m in Sources */,
+				7EB739D617BBA40F00406C59 /* TestingRequestFactory.m in Sources */,
+				78B0BD8D17BCD1BA0013B6DC /* ReadFieldsWithAuthExtended.m in Sources */,
+				2598AB3417F42DBF00252AA4 /* EditItemTest-shell.m in Sources */,
+				78B0BD8F17BCD1BA0013B6DC /* ReadItemsCPTestAuthExtended.m in Sources */,
+				78B0BD9117BCD1BA0013B6DC /* ReadItemsCTestAuthExtended.m in Sources */,
+				78B0BD9317BCD1BA0013B6DC /* ReadItemsPTestAuthExtended.m in Sources */,
+				78B0BD9517BCD1BA0013B6DC /* REadItemsSCPTestAuthExtended.m in Sources */,
+				78B0BD9717BCD1BA0013B6DC /* ReadItemsSCTestAuthExtended.m in Sources */,
+				78B0BD9917BCD1BA0013B6DC /* ReadItemsSPTestAuthExtended.m in Sources */,
+				2598AB2E17F42DBF00252AA4 /* DeleteAllItemsExtended.m in Sources */,
+				78B0BD9B17BCD1BA0013B6DC /* ReadItemsSTestAuthExtended.m in Sources */,
+				78B0BDA017BCFEAC0013B6DC /* ReadItemsCacheTestExtended.mm in Sources */,
+				78B0BDA217BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m in Sources */,
+				78B0BDA717BD075E0013B6DC /* PagingItemsTestExtended.m in Sources */,
+				78B0BDA917BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m in Sources */,
+				2598AB3117F42DBF00252AA4 /* CreateItemPositiveTest.m in Sources */,
+				78B0BDAE17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m in Sources */,
+				78B0BDB017BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m in Sources */,
+				7E80E6AB17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */,
+				78B0BDC117BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m in Sources */,
+				7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */,
+				78B0BDC517BD0E680013B6DC /* CreateItemNegativeTestExtended.m in Sources */,
+				78B0BDC717BD0E680013B6DC /* DmsTriggeringTestExtended.m in Sources */,
+				78B0BDC917BD0E680013B6DC /* EditItemNegativeTestExtended.m in Sources */,
+				78B0BDCB17BD0E680013B6DC /* FieldsErrorTestExtended.m in Sources */,
+				78B0BDCD17BD0E680013B6DC /* InvalidPathErrorTestExtended.m in Sources */,
+				78B0BDCF17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m in Sources */,
+				78B0BDD117BD0E680013B6DC /* NoItemErrorTestExtended.m in Sources */,
+				78B0BDD317BD0E680013B6DC /* NoItemFieldErrorTestExtended.m in Sources */,
+				2598AB3A17F42DBF00252AA4 /* DeleteAllItems.m in Sources */,
+				78B0BDD517BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m in Sources */,
+				2598AB3317F42DBF00252AA4 /* EditItemTest.mm in Sources */,
+				78B0BDD717BD0E680013B6DC /* ResponseErrorTestExtended.m in Sources */,
+				78B0BDD917BD0E680013B6DC /* UploadMediaNegativeTestExtended.m in Sources */,
+				78B0BDDB17BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m in Sources */,
+				7E18F8CD17C2157700006465 /* SCTestUsers.m in Sources */,
+				7E18F8D117C2163300006465 /* SCTestPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,28 +1599,319 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCC930C1511E11B00271BFD /* main.m in Sources */,
-				1BCC930D1511E11B00271BFD /* SCAsyncTestCase.m in Sources */,
 				1BCC930E1511E11B00271BFD /* SCGlobalSettings.m in Sources */,
-				7E3B1BE01727D5C70069E6F2 /* TriggeringTest.m in Sources */,
-				7E3B1BF31727D5D00069E6F2 /* AllNegativeItemsRemoveFirst.m in Sources */,
-				7E3B1BF41727D5D00069E6F2 /* AuthErrorTest.m in Sources */,
-				7E3B1BF51727D5D00069E6F2 /* CreateItemNegativeTest.m in Sources */,
-				7E3B1BF61727D5D00069E6F2 /* EditItemNegativeTest.m in Sources */,
-				7E3B1BF71727D5D00069E6F2 /* FieldsErrorTest.m in Sources */,
-				7E3B1BF81727D5D00069E6F2 /* InvalidPathErrorTest.m in Sources */,
-				7E3B1BF91727D5D00069E6F2 /* InvalidRequestErrorTest.m in Sources */,
-				7E3B1BFA1727D5D00069E6F2 /* NoItemErrorTest.m in Sources */,
-				7E3B1BFB1727D5D00069E6F2 /* NoItemFieldErrorTest.m in Sources */,
-				7E3B1BFC1727D5D00069E6F2 /* ResponseErrorTest.m in Sources */,
-				7E3B1BFD1727D5D00069E6F2 /* UploadMediaNegativeTest.m in Sources */,
-				7E3B1BFE1727D5D00069E6F2 /* ZRemoveAllNegativeTests.m in Sources */,
-				7E3B1BFF1727D5D00069E6F2 /* DmsTriggeringTest.m in Sources */,
-				7E3B1C001727D5D00069E6F2 /* AFisrtRemoveAll.m in Sources */,
-				7E3B1C011727D5D00069E6F2 /* CreateItemPositiveTest.m in Sources */,
-				7E3B1C021727D5D00069E6F2 /* EditItemTest.m in Sources */,
-				7E3B1C031727D5D00069E6F2 /* UploadMediaTest.m in Sources */,
-				7E3B1C041727D5D00069E6F2 /* DeleteItemTest.m in Sources */,
-				7E3B1C051727D5D00069E6F2 /* DeleteAllItems.m in Sources */,
+				78BDD60717BE15DA00DBEB62 /* SCAsyncTestCase.m in Sources */,
+				2598AB1C17F42DBE00252AA4 /* CreateItemPositiveTest-shell.m in Sources */,
+				2598AB2117F42DBE00252AA4 /* UploadMediaWithoutAccessTest.m in Sources */,
+				2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */,
+				78911DB117C21E6900C680AE /* TestingRequestFactory.m in Sources */,
+				7E18F8CE17C2157700006465 /* SCTestUsers.m in Sources */,
+				2598AB1617F42DBE00252AA4 /* DeleteItemTestExtended.m in Sources */,
+				7E18F8D217C2163300006465 /* SCTestPath.m in Sources */,
+				2598AB2217F42DBE00252AA4 /* DeleteItemTest.m in Sources */,
+				78B0765E17C39DF200D0F905 /* TriggeringTestExtended.m in Sources */,
+				78B0765F17C39DF200D0F905 /* MultipleItemsTriggerTestExtended.m in Sources */,
+				78B0766017C39DF200D0F905 /* TriggeringTest.m in Sources */,
+				2598AB1417F42DBE00252AA4 /* EditItemTestExtended.m in Sources */,
+				78B0766117C39DF200D0F905 /* MultipleItemsTriggerTest.m in Sources */,
+				7E286C6417EC91780022F621 /* BadCredentialsAuthTest.m in Sources */,
+				78B0766217C39DF500D0F905 /* ReadItemsCacheTestExtended.mm in Sources */,
+				78B0766317C39DF500D0F905 /* ReadItemsIgnoreCacheTestExtended.m in Sources */,
+				78B0766417C39DF500D0F905 /* ReadItemsCacheTest.mm in Sources */,
+				78B0766517C39DF500D0F905 /* ReadItemsIgnoreCacheTest.m in Sources */,
+				78B0766C17C39DFC00D0F905 /* GetFieldFromItemTestExtended.m in Sources */,
+				78B0766D17C39DFC00D0F905 /* GetFieldsFromItemReaderTestExtended.m in Sources */,
+				2598AB1A17F42DBE00252AA4 /* AFisrtRemoveAll.m in Sources */,
+				2598AB1317F42DBE00252AA4 /* CreateItemPositiveTestExtended.m in Sources */,
+				2598AB2017F42DBE00252AA4 /* UploadMediaTest-shell.m in Sources */,
+				78B0766E17C39DFC00D0F905 /* GetFieldValueFromFieldTestExtended.m in Sources */,
+				2545B3DA1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */,
+				78B0766F17C39DFC00D0F905 /* ReadFieldsWithSecurityTestExtended.m in Sources */,
+				2545B3DE1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */,
+				78B0767017C39DFC00D0F905 /* GetFieldFromItemTest.m in Sources */,
+				78B0767117C39DFC00D0F905 /* GetFieldsFromItemReaderTest.m in Sources */,
+				78B0767217C39DFC00D0F905 /* GetFieldValueFromFieldTest.m in Sources */,
+				78B0767317C39DFC00D0F905 /* ReadFieldsWithSecurityTest.m in Sources */,
+				78B0767417C39E0300D0F905 /* ReadFieldsWithAuthExtended.m in Sources */,
+				78B0767517C39E0300D0F905 /* ReadItemsCPTestAuthExtended.m in Sources */,
+				2598AB1717F42DBE00252AA4 /* DeleteItemTest_shellExtended.m in Sources */,
+				78B0767617C39E0300D0F905 /* ReadItemsCTestAuthExtended.m in Sources */,
+				78B0767717C39E0300D0F905 /* ReadItemsPTestAuthExtended.m in Sources */,
+				78B0767817C39E0300D0F905 /* REadItemsSCPTestAuthExtended.m in Sources */,
+				2598AB1F17F42DBE00252AA4 /* UploadMediaTest.m in Sources */,
+				78B0767917C39E0300D0F905 /* ReadItemsSCTestAuthExtended.m in Sources */,
+				78B0767A17C39E0300D0F905 /* ReadItemsSPTestAuthExtended.m in Sources */,
+				78B0767B17C39E0300D0F905 /* ReadItemsSTestAuthExtended.m in Sources */,
+				2565FFB917F3067C009366E9 /* AuthErrorTestExtended.m in Sources */,
+				2545B3E41803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */,
+				78B0767C17C39E0300D0F905 /* ReadFieldsWithAuth.m in Sources */,
+				78B0767D17C39E0300D0F905 /* ReadItemsSTestAuth.m in Sources */,
+				78B0767E17C39E0300D0F905 /* ReadItemsCTestAuth.m in Sources */,
+				2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */,
+				78B0767F17C39E0300D0F905 /* ReadItemsPTestAuth.m in Sources */,
+				2598AB2317F42DBE00252AA4 /* DeleteItemTest-shell.m in Sources */,
+				78B0768017C39E0300D0F905 /* ReadItemsCPTestAuth.m in Sources */,
+				78B0768117C39E0300D0F905 /* ReadItemsSCTestAuth.m in Sources */,
+				7E80E6B017EC823200E1921A /* ShellUserAuthTest.m in Sources */,
+				78B0768217C39E0300D0F905 /* ReadItemsSPTestAuth.m in Sources */,
+				78B0768317C39E0300D0F905 /* REadItemsSCPTestAuth.m in Sources */,
+				78B076A417C39E2200D0F905 /* PagingItemsTestExtended.m in Sources */,
+				78B076A517C39E2200D0F905 /* ReadPagingItemsAuthTestExtended.m in Sources */,
+				78B076A617C39E2200D0F905 /* PagingItemsTest.m in Sources */,
+				78B076A717C39E2200D0F905 /* ReadPagingItemsAuthTest.m in Sources */,
+				78B076AC17C39E2700D0F905 /* LanguageReaderNegativeTestExtended.m in Sources */,
+				2598AB1517F42DBE00252AA4 /* UploadMediaTestExtended.m in Sources */,
+				78B076AD17C39E2700D0F905 /* LanguageReaderPositiveTestExtended.m in Sources */,
+				78B076AE17C39E2700D0F905 /* LanguageReaderNegativeTest.m in Sources */,
+				2598AB1E17F42DBE00252AA4 /* EditItemTest-shell.m in Sources */,
+				78B076AF17C39E2700D0F905 /* LanguageReaderPositiveTest.m in Sources */,
+				78B076B417C39E2D00D0F905 /* AllNegativeItemsRemoveFirstExtended.m in Sources */,
+				2565FFBD17F30682009366E9 /* AuthErrorTest.m in Sources */,
+				78B076B617C39E2D00D0F905 /* CreateItemNegativeTestExtended.m in Sources */,
+				78B076B717C39E2D00D0F905 /* DmsTriggeringTestExtended.m in Sources */,
+				78B076B817C39E2D00D0F905 /* EditItemNegativeTestExtended.m in Sources */,
+				2598AB1817F42DBE00252AA4 /* DeleteAllItemsExtended.m in Sources */,
+				78B076B917C39E2D00D0F905 /* FieldsErrorTestExtended.m in Sources */,
+				78B076BA17C39E2D00D0F905 /* InvalidPathErrorTestExtended.m in Sources */,
+				78B076BB17C39E2D00D0F905 /* InvalidRequestErrorTestExtended.m in Sources */,
+				78B076BC17C39E2D00D0F905 /* NoItemErrorTestExtended.m in Sources */,
+				78B076BD17C39E2D00D0F905 /* NoItemFieldErrorTestExtended.m in Sources */,
+				2598AB1B17F42DBE00252AA4 /* CreateItemPositiveTest.m in Sources */,
+				78B076BE17C39E2D00D0F905 /* RemoveAllNegativeTestsExtended.m in Sources */,
+				7E17DDFB17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */,
+				78B076BF17C39E2D00D0F905 /* ResponseErrorTestExtended.m in Sources */,
+				78B076C017C39E2D00D0F905 /* UploadMediaNegativeTestExtended.m in Sources */,
+				78B076C117C39E2D00D0F905 /* ZRemoveAllNegativeTestsExtended.m in Sources */,
+				78B076C217C39E2D00D0F905 /* AllNegativeItemsRemoveFirst.m in Sources */,
+				78B076C417C39E2D00D0F905 /* CreateItemNegativeTest.m in Sources */,
+				78B076C517C39E2D00D0F905 /* EditItemNegativeTest.m in Sources */,
+				78B076C617C39E2D00D0F905 /* FieldsErrorTest.m in Sources */,
+				78B076C717C39E2D00D0F905 /* InvalidPathErrorTest.m in Sources */,
+				78B076C817C39E2D00D0F905 /* InvalidRequestErrorTest.m in Sources */,
+				78B076C917C39E2D00D0F905 /* NoItemErrorTest.m in Sources */,
+				78B076CA17C39E2D00D0F905 /* NoItemFieldErrorTest.m in Sources */,
+				2598AB2417F42DBE00252AA4 /* DeleteAllItems.m in Sources */,
+				78B076CB17C39E2D00D0F905 /* ResponseErrorTest.m in Sources */,
+				2598AB1D17F42DBE00252AA4 /* EditItemTest.mm in Sources */,
+				78B076CC17C39E2D00D0F905 /* UploadMediaNegativeTest.m in Sources */,
+				78B076CD17C39E2D00D0F905 /* ZRemoveAllNegativeTests.m in Sources */,
+				78B076CE17C39E2D00D0F905 /* DmsTriggeringTest.m in Sources */,
+				7E80E6AC17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */,
+				7E80E6A817EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F8D417C217B400006465 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E18F8D517C217B400006465 /* main.m in Sources */,
+				7E18F8D617C217B400006465 /* SCAsyncTestCase.m in Sources */,
+				7E18F8D817C217B400006465 /* DmsTriggeringTest.m in Sources */,
+				7E18F8D917C217B400006465 /* TriggeringTest.m in Sources */,
+				7E18F8DC17C217B400006465 /* GetFieldFromItemTest.m in Sources */,
+				7E18F8DD17C217B400006465 /* GetFieldsFromItemReaderTest.m in Sources */,
+				7E18F8DE17C217B400006465 /* GetFieldValueFromFieldTest.m in Sources */,
+				2565FFBA17F3067D009366E9 /* AuthErrorTestExtended.m in Sources */,
+				7E18F8DF17C217B400006465 /* ReadFieldsWithSecurityTest.m in Sources */,
+				7E18F8E017C217B400006465 /* ReadFieldsWithAuth.m in Sources */,
+				7E18F8E117C217B400006465 /* ReadItemsSTestAuth.m in Sources */,
+				7E18F8E217C217B400006465 /* ReadItemsCTestAuth.m in Sources */,
+				7E18F8E317C217B400006465 /* ReadItemsPTestAuth.m in Sources */,
+				7E18F8E417C217B400006465 /* ReadItemsCPTestAuth.m in Sources */,
+				7E18F8E517C217B400006465 /* ReadItemsSCTestAuth.m in Sources */,
+				7E18F8E617C217B400006465 /* ReadItemsSPTestAuth.m in Sources */,
+				7E18F8E717C217B400006465 /* REadItemsSCPTestAuth.m in Sources */,
+				78B28A5317C747FF00942D26 /* UploadMediaWithoutAccessTest.m in Sources */,
+				7E18F8E817C217B400006465 /* PagingItemsTest.m in Sources */,
+				7E18F8E917C217B400006465 /* ReadPagingItemsAuthTest.m in Sources */,
+				7E18F8EA17C217B400006465 /* LanguageReaderNegativeTest.m in Sources */,
+				7E18F8EB17C217B400006465 /* LanguageReaderPositiveTest.m in Sources */,
+				7E18F8EC17C217B400006465 /* AllNegativeItemsRemoveFirst.m in Sources */,
+				7E18F8EE17C217B400006465 /* CreateItemNegativeTest.m in Sources */,
+				7E18F8EF17C217B400006465 /* EditItemNegativeTest.m in Sources */,
+				7E18F8F017C217B400006465 /* FieldsErrorTest.m in Sources */,
+				7E18F8F117C217B400006465 /* InvalidPathErrorTest.m in Sources */,
+				2545B3DB1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */,
+				7E18F8F217C217B400006465 /* InvalidRequestErrorTest.m in Sources */,
+				2545B3DF1803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */,
+				7E18F8F317C217B400006465 /* NoItemErrorTest.m in Sources */,
+				7E18F8F417C217B400006465 /* NoItemFieldErrorTest.m in Sources */,
+				7E18F8F517C217B400006465 /* ResponseErrorTest.m in Sources */,
+				7E18F8F617C217B400006465 /* UploadMediaNegativeTest.m in Sources */,
+				7E18F8F717C217B400006465 /* ZRemoveAllNegativeTests.m in Sources */,
+				7E18F8F817C217B400006465 /* AFisrtRemoveAll.m in Sources */,
+				7E18F8F917C217B400006465 /* CreateItemPositiveTest.m in Sources */,
+				7E18F8FA17C217B400006465 /* EditItemTest.mm in Sources */,
+				7E18F8FB17C217B400006465 /* UploadMediaTest.m in Sources */,
+				7E18F8FC17C217B400006465 /* DeleteItemTest.m in Sources */,
+				2565FFC117F32185009366E9 /* ReadItemsIgnoreCacheTestExtended.m in Sources */,
+				7E18F8FD17C217B400006465 /* DeleteAllItems.m in Sources */,
+				7E18F8FF17C217B400006465 /* MultipleItemsTriggerTest.m in Sources */,
+				7E18F90017C217B400006465 /* DeleteItemTest-shell.m in Sources */,
+				2565FFC217F32185009366E9 /* ReadItemsCacheTest.mm in Sources */,
+				2545B3E51803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */,
+				7E18F90117C217B400006465 /* TestingRequestFactory.m in Sources */,
+				7E18F90217C217B400006465 /* EditItemTest-shell.m in Sources */,
+				7E18F90317C217B400006465 /* UploadMediaTest-shell.m in Sources */,
+				7E18F90417C217B400006465 /* CreateItemPositiveTest-shell.m in Sources */,
+				7E18F90517C217B400006465 /* SCTestUsers.m in Sources */,
+				7E18F90617C217B400006465 /* SCTestPath.m in Sources */,
+				7E18F98517C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */,
+				78B0768417C39E0F00D0F905 /* TriggeringTestExtended.m in Sources */,
+				78B0768517C39E0F00D0F905 /* MultipleItemsTriggerTestExtended.m in Sources */,
+				78B0768C17C39E1A00D0F905 /* GetFieldFromItemTestExtended.m in Sources */,
+				7E80E6A917EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */,
+				78B0768D17C39E1A00D0F905 /* GetFieldsFromItemReaderTestExtended.m in Sources */,
+				78B0768E17C39E1A00D0F905 /* GetFieldValueFromFieldTestExtended.m in Sources */,
+				78B0768F17C39E1A00D0F905 /* ReadFieldsWithSecurityTestExtended.m in Sources */,
+				2565FFBE17F30682009366E9 /* AuthErrorTest.m in Sources */,
+				78B0769417C39E1E00D0F905 /* ReadFieldsWithAuthExtended.m in Sources */,
+				78B0769517C39E1E00D0F905 /* ReadItemsCPTestAuthExtended.m in Sources */,
+				78B0769617C39E1E00D0F905 /* ReadItemsCTestAuthExtended.m in Sources */,
+				78B0769717C39E1E00D0F905 /* ReadItemsPTestAuthExtended.m in Sources */,
+				78B0769817C39E1E00D0F905 /* REadItemsSCPTestAuthExtended.m in Sources */,
+				78B0769917C39E1E00D0F905 /* ReadItemsSCTestAuthExtended.m in Sources */,
+				7E80E6AD17EC823200E1921A /* ExtranetUserAuthTest.m in Sources */,
+				78B0769A17C39E1E00D0F905 /* ReadItemsSPTestAuthExtended.m in Sources */,
+				78B0769B17C39E1E00D0F905 /* ReadItemsSTestAuthExtended.m in Sources */,
+				78B076A817C39E2200D0F905 /* PagingItemsTestExtended.m in Sources */,
+				78B076A917C39E2200D0F905 /* ReadPagingItemsAuthTestExtended.m in Sources */,
+				78B076B017C39E2800D0F905 /* LanguageReaderNegativeTestExtended.m in Sources */,
+				78B076B117C39E2800D0F905 /* LanguageReaderPositiveTestExtended.m in Sources */,
+				7E17DDFC17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */,
+				78B076CF17C39E2D00D0F905 /* AllNegativeItemsRemoveFirstExtended.m in Sources */,
+				2565FFC017F32185009366E9 /* ReadItemsCacheTestExtended.mm in Sources */,
+				7E80E6B117EC823200E1921A /* ShellUserAuthTest.m in Sources */,
+				78B076D117C39E2D00D0F905 /* CreateItemNegativeTestExtended.m in Sources */,
+				78B076D217C39E2D00D0F905 /* DmsTriggeringTestExtended.m in Sources */,
+				78B076D317C39E2D00D0F905 /* EditItemNegativeTestExtended.m in Sources */,
+				78B076D417C39E2D00D0F905 /* FieldsErrorTestExtended.m in Sources */,
+				78B076D517C39E2D00D0F905 /* InvalidPathErrorTestExtended.m in Sources */,
+				78B076D617C39E2D00D0F905 /* InvalidRequestErrorTestExtended.m in Sources */,
+				78B076D717C39E2D00D0F905 /* NoItemErrorTestExtended.m in Sources */,
+				78B076D817C39E2D00D0F905 /* NoItemFieldErrorTestExtended.m in Sources */,
+				78B076D917C39E2D00D0F905 /* RemoveAllNegativeTestsExtended.m in Sources */,
+				78B076DA17C39E2D00D0F905 /* ResponseErrorTestExtended.m in Sources */,
+				78B076DB17C39E2D00D0F905 /* UploadMediaNegativeTestExtended.m in Sources */,
+				78B076DC17C39E2D00D0F905 /* ZRemoveAllNegativeTestsExtended.m in Sources */,
+				2565FFC317F32185009366E9 /* ReadItemsIgnoreCacheTest.m in Sources */,
+				78B076FF17C39E3400D0F905 /* AFisrtRemoveAllExtended.m in Sources */,
+				78B0770017C39E3400D0F905 /* ExtendedApiContextTest.m in Sources */,
+				78B0770217C39E3400D0F905 /* CreateItemPositiveTestExtended.m in Sources */,
+				78B0770317C39E3400D0F905 /* EditItemTestExtended.m in Sources */,
+				7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */,
+				78B0770417C39E3400D0F905 /* UploadMediaTestExtended.m in Sources */,
+				78B0770517C39E3400D0F905 /* DeleteItemTestExtended.m in Sources */,
+				78B0770617C39E3400D0F905 /* DeleteItemTest_shellExtended.m in Sources */,
+				78B0770717C39E3400D0F905 /* DeleteAllItemsExtended.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E18F92E17C217C700006465 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78AFAD861802D05000B1FEFE /* NoItemErrorTest.m in Sources */,
+				78AFAD911802D05000B1FEFE /* UploadMediaTestExtended.m in Sources */,
+				78AFAD481802D05000B1FEFE /* ReadItemsCacheTestExtended.mm in Sources */,
+				78AFAD8F1802D05000B1FEFE /* CreateItemPositiveTestExtended.m in Sources */,
+				78AFAD701802D05000B1FEFE /* LanguageReaderPositiveTest.m in Sources */,
+				78AFAD8A1802D05000B1FEFE /* ZRemoveAllNegativeTests.m in Sources */,
+				78AFAD6B1802D05000B1FEFE /* PagingItemsTest.m in Sources */,
+				78AFAD731802D05000B1FEFE /* CreateItemNegativeTestExtended.m in Sources */,
+				78AFAD901802D05000B1FEFE /* EditItemTestExtended.m in Sources */,
+				78AFAD4C1802D05000B1FEFE /* GetFieldFromItemTestExtended.m in Sources */,
+				78AFAD941802D05000B1FEFE /* DeleteAllItemsExtended.m in Sources */,
+				78AFAD4A1802D05000B1FEFE /* ReadItemsCacheTest.mm in Sources */,
+				78AFAD601802D05000B1FEFE /* ReadItemsCPTestAuth.m in Sources */,
+				78AFAD921802D05000B1FEFE /* DeleteItemTestExtended.m in Sources */,
+				78AFAD5B1802D05000B1FEFE /* ReadItemsSTestAuthExtended.m in Sources */,
+				78AFAD5E1802D05000B1FEFE /* ReadItemsCTestAuth.m in Sources */,
+				78AFAD8D1802D05000B1FEFE /* ExtendedApiContextTest.m in Sources */,
+				78AFAD831802D05000B1FEFE /* FieldsErrorTest.m in Sources */,
+				78AFAD681802D05000B1FEFE /* BadCredentialsAuthTest.m in Sources */,
+				78AFAD791802D05000B1FEFE /* NoItemErrorTestExtended.m in Sources */,
+				78AFAD8B1802D05000B1FEFE /* DmsTriggeringTest.m in Sources */,
+				78AFAD991802D05000B1FEFE /* EditItemTest.mm in Sources */,
+				78AFAD611802D05000B1FEFE /* ReadItemsSCTestAuth.m in Sources */,
+				78AFAD4E1802D05000B1FEFE /* GetFieldValueFromFieldTestExtended.m in Sources */,
+				78AFAD661802D05000B1FEFE /* ExtranetAdminAuthTest.m in Sources */,
+				78AFAD841802D05000B1FEFE /* InvalidPathErrorTest.m in Sources */,
+				78AFAD651802D05000B1FEFE /* ShellUserAuthTest.m in Sources */,
+				2545B3DC1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */,
+				78AFAD671802D05000B1FEFE /* ExtranetUserAuthTest.m in Sources */,
+				2545B3E01803F4E60062481B /* ReadImageWithParamsTestExtended.m in Sources */,
+				78AFAD891802D05000B1FEFE /* UploadMediaNegativeTest.m in Sources */,
+				78AFAD971802D05000B1FEFE /* CreateItemPositiveTest.m in Sources */,
+				78AFAD581802D05000B1FEFE /* REadItemsSCPTestAuthExtended.m in Sources */,
+				78AFAD521802D05000B1FEFE /* GetFieldValueFromFieldTest.m in Sources */,
+				78AFAD871802D05000B1FEFE /* NoItemFieldErrorTest.m in Sources */,
+				7E18F92F17C217C700006465 /* main.m in Sources */,
+				78AFAD881802D05000B1FEFE /* ResponseErrorTest.m in Sources */,
+				78AFAD7F1802D05000B1FEFE /* AllNegativeItemsRemoveFirst.m in Sources */,
+				78AFAD931802D05000B1FEFE /* DeleteItemTest_shellExtended.m in Sources */,
+				78AFAD7D1802D05000B1FEFE /* UploadMediaNegativeTestExtended.m in Sources */,
+				78AFAD721802D05000B1FEFE /* AuthErrorTestExtended.m in Sources */,
+				78AFAD641802D05000B1FEFE /* SitecoreAdminAuthTest.m in Sources */,
+				78AFAD691802D05000B1FEFE /* PagingItemsTestExtended.m in Sources */,
+				7E18F93017C217C700006465 /* SCAsyncTestCase.m in Sources */,
+				78AFAD771802D05000B1FEFE /* InvalidPathErrorTestExtended.m in Sources */,
+				2545B3E61803F4FE0062481B /* ReadHTMLRenderingTest.m in Sources */,
+				78AFAD801802D05000B1FEFE /* AuthErrorTest.m in Sources */,
+				78AFAD9D1802D05000B1FEFE /* UploadMediaWithoutAccessTest.m in Sources */,
+				7E18F95B17C217C700006465 /* TestingRequestFactory.m in Sources */,
+				78AFAD5F1802D05000B1FEFE /* ReadItemsPTestAuth.m in Sources */,
+				78AFAD9B1802D05000B1FEFE /* UploadMediaTest.m in Sources */,
+				78AFAD9E1802D05000B1FEFE /* DeleteItemTest.m in Sources */,
+				7E18F95F17C217C700006465 /* SCTestUsers.m in Sources */,
+				78AFAD961802D05000B1FEFE /* AFisrtRemoveAll.m in Sources */,
+				78AFAD6F1802D05000B1FEFE /* LanguageReaderNegativeTest.m in Sources */,
+				78AFAD631802D05000B1FEFE /* REadItemsSCPTestAuth.m in Sources */,
+				78AFAD4D1802D05000B1FEFE /* GetFieldsFromItemReaderTestExtended.m in Sources */,
+				78AFAD781802D05000B1FEFE /* InvalidRequestErrorTestExtended.m in Sources */,
+				7E18F96017C217C700006465 /* SCTestPath.m in Sources */,
+				78AFAD7C1802D05000B1FEFE /* ResponseErrorTestExtended.m in Sources */,
+				78AFAD591802D05000B1FEFE /* ReadItemsSCTestAuthExtended.m in Sources */,
+				78AFAD471802D05000B1FEFE /* MultipleItemsTriggerTest.m in Sources */,
+				78AFAD4F1802D05000B1FEFE /* ReadFieldsWithSecurityTestExtended.m in Sources */,
+				78AFAD9C1802D05000B1FEFE /* UploadMediaTest-shell.m in Sources */,
+				78AFAD5C1802D05000B1FEFE /* ReadFieldsWithAuth.m in Sources */,
+				78AFAD561802D05000B1FEFE /* ReadItemsCTestAuthExtended.m in Sources */,
+				78AFAD851802D05000B1FEFE /* InvalidRequestErrorTest.m in Sources */,
+				78AFAD5A1802D05000B1FEFE /* ReadItemsSPTestAuthExtended.m in Sources */,
+				78AFAD501802D05000B1FEFE /* GetFieldFromItemTest.m in Sources */,
+				78AFAD9F1802D05000B1FEFE /* DeleteItemTest-shell.m in Sources */,
+				78AFAD461802D05000B1FEFE /* TriggeringTest.m in Sources */,
+				78AFAD9A1802D05000B1FEFE /* EditItemTest-shell.m in Sources */,
+				78AFAD7A1802D05000B1FEFE /* NoItemFieldErrorTestExtended.m in Sources */,
+				78AFAD741802D05000B1FEFE /* DmsTriggeringTestExtended.m in Sources */,
+				78AFAD571802D05000B1FEFE /* ReadItemsPTestAuthExtended.m in Sources */,
+				78AFAD511802D05000B1FEFE /* GetFieldsFromItemReaderTest.m in Sources */,
+				78AFAD491802D05000B1FEFE /* ReadItemsIgnoreCacheTestExtended.m in Sources */,
+				78AFAD541802D05000B1FEFE /* ReadFieldsWithAuthExtended.m in Sources */,
+				78AFAD4B1802D05000B1FEFE /* ReadItemsIgnoreCacheTest.m in Sources */,
+				78AFAD6D1802D05000B1FEFE /* LanguageReaderNegativeTestExtended.m in Sources */,
+				7E18F98617C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */,
+				78AFAD621802D05000B1FEFE /* ReadItemsSPTestAuth.m in Sources */,
+				78AFAD7E1802D05000B1FEFE /* ZRemoveAllNegativeTestsExtended.m in Sources */,
+				78AFAD451802D05000B1FEFE /* MultipleItemsTriggerTestExtended.m in Sources */,
+				78AFAD6E1802D05000B1FEFE /* LanguageReaderPositiveTestExtended.m in Sources */,
+				78AFAD751802D05000B1FEFE /* EditItemNegativeTestExtended.m in Sources */,
+				78AFAD551802D05000B1FEFE /* ReadItemsCPTestAuthExtended.m in Sources */,
+				78AFAD6C1802D05000B1FEFE /* ReadPagingItemsAuthTest.m in Sources */,
+				78AFAD8C1802D05000B1FEFE /* AFisrtRemoveAllExtended.m in Sources */,
+				78AFAD7B1802D05000B1FEFE /* RemoveAllNegativeTestsExtended.m in Sources */,
+				78AFADA01802D05000B1FEFE /* DeleteAllItems.m in Sources */,
+				78AFAD6A1802D05000B1FEFE /* ReadPagingItemsAuthTestExtended.m in Sources */,
+				78AFAD761802D05000B1FEFE /* FieldsErrorTestExtended.m in Sources */,
+				78AFAD981802D05000B1FEFE /* CreateItemPositiveTest-shell.m in Sources */,
+				78AFAD711802D05000B1FEFE /* AllNegativeItemsRemoveFirstExtended.m in Sources */,
+				78AFAD441802D05000B1FEFE /* TriggeringTestExtended.m in Sources */,
+				78AFAD821802D05000B1FEFE /* EditItemNegativeTest.m in Sources */,
+				78AFAD811802D05000B1FEFE /* CreateItemNegativeTest.m in Sources */,
+				78AFAD5D1802D05000B1FEFE /* ReadItemsSTestAuth.m in Sources */,
+				78AFAD531802D05000B1FEFE /* ReadFieldsWithSecurityTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +1922,11 @@
 			isa = PBXTargetDependency;
 			name = SCAllMobileSDKLibs;
 			targetProxy = 1B0D82C01519CD4900EC4A92 /* PBXContainerItemProxy */;
+		};
+		7E18F92C17C217C700006465 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCAllMobileSDKLibs;
+			targetProxy = 7E18F92D17C217C700006465 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -794,8 +1980,9 @@
 					../../../lib/SCApi,
 					../../../lib/SCMonad,
 					../../../lib/SCUtils,
+					"../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -835,8 +2022,9 @@
 					../../../lib/SCApi,
 					../../../lib/SCMonad,
 					../../../lib/SCUtils,
+					"../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
@@ -849,10 +2037,14 @@
 		1B925BBB14615C7E00C9FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -868,10 +2060,14 @@
 		1B925BBC14615C7E00C9FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -889,7 +2085,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
+					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -907,13 +2105,111 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
+					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = SCApiTestLibs;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7E18F92717C217B400006465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTest copy2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTest-NoAnonymous";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E18F92817C217B400006465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTest copy2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTest-NoAnonymous";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7E18F98117C217C700006465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTestLibs copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTestLibs-NoAnonymous";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E18F98217C217C700006465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
+					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
+					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTestLibs copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTestLibs-NoAnonymous";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
 				WRAPPER_EXTENSION = app;
@@ -946,6 +2242,24 @@
 			buildConfigurations = (
 				1BCC938E1511E11B00271BFD /* Debug */,
 				1BCC938F1511E11B00271BFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E18F92617C217B400006465 /* Build configuration list for PBXNativeTarget "SCApiTest-NoAnonymous" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E18F92717C217B400006465 /* Debug */,
+				7E18F92817C217B400006465 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E18F98017C217C700006465 /* Build configuration list for PBXNativeTarget "SCApiTestLibs-NoAnonymous" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E18F98117C217C700006465 /* Debug */,
+				7E18F98217C217C700006465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

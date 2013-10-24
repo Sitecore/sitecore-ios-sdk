@@ -33,10 +33,12 @@ if [ "$?" -ne "0" ]; then
 fi
 
 
+
 BUILT_PRODUCTS_DIR=$( cat /tmp/SCApiTestLibsBuild/PRODUCT_DIR.txt )
 cd "$BUILT_PRODUCTS_DIR/$CONFIGURATION-iphonesimulator"
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
     iphonesim launch "$PWD/SCApiTestLibs.app" $IOS_VERSION 
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
+
 
 cd "$LAUNCH_DIR"

@@ -1,10 +1,10 @@
 #import "SCItemsReaderRequest.h"
 #import "SCCreateMediaItemRequest.h"
 
-@class SCApiContext;
+@class SCExtendedApiContext;
 
 @interface SCCreateMediaItemRequest (ToItemsReadRequest)
 
--(SCItemsReaderRequest*)toItemsReadRequestWithApiContext:( SCApiContext* )apiContext_;
+-(SCItemsReaderRequest*)toItemsReadRequestWithApiContext:( SCExtendedApiContext* )apiContext_;
 
 @end

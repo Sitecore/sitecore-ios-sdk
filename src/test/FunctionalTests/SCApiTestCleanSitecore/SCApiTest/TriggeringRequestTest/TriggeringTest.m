@@ -18,13 +18,14 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
-                                                   login: nil
-                                                password: nil ];
+                                                             login: nil
+                                                          password: nil
+                                                           version: SCWebApiV1 ];
             apiContext_ = strongContext_;
             
             SCPageEventTriggeringRequest *request_ =
             [ [ SCPageEventTriggeringRequest alloc ] initWithPath: nil
-                                                      eventName: @"Page Visited" ];
+                                                      eventName: @"Print" ];
             
             [ apiContext_ triggerLoaderForRequest:request_ ]( ^( id result_, NSError* error_ )
             {
@@ -65,7 +66,7 @@
                 apiContext_ = strongContext_;
                 
                 SCPageEventTriggeringRequest *request_ =
-                [ [ SCPageEventTriggeringRequest alloc ] initWithPath: SCHomePath
+                [ [ SCPageEventTriggeringRequest alloc ] initWithPath: SCTriggeringPath
                                                             eventName: @"Logout" ];
                 
                 [ apiContext_ triggerLoaderForRequest:request_ ]( ^( id result_, NSError* error_ )
@@ -104,8 +105,9 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
-                                                   login: nil
-                                                password: nil ];
+                                                             login: nil
+                                                          password: nil
+                                                           version: SCWebApiV1 ];
             apiContext_ = strongContext_;
             
             SCCampaignTriggeringRequest *request_ =

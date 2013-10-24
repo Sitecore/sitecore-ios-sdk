@@ -45,9 +45,7 @@
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                                login: SCWebApiAdminLogin
-                                                             password: SCWebApiAdminPassword];
+        SCApiContext* context = [ TestingRequestFactory getNewAdminContextWithShell ];
         
         SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
         request.request = SCHomePath;
@@ -99,9 +97,7 @@
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                         login: SCWebApiAdminLogin
-                                                      password: SCWebApiAdminPassword];
+        SCApiContext* context = [ TestingRequestFactory getNewAdminContextWithShell ];
         
         SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
         request.request = @"/sitecore/content/home/child::*";

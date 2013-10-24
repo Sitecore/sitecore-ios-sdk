@@ -77,7 +77,7 @@
         UIApplication* application_ = [ UIApplication sharedApplication ];
         [ [ NSNotificationCenter defaultCenter ] addObserver: self
                                                     selector: @selector( autoCloseOnResignActive: )
-                                                        name: UIApplicationWillResignActiveNotification
+                                                        name: UIApplicationDidEnterBackgroundNotification
                                                       object: application_ ];
     }
 
