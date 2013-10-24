@@ -356,11 +356,12 @@
                                                selector: _cmd ];
     }
     
+    // @adk - this should work regardless of Web.config settings
     NSLog( @"response_error_: %@", response_error_ );
     NSLog( @"media_item_: %@", media_item_ );
     GHAssertTrue( media_item_ == nil, @"OK" );
     GHAssertTrue( response_error_ != nil, @"OK" );
-    GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
+    GHAssertTrue( [ response_error_ isKindOfClass: [  SCResponseError  class ] ], @"OK" );
 }
 
 -(void)testCreateMediaWithLowPermissionUser
@@ -416,8 +417,11 @@
     NSLog( @"media_item_: %@", media_item_ );
     GHAssertTrue( media_item_ == nil, @"OK" );
     GHAssertTrue( response_error_ != nil, @"OK" );
+
+
+    // @adk - this should work regardless of Web.config settings
     GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
-    
+
     SCResponseError* castedError = (SCResponseError*)response_error_;
     GHAssertTrue( [ castedError statusCode ] == 403, @"error code mismatch" );
     GHAssertTrue( [ [ castedError localizedDescription ] containsString: @"Access denied" ], @"OK" );
