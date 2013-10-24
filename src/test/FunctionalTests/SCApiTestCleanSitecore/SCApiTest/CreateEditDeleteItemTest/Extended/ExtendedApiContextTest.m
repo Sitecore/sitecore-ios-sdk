@@ -38,7 +38,7 @@
             didFinishCallback_();
         };
         
-        SCAsyncOperationProgressHandler progressCallback = ^(JFFNetworkUploadProgressCallback *progressInfo)
+        SCAsyncOperationProgressHandler progressCallback = ^(id<SCUploadProgress> progressInfo)
         {
             if ([progressInfo isKindOfClass:[JFFNetworkUploadProgressCallback class]])
                 NSLog(@"-=== progress: %.2f%%", (progressInfo.progress.floatValue * 100));
