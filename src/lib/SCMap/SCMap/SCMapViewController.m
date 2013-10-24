@@ -69,12 +69,19 @@ static void(^presentControllerHandler_)( SCMapViewController* );
 
 -(void)addTapRecognizer
 {
-    _recognizer =  [ SCGestureRecognizer recognizerWithView: self.view
-                                        viewToIgnoreTouches: _toolBar ];
-    _recognizer.scDelegate = self;
+    
+    UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    //TODO: @igk delete this code and SCGestureRecognizer class after testing
 
-    [ _recognizer addTarget: self
-                     action: @selector( tapAction ) ];
+//    _recognizer =  [ SCGestureRecognizer recognizerWithView: self.view
+//                                        viewToIgnoreTouches: _toolBar ];
+//    _recognizer.scDelegate = self;
+//
+//    [ _recognizer addTarget: self
+//                     action: @selector( tapAction ) ];
 }
 
 -(void)viewDidLoad
@@ -114,11 +121,12 @@ static void(^presentControllerHandler_)( SCMapViewController* );
 
     [ _toolBar sizeToFit ];    
 
-    UIBarButtonItem* doneButton_ = [ [ UIBarButtonItem alloc ] initWithTitle: @"Done"
-                                                                       style: UIBarButtonItemStyleDone 
-                                                                      target: self
-                                                                      action: @selector( doneAction ) ];
-
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 70, _toolBar.frame.size.height)];
+    [button setTitle:@"Done" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector( doneAction ) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* doneButton_ = [[ UIBarButtonItem alloc ] initWithCustomView:button];
+    
     [ _toolBar setItems: [ NSArray arrayWithObject: doneButton_ ] animated: NO ];
 
     _toolBar.hidden = YES;
