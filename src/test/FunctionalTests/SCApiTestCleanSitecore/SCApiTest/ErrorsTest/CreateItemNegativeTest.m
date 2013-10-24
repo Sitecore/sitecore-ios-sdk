@@ -370,7 +370,10 @@
     __block SCApiContext* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+
+    // @adk - sitecore/admin ---> extranet/anonymous
+    // Do not add "/sitecore/shell" website
+    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     
@@ -389,16 +392,16 @@
         request_.fieldsRawValuesByName = field_values_;
         
         [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
-                                                         {
-                                                             item_ = result_;
-                                                             response_error_ = error_;
-                                                             didFinishCallback_();
-                                                         } );
+         {
+             item_ = result_;
+             response_error_ = error_;
+             didFinishCallback_();
+         } );
     };
-    
+   
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
         [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
@@ -410,7 +413,7 @@
             
             didFinishCallback_();
         } );
-    }; 
+    };
     
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];    
@@ -426,6 +429,10 @@
         GHAssertTrue( 403 == responseError.statusCode, @"status code mismatch" );
         
         return;
+    }
+    else
+    {
+        GHAssertNotNil( item_, @"valid item expected" );
     }
 
     
@@ -841,6 +848,12 @@
     
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
+        // @adk - affected by
+        // 393416 - [WebAPI] media item created by user who has no create rights
+
+        // CMS 7.1 ==> json 403
+        // CMS 6.6 ==> json 200 OK <empty>
+        
         GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCNoItemError class ] ], @"OK" );
     }
     else
