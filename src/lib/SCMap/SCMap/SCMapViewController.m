@@ -74,14 +74,6 @@ static void(^presentControllerHandler_)( SCMapViewController* );
                                                                                     action:@selector(tapAction)];
     [self.view addGestureRecognizer:tapRecognizer];
     
-    //TODO: @igk delete this code and SCGestureRecognizer class after testing
-
-//    _recognizer =  [ SCGestureRecognizer recognizerWithView: self.view
-//                                        viewToIgnoreTouches: _toolBar ];
-//    _recognizer.scDelegate = self;
-//
-//    [ _recognizer addTarget: self
-//                     action: @selector( tapAction ) ];
 }
 
 -(void)viewDidLoad
