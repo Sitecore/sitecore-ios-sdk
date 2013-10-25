@@ -129,8 +129,8 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
 {
     BOOL centerCoordsIsValid = CLLocationCoordinate2DIsValid( region.center );
     
-    BOOL spanIsValid =   region.span.latitudeDelta > 0.0f
-                      && region.span.longitudeDelta > 0.0f;
+    BOOL spanIsValid =   ( -180.0f < region.span.latitudeDelta && region.span.latitudeDelta < 180.0f )
+                      && ( -180.0f < region.span.longitudeDelta && region.span.longitudeDelta < 180.0f );
     
     return spanIsValid && centerCoordsIsValid;
 }
