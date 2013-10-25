@@ -39,19 +39,23 @@
 {
     ABAddressBookRef rawBook_ = self.rawBook;
     CFErrorRef rawError_ = NULL;
-    NSArray* contacts_ = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople( rawBook_ );
     
-    for ( id record_ in contacts_ )
+    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( rawBook_ );
     {
-        ABRecordRef rawRecord_ = (__bridge ABRecordRef)record_;
-        ABAddressBookRemoveRecord( rawBook_, rawRecord_, &rawError_ );
-        if ( NULL != rawError_ )
+        NSArray* contacts_ = (__bridge NSArray*)allPeople;
+        
+        for ( id record_ in contacts_ )
         {
-            [ (__bridge NSError*)rawError_ setToPointer: error_ ];
-            return NO;
+            ABRecordRef rawRecord_ = (__bridge ABRecordRef)record_;
+            ABAddressBookRemoveRecord( rawBook_, rawRecord_, &rawError_ );
+            if ( NULL != rawError_ )
+            {
+                [ (__bridge NSError*)rawError_ setToPointer: error_ ];
+                return NO;
+            }
         }
     }
-    
+    CFRelease( allPeople );
 
     ABAddressBookSave( rawBook_, &rawError_ );
     if ( NULL != rawError_ )

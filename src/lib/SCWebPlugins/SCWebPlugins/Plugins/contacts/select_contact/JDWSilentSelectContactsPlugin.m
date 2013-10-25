@@ -50,16 +50,22 @@
 -(NSArray*)allAccountsWithAllFieldsFromAddressBook:( SCAddressBook* )book_
 {
     ABAddressBookRef addressBook_ = book_.rawBook;
-    NSArray* result_ = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople( addressBook_ );
-
-
-    result_ = [ result_ map: ^id( id object_ )
+    
+    NSArray* result_ = nil;
+    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( addressBook_ );
     {
-        ABRecordRef person_ = ( __bridge ABRecordRef )object_;
-        return [ [ SCContact alloc ] initWithPerson: person_
-                                        addressBook: book_ ];
-    } ];
+        NSArray* castedAllPeople = (__bridge NSArray*)allPeople;
 
+        result_ = [ castedAllPeople map: ^id( id object_ )
+        {
+            ABRecordRef person_ = ( __bridge ABRecordRef )object_;
+            return [ [ SCContact alloc ] initWithPerson: person_
+                                            addressBook: book_ ];
+        } ];
+    }
+    CFRelease( allPeople );
+    allPeople = NULL;
+    
     return result_;
 }
 
