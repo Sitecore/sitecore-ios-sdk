@@ -118,7 +118,7 @@
     
     SCField* defaultField = [ default_item_ fieldWithName: @"Title" ];
     
-    // @adk : web API returns default language ("en")
+    // @adk : web API returns default language ("en") #394160
     NSString* rawValue = field_.rawValue;
     NSString* expectedRawValue = defaultField.rawValue;
     
