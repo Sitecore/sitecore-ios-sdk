@@ -4,6 +4,9 @@
 #import <SCWebPlugins/SCWebPlugins/Plugins/contacts/ContactsAPI/SCAddressBookFactory.h>
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
+#define IS_CONTACT_SEARCH_PROFILING_MODE 0
+
+
 @interface WebViewAccountsTest : SCAsyncTestCase
 @end
 
@@ -15,7 +18,9 @@
          ^void(SCAddressBook* book_ )
          {
              NSError* error_ = nil;
+#if !IS_CONTACT_SEARCH_PROFILING_MODE
              [ book_ removeAllContactsWithError: &error_ ];
+#endif
              
              if ( nil != error_ )
              {
@@ -164,6 +169,23 @@
                      javasript: @"testFindAllAndRemoveContacts()" ];
 }
 
+#if IS_CONTACT_SEARCH_PROFILING_MODE
+-(void)testFindContactFLName
+{
+    [ self prepare: _cmd ];
+    {
+        [ self removeAllContactsAndRunBlock: ^void()
+         {
+             [ self notify: kGHUnitWaitStatusSuccess
+               forSelector: _cmd ];
+         }];
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: 10 ];
+
+    [ self testFindContactWithFirstLastNameWithSelector: _cmd ];
+}
+#else
 -(void)testCreateFindContactFName
 {
     [ self prepare: _cmd ];
@@ -315,5 +337,6 @@
     [ self testCreateContactWithAllFieldsWithSelector: _cmd ];
     [ self testEditContactWithAllFieldsWithSelector: _cmd ];
 }
+#endif
 
 @end
