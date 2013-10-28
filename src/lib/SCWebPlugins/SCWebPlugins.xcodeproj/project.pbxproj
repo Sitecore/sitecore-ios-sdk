@@ -113,6 +113,8 @@
 		7E921ACD1705F16D0006747C /* SCMobileMapPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E921ACB1705F16D0006747C /* SCMobileMapPluginError.m */; };
 		7EA15BAD170AFF26003FC13C /* SCBaseSocialPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA15BAB170AFF26003FC13C /* SCBaseSocialPoster.h */; };
 		7EA15BAE170AFF26003FC13C /* SCBaseSocialPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */; };
+		7EDA17C6181E6DCF00817A79 /* SCContactPluginError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDA17C4181E6DCF00817A79 /* SCContactPluginError.h */; };
+		7EDA17C7181E6DCF00817A79 /* SCContactPluginError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA17C5181E6DCF00817A79 /* SCContactPluginError.m */; };
 		7EE49FD6170B0F85004288E1 /* SCSocialFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE49FD4170B0F85004288E1 /* SCSocialFactory.h */; };
 		7EE49FD7170B0F85004288E1 /* SCSocialFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE49FD5170B0F85004288E1 /* SCSocialFactory.m */; };
 /* End PBXBuildFile section */
@@ -253,6 +255,8 @@
 		7E921ACB1705F16D0006747C /* SCMobileMapPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobileMapPluginError.m; sourceTree = "<group>"; };
 		7EA15BAB170AFF26003FC13C /* SCBaseSocialPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBaseSocialPoster.h; sourceTree = "<group>"; };
 		7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBaseSocialPoster.m; sourceTree = "<group>"; };
+		7EDA17C4181E6DCF00817A79 /* SCContactPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContactPluginError.h; sourceTree = "<group>"; };
+		7EDA17C5181E6DCF00817A79 /* SCContactPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContactPluginError.m; sourceTree = "<group>"; };
 		7EE49FD4170B0F85004288E1 /* SCSocialFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSocialFactory.h; sourceTree = "<group>"; };
 		7EE49FD5170B0F85004288E1 /* SCSocialFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSocialFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -396,6 +400,8 @@
 				1B90998814EA600600B19283 /* remove_contact */,
 				1B90998914EA600600B19283 /* save_contact */,
 				1B90998A14EA600600B19283 /* select_contact */,
+				7EDA17C4181E6DCF00817A79 /* SCContactPluginError.h */,
+				7EDA17C5181E6DCF00817A79 /* SCContactPluginError.m */,
 			);
 			path = contacts;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				1BFEB14C14E41FF70039CEBB /* SCMobilePluginsJavaScriptExport.h in Headers */,
 				1BFEB14F14E420230039CEBB /* scmobile.js.h in Headers */,
 				1BBB07E014E56C40003E77D0 /* pathToAllPluginsJavascripts.h in Headers */,
+				7EDA17C6181E6DCF00817A79 /* SCContactPluginError.h in Headers */,
 				1BBB07E414E56DA6003E77D0 /* SCWebViewPluginHolder.h in Headers */,
 				1BE73D3814E940920072C825 /* SCWebViewTapGestureRecognizer.h in Headers */,
 				1BE73D3E14E953840072C825 /* UIPopoverController+PresentPopoverInWebView.h in Headers */,
@@ -844,6 +851,7 @@
 				1B1BA9DD14EAA7570040D99E /* SCContact.m in Sources */,
 				78B0E5DF17F3192800233498 /* SCEventValuesParser.m in Sources */,
 				1B1BA9E114EAA8220040D99E /* SCContactField.m in Sources */,
+				7EDA17C7181E6DCF00817A79 /* SCContactPluginError.m in Sources */,
 				1B1BA9E514EAA99F0040D99E /* SCContactStringField.m in Sources */,
 				1B0E822514EBCDAE001D4299 /* SCContactStringArrayField.m in Sources */,
 				1B0E822A14EBD2AA001D4299 /* SCContactEmailsField.m in Sources */,
