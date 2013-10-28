@@ -66,7 +66,7 @@
 {
     return self.pageSize == 0
     ? @""
-    : [ [ NSString alloc ] initWithFormat: @"pageSize=%d&page=%d", self.pageSize, self.page ];
+    : [ [ NSString alloc ] initWithFormat: @"pageSize=%lu&page=%lu", (unsigned long)self.pageSize, (unsigned long)self.page ];
 }
 
 -(NSString*)itemVersionURLParam

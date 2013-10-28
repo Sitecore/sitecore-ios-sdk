@@ -4,11 +4,11 @@
 
 -(NSString*)description
 {
-    return [ [ NSString alloc ] initWithFormat: @"<SCItemInfo itemId:\"%@\" itemPath:\"%@\" language:\"%@\" version:\"%d\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCItemInfo itemId:\"%@\" itemPath:\"%@\" language:\"%@\" version:\"%ld\" >"
             , self->_itemId
             , self->_itemPath
             , self->_language
-            , self->_version ];
+            , (long)self->_version ];
 }
 
 @end

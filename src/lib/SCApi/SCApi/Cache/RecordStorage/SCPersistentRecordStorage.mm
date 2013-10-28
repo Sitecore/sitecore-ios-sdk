@@ -620,7 +620,7 @@ withAllChildrenInCache:( BOOL )isAllChildrenCached
     @"UPDATE [Fields] \n"
     @"SET \n"
     @"   [RawValue] = %@, \n"
-    @"   [HasLocalModifications] = %d \n"
+    @"   [HasLocalModifications] = %ld \n"
     @"WHERE \n"
     @"   [ItemId] = %@ AND \n"
     @"   [FieldId] = %@";
@@ -631,7 +631,7 @@ withAllChildrenInCache:( BOOL )isAllChildrenCached
     
     NSString* query = [ NSString stringWithFormat: queryFormat,
                        sqlRawValue,
-                       HAS_LOCAL_MODIFICATIONS,
+                       static_cast<long>( HAS_LOCAL_MODIFICATIONS ),
                        sqlItemId,
                        sqlFieldId ];
     

@@ -80,8 +80,9 @@ using namespace ::Utils;
         }
 
 
-
-        std::vector<unsigned char> cipherVt( maxSize, 0 );
+        unsigned long castedMaxSize = static_cast<unsigned long>(maxSize);
+        
+        std::vector<unsigned char> cipherVt( castedMaxSize, 0 );
         unsigned char* cipher = &cipherVt[0];
 
         int cipherTextSize = RSA_public_encrypt

@@ -145,8 +145,8 @@
     CGColorSpaceRef colorSpace_ = CGColorSpaceCreateDeviceRGB();
     CGContextRef bmContext_     = CGBitmapContextCreate(
         NULL
-        , lroundf( rotatedRect_.size.width )
-        , lroundf( rotatedRect_.size.height )
+        , lround( rotatedRect_.size.width )
+        , lround( rotatedRect_.size.height )
         , 8
         , 0
         , colorSpace_
@@ -194,7 +194,7 @@ didOutputSampleBuffer:( CMSampleBufferRef )sample_buffer_
     if (true)
     { // iOS bug?
         uint8_t* tmp_      = base_address_;
-        int bytes_         = bytes_per_row_ * height_;
+        int bytes_         = static_cast<int>( bytes_per_row_ * height_ );
         free_me_           = base_address_ = (uint8_t*)malloc( bytes_ );
         base_address_[ 0 ] = 0xdb;
 
