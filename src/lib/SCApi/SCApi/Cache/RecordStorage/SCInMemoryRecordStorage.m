@@ -161,7 +161,7 @@
 {
     NSParameterAssert( nil != itemId );
     NSParameterAssert( nil != fieldId );
-    newRawValue = newRawValue ?: @"";
+    //newRawValue = newRawValue ?: @"";
     
     
     NSAssert( NO, @"not implemented" );
