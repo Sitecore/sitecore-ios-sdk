@@ -49,23 +49,40 @@
 
 -(NSArray*)allAccountsWithAllFieldsFromAddressBook:( SCAddressBook* )book_
 {
-    ABAddressBookRef addressBook_ = book_.rawBook;
-    
+    NSMutableArray* contacts = nil;
     NSArray* result_ = nil;
-    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( addressBook_ );
-    {
-        NSArray* castedAllPeople = (__bridge NSArray*)allPeople;
-
-        result_ = [ castedAllPeople map: ^id( id object_ )
-        {
-            ABRecordRef person_ = ( __bridge ABRecordRef )object_;
-            return [ [ SCContact alloc ] initWithPerson: person_
-                                            addressBook: book_ ];
-        } ];
-    }
-    CFRelease( allPeople );
-    allPeople = NULL;
     
+    @autoreleasepool
+    {
+        ABAddressBookRef addressBook_ = book_.rawBook;
+        
+        CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( addressBook_ );
+
+        CFIndex allPeopleCount = CFArrayGetCount( allPeople );
+        NSUInteger castedPeopleCount = (NSUInteger)allPeopleCount;
+        
+        contacts = [ [ NSMutableArray alloc ] initWithCapacity: castedPeopleCount ];
+        
+        for ( CFIndex i = 0; i != allPeopleCount; ++i )
+        {
+            ABRecordRef person_ = CFArrayGetValueAtIndex( allPeople, i );
+            
+            if ( NULL != person_ )
+            {
+                SCContact* contact = [ [ SCContact alloc ] initWithPerson: person_
+                                                              addressBook: book_ ];
+                [ contacts addObject: contact ];            
+            }
+        }
+
+
+        CFRelease( allPeople );
+        allPeople = NULL;
+        
+        [ book_ releaseBook ];
+    }
+        
+    result_ = [ NSArray arrayWithArray: contacts ];
     return result_;
 }
 
@@ -107,18 +124,21 @@
 
 -(void)doWorkWithAddressBook:( SCAddressBook* )book_
 {
-    NSArray* contacts_ = [ self allAccountsWithAllFieldsFromAddressBook: book_ ];
-    
-    NSString* msg_ = [ contacts_ scContactsToJSON ];
-    if ( nil == msg_ )
+    @autoreleasepool
     {
-        msg_ = [ [ SCContactsPluginError invalidContactsJsonError ] toJson ];
+        NSArray* contacts_ = [ self allAccountsWithAllFieldsFromAddressBook: book_ ];
+        
+        NSString* msg_ = [ contacts_ scContactsToJSON ];
+        if ( nil == msg_ )
+        {
+            msg_ = [ [ SCContactsPluginError invalidContactsJsonError ] toJson ];
+        }
+        
+        [ self.delegate sendMessage: msg_ ];
+        [ self.delegate close ];
+        
+        NSLog(@"[END] - %@.", NSStringFromClass( [ self class ] ) );
     }
-    
-    [ self.delegate sendMessage: msg_ ];
-    [ self.delegate close ];
-    
-    NSLog(@"[END] - %@.", NSStringFromClass( [ self class ] ) );
 }
 
 @end
