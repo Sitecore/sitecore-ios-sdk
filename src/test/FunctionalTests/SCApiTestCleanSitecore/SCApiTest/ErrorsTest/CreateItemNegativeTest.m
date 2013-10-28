@@ -631,8 +631,8 @@
     __block SCItem* read_item_ = nil;
     __block NSError* response_error_ = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                  login: @"sitecore\\nocreate"
-                                               password: @"nocreate" ];
+                                                  login: SCWebApiNocreateLogin
+                                               password: SCWebApiNocreatePassword];
     
     apiContext_.defaultDatabase = @"web";
     apiContext_.defaultSite = @"/sitecore/shell";
@@ -686,8 +686,8 @@
     __block SCItem* read_item_ = nil;
     __block NSError* response_error_ = nil;
     apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                  login: @"sitecore\\nocreate"
-                                        password: @"nocreate" ];
+                                                  login: SCWebApiNocreateLogin
+                                               password: SCWebApiNocreatePassword ];
     
     apiContext_.defaultDatabase = @"web";
     
@@ -760,8 +760,8 @@
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiLogin
-                                                          password: SCWebApiPassword
+                                                             login: SCWebApiNocreateLogin
+                                                          password: SCWebApiNocreatePassword
                                                            version: SCWebApiV1 ];
             apiContext_ = strongContext_;
             
@@ -789,13 +789,20 @@
      GHAssertTrue( apiContext_ == nil, @"OK" );
      GHAssertTrue( response_error_ != nil, @"OK" );
      NSLog( @"response: %@", response_error_ );
+     SCCreateItemError* castedError_ = (SCCreateItemError*)response_error_;
     
-    
-    GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
-    SCCreateItemError* castedError_ = (SCCreateItemError*)response_error_;
-
-    
-    GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"OK" );
+    if ( IS_ANONYMOUS_ACCESS_ENABLED )
+    {
+        // ALR can be failed for Web API 1.0 because of issue 393416 fixed on CMS 7.1
+        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
+    }
+    else
+    {
+        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"OK" );
+        
+        SCResponseError* underlyingError = (SCResponseError*)castedError_.underlyingError;
+        GHAssertTrue( underlyingError.statusCode == 403, @"error code mismatch" );
+    }
 }
 
 -(void)testCreateItemInCoreWithoutSecurityAccess_Shell
@@ -811,8 +818,8 @@
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiLogin
-                                                          password: SCWebApiPassword
+                                                             login: SCWebApiNoAccessLogin
+                                                          password: SCWebApiNoAccessPassword
                                                            version: SCWebApiV1 ];
             apiContext_ = strongContext_;
             
@@ -848,13 +855,10 @@
     
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        // @adk - affected by
-        // 393416 - [WebAPI] media item created by user who has no create rights
-
-        // CMS 7.1 ==> json 403
-        // CMS 6.6 ==> json 200 OK <empty>
+        // ALR can be failed because of issue 397233
+        // ALR can be failed for Web API 1.0 because of issue 393416 fixed on CMS 7.1
+        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
         
-        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCNoItemError class ] ], @"OK" );
     }
     else
     {

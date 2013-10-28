@@ -122,8 +122,8 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiLogin
-                                                          password: SCWebApiPassword
+                                                             login: SCWebApiNoAccessLogin
+                                                          password: SCWebApiNoAccessPassword
                                                            version: SCWebApiV1 ];
             apiContext_ = strongContext_;
             
@@ -329,8 +329,8 @@
             {
                 NSString* path_ = SCTestFieldsItemPath;
                 strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                                 login: SCWebApiLogin 
-                                                              password: SCWebApiPassword
+                                                                 login: SCWebApiNoAccessLogin 
+                                                              password: SCWebApiNoAccessPassword
                                                                version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 
@@ -412,8 +412,8 @@
             @autoreleasepool
             {
                 strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                                 login: SCWebApiLogin
-                                                              password: SCWebApiPassword
+                                                                 login: SCWebApiNoAccessLogin
+                                                              password: SCWebApiNoAccessPassword
                                                                version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 
@@ -498,8 +498,8 @@
             @autoreleasepool
             {
                 strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                                 login: SCWebApiLogin 
-                                                              password: SCWebApiPassword];
+                                                                 login: SCWebApiNoAccessLogin 
+                                                              password: SCWebApiNoAccessPassword];
                 apiContext_ = strongContext_;
                 
                 SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -566,8 +566,8 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                             login: SCWebApiLogin 
-                                                          password: SCWebApiPassword ];
+                                                             login: SCWebApiNoAccessLogin 
+                                                          password: SCWebApiNoAccessPassword ];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -644,8 +644,8 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
-                                                             login: SCWebApiLogin 
-                                                          password: SCWebApiPassword ];
+                                                             login: SCWebApiNoAccessLogin 
+                                                          password: SCWebApiNoAccessPassword ];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -711,8 +711,8 @@
     {
         @autoreleasepool {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiLogin
-                                                          password: SCWebApiPassword];
+                                                             login: SCWebApiNoAccessLogin
+                                                          password: SCWebApiNoAccessPassword];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
@@ -779,8 +779,8 @@
         @autoreleasepool
         {
             strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
-                                                             login: SCWebApiLogin
-                                                          password: SCWebApiPassword];
+                                                             login: SCWebApiNoAccessLogin
+                                                          password: SCWebApiNoAccessPassword];
             apiContext_ = strongContext_;
             
             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];

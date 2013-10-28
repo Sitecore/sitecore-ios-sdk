@@ -36,7 +36,7 @@
     
     self->_extranetUserContext =
     [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
-                                    login: SCWebApiLogin
+                                    login: SCWebApiNoAccessLogin
                                  password: @"xyz"
                                   version: SCWebApiMaxSupportedVersion ];
 }

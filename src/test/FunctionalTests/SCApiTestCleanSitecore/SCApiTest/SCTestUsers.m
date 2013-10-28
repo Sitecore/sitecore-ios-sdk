@@ -3,8 +3,8 @@
 NSString* const SCWebApiNoReadAccessLogin = @"extranet\\noreadaccess";
 NSString* const SCWebApiNoReadAccessPassword = @"noreadaccess";
 
-NSString* const SCWebApiLogin = @"extranet\\test";
-NSString* const SCWebApiPassword = @"test";
+NSString* const SCWebApiNoAccessLogin = @"extranet\\test";
+NSString* const SCWebApiNoAccessPassword = @"test";
 
 NSString* const SCWebApiAdminLogin = @"sitecore\\admin";
 NSString* const SCWebApiAdminPassword = @"b";

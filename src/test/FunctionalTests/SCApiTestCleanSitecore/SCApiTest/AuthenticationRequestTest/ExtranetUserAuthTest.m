@@ -14,8 +14,8 @@
     
     self->_context =
     [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
-                                    login: SCWebApiLogin
-                                 password: SCWebApiPassword
+                                    login: SCWebApiNoAccessLogin
+                                 password: SCWebApiNoAccessPassword
                                   version: SCWebApiMaxSupportedVersion ];
 }
 

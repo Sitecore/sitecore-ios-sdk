@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-    extern NSString* const SCWebApiLogin;
-    extern NSString* const SCWebApiPassword;
+    extern NSString* const SCWebApiNoAccessLogin;
+    extern NSString* const SCWebApiNoAccessPassword;
     
     extern NSString* const SCWebApiAdminLogin;
     extern NSString* const SCWebApiAdminPassword;
