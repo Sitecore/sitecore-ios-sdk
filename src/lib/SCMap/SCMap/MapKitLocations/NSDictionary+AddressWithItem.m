@@ -28,10 +28,13 @@
          toDict:( NSMutableDictionary* )dict_
             key:( id )key_
 {
-    if ( ![ field_ placeMarkValue ] )
+    NSString* placeMark = [ field_ placeMarkValue ];
+    if ( nil == placeMark )
+    {
         return;
+    }
 
-    dict_[ key_ ] = field_.placeMarkValue;
+    dict_[ key_ ] = placeMark;
 }
 
 +(id)addressDictionaryWithItem:( SCItem* )item_
