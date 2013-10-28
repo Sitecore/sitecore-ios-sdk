@@ -666,20 +666,6 @@
 			remoteGlobalIDString = C7A1AB8713ED46B700CFDFD0;
 			remoteInfo = "CocoaHTTPServerCore-iOS";
 		};
-		7EBF98AA17B3C04500A142B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7EBF989617B3C04500A142B7 /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1D8157F8687007D89F1;
-			remoteInfo = DDUrlBuilder;
-		};
-		7EBF98AC17B3C04500A142B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7EBF989617B3C04500A142B7 /* DDUrlBuilder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E54C1F1157F889A007D89F1;
-			remoteInfo = DDUrlBuilderTest;
-		};
 		7EBF98AF17B3C04500A142B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EBF988A17B3C04500A142B7 /* DeviceUniqueIdentifier.xcodeproj */;
@@ -1141,7 +1127,6 @@
 		7EBF988D17B3C04500A142B7 /* cocoahttpserver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocoahttpserver.xcodeproj; path = "../../../lib-third-party/cocoahttpserver/cocoahttpserver.xcodeproj"; sourceTree = "<group>"; };
 		7EBF989017B3C04500A142B7 /* AmberFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AmberFoundation.xcodeproj; path = "../../../lib-third-party/AmberFramework-lite/AmberFoundation/AmberFoundation.xcodeproj"; sourceTree = "<group>"; };
 		7EBF989317B3C04500A142B7 /* ObjcScopedGuard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjcScopedGuard.xcodeproj; path = "../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj"; sourceTree = "<group>"; };
-		7EBF989617B3C04500A142B7 /* DDUrlBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDUrlBuilder.xcodeproj; path = "../../../lib-third-party/davedelong-Demos/DDURLBuilder/DDUrlBuilder/DDUrlBuilder.xcodeproj"; sourceTree = "<group>"; };
 		7EBF989917B3C04500A142B7 /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
 		7EBF989C17B3C04500A142B7 /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
 		7EBF98CB17B3C05D00A142B7 /* SCUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCUtils.xcodeproj; path = ../../SCUtils/SCUtils.xcodeproj; sourceTree = "<group>"; };
@@ -1877,7 +1862,6 @@
 				7EBF988D17B3C04500A142B7 /* cocoahttpserver.xcodeproj */,
 				7EBF989017B3C04500A142B7 /* AmberFoundation.xcodeproj */,
 				7EBF989317B3C04500A142B7 /* ObjcScopedGuard.xcodeproj */,
-				7EBF989617B3C04500A142B7 /* DDUrlBuilder.xcodeproj */,
 				7EBF989917B3C04500A142B7 /* TouchXmlHelper.xcodeproj */,
 				7EBF989C17B3C04500A142B7 /* TouchXML.xcodeproj */,
 			);
@@ -1923,15 +1907,6 @@
 				7EBF98B817B3C04500A142B7 /* libObjcScopedGuard.a */,
 				7EBF98BA17B3C04500A142B7 /* ObjcScopedGuardTests.octest */,
 				7EBF98BC17B3C04500A142B7 /* ObjcScopedGuardTests copy.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7EBF989717B3C04500A142B7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7EBF98AB17B3C04500A142B7 /* libDDUrlBuilder.a */,
-				7EBF98AD17B3C04500A142B7 /* DDUrlBuilderTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2279,10 +2254,6 @@
 					ProjectRef = 7EBF988D17B3C04500A142B7 /* cocoahttpserver.xcodeproj */;
 				},
 				{
-					ProductGroup = 7EBF989717B3C04500A142B7 /* Products */;
-					ProjectRef = 7EBF989617B3C04500A142B7 /* DDUrlBuilder.xcodeproj */;
-				},
-				{
 					ProductGroup = 7EBF988B17B3C04500A142B7 /* Products */;
 					ProjectRef = 7EBF988A17B3C04500A142B7 /* DeviceUniqueIdentifier.xcodeproj */;
 				},
@@ -2540,20 +2511,6 @@
 			fileType = archive.ar;
 			path = "libCocoaHTTPServerCore-iOS.a";
 			remoteRef = 7EBF98A617B3C04500A142B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7EBF98AB17B3C04500A142B7 /* libDDUrlBuilder.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDDUrlBuilder.a;
-			remoteRef = 7EBF98AA17B3C04500A142B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7EBF98AD17B3C04500A142B7 /* DDUrlBuilderTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DDUrlBuilderTest.octest;
-			remoteRef = 7EBF98AC17B3C04500A142B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7EBF98B017B3C04500A142B7 /* libDeviceUniqueIdentifier.a */ = {
