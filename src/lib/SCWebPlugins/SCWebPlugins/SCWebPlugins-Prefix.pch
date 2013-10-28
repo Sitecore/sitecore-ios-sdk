@@ -13,6 +13,7 @@
 
     #import <iFeatureAvailability/iFeatureAvailability.h>
 
+    #import <AddressBook/AddressBook.h>
     #import <AddressBookUI/AddressBookUI.h>
     #import <UIKit/UIKit.h>
     #import <Social/Social.h>
