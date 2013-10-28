@@ -8,4 +8,6 @@
 
 -(BOOL)removeAllContactsWithError:( NSError** )error_;
 
+-(void)releaseBook;
+
 @end
