@@ -28,7 +28,6 @@ Documentation, including installation and developer guides can be found on the [
 ## Further Information
  * [Product page on SDN][1]
  * [Sitecore Item Web API module page on SDN][2]
- * [Landing page at Github][4]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
  
@@ -40,6 +39,5 @@ SITECORE SHARED SOURCE LICENSE
  [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
- [4]: https://github.com/Sitecore/sitecore-ios-sdk/
  [5]: http://sitecore.github.io/sitecore-ios-sdk/
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
