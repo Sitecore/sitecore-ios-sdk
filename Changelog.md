@@ -2,24 +2,24 @@
 
 ## New features:
  * Apple iOS7 is now supported (in addition to iOS 6)
- * All existing SDK APIs have been reviewed, fixed and tested against the iOS 7
+ 	* All existing SDK APIs have been reviewed, fixed and tested against the iOS 7
  * New features from iOS 7 incorporated into the JavaScript libraries;
- * Apple Mapping support (including 3D Maps)
- * Updated Calendar features 
+ 	* Apple Mapping support (including 3D Maps)
+ 	* Updated Calendar features 
  * Updated Item Manipulation features
- * Cancel and progress support for item manipulation operations 
- * Image scaling options support 
+ 	* Cancel and progress support for item manipulation operations 
+ 	* Image scaling options support 
  * As a part of the update we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. These include examples of;
- * Authorisation (with a Sitecore instance)
- * Mapping (Apple Maps and Path-finding) 
- * Web View (example integration with a Sitecore instance)
- *  Manipulating Sitecore content through the Sitecore Item Web API
- * Social network sharing 
- * Email (Creating and Sending)
- * Device information retrieval (Camera, Accelerometer, Hardware)
- * Contacts (create and add contact information locally)
- * QR code (Scan and use QR codes)
- * Air Drop (Share local items through Air Drop)
+ 	* Authorisation (with a Sitecore instance)
+ 	* Mapping (Apple Maps and Path-finding) 
+ 	* Web View (example integration with a Sitecore instance)
+ 	*  Manipulating Sitecore content through the Sitecore Item Web API
+ 	* Social network sharing 
+ 	* Email (Creating and Sending)
+ 	* Device information retrieval (Camera, Accelerometer, Hardware)
+ 	* Contacts (create and add contact information locally)
+ 	* QR code (Scan and use QR codes)
+ 	* Air Drop (Share local items through Air Drop)
 
 ## Issues resolved:
 A large number of bugs have been resolved;
