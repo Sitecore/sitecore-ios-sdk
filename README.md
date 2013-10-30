@@ -23,7 +23,7 @@ Documentation, including installation and developer guides can be found on the [
 
 ### This repository contains:
  * Source code of the Sitecore SDK for iOS framework
- * Binaries of the Sitecore SDK for Android framework in [releases section][7]
+ * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
 
 ## Further Information
  * [Product page on SDN][1]
