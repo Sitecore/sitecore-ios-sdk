@@ -16,19 +16,21 @@
 
 @end
 
-@interface SCMapViewLogic ()
+@implementation SCMapViewLogic
 {
+@private
+    MKMapView* _mapView;
+
+@private
     NSArray*        _placeMarks;
     CLLocation*     _selfLocation;
     MKPolyline*     _routeLine;
     MKPolylineView* _routeLineView;
-}
-
-@end
-
-@implementation SCMapViewLogic
-{
-    MKMapView* _mapView;
+    
+@private
+    Class _MKDirectionsClass;
+    Class _MKDirectionsRequestClass;
+    Class _MKDirectionsResponseClass;
 }
 
 static const double DEFAULT_REGION_RADIUS = 10000.;
@@ -51,6 +53,10 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
 
 -(void)initialize
 {
+    self->_MKDirectionsClass         = NSClassFromString( @"MKDirections" );
+    self->_MKDirectionsRequestClass  = NSClassFromString( @"MKDirectionsRequest" );
+    self->_MKDirectionsResponseClass = NSClassFromString( @"MKDirectionsResponse" );
+    
     self.regionIsAdjusted = NO;
     self.regionRadius = DEFAULT_REGION_RADIUS;
 }
@@ -264,20 +270,38 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
     }
 }
 
+-(BOOL)shouldDrawRoute
+{
+    BOOL isLocationSet = ( nil != self->_selfLocation );
+    
+    BOOL result =
+    (
+     isLocationSet                    &&
+     self->_drawRouteToNearestAddress &&
+     [ self->_placeMarks hasElements ]
+    );
+
+    return result;
+}
+
 -(void)drawRouteToClosestPlaceMark
 {
-    if ( [ self->_placeMarks count ] == 0
-        || !self->_selfLocation
-        || !self->_drawRouteToNearestAddress )
+    BOOL shouldDrawRoute = [ self shouldDrawRoute ];
+    if ( !shouldDrawRoute )
+    {
         return;
+    }
+    
     
     BOOL nativePAthBuilderIsAvalable = [ ESFeatureAvailabilityChecker isPathBuilderAvailable ];
-    
     if ( nativePAthBuilderIsAvalable )
+    {
         [ self buildRouteWithNativeAPI ];
+    }
     else
+    {
         [ self buildRouteWithGoogleAPI ];
-    
+    }
 }
 
 -(void)buildRouteWithGoogleAPI
@@ -313,6 +337,9 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
 
 -(void)buildRouteWithNativeAPI
 {
+    NSParameterAssert( NULL != self->_MKDirectionsClass         );
+    NSParameterAssert( NULL != self->_MKDirectionsRequestClass  );
+    NSParameterAssert( NULL != self->_MKDirectionsResponseClass );
     
     MKPlacemark *currentLocationPlacemark = [ [MKPlacemark alloc] initWithCoordinate: self->_selfLocation.coordinate
                                                                    addressDictionary: nil ];
@@ -322,16 +349,16 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
     MKMapItem *destinationItem = [ [MKMapItem alloc] initWithPlacemark :destinationPlacemark ];
     
     
-    MKDirectionsRequest *request = [ [MKDirectionsRequest alloc] init ];
-    
-    request.source = sourceItem;
-    request.destination = destinationItem;
-    
-    request.requestsAlternateRoutes = NO;
-    MKDirections *directions = [ [MKDirections alloc] initWithRequest:request ];
+    id<SC_MKDirectionsRequestProtocol> request = [ [ self->_MKDirectionsRequestClass alloc] init ];
+    {
+        request.source = sourceItem;
+        request.destination = destinationItem;
+        request.requestsAlternateRoutes = NO;
+    }
+    id<SC_MKDirectionsProtocol> directions = [ [self->_MKDirectionsClass alloc] initWithRequest:request ];
     
     [ directions calculateDirectionsWithCompletionHandler:
-     ^( MKDirectionsResponse *response, NSError *error )
+    ^( id<SC_MKDirectionsResponseProtocol> response, NSError *error )
     {
          if ( !error && [ response.routes count ] > 0 )
          {

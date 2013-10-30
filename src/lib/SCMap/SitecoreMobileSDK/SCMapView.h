@@ -47,4 +47,8 @@ typedef void (^SCMapViewResultHandler)(NSArray *annotations, NSError *error);
  */
 @property(nonatomic,copy) SCMapViewResultHandler didLoadedAnnotationsHandler;
 
+-(void)setCamera:(id)camera;
+-(void)setCamera:(id)camera
+        animated:(BOOL)animated;
+
 @end
