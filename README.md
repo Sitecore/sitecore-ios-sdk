@@ -9,7 +9,6 @@ Sitecore Mobile SDK is a framework that is designed to help the developer produc
  * Accelerometer functions
  * Device information
  * Access to the built-in address book and easy creation of new contacts
- * Creating tweets through the system-wide twitter accounts
  * Sending emails using the e-mail account
  * Social networks integration (Facebook, Twitter)
  * Mapping integration (with both Apple Maps and Google Maps)
