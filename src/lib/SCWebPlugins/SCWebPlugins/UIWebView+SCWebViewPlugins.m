@@ -117,7 +117,7 @@
     deviceNameWithEscapes = [ deviceNameWithEscapes stringByReplacingJSEscapes ];
     
     NSMutableArray* settings_ = [ NSMutableArray new ];
-    [ settings_ addObject: [ NSString stringWithFormat: @"scmobile.device.name = unescape('%@');"
+    [ settings_ addObject: [ NSString stringWithFormat: @"scmobile.device.name = unescape( decodeURIComponent('%@') );"
                             , deviceNameWithEscapes ] ];
     [ settings_ addObject: [ NSString stringWithFormat: @"scmobile.device.uuid = '%@';"
                             ,  deviceId ] ];
