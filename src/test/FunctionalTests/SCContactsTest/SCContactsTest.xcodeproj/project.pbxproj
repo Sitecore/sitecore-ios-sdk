@@ -49,7 +49,6 @@
 		1BAFB7311511E8B30007A91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CAE146D57920099177E /* UIKit.framework */; };
 		1BAFB7321511E8B30007A91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB0146D57920099177E /* Foundation.framework */; };
 		1BAFB7331511E8B30007A91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB2146D57920099177E /* CoreGraphics.framework */; };
-		1BAFB7341511E8B30007A91D /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258CCE531471292700DCDE0A /* GHUnitIOS.framework */; };
 		1BAFB7371511E8B30007A91D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25913CB7146D57920099177E /* InfoPlist.strings */; };
 		1BAFB7381511E8B30007A91D /* contacts_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25CF77CF147138C7002C0525 /* contacts_tests.js */; };
 		1BAFB7391511E8B30007A91D /* version_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25936A08147A3DF2004389B0 /* version_tests.js */; };
@@ -69,7 +68,6 @@
 		251CA68E14713AB600C67296 /* contacts_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 25CF77CF147138C7002C0525 /* contacts_tests.js */; };
 		257F504614752CF00066AC47 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257F504514752CF00066AC47 /* AudioToolbox.framework */; };
 		258A14EF14E537AB00DA4DE5 /* manual tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14EE14E537AB00DA4DE5 /* manual tests.png */; };
-		258CCE541471292700DCDE0A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258CCE531471292700DCDE0A /* GHUnitIOS.framework */; };
 		258CCE5B14712B1200DCDE0A /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */; };
 		25913CAF146D57920099177E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CAE146D57920099177E /* UIKit.framework */; };
 		25913CB1146D57920099177E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25913CB0146D57920099177E /* Foundation.framework */; };
@@ -113,6 +111,8 @@
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7EE4184F181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */; };
+		7EE41850181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,20 +151,6 @@
 			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
-		7EF932EB15E6526A00117BCF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B13993D1446E84F0015C191;
-			remoteInfo = SitecoreMobileSDK;
-		};
-		7EF932ED15E6527700117BCF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B13993C1446E84F0015C191;
-			remoteInfo = SitecoreMobileSDK;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -194,7 +180,6 @@
 		253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewVersionTest.m; sourceTree = "<group>"; };
 		257F504514752CF00066AC47 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		258A14EE14E537AB00DA4DE5 /* manual tests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "manual tests.png"; sourceTree = "<group>"; };
-		258CCE531471292700DCDE0A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
 		258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewAccountsTest.m; sourceTree = "<group>"; };
 		258CCE5914712B1200DCDE0A /* SCAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncTestCase.h; sourceTree = "<group>"; };
 		258CCE5A14712B1200DCDE0A /* SCAsyncTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncTestCase.m; sourceTree = "<group>"; };
@@ -231,7 +216,7 @@
 		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
 		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
 		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SitecoreMobileSDK.xcodeproj; path = ../../../lib/SitecoreMobileSDK/SitecoreMobileSDK.xcodeproj; sourceTree = "<group>"; };
+		7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +241,7 @@
 				1BAFB7271511E8B30007A91D /* CoreLocation.framework in Frameworks */,
 				1BAFB7281511E8B30007A91D /* AddressBookUI.framework in Frameworks */,
 				1BAFB7291511E8B30007A91D /* Twitter.framework in Frameworks */,
+				7EE41850181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */,
 				1BAFB72A1511E8B30007A91D /* AudioToolbox.framework in Frameworks */,
 				1BAFB72B1511E8B30007A91D /* libsqlite3.dylib in Frameworks */,
 				1BAFB72C1511E8B30007A91D /* libz.dylib in Frameworks */,
@@ -266,7 +252,6 @@
 				1BAFB7311511E8B30007A91D /* UIKit.framework in Frameworks */,
 				1BAFB7321511E8B30007A91D /* Foundation.framework in Frameworks */,
 				1BAFB7331511E8B30007A91D /* CoreGraphics.framework in Frameworks */,
-				1BAFB7341511E8B30007A91D /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE4184F181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */,
 				7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */,
 				7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */,
 				7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */,
@@ -300,7 +286,6 @@
 				25913CAF146D57920099177E /* UIKit.framework in Frameworks */,
 				25913CB1146D57920099177E /* Foundation.framework in Frameworks */,
 				25913CB3146D57920099177E /* CoreGraphics.framework in Frameworks */,
-				258CCE541471292700DCDE0A /* GHUnitIOS.framework in Frameworks */,
 				1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +359,7 @@
 		25913CAD146D57920099177E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */,
 				7E72CA6317FBF8990081F306 /* QuartzCore.framework */,
 				7E36C06217FAFE2F000E3083 /* EventKit.framework */,
 				7E36C06317FAFE2F000E3083 /* EventKitUI.framework */,
@@ -390,7 +376,6 @@
 				1B104CD814838D960025FDDA /* AddressBookUI.framework */,
 				1BC086B0147AAF890066CFB3 /* Twitter.framework */,
 				257F504514752CF00066AC47 /* AudioToolbox.framework */,
-				258CCE531471292700DCDE0A /* GHUnitIOS.framework */,
 				25913CD9146D5C2F0099177E /* libsqlite3.dylib */,
 				259453DA14CD694A00A33C78 /* libstdc++.dylib */,
 				25913CD7146D5C250099177E /* libz.dylib */,
@@ -451,19 +436,10 @@
 		6568491F1472F9DC0064CDE4 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */,
 				1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */,
 				1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */,
 			);
 			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		7EF932E415E6526900117BCF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7EF932EC15E6526A00117BCF /* SitecoreMobileSDK.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,7 +477,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7EF932EE15E6527700117BCF /* PBXTargetDependency */,
 				1B0BFBE115612F2300853028 /* PBXTargetDependency */,
 			);
 			name = SCContactsTest;
@@ -536,10 +511,6 @@
 					ProductGroup = 1B0D83711519D11500EC4A92 /* Products */;
 					ProjectRef = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 				},
-				{
-					ProductGroup = 7EF932E415E6526900117BCF /* Products */;
-					ProjectRef = 7EF932E315E6526900117BCF /* SitecoreMobileSDK.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -562,13 +533,6 @@
 			fileType = archive.ar;
 			path = libSCAllMobileSDKLibs.a;
 			remoteRef = 1B0D83B51519D11600EC4A92 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7EF932EC15E6526A00117BCF /* SitecoreMobileSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SitecoreMobileSDK.framework;
-			remoteRef = 7EF932EB15E6526A00117BCF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -704,11 +668,6 @@
 			name = SCAllMobileSDKLibs;
 			targetProxy = 1B154B3A151A3D67005C28F2 /* PBXContainerItemProxy */;
 		};
-		7EF932EE15E6527700117BCF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SitecoreMobileSDK;
-			targetProxy = 7EF932ED15E6527700117BCF /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -726,11 +685,6 @@
 		1BAFB73F1511E8B30007A91D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
@@ -749,11 +703,6 @@
 		1BAFB7401511E8B30007A91D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
@@ -855,19 +804,10 @@
 		25913CC9146D57920099177E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -881,19 +821,10 @@
 		25913CCA146D57920099177E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks\"",
-					"\"$(SRCROOT)/../../../deployment\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
