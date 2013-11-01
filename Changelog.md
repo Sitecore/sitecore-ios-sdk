@@ -10,7 +10,7 @@
  	* Cancel and progress support for item manipulation operations 
  	* Image scaling options support 
  * As a part of the update we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. These include examples of;
- 	* Authorisation (with a Sitecore instance)
+ 	* Authentication request (to Sitecore instance)
  	* Mapping (Apple Maps and Path-finding) 
  	* Web View (example integration with a Sitecore instance)
  	*  Manipulating Sitecore content through the Sitecore Item Web API
