@@ -9,7 +9,6 @@ Sitecore Mobile SDK is a framework that is designed to help the developer produc
  * Accelerometer functions
  * Device information
  * Access to the built-in address book and easy creation of new contacts
- * Creating tweets through the system-wide twitter accounts
  * Sending emails using the e-mail account
  * Social networks integration (Facebook, Twitter)
  * Mapping integration (with both Apple Maps and Google Maps)
@@ -24,6 +23,7 @@ Documentation, including installation and developer guides can be found on the [
 
 ### This repository contains:
  * Source code of the Sitecore SDK for iOS framework
+ * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
 
 ## Further Information
  * [Product page on SDN][1]
@@ -41,3 +41,4 @@ SITECORE SHARED SOURCE LICENSE
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
  [5]: http://sitecore.github.io/sitecore-ios-sdk/
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
+ [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases

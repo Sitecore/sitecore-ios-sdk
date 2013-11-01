@@ -21,6 +21,8 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     UIToolbar* _toolBar;
     JFFScheduler* _scheduler;
     __weak SCGestureRecognizer* _recognizer;
+    
+    Class _MKMapCameraClass;
 }
 
 -(void)dealloc
@@ -40,15 +42,31 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     self.view = [ [ SCMapView alloc ] initWithFrame: frame_ ];
 }
 
+-(void)initializeMapKitClasses
+{
+    if ( ![ ESFeatureAvailabilityChecker isMapCameraAvailable ] )
+    {
+        return;
+    }
+    
+    self->_MKMapCameraClass = NSClassFromString(@"MKMapCamera");
+}
+
 -(void)initializeMapView
 {
     [ self.mapView addAddressesAnnotations: self.addresses ];
 
     self.mapView.drawRouteToNearestAddress = self.drawRoute;
     if ( self.regionRadius > 100. )
+    {
         self.mapView.regionRadius = self.regionRadius;
+    }
     
-#ifdef __IPHONE_7_0
+    
+    if ( ![ ESFeatureAvailabilityChecker isMapCameraAvailable ] )
+    {
+        return;
+    }
     
     BOOL perspectiveParamsAreValid =
            CLLocationCoordinate2DIsValid( self.viewPointPosition )
@@ -57,14 +75,11 @@ static void(^presentControllerHandler_)( SCMapViewController* );
     
     if ( perspectiveParamsAreValid )
     {
-        MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate: self.viewPointPosition
+        id<SC_MKMapCameraProtocol> camera = [self->_MKMapCameraClass cameraLookingAtCenterCoordinate: self.viewPointPosition
                                                          fromEyeCoordinate: self.cameraPosition
                                                                eyeAltitude: self.cameraHeight ];
-        self.mapView.camera = camera;
+        [ self.mapView setCamera: camera ];
     }
-    
-#endif
-    
 }
 
 -(void)addTapRecognizer
@@ -80,12 +95,16 @@ static void(^presentControllerHandler_)( SCMapViewController* );
 {
     [ super viewDidLoad ];
 
+    // @adk : order matters
+    [ self initializeMapKitClasses ];
     [ self addToolBar ];
     [ self initializeMapView ];
     [ self addTapRecognizer ];
 
     if ( presentControllerHandler_ )
+    {
         presentControllerHandler_( self );
+    }
 }
 
 -(void)viewDidUnload

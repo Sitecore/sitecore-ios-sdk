@@ -73,6 +73,11 @@
 		7E936AC01702DC2000879849 /* JFFAsyncOperationGeocoderDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoderDict.m; sourceTree = "<group>"; };
 		7E936AC31702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFAsyncOperationGeocoderAddress.h; sourceTree = "<group>"; };
 		7E936AC41702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFAsyncOperationGeocoderAddress.m; sourceTree = "<group>"; };
+		7EA32190182108E30003433D /* SC_MKDirectionsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKDirectionsProtocol.h; sourceTree = "<group>"; };
+		7EA321911821092B0003433D /* SC_MKDirectionsRequestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKDirectionsRequestProtocol.h; sourceTree = "<group>"; };
+		7EA321921821093E0003433D /* SC_MKDirectionsResponseProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKDirectionsResponseProtocol.h; sourceTree = "<group>"; };
+		7EBC91011821327E00BCBFA0 /* SC_MKMapCameraProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKMapCameraProtocol.h; sourceTree = "<group>"; };
+		7EBC9102182137EB00BCBFA0 /* SC_MKPolylineRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKPolylineRendererProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +170,7 @@
 				1B33DD691518C0BD00EEA9BA /* MapKitLocations */,
 				06BF6406150F896600281999 /* GoogleAPI */,
 				1BE4D124150F82A6007259C2 /* Details */,
+				7EA3218E182108980003433D /* MapKitProtocols */,
 				1BE4CEAE150F3CBE007259C2 /* SCMap.h */,
 				1BE4CEAF150F3CBE007259C2 /* SCMap.m */,
 				1BE4CFCE150F5D9B007259C2 /* SCMapView.h */,
@@ -212,6 +218,18 @@
 				062CA949151333FD0053A66E /* SCGestureRecognizer.m */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		7EA3218E182108980003433D /* MapKitProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				7EA32190182108E30003433D /* SC_MKDirectionsProtocol.h */,
+				7EA321911821092B0003433D /* SC_MKDirectionsRequestProtocol.h */,
+				7EBC91011821327E00BCBFA0 /* SC_MKMapCameraProtocol.h */,
+				7EBC9102182137EB00BCBFA0 /* SC_MKPolylineRendererProtocol.h */,
+				7EA321921821093E0003433D /* SC_MKDirectionsResponseProtocol.h */,
+			);
+			path = MapKitProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

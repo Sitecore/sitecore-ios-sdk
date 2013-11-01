@@ -12,6 +12,8 @@
 {
     SCMapViewLogic* _logic;
     id<MKMapViewDelegate> _externalDelegate;
+    
+    Class _MKPolylineRendererClass;
 }
 
 -(id)init
@@ -52,17 +54,30 @@
 
 -(void)initialize
 {
+    if ( [ ESFeatureAvailabilityChecker isPolyLineMapOverlayRendererAvailable ] )
+    {
+        self->_MKPolylineRendererClass = NSClassFromString(@"MKPolylineRenderer");
+    }
+    
     self.delegate = self;
-    _logic = [ [ SCMapViewLogic alloc ] initWithMapView: self ];
+    self->_logic = [ [ SCMapViewLogic alloc ] initWithMapView: self ];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView
             rendererForOverlay:(id<MKOverlay>)overlay
-{    
-    MKPolylineRenderer *renderer =
-    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-    renderer.lineWidth = 3.0;
-    renderer.strokeColor = [UIColor blueColor];
+{
+    if ( ![ ESFeatureAvailabilityChecker isPolyLineMapOverlayRendererAvailable ] )
+    {
+        return nil;
+    }
+
+    id<SC_MKPolylineRendererProtocol> renderer =
+    [ [ self->_MKPolylineRendererClass alloc ] initWithOverlay: overlay ];
+    {
+        [renderer setLineWidth: 3.0];
+        [renderer setStrokeColor: [UIColor blueColor] ];
+    }
+    
     return renderer;
 }
 
@@ -70,9 +85,13 @@
 -(void)setDelegate:(id<MKMapViewDelegate>)delegate
 {
     if (delegate == self)
+    {
         [super setDelegate:delegate];
+    }
     else
+    {
         self->_externalDelegate = delegate;
+    }
 }
 
 -(id<MKMapViewDelegate>)delegate
@@ -168,22 +187,32 @@
 
 #ifdef __IPHONE_7_0
 
--(void)setCamera:(MKMapCamera *)camera
+-(void)setCamera:(id)camera
+        animated:(BOOL)animated
 {
+    self->_logic.regionIsAdjusted = YES;
+    
     if ( [ super respondsToSelector:@selector(setCamera:animated:) ] )
     {
-        _logic.regionIsAdjusted = YES;
         [ super setCamera:camera animated:YES ];
     }
-    else
-    {
-        NSLog(@"Maps perspective view is not suppoorted on this device!");
-    }
+}
+
+-(void)setCamera:(id)camera
+{
+   [ self setCamera:camera
+           animated:YES ];
 }
 
 #else
 
 -(void)setCamera:(id)camera
+{
+    NSLog(@"Maps perspective view is not suppoorted on this device!");
+}
+
+-(void)setCamera:(id)camera
+        animated:(BOOL)animated
 {
     NSLog(@"Maps perspective view is not suppoorted on this device!");
 }
