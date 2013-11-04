@@ -9,7 +9,7 @@
  * Updated Item Manipulation features
  	* Cancel and progress support for item manipulation operations 
  	* Image scaling options support 
- * As a part of the update we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. These include examples of;
+ * As a part of the update we have created a [sample application](https://github.com/Sitecore/sitecore-ios-sdk-sample) that can be used as a starting point to understand the Mobile SDK for iOS and the features available. These include examples of;
  	* Authentication request (to Sitecore instance)
  	* Mapping (Apple Maps and Path-finding) 
  	* Web View (example integration with a Sitecore instance)
@@ -25,7 +25,7 @@
 A large number of bugs have been resolved;
  * [Issue #3369] Considering SCItem and SCField item's source parameters (database, language, version) has been added.
  * [Issue #2796] “Site" parameter for request to define what site we want access to is added.
- * [Issue #3443] Using UIWebView control to render text from RichText Field with internal links to media items
+ * [ [Issue #3443] ](https://github.com/Sitecore/sitecore-ios-sdk/issues/18) Using UIWebView control to render text from RichText Field with internal links to media items
 
 
 # Version 1.1
