@@ -36,9 +36,9 @@ Documentation, including installation and developer guides can be found on the [
 SITECORE SHARED SOURCE LICENSE
 ```
 
- [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
+ [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
- [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
+ [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS/Documentation.aspx
  [5]: http://sitecore.github.io/sitecore-ios-sdk/
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
