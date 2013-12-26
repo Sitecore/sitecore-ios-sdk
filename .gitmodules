@@ -28,3 +28,6 @@
 [submodule "src/lib-third-party/iFeatureAvailability"]
 	path = src/lib-third-party/iFeatureAvailability
 	url = https://github.com/Sitecore/iFeatureAvailability.git
+[submodule "src/lib-third-party/cocoahttpserver"]
+	path = src/lib-third-party/cocoahttpserver
+	url = https://github.com/Sitecore/CocoaHTTPServer.git
