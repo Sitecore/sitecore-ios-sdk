@@ -21,10 +21,7 @@
 #import "ParsedResult.h"
 #import "ResultAction.h"
 #import "TwoDDecoderResult.h"
-#include <sys/types.h>
-#include <sys/sysctl.h>
 
-#import <AVFoundation/AVFoundation.h>
 
 #define CAMERA_SCALAR 1.12412 // scalar = (480 / (2048 / 480))
 #define FIRST_TAKE_DELAY 1.0
@@ -59,7 +56,9 @@
     [self setDelegate:scanDelegate];
     self.oneDMode = shouldUseoOneDMode;
     self.showCancel = shouldShowCancel;
-    self.wantsFullScreenLayout = YES;
+      
+    [ self setFullScreenMode ];
+      
     beepSound = -1;
     decoding = NO;
     OverlayView *theOverLayView = [[OverlayView alloc] initWithFrame:[UIScreen mainScreen].bounds 
@@ -107,9 +106,35 @@
   return NO;
 }
 
+-(void)setFullScreenMode
+{
+    SEL edgesForExtendedLayoutSelector = @selector(setEdgesForExtendedLayout:);
+    
+    
+    if ( [ self respondsToSelector: edgesForExtendedLayoutSelector ] )
+    {
+        typedef void(*SetEdgesFunctionType)( id, SEL, UIRectEdge );
+        SetEdgesFunctionType SetEdgesFunction = (SetEdgesFunctionType)objc_msgSend;
+        
+        SetEdgesFunction( self, edgesForExtendedLayoutSelector, UIRectEdgeNone );
+    }
+    else
+    {
+        typedef void(*SetWantsFullScreenFunctionType)( id, SEL, BOOL );
+        SetWantsFullScreenFunctionType SetWantsFullScreenFunction = (SetWantsFullScreenFunctionType)objc_msgSend;
+
+        SetWantsFullScreenFunction( self, @selector(setWantsFullScreenLayout:), YES );
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  self.wantsFullScreenLayout = YES;
+  
+  
+    
+    [ self setFullScreenMode ];
+    
+    
   if ([self soundToPlay] != nil) {
     OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)[self soundToPlay], &beepSound);
     if (error != kAudioServicesNoError) {

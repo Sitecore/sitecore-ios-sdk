@@ -3,5 +3,16 @@
 //
 
 #ifdef __OBJC__
+    #import <AVFoundation/AVFoundation.h>
+
+
+    #import <CoreGraphics/CoreGraphics.h>
+    #import <CoreText/CoreText.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#import <objc/message.h>
+
+#include <sys/types.h>
+#include <sys/sysctl.h>
+

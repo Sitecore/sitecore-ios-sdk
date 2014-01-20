@@ -61,7 +61,10 @@ static NSMutableDictionary *iconsByClass = nil;
     [[UIColor blackColor] set];
     NSString *s = [[self class] typeName];
     UIFont *font = [UIFont systemFontOfSize:16];
-    CGSize stringSize = [s sizeWithFont:font];
+      
+      NSDictionary* fontAttr = @{ NSFontAttributeName : font };
+      
+      CGSize stringSize = [s sizeWithAttributes: fontAttr ];
     float xScale = fminf(1.0, ICON_INSIDE / stringSize.width);
     float yScale = fminf(1.0, ICON_INSIDE / stringSize.height);
     
@@ -72,7 +75,8 @@ static NSMutableDictionary *iconsByClass = nil;
                           -(stringSize.width)/2.0, 
                           -(stringSize.height)/2.0);
     
-    [s drawAtPoint:CGPointMake(0, 0) withFont:font];
+    [s drawAtPoint: CGPointMake(0, 0)
+    withAttributes: fontAttr ];
     
     icon = UIGraphicsGetImageFromCurrentImageContext();
     [iconsByClass setObject:icon forKey: NSStringFromClass( [ self class ] )];

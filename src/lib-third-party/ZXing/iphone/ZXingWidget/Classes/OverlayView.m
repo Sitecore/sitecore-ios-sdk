@@ -142,18 +142,51 @@ static const CGFloat kPadding = 10;
 	//	CGContextSetStrokeColor(c, white);
 	CGContextSaveGState(c);
 	if (oneDMode) {
-		char *text = "Place a red line over the bar code to be scanned.";
-		CGContextSelectFont(c, "Helvetica", 15, kCGEncodingMacRoman);
-		CGContextScaleCTM(c, -1.0, 1.0);
+		NSString *text = @"Place a red line over the bar code to be scanned.";
+        
+        
+        UIFont* font = [ UIFont fontWithName: @"Helvetica"
+                                        size: 15 ];
+        NSDictionary *attributes = @{ NSFontAttributeName: font };
+        
+        CGContextScaleCTM(c, -1.0, 1.0);
 		CGContextRotateCTM(c, M_PI/2);
-		CGContextShowTextAtPoint(c, 74.0, 285.0, text, 49);
+
+        
+        static const CGPoint textPoint = {74, 285};
+        CGContextSetTextDrawingMode(c, kCGTextFill);
+        [ text drawAtPoint: textPoint
+            withAttributes: attributes ];
 	}
 	else {
     UIFont *font = [UIFont systemFontOfSize:18];
     CGSize constraint = CGSizeMake(rect.size.width  - 2 * kTextMargin, cropRect.origin.y);
-    CGSize displaySize = [self.displayedMessage sizeWithFont:font constrainedToSize:constraint];
+
+
+        NSMutableParagraphStyle* paragraphStyle = [ NSMutableParagraphStyle new ];
+        {
+            paragraphStyle.alignment = NSTextAlignmentCenter;
+            paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        }
+        
+        NSDictionary *attributes =
+        @{
+           NSFontAttributeName : font,
+           NSParagraphStyleAttributeName : paragraphStyle
+        };
+        CGRect boundingRect = [ self.displayedMessage boundingRectWithSize: constraint
+                                                                  options: NSStringDrawingUsesLineFragmentOrigin
+                                                               attributes: attributes
+                                                                  context: nil ];
+        
+        CGSize displaySize = boundingRect.size;
+        
     CGRect displayRect = CGRectMake((rect.size.width - displaySize.width) / 2 , cropRect.origin.y - displaySize.height, displaySize.width, displaySize.height);
-    [self.displayedMessage drawInRect:displayRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
+
+        
+        [ self.displayedMessage drawInRect: displayRect
+                            withAttributes: attributes ];
+        
 	}
 	CGContextRestoreGState(c);
 	int offset = rect.size.width / 2;
@@ -192,29 +225,6 @@ static const CGFloat kPadding = 10;
 	}
 }
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
- - (void) setImage:(UIImage*)image {
- //if( nil == imageView ) {
-// imageView = [[UIImageView alloc] initWithImage:image];
-// imageView.alpha = 0.5;
-// } else {
- imageView.image = image;
- //}
- 
- //CGRect frame = imageView.frame;
- //frame.origin.x = self.cropRect.origin.x;
- //frame.origin.y = self.cropRect.origin.y;
- //imageView.frame = CGRectMake(0,0, 30, 50);
- 
- //[_points release];
- //_points = nil;
- //self.backgroundColor = [UIColor clearColor];
- 
- //[self setNeedsDisplay];
- }
- */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIImage*) image {
