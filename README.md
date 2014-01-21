@@ -58,3 +58,6 @@ SITECORE SHARED SOURCE LICENSE
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
  [8]: https://github.com/sitecore/scitemsbrowser-ios
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
