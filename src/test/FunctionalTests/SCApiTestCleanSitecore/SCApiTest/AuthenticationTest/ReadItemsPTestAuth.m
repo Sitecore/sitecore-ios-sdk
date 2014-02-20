@@ -9,7 +9,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope;
 
 -(void)testReadItemPAllowedItemNotAllowedParentWithAllFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
 
@@ -17,26 +17,26 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                             fieldsNames: nil ];
             request_.scope = scope_;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
                 items_ = result_items_;
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword
                                                                version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 apiContext_.defaultSite = @"/sitecore/shell";
                 
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
                 {
                     items_auth_ = result_items_;
                     didFinishCallback_();
@@ -70,7 +70,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope;
 
 -(void)testReadItemPNotAllowedItemAllowedParentWithNoFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -79,26 +79,26 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                             fieldsNames: nil ];
             request_.scope = scope_;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
                 items_ = result_items_;
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword
                                                                version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
                 apiContext_.defaultSite = @"/sitecore/shell";
                 
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
                 {
                     items_auth_ = result_items_;
                     didFinishCallback_();

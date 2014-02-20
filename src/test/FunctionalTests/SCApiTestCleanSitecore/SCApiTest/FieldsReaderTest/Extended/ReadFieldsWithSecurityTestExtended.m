@@ -7,13 +7,13 @@
 
 -(void)testReadSecurityDenyFieldValue
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* result_item_ = nil;
     __block id deny_field_value_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -41,8 +41,8 @@
                     loader1(nil, nil, doneHandler1);
                 };
                 
-                SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+                SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -63,13 +63,13 @@
 
 -(void)testReadSecurityDenyField
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* result_item_ = nil;
     __block SCField* deny_field_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -99,8 +99,8 @@
                 };
                 
                 
-                SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+                SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -118,7 +118,7 @@
 
 -(void)testReadSecurityAllowAndDenyFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
 
     __block NSArray* result_items_ = nil;
     __block SCField* allow_field_ = nil;
@@ -126,7 +126,7 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -134,7 +134,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
             
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request = SCTestFieldsItemPath;
                 request_.requestType = SCItemReaderRequestQuery;
                 request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Normal Text", nil ];
@@ -153,7 +153,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
                 loader(nil, nil, doneHandler);
             }
         };
@@ -186,14 +186,14 @@
 
 -(void)testReadSecurityAllowAndDenyFieldsWithValues
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* result_items_ = nil;
     __block SCField* allow_field_ = nil;
     __block SCField* deny_field_ = nil;
 
     @autoreleasepool
     {
-    __block SCApiContext* strongContext_  = nil;
+    __block SCApiSession* strongContext_  = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -201,7 +201,7 @@
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = SCTestFieldsItemPath;
             request_.requestType = SCItemReaderRequestQuery;
             request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Image", nil ];
@@ -221,7 +221,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -252,7 +252,7 @@
 
 -(void)testReadNotAllowedItemByAllowedField
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* resultItems_ = nil;
     
     __block SCField* field_ = nil;
@@ -262,7 +262,7 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -271,7 +271,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
                 
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request     = path_;
                 request_.requestType = SCItemReaderRequestQuery;
                 request_.fieldNames  = fields_;
@@ -295,7 +295,7 @@
                     }
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
                 loader(nil, nil, doneHandler);
             }
         };

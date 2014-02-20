@@ -11,7 +11,7 @@
     __block NSUInteger readItemsCount_ = 0;
     __block NSString* path_ = SCCreateItemPath;
 
-    __block SCApiContext* apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    __block SCApiSession* apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
@@ -25,7 +25,7 @@
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
         {
             didFinishCallback_();
         } );
@@ -34,13 +34,13 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: path_ ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: path_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         item_request_.scope = SCItemReaderChildrenScope;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
         {
             readItemsCount_ = [ readItems_ count ];
-            [ apiContext_ removeItemsWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
+            [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
             {
                 didFinishCallback_();
             } );
@@ -61,10 +61,10 @@
 
 -(void)testCreateItemWithEmptyName
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -77,7 +77,7 @@
         request_.itemName     = @"";
         request_.itemTemplate = @"System/Layout/Layout";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -99,10 +99,10 @@
  
 -(void)testCreateItemWithEmptyPath
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -115,7 +115,7 @@
         request_.itemName     = @"ItemEmptyPath";
         request_.itemTemplate = @"System/Layout/Layout Folder";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -137,10 +137,10 @@
 
 -(void)testCreateItemWithInvalidPath
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -153,7 +153,7 @@
         request_.itemName     = @"ItemInvalidPath";
         request_.itemTemplate = @"System/Layout/Layout Folder";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -176,10 +176,10 @@
 
 -(void)testCreateItemWithInvalidTemplate
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -192,7 +192,7 @@
         request_.itemName     = @"ItemInvalidTemplate";
         request_.itemTemplate = @"System/Layout/Layout Invalid";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -214,10 +214,10 @@
 
 -(void)testCreateItemWithInvalidFields_Shell
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     
@@ -236,7 +236,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
                                                          {
                                                              item_ = result_;
                                                              response_error_ = error_;
@@ -249,10 +249,10 @@
         GHAssertTrue( item_.itemId != nil, @"item should exist" );
         if ( item_.itemId != nil )
         {
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                                fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
             item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-            [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
                   {
                       if ( [ read_items_ count ] > 0 )
                           item_ = [ read_items_ objectAtIndex: 0 ];
@@ -284,10 +284,10 @@
 
 -(void)testCreateItemWithInvalidFields
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -305,7 +305,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -315,10 +315,10 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
                 item_ = [ read_items_ objectAtIndex: 0 ];
@@ -330,6 +330,7 @@
                                            selector: _cmd ];
     if ( !IS_ANONYMOUS_ACCESS_ENABLED )
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"unexpecred item object" );
         GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
         
@@ -367,13 +368,13 @@
 
 -(void)testCreateItemWithEmptyFields
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
 
     // @adk - sitecore/admin ---> extranet/anonymous
     // Do not add "/sitecore/shell" website
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     
@@ -391,7 +392,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
          {
              item_ = result_;
              response_error_ = error_;
@@ -401,10 +402,10 @@
    
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -419,6 +420,7 @@
                                            selector: _cmd ];    
     if ( !IS_ANONYMOUS_ACCESS_ENABLED)
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"unexpecred item object" );
         GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
         
@@ -456,10 +458,10 @@
 
 -(void)testCreateItemWithEmptyFields_Shell
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     
@@ -478,7 +480,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
            item_ = result_;
            response_error_ = error_;
@@ -488,10 +490,10 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
           if ( [ read_items_ count ] > 0 )
           {
@@ -523,10 +525,10 @@
 
 -(void)testCreateItemWithNotExistedFields
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     
@@ -544,7 +546,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
                                                          {
                                                              item_ = result_;
                                                              response_error_ = error_;
@@ -568,6 +570,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"unexpecred item object" );
         GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
         
@@ -581,10 +584,10 @@
 
 -(void)testCreateItemWithNotExistedFields_Shell
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -603,7 +606,7 @@
         NSDictionary* field_values_ = [ NSDictionary dictionaryWithObjects: values_ forKeys: names_ ];
         request_.fieldsRawValuesByName = field_values_;
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -626,11 +629,11 @@
 
 -(void)testCreateItemWithoutCreatePermission_Shell
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* read_item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiNocreateLogin
                                                password: SCWebApiNocreatePassword];
     
@@ -644,7 +647,7 @@
         request_.itemName     = @"ItemWithoutCreatePermission";
         request_.itemTemplate = @"System/Layout/Layout";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
                                                          {
                                                              item_ = result_;
                                                              response_error_ = error_;
@@ -681,11 +684,11 @@
 
 -(void)testCreateItemWithoutCreatePermission
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* read_item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                   login: SCWebApiNocreateLogin
                                                password: SCWebApiNocreatePassword ];
     
@@ -698,7 +701,7 @@
         request_.itemName     = @"ItemWithoutCreatePermission";
         request_.itemTemplate = @"System/Layout/Layout";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -749,17 +752,17 @@
 
 -(void)testCreateItemInCoreWithoutSecurityAccess
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
     __block NSString* path_ = SCCreateItemPath;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiNocreateLogin
                                                           password: SCWebApiNocreatePassword
                                                            version: SCWebApiV1 ];
@@ -774,7 +777,7 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObject: @"Path" ];
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 response_error_ = error;
@@ -807,17 +810,17 @@
 
 -(void)testCreateItemInCoreWithoutSecurityAccess_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
     __block NSString* path_ = SCCreateItemPath;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiNoAccessLogin
                                                           password: SCWebApiNoAccessPassword
                                                            version: SCWebApiV1 ];
@@ -833,7 +836,7 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObject: @"Path" ];
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                                                              {
                                                                  item_ = result;
                                                                  response_error_ = error;
@@ -862,15 +865,12 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] error type should be 403 (no access for extranet\test user to sitecore domain )
         GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"OK" );
         
         SCResponseError* underlyingError = (SCResponseError*)castedError_.underlyingError;
         GHAssertTrue( underlyingError.statusCode == 403, @"error code mismatch" );
     }
 }
-
-
-
-
 
 @end

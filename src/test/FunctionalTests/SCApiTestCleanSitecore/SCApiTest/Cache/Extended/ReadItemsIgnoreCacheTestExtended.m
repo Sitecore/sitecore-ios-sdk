@@ -38,7 +38,7 @@
     self.connectionOpenCounter = 0;
 }
 
-//TODO: @igk fix after SCExtendedApi and SCApiContext will be merged
+//TODO: @igk fix after SCExtendedApi and SCApiSession will be merged
 //-(void)testReadItemsWithCache
 //{
 //    __weak ReadItemsIgnoreCacheTestExtended* weakSelf = self;
@@ -46,17 +46,17 @@
 //    
 //    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
 //    {
-//        SCApiContext* context = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+//        SCApiSession* context = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
 //                                                                login: SCWebApiAdminLogin
 //                                                             password: SCWebApiAdminPassword
 //                                 version: SCWebApiV1 ];
 //        
-//        SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
+//        SCReadItemsRequest* request = [ SCReadItemsRequest new ];
 //        request.request = SCHomePath;
 //        request.requestType = SCItemReaderRequestItemPath;
 //        request.fieldNames = [ NSSet new ];
 //        
-//        [ context itemsReaderWithRequest: request ]( ^( id result, NSError* error )
+//        [ context readItemsOperationWithRequest: request ]( ^( id result, NSError* error )
 //        {
 //            if ( [ result count ] == 0 )
 //            {
@@ -101,9 +101,9 @@
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ TestingRequestFactory getNewAdminContextWithShell ];
+        SCApiSession* context = [ TestingRequestFactory getNewAdminContextWithShell ];
         
-        SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request = [ SCReadItemsRequest new ];
         request.request = @"/sitecore/content/home/child::*";
         request.requestType = SCItemReaderRequestQuery;
         request.fieldNames  = [ NSSet new ];
@@ -126,11 +126,11 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ context.extendedApiContext itemsReaderWithRequest: request ];
+            SCExtendedAsyncOp loader1 = [ context.extendedApiSession readItemsOperationWithRequest: request ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ context.extendedApiContext itemsReaderWithRequest: request ];
+        SCExtendedAsyncOp loader = [ context.extendedApiSession readItemsOperationWithRequest: request ];
         loader(nil, nil, doneHandler);
     };
     [ self performAsyncRequestOnMainThreadWithBlock: block_

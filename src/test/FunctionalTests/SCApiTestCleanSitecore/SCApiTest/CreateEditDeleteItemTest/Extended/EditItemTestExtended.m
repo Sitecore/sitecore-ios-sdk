@@ -7,12 +7,12 @@
 
 -(void)testCreateAndEditItemInWeb
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
+        __block SCApiSession* strongContext_ =
         [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
     
@@ -32,14 +32,14 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
 
             SCDidFinishAsyncOperationHandler mainDoneHandler = ^( NSArray* items_, NSError* error_ )
@@ -67,7 +67,7 @@
                 }
             };
             
-            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             mainLoader(nil, nil, mainDoneHandler);
         };
 
@@ -91,12 +91,12 @@
 
 -(void)testCreateAndEditItemInMaster
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
+        __block SCApiSession* strongContext_ =
         [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"master";
@@ -115,14 +115,14 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHAndler);
         };
         
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -146,13 +146,13 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             
@@ -169,7 +169,7 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -197,13 +197,13 @@
 
 -(void)testCreateAndEditSystemItemInWeb
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
+        __block SCApiSession* strongContext_ =
         [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
@@ -223,14 +223,14 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
         void (^editBlock_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -252,13 +252,13 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         void (^readBlock_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
 
@@ -276,7 +276,7 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -303,12 +303,12 @@
 
 -(void)testCreateAndEditItemNotSave
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        SCApiContext* strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+        SCApiSession* strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"web";
 
@@ -326,14 +326,14 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -353,14 +353,14 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             
@@ -377,7 +377,7 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -406,12 +406,12 @@
 
 -(void)testCreateAndEditItemInCore
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
+        __block SCApiSession* strongContext_ =
         [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         apiContext_.defaultDatabase = @"core";
@@ -430,14 +430,14 @@
                 didFinishCallback_();
             } ;
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -460,7 +460,7 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -487,14 +487,14 @@
 
 -(void)testCreateAndEditSeveralItemsAtOnce
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     __block NSUInteger items_count_ = 0;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
+        __block SCApiSession* strongContext_ =
         [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
     
@@ -519,22 +519,22 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                    SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
-                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                 loader1(nil, nil, donaHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
             
@@ -571,14 +571,14 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
             
         };
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
@@ -597,7 +597,7 @@
                 }
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         

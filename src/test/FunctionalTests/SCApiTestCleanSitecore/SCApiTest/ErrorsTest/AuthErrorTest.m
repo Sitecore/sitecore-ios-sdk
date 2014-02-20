@@ -7,18 +7,18 @@
 
 -(void)testReadItemWithAuthWithWrongLoginPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: @"aaa"
                                                               password: @"bbb"
                                                                version: SCWebApiV1 ];
@@ -54,16 +54,16 @@
 
 -(void)testReadItemWithAuthWithEmptyLoginPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_        = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                              login: @""
                                                           password: @"" ];
             apiContext_ = strongContext_;
@@ -100,18 +100,18 @@
 
 -(void)testReadItemWithAuthWithInvalidLogin
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                                  login: @"yuQ^:`~%" 
                                                               password: @"" ];
                 apiContext_ = strongContext_;
@@ -150,18 +150,18 @@
 
 -(void)testReadItemWithAuthWithInvalidPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                              login: @"test" 
                                                           password: @"yuQ^:`~%  " ];
             apiContext_ = strongContext_;
@@ -199,18 +199,18 @@
 
 -(void)testReadItemWithAuthWithWrongPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                              login: @"test" 
                                                           password: @"_test" ];
             apiContext_ = strongContext_;
@@ -245,18 +245,18 @@
 
 -(void)testReadItemWithoutAuth
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
                 apiContext_ = strongContext_;
 
                 NSString* path_ = SCHomePath;
@@ -295,13 +295,13 @@
 
 -(void)testReadItemWithAuthWithRightLoginPwd_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool

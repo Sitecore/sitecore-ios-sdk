@@ -8,18 +8,18 @@
 
 -(void)testPageEventTriggeringWithNotExistedEvent
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     __block NSError *requestError_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName
                                                                  login: nil
                                                               password: nil
                                                                version: SCWebApiV1 ];
@@ -29,7 +29,7 @@
                 [ [ SCPageEventTriggeringRequest alloc ] initWithPath: SCHomePath
                                                             eventName: @"Not existed event" ];
                 
-                [ apiContext_ triggerLoaderForRequest: request_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ triggerOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -57,25 +57,25 @@
 
 -(void)testCampaignTriggeringWithInvalidCampaignID
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     __block NSError *requestError_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName ];
                 apiContext_ = strongContext_;
                 
                 SCCampaignTriggeringRequest *request_ =
                 [ [ SCCampaignTriggeringRequest alloc ] initWithPath: nil
                                                           campaignId: @"7F6000F1A0000CF3A46__78080000440AD" ];
                 
-                [ apiContext_ triggerLoaderForRequest:request_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ triggerOperationWithRequest:request_ ]( ^( id result_, NSError* error_ )
                                                                  {
                                                                      if ( error_ )
                                                                      {
@@ -103,25 +103,25 @@
 
 -(void)testCampaignTriggeringWithNilItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     __block NSError *requestError_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName ];
                 apiContext_ = strongContext_;
                 
                 SCCampaignTriggeringRequest *request_ =
                 [ [ SCCampaignTriggeringRequest alloc ] initWithItem: nil
                                                           campaignId: @"ID" ];
                 
-                [ apiContext_ triggerLoaderForRequest:request_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ triggerOperationWithRequest:request_ ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -149,18 +149,18 @@
 
 -(void)testPageEventTriggeringWithNotExistedItemPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     __block NSError *requestError_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName
                                                                  login: nil
                                                               password: nil
                                                                version: SCWebApiV1 ];
@@ -170,7 +170,7 @@
                 [ [ SCPageEventTriggeringRequest alloc ] initWithPath: @"sitecore/content/not_existed_item"
                                                             eventName: @"Logout" ];
                 
-                [ apiContext_ triggerLoaderForRequest: request_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ triggerOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {

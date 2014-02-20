@@ -8,8 +8,8 @@
 -(void)testPagedItemSCWithoutAuth
 {
     __block SCPagedItems* pagedItems_;
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSNumber* items_count_ = 0;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -17,14 +17,14 @@
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.requestType = SCItemReaderRequestItemPath;
         request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
         request_.request     = SCHomePath;
         request_.fieldNames  = nil;
         request_.pageSize    = 2;
 
-        pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+        pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                       request: request_ ];
 
         SCDidFinishAsyncOperationHandler doneHandler =  ^( id result_, NSError* error_ )

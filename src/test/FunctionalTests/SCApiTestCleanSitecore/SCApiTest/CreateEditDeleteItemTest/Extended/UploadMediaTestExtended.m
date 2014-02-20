@@ -9,14 +9,14 @@
 
 -(void)testCreateMediaItemInWeb
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"web";
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaItem";
@@ -33,14 +33,14 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, donaHandler);
 
     };
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
@@ -56,7 +56,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -78,14 +78,14 @@
 
 -(void)testCreateMediaItemWithFields
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"web";
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaWithFields";
@@ -117,7 +117,7 @@
             }
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -125,7 +125,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
         
@@ -142,7 +142,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -170,14 +170,14 @@
 
 -(void)testCreateAndEditMediaItem
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"master";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestAndEditMedia";
@@ -194,7 +194,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -202,7 +202,7 @@
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
         item_request_.site = @"/sitecore/shell";
@@ -228,7 +228,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -236,7 +236,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
         
@@ -253,7 +253,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, donaHandler);
     };
     
@@ -280,14 +280,14 @@
 
 -(void)testCreateNotMediaItemInWeb
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"web";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestNotAMediaItem";
@@ -304,14 +304,14 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, donaHandler);
         
     };
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
@@ -327,7 +327,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
     
@@ -347,14 +347,14 @@
 
 -(void)testCreateMediaItemInCore
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"core";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestCoreMediaItem Extended";
@@ -371,14 +371,14 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
@@ -394,7 +394,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
     
@@ -413,14 +413,14 @@
 
 -(void)testCreateSeveralMediaItems
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"web";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"File name (Alt)";
         request_.itemName      = @"TestSeveralMediaItems";
@@ -442,21 +442,21 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
                 loader2(nil, nil, doneHandler2);
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
@@ -472,7 +472,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
     

@@ -9,15 +9,15 @@
 
 -(void)testCreateNormalItem_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* read_fields_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -36,7 +36,7 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObjects: @"__Editor", nil ];
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 NSLog( @"items fields: %@", item_.readFieldsByName );
@@ -71,13 +71,13 @@
 
 -(void)testCreateItemWithoutFields_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         
@@ -93,7 +93,7 @@
             request_.itemName     = @"Item Without Fields";
             request_.itemTemplate = @"Common/Folder";
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error )
             {
                 item_ = result_;
                 didFinishCallback_();
@@ -124,14 +124,14 @@
 
 -(void)testCreateSpecialDeviceItem_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* read_fields_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -148,7 +148,7 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObject: @"__Display name" ];
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 read_fields_ = [ item_ readFieldsByName ];
@@ -182,15 +182,15 @@
 
 -(void)testCreateSpecialFolderItem_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     
     __block NSDictionary* read_fields_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -207,7 +207,7 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObject: @"__Display name" ];
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 read_fields_ = [ item_ readFieldsByName ];
@@ -240,14 +240,14 @@
 
 -(void)testCreateSpecialLayoutInWebItem_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* readFields_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -267,7 +267,7 @@
                                      , nil ];
             request_.fieldsRawValuesByName = fields_;
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 readFields_ = item_.readFieldsByName;
@@ -304,7 +304,7 @@
 
 -(void)testCreateTwoItemsInWeb_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     __block NSUInteger readItemsCount_ = 0;
@@ -314,8 +314,8 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -335,11 +335,11 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObjects: @"Path", nil ];
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 item_ = result;
                 fieldsByName_ = [ item_ readFieldsByName ];
-                [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+                [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                 {
                     item2_ = result;
                     fields2ByName_ = [ item_ readFieldsByName ];
@@ -350,10 +350,10 @@
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
             item_request_.flags = SCItemReaderRequestIngnoreCache;
             item_request_.scope = SCItemReaderChildrenScope;
-            [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
             {
                 readItemsCount_ = [ readItems_ count ];
                 didFinishCallback_();
@@ -398,15 +398,15 @@
 
 -(void)testCreateItemsIerarhyInWeb_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -423,12 +423,12 @@
             request_.fieldsRawValuesByName = fields_;
             request_.fieldNames = [ NSSet setWithObject: @"__Display name" ];
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error )
             {
                 item_ = result_;
                 request_.request = item_.path;
                 NSLog( @"readFieldsByName: %@", [item_ readFieldsByName ] );
-                [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+                [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                 {
                     item2_ = result;
                     NSLog( @"readFieldsByName: %@", [item_ readFieldsByName ] );

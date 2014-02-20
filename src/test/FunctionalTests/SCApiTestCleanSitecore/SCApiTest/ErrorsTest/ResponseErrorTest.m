@@ -7,29 +7,29 @@
 
 -(void)RtestItemParentQueryWithInvalidQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* productsItems_ = nil;
     __block SCResponseError* itemError_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             apiContext_.defaultSite = @"/sitecore/shell";
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = @"[./22@>";
             request_.scope       = SCItemReaderParentScope;
             request_.requestType = SCItemReaderRequestQuery;
             request_.fieldNames  = [ NSSet new ];
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 itemError_ = (SCResponseError*)error_;
                 productsItems_ = items_;
@@ -52,25 +52,25 @@
 
 -(void)RtestItemQueryWithHighDataSize
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
     __block SCResponseError* item_error_ = nil;
 
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             apiContext_.defaultSite = @"/sitecore/shell";
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = @"/sitecore/content/descendant::*/child::*/descendant::*/child::*/descendant::*";
             request_.scope       = SCItemReaderParentScope;
             request_.requestType = SCItemReaderRequestQuery;
@@ -81,7 +81,7 @@
                 didFinishCallback_();
                 return;
             }
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 item_error_ = (SCResponseError*)error_;
                 products_items_ = items_;
@@ -103,30 +103,30 @@
 
 -(void)RtestItemQueryWithWrongItemPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             apiContext_.defaultSite = @"/sitecore/shell";
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/home/WrongItem/*";
             request_.scope = SCItemReaderSelfScope;
             request_.requestType = SCItemReaderRequestQuery;
             request_.flags = SCItemReaderRequestReadFieldsValues;
             request_.fieldNames = nil;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 item_error_ = (SCApiError*)error_;
                 products_items_ = items_;
@@ -147,28 +147,28 @@
 
 -(void)testItemQueryWithWrongQueryFormat
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
     __block SCResponseError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             apiContext_.defaultSite = @"/sitecore/shell";
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/nicam/products/*[@@@template='WrongTemplate']";
             request_.scope = SCItemReaderSelfScope;
             request_.requestType = SCItemReaderRequestQuery;
             request_.flags = SCItemReaderRequestReadFieldsValues;
             request_.fieldNames = nil;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 item_error_ = (SCResponseError*)error_;
                 products_items_ = items_;

@@ -7,10 +7,10 @@
 
 -(void)testEditItemManyTimes
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword
                                                 version: SCWebApiV1 ];
@@ -26,7 +26,7 @@
         request_.itemTemplate = @"System/Layout/Layout";
         request_.fieldNames = nil;
 
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             didFinishCallback_();
@@ -35,10 +35,10 @@
     
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -105,10 +105,10 @@
 
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
                 item_ = read_items_[ 0 ];
@@ -145,10 +145,10 @@
 /* Fixed
 -(void)testEditNotExistedItem
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     
@@ -172,11 +172,11 @@
 
 -(void)testEditItemWithoutEditPermission
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* read_item_ = nil;
     __block SCApiError* response_error_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword
                                                 version: SCWebApiV1 ];
@@ -191,7 +191,7 @@
         request_.itemName     = @"ItemWithoutEditPermission";
         request_.itemTemplate = @"System/Layout/Layout";
 
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = (SCApiError*)error_;
@@ -201,16 +201,16 @@
 
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+        apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                       login: SCWebApiNocreateLogin
                                                    password: SCWebApiNocreatePassword
                                                     version: SCWebApiV1 ];
         apiContext_.defaultSite = @"/sitecore/shell";
         apiContext_.defaultDatabase = @"web";
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                              fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
         item_ = nil;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_result_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_result_, NSError* read_error_ )
         {
             if ( [ read_items_result_ count ] > 0 )
             {
@@ -254,11 +254,11 @@
 
 -(void)testRemoveItemWithoutRemovePermission
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
     __block NSString* delete_response_ = @"";
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword
                                                 version: SCWebApiV1 ];
@@ -273,7 +273,7 @@
         request_.itemName     = @"ItemWithoutDeletePermission";
         request_.itemTemplate = @"System/Layout/Layout";
         
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
+        [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             didFinishCallback_();
@@ -282,20 +282,20 @@
     
     void (^remove_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+        apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                login: @"sitecore\\nocreate"
                                             password: @"nocreate"
                                                     version: SCWebApiV1 ];
         
         apiContext_.defaultDatabase = @"web";
         apiContext_.defaultSite = @"/sitecore/shell";        
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
-        [ apiContext_ removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* error_ )
+        [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* error_ )
         {
             delete_response_ = [ NSString stringWithFormat: @"%@", response_ ];
             response_error_ = error_;
-            [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_result_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_result_, NSError* read_error_ )
             {
                 if ( [ read_items_result_ count ] > 0 )
                     item_ = read_items_result_[ 0 ];

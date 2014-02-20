@@ -7,13 +7,13 @@
 
 -(void)testReadSecurityDenyFieldValue
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* result_item_ = nil;
     __block id deny_field_value_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -65,13 +65,13 @@
 
 -(void)testReadSecurityDenyField
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* result_item_ = nil;
     __block SCField* deny_field_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
@@ -110,7 +110,7 @@
 
 -(void)testReadSecurityAllowAndDenyFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
 
     __block NSArray* result_items_ = nil;
     __block SCField* allow_field_ = nil;
@@ -118,7 +118,7 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -126,12 +126,12 @@
                 strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
             
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request = SCTestFieldsItemPath;
                 request_.requestType = SCItemReaderRequestQuery;
                 request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Normal Text", nil ];
 
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
                 {
                     if ( [ items_ count ] == 0 )
                     {
@@ -175,14 +175,14 @@
 
 -(void)testReadSecurityAllowAndDenyFieldsWithValues
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* result_items_ = nil;
     __block SCField* allow_field_ = nil;
     __block SCField* deny_field_ = nil;
 
     @autoreleasepool
     {
-    __block SCApiContext* strongContext_  = nil;
+    __block SCApiSession* strongContext_  = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -190,13 +190,13 @@
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = SCTestFieldsItemPath;
             request_.requestType = SCItemReaderRequestQuery;
             request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Image", nil ];
             request_.flags = SCItemReaderRequestReadFieldsValues;
 
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] == 0 )
                 {
@@ -238,7 +238,7 @@
 
 -(void)testReadNotAllowedItemByAllowedField
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* resultItems_ = nil;
     
     __block SCField* field_ = nil;
@@ -248,7 +248,7 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -257,13 +257,13 @@
                 strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
                 
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request     = path_;
                 request_.requestType = SCItemReaderRequestQuery;
                 request_.fieldNames  = fields_;
                 request_.flags       = SCItemReaderRequestReadFieldsValues;
                 
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
                 {
                     NSLog( @"error:%@", error_ );
                     if ( [ items_ count ] == 0 )

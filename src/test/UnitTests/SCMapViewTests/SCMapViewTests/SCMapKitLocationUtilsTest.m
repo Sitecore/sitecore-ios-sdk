@@ -123,39 +123,39 @@
 
 //STODO
 
--(void)testNormalItemAddressesFromNicam
-{
-    __block BOOL resultOk_ = NO;
-
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCApiContext* context_ = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:9999"
-                                                          login: @"sitecore\\admin"
-                                                       password: @"b"
-                                                        version: SCWebApiMaxSupportedVersion ];
-        context_.defaultSite = @"/sitecore/shell";
-        
-        NSString* path_ = @"/sitecore/content/UIFeatures/Test Data/Map";
-        itemAddressesGeocoderWithPath( context_, path_ )( nil, nil, ^( id result_, NSError* error_ )
-        {
-            if ( error_ )
-            {
-                NSLog( @"failed: %@", error_ );
-            }
-            else
-            {
-                NSLog( @"addresses: %@", result_ );
-            }
-            resultOk_ = [ result_ count ] == 23;
-            didFinishCallback_();
-        } );
-    };
-
-    [ self performAsyncRequestOnMainThreadWithBlock: block_
-                                           selector: _cmd ];
-
-    GHAssertTrue( resultOk_, @"Nicam item should be read" );
-}
+//-(void)testNormalItemAddressesFromNicam
+//{
+//    __block BOOL resultOk_ = NO;
+//
+//    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+//    {
+//        SCApiContext* context_ = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:9999"
+//                                                          login: @"sitecore\\admin"
+//                                                       password: @"b"
+//                                                        version: SCWebApiMaxSupportedVersion ];
+//        context_.defaultSite = @"/sitecore/shell";
+//        
+//        NSString* path_ = @"/sitecore/content/UIFeatures/Test Data/Map";
+//        itemAddressesGeocoderWithPath( context_, path_ )( nil, nil, ^( id result_, NSError* error_ )
+//        {
+//            if ( error_ )
+//            {
+//                NSLog( @"failed: %@", error_ );
+//            }
+//            else
+//            {
+//                NSLog( @"addresses: %@", result_ );
+//            }
+//            resultOk_ = [ result_ count ] == 23;
+//            didFinishCallback_();
+//        } );
+//    };
+//
+//    [ self performAsyncRequestOnMainThreadWithBlock: block_
+//                                           selector: _cmd ];
+//
+//    GHAssertTrue( resultOk_, @"Nicam item should be read" );
+//}
 
 //STODO
 // itemAddressesGeocoder

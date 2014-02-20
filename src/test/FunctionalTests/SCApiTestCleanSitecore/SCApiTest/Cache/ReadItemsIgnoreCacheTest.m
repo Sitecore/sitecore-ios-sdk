@@ -45,14 +45,14 @@
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ TestingRequestFactory getNewAdminContextWithShell ];
+        SCApiSession* context = [ TestingRequestFactory getNewAdminContextWithShell ];
         
-        SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request = [ SCReadItemsRequest new ];
         request.request = SCHomePath;
         request.requestType = SCItemReaderRequestItemPath;
         request.fieldNames = [ NSSet new ];
         
-        [ context itemsReaderWithRequest: request ]( ^( id result, NSError* error )
+        [ context readItemsOperationWithRequest: request ]( ^( id result, NSError* error )
         {
             if ( [ result count ] == 0 )
             {
@@ -97,15 +97,15 @@
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ TestingRequestFactory getNewAdminContextWithShell ];
+        SCApiSession* context = [ TestingRequestFactory getNewAdminContextWithShell ];
         
-        SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request = [ SCReadItemsRequest new ];
         request.request = @"/sitecore/content/home/child::*";
         request.requestType = SCItemReaderRequestQuery;
         request.fieldNames  = [ NSSet new ];
         request.flags = SCItemReaderRequestIngnoreCache;
         
-        [ context itemsReaderWithRequest: request ]( ^( NSArray* result, NSError* error )
+        [ context readItemsOperationWithRequest: request ]( ^( NSArray* result, NSError* error )
         {
             if ( error )
             {
@@ -116,7 +116,7 @@
             }
 
             [ mock_ enableMock ];
-            [ context itemsReaderWithRequest: request ]( ^( NSArray* result, NSError* error )
+            [ context readItemsOperationWithRequest: request ]( ^( NSArray* result, NSError* error )
             {
                 didFinishCallback_();
             } );

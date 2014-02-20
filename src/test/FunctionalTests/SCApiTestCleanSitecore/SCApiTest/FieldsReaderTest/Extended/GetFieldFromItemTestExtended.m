@@ -7,21 +7,21 @@
 
 -(void)testAfterValueReadImage
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
     __block SCItem* item_  = nil;
     __block id fieldValue_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -43,7 +43,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -61,7 +61,7 @@
 
 -(void)testAfterFieldReadCheckbox
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id field_value_ = nil;
     __block SCField* field_ = nil;
@@ -69,14 +69,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ apiContext_.extendedApiContext contextSource ];
+            contextSource = [ apiContext_.extendedApiSession contextSource ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -100,7 +100,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -125,7 +125,7 @@
 
 -(void)testAfterFieldReadDateTimeAndDate
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id dateValue_ = nil;
     __block SCField* dateField_ = nil;
@@ -135,14 +135,14 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -168,7 +168,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -206,7 +206,7 @@
 
 -(void)testAfterFieldReadMultilist
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id field_value_ = nil;
     __block SCField* field_ = nil;
@@ -214,14 +214,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHAndler = ^( id result_, NSError* error_ )
             {
@@ -245,7 +245,7 @@
                 
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHAndler);
         }
@@ -267,7 +267,7 @@
 
 -(void)testAfterFieldReadTreelist
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_   = nil;
     __block id fieldValue_  = nil;
     __block SCField* field_ = nil;
@@ -275,14 +275,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -305,7 +305,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -328,7 +328,7 @@
 
 -(void)testNoReadFieldString
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id field_value_ = nil;
     __block SCField* field_ = nil;
@@ -336,14 +336,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -353,7 +353,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -371,7 +371,7 @@
 
 -(void)testCheckAndMultiList
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id checklistValue_ = nil;
     __block id multilistValue_ = nil;
@@ -379,14 +379,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -411,7 +411,7 @@
 
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -442,7 +442,7 @@
 
 -(void)testDroplinkAndDroptree
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id droplink_value_ = nil;
     __block id droptree_value_ = nil;
@@ -450,14 +450,14 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -481,7 +481,7 @@
                 
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
             
@@ -507,12 +507,12 @@
 
 -(void)testImageLoaderForSCMediaPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block id value_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -527,7 +527,7 @@
             };
             
             SCExtendedAsyncOp loader =
-            [ apiContext_.extendedApiContext imageLoaderForSCMediaPath: @"~/media/Images/test image"
+            [ apiContext_.extendedApiSession imageLoaderForSCMediaPath: @"~/media/Images/test image"
                                                            imageParams: nil ];
             loader(nil, nil, doneHandler);
             
@@ -545,7 +545,7 @@
 
 -(void)testGeneralLinkMediaNormal
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block id mediaValue_ = nil;
     __block SCGeneralLinkField* field_ = nil;
@@ -553,7 +553,7 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -598,7 +598,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -635,14 +635,14 @@
 
 -(void)testGeneralLinkLinkEmpty
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCGeneralLinkField* field_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -672,7 +672,7 @@
             };
             
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -703,20 +703,20 @@
 
 -(void)testGeneralLinkExtLinkInvalid
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCGeneralLinkField* field_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -740,7 +740,7 @@
             };
             
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -771,21 +771,21 @@
 
 -(void)testGeneralLinkEmail
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCGeneralLinkField* field_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -808,7 +808,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource];
             loader( nil, nil, doneHandler);
         }
@@ -840,21 +840,21 @@
 
 -(void)testGeneralLinkJavascriptNormal
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCGeneralLinkField* field_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -877,7 +877,7 @@
                 loader1(nil, nil, doneHAndler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath:  SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }

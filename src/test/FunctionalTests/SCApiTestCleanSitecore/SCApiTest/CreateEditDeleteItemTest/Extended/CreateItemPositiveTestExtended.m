@@ -7,18 +7,18 @@
 
 -(void)testCreateNormalItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* read_fields_ = nil;
     __block NSError* createError = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
@@ -43,7 +43,7 @@
                                                  didFinishCallback_();
                                              } ;
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -74,6 +74,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"item created without proper permissions" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
@@ -88,15 +89,15 @@
 
 -(void)testCreateItemWithoutFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
 
      __block NSError* createError = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -117,7 +118,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -147,6 +148,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"item created without proper permissions" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
@@ -162,15 +164,15 @@
 
 -(void)testCreateSpecialDeviceItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* read_fields_ = nil;
     __block NSError* createError = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -194,7 +196,7 @@
                                                                 didFinishCallback_();
                                                             } ;
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -224,6 +226,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"item created without proper permissions" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
@@ -238,7 +241,7 @@
 
 -(void)testCreateSpecialFolderItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     
     __block NSDictionary* read_fields_ = nil;
@@ -246,8 +249,8 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -271,7 +274,7 @@
                                                                 didFinishCallback_();
                                                             } ;
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -301,6 +304,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"item created without proper permissions" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
@@ -315,15 +319,15 @@
 
 -(void)testCreateSpecialLayoutInWebItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block NSDictionary* readFields_ = nil;
     __block NSError* createError = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -350,7 +354,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -383,6 +387,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( item_, @"item created without proper permissions" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
@@ -399,7 +404,7 @@
 
 -(void)testCreateTwoItemsInWeb
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     __block NSUInteger readItemsCount_ = 0;
@@ -409,8 +414,8 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -441,17 +446,17 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                 loader(nil, nil, doneHandler);
             };
             
-            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             mainLoader(nil, nil, mainDoneHandler);
         };
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
             item_request_.flags = SCItemReaderRequestIngnoreCache;
             item_request_.scope = SCItemReaderChildrenScope;
             
@@ -461,7 +466,7 @@
                 didFinishCallback_();
             };
 
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -503,15 +508,15 @@
 
 -(void)testCreateItemsIerarhyInWeb
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -541,11 +546,11 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                 loader(nil, nil, donHandler);
             };
             
-            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp mainLoader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             mainLoader(nil, nil, mainDoneHandler);
         };
 

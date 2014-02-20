@@ -8,18 +8,18 @@
 
 -(void)testRemoveAllItems
 {
-    __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* apiContext_ = nil;
     
     void (^delete_system_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                               login: SCWebApiAdminLogin
                                                            password: SCWebApiAdminPassword
                                                             version: SCWebApiV1 ];
         
         apiContext_.defaultDatabase = @"master";
-        SCItemsReaderRequest* request_ =
-        [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];
+        SCReadItemsRequest* request_ =
+        [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
         request_.scope = SCItemReaderChildrenScope;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( id response_, NSError* error_ )
@@ -49,27 +49,27 @@
                                 didFinishCallback_();
                             };
                             
-                            SCExtendedAsyncOp loader5 = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+                            SCExtendedAsyncOp loader5 = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
                             loader5(nil, nil, doneHandler5);
                         };
                         
-                        SCExtendedAsyncOp loader4 = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+                        SCExtendedAsyncOp loader4 = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
                         loader4(nil, nil, doneHandler4);
                     };
                     
-                    SCExtendedAsyncOp loader3 = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+                    SCExtendedAsyncOp loader3 = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
                     loader3(nil, nil, doneHandler3);
                 };
                 
-                SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+                SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
                 loader2(nil, nil, doneHandler2);
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };

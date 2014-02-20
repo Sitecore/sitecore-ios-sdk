@@ -8,17 +8,17 @@
 
 -(void)testSystemLanguagesReader
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSSet* resultLanguages_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword ];
                 apiContext_ = strongContext_;
@@ -36,7 +36,7 @@
         [ self performAsyncRequestOnMainThreadWithBlock: block_
                                                selector: _cmd ];
         
-        [ [ apiContext_.extendedApiContext itemsCache ] cleanupAll ];
+        [ [ apiContext_.extendedApiSession itemsCache ] cleanupAll ];
     }
     
     
@@ -49,28 +49,28 @@
 
 -(void)testContextDefaultLanguageSameItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block BOOL isDanishItem_ = false;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword ];
                 apiContext_ = strongContext_;
                 apiContext_.defaultSite = @"/sitecore/shell";
                 
                 apiContext_.defaultLanguage = @"da";
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
                                                                                 fieldsNames: [ NSSet setWithObject: @"Title" ] ];
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
                 {
                     if ( [ da_result_ count ] == 0 )
                     {
@@ -108,7 +108,7 @@
 
 -(void)testContextDefaultLanguageDifferentItems
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* da_item_ = nil;
     __block SCItem* en_item_ = nil;
     __block NSSet* field_names_ = [ NSSet setWithObject: @"Title" ];
@@ -116,12 +116,12 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword ];
                 apiContext_ = strongContext_;
@@ -129,9 +129,9 @@
                 
                 
                 apiContext_.defaultLanguage = @"da";
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
                                                                                 fieldsNames: field_names_ ];
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
                 {
                     if ( [ da_result_ count ] == 0 )
                     {
@@ -169,7 +169,7 @@
 
 -(void)testRequestLanguageOneItem
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* da_item_ = nil;
     __block SCItem* en_item_ = nil;
     __block NSSet* field_names_ = [ NSSet setWithObject: @"Title" ];
@@ -177,23 +177,23 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             apiContext_.defaultSite = @"/sitecore/shell";
             
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
                                                                             fieldsNames: field_names_ ];
             request_.language = @"da";
             apiContext_.defaultLanguage = @"en";
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
             {
                 if ( [ da_result_ count ] == 0 )
                 {

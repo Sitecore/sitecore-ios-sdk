@@ -7,7 +7,7 @@
 
 -(void)testInvalidRequestTypeItemIDWithPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* error_ = nil;
 
@@ -15,13 +15,13 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [[ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
             apiContext_ = strongContext_;
 
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: path_
                                                                           fieldsNames: [ NSSet new ] ];
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* resultItems_, NSError* result_error_ )
@@ -31,7 +31,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -48,7 +48,7 @@
 
 -(void)testInvalidRequestTypeItemPathWithQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* error_ = nil;
 
@@ -56,13 +56,13 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                             fieldsNames: [ NSSet new ] ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* resultItems_, NSError* result_error_ )
             {
@@ -71,7 +71,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -87,7 +87,7 @@
 
 -(void)testInvalidRequestTypeItemPathWithId
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* error_ = nil;
 
@@ -95,13 +95,13 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [[ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+            strongContext_ = [[ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                             fieldsNames: [ NSSet new ] ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* resultItems_, NSError* result_error_ )
             {
@@ -110,7 +110,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -126,7 +126,7 @@
 
 -(void)testInvalidRequestTypeItemQueryWithId
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* error_ = nil;
 
@@ -134,14 +134,14 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
 
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [SCReadItemsRequest new ];
             request_.request = path_;
             request_.fieldNames = [ NSSet new ];
             request_.requestType = SCItemReaderRequestQuery;
@@ -152,7 +152,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
 
@@ -167,7 +167,7 @@
 
 -(void)testInvalidRequestTypeItemIdWithPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* error_ = nil;
     
@@ -175,13 +175,13 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: path_
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: path_
                                                                           fieldsNames: [ NSSet new ] ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* resultItems_, NSError* result_error_ )
             {
@@ -190,7 +190,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         

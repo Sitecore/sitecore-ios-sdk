@@ -168,10 +168,6 @@
 		25E177AD1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
 		25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
 		25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
-		25E177B11806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
-		25E177B21806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
-		25E177B31806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
-		25E177B41806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E177B01806CD4200201DC6 /* GHUnitIOS.framework */; };
 		78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
 		78769DB717B51D5500E5836B /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
 		78911DB017C21CF900C680AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
@@ -408,6 +404,10 @@
 		78B0BDDB17BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
 		78B28A5317C747FF00942D26 /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
 		78BDD60717BE15DA00DBEB62 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
+		78F3C23618AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
+		78F3C23718AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
+		78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
+		78F3C23918AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E17DDFA17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
@@ -566,7 +566,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemPositiveTest.m; sourceTree = "<group>"; };
+		1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CreateItemPositiveTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCAllMobileSDKLibs.xcodeproj; path = ../../../lib/SCAllMobileSDKLibs/SCAllMobileSDKLibs.xcodeproj; sourceTree = "<group>"; };
 		1B11671714C6C5F6000AD289 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1B11671814C6C5F6000AD289 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -626,19 +626,19 @@
 		258D2CE51636AA6B00F87911 /* ReadFieldsWithSecurityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFieldsWithSecurityTest.m; sourceTree = "<group>"; };
 		258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReadItemsCacheTest.mm; sourceTree = "<group>"; };
 		258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsIgnoreCacheTest.m; sourceTree = "<group>"; };
-		258F6E661525A50000A0E959 /* DeleteItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTest.m; sourceTree = "<group>"; };
-		259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFisrtRemoveAll.m; sourceTree = "<group>"; };
+		258F6E661525A50000A0E959 /* DeleteItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DeleteItemTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AFisrtRemoveAll.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2598AAA817F42CD900252AA4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		2598AAA917F42CD900252AA4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNegativeItemsRemoveFirst.m; sourceTree = "<group>"; };
-		25A56EC2163941E200738376 /* AuthErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthErrorTest.m; sourceTree = "<group>"; };
-		25A56EC3163941E200738376 /* CreateItemNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemNegativeTest.m; sourceTree = "<group>"; };
-		25A56EC4163941E200738376 /* EditItemNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemNegativeTest.m; sourceTree = "<group>"; };
+		25A56E9E1639409700738376 /* AllNegativeItemsRemoveFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AllNegativeItemsRemoveFirst.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		25A56EC2163941E200738376 /* AuthErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AuthErrorTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		25A56EC3163941E200738376 /* CreateItemNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CreateItemNegativeTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		25A56EC4163941E200738376 /* EditItemNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EditItemNegativeTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		25A56EC5163941E200738376 /* FieldsErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldsErrorTest.m; sourceTree = "<group>"; };
 		25A56EC6163941E200738376 /* InvalidPathErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidPathErrorTest.m; sourceTree = "<group>"; };
 		25A56EC7163941E200738376 /* InvalidRequestErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidRequestErrorTest.m; sourceTree = "<group>"; };
-		25A56EC8163941E200738376 /* NoItemErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemErrorTest.m; sourceTree = "<group>"; };
-		25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemFieldErrorTest.m; sourceTree = "<group>"; };
+		25A56EC8163941E200738376 /* NoItemErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NoItemErrorTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		25A56EC9163941E200738376 /* NoItemFieldErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NoItemFieldErrorTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		25A56ECA163941E200738376 /* ResponseErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseErrorTest.m; sourceTree = "<group>"; };
 		25A56ECB163941E200738376 /* UploadMediaNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaNegativeTest.m; sourceTree = "<group>"; };
 		25A56ECC163941E200738376 /* ZRemoveAllNegativeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRemoveAllNegativeTests.m; sourceTree = "<group>"; };
@@ -648,20 +648,19 @@
 		25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTest.m; sourceTree = "<group>"; };
 		25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SCApiTest copy-Info.plist"; sourceTree = "<group>"; };
-		25E177B01806CD4200201DC6 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
 		78911DAF17C21CF900C680AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78A4D591170580F70035D5DA /* TriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggeringTest.m; sourceTree = "<group>"; };
 		78A6181517BA142400D43837 /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
 		78A6183B17BA2A8100D43837 /* MultipleItemsTriggerTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleItemsTriggerTestExtended.m; sourceTree = "<group>"; };
 		78A6183C17BA2A8100D43837 /* TriggeringTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggeringTestExtended.m; sourceTree = "<group>"; };
-		78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemPositiveTestExtended.m; sourceTree = "<group>"; };
+		78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CreateItemPositiveTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedApiContextTest.m; sourceTree = "<group>"; };
 		78ABFEBD17BA70BC001EA3BF /* EditItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemTestExtended.m; sourceTree = "<group>"; };
 		78ABFEC017BA7913001EA3BF /* UploadMediaTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaTestExtended.m; sourceTree = "<group>"; };
-		78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTestExtended.m; sourceTree = "<group>"; };
-		78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFisrtRemoveAllExtended.m; sourceTree = "<group>"; };
-		78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemTest_shellExtended.m; sourceTree = "<group>"; };
-		78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAllItemsExtended.m; sourceTree = "<group>"; };
+		78B0BA9C17BB6B8400ED739A /* DeleteItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DeleteItemTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AFisrtRemoveAllExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BAA217BB72A300ED739A /* DeleteItemTest_shellExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DeleteItemTest_shellExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BAA517BB7CE100ED739A /* DeleteAllItemsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DeleteAllItemsExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78B0BAA917BB856D00ED739A /* GetFieldFromItemTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldFromItemTestExtended.m; sourceTree = "<group>"; };
 		78B0BAAA17BB856D00ED739A /* GetFieldsFromItemReaderTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldsFromItemReaderTestExtended.m; sourceTree = "<group>"; };
 		78B0BAAB17BB856D00ED739A /* GetFieldValueFromFieldTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldValueFromFieldTestExtended.m; sourceTree = "<group>"; };
@@ -679,22 +678,23 @@
 		78B0BDA517BD075E0013B6DC /* PagingItemsTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingItemsTestExtended.m; sourceTree = "<group>"; };
 		78B0BDA617BD075E0013B6DC /* ReadPagingItemsAuthTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPagingItemsAuthTestExtended.m; sourceTree = "<group>"; };
 		78B0BDAC17BD0BBC0013B6DC /* LanguageReaderNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderNegativeTestExtended.m; sourceTree = "<group>"; };
-		78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTestExtended.m; sourceTree = "<group>"; };
-		78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNegativeItemsRemoveFirstExtended.m; sourceTree = "<group>"; };
-		78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthErrorTestExtended.m; sourceTree = "<group>"; };
-		78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDAD17BD0BBC0013B6DC /* LanguageReaderPositiveTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LanguageReaderPositiveTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BDB317BD0E680013B6DC /* AllNegativeItemsRemoveFirstExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AllNegativeItemsRemoveFirstExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BDB417BD0E680013B6DC /* AuthErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AuthErrorTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		78B0BDB517BD0E680013B6DC /* CreateItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CreateItemNegativeTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78B0BDB617BD0E680013B6DC /* DmsTriggeringTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmsTriggeringTestExtended.m; sourceTree = "<group>"; };
-		78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemNegativeTestExtended.m; sourceTree = "<group>"; };
+		78B0BDB717BD0E680013B6DC /* EditItemNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EditItemNegativeTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78B0BDB817BD0E680013B6DC /* FieldsErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldsErrorTestExtended.m; sourceTree = "<group>"; };
 		78B0BDB917BD0E680013B6DC /* InvalidPathErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidPathErrorTestExtended.m; sourceTree = "<group>"; };
 		78B0BDBA17BD0E680013B6DC /* InvalidRequestErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvalidRequestErrorTestExtended.m; sourceTree = "<group>"; };
-		78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemErrorTestExtended.m; sourceTree = "<group>"; };
+		78B0BDBB17BD0E680013B6DC /* NoItemErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NoItemErrorTestExtended.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		78B0BDBC17BD0E680013B6DC /* NoItemFieldErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoItemFieldErrorTestExtended.m; sourceTree = "<group>"; };
 		78B0BDBD17BD0E680013B6DC /* RemoveAllNegativeTestsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoveAllNegativeTestsExtended.m; sourceTree = "<group>"; };
 		78B0BDBE17BD0E680013B6DC /* ResponseErrorTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseErrorTestExtended.m; sourceTree = "<group>"; };
 		78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaNegativeTestExtended.m; sourceTree = "<group>"; };
 		78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRemoveAllNegativeTestsExtended.m; sourceTree = "<group>"; };
 		78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaWithoutAccessTest.m; sourceTree = "<group>"; };
+		78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		7E08ACB9170D65AE007413D6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SitecoreAdminAuthTest.m; sourceTree = "<group>"; };
 		7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SCGlobalSettings-NoAccess.m"; sourceTree = "<group>"; };
@@ -706,16 +706,16 @@
 		7E18F92A17C217B400006465 /* SCApiTest copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SCApiTest copy2-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/test/FunctionalTests/SCApiTestCleanSitecore/SCApiTest copy2-Info.plist"; sourceTree = "<absolute>"; };
 		7E18F98317C217C700006465 /* SCApiTestLibs-NoAnonymous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCApiTestLibs-NoAnonymous.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E18F98417C217C700006465 /* SCApiTestLibs copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SCApiTestLibs copy-Info.plist"; path = "/Volumes/NO NAME/Mobile/Mobile SDK/test/FunctionalTests/SCApiTestCleanSitecore/SCApiTestLibs copy-Info.plist"; sourceTree = "<absolute>"; };
-		7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadCredentialsAuthTest.m; sourceTree = "<group>"; };
-		7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateItemPositiveTest-shell.m"; sourceTree = "<group>"; };
+		7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BadCredentialsAuthTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "CreateItemPositiveTest-shell.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7E72CAFE17FC02670081F306 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtranetAdminAuthTest.m; sourceTree = "<group>"; };
 		7E80E6A517EC823200E1921A /* ExtranetUserAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtranetUserAuthTest.m; sourceTree = "<group>"; };
 		7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellUserAuthTest.m; sourceTree = "<group>"; };
-		7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DeleteItemTest-shell.m"; sourceTree = "<group>"; };
+		7EA5B64817B913E0008F3A2A /* DeleteItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "DeleteItemTest-shell.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7EB739D417BBA40F00406C59 /* TestingRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingRequestFactory.h; sourceTree = "<group>"; };
 		7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingRequestFactory.m; sourceTree = "<group>"; };
-		7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditItemTest-shell.m"; sourceTree = "<group>"; };
+		7EB739D817BBD2DF00406C59 /* EditItemTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "EditItemTest-shell.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7EB739DB17BBDA8C00406C59 /* UploadMediaTest-shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UploadMediaTest-shell.m"; sourceTree = "<group>"; };
 		7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleItemsTriggerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -725,7 +725,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E177B11806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
 				7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */,
 				2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */,
 				7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */,
@@ -735,6 +734,7 @@
 				1BD6A9D11518CAA100D2FC84 /* CoreLocation.framework in Frameworks */,
 				1BBCABEF1510E87600199B37 /* AVFoundation.framework in Frameworks */,
 				1BBCABF01510E87600199B37 /* CoreMedia.framework in Frameworks */,
+				78F3C23618AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
 				1BBCABF11510E87600199B37 /* CoreVideo.framework in Frameworks */,
 				1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */,
 				1B11672214C6C60F000AD289 /* AudioToolbox.framework in Frameworks */,
@@ -759,7 +759,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E177B21806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
 				7E72CB0117FC02710081F306 /* QuartzCore.framework in Frameworks */,
 				2598AAB017F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
 				7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */,
@@ -769,6 +768,7 @@
 				1B0D82C31519CD9C00EC4A92 /* MapKit.framework in Frameworks */,
 				1B0D82C21519CD8100EC4A92 /* libSCAllMobileSDKLibs.a in Frameworks */,
 				1BCC93361511E11B00271BFD /* AVFoundation.framework in Frameworks */,
+				78F3C23718AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
 				1BCC93371511E11B00271BFD /* CoreMedia.framework in Frameworks */,
 				1BCC93381511E11B00271BFD /* CoreVideo.framework in Frameworks */,
 				1BCC93391511E11B00271BFD /* libiconv.dylib in Frameworks */,
@@ -793,7 +793,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E177B31806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
 				7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */,
 				2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */,
 				2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */,
@@ -803,6 +802,7 @@
 				7E18F90B17C217B400006465 /* MapKit.framework in Frameworks */,
 				7E18F90C17C217B400006465 /* CoreLocation.framework in Frameworks */,
 				7E18F90D17C217B400006465 /* AVFoundation.framework in Frameworks */,
+				78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
 				7E18F90E17C217B400006465 /* CoreMedia.framework in Frameworks */,
 				7E18F90F17C217B400006465 /* CoreVideo.framework in Frameworks */,
 				7E18F91017C217B400006465 /* libiconv.dylib in Frameworks */,
@@ -827,7 +827,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E177B41806CD4200201DC6 /* GHUnitIOS.framework in Frameworks */,
 				7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */,
 				2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
 				7E18F96217C217C700006465 /* Social.framework in Frameworks */,
@@ -837,6 +836,7 @@
 				7E18F96617C217C700006465 /* MapKit.framework in Frameworks */,
 				7E18F96717C217C700006465 /* libSCAllMobileSDKLibs.a in Frameworks */,
 				7E18F96817C217C700006465 /* AVFoundation.framework in Frameworks */,
+				78F3C23918AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
 				7E18F96917C217C700006465 /* CoreMedia.framework in Frameworks */,
 				7E18F96A17C217C700006465 /* CoreVideo.framework in Frameworks */,
 				7E18F96B17C217C700006465 /* libiconv.dylib in Frameworks */,
@@ -901,7 +901,7 @@
 		1B925B9F14615C7D00C9FC49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25E177B01806CD4200201DC6 /* GHUnitIOS.framework */,
+				78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */,
 				25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */,
 				7E72CAFE17FC02670081F306 /* QuartzCore.framework */,
 				2598AAA817F42CD900252AA4 /* EventKit.framework */,
@@ -1946,6 +1946,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1959,6 +1960,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1983,7 +1986,7 @@
 					"../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1995,6 +1998,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -2007,6 +2011,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2025,7 +2031,7 @@
 					"../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -2040,11 +2046,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2063,11 +2067,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2085,9 +2087,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2105,9 +2106,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2120,6 +2120,143 @@
 			};
 			name = Release;
 		};
+		78F3C23F18AA83B8009BF646 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../lib-third-party/JFFLibrary/lib",
+					/usr/include/libxml2,
+					"../../../lib-third-party/TouchXML/Source",
+					../../../lib/SCApi,
+					../../../lib/SCMonad,
+					../../../lib/SCUtils,
+					"../../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+			};
+			name = Coverage;
+		};
+		78F3C24018AA83B8009BF646 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		78F3C24118AA83B8009BF646 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTest copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = SCApiTestLibs;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		78F3C24218AA83B8009BF646 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTest copy2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTest-NoAnonymous";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		78F3C24318AA83B8009BF646 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
+				INFOPLIST_FILE = "SCApiTestLibs copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "SCApiTestLibs-NoAnonymous";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
 		7E18F92717C217B400006465 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2127,11 +2264,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2152,11 +2287,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../../../deployment\\\\\\\\\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/deployment",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					../../../deployment,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2177,9 +2310,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2200,9 +2332,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/../../../frameworks\\\\\\\"",
-					"/Volumes/untitled/Mobile/Mobile\\ SDK/frameworks",
-					"/Volumes/NO\\ NAME/Mobile/Mobile\\ SDK/frameworks",
+					../../../frameworks,
+					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2223,6 +2354,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B925BB814615C7E00C9FC49 /* Debug */,
+				78F3C23F18AA83B8009BF646 /* Coverage */,
 				1B925BB914615C7E00C9FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2232,6 +2364,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B925BBB14615C7E00C9FC49 /* Debug */,
+				78F3C24018AA83B8009BF646 /* Coverage */,
 				1B925BBC14615C7E00C9FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2241,6 +2374,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BCC938E1511E11B00271BFD /* Debug */,
+				78F3C24118AA83B8009BF646 /* Coverage */,
 				1BCC938F1511E11B00271BFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2250,6 +2384,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E18F92717C217B400006465 /* Debug */,
+				78F3C24218AA83B8009BF646 /* Coverage */,
 				7E18F92817C217B400006465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2259,6 +2394,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E18F98117C217C700006465 /* Debug */,
+				78F3C24318AA83B8009BF646 /* Coverage */,
 				7E18F98217C217C700006465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

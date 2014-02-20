@@ -23,7 +23,7 @@
 
         [ self prepare ];
 
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
+        SCApiSession* apiContext_ = [ SCApiSession sessionWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultSite = @"/sitecore/shell";
@@ -72,7 +72,7 @@
         
         [ self prepare ];
         
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: host
+        SCApiSession* apiContext_ = [ SCApiSession sessionWithHost: host
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultDatabase = @"core";

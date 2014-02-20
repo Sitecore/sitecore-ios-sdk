@@ -7,13 +7,13 @@
 
 -(void)testItemWithNilPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -42,13 +42,13 @@
 -(void)testItemWithFieldsNamesWithEmptyPath
 {
 
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -77,13 +77,13 @@
 
 -(void)testChildrenWithInvalidPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSDictionary* items_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
@@ -110,20 +110,20 @@
 -(void)testPagedItemSCWithInvalidPath
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.requestType = SCItemReaderRequestItemPath;
             request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
             request_.request     = @"./[.//";
@@ -131,7 +131,7 @@
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
-            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
             [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
             {
@@ -156,20 +156,20 @@
     __block SCPagedItems* pagedItems_;
     
 
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     
     __block SCApiError* item_error_ = nil;
     __block NSNumber* items_count_ = 0;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.requestType = SCItemReaderRequestItemPath;
             request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
             request_.request     = nil;
@@ -177,7 +177,7 @@
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
-            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
             [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
             {
@@ -199,13 +199,13 @@
 
 -(void)testItemChildrenRequestWithNilQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -213,12 +213,12 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request = nil;
                 request_.scope = SCItemReaderChildrenScope;
                 request_.requestType = SCItemReaderRequestQuery;
                 request_.fieldNames = [ NSSet new ];
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*)error_;
                     items_ = result_items_;
@@ -241,13 +241,13 @@
 
 -(void)testItemSelfRequestWithEmptyQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-     __block SCApiContext* strongContext_  = nil;       
+     __block SCApiSession* strongContext_  = nil;       
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -255,12 +255,12 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"";
             request_.scope = SCItemReaderSelfScope;
             request_.requestType = SCItemReaderRequestQuery;
             request_.fieldNames = nil;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
                  item_error_ = (SCApiError*)error_;
                  items_ = result_items_;
@@ -281,13 +281,13 @@
 
 -(void)testImageLoaderForSCMediaPathWithInvalidPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block id value_ = nil;
     __block SCApiError* value_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_  = nil;
+        __block SCApiSession* strongContext_  = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool

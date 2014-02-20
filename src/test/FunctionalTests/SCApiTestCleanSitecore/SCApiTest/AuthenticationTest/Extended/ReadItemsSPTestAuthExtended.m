@@ -8,7 +8,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
 
 -(void)testReadItemSPWithAllowedItemNotAllowedParent
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -16,13 +16,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
         
@@ -38,11 +38,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
                 items_auth_ = result_items_;
                 didFinishCallback_();
             };
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
 
     };
@@ -52,8 +52,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
-     NSLog( @"[ items_auth_ count ]: %d", [ items_auth_ count ] );
     //test get items (without auth)
     GHAssertTrue( items_ != nil, @"OK" );
     GHAssertTrue( [ items_ count ] == 1, @"OK" );
@@ -84,7 +82,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
 
 -(void)testReadItemSPWithNotAllowedItemAndParent
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -92,13 +90,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
         
@@ -114,11 +112,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
                 items_auth_ = result_items_;
                 didFinishCallback_();
             };
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -128,8 +126,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
-    NSLog( @"[ items_auth_ count ]: %d", [ items_auth_ count ] );
     //test get items (without auth)
     GHAssertTrue( [ items_ count ] == 0, @"OK" );
     
@@ -153,7 +149,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
 
 -(void)testReadItemSPWithNotAllowedItemAllowedParent
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -161,13 +157,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
         
@@ -184,11 +180,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
                 items_auth_ = result_items_;
                 didFinishCallback_();
             };
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -198,8 +194,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
     }
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
-    NSLog( @"[ items_auth_ count ]: %d", [ items_auth_ count ] );
     //test get items (without auth)
     GHAssertTrue( [ items_ count ] == 0, @"OK" );
     

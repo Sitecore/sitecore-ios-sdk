@@ -8,12 +8,12 @@
 -(void)testPagedItemReaderWithWrongPath
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -21,13 +21,13 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.requestType = SCItemReaderRequestItemPath;
                 request_.scope       = SCItemReaderChildrenScope;
                 request_.request     = @"/sitecore/content/WrongItem/";
                 request_.pageSize    = 2;
 
-                pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+                pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                               request: request_ ];
             
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
@@ -56,24 +56,24 @@
 -(void)testPagedItemsCountReaderWithWrongID
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.requestType = SCItemReaderRequestItemId;
             request_.scope       = SCItemReaderChildrenScope;
             request_.request     = @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}";
             request_.pageSize    = 1;
             
-            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
             
             
@@ -98,12 +98,12 @@
 
 -(void)testItemChildrenRequestWithWrongQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
    
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -113,7 +113,7 @@
             apiContext_ = strongContext_;
             
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/Home/WrongItem/*[@@templatename='WrongTemplate']";
             request_.scope = SCItemReaderChildrenScope;
             request_.requestType = SCItemReaderRequestQuery;
@@ -125,7 +125,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         
         }
@@ -144,12 +144,12 @@
 
 -(void)testItemSelfRequestWithWrongPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -157,8 +157,8 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = 
-            [ SCItemsReaderRequest requestWithItemPath: @"/sitecore/content/WrongItem/"
+            SCReadItemsRequest* request_ = 
+            [ SCReadItemsRequest requestWithItemPath: @"/sitecore/content/WrongItem/"
                                            fieldsNames: nil
                                                  scope: SCItemReaderSelfScope ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -167,7 +167,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -184,13 +184,13 @@
 
 -(void)testItemParentRequestWithWrongId
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_items_ = nil;
     __block SCApiError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -198,8 +198,8 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            SCItemsReaderRequest* request_ = 
-            [ SCItemsReaderRequest requestWithItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}"
+            SCReadItemsRequest* request_ = 
+            [ SCReadItemsRequest requestWithItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}"
                                          fieldsNames: [ NSSet new ]
                                                scope: SCItemReaderParentScope ];
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -210,7 +210,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -227,21 +227,21 @@
 
 -(void)testItemWithWrongPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
+            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
             
-            item_ = [ apiContext_.extendedApiContext itemWithPath: @"/sitecore/content/WrongItem/"
+            item_ = [ apiContext_.extendedApiSession itemWithPath: @"/sitecore/content/WrongItem/"
                                                        itemSource: contextSource ];
             didFinishCallback_();
         }
@@ -258,13 +258,13 @@
 
 -(void)testItemForItemWrongPath
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
         @autoreleasepool
@@ -280,8 +280,8 @@
                 did_finish_callback_();
             };
             
-            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: @"/sitecore/content/WrongItem/"
+            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: @"/sitecore/content/WrongItem/"
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -299,13 +299,13 @@
 
 -(void)testItemForItemWrongId
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* itemError_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -320,8 +320,8 @@
                 didFinishCallback_();
             };
             
-            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
+            SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -341,21 +341,21 @@
 
 -(void)testItemForItemWrongIdWithFieldNames
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* itemError_ = nil;
 
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
-            SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -365,7 +365,7 @@
             };
             
             SCExtendedAsyncOp loader =
-            [ apiContext_.extendedApiContext itemReaderWithFieldsNames: [ NSSet new ]
+            [ apiContext_.extendedApiSession itemReaderWithFieldsNames: [ NSSet new ]
                                                               itemPath: @"/sitecore/content/WrongItem/"
                                                             itemSource: contextSource ];
             loader(nil, nil, doneHandler);
@@ -385,20 +385,20 @@
 
 -(void)testItemForItemWrongPathWithFieldNames
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
         {
             @autoreleasepool
             {
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
                 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
                 {
@@ -408,7 +408,7 @@
                 };
                 
                 SCExtendedAsyncOp loader =
-                [ apiContext_.extendedApiContext itemReaderWithFieldsNames: [ NSSet new ]
+                [ apiContext_.extendedApiSession itemReaderWithFieldsNames: [ NSSet new ]
                                                                     itemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
                                                                 itemSource: contextSource ];
                 loader(nil, nil, doneHandler);

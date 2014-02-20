@@ -111,8 +111,8 @@
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		7EE4184F181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */; };
-		7EE41850181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */; };
+		7EFC0A4A182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */; };
+		7EFC0A4B182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +216,7 @@
 		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
 		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
 		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +241,7 @@
 				1BAFB7271511E8B30007A91D /* CoreLocation.framework in Frameworks */,
 				1BAFB7281511E8B30007A91D /* AddressBookUI.framework in Frameworks */,
 				1BAFB7291511E8B30007A91D /* Twitter.framework in Frameworks */,
-				7EE41850181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */,
+				7EFC0A4B182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */,
 				1BAFB72A1511E8B30007A91D /* AudioToolbox.framework in Frameworks */,
 				1BAFB72B1511E8B30007A91D /* libsqlite3.dylib in Frameworks */,
 				1BAFB72C1511E8B30007A91D /* libz.dylib in Frameworks */,
@@ -259,7 +259,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EE4184F181FE75C00911C62 /* GHUnitIOS.framework in Frameworks */,
 				7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */,
 				7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */,
 				7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */,
@@ -277,6 +276,7 @@
 				1B104CD914838D960025FDDA /* AddressBookUI.framework in Frameworks */,
 				1BC086B1147AAF890066CFB3 /* Twitter.framework in Frameworks */,
 				257F504614752CF00066AC47 /* AudioToolbox.framework in Frameworks */,
+				7EFC0A4A182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */,
 				25913CDA146D5C2F0099177E /* libsqlite3.dylib in Frameworks */,
 				25913CD8146D5C250099177E /* libz.dylib in Frameworks */,
 				25913CD6146D5C130099177E /* libxml2.dylib in Frameworks */,
@@ -359,7 +359,7 @@
 		25913CAD146D57920099177E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EE4184E181FE75C00911C62 /* GHUnitIOS.framework */,
+				7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */,
 				7E72CA6317FBF8990081F306 /* QuartzCore.framework */,
 				7E36C06217FAFE2F000E3083 /* EventKit.framework */,
 				7E36C06317FAFE2F000E3083 /* EventKitUI.framework */,
@@ -685,10 +685,13 @@
 		1BAFB73F1511E8B30007A91D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -703,10 +706,13 @@
 		1BAFB7401511E8B30007A91D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -722,7 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -732,6 +738,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -755,8 +763,7 @@
 					../../../lib/SCMap,
 					"../../../lib-third-party/JFFLibrary/lib/JFFTestTools",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
@@ -766,7 +773,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -792,8 +799,7 @@
 					../../../lib/SCMap,
 					"../../../lib-third-party/JFFLibrary/lib/JFFTestTools",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -804,10 +810,13 @@
 		25913CC9146D57920099177E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -821,10 +830,13 @@
 		25913CCA146D57920099177E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -835,6 +847,92 @@
 			};
 			name = Release;
 		};
+		78D1CEE118AB9FDE007AB677 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../lib/SCUI,
+					../../../lib/SCUtils,
+					../../../lib/SCQRCodeReader,
+					../../../lib/SCApi,
+					../../../lib/SitecoreMobileSDK,
+					../../../lib,
+					"../../../lib-third-party/JFFLibrary/lib",
+					../../../lib/SCWebView,
+					../../../lib/SCMap,
+					"../../../lib-third-party/JFFLibrary/lib/JFFTestTools",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Coverage;
+		};
+		78D1CEE218AB9FDE007AB677 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		78D1CEE318AB9FDE007AB677 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
+				INFOPLIST_FILE = "SCContactsTest copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "SCContactsTest copy";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -842,6 +940,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BAFB73F1511E8B30007A91D /* Debug */,
+				78D1CEE318AB9FDE007AB677 /* Coverage */,
 				1BAFB7401511E8B30007A91D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -851,6 +950,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25913CC6146D57920099177E /* Debug */,
+				78D1CEE118AB9FDE007AB677 /* Coverage */,
 				25913CC7146D57920099177E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -860,6 +960,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25913CC9146D57920099177E /* Debug */,
+				78D1CEE218AB9FDE007AB677 /* Coverage */,
 				25913CCA146D57920099177E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

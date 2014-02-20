@@ -7,19 +7,19 @@
 
 -(void)testCreateMediaItemInWeb
 {
-    __block __weak SCApiContext* apiContext_;
+    __block __weak SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
     
     @autoreleasepool
     {
-        SCApiContext* strongContext = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        SCApiSession* strongContext = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
         apiContext_ = strongContext;
         apiContext_.defaultDatabase = @"web";
 
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
             request_.fileName      = @"auto tests.png";
             request_.itemName      = @"TestMediaItemNoRights";
@@ -29,7 +29,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = SCCreateMediaFolder;
 
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 createError = error_;
                 media_item_ = item_;
@@ -40,9 +40,9 @@
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
             item_request_.flags = SCItemReaderRequestIngnoreCache;
-            [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 if ( [ read_items_ count ] > 0 )
                 {
@@ -63,12 +63,12 @@
         [ self performAsyncRequestOnMainThreadWithBlock: read_block_
                                                selector: _cmd ];
         
-        [ [ apiContext_.extendedApiContext itemsCache ] cleanupAll ];
+        [ [ apiContext_.extendedApiSession itemsCache ] cleanupAll ];
     }
     
     if ( !IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        GHAssertNil( apiContext_, @"ApiContext must not exist anymore" );
+        GHAssertNil( apiContext_, @"ApiSession must not exist anymore" );
         GHAssertNil( media_item_, @"media item must not exist anymore" );
     }
 
@@ -76,13 +76,13 @@
 
 -(void)testGetMediaWithoutAccess
 {
-    __block __weak SCApiContext* apiContext_;
+    __block __weak SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* error_ = nil;
     
     @autoreleasepool
     {
-        SCApiContext* strongContext = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        SCApiSession* strongContext = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                       login: SCWebApiNoReadAccessLogin
                                                                    password: SCWebApiNoReadAccessPassword
                                                                     version: SCWebApiV1 ];
@@ -92,10 +92,10 @@
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: @"/sitecore/Media Library/Images/test image" ];
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: @"/sitecore/Media Library/Images/test image" ];
             item_request_.fieldNames = nil;
             item_request_.flags = SCItemReaderRequestReadFieldsValues | SCItemReaderRequestIngnoreCache;
-            [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 if ( read_error_ )
                 {
@@ -119,10 +119,10 @@
         [ self performAsyncRequestOnMainThreadWithBlock: read_block_
                                                selector: _cmd ];
         
-        [ [ apiContext_.extendedApiContext itemsCache ] cleanupAll ];
+        [ [ apiContext_.extendedApiSession itemsCache ] cleanupAll ];
     }
 
-        GHAssertNil( apiContext_, @"ApiContext must not exist anymore" );
+        GHAssertNil( apiContext_, @"ApiSession must not exist anymore" );
         GHAssertNil( media_item_, @"media item must not exist anymore" );
     
 }

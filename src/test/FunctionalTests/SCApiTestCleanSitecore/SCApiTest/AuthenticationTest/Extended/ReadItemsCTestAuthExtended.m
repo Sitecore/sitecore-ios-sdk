@@ -9,7 +9,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
 
 -(void)testReadItemCAllowedItemAllowedChildrenWithAllFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -17,13 +17,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
         
@@ -39,11 +39,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandelr);
     };
 
@@ -55,7 +55,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     NSLog( @"items_auth_: %@", items_auth_ );
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
     //test get item without auth
     GHAssertTrue( [ items_ count ] == 1, @"OK" );
 
@@ -77,7 +76,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
 
 -(void)testReadItemCNotAllowedItemAllowedChildrenWithSomeFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -85,14 +84,14 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
         NSSet* field_names_ = [ NSSet setWithObjects: @"Title", nil];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: field_names_ ];
         request_.scope = scope_;
         
@@ -108,11 +107,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
     
@@ -122,8 +121,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     
     NSLog( @"items_: %@", items_ );
     NSLog( @"items_auth_: %@", items_auth_ );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
-    NSLog( @"[ items_auth_ count ]: %d", [ items_auth_ count ] );
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
     //test get item with auth
@@ -147,7 +144,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
 
 -(void)testReadItemCWithQuery
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSArray* items_auth_ = nil;
     
@@ -155,14 +152,14 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
         apiContext_ = strongContext_;
         
         NSSet* field_names_ = [ NSSet new ];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.fieldNames = field_names_;
         request_.request = path_;
         request_.requestType = SCItemReaderRequestQuery;
@@ -180,11 +177,11 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
     
@@ -194,8 +191,6 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
     
     NSLog( @"items_: %@", items_ );
     NSLog( @"items_auth_: %@", items_auth_ );
-    NSLog( @"[ items_ count ]: %d", [ items_ count ] );
-    NSLog( @"[ items_auth_ count ]: %d", [ items_auth_ count ] );
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
     //test get item without auth

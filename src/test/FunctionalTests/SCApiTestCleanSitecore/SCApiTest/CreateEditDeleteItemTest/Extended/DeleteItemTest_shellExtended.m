@@ -7,7 +7,7 @@
 
 -(void)testDeleteParentItem_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     __block NSString* item2Id = nil;
@@ -17,8 +17,8 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -50,17 +50,17 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
     void (^delete_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item2_.itemId ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2_.itemId ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         item_request_.scope = SCItemReaderParentScope;
     
@@ -70,13 +70,13 @@
             didFinishCallback_();
         };
 
-        SCExtendedAsyncOp loader =[ apiContext_.extendedApiContext removeItemsWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader =[ apiContext_.extendedApiSession deleteItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
 
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item2Id ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2Id ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         item_request_.scope = SCItemReaderParentScope | SCItemReaderSelfScope;
 
@@ -86,7 +86,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -120,7 +120,7 @@
 
 -(void)testDeleteItemsIerarchy_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCItem* item2_ = nil;
     __block NSString* item2Id = nil;
@@ -130,8 +130,8 @@
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -161,11 +161,11 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
         
     };
@@ -173,7 +173,7 @@
     void (^delete_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         deletedItemId_ = item_.itemId;
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item_.itemId ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         item_request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
 
@@ -183,13 +183,13 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext removeItemsWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession deleteItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
 
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: item2Id ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2Id ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
         item_request_.scope = SCItemReaderParentScope | SCItemReaderSelfScope;
 
@@ -199,7 +199,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: item_request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];
         loader(nil, nil, doneHandler);
     };
     
@@ -241,7 +241,7 @@
 
 -(void)testDeleteItemsWithQuery_Shell
 {
-    __block  __weak SCApiContext* apiContext_ = nil;
+    __block  __weak SCApiSession* apiContext_ = nil;
     __block NSUInteger readItemsCount_ = 0;
     __block NSString* request1_ = nil;
     __block NSString* request2_ = nil;
@@ -255,8 +255,8 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -292,39 +292,39 @@
                                didFinishCallback_();
                            };
                           
-                          SCExtendedAsyncOp loader3 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                          SCExtendedAsyncOp loader3 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                           loader3(nil, nil, doneHandler3);
                       };
                      
-                     SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                     SCExtendedAsyncOp loader2 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                      loader2(nil, nil, doneHandler2);
                  };
                 
                 
-                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
         void (^delete_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             
             apiContext_.defaultSite = @"/sitecore/shell";
             apiContext_.defaultDatabase = @"web";
-            SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* item_request_ = [ SCReadItemsRequest new ];
             item_request_.request =
             [ rootItem_.path stringByAppendingString: @"/parent::*/descendant::*[@@key='itemtodelete shell']" ];
             item_request_.flags = SCItemReaderRequestIngnoreCache;
             item_request_.requestType = SCItemReaderRequestQuery;
             item_request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
-            [ apiContext_ removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
+            [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
                                                                   {
                                                                       deleteResponse_ = response_;
                                                                       NSLog( @"deleteResponse_: %@", deleteResponse_ );
@@ -334,17 +334,17 @@
         
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiAdminLogin
                                                           password: SCWebApiAdminPassword ];
             apiContext_ = strongContext_;
             
             apiContext_.defaultSite = @"/sitecore/shell";
             apiContext_.defaultDatabase = @"web";
-            SCItemsReaderRequest* itemRequest_ = [ SCItemsReaderRequest requestWithItemPath: request2_ ];
+            SCReadItemsRequest* itemRequest_ = [ SCReadItemsRequest requestWithItemPath: request2_ ];
             itemRequest_.flags = SCItemReaderRequestIngnoreCache;
             itemRequest_.scope = SCItemReaderParentScope | SCItemReaderSelfScope | SCItemReaderChildrenScope;
-            [ apiContext_ itemsReaderWithRequest: itemRequest_ ]( ^( NSArray* readItems_, NSError* read_error_ )
+            [ apiContext_ readItemsOperationWithRequest: itemRequest_ ]( ^( NSArray* readItems_, NSError* read_error_ )
                                                                  {
                                                                      readItemsCount_ = [ readItems_ count ];
                                                                      didFinishCallback_();                                                  
@@ -398,7 +398,7 @@
 
 -(void)testDeleteItemsWithChildren_Shell
 {
-    __weak __block SCApiContext* weakApiContext_   = nil;
+    __weak __block SCApiSession* weakApiSession_   = nil;
     
     __block NSString* itemId1_;
     __block NSString* itemId2_;
@@ -414,31 +414,31 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongApiContext_ = nil;
+        __block SCApiSession* strongApiSession_ = nil;
         
         
         
         __block NSString* currentPath_ = SCCreateItemPath;
         
-        strongApiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        strongApiSession_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                             login: SCWebApiAdminLogin
                                                          password: SCWebApiAdminPassword ];
         
-        weakApiContext_ = strongApiContext_;
+        weakApiSession_ = strongApiSession_;
         
-        strongApiContext_.defaultDatabase = @"web";
-        strongApiContext_.defaultSite = @"/sitecore/shell";
+        strongApiSession_.defaultDatabase = @"web";
+        strongApiSession_.defaultSite = @"/sitecore/shell";
         
         
         void (^deleteBlock_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongApiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongApiSession_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                 login: SCWebApiAdminLogin
                                                              password: SCWebApiAdminPassword ];
-            strongApiContext_.defaultSite = @"/sitecore/shell";
-            weakApiContext_ = strongApiContext_;
+            strongApiSession_.defaultSite = @"/sitecore/shell";
+            weakApiSession_ = strongApiSession_;
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId1_ ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId1_ ];
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( id response_, NSError* error_ )
                                                             {
@@ -446,7 +446,7 @@
                                                                 didFinishCallback_();
                                                             };
             
-            SCExtendedAsyncOp loader = [ strongApiContext_.extendedApiContext removeItemsWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ strongApiSession_.extendedApiSession deleteItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -490,16 +490,16 @@
                           didFinishCallback_();
                       };
                      
-                     SCExtendedAsyncOp loader2 = [ strongApiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                     SCExtendedAsyncOp loader2 = [ strongApiSession_.extendedApiSession createItemsOperationWithRequest: request_ ];
                      loader2(nil, nil, doneHandler2);
                  };
                 
-                SCExtendedAsyncOp loader1 = [ strongApiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+                SCExtendedAsyncOp loader1 = [ strongApiSession_.extendedApiSession createItemsOperationWithRequest: request_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
             
-            SCExtendedAsyncOp loader = [ strongApiContext_.extendedApiContext itemCreatorWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ strongApiSession_.extendedApiSession createItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         };
         
@@ -508,15 +508,15 @@
         
         GHAssertTrue( itemsWasCreated_, @"OK" );
         
-        GHAssertNotNil( weakApiContext_, @"OK" );
+        GHAssertNotNil( weakApiSession_, @"OK" );
         
-        item1_ = [ strongApiContext_ itemWithId: itemId1_ ];
+        item1_ = [ strongApiSession_ itemWithId: itemId1_ ];
         GHAssertNotNil( item1_, @"OK" );
         
-        item2_ = [ strongApiContext_ itemWithId: itemId2_ ];
+        item2_ = [ strongApiSession_ itemWithId: itemId2_ ];
         GHAssertNotNil( item2_, @"OK" );
         
-        item3_ = [ strongApiContext_ itemWithId: itemId3_ ];
+        item3_ = [ strongApiSession_ itemWithId: itemId3_ ];
         GHAssertNotNil( item3_, @"OK" );
         
         itemsWasRemoved_ = NO;
@@ -525,19 +525,19 @@
                                                selector: _cmd ];
         
         GHAssertTrue( itemsWasRemoved_, @"OK" );
-        GHAssertNotNil( weakApiContext_, @"OK" );
+        GHAssertNotNil( weakApiSession_, @"OK" );
         
-        item1_ = [ weakApiContext_ itemWithId: itemId1_ ];
+        item1_ = [ weakApiSession_ itemWithId: itemId1_ ];
         GHAssertNil( item1_, @"OK" );
         
-        item2_ = [ weakApiContext_ itemWithId: itemId2_ ];
+        item2_ = [ weakApiSession_ itemWithId: itemId2_ ];
         GHAssertNil( item2_, @"OK" );
         
-        item3_ = [ weakApiContext_ itemWithId: itemId3_ ];
+        item3_ = [ weakApiSession_ itemWithId: itemId3_ ];
         GHAssertNil( item3_, @"OK" );    
     }
     
-    GHAssertNil( weakApiContext_, @"OK" );
+    GHAssertNil( weakApiSession_, @"OK" );
 }
 
 @end

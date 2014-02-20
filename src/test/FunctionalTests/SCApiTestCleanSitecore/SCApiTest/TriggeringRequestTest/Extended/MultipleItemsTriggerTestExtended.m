@@ -18,7 +18,7 @@
 
 -(SCPageEventTriggeringRequest*)kodLogout:( NSInteger )itemNameIndex
 {
-    NSString* itemPath = [ NSString stringWithFormat: @"/sitecore/content/Triggering Events/Copy%d", itemNameIndex ];
+    NSString* itemPath = [ NSString stringWithFormat: @"/sitecore/content/Triggering Events/Copy%ld", (long)itemNameIndex ];
     
     SCPageEventTriggeringRequest *request_ =
     [ [ SCPageEventTriggeringRequest alloc ] initWithPath: itemPath
@@ -27,13 +27,13 @@
     return request_;
 }
 
--(SCExtendedAsyncOp)asyncTrigger12WithContext:( SCApiContext* )apiContext_
+-(SCExtendedAsyncOp)asyncTrigger12WithContext:( SCApiSession* )apiContext_
 {
     SCPageEventTriggeringRequest* first  = [ self kodLogout: 1 ];
     SCPageEventTriggeringRequest* second = [ self kodLogout: 2 ];
 
-    SCExtendedAsyncOp triggerFirst  = [ apiContext_.extendedApiContext triggerLoaderForRequest: first ];
-    SCExtendedAsyncOp triggerSecond = [ apiContext_.extendedApiContext triggerLoaderForRequest: second ];
+    SCExtendedAsyncOp triggerFirst  = [ apiContext_.extendedApiSession triggerOperationWithRequest: first ];
+    SCExtendedAsyncOp triggerSecond = [ apiContext_.extendedApiSession triggerOperationWithRequest: second ];
 
     NSArray* sequence = @[ triggerFirst, triggerSecond ];
     SCExtendedAsyncOp trigger = [ SCExtendedAsyncOpRelationsBuilder sequence: sequence ];
@@ -41,13 +41,13 @@
     return trigger;
 }
 
--(SCExtendedAsyncOp)asyncTrigger34WithContext:( SCApiContext* )apiContext_
+-(SCExtendedAsyncOp)asyncTrigger34WithContext:( SCApiSession* )apiContext_
 {
     SCPageEventTriggeringRequest* first  = [ self kodLogout: 3 ];
     SCPageEventTriggeringRequest* second = [ self kodLogout: 4 ];
     
-    SCExtendedAsyncOp triggerFirst  = [ apiContext_.extendedApiContext triggerLoaderForRequest: first ];
-    SCExtendedAsyncOp triggerSecond = [ apiContext_.extendedApiContext triggerLoaderForRequest: second ];
+    SCExtendedAsyncOp triggerFirst  = [ apiContext_.extendedApiSession triggerOperationWithRequest: first ];
+    SCExtendedAsyncOp triggerSecond = [ apiContext_.extendedApiSession triggerOperationWithRequest: second ];
     
     NSArray* sequence = @[ triggerFirst, triggerSecond ];
     SCExtendedAsyncOp trigger = [ SCExtendedAsyncOpRelationsBuilder sequence: sequence ];
@@ -55,7 +55,7 @@
     return trigger;
 }
 
--(SCExtendedAsyncOp)asyncTriggerAllWithContext:( SCApiContext* )apiContext_
+-(SCExtendedAsyncOp)asyncTriggerAllWithContext:( SCApiSession* )apiContext_
 {
     SCExtendedAsyncOp triggerFirst  = [ self asyncTrigger12WithContext: apiContext_ ];
     SCExtendedAsyncOp triggerSecond = [ self asyncTrigger34WithContext: apiContext_ ];
@@ -69,17 +69,17 @@
 -(void)testTrigger12
 {
     __weak MultipleItemsTriggerTestExtended* weakSelf = self;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName ];
                 apiContext_ = strongContext_;
                 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
@@ -108,17 +108,17 @@
 -(void)testTrigger34
 {
     __weak MultipleItemsTriggerTestExtended* weakSelf = self;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName ];
                 apiContext_ = strongContext_;
                 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
@@ -148,17 +148,17 @@
 -(void)testTrigger1234
 {
     __weak MultipleItemsTriggerTestExtended* weakSelf = self;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSString *requestResult_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiAnalyticsHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiAnalyticsHostName ];
                 apiContext_ = strongContext_;
                 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )

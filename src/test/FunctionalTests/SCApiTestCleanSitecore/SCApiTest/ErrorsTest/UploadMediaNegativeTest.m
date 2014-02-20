@@ -7,14 +7,14 @@
 
 -(void)testCreateMediaWithoutName
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -24,7 +24,7 @@
 
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
             request_.itemName      = @" ";
             request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -33,7 +33,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = SCCreateMediaFolder;
 
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -54,14 +54,14 @@
 
 -(void)testCreateMediaWithInvalidName
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                login: SCWebApiAdminLogin
                                             password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -70,7 +70,7 @@
     
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
             
             request_.itemName      = @"  _$";
             request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -79,7 +79,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = SCCreateMediaFolder;
 
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -99,14 +99,14 @@
 
 -(void)testCreateMediaWithInvalidTemplate
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -116,7 +116,7 @@
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
             
             request_.itemName      = @"Invalid Template";
             request_.itemTemplate  = @"System/Media/Unversioned/Invalid";
@@ -125,7 +125,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = SCCreateMediaFolder;
             
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -147,14 +147,14 @@
 
 -(void)testCreateMediaWithEmptyFile
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -165,7 +165,7 @@
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
             
             request_.itemName      = @"Empty Media";
             request_.itemTemplate  = @"System/Media/Unversioned/File";
@@ -174,7 +174,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = SCCreateMediaFolder;
             
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -187,7 +187,7 @@
                                                selector: _cmd ];
     }
     
-    
+    //FIXME: @igk [new webApi] item is not created, it was server side bug, we need fix this test. Disscuss on meeting
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( media_item_ != nil, @"OK" );
     GHAssertTrue( response_error_ == nil, @"OK" );
@@ -199,14 +199,14 @@
 
 -(void)testCreateMediaWithHighData
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -216,7 +216,7 @@
         
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
             
             request_.itemName      = @"Large Image";
             request_.fileName      = @"large_image.jpg";
@@ -226,7 +226,7 @@
             request_.contentType   = @"image/jpg";
             request_.folder        = SCCreateMediaFolder;
             
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -253,15 +253,15 @@
 
 -(void)testCreateMediaWithInvalidUser_shell
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: @"notexisted"
                                                       password: @"notexisted" ];
         apiContext_ = strongContext_;
@@ -272,7 +272,7 @@
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.itemName      = @"InvalidUserAdd";
         request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -281,7 +281,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             media_item_ = item_;
             response_error_ = error_;
@@ -310,15 +310,15 @@
     // The test will fail for older releases
 
 
-        __weak __block SCApiContext* apiContext_;
+        __weak __block SCApiSession* apiContext_;
         __block SCItem* media_item_ = nil;
         __block NSError* response_error_ = nil;
         
         @autoreleasepool
         {
-            __block SCApiContext* strongContext_ = nil;
+            __block SCApiSession* strongContext_ = nil;
             
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: @"notexisted"
                                                           password: @"notexisted" ];
             apiContext_ = strongContext_;
@@ -329,7 +329,7 @@
             
             void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
             {
-                SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+                SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
                 
                 request_.itemName      = @"InvalidUserAdd";
                 request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -338,7 +338,7 @@
                 request_.contentType   = @"image/png";
                 request_.folder        = SCCreateMediaFolder;
                 
-                [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+                [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
                   {
                       media_item_ = item_;
                       response_error_ = error_;
@@ -365,14 +365,14 @@
     // https://support.sitecore.net/client/ViewItem.aspx?type=defects&id=393416
     // The test will fail for older releases
     
-        __weak __block SCApiContext* apiContext_;
+        __weak __block SCApiSession* apiContext_;
         __block SCItem* media_item_ = nil;
         __block NSError* response_error_ = nil;
         
         @autoreleasepool
         {
-            __block SCApiContext* strongContext_ = nil;
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            __block SCApiSession* strongContext_ = nil;
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                              login: SCWebApiNocreateLogin
                                                           password: SCWebApiNocreatePassword ];
             apiContext_ = strongContext_;
@@ -383,7 +383,7 @@
             
             void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
             {
-                SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+                SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
                 
                 request_.itemName      = @"LowPermissionUserAdd";
                 request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -392,7 +392,7 @@
                 request_.contentType   = @"image/png";
                 request_.folder        = SCCreateMediaFolder;
                 
-                [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+                [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
                 {
                     media_item_ = item_;
                     response_error_ = error_;
@@ -420,14 +420,14 @@
 
 -(void)testCreateMediaWithNotExitedFolder
 {
-    __weak __block SCApiContext* apiContext_;
+    __weak __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* response_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
-        strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ = nil;
+        strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                          login: SCWebApiAdminLogin
                                                       password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -437,7 +437,7 @@
     
         void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+            SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
             
             request_.itemName      = @"NotExistedFolder";
             request_.itemTemplate  = @"System/Media/Unversioned/Image";
@@ -446,7 +446,7 @@
             request_.contentType   = @"image/png";
             request_.folder        = [ SCCreateMediaFolder stringByAppendingString: @"NotExistedFolder" ];
             
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
                 media_item_ = item_;
                 response_error_ = error_;
@@ -472,6 +472,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertTrue( [ castedError statusCode ] == 403, @"error code mismatch" );
     }
 }

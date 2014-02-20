@@ -1,22 +1,22 @@
 #import <Foundation/Foundation.h>
 #import <JFFUtils/JFFUtils.h>
 
-@class SCApiContext;
-@class SCItemsReaderRequest;
+@class SCApiSession;
+@class SCReadItemsRequest;
 typedef void (^CLEANUP_BLOCK)(JFFSimpleBlock);
 
 
 @interface TestingRequestFactory : NSObject
 
-+(SCItemsReaderRequest*)removeAllTestItemsFromWebAsSitecoreAdmin;
++(SCReadItemsRequest*)removeAllTestItemsFromWebAsSitecoreAdmin;
 +(CLEANUP_BLOCK)doRemoveAllTestItemsFromWebAsSitecoreAdminForTestCase;
 
-+(SCItemsReaderRequest*)removeAllTestItemsFromMasterAsSitecoreAdmin;
++(SCReadItemsRequest*)removeAllTestItemsFromMasterAsSitecoreAdmin;
 +(CLEANUP_BLOCK)doRemoveAllTestItemsFromMasterAsSitecoreAdminForTestCase;
 
-+(CLEANUP_BLOCK)doRemoveAllTestItemsFromMasterForContext:( SCApiContext* )context;
++(CLEANUP_BLOCK)doRemoveAllTestItemsFromMasterForContext:( SCApiSession* )context;
 
-+(SCApiContext*)getNewAnonymousContext;
-+(SCApiContext*)getNewAdminContextWithShell;
++(SCApiSession*)getNewAnonymousContext;
++(SCApiSession*)getNewAdminContextWithShell;
 
 @end

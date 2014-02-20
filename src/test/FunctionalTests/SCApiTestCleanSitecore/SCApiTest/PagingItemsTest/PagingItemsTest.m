@@ -9,16 +9,16 @@
 -(void)testPagedItemCWithSomeFields
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSNumber* items_count_ = 0;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ =
-            [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+            [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                             login: SCWebApiAdminLogin
                                          password: SCWebApiAdminPassword
                                           version: SCWebApiV1 ];
@@ -26,7 +26,7 @@
             apiContext_.defaultSite = @"/sitecore/shell";
             
             
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.requestType = SCItemReaderRequestItemPath;
             request_.scope = SCItemReaderChildrenScope;
             request_.request = SCHomePath;
@@ -34,7 +34,7 @@
             request_.fieldNames = [ NSSet setWithObjects: @"Normal Text", nil ];
             request_.pageSize = 2;
 
-            pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+            pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
             if ( !pagedItems_ )
             {
@@ -84,24 +84,24 @@
 -(void)testPagedItemSCWithAllFields
 {
    __block SCPagedItems* pagedItems_;
-   __weak __block SCApiContext* apiContext_ = nil;
+   __weak __block SCApiSession* apiContext_ = nil;
    //__block NSArray* test_items_ = nil;
    __block NSNumber* items_count_ = 0;
    
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
        {
            strongContext_ =
-           [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+           [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword
                                          version: SCWebApiV1 ];
            apiContext_ = strongContext_;
            apiContext_.defaultSite = @"/sitecore/shell";
           
-          SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+          SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
           request_.requestType = SCItemReaderRequestItemPath;
           request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
           request_.request     = SCHomePath;
@@ -109,7 +109,7 @@
           request_.fieldNames  = nil;
           request_.pageSize    = 2;
 
-          pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+          pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                         request: request_ ];
           [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
           {
@@ -154,16 +154,16 @@
 -(void)testPagedItemWithQueryWithoutFields
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSNumber* items_count_ = 0;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword
                                       version: SCWebApiV1 ];
@@ -171,13 +171,13 @@
         apiContext_.defaultSite = @"/sitecore/shell";
         
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.requestType = SCItemReaderRequestQuery;
         request_.request = @"/sitecore/content/home/descendant-or-self::*[@@templatename='Sample Item']";
         request_.fieldNames = [ NSSet set ];
         request_.pageSize = 2;
 
-        pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+        pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                       request: request_ ];
         if ( !pagedItems_ )
         {

@@ -4,9 +4,9 @@
 
 @implementation TestingRequestFactory
 
-+(SCItemsReaderRequest*)removeAllTestItemsFromWebAsSitecoreAdmin
++(SCReadItemsRequest*)removeAllTestItemsFromWebAsSitecoreAdmin
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
     request_.scope = SCItemReaderChildrenScope;
     request_.site = @"/sitecore/shell";
     request_.database = @"web";
@@ -18,13 +18,13 @@
 {
     void (^result)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        SCApiSession* context =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         
-        SCItemsReaderRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromWebAsSitecoreAdmin ];
-        [ context removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
+        SCReadItemsRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromWebAsSitecoreAdmin ];
+        [ context deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
         {
           didFinishCallback_();
         } );
@@ -33,9 +33,9 @@
     return result;
 }
 
-+(SCItemsReaderRequest*)removeAllTestItemsFromMasterAsSitecoreAdmin
++(SCReadItemsRequest*)removeAllTestItemsFromMasterAsSitecoreAdmin
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCCreateItemPath ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
     request_.scope = SCItemReaderChildrenScope;
     request_.site = @"/sitecore/shell";
     request_.database = @"master";
@@ -47,13 +47,13 @@
 {
     void (^result)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        SCApiSession* context =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         
-        SCItemsReaderRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromMasterAsSitecoreAdmin ];
-        [ context removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
+        SCReadItemsRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromMasterAsSitecoreAdmin ];
+        [ context deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
         {
           didFinishCallback_();
         } );
@@ -62,12 +62,12 @@
     return result;
 }
 
-+(CLEANUP_BLOCK)doRemoveAllTestItemsFromMasterForContext:( SCApiContext* )context
++(CLEANUP_BLOCK)doRemoveAllTestItemsFromMasterForContext:( SCApiSession* )context
 {
     void (^result)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromMasterAsSitecoreAdmin ];
-        [ context removeItemsWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
+        SCReadItemsRequest* item_request_ = [ TestingRequestFactory removeAllTestItemsFromMasterAsSitecoreAdmin ];
+        [ context deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
         {
             didFinishCallback_();
         } );
@@ -76,17 +76,17 @@
     return result;   
 }
 
-+(SCApiContext*)getNewAnonymousContext
++(SCApiSession*)getNewAnonymousContext
 {
-    SCApiContext* result = nil;
+    SCApiSession* result = nil;
     
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        result = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+        result = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
     }
     else
     {
-        result = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        result = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                  login: SCWebApiFakeAnonymousLogin
                                               password: SCWebApiFakeAnonymousPassword
                                                version: SCWebApiV1 ];
@@ -95,10 +95,10 @@
     return result;
 }
 
-+(SCApiContext*)getNewAdminContextWithShell
++(SCApiSession*)getNewAdminContextWithShell
 {
-    SCApiContext* result = nil;
-    result = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    SCApiSession* result = nil;
+    result = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                              login: SCWebApiAdminLogin
                                           password: SCWebApiAdminPassword
                                            version: SCWebApiV1 ];

@@ -8,7 +8,7 @@
 
 -(void)testCreateAndReadImageWithPAramsAndCacheDapendFromParams
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"web";
@@ -17,7 +17,7 @@
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaItem";
@@ -27,7 +27,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
 
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             media_item_ = item_;
             didFinishCallback_();
@@ -49,7 +49,7 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             
-            SCFieldImageParams *params = [ SCFieldImageParams new ];
+            SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.width = 10.f;
             params.height = 10.f;
             
@@ -75,7 +75,7 @@
         void (^read_block1_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             
-            SCFieldImageParams *params = [ SCFieldImageParams new ];
+            SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.width = 15.f;
             params.height = 15.f;
             
@@ -102,9 +102,9 @@
 
 -(void)testCreateAndReadImageWithScale
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
@@ -112,7 +112,7 @@
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaItem";
@@ -122,7 +122,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
           media_item_ = item_;
           didFinishCallback_();
@@ -144,7 +144,7 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             
-            SCFieldImageParams *params = [ SCFieldImageParams new ];
+            SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.scale = 2.f;
             
             [ apiContext_ imageLoaderForSCMediaPath: media_item_.path
@@ -169,9 +169,9 @@
 
 -(void)testCreateAndReadImageAsThumbnail
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                   login: SCWebApiAdminLogin
                                                password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
@@ -179,7 +179,7 @@
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaItem";
@@ -189,7 +189,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
           {
               media_item_ = item_;
               didFinishCallback_();
@@ -210,7 +210,7 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             
-            SCFieldImageParams *params = [ SCFieldImageParams new ];
+            SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.displayAsThumbnail = YES;
             
             [ apiContext_ imageLoaderForSCMediaPath: media_item_.path

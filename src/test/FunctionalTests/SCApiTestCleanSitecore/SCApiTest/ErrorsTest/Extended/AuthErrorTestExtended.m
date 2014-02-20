@@ -7,23 +7,23 @@
 
 -(void)testReadItemWithAuthWithWrongLoginPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: @"aaa"
                                                               password: @"bbb"
                                                                version: SCWebApiV1 ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
                 NSString* path_ = SCHidedPath;
                 
@@ -34,7 +34,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -59,21 +59,21 @@
 
 -(void)testReadItemWithAuthWithEmptyLoginPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_        = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
-            strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                              login: @""
                                                           password: @"" ];
             strongContext_.defaultDatabase = @"web";
             apiContext_ = strongContext_;
-            SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+            SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
             NSString* path_ = SCHidedPath;
             SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -83,7 +83,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                    itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         };
@@ -108,22 +108,22 @@
 
 -(void)testReadItemWithAuthWithInvalidLogin
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                                  login: @"yuQ^:`~%" 
                                                               password: @"" ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
                 
                 NSString* path_ = SCHidedPath;
                 SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -133,7 +133,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -159,22 +159,22 @@
 
 -(void)testReadItemWithAuthWithInvalidPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                                  login: @"test" 
                                                               password: @"yuQ^:`~%  " ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
                 
                 NSString* path_ = SCHidedPath;
                 SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -184,7 +184,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -210,22 +210,22 @@
 
 -(void)testReadItemWithAuthWithWrongPwd
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                                  login: @"test" 
                                                               password: @"_test" ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
                 NSString* path_ = SCHidedPath;
                 SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -235,7 +235,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -261,20 +261,20 @@
 
 -(void)testReadItemWithAuthWithoutAuth
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName ];
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
                 NSString* path_ = SCHomePath;
                 SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -284,7 +284,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -313,23 +313,23 @@
 
 -(void)testReadItemWithAuthWithRightLoginPwd_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
     __block SCApiError* item_error_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
             {
-                strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+                strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                  login: SCWebApiAdminLogin
                                                               password: SCWebApiAdminPassword ];
                 apiContext_ = strongContext_;
                 apiContext_.defaultSite = @"/sitecore/shell";
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
                 
                 NSString* path_ = SCHomePath;
                 SCDidFinishAsyncOperationHandler doneHandler = ^( SCItem* result_item_, NSError* error_ )
@@ -339,7 +339,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }

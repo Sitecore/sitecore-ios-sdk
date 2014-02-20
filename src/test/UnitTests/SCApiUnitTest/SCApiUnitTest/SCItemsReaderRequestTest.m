@@ -2,14 +2,14 @@
 #import <JFFNetwork/JFFNetwork.h>
 #import <SCApi/Api/NSURL+URLWithItemsReaderRequest.h>
 
-@interface SCItemsReaderRequestTest : GHTestCase
+@interface SCReadItemsRequestTest : GHTestCase
 @end
 
-@implementation SCItemsReaderRequestTest
+@implementation SCReadItemsRequestTest
 
 -(NSString*)scopeURLParamWithScope:( SCItemReaderScopeType )scope_
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.scope = scope_;
 
@@ -23,7 +23,7 @@
 
 -(NSString*)pathURLParamWithPath:( NSString* )path_
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.requestType = SCItemReaderRequestItemPath;
     request_.request = path_;
@@ -36,7 +36,7 @@
 
 -(NSString*)itemIdURLParamWithItemId:( NSString* )itemId_
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.requestType = SCItemReaderRequestItemId;
     request_.request = itemId_;
@@ -51,7 +51,7 @@
 
 -(NSString*)queryURLParamWithQuery:( NSString* )query_
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.requestType = SCItemReaderRequestQuery;
     request_.request     = query_;
@@ -142,7 +142,7 @@
 
 -(void)testURLWithItemsReaderRequestWithPath
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.request = @"/path";
     request_.scope = SCItemReaderChildrenScope;
@@ -231,7 +231,7 @@
 
 -(void)testURLReaderWithHttpInHost
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
     request_.request = @"/path";
     request_.requestType = SCItemReaderRequestItemPath;
     request_.scope = SCItemReaderChildrenScope;
@@ -264,7 +264,8 @@
 -(void)testURLWithCreateMediaItemRequest
 {
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         NSURL* url_ = [ NSURL URLToCreateMediaItemWithRequest: request_
                                                          host: @"host"
@@ -274,7 +275,7 @@
     }
 
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.folder = @"/1/";
     
@@ -286,7 +287,7 @@
     }
 
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.folder = @"1";
 
@@ -298,7 +299,7 @@
     }
 
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.folder = @"1/2/3";
         

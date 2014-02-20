@@ -13,8 +13,8 @@
 -(SCItem*)testReadItemSWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -24,7 +24,7 @@
 
         NSString* path_ = SCHomePath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -33,7 +33,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -55,11 +55,11 @@
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
     GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
-    NSLog( @"[ test_item_.allFieldsByName count ]: %d", [ test_item_.allFieldsByName count ]);
+    NSLog( @"[ test_item_.allFieldsByName count ]: %lu", (unsigned long)[ test_item_.allFieldsByName count ]);
     GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
     GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
 
-    SCExtendedApiContext* exContext = apiContext_.extendedApiContext;
+    SCExtendedApiSession* exContext = apiContext_.extendedApiSession;
     return [ exContext itemWithPath: @"/sitecore"
                          itemSource: [ exContext contextSource ] ];
 }
@@ -69,8 +69,8 @@
 -(SCItem*)testReadItemSWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -78,12 +78,12 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+        contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
         NSString* itemId_ = SCHomeID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
         {
@@ -91,7 +91,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -117,7 +117,7 @@
         GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
     }
 
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -126,8 +126,8 @@
 -(SCItem*)testReadItemSWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -138,7 +138,7 @@
         NSString* path_ = SCHomePath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
         {
@@ -146,7 +146,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -169,8 +169,8 @@
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
 
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -180,8 +180,8 @@
 -(SCItem*)testReadItemCWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_children_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -191,7 +191,7 @@
 
         NSString* path_ = SCHomePath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: SCItemReaderChildrenScope ];
         
@@ -201,7 +201,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     
     };
@@ -223,8 +223,8 @@
         GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -233,8 +233,8 @@
 -(SCItem*)testReadItemCWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* children_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -245,7 +245,7 @@
         NSString* itemId_   = SCHomeID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderChildrenScope ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -254,7 +254,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -273,8 +273,8 @@
         }
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -283,8 +283,8 @@
 -(SCItem*)testReadItemCWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-   __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+   __weak __block SCApiSession* apiContext_ = nil;
    __block NSArray* products_children_items_ = nil;
 
    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -295,7 +295,7 @@
       NSString* path_ = SCHomePath;
       NSSet* fieldsNames_ = [ NSSet new ];
 
-      SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+      SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderChildrenScope ];
        SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -304,7 +304,7 @@
            didFinishCallback_();
        };
        
-       SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+       SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
        loader(nil, nil, doneHandler);
    };
 
@@ -324,8 +324,8 @@
       }
    }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-   return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+   return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                              itemSource: contextSource ];
 }
 
@@ -335,8 +335,8 @@
 -(SCItem*)testReadItemPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -346,7 +346,7 @@
 
         NSString* path_ = SCAllowedParentPath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: SCItemReaderParentScope ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -355,7 +355,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -381,8 +381,8 @@
     GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
     GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -391,8 +391,8 @@
 -(SCItem*)testReadItemPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -403,7 +403,7 @@
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderParentScope ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -412,7 +412,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -438,8 +438,8 @@
         GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -448,8 +448,8 @@
 -(SCItem*)testReadItemPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -460,7 +460,7 @@
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: SCItemReaderParentScope ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -469,7 +469,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -493,8 +493,8 @@
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
 
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -504,8 +504,8 @@
 -(SCItem*)testReadItemSCWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -516,7 +516,7 @@
         NSString* path_ = SCHomePath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -525,7 +525,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -562,8 +562,8 @@
         GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -572,8 +572,8 @@
 -(SCItem*)testReadItemSCWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -585,7 +585,7 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -594,7 +594,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -628,8 +628,8 @@
         GHAssertTrue( item_.parent == test_item_, @"OK" );
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -638,8 +638,8 @@
 -(SCItem*)testReadItemSCWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -651,7 +651,7 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -660,7 +660,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -695,8 +695,8 @@
         }
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -707,8 +707,8 @@
 -(SCItem*)testReadItemSPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -719,7 +719,7 @@
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -728,7 +728,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -776,8 +776,8 @@
         GHAssertTrue( [ child_item_.allFieldsByName count ] == [ child_item_.readFieldsByName count ], @"OK" );
     }
     
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -787,8 +787,8 @@
 -(SCItem*)testReadItemSPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -796,13 +796,13 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ apiContext_.extendedApiContext contextSource ];
+        contextSource = [ apiContext_.extendedApiSession contextSource ];
 
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -811,7 +811,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -845,7 +845,7 @@
     //test self item
     {
         //STODO get item via property readChildren
-        SCItem* self_item_ = [ apiContext_.extendedApiContext itemWithPath: SCAllowedParentPath
+        SCItem* self_item_ = [ apiContext_.extendedApiSession itemWithPath: SCAllowedParentPath
                                                                 itemSource: contextSource ];
 
         GHAssertTrue( self_item_ != nil, @"OK" );
@@ -861,7 +861,7 @@
         // STODO: If Cache: allFieldsByName != nil
         GHAssertTrue( 1 <= [ self_item_.readFieldsByName count ], @"OK" );
     }
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -870,8 +870,8 @@
 -(SCItem*)testReadItemSPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -879,13 +879,13 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ apiContext_.extendedApiContext contextSource ];
+        contextSource = [ apiContext_.extendedApiSession contextSource ];
 
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderSelfScope | SCItemReaderParentScope );
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
         
@@ -895,7 +895,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -926,7 +926,7 @@
 
     //test self item
     {
-        SCItem* child_item_ = [ apiContext_.extendedApiContext itemWithPath: SCAllowedParentPath
+        SCItem* child_item_ = [ apiContext_.extendedApiSession itemWithPath: SCAllowedParentPath
                                                                  itemSource: contextSource ];
 
         GHAssertTrue( child_item_ != nil, @"OK" );
@@ -941,7 +941,7 @@
             GHAssertTrue( [ child_item_.readFieldsByName count ] == 0, @"OK" );
         }
     }
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -951,8 +951,8 @@
 -(SCItem*)testReadItemCPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -963,7 +963,7 @@
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderParentScope | SCItemReaderChildrenScope );
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
         
@@ -973,7 +973,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1004,7 +1004,7 @@
 
     //test childs
     {
-        NSLog( @"test_items_ count: %d", [ test_items_ count ] );
+        NSLog( @"test_items_ count: %lu", (unsigned long)[ test_items_ count ] );
         NSRange childrenRange = NSMakeRange( 1, [ test_items_ count ] - 1 );
         NSArray* children_ = [ test_items_ subarrayWithRange: childrenRange ];
         GHAssertTrue( 2 == [ children_ count ], @"OK" );
@@ -1020,8 +1020,8 @@
         }
     }
 
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1030,8 +1030,8 @@
 -(SCItem*)testReadItemCPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1043,7 +1043,7 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
         
@@ -1053,7 +1053,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1097,8 +1097,8 @@
         }
     }
 
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1107,8 +1107,8 @@
 -(SCItem*)testReadItemCPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1120,7 +1120,7 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
         
@@ -1130,7 +1130,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1172,8 +1172,8 @@
         }
     }
 
-    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiContext contextSource ];
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1183,8 +1183,8 @@
 -(SCItem*)testReadItemSCPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -1192,12 +1192,12 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ apiContext_.extendedApiContext contextSource ];
+        contextSource = [ apiContext_.extendedApiSession contextSource ];
 
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
         
@@ -1207,7 +1207,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1238,7 +1238,7 @@
 
     //test self with children item
     {
-        SCItem* self_item_ = [ apiContext_.extendedApiContext itemWithPath: SCAllowedParentPath
+        SCItem* self_item_ = [ apiContext_.extendedApiSession itemWithPath: SCAllowedParentPath
                                                                 itemSource: contextSource ];
 
         GHAssertTrue( self_item_ != nil, @"OK" );
@@ -1260,7 +1260,7 @@
             GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
         }
     }
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1269,8 +1269,8 @@
 -(SCItem*)testReadItemSCPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                            selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -1278,13 +1278,13 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ apiContext_.extendedApiContext contextSource ];
+        contextSource = [ apiContext_.extendedApiSession contextSource ];
         
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
         
@@ -1294,7 +1294,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1324,7 +1324,7 @@
 
     //test self with children item
     {
-        SCItem* self_item_ = [ apiContext_.extendedApiContext itemWithPath: SCAllowedParentPath
+        SCItem* self_item_ = [ apiContext_.extendedApiSession itemWithPath: SCAllowedParentPath
                                                                 itemSource: contextSource ];
 
         GHAssertTrue( self_item_ != nil, @"OK" );
@@ -1350,7 +1350,7 @@
             GHAssertTrue( 1 <= [ item_.readFieldsByName count ], @"OK" );
         }
     }
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1359,8 +1359,8 @@
 -(SCItem*)testReadItemSCPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
     __block SCItemSourcePOD* contextSource = nil;
 
@@ -1368,13 +1368,13 @@
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
-        contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+        contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
 
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
         
@@ -1384,7 +1384,7 @@
             didFinishCallback_();
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -1414,7 +1414,7 @@
 
     //test self with children item
     {
-        SCItem* self_item_ = [ apiContext_.extendedApiContext itemWithPath: SCAllowedParentPath
+        SCItem* self_item_ = [ apiContext_.extendedApiSession itemWithPath: SCAllowedParentPath
                                                                 itemSource: contextSource ];
 
         GHAssertTrue( self_item_ != nil, @"OK" );
@@ -1437,7 +1437,7 @@
             }
         }
     }
-    return [ apiContext_.extendedApiContext itemWithPath: @"/sitecore"
+    return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
 }
 
@@ -1593,7 +1593,7 @@
     {
         for ( NSUInteger j = 0; j != [ array_ count ]; ++j )
         {
-            NSLog( @"for: i=%d, j=%d", i, j );
+            NSLog( @"for: i=%lu, j=%lu", (unsigned long)i, (unsigned long)j );
             @autoreleasepool
             {
                 LensesBlock block1_ = array_[ i ];

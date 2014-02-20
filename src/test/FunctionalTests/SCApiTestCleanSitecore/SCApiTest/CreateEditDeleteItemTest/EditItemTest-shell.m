@@ -7,13 +7,13 @@
 
 -(void)testCreateAndEditItemInWeb_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -28,7 +28,7 @@
             request_.itemName     = @"Tweet Item";
             request_.itemTemplate = @"Common/Folder";
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 edited_item_ = result;
                 didFinishCallback_();
@@ -38,10 +38,10 @@
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
 
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] != 0 )
                 {
@@ -83,13 +83,13 @@
 
 -(void)testCreateAndEditItemInMaster_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -103,7 +103,7 @@
             request_.itemName     = @"Empty Item";
             request_.itemTemplate = @"Common/Folder";
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 edited_item_ = result;
                 didFinishCallback_();
@@ -113,10 +113,10 @@
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] != 0 )
                 {
@@ -141,11 +141,11 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
                 {
@@ -183,14 +183,14 @@
 
 -(void)testCreateAndEditSystemItemInWeb_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -205,7 +205,7 @@
             request_.itemName     = @"Language Item";
             request_.itemTemplate = @"System/Language";
 
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 edited_item_ = result;
                 didFinishCallback_();
@@ -215,10 +215,10 @@
         void (^editBlock_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
 
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] != 0 )
                 {
@@ -241,11 +241,11 @@
         void (^readBlock_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
 
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
                 {
@@ -283,12 +283,12 @@
 
 -(void)testCreateAndEditItemNotSave_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        SCApiContext* strongContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        SCApiSession* strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                                        login: SCWebApiAdminLogin
                                                                     password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -302,7 +302,7 @@
             request_.itemName     = @"Not Saved Item";
             request_.itemTemplate = @"Common/Folder";
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                                                              {
                                                                  edited_item_ = result;
                                                                  didFinishCallback_();
@@ -312,10 +312,10 @@
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] != 0 )
                 {
@@ -336,11 +336,11 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
                 {
@@ -379,13 +379,13 @@
 
 -(void)testCreateAndEditItemInCore_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -399,7 +399,7 @@
             request_.itemName     = @"Folder Item";
             request_.itemTemplate = @"Common/Folder";
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 edited_item_ = result;
                 didFinishCallback_();
@@ -409,10 +409,10 @@
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] != 0 )
                 {
@@ -456,15 +456,15 @@
 
 -(void)testCreateAndEditSeveralItemsAtOnce_Shell
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* edited_item_ = nil;
     __block NSUInteger items_count_ = 0;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ =
-        [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+        __block SCApiSession* strongContext_ =
+        [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                         login: SCWebApiAdminLogin
                                      password: SCWebApiAdminPassword ];
         apiContext_ = strongContext_;
@@ -479,13 +479,13 @@
             request_.itemName     = @"Several Items";
             request_.itemTemplate = @"System/Language";
             
-            [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
             {
                 edited_item_ = result;
                 request_.request = [ (SCItem*)result path ];
-                [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+                [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                 {
-                    [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result, NSError* error )
+                    [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
                     {
                         didFinishCallback_();
                     } );
@@ -496,10 +496,10 @@
         void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
             request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
                 {
@@ -535,11 +535,11 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: edited_item_.itemId
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
             request_.flags = SCItemReaderRequestIngnoreCache;
             request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
                 {

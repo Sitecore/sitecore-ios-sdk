@@ -8,25 +8,25 @@
 -(void)testPagedFieldValueReaderWrongField
 {
     __block SCPagedItems* pagedItems_;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* result_field_ = nil;
     __block SCApiError* field_error_ = nil;
 
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
 
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.requestType = SCItemReaderRequestItemPath;
         request_.request     = SCHomePath;
         request_.pageSize    = 2;
 
-        pagedItems_ = [ SCPagedItems pagedItemsWithApiContext: apiContext_
+        pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                       request: request_ ];
 
         SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
@@ -66,21 +66,21 @@
 
 -(void)testQueryFieldsReaderWrongFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_ = nil;
     __block NSDictionary* result_fields_ = nil;
     
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
         strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
         apiContext_ = strongContext_;
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.request = @"/sitecore/content/Home/descendant-or-self::*[@@templatename='Sample Item']";
         request_.requestType = SCItemReaderRequestQuery;
         request_.fieldNames = [ NSSet set ];
@@ -105,7 +105,7 @@
             
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -123,14 +123,14 @@
 
 -(void)testFieldsValuesReaderWrongFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* result_items_ = nil;
     __block NSDictionary* result_fields_ = nil;
 
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
 
@@ -138,7 +138,7 @@
         apiContext_ = strongContext_;
         
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: @"/sitecore/content/home"
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: @"/sitecore/content/home"
                                                                         fieldsNames: [ NSSet new ] ];
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* result_, NSError* error_ )
         {
@@ -160,7 +160,7 @@
             
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
         loader(nil, nil, doneHandler);
     };
 
@@ -178,14 +178,14 @@
 
 -(void)testFieldValueReaderWrongFieldName 
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_   = nil;
     __block SCField* field_ = nil;
     __block NSDictionary* fields_result_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -193,7 +193,7 @@
 
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
-                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiContext contextSource ] copy ];
+                SCItemSourcePOD* contextSource = [ [ apiContext_.extendedApiSession contextSource ] copy ];
                         
                 SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
                 {
@@ -216,7 +216,7 @@
                 };
 
                 SCExtendedAsyncOp loader =
-                [ apiContext_.extendedApiContext itemReaderForItemPath:  SCHomePath
+                [ apiContext_.extendedApiSession itemReaderForItemPath:  SCHomePath
                                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }

@@ -13,8 +13,8 @@
 -(SCItem*)testReadItemSWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -24,9 +24,9 @@
 
         NSString* path_ = SCHomePath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -51,7 +51,7 @@
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
     GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
-    NSLog( @"[ test_item_.allFieldsByName count ]: %d", [ test_item_.allFieldsByName count ]);
+
     GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
     GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
 
@@ -63,8 +63,8 @@
 -(SCItem*)testReadItemSWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -75,9 +75,9 @@
         NSString* itemId_ = SCHomeID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -113,8 +113,8 @@
 -(SCItem*)testReadItemSWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -125,9 +125,9 @@
         NSString* path_ = SCHomePath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -162,8 +162,8 @@
 -(SCItem*)testReadItemCWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* products_children_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -173,10 +173,10 @@
 
         NSString* path_ = SCHomePath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: SCItemReaderChildrenScope ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             products_children_items_ = items_;
             didFinishCallback_();
@@ -207,8 +207,8 @@
 -(SCItem*)testReadItemCWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* children_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -219,10 +219,10 @@
         NSString* itemId_   = SCHomeID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderChildrenScope ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             children_items_ = items_;
             didFinishCallback_();
@@ -251,8 +251,8 @@
 -(SCItem*)testReadItemCWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-   __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+   __weak __block SCApiSession* apiContext_ = nil;
    __block NSArray* products_children_items_ = nil;
 
    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -263,10 +263,10 @@
       NSString* path_ = SCHomePath;
       NSSet* fieldsNames_ = [ NSSet new ];
 
-      SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+      SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderChildrenScope ];
-      [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+      [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
       {
          products_children_items_ = items_;
          didFinishCallback_();
@@ -297,8 +297,8 @@
 -(SCItem*)testReadItemPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -308,10 +308,10 @@
 
         NSString* path_ = SCAllowedParentPath;
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: SCItemReaderParentScope ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -347,8 +347,8 @@
 -(SCItem*)testReadItemPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -359,10 +359,10 @@
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: SCItemReaderParentScope ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -398,8 +398,8 @@
 -(SCItem*)testReadItemPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                        selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -410,10 +410,10 @@
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: SCItemReaderParentScope ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -449,8 +449,8 @@
 -(SCItem*)testReadItemSCWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -461,10 +461,10 @@
         NSString* path_ = SCHomePath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -511,8 +511,8 @@
 -(SCItem*)testReadItemSCWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -524,10 +524,10 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -571,8 +571,8 @@
 -(SCItem*)testReadItemSCWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -584,10 +584,10 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -634,8 +634,8 @@
 -(SCItem*)testReadItemSPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -646,10 +646,10 @@
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -708,8 +708,8 @@
 -(SCItem*)testReadItemSPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -721,10 +721,10 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -784,8 +784,8 @@
 -(SCItem*)testReadItemSPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -797,10 +797,10 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderSelfScope | SCItemReaderParentScope );
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -857,8 +857,8 @@
 -(SCItem*)testReadItemCPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -869,10 +869,10 @@
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderParentScope | SCItemReaderChildrenScope );
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -906,7 +906,6 @@
 
     //test childs
     {
-        NSLog( @"test_items_ count: %d", [ test_items_ count ] );
         NSRange childrenRange = NSMakeRange( 1, [ test_items_ count ] - 1 );
         NSArray* children_ = [ test_items_ subarrayWithRange: childrenRange ];
         GHAssertTrue( 2 == [ children_ count ], @"OK" );
@@ -930,8 +929,8 @@
 -(SCItem*)testReadItemCPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -943,10 +942,10 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -1001,8 +1000,8 @@
 -(SCItem*)testReadItemCPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                         selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1014,10 +1013,10 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -1071,8 +1070,8 @@
 -(SCItem*)testReadItemSCPWithAllFieldsWithRootItem:( SCItem* )rootItem_
                                           selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1083,10 +1082,10 @@
         NSString* path_ = SCAllowedParentPath;
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -1149,8 +1148,8 @@
 -(SCItem*)testReadItemSCPWithSomeFieldsWithRootItem:( SCItem* )rootItem_
                                            selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1162,10 +1161,10 @@
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -1231,8 +1230,8 @@
 -(SCItem*)testReadItemSCPWithNoFieldsWithRootItem:( SCItem* )rootItem_
                                          selector:( SEL )selector_
 {
-    __block SCApiContext* strongContext_  = nil;
-    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCApiSession* strongContext_  = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* test_items_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -1244,10 +1243,10 @@
         NSSet* fieldsNames_ = [ NSSet new ];
 
         SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
-        SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+        SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
-        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
+        [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
             didFinishCallback_();
@@ -1457,7 +1456,7 @@
     {
         for ( NSUInteger j = 0; j != [ array_ count ]; ++j )
         {
-            NSLog( @"for: i=%d, j=%d", i, j );
+            NSLog( @"for: i=%lu, j=%lu", (unsigned long)i, (unsigned long)j );
             @autoreleasepool
             {
                 LensesBlock block1_ = array_[ i ];

@@ -7,23 +7,23 @@
 
 -(void)testReadItemSWithSomeFields
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block NSArray* items_         = nil;
 
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
             NSSet* field_names_ = [ NSSet setWithObjects: @"Normal Text", nil];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCTestFieldsItemPath
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCTestFieldsItemPath
                                                                             fieldsNames: field_names_ ];
             request_.flags = SCItemReaderRequestReadFieldsValues;
-            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
+            [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
                 items_ = result_items_;
                 didFinishCallback_();

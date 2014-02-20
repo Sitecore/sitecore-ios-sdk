@@ -7,12 +7,12 @@
 
 -(void)testContextWrongDefaultLanguage
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
  
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
         void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             @autoreleasepool
@@ -25,7 +25,7 @@
                 apiContext_.defaultLanguage = @"fr";
                 NSString* path_ = SCLanguageItemPath;
                 NSSet* fieldNames_ = [ NSSet setWithObject: @"Title" ];
-                SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                                 fieldsNames: fieldNames_ ];
 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* da_result_, NSError* error_ )
@@ -40,7 +40,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
                 loader(nil, nil, doneHandler);
             }
         };
@@ -58,13 +58,13 @@
 
 -(void)testWrongRequestLanguage
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* da_item_ = nil;
     __block SCItem* default_item_ = nil;
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         @autoreleasepool
@@ -74,7 +74,7 @@
             apiContext_ = strongContext_;
             
             NSSet* fields_ = [ NSSet setWithObject: @"Title" ];
-            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: SCLanguageItemPath
+            SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
                                                                             fieldsNames: fields_ ];
             request_.language = @"xx";
             apiContext_.defaultLanguage = @"da";
@@ -89,7 +89,7 @@
                 da_item_ = da_result_[ 0 ];
                 request_.language = nil;
                 apiContext_.defaultLanguage = nil;
-                [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
+                [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
                  {
                      if ( [ default_result_ count ] == 0 )
                      {
@@ -102,7 +102,7 @@
                  } );
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -129,7 +129,7 @@
 
 -(void)testLanguageReadNotExistedItems
 {
-    __weak __block SCApiContext* apiContext_ = nil;
+    __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* base_item_ = nil;
     __block NSSet* field_names_ = [ NSSet setWithObjects: @"Title", nil ];
  
@@ -142,7 +142,7 @@
     
     @autoreleasepool
     {
-        __block SCApiContext* strongContext_ = nil;
+        __block SCApiSession* strongContext_ = nil;
      void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
      {
          @autoreleasepool
@@ -151,7 +151,7 @@
              strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
              apiContext_ = strongContext_;
              
-             SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
              request_.requestType = SCItemReaderRequestQuery;
              request_.request = SCHomePath;
              request_.language = @"da";
@@ -159,14 +159,14 @@
                           
              SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* da_result_, NSError* error_ )
              {
-                 base_item_ = [ apiContext_.extendedApiContext itemWithPath: SCHomePath
+                 base_item_ = [ apiContext_.extendedApiSession itemWithPath: SCHomePath
                                                                  itemSource: webShellDanish ];
                  NSLog( @"base_item_.field: %@", [ [ base_item_ fieldWithName: @"Title" ] rawValue ]);
                  
                  didFinishCallback_();
              };
              
-             SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext itemsReaderWithRequest: request_ ];
+             SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: request_ ];
              loader(nil, nil, doneHandler);
          }
      };

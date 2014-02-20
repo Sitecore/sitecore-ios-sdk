@@ -3,7 +3,7 @@
 
 @implementation ExtranetAdminAuthTest
 {
-    SCApiContext* _context;
+    SCApiSession* _context;
 }
 
 
@@ -12,7 +12,7 @@
     [ super setUp ];
     
     self->_context =
-    [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
+    [ [ SCApiSession alloc ] initWithHost: SCWebApiHostWithAuthRequest
                                     login: SCExtranetAdminLogin
                                  password: SCExtranetAdminPassword
                                   version: SCWebApiMaxSupportedVersion ];
@@ -28,7 +28,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_context credentialsCheckerForSite: nil ];
+    SCAsyncOp authOp = [ self->_context checkCredentialsOperationForSite: nil ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -56,7 +56,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_context credentialsCheckerForSite: SCSitecoreShellSite ];
+    SCAsyncOp authOp = [ self->_context checkCredentialsOperationForSite: SCSitecoreShellSite ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -74,6 +74,7 @@
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
     
+    //FIXME: extranet\adminex user shouldn's have access to sitecore domain
     // @adk - same behaviour for both anonymous access modes
     GHAssertNil( result, @"[auth failed] : unexpected result" );
     GHAssertNotNil( error, @"[auth failed] : error expected" );

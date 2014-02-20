@@ -3,11 +3,11 @@
 
 @implementation BadCredentialsAuthTest
 {
-    SCApiContext* _extranetUserContext;
-    SCApiContext* _extranetAdminContext;
+    SCApiSession* _extranetUserContext;
+    SCApiSession* _extranetAdminContext;
     
-    SCApiContext* _shellUserContext;
-    SCApiContext* _shellAdminContext;
+    SCApiSession* _shellUserContext;
+    SCApiSession* _shellAdminContext;
 }
 
 
@@ -16,26 +16,26 @@
     [ super setUp ];
     
     self->_shellUserContext =
-    [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
+    [ [ SCApiSession alloc ] initWithHost: SCWebApiHostWithAuthRequest
                                     login: SCWebApiCreatorLogin
                                  password: @"xyz"
                                   version: SCWebApiMaxSupportedVersion ];
 
     self->_shellAdminContext =
-    [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
+    [ [ SCApiSession alloc ] initWithHost: SCWebApiHostWithAuthRequest
                                     login: SCWebApiAdminLogin
                                  password: @"xyz"
                                   version: SCWebApiMaxSupportedVersion ];
 
     
     self->_extranetAdminContext =
-    [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
+    [ [ SCApiSession alloc ] initWithHost: SCWebApiHostWithAuthRequest
                                     login: SCExtranetAdminLogin
                                  password: @"xyz"
                                   version: SCWebApiMaxSupportedVersion ];
     
     self->_extranetUserContext =
-    [ [ SCApiContext alloc ] initWithHost: SCWebApiHostWithAuthRequest
+    [ [ SCApiSession alloc ] initWithHost: SCWebApiHostWithAuthRequest
                                     login: SCWebApiNoAccessLogin
                                  password: @"xyz"
                                   version: SCWebApiMaxSupportedVersion ];
@@ -55,7 +55,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_extranetUserContext credentialsCheckerForSite: nil ];
+    SCAsyncOp authOp = [ self->_extranetUserContext checkCredentialsOperationForSite: nil ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -88,7 +88,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_extranetUserContext credentialsCheckerForSite: SCSitecoreShellSite ];
+    SCAsyncOp authOp = [ self->_extranetUserContext checkCredentialsOperationForSite: SCSitecoreShellSite ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -121,7 +121,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_extranetAdminContext credentialsCheckerForSite: nil ];
+    SCAsyncOp authOp = [ self->_extranetAdminContext checkCredentialsOperationForSite: nil ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -154,7 +154,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_extranetAdminContext credentialsCheckerForSite: SCSitecoreShellSite ];
+    SCAsyncOp authOp = [ self->_extranetAdminContext checkCredentialsOperationForSite: SCSitecoreShellSite ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -187,7 +187,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_shellUserContext credentialsCheckerForSite: nil ];
+    SCAsyncOp authOp = [ self->_shellUserContext checkCredentialsOperationForSite: nil ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -220,7 +220,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_shellUserContext credentialsCheckerForSite: SCSitecoreShellSite ];
+    SCAsyncOp authOp = [ self->_shellUserContext checkCredentialsOperationForSite: SCSitecoreShellSite ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -253,7 +253,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_shellAdminContext credentialsCheckerForSite: nil ];
+    SCAsyncOp authOp = [ self->_shellAdminContext checkCredentialsOperationForSite: nil ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -286,7 +286,7 @@
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
-    SCAsyncOp authOp = [ self->_shellAdminContext credentialsCheckerForSite: SCSitecoreShellSite ];
+    SCAsyncOp authOp = [ self->_shellAdminContext checkCredentialsOperationForSite: SCSitecoreShellSite ];
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {

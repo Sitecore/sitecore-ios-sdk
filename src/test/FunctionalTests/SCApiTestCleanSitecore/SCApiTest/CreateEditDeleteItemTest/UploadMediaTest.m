@@ -9,10 +9,10 @@
 
 -(void)testCreateMediaItemInWeb
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                                   login: SCExtranetAdminLogin
                                                password: SCExtranetAdminPassword ];
     apiContext_.defaultDatabase = @"web";
@@ -20,7 +20,7 @@
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaItem";
@@ -30,7 +30,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
 
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             createError = error_;
             media_item_ = item_;
@@ -41,9 +41,9 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -74,17 +74,17 @@
 
 -(void)testCreateMediaItemWithFields
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
 
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
 
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestMediaWithFields";
@@ -94,7 +94,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
 
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             createError = error_;
             
@@ -121,10 +121,10 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", @"media", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -164,6 +164,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( media_item_, @"item should not be read" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
@@ -175,14 +176,14 @@
 
 -(void)testCreateAndEditMediaItem
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
     apiContext_.defaultDatabase = @"master";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestAndEditMedia";
@@ -193,7 +194,7 @@
         request_.folder        = SCCreateMediaFolder;
         request_.site = @"/sitecore/shell";
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             media_item_ = item_;
             GHAssertTrue(media_item_ != nil, @"item should be created");
@@ -207,10 +208,10 @@
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -237,10 +238,10 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemId: media_item_.itemId 
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
         item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -279,18 +280,18 @@
 
 -(void)testCreateNotMediaItemInWeb
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
     
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestNotAMediaItem";
@@ -300,7 +301,7 @@
         request_.contentType   = @"file";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             createError = error_;
             media_item_ = item_;
@@ -311,9 +312,9 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -344,6 +345,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( media_item_, @"item should not be read" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
@@ -355,18 +357,18 @@
 
 -(void)testCreateMediaItemInCore
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
     
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"core";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestCoreMediaItem";
@@ -376,7 +378,7 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
             createError = error_;
             media_item_ = item_;
@@ -387,9 +389,9 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -419,6 +421,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( media_item_, @"item should not be read" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
@@ -430,19 +433,19 @@
 
 -(void)testCreateSeveralMediaItems
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
     __block NSError* createError = nil;
     
     
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName 
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName 
                                            login: SCWebApiAdminLogin
                                         password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"File name (Alt)";
         request_.itemName      = @"TestSeveralMediaItems";
@@ -452,11 +455,11 @@
         request_.contentType   = @"image/png";
         request_.folder        = SCCreateMediaFolder;
         
-        [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+        [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
         {
-            [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+            [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
             {
-                [ apiContext_ mediaItemCreatorWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
+                [ apiContext_ uploadMediaOperationWithRequest: request_ ]( ^( SCItem* item_, NSError* error_ )
                 {
                     createError = error_;
                     media_item_ = item_;
@@ -469,9 +472,9 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCItemsReaderRequest* item_request_ = [ SCItemsReaderRequest requestWithItemPath: media_item_.path ];
+        SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
         item_request_.flags = SCItemReaderRequestIngnoreCache;
-        [ apiContext_ itemsReaderWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
+        [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
             {
@@ -502,6 +505,7 @@
     }
     else
     {
+        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
         GHAssertNil( media_item_, @"item should not be read" );
         
         GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );

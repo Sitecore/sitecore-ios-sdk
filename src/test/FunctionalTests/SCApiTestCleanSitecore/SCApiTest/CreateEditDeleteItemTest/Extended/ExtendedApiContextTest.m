@@ -1,22 +1,22 @@
 #import "SCAsyncTestCase.h"
 
-@interface ExtendedApiContextTest : SCAsyncTestCase
+@interface ExtendedApiSessionTest : SCAsyncTestCase
 @end
 
-@implementation ExtendedApiContextTest
+@implementation ExtendedApiSessionTest
 
 -(void)testCreateItem
 {
-    __block SCApiContext* apiContext_;
+    __block SCApiSession* apiContext_;
     __block SCItem* media_item_ = nil;
-    apiContext_ = [ [ SCApiContext alloc ] initWithHost: SCWebApiHostName
+    apiContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
                                                           login: SCWebApiAdminLogin
                                                        password: SCWebApiAdminPassword ];
     apiContext_.defaultDatabase = @"web";
     
     void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
         request_.fileName      = @"large_image.jpg";
         request_.itemName      = @"TestMediaItem";
@@ -44,7 +44,7 @@
                 NSLog(@"-=== progress: %.2f%%", (progressInfo.progress.floatValue * 100));
         };
         
-        SCExtendedAsyncOp loader = [ apiContext_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
         
         SCCancelAsyncOperation cancelOperation = loader ( progressCallback, cancelCallback, doneCallback );
 
