@@ -1,5 +1,6 @@
 
 /todo1.txt
 ._*
+*.xccheckout
 /src/deploymen
 build
