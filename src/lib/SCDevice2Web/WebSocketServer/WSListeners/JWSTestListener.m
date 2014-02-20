@@ -4,7 +4,7 @@
 
 @implementation JWSTestListener
 {
-    JFFScheduler* _scheduler;
+    JFFTimer* _scheduler;
 }
 
 +(NSString*)requestURLPath
@@ -16,7 +16,7 @@
 {
     [ super didOpen ];
 
-    _scheduler = [ JFFScheduler new ];
+    _scheduler = [ JFFTimer new ];
     __weak JWSTestListener* self_ = self;
     [ _scheduler addBlock: ^void( JFFCancelScheduledBlock cancel_ )
     {

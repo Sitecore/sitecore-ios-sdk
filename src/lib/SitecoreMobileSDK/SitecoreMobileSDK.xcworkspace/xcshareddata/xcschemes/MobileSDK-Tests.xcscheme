@@ -16,8 +16,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE444A1B1608609100DD85B0"
-               BuildableName = "JFFUtilsTest.octest"
+               BlueprintIdentifier = "7E8EE28B18646C8F000A3B34"
+               BuildableName = "JFFUtilsTest.xctest"
                BlueprintName = "JFFUtilsTest"
                ReferencedContainer = "container:../../lib-third-party/JFFLibrary/lib/JFFUtils/JFFUtils.xcodeproj">
             </BuildableReference>

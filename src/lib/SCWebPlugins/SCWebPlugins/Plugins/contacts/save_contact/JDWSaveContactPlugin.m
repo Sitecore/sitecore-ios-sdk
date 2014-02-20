@@ -171,7 +171,7 @@
     _popover = nil;
 
     // @adk - a nasty threading issue.
-    [ [ JFFScheduler sharedByThreadScheduler ] addBlock: ^( JFFCancelScheduledBlock cancel_ )
+    [ [ JFFTimer sharedByThreadTimer ] addBlock: ^( JFFCancelScheduledBlock cancel_ )
     {
         _navigationController = nil;
     } duration: 0.2 ];

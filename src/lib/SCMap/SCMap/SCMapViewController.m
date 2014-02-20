@@ -19,7 +19,7 @@ static void(^presentControllerHandler_)( SCMapViewController* );
 @implementation SCMapViewController
 {
     UIToolbar* _toolBar;
-    JFFScheduler* _scheduler;
+    JFFTimer* _timer;
     __weak SCGestureRecognizer* _recognizer;
     
     Class _MKMapCameraClass;
@@ -175,8 +175,8 @@ static void(^presentControllerHandler_)( SCMapViewController* );
         } ];
     };
 
-    _scheduler = [ JFFScheduler new ];
-    [ _scheduler addBlock: hideAnimationBlock_ duration: 3 ];
+    _timer = [ JFFTimer new ];
+    [ _timer addBlock: hideAnimationBlock_ duration: 3 ];
 }
 
 -(void)hideMapViewController

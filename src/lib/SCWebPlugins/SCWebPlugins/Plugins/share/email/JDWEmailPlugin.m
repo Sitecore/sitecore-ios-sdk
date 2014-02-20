@@ -109,7 +109,7 @@
     {
         self->_emailController = nil;
     };
-    [ [ JFFScheduler sharedByThreadScheduler ] addBlock: actionBlock_ duration: 0.2 ];
+    [ [ JFFTimer sharedByThreadTimer ] addBlock: actionBlock_ duration: 0.2 ];
 }
 
 -(void)didOpenInWebView:( UIWebView* )webView_
