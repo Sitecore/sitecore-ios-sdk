@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCCacheSettings;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @interface SCPersistentStorageBuilder : NSObject< SCItemRecordStorageBuilder >
 
@@ -10,6 +10,6 @@
                                settings:( SCCacheSettings* )settings;
 
 
-@property ( nonatomic, weak ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, weak ) SCExtendedApiSession* apiSession;
 
 @end

@@ -1,6 +1,6 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface ItemRecordStorageTest : SenTestCase
+@interface ItemRecordStorageTest : XCTestCase
 @end
 
 @implementation ItemRecordStorageTest
@@ -93,7 +93,7 @@
     {
         SCFieldRecord* parsedField = [ SCFieldRecord fieldRecordWithJson: fieldDataJson
                                                                  fieldId: fieldId
-                                                              apiContext: nil ];
+                                                              apiSession: nil ];
 
         self->_homeFields[ parsedField.name ] = parsedField;
     }];
@@ -136,13 +136,13 @@
 #pragma mark Constructors
 -(void)testInMemoryStorageRejectsInit
 {
-    STAssertThrows( [ SCInMemoryRecordStorage new ], @"assert expected" );
+    XCTAssertThrows( [ SCInMemoryRecordStorage new ], @"assert expected" );
 }
 
 -(void)testInMemoryStorageRemembersSource
 {
-    STAssertEqualObjects( self->_storage.itemSource, self->_itemSource, @"item source mismatch" );
-    STAssertTrue( self->_storage.itemSource == self->_itemSource, @"item source mismatch" );
+    XCTAssertEqualObjects( self->_storage.itemSource, self->_itemSource, @"item source mismatch" );
+    XCTAssertTrue( self->_storage.itemSource == self->_itemSource, @"item source mismatch" );
 }
 
 #pragma mark -
@@ -154,9 +154,9 @@
     self->_storage.storage = mockStorage;
     [ self->_storage cleanup ];
     
-    STAssertFalse( [ self->_storage.storage isEqual: mockStorage ], @"storage not dropped" );
-    STAssertNotNil( self->_storage.storage, @"dropped storage must not be nil" );
-    STAssertTrue( 0 == [ self->_storage.storage count ], @"dropped storage must be empty" );
+    XCTAssertFalse( [ self->_storage.storage isEqual: mockStorage ], @"storage not dropped" );
+    XCTAssertNotNil( self->_storage.storage, @"dropped storage must not be nil" );
+    XCTAssertTrue( 0 == [ self->_storage.storage count ], @"dropped storage must be empty" );
 }
 
 
@@ -171,7 +171,7 @@
     
     NSString* key = [ record.itemId copy ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage registerItem: nil
               withAllFieldsInCache: NO
@@ -181,7 +181,7 @@
     );
 
 
-    STAssertThrows
+    XCTAssertThrows
     (
          [ self->_storage registerItem: record
                   withAllFieldsInCache: NO
@@ -206,16 +206,16 @@
                            forKey: key ];
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-    STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+    XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
     
     SCItemAndFields* entity = [ self->_storage getStoredEntityForItemKey: key ];
-    STAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
-    STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
-    STAssertNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
+    XCTAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
+    XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+    XCTAssertNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
     
     SCFieldRecord* mockField = [self->_storage fieldWithName: @"1"
                                                      itemKey: key ];
-    STAssertNil( mockField, @"no fields expected" );
+    XCTAssertNil( mockField, @"no fields expected" );
 }
 
 -(void)testRegisterItemSetsSourceOfTheCache
@@ -233,9 +233,9 @@
                            forKey: key ];
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-    STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+    XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
 
-    STAssertTrue( record.itemSource == self->_itemSource, @"source object address mismatch" );
+    XCTAssertTrue( record.itemSource == self->_itemSource, @"source object address mismatch" );
 }
 
 -(void)testRegisterItemRejectsItemsWithDifferentSource
@@ -247,7 +247,7 @@
     
     NSString* key = [ record.itemId copy ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
         [ self->_storage registerItem: record
                  withAllFieldsInCache: NO
@@ -275,18 +275,18 @@
                                forKey: key ];
         
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-        STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+        XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
         
 
         NSDictionary* fields = [ self->_storage allFieldsByNameForItemKey: key ];
-        STAssertNil( fields, @"all fields must not be available yet" );
+        XCTAssertNil( fields, @"all fields must not be available yet" );
         
         
         
         SCFieldRecord* mockField = [self->_storage fieldWithName: @"1"
                                                          itemKey: key ];
-        STAssertNotNil( mockField, @"no fields expected" );
-        STAssertTrue( [ @"1" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
+        XCTAssertNotNil( mockField, @"no fields expected" );
+        XCTAssertTrue( [ @"1" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
     }
 
     
@@ -305,21 +305,21 @@
                                forKey: key ];
         
         SCItemAndFields* entity = [ self->_storage getStoredEntityForItemKey: key ];
-        STAssertTrue( entity.cachedItemRecord == freshRecord, @"cached record mismatch" );
-        STAssertTrue( entity.isAllFieldItemsCached, @"fields flag mismatch" );
-        STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+        XCTAssertTrue( entity.cachedItemRecord == freshRecord, @"cached record mismatch" );
+        XCTAssertTrue( entity.isAllFieldItemsCached, @"fields flag mismatch" );
+        XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
         
-        STAssertTrue( mockFields == entity.cachedItemFieldsByName, @"fields mismatch" );
-        STAssertEqualObjects( mockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
+        XCTAssertTrue( mockFields == entity.cachedItemFieldsByName, @"fields mismatch" );
+        XCTAssertEqualObjects( mockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
         
         SCFieldRecord* mockField = [ self->_storage fieldWithName: @"2"
                                                           itemKey: key ];
-        STAssertNotNil( mockField, @"no fields expected" );
-        STAssertTrue( [ @"2" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
+        XCTAssertNotNil( mockField, @"no fields expected" );
+        XCTAssertTrue( [ @"2" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
         
         mockField = [ self->_storage fieldWithName: @"3"
                                            itemKey: key ];
-        STAssertTrue( [ @"3" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
+        XCTAssertTrue( [ @"3" isEqualToString: (NSString*)mockField ], @"mock field mismatch" );
     }
 }
 
@@ -343,11 +343,11 @@
                                forKey: key ];
         
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-        STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+        XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
         
         
         NSDictionary* fields = [ self->_storage allFieldsByNameForItemKey: key ];
-        STAssertNil( fields, @"all fields must not be available yet" );
+        XCTAssertNil( fields, @"all fields must not be available yet" );
     }
     
     
@@ -367,8 +367,8 @@
                                forKey: key ];
         
         SCItemAndFields* entity = [ self->_storage getStoredEntityForItemKey: key ];
-        STAssertTrue( entity.cachedItemRecord == freshRecord, @"cached record mismatch" );
-        STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+        XCTAssertTrue( entity.cachedItemRecord == freshRecord, @"cached record mismatch" );
+        XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
         
         NSDictionary* expectedMockFields =
         @{
@@ -378,8 +378,8 @@
           @"3333" : @"3"
         };
         
-        STAssertEqualObjects( expectedMockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
-        STAssertEqualObjects( expectedMockFields, freshRecord.fieldsByName, @"fields mismatch" );
+        XCTAssertEqualObjects( expectedMockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
+        XCTAssertEqualObjects( expectedMockFields, freshRecord.fieldsByName, @"fields mismatch" );
     }
 }
 
@@ -416,11 +416,11 @@
     
     [ self->_storage unregisterItemForKey: @"{1111}" ];
     {
-        STAssertTrue( 1 == [ self->_storage.storage count ], @"cached items mismatch" );
+        XCTAssertTrue( 1 == [ self->_storage.storage count ], @"cached items mismatch" );
         SCItemAndFields* entity = [ [ self->_storage.storage allValues ] lastObject ];
 
-        STAssertTrue( entity.cachedItemRecord == otherRecord, @"remaining record mismatch" );
-        STAssertEqualObjects( entity.cachedItemRecord.itemId, @"{2222}", @"remaining id mismatch" );
+        XCTAssertTrue( entity.cachedItemRecord == otherRecord, @"remaining record mismatch" );
+        XCTAssertEqualObjects( entity.cachedItemRecord.itemId, @"{2222}", @"remaining id mismatch" );
     }
 }
 
@@ -441,19 +441,19 @@
                                forKey: key ];
     }
     
-    STAssertThrows
+    XCTAssertThrows
     (
        [ self->_storage unregisterItemForKey: nil ],
        @"assert expected"
     );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage itemRecordForItemKey: nil ],
      @"assert expected"
     );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage fieldWithName: @"achtung"
                             itemKey: nil ],
@@ -461,7 +461,7 @@
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage fieldWithName: nil
                             itemKey: @"hola" ],
@@ -469,13 +469,13 @@
      );
     
 
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage cachedFieldsByNameForItemKey: nil ],
      @"assert expected"
      );
 
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage allFieldsByNameForItemKey: nil ],
      @"assert expected"
@@ -508,18 +508,18 @@
            withAllChildrenInCache: NO
                            forKey: upperCaseRecord.path ];
     
-    STAssertTrue( [ self->_storage.storage count ] == 1, @"count mismatch" );
+    XCTAssertTrue( [ self->_storage.storage count ] == 1, @"count mismatch" );
     
     SCItemAndFields* entity = [ [self->_storage.storage allValues ] lastObject ];
-    STAssertEqualObjects( entity.cachedItemRecord.itemId, @"{UPPER case}", @"cached id mismatch" );
+    XCTAssertEqualObjects( entity.cachedItemRecord.itemId, @"{UPPER case}", @"cached id mismatch" );
     
     NSString* entityKey = [ [ self->_storage.storage allKeys ] lastObject ];
-    STAssertEqualObjects( @"/sitecore/content/home", entityKey, @"key mismatch" );
+    XCTAssertEqualObjects( @"/sitecore/content/home", entityKey, @"key mismatch" );
     
     
     SCItemRecord* result = [ self->_storage itemRecordForItemKey: @"/sitecore/CONTENT/home" ];
-    STAssertNotNil( result, @"record from cache is nil" );
-    STAssertEqualObjects( result.itemId, @"{UPPER case}", @"cached id mismatch" );
+    XCTAssertNotNil( result, @"record from cache is nil" );
+    XCTAssertEqualObjects( result.itemId, @"{UPPER case}", @"cached id mismatch" );
 }
 
 #pragma mark -
@@ -556,13 +556,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_sitecoreContent.itemId
                                              searchProperty: _idGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_sitecoreContent.itemId
                                                 searchProperty: _idGetterBlock ];
-            STAssertTrue( 1 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 1 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -571,13 +571,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_homeRecord.itemId
                                              searchProperty: _idGetterBlock ];
-            STAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_homeRecord.itemId
                                                 searchProperty: _idGetterBlock ];
-            STAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
         }
     }
 
@@ -586,15 +586,15 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_record.itemId
                                              searchProperty: _idGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_record.itemId
                                                 searchProperty: _idGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -603,14 +603,14 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_otherRecord.itemId
                                              searchProperty: _idGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_otherRecord.itemId
                                                 searchProperty: _idGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
     }
 
@@ -618,13 +618,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: @"trololo"
                                              searchProperty: _idGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: @"trololo"
                                                 searchProperty: _idGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
     }
 }
@@ -661,13 +661,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_sitecoreContent.path
                                              searchProperty: _pathGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_sitecoreContent.path
                                                 searchProperty: _pathGetterBlock ];
-            STAssertTrue( 1 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 1 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -676,13 +676,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_homeRecord.path
                                              searchProperty: _pathGetterBlock ];
-            STAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_homeRecord.path
                                                 searchProperty: _pathGetterBlock ];
-            STAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
+            XCTAssertTrue( 2 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -691,15 +691,15 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_record.path
                                              searchProperty: _pathGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_record.path
                                                 searchProperty: _pathGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -708,14 +708,14 @@
         {
             result = [ self->_storage allChildrenForItemKey: self->_otherRecord.path
                                              searchProperty: _pathGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: self->_otherRecord.path
                                                 searchProperty: _pathGetterBlock ];
-            STAssertNotNil( result, @"no ALL children expected" );
-            STAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
+            XCTAssertNotNil( result, @"no ALL children expected" );
+            XCTAssertTrue( 0 == [ result count ], @"cached children items mismatch" );
         }
     }
     
@@ -723,13 +723,13 @@
         {
             result = [ self->_storage allChildrenForItemKey: @"trololo"
                                              searchProperty: _pathGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
         
         {
             result = [ self->_storage cachedChildrenForItemKey: @"trololo"
                                                 searchProperty: _pathGetterBlock ];
-            STAssertNil( result, @"no ALL children expected" );
+            XCTAssertNil( result, @"no ALL children expected" );
         }
     }
 }
@@ -750,28 +750,28 @@
                            forKey: key ];
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-    STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+    XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
     
     SCItemAndFields* entity = [ self->_storage getStoredEntityForItemKey: key ];
-    STAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
-    STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
-    STAssertNotNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
+    XCTAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
+    XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+    XCTAssertNotNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
     
-    STAssertTrue( 2 == [ entity.cachedItemFieldsByName count ], @"fields count mismatch" );
+    XCTAssertTrue( 2 == [ entity.cachedItemFieldsByName count ], @"fields count mismatch" );
     
     SCFieldRecord* textField = [ self->_storage fieldWithName: @"Text"
                                                       itemKey: key ];
-    STAssertNotNil( textField, @"no fields expected" );
+    XCTAssertNotNil( textField, @"no fields expected" );
     
     NSDictionary* cachedFields = [ self->_storage cachedFieldsByNameForItemKey: key ];
     NSDictionary* allCachedFields = [ self->_storage allFieldsByNameForItemKey: key ];
 
-    STAssertTrue( 2 == [ cachedFields    count ], @"cachedFields count mismatch" );
-    STAssertTrue( 2 == [ allCachedFields count ], @"allCachedFields count mismatch" );
+    XCTAssertTrue( 2 == [ cachedFields    count ], @"cachedFields count mismatch" );
+    XCTAssertTrue( 2 == [ allCachedFields count ], @"allCachedFields count mismatch" );
     
     SCField* fieldForUser = cachedFields[ @"Title" ];
-    STAssertTrue( [ fieldForUser isKindOfClass: [ SCField class ] ], @"field class mismatch" );
-    STAssertEqualObjects( fieldForUser.fieldValue, @"Welcome to Sitecore", @"field name mismatch" );
+    XCTAssertTrue( [ fieldForUser isKindOfClass: [ SCField class ] ], @"field class mismatch" );
+    XCTAssertEqualObjects( fieldForUser.fieldValue, @"Welcome to Sitecore", @"field name mismatch" );
 }
 
 -(void)testSomeFieldsCaching
@@ -790,29 +790,29 @@
                            forKey: key ];
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-    STAssertTrue( record == cachedRecord, @"cached record mismatch" );
+    XCTAssertTrue( record == cachedRecord, @"cached record mismatch" );
     
     SCItemAndFields* entity = [ self->_storage getStoredEntityForItemKey: key ];
-    STAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
-    STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
-    STAssertNotNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
+    XCTAssertTrue( entity.cachedItemRecord == record, @"cached record mismatch" );
+    XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+    XCTAssertNotNil( entity.cachedItemFieldsByName, @"cached fields mismatch" );
     
-    STAssertTrue( 2 == [ entity.cachedItemFieldsByName count ], @"fields count mismatch" );
+    XCTAssertTrue( 2 == [ entity.cachedItemFieldsByName count ], @"fields count mismatch" );
     
     SCFieldRecord* textField = [ self->_storage fieldWithName: @"Text"
                                                       itemKey: key ];
-    STAssertNotNil( textField, @"no fields expected" );
+    XCTAssertNotNil( textField, @"no fields expected" );
     
     NSDictionary* cachedFields = [ self->_storage cachedFieldsByNameForItemKey: key ];
     NSDictionary* allCachedFields = [ self->_storage allFieldsByNameForItemKey: key ];
     
-    STAssertTrue( 2 == [ cachedFields    count ], @"cachedFields count mismatch" );
-    STAssertNil( allCachedFields, @"allCachedFields count mismatch" );
+    XCTAssertTrue( 2 == [ cachedFields    count ], @"cachedFields count mismatch" );
+    XCTAssertNil( allCachedFields, @"allCachedFields count mismatch" );
     
     
     SCField* fieldForUser = cachedFields[ @"Title" ];
-    STAssertTrue( [ fieldForUser isKindOfClass: [ SCField class ] ], @"field class mismatch" );
-    STAssertEqualObjects( fieldForUser.fieldValue, @"Welcome to Sitecore", @"field name mismatch" );
+    XCTAssertTrue( [ fieldForUser isKindOfClass: [ SCField class ] ], @"field class mismatch" );
+    XCTAssertEqualObjects( fieldForUser.fieldValue, @"Welcome to Sitecore", @"field name mismatch" );
 }
 
 -(void)testFieldTypesMustBeAsserted
@@ -828,7 +828,7 @@
         
         key = [ record.itemId copy ];
     
-        STAssertThrows
+        XCTAssertThrows
         (
             [ self->_storage registerItem: record
                      withAllFieldsInCache: NO
@@ -867,7 +867,7 @@
         NSDictionary* mockFields = @{ @"2" : @"222", @"3333" : @"3" };
         freshRecord.fieldsByName = mockFields;
         
-        STAssertThrows
+        XCTAssertThrows
         (
             [ self->_storage registerItem: freshRecord
                      withAllFieldsInCache: NO

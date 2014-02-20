@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
-@class SCItemsReaderRequest;
-@class SCExtendedApiContext;
+@class SCReadItemsRequest;
+@class SCExtendedApiSession;
 @class SCItemRecord;
 
 @protocol SCItemSource;
@@ -10,8 +10,8 @@
 
 // NSArray<ItemRecord>
 -(void)cacheResponseItems:( NSArray* )items_
-               forRequest:( SCItemsReaderRequest* )request_
-               apiContext:( SCExtendedApiContext* )apiContext_;
+               forRequest:( SCReadItemsRequest * )request_
+               apiSession:( SCExtendedApiSession* )apiSession_;
 
 
 // SCItemRecord

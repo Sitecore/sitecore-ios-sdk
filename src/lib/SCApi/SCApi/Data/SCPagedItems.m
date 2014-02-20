@@ -2,19 +2,19 @@
 
 #import "SCError.h"
 #import "SCItemsPage.h"
-#import "SCApiContext.h"
-#import "SCExtendedApiContext.h"
-#import "SCItemsReaderRequest.h"
+#import "SCApiSession.h"
+#import "SCExtendedApiSession.h"
+#import "SCReadItemsRequest.h"
 
-@interface SCExtendedApiContext (SCPagedItems)
+@interface SCExtendedApiSession (SCPagedItems)
 
--(JFFAsyncOperation)privateItemsPageLoaderWithRequest:( SCItemsReaderRequest* )request_;
+-(JFFAsyncOperation)privateItemsPageLoaderWithRequest:( SCReadItemsRequest * )request_;
 
 @end
 
 @interface SCPagedItems ()
 
-@property ( nonatomic ) SCApiContext* apiContext;
+@property ( nonatomic ) SCApiSession * apiSession;
 @property ( nonatomic ) NSMutableDictionary* itemsByPageNumber;
 
 @end
@@ -22,17 +22,17 @@
 @implementation SCPagedItems
 {
     NSNumber* _totalItemsCount;
-    SCItemsReaderRequest* _requestTemplate;
+    SCReadItemsRequest * _requestTemplate;
 }
 
--(id)initWithApiContext:( SCApiContext* )apiContext_
-                request:( SCItemsReaderRequest* )request_
+-(id)initWithApiSession:( SCApiSession * )apiSession_
+                request:( SCReadItemsRequest * )request_
 {
     self = [ super init ];
 
     if ( self )
     {
-        _apiContext        = apiContext_;
+        _apiSession        = apiSession_;
         _requestTemplate   = [ request_ copy ];
         _itemsByPageNumber = [ NSMutableDictionary new ];
     }
@@ -40,27 +40,27 @@
     return self;
 }
 
-+(id)pagedItemsWithApiContext:(SCApiContext *)apiContext_
++(id)pagedItemsWithApiSession:(SCApiSession *)apiSession_
                      pageSize:(NSUInteger)pageSize_
                         query:(NSString *)query_
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = query_;
     request_.requestType = SCItemReaderRequestQuery;
     request_.pageSize    = pageSize_;
     request_.fieldNames  = [ NSSet new ];
 
-    return [ self pagedItemsWithApiContext: apiContext_
+    return [ self pagedItemsWithApiSession: apiSession_
                                    request: request_ ];
 }
 
-+(id)pagedItemsWithApiContext:( SCApiContext* )apiContext_
-                      request:( SCItemsReaderRequest* )request_
++(id)pagedItemsWithApiSession:( SCApiSession * )apiSession_
+                      request:( SCReadItemsRequest * )request_
 {
-    NSParameterAssert( apiContext_ );
+    NSParameterAssert( apiSession_ );
     NSParameterAssert( request_.pageSize != 0 );
 
-    return [ [ self alloc ] initWithApiContext: apiContext_
+    return [ [ self alloc ] initWithApiSession: apiSession_
                                        request: request_ ];
 }
 
@@ -71,14 +71,14 @@
 
 -(JFFAsyncOperation)pageLoaderForPage:( NSUInteger )pageNumber_
 {
-    SCItemsReaderRequest* request_ = [ _requestTemplate copy ];
+    SCReadItemsRequest * request_ = [ _requestTemplate copy ];
     request_.page = pageNumber_;
 
     JFFAsyncOperation loader_ = ^( JFFAsyncOperationProgressHandler progressCallback_
                                   , JFFCancelAsyncOperationHandler cancelCallback_
                                   , JFFDidFinishAsyncOperationHandler doneCallback_ )
     {
-        JFFAsyncOperation loader_ = [ _apiContext.extendedApiContext privateItemsPageLoaderWithRequest: request_ ];
+        JFFAsyncOperation loader_ = [ _apiSession.extendedApiSession privateItemsPageLoaderWithRequest: request_ ];
 
         JFFAsyncOperationBinder totalCountBinder_ = asyncOperationBinderWithAnalyzer( ^id( SCItemsPage* page_
                                                                                           , NSError **error_)

@@ -1,7 +1,7 @@
 #import "SCRichTextField.h"
 
 #import "NSString+URLWithItemsReaderRequest.h"
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 
 
 @implementation SCRichTextField
@@ -13,7 +13,7 @@
     NSString* rawValue = self.rawValue;
 
     static NSString* const SITECORE_MEDIA = @"~/media";
-    NSString* host = [ self.apiContext.host scHostWithURLScheme ];
+    NSString* host = [ self.apiSession.host scHostWithURLScheme ];
     
     NSRange entireString = { 0, rawValue.length };
 

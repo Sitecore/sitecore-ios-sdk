@@ -3,24 +3,24 @@
 
 #import "SCWebApiConfig.h"
 
-#import "SCCreateMediaItemRequest.h"
-#import "SCCreateMediaItemRequest+ToItemsReadRequest.h"
+#import "SCUploadMediaItemRequest.h"
+#import "SCUploadMediaItemRequest+ToItemsReadRequest.h"
 
 
 #import "SCRestArgsBuilder.h"
-#import "SCItemsReaderRequest+URLWithItemsReaderRequest.h"
+#import "SCReadItemsRequest+URLWithItemsReaderRequest.h"
 
 
 @implementation SCCreateMediaRequestUrlBuilder
 {
 @private
-    SCCreateMediaItemRequest* _request;
+    SCUploadMediaItemRequest * _request;
 }
 
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCCreateMediaItemRequest* )request
+                    request:( SCUploadMediaItemRequest * )request
 {
     self = [ super initWithHost: host
                   webApiVersion: webApiVersion

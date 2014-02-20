@@ -19,6 +19,8 @@
 @property ( nonatomic, strong ) SCAddressBook* book;
 @property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
 
+@property ( nonatomic ) UINavigationController* navigationController;
+
 @end
 
 @implementation JDWSaveContactPlugin
@@ -168,13 +170,19 @@
 
 -(void)onStopWithPerson:( ABRecordRef )person_
 {
-    _popover = nil;
+    self->_popover = nil;
 
-    // @adk - a nasty threading issue.
-    [ [ JFFTimer sharedByThreadTimer ] addBlock: ^( JFFCancelScheduledBlock cancel_ )
+    __weak JDWSaveContactPlugin* weakSelf = self;
+    
+    JFFTimer* timer = [ JFFTimer sharedByThreadTimer ];
+    JFFScheduledBlock disposeNavigationController = ^void( JFFCancelScheduledBlock cancel_ )
     {
-        _navigationController = nil;
-    } duration: 0.2 ];
+        weakSelf.navigationController = nil;
+    };
+    
+    // @adk - a nasty threading issue.
+    [ timer addBlock: disposeNavigationController
+            duration: 0.2 ];
 
     [ self sendSavedPerson: person_ ];
 }

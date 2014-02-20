@@ -4,11 +4,11 @@
 
 #import "SCError.h"
 #import "SCItemRecord.h"
-#import "SCApiContext.h"
-#import "SCExtendedApiContext.h"
+#import "SCApiSession.h"
+#import "SCExtendedApiSession.h"
 
 #import "SCEditItemsRequest.h"
-#import "SCItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
 
 #import "SCApiUtils.h"
 
@@ -23,17 +23,17 @@
 #import "SCApiMacro.h"
 #import <SitecoreMobileSDK/SCAsyncOpRelationsBuilder.h>
 
-@interface SCExtendedApiContext (SCItem)
+@interface SCExtendedApiSession (SCItem)
 
 @property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
--(JFFAsyncOperation)itemsLoaderWithRequest:( SCItemsReaderRequest* )request_;
+-(JFFAsyncOperation)itemsLoaderWithRequest:( SCReadItemsRequest * )request_;
 -(SCField*)fieldWithName:( NSString* )fieldName_
                   itemId:( NSString* )itemId_
                 language:( NSString* )language_;
 
 -(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )editItemsRequest_;
--(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCItemsReaderRequest* )request_;
+-(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCReadItemsRequest * )request_;
 
 @end
 
@@ -60,8 +60,8 @@
 @implementation SCItem
 {
     SCItemRecord* _record;
-    SCExtendedApiContext* _apiContext;
-    SCApiContext *_mainApiContext;
+    SCExtendedApiSession* _apiSession;
+    SCApiSession *_mainApiSession;
     
     SCItemSourcePOD *_itemSourcePOD;
 }
@@ -84,42 +84,42 @@
 }
 
 -(id)initWithRecord:( SCItemRecord* )record_
-         apiContext:( SCExtendedApiContext* )apiContext_
+         apiSession:( SCExtendedApiSession* )apiSession_
 {
     self = [ super init ];
 
     if ( self )
     {
         self->_record     = record_;
-        self->_apiContext = apiContext_;
-        self->_mainApiContext = apiContext_.mainContext;
+        self->_apiSession = apiSession_;
+        self->_mainApiSession = apiSession_.mainContext;
         
         self->_itemSourcePOD = [ SCItemSourcePOD new ];
-        self->_itemSourcePOD.language = apiContext_.defaultLanguage;
-        self->_itemSourcePOD.database = apiContext_.defaultDatabase;
-        self->_itemSourcePOD.site = apiContext_.defaultSite;
-        self->_itemSourcePOD.itemVersion = apiContext_.defaultItemVersion;
+        self->_itemSourcePOD.language = apiSession_.defaultLanguage;
+        self->_itemSourcePOD.database = apiSession_.defaultDatabase;
+        self->_itemSourcePOD.site = apiSession_.defaultSite;
+        self->_itemSourcePOD.itemVersion = apiSession_.defaultItemVersion;
     }
 
     return self;
 }
 
 +(id)itemWithRecord:( SCItemRecord* )record_
-         apiContext:( SCExtendedApiContext* )apiContext_
+         apiSession:( SCExtendedApiSession* )apiSession_
 {
     return [ [ self alloc ] initWithRecord: record_
-                                apiContext: apiContext_ ];
+                                apiSession: apiSession_ ];
 }
 
-+(id)rootItemWithApiContext:( SCExtendedApiContext* )apiContext_
++(id)rootItemWithApiSession:( SCExtendedApiSession* )apiSession_
 {
     return [ [ self alloc ] initWithRecord: [ SCItemRecord rootRecord ]
-                                apiContext: apiContext_ ];
+                                apiSession: apiSession_ ];
 }
 
 -(SCItem*)itemWithId:( NSString* )itemId_
 {
-    return [ self->_apiContext itemWithId: itemId_
+    return [ self->_apiSession itemWithId: itemId_
                                itemSource: self->_record.itemSource ];
 }
 
@@ -141,9 +141,9 @@
     return self->_fieldNamesToChange;
 }
 
--(SCExtendedApiContext*)apiContext
+-(SCExtendedApiSession*)apiSession
 {
-    return self->_apiContext;
+    return self->_apiSession;
 }
 
 -(id)forwardingTargetForSelector:( SEL )selector_
@@ -153,7 +153,7 @@
 
 -(SCField*)fieldWithName:( NSString* )fieldName_
 {
-    SCFieldRecord* fieldRecord = [ self->_apiContext.itemsCache fieldWithName: fieldName_
+    SCFieldRecord* fieldRecord = [ self->_apiSession.itemsCache fieldWithName: fieldName_
                                                                        itemId: self->_record.itemId
                                                                    itemSource: self->_record.itemSource ];
     
@@ -172,13 +172,13 @@
 
 -(NSDictionary*)allFieldsByName
 {
-    return [ self->_apiContext.itemsCache allFieldsByNameForItemId: self->_record.itemId
+    return [ self->_apiSession.itemsCache allFieldsByNameForItemId: self->_record.itemId
                                                         itemSource: self->_record.itemSource ];
 }
 
 -(NSDictionary*)readFieldsByName
 {
-    return [ self->_apiContext.itemsCache cachedFieldsByNameForItemId: self->_record.itemId
+    return [ self->_apiSession.itemsCache cachedFieldsByNameForItemId: self->_record.itemId
                                                            itemSource: self->_record.itemSource ];
 }
 
@@ -189,21 +189,21 @@
 
 -(SCExtendedAsyncOp)extendedChildrenReader
 {
-    SCItemsReaderRequest* request = [ SCItemsReaderRequest requestWithItemId: self.itemId
-                                                                 fieldsNames: [ NSSet new ]
-                                                                       scope: SCItemReaderChildrenScope ];
+    SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:self.itemId
+                                                             fieldsNames:[NSSet new]
+                                                                   scope:SCItemReaderChildrenScope];
     [ self->_itemSourcePOD fillRequestParameters: request ];
     
-    return [ _apiContext itemsReaderWithRequest: request ];
+    return [ _apiSession readItemsOperationWithRequest: request ];
 }
 
 -(JFFAsyncOperation)fieldsLoaderForFieldsNames:( NSSet* )fieldNames_
 {
-    SCItemsReaderRequest* request = [ SCItemsReaderRequest requestWithItemId: self.itemId
-                                                                 fieldsNames: fieldNames_ ];
+    SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:self.itemId
+                                                             fieldsNames:fieldNames_];
     [ self->_itemSourcePOD fillRequestParameters: request ];
 
-    JFFAsyncOperation loader_ = [ _apiContext itemsLoaderWithRequest: request ];
+    JFFAsyncOperation loader_ = [ _apiSession itemsLoaderWithRequest: request ];
 
     loader_ = firstItemFromArrayReader( loader_ );
 
@@ -323,7 +323,7 @@
     {
         JFFSyncOperation syncChangedFieldNamesBlock = ^NSSet*( NSError** outError )
         {
-            id<SCItemRecordCacheRW> cache = self.apiContext.itemsCache;
+            id<SCItemRecordCacheRW> cache = self.apiSession.itemsCache;
             NSArray* namesOfDirtyFields =
             [ cache changedFieldsForItemId: self.itemId
                                 itemSource: self->_record.itemSource ];
@@ -376,7 +376,7 @@
     self->_fieldNamesToChange = nil;
     [ [ self->_record itemSource ] fillRequestParameters: editItemsRequest_ ];
     
-    JFFAsyncOperation loader_ = [ self.apiContext editItemsLoaderWithRequest: editItemsRequest_ ];
+    JFFAsyncOperation loader_ = [ self.apiSession editItemsLoaderWithRequest: editItemsRequest_ ];
     loader_ = firstItemFromArrayReader( loader_ );
         
     return loader_;
@@ -430,10 +430,10 @@
 {
     NSParameterAssert( [ itemId length ] > 0 );
 
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemId: itemId ];
+    SCReadItemsRequest * request_ = [SCReadItemsRequest requestWithItemId:itemId];
     
     [ self->_itemSourcePOD fillRequestParameters: request_ ];
-    JFFAsyncOperation loader_ = [ self.apiContext removeItemsLoaderWithRequest: request_ ];
+    JFFAsyncOperation loader_ = [ self.apiSession removeItemsLoaderWithRequest: request_ ];
     
     return loader_;
 }

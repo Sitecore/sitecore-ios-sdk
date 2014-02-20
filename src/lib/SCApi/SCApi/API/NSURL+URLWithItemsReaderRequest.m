@@ -2,15 +2,15 @@
 
 #import "SCEditItemsRequest.h"
 #import "SCCreateItemRequest.h"
-#import "SCItemsReaderRequest.h"
-#import "SCCreateMediaItemRequest.h"
+#import "SCReadItemsRequest.h"
+#import "SCUploadMediaItemRequest.h"
 
-#import "SCItemsReaderRequest+Factory.h"
-#import "SCCreateMediaItemRequest+ToItemsReadRequest.h"
-#import "SCApiContext.h"
+#import "SCReadItemsRequest+Factory.h"
+#import "SCUploadMediaItemRequest+ToItemsReadRequest.h"
+#import "SCApiSession.h"
 
 
-#import "SCItemsReaderRequest+URLWithItemsReaderRequest.h"
+#import "SCReadItemsRequest+URLWithItemsReaderRequest.h"
 #import "NSString+URLWithItemsReaderRequest.h"
 
 

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class SCApiContext;
+@class SCApiSession;
 
 @interface SCMapViewLogic : NSObject
 
@@ -11,11 +11,11 @@
 -(id)initWithMapView:( MKMapView* )mapView_;
 
 -(void)addItemsAnnotationsForQuery:( NSString* )query_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_;
 
 -(void)addItemsAnnotationsWithPath:( NSString* )path_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_;
 
 -(void)addAddressesAnnotations:( NSArray* )addresses_;

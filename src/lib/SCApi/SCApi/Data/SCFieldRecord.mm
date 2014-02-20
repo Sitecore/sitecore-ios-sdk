@@ -18,7 +18,7 @@
 @interface SCField (SCFieldRecord)
 
 +(id)fieldWithFieldRecord:( SCFieldRecord* )fieldRecord_
-               apiContext:( SCExtendedApiContext* )apiContext_;
+               apiSession:( SCExtendedApiSession* )apiSession_;
 
 @end
 
@@ -59,7 +59,7 @@
     {
         Class fieldClass_ = [ [ self class ] fieldClassForType: self.type ];
         field_ = [ fieldClass_ fieldWithFieldRecord: self
-                                         apiContext: self.apiContext ];
+                                         apiSession: self.apiSession ];
         self->_fieldRef = field_;
     }
 

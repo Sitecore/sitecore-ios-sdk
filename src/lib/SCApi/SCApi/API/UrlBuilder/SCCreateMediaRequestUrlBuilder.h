@@ -2,15 +2,15 @@
 #import <Foundation/Foundation.h>
 
 @class SCWebApiConfig;
-@class SCCreateMediaItemRequest;
+@class SCUploadMediaItemRequest;
 
 @interface SCCreateMediaRequestUrlBuilder : SCAbstractRequestUrlBuilder
 
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCCreateMediaItemRequest* )request;
+                    request:( SCUploadMediaItemRequest * )request;
 
-@property ( nonatomic, readonly ) SCCreateMediaItemRequest* request;
+@property ( nonatomic, readonly ) SCUploadMediaItemRequest * request;
 
 @end

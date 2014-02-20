@@ -1,5 +1,5 @@
 
-@interface ObjcLanguageTest : SenTestCase
+@interface ObjcLanguageTest : XCTestCase
 @end
 
 
@@ -17,7 +17,7 @@
     __weak SCItemRecord* weakRecord = record;
     record = nil;
     
-    STAssertNil( weakRecord, @"weakRef must be nil now" );
+    XCTAssertNil( weakRecord, @"weakRef must be nil now" );
 }
 
 @end

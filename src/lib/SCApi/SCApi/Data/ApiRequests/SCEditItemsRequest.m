@@ -1,8 +1,8 @@
 #import "SCEditItemsRequest.h"
 
-@interface SCItemsReaderRequest (SCEditItemsRequest)
+@interface SCReadItemsRequest (SCEditItemsRequest)
 
--(BOOL)isEqualToItemsReaderRequest:( SCItemsReaderRequest* )other_;
+-(BOOL)isEqualToItemsReaderRequest:( SCReadItemsRequest * )other_;
 
 @end
 

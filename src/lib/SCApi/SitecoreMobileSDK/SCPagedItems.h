@@ -11,8 +11,8 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCApiContext;
-@class SCItemsReaderRequest;
+@class SCApiSession;
+@class SCReadItemsRequest;
 
 /**
  The SCPagedItems object provides methods for paged loading of the items, it is very usefull if it is expected a lot of items for the given request and the application try to safe the memory and time for reading them.
@@ -25,9 +25,9 @@
 @interface SCPagedItems : NSObject
 
 /**
- The SCApiContext object used in creating SCPagedItems object.
+ The SCApiSession object used in creating SCPagedItems object.
  */
-@property(nonatomic,readonly) SCApiContext *apiContext;
+@property(nonatomic,readonly) SCApiSession *apiSession;
 /**
  The size of the page used to load of items with paging, you can select any positive reasonable and convenient page size for your application.
  */
@@ -35,23 +35,23 @@
 
 /**
  Creates SCPagedItems object.
- @param apiContext SCApiContext object which will be used to load items, should not be nil.
- @param pageSize The size of the page used to load of items, you can select any positive reasonable and convenient page size for your application. Used at constructing SCItemsReaderRequest object, see [SCItemsReaderRequest pageSize].
- @param query Query string used at constructing SCItemsReaderRequest object, see [SCItemsReaderRequest request] and [SCItemsReaderRequest requestType] for details.
+ @param apiSession SCApiSession object which will be used to load items, should not be nil.
+ @param pageSize The size of the page used to load of items, you can select any positive reasonable and convenient page size for your application. Used at constructing SCReadItemsRequest object, see [SCReadItemsRequest pageSize].
+ @param query Query string used at constructing SCReadItemsRequest object, see [SCReadItemsRequest request] and [SCReadItemsRequest requestType] for details.
  @return SCPagedItems instance.
  */
-+ (id)pagedItemsWithApiContext:(SCApiContext *)apiContext
++ (id)pagedItemsWithApiSession:(SCApiSession *)apiSession
                       pageSize:(NSUInteger)pageSize
                          query:(NSString *)query;
 
 /**
  Creates SCPagedItems object.
- @param apiContext SCApiContext object which will be used to load items, should not be nil.
+ @param apiSession SCApiSession object which will be used to load items, should not be nil.
  @param request Request used to load items by pages. Please, do not forget to set up the pageSize for request.
  @return SCPagedItems instance.
  */
-+ (id)pagedItemsWithApiContext:(SCApiContext *)apiContext
-                       request:(SCItemsReaderRequest *)request;
++ (id)pagedItemsWithApiSession:(SCApiSession *)apiSession
+                       request:(SCReadItemsRequest *)request;
 
 /**
  Returns the SCItem object for the given index.

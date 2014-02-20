@@ -13,7 +13,7 @@
     SCCacheSettings* _settings;
 }
 
-@synthesize apiContext = _context;
+@synthesize apiSession = _context;
 
 -(instancetype)init
 {
@@ -63,7 +63,7 @@
         
         keyColumn = [ SCPersistentRecordStorage itemIdColumn ];
         pStorage =
-        [ [ SCPersistentRecordStorage alloc ] initWithApiContext: self->_context
+        [ [ SCPersistentRecordStorage alloc ] initWithApiSession: self->_context
                                                       itemSource: itemSource
                                                     readDatabase: db
                                                    writeDatabase: db
@@ -75,7 +75,7 @@
 
         keyColumn = [ SCPersistentRecordStorage itemPathColumn ];
         pStorage =
-        [ [ SCPersistentRecordStorage alloc ] initWithApiContext: self->_context
+        [ [ SCPersistentRecordStorage alloc ] initWithApiSession: self->_context
                                                       itemSource: itemSource
                                                     readDatabase: db
                                                    writeDatabase: nil

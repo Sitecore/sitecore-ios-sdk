@@ -20,14 +20,14 @@
 @end
 
 /**
- The SCNoItemError error may happens with calling such method as [SCApiContext itemReaderForItemId:] when Sitecore Item Web Api does not return any item
+ The SCNoItemError error may happens with calling such method as [SCApiSession itemReaderForItemId:] when Sitecore Item Web Api does not return any item
  */
 @interface SCNoItemError : SCApiError
 @end
 
 
 /**
- The SCCreateItemError error is returned by [SCApiContext itemCreatorWithRequest:] method in case of insufficient permissions or connectivity issues. Sitecore Item Web Api does not return any item
+ The SCCreateItemError error is returned by [SCApiSession createItemsOperationWithRequest:] method in case of insufficient permissions or connectivity issues. Sitecore Item Web Api does not return any item
  */
 @interface SCCreateItemError : SCApiError
 @end
@@ -39,13 +39,13 @@
 @end
 
 /**
- The SCInvalidPathError error may happens at passing an invalid path argument to the method like: [SCApiContext itemReaderForItemPath:]
+ The SCInvalidPathError error may happens at passing an invalid path argument to the method like: [SCApiSession itemReaderForItemPath:]
  */
 @interface SCInvalidPathError : SCApiError
 @end
 
 /**
- The SCInvalidItemIdError error may happens at passing an invalid item it argument to the method like: [SCApiContext itemReaderForItemId:]
+ The SCInvalidItemIdError error may happens at passing an invalid item it argument to the method like: [SCApiSession itemReaderForItemId:]
  */
 @interface SCInvalidItemIdError : SCApiError
 

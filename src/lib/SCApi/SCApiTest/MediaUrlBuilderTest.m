@@ -1,7 +1,7 @@
 #import "SCWebApiUrlBuilder.h"
-#import "SCFieldImageParams.h"
+#import "SCDownloadMediaOptions.h"
 
-@interface MediaUrlBuilderTest : SenTestCase
+@interface MediaUrlBuilderTest : XCTestCase
 @end
 
 
@@ -11,11 +11,11 @@
 {
     SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
          [ builder  urlStringForMediaItemAtPath: nil
                                            host: @"http://mobiledev1ua1.dk.sitecore.net"
-                                   resizeParams: [ SCFieldImageParams new ] ],
+                                   resizeParams: [SCDownloadMediaOptions new] ],
          @"assert expected"
     );
     
@@ -26,20 +26,20 @@
 {
     SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
          [ builder  urlStringForMediaItemAtPath: @""
                                            host: @"http://mobiledev1ua1.dk.sitecore.net"
-                                   resizeParams: [ SCFieldImageParams new ] ],
+                                   resizeParams: [SCDownloadMediaOptions new] ],
          @"assert expected"
     );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library"
                                        host: @"http://mobiledev1ua1.dk.sitecore.net"
-                               resizeParams: [ SCFieldImageParams new ] ],
+                               resizeParams: [SCDownloadMediaOptions new] ],
      @"assert expected"
     );
 }
@@ -49,20 +49,20 @@
 {
     SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                        host: nil
-                               resizeParams: [ SCFieldImageParams new ] ],
+                               resizeParams: [SCDownloadMediaOptions new] ],
      @"assert expected"
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                        host: @""
-                               resizeParams: [ SCFieldImageParams new ] ],
+                               resizeParams: [SCDownloadMediaOptions new] ],
      @"assert expected"
      );
 }
@@ -71,7 +71,7 @@
 {
     SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
     
-    STAssertNoThrow
+    XCTAssertNoThrow
     (
      [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                        host: @"test.host"
@@ -91,7 +91,7 @@
                               resizeParams: nil ];
 
     NSString* expected = @"http://test.host/~/media/1.png.ashx";
-    STAssertEqualObjects( result, expected, @"media url mismatch" );
+    XCTAssertEqualObjects( result, expected, @"media url mismatch" );
 }
 
 -(void)testMediaUrlDoesNotAutocompleteTwice
@@ -108,17 +108,17 @@
                                   resizeParams: nil ];
 
         expected = @"http://test.host/~/media/1.png.ashx";
-        STAssertEqualObjects( result, expected, @"media url mismatch" );
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
     }
 
     {
         result =
         [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                           host: @"https://test.host"
-                                  resizeParams: [ SCFieldImageParams new ] ];
+                                  resizeParams: [SCDownloadMediaOptions new] ];
         
         expected = @"https://test.host/~/media/1.png.ashx";
-        STAssertEqualObjects( result, expected, @"media url mismatch" );
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
     }
 }
 
@@ -130,7 +130,7 @@
     
     
     {
-        SCFieldImageParams* resize = [ SCFieldImageParams new ];
+        SCDownloadMediaOptions * resize = [SCDownloadMediaOptions new];
         resize.height = 480;
         resize.width  = 640;
         
@@ -140,7 +140,7 @@
                                   resizeParams: resize ];
         
         expected = @"https://test.host/~/media/1.png.ashx?w=640&h=480";
-        STAssertEqualObjects( result, expected, @"media url mismatch" );
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
     }
 }
 

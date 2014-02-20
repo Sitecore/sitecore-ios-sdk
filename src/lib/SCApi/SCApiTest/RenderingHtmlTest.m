@@ -1,15 +1,15 @@
 #import "SCHTMLRenderingRequestUrlBuilder.h"
-#import "SCApiContext.h"
-#import "SCApiContext+Init.h"
-#import "SCHTMLReaderRequest.h"
+#import "SCApiSession.h"
+#import "SCApiSession+Init.h"
+#import "SCGetRenderingHtmlRequest.h"
 
-@interface RenderingHtmlTest : SenTestCase
+@interface RenderingHtmlTest : XCTestCase
 @end
 
 
 @implementation RenderingHtmlTest
 {
-    SCApiContext      * _context;
+    SCApiSession * _context;
     SCHTMLRenderingRequestUrlBuilder* _builder;
 }
 
@@ -17,13 +17,13 @@
 {
     [ super setUp ];
     self->_builder = nil;
-    self->_context = [ [ SCApiContext alloc ] initWithHost: @"stub.host" ];
+    self->_context = [ [SCApiSession alloc] initWithHost: @"stub.host" ];
 }
 
 
 -(void)testRenderingIdIsRequiredForHtmlRendering
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.sourceId = @"someid";
     request.language = @"lll";
     request.database = @"ddd";
@@ -35,7 +35,7 @@
 
 //    NSString *tst = [ self->_builder getRequestUrl ];
 //    NSLog(@"%@", tst);
-    STAssertThrows
+    XCTAssertThrows
     (
        [ self->_builder getRequestUrl ],
         @"assert expected"
@@ -45,7 +45,7 @@
 
 -(void)testSourceIdIsRequiredForHtmlRendering
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.renderingId = @"someid";
     request.language = @"lll";
     request.database = @"ddd";
@@ -55,7 +55,7 @@
                                                                  restApiConfig:[ SCWebApiConfig webApiV1Config ]
                                                                        request:request ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_builder getRequestUrl ],
      @"assert expected"
@@ -64,7 +64,7 @@
 
 -(void)testHostIsRequiredForHtmlRendering
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.renderingId = @"someid";
     request.sourceId = @"someid";
     request.language = @"lll";
@@ -75,7 +75,7 @@
                                                                  restApiConfig:[ SCWebApiConfig webApiV1Config ]
                                                                        request:request ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_builder getRequestUrl ],
      @"assert expected"
@@ -85,7 +85,7 @@
 
 -(void)testLanguageIsRequiredForHtmlRendering
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.renderingId = @"someid";
     request.sourceId = @"someid";
     request.language = nil;
@@ -96,7 +96,7 @@
                                                                  restApiConfig:[ SCWebApiConfig webApiV1Config ]
                                                                        request:request ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_builder getRequestUrl ],
      @"assert expected"
@@ -106,7 +106,7 @@
 
 -(void)testDatabaseIsRequiredForHtmlRendering
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.renderingId = @"someid";
     request.sourceId = @"someid";
     request.language = @"lll";
@@ -117,7 +117,7 @@
                                                                  restApiConfig:[ SCWebApiConfig webApiV1Config ]
                                                                        request:request ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_builder getRequestUrl ],
      @"assert expected"
@@ -127,7 +127,7 @@
 
 -(void)testHtmlRenderingAutocomplete
 {
-    SCHTMLReaderRequest *request = [[SCHTMLReaderRequest alloc] init];
+    SCGetRenderingHtmlRequest *request = [[SCGetRenderingHtmlRequest alloc] init];
     request.renderingId = @"aaa";
     request.sourceId = @"bbb";
     request.language = @"lll";
@@ -142,7 +142,7 @@
     NSString *expected = @"stub.host/-/item/v1/-/actions/GetRenderingHtml?database=ddd&language=lll&renderingId=aaa&itemId=bbb";
     
     
-    STAssertEqualObjects( result, expected, @"rendering HTML mismatch" );
+    XCTAssertEqualObjects( result, expected, @"rendering HTML mismatch" );
 }
 
 @end

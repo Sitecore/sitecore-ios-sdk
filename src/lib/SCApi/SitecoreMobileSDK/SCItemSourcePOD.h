@@ -1,14 +1,14 @@
 #import <SitecoreMobileSDK/SCItemSource.h>
 #import <Foundation/Foundation.h>
 
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 @interface SCItemSourcePOD : NSObject<NSCopying, SCItemSource>
 
 +(SCItemSourcePOD*)newPlainSourceFromItemSource:( id<SCItemSource> )itemSource;
 -(BOOL)isEqualToItemSource:( id<SCItemSource> )other;
 
--(void)fillRequestParameters:( SCItemsReaderRequest * )request;
+-(void)fillRequestParameters:( SCReadItemsRequest * )request;
 
 @property( nonatomic, strong ) NSString* language   ;
 @property( nonatomic, strong ) NSString* database   ;

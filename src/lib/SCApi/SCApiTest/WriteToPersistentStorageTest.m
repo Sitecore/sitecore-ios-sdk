@@ -1,4 +1,4 @@
-@interface WriteToPersistentStorageTest : SenTestCase
+@interface WriteToPersistentStorageTest : XCTestCase
 @end
 
 @implementation WriteToPersistentStorageTest
@@ -108,10 +108,10 @@
                            forKey: key ];
     
     NSInteger itemsCount = [ self->_storage.readDb selectIntScalar: @"SELECT COUNT(*) FROM [Items]" ];
-    STAssertTrue( 1 == itemsCount, @"items count mismatch" );
+    XCTAssertTrue( 1 == itemsCount, @"items count mismatch" );
     
     NSInteger fieldsCount = [ self->_storage.readDb selectIntScalar: @"SELECT COUNT(*) FROM [Fields]" ];
-    STAssertTrue( 0 == fieldsCount, @"fields count mismatch" );
+    XCTAssertTrue( 0 == fieldsCount, @"fields count mismatch" );
     
     
     NSUInteger actualItemsCount = 0;
@@ -129,24 +129,24 @@
         BOOL IsAllChildrenCached = [ itemRS boolForColumn: @"IsAllChildrenCached" ];
         BOOL IsAllFieldsCached   = [ itemRS boolForColumn: @"IsAllFieldsCached" ];
         
-        STAssertNotNil( Timestamp, @"timestamp mismatch" );
+        XCTAssertNotNil( Timestamp, @"timestamp mismatch" );
         
-        STAssertEqualObjects( ItemId, record.itemId, @"itemId mismatch");
-        STAssertEqualObjects( LongId, record.longID, @"longID mismatch");
-        STAssertEqualObjects( Path  , record.path, @"Path mismatch");
-        STAssertEqualObjects( template, record.itemTemplate, @"template mismatch" );
+        XCTAssertEqualObjects( ItemId, record.itemId, @"itemId mismatch");
+        XCTAssertEqualObjects( LongId, record.longID, @"longID mismatch");
+        XCTAssertEqualObjects( Path  , record.path, @"Path mismatch");
+        XCTAssertEqualObjects( template, record.itemTemplate, @"template mismatch" );
         
-        STAssertEqualObjects( DisplayName, record.displayName, @"itemId mismatch");
+        XCTAssertEqualObjects( DisplayName, record.displayName, @"itemId mismatch");
         
-        STAssertFalse( IsAllChildrenCached, @"IsAllChildrenCached mismatch");
-        STAssertFalse( IsAllFieldsCached  , @"IsAllFieldsCached mismatch");
-        STAssertTrue( hasChildren, @"has children flag mismatch" );
+        XCTAssertFalse( IsAllChildrenCached, @"IsAllChildrenCached mismatch");
+        XCTAssertFalse( IsAllFieldsCached  , @"IsAllFieldsCached mismatch");
+        XCTAssertTrue( hasChildren, @"has children flag mismatch" );
         
         ++actualItemsCount;
     }
     [ itemRS close ];
 
-    STAssertTrue( 1 == actualItemsCount, @"items count mismatch" );
+    XCTAssertTrue( 1 == actualItemsCount, @"items count mismatch" );
 }
 
 -(void)testWriteItemWithAllFields
@@ -176,10 +176,10 @@
                            forKey: key ];
     
     NSInteger itemsCount = [ self->_storage.readDb selectIntScalar: @"SELECT COUNT(*) FROM [Items]" ];
-    STAssertTrue( 1 == itemsCount, @"items count mismatch" );
+    XCTAssertTrue( 1 == itemsCount, @"items count mismatch" );
     
     NSInteger fieldsCount = [ self->_storage.readDb selectIntScalar: @"SELECT COUNT(*) FROM [Fields]" ];
-    STAssertTrue( 1 == fieldsCount, @"fields count mismatch" );
+    XCTAssertTrue( 1 == fieldsCount, @"fields count mismatch" );
     
     
     NSUInteger actualFieldsCount = 0;
@@ -192,17 +192,17 @@
         NSString* Type = [ fieldRS stringForColumn: @"Type" ];
         NSString* RawValue = [ fieldRS stringForColumn: @"RawValue" ];
         
-        STAssertEqualObjects( ItemId  , record.itemId           , @"itemId mismatch"  );
-        STAssertEqualObjects( FieldId , checklistField.fieldId  , @"FieldId mismatch" );
-        STAssertEqualObjects( Name    , checklistField.name     , @"Name mismatch"    );
-        STAssertEqualObjects( Type    , checklistField.type     , @"Type mismatch"    );
-        STAssertEqualObjects( RawValue, checklistField.rawValue , @"RawValue mismatch");
+        XCTAssertEqualObjects( ItemId  , record.itemId           , @"itemId mismatch"  );
+        XCTAssertEqualObjects( FieldId , checklistField.fieldId  , @"FieldId mismatch" );
+        XCTAssertEqualObjects( Name    , checklistField.name     , @"Name mismatch"    );
+        XCTAssertEqualObjects( Type    , checklistField.type     , @"Type mismatch"    );
+        XCTAssertEqualObjects( RawValue, checklistField.rawValue , @"RawValue mismatch");
         
         ++actualFieldsCount;
     }
     [ fieldRS close ];
     
-    STAssertTrue( 1 == actualFieldsCount, @"items count mismatch" );
+    XCTAssertTrue( 1 == actualFieldsCount, @"items count mismatch" );
 }
 
 @end

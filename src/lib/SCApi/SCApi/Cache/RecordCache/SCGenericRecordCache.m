@@ -12,8 +12,8 @@
 #import "SCItemSource.h"
 #import "SCItemRecordStorageRW.h"
 #import "SCItemSourcePOD.h"
-#import "SCItemsReaderRequest+SCItemSource.h"
-#import "SCItemsReaderRequest+AllFields.h"
+#import "SCReadItemsRequest+SCItemSource.h"
+#import "SCReadItemsRequest+AllFields.h"
 #import "SCItemRecordStorageBuilder.h"
 
 // @adk - Try setting this to "0" while tuning performance
@@ -223,7 +223,7 @@ static JFFPredicateBlock ITEMS_WITHOUT_CACHE_STUBS = ^BOOL(SCItemRecord* blockIt
 #pragma mark -
 #pragma mark SCMutableItemRecordCache
 -(SCItemRecord*)findParentRecordInResponseItems:( NSArray* )items
-                                     forRequest:( SCItemsReaderRequest* )request
+                                     forRequest:( SCReadItemsRequest * )request
 {
     SCItemRecord* childItemRecord = [ request getAnyChildItemRecordFromItems: items ];
     NSString* parentItemId = [ childItemRecord.parentId lowercaseStringWithLocale: self->_posixLocale ];
@@ -258,8 +258,8 @@ static JFFPredicateBlock ITEMS_WITHOUT_CACHE_STUBS = ^BOOL(SCItemRecord* blockIt
         
         // @adk [?]
         // Should API context be retained by fake items ?
-        result.apiContext     = childRecord.apiContext;
-        result.mainApiContext = childRecord.mainApiContext;
+        result.apiSession     = childRecord.apiSession;
+        result.mainApiSession = childRecord.mainApiSession;
     }
 
     return result;
@@ -267,12 +267,12 @@ static JFFPredicateBlock ITEMS_WITHOUT_CACHE_STUBS = ^BOOL(SCItemRecord* blockIt
 
 // NSArray<ItemRecord>
 -(void)cacheResponseItems:( NSArray* )items
-               forRequest:( SCItemsReaderRequest* )request
-               apiContext:( SCExtendedApiContext* )apiContext
+               forRequest:( SCReadItemsRequest * )request
+               apiSession:( SCExtendedApiSession* )apiSession
 {
     NSParameterAssert( nil != items      );
     NSParameterAssert( nil != request    );
-    NSParameterAssert( nil != apiContext );    
+    NSParameterAssert( nil != apiSession );    
     if ( ![ items hasElements ] )
     {
         return;
@@ -288,7 +288,7 @@ static JFFPredicateBlock ITEMS_WITHOUT_CACHE_STUBS = ^BOOL(SCItemRecord* blockIt
         }
         #endif
         
-        itemRecord.apiContext = apiContext;
+        itemRecord.apiSession = apiSession;
     }
 
     

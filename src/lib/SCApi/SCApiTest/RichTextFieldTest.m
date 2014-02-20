@@ -1,10 +1,10 @@
-@interface RichTextFieldTest : SenTestCase
+@interface RichTextFieldTest : XCTestCase
 {
     NSBundle* _testBundle;
     NSDictionary* _fieldJson;
     
-    SCApiContext* _context;
-    SCExtendedApiContext* _contextEx;
+    SCApiSession * _context;
+    SCExtendedApiSession* _contextEx;
 
     SCFieldRecord* _richTextRecord;
     SCField* _richTextField;
@@ -22,8 +22,8 @@
 {
     [ super setUp ];
     self->_testBundle = [ NSBundle bundleForClass: [ self class ] ];
-    self->_context = [ [ SCApiContext alloc ] initWithHost: @"mobiledev1ua1.dk.sitecore.net:89" ];
-    self->_contextEx = self->_context.extendedApiContext;
+    self->_context = [ [SCApiSession alloc] initWithHost: @"mobiledev1ua1.dk.sitecore.net:89" ];
+    self->_contextEx = self->_context.extendedApiSession;
 }
 
 -(void)testRichTextLinksAreConvertedToFullUrls_SingleQuotes
@@ -39,16 +39,16 @@
         
         self->_singleQuoteRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                                fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                            apiContext: self->_contextEx ];
+                                                            apiSession: self->_contextEx ];
         
         self->_singleQuoteField = self->_singleQuoteRecord.field;
     }
     
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_singleQuoteField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\n"
@@ -59,7 +59,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 -(void)testRichTextLinksAreConvertedToFullUrls
@@ -75,17 +75,17 @@
         
         self->_richTextRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                             fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                         apiContext: self->_contextEx ];
+                                                         apiSession: self->_contextEx ];
         
         self->_richTextField = self->_richTextRecord.field;
     }
     
     
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_richTextRecord, @"test data not loaded" );
-    STAssertNotNil( self->_richTextField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_richTextField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\n"
@@ -96,7 +96,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 -(void)testFullUrlsAreNotChanged_SingleQuotes
@@ -112,17 +112,17 @@
         
         self->_singleQuoteRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                                fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                            apiContext: self->_contextEx ];
+                                                            apiSession: self->_contextEx ];
         
         self->_singleQuoteField = self->_singleQuoteRecord.field;
     }
 
     
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_singleQuoteField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\n"
@@ -133,7 +133,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 -(void)testFullUrlsAreNotChanged
@@ -149,18 +149,18 @@
         
         self->_richTextRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                             fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                         apiContext: self->_contextEx ];
+                                                         apiSession: self->_contextEx ];
         
         self->_richTextField = self->_richTextRecord.field;
     }
     
     
     
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_richTextRecord, @"test data not loaded" );
-    STAssertNotNil( self->_richTextField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_richTextField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\n"
@@ -171,7 +171,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 -(void)testNonLinkUrlsAreNotChanged_SingleQuotes
@@ -187,16 +187,16 @@
         
         self->_singleQuoteRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                                fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                            apiContext: self->_contextEx ];
+                                                            apiSession: self->_contextEx ];
         
         self->_singleQuoteField = self->_singleQuoteRecord.field;
     }
 
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
-    STAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_singleQuoteField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_singleQuoteField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_singleQuoteField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\r\n"
@@ -208,7 +208,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 -(void)testNonLinkUrlsAreNotChanged
@@ -224,17 +224,17 @@
         
         self->_richTextRecord = [ SCFieldRecord fieldRecordWithJson: self->_fieldJson
                                                             fieldId: @"{A60ACD61-A6DB-4182-8329-C957982CEC74}"
-                                                         apiContext: self->_contextEx ];
+                                                         apiSession: self->_contextEx ];
         
         self->_richTextField = self->_richTextRecord.field;
     }
         
     
-    STAssertNotNil( self->_fieldJson, @"test data not loaded" );
-    STAssertNotNil( self->_richTextRecord, @"test data not loaded" );
-    STAssertNotNil( self->_richTextField, @"test data not loaded" );
+    XCTAssertNotNil( self->_fieldJson, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextRecord, @"test data not loaded" );
+    XCTAssertNotNil( self->_richTextField, @"test data not loaded" );
     
-    STAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
+    XCTAssertTrue( [ self->_richTextField isMemberOfClass: [ SCRichTextField class] ], @"field class mismatch" );
     NSString* fieldValue = self->_richTextField.fieldValue;
     NSString* expected =
     @"<p>Welcome to Sitecore</p>\r\n"
@@ -246,7 +246,7 @@
     NSLog( @"%@", fieldValue );
     NSLog( @"%@", expected );
     
-    STAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
+    XCTAssertEqualObjects( fieldValue, expected, @"images are not compatible with WebView" );
 }
 
 @end

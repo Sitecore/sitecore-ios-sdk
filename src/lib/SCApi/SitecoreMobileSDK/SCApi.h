@@ -9,18 +9,18 @@
 #import <SitecoreMobileSDK/SCItemSource.h>
 #import <SitecoreMobileSDK/SCItemSourcePOD.h>
 
-#import <SitecoreMobileSDK/SCApiContext.h>
-#import <SitecoreMobileSDK/SCExtendedApiContext.h>
+#import <SitecoreMobileSDK/SCApiSession.h>
+#import <SitecoreMobileSDK/SCExtendedApiSession.h>
 
 #import <SitecoreMobileSDK/SCItem.h>
 #import <SitecoreMobileSDK/SCPagedItems.h>
 
 #import <SitecoreMobileSDK/SCBaseItemRequest.h>
 #import <SitecoreMobileSDK/SCEditItemsRequest.h>
-#import <SitecoreMobileSDK/SCItemsReaderRequest.h>
-#import <SitecoreMobileSDK/SCHTMLReaderRequest.h>
+#import <SitecoreMobileSDK/SCReadItemsRequest.h>
+#import <SitecoreMobileSDK/SCGetRenderingHtmlRequest.h>
 #import <SitecoreMobileSDK/SCCreateItemRequest.h>
-#import <SitecoreMobileSDK/SCCreateMediaItemRequest.h>
+#import <SitecoreMobileSDK/SCUploadMediaItemRequest.h>
 #import <SitecoreMobileSDK/SCPageEventTriggeringRequest.h>
 #import <SitecoreMobileSDK/SCCampaignTriggeringRequest.h>
 
@@ -38,6 +38,6 @@
 #import <SitecoreMobileSDK/SCGeneralLinkField.h>
 
 #import <SitecoreMobileSDK/SCParams.h>
-#import <SitecoreMobileSDK/SCFieldImageParams.h>
+#import <SitecoreMobileSDK/SCDownloadMediaOptions.h>
 
 #import <SitecoreMobileSDK/SCError.h>

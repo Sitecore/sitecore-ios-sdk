@@ -75,13 +75,29 @@
     
     // Now we draw the underlying CGImage into a new context, applying the transform
     // calculated above.
-    CGContextRef ctx = CGBitmapContextCreate(
-        NULL,
-        (size_t)lroundf( self.size.width  ),
-        (size_t)lroundf( self.size.height ),
-        CGImageGetBitsPerComponent(self.CGImage), 0,
-        CGImageGetColorSpace(self.CGImage),
-        CGImageGetBitmapInfo(self.CGImage));
+
+    CGContextRef ctx = NULL;
+#if defined(__LP64__) && __LP64__
+    {
+        ctx = CGBitmapContextCreate(
+            NULL,
+            (size_t)lround( self.size.width  ),
+            (size_t)lround( self.size.height ),
+            CGImageGetBitsPerComponent(self.CGImage), 0,
+            CGImageGetColorSpace(self.CGImage),
+            CGImageGetBitmapInfo(self.CGImage));
+    }
+#else
+    {
+        ctx = CGBitmapContextCreate(
+            NULL,
+            (size_t)lroundf( self.size.width  ),
+            (size_t)lroundf( self.size.height ),
+            CGImageGetBitsPerComponent(self.CGImage), 0,
+            CGImageGetColorSpace(self.CGImage),
+            CGImageGetBitmapInfo(self.CGImage));
+    }
+#endif
     
     CGContextConcatCTM(ctx, transform);
     switch (self.imageOrientation) {

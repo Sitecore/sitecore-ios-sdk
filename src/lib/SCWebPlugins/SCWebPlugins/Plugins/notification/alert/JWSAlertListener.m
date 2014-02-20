@@ -65,7 +65,10 @@
     _alertView.delegate = nil;
     _alertView = nil;
 
-    NSString* indexString_ = [ [ NSString alloc ] initWithFormat: @"{ closeIndex: %d }", index_ ];
+    NSNumber* boxedIndex = @( index_ );
+    NSString* rawIndexString = [ boxedIndex descriptionWithLocale: nil ];
+    
+    NSString* indexString_ = [ [ NSString alloc ] initWithFormat: @"{ closeIndex: %@ }", rawIndexString ];
 
     [ self.delegate sendMessage: indexString_ ];
     [ self.delegate close ];

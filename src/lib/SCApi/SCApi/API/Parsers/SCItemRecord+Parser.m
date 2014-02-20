@@ -19,7 +19,7 @@
 
 @implementation SCItemRecord (Parser)
 
-+(JFFAsyncOperationBinder)itemRecordWithApiContext:( SCExtendedApiContext* )apiContext_
++(JFFAsyncOperationBinder)itemRecordWithApiSession:( SCExtendedApiSession* )apiSession_
                                 forRequestedSource:( id<SCItemSource> )requestedSource_
 {
     return ^JFFAsyncOperation( id json_ )
@@ -66,7 +66,7 @@
                 {
                     id result_ = [ SCFieldRecord fieldRecordWithJson: json_
                                                              fieldId: fieldId_
-                                                          apiContext: apiContext_ ];
+                                                          apiSession: apiSession_ ];
                     return asyncOperationWithResult( result_ );
                 } ];
                 loader_ = asyncOperationWithChangedResult( loader_, resultBuilder_ );

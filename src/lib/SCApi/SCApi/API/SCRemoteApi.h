@@ -1,16 +1,15 @@
 #import <JFFAsyncOperations/JFFAsyncOperationsBlockDefinitions.h>
-#include <SitecoreMobileSDK/SCItemReaderScopeType.h>
-#include <SitecoreMobileSDK/SCItemReaderRequestType.h>
-
+#import <SitecoreMobileSDK/SCReadItemsScopeType.h>
+#import <SitecoreMobileSDK/SCReadItemsRequestType.h>
 #import <Foundation/Foundation.h>
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @class SCEditItemsRequest;
 @class SCCreateItemRequest;
-@class SCItemsReaderRequest;
-@class SCCreateMediaItemRequest;
+@class SCReadItemsRequest;
+@class SCUploadMediaItemRequest;
 @class SCTriggeringRequest;
-@class SCHTMLReaderRequest;
+@class SCGetRenderingHtmlRequest;
 
 @class SCWebApiUrlBuilder;
 @class SCParams;
@@ -28,7 +27,7 @@
 -(NSString*)host;
 -(NSString*)login;
 
--(JFFAsyncOperation)credentialsCheckerForSite:( NSString* )site;
+-(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site;
 
 -(JFFAsyncOperation)imageLoaderForSCMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_;
@@ -37,23 +36,23 @@
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
                                        params:( SCParams* )params_;
 
--(JFFAsyncOperation)itemsReaderWithRequest:( SCItemsReaderRequest* )request_
-                                apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)readItemsOperationWithRequest:( SCReadItemsRequest * )request_
+                                apiSession:( SCExtendedApiSession* )apiSession_;
 
--(JFFAsyncOperation)itemCreatorWithRequest:( SCCreateItemRequest* )createItemRequest_
-                                apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)createItemsOperationWithRequest:( SCCreateItemRequest* )createItemRequest_
+                                apiSession:( SCExtendedApiSession* )apiSession_;
 
 -(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )editItemsRequest_
-                                    apiContext:( SCExtendedApiContext* )apiContext_;
+                                    apiSession:( SCExtendedApiSession* )apiSession_;
 
--(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCItemsReaderRequest* )removeItemsRequest_
-                                      apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCReadItemsRequest * )removeItemsRequest_
+                                      apiSession:( SCExtendedApiSession* )apiSession_;
 
--(JFFAsyncOperation)mediaItemCreatorWithRequest:( SCCreateMediaItemRequest* )createMediaItemRequest_
-                                     apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)uploadMediaOperationWithRequest:( SCUploadMediaItemRequest * )createMediaItemRequest_
+                                     apiSession:( SCExtendedApiSession* )apiSession_;
 
--(JFFAsyncOperation)renderingHTMLLoaderForRequest:( SCHTMLReaderRequest* )request_
-                                       apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)renderingHTMLLoaderForRequest:( SCGetRenderingHtmlRequest * )request_
+                                       apiSession:( SCExtendedApiSession* )apiSession_;
 
 -(JFFAsyncOperation)triggerLoaderWithRequest:( SCTriggeringRequest* )request_;
 @end

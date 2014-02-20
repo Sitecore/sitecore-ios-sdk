@@ -91,7 +91,6 @@
 		7E0461C5170C1B5E00AB6873 /* SCSocialFrameworkPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461C1170C1B5E00AB6873 /* SCSocialFrameworkPoster.h */; };
 		7E0461C6170C1B5E00AB6873 /* SCSocialFrameworkPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461C2170C1B5E00AB6873 /* SCSocialFrameworkPoster.m */; };
 		7E0461CC170C1B6B00AB6873 /* SCTwitterPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461C8170C1B6B00AB6873 /* SCTwitterPoster.h */; };
-		7E0461CD170C1B6B00AB6873 /* SCTwitterPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461C9170C1B6B00AB6873 /* SCTwitterPoster.m */; };
 		7E0461D2170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0461D0170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.h */; };
 		7E0461D3170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461D1170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m */; };
 		7E0461D5170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0461D4170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m */; };
@@ -243,7 +242,7 @@
 		7E84E5EA15E25BDA00FB8E36 /* SCAddressBookFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCAddressBookFactory.mm; sourceTree = "<group>"; };
 		7E84E61715E2660800FB8E36 /* SCAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAddressBook.h; sourceTree = "<group>"; };
 		7E84E61815E2660800FB8E36 /* SCAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAddressBook.m; sourceTree = "<group>"; };
-		7E921AB21705B6230006747C /* SCWebPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebPluginError.h; sourceTree = "<group>"; };
+		7E921AB21705B6230006747C /* SCWebPluginError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCWebPluginError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7E921AB31705B6230006747C /* SCWebPluginError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebPluginError.m; sourceTree = "<group>"; };
 		7E921AB61705B64C0006747C /* SCMobileEmailError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMobileEmailError.h; sourceTree = "<group>"; };
 		7E921AB71705B64C0006747C /* SCMobileEmailError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMobileEmailError.m; sourceTree = "<group>"; };
@@ -293,7 +292,7 @@
 				7EA15BAC170AFF26003FC13C /* SCBaseSocialPoster.m */,
 				7E0461DA170C1E1400AB6873 /* SCSocialNetworkPluginError.h */,
 				7E0461DB170C1E1500AB6873 /* SCSocialNetworkPluginError.m */,
-				7E0461C7170C1B6B00AB6873 /* twitter */,
+				7E0461C7170C1B6B00AB6873 /* twitter_iOS5 */,
 				7E0461BE170C1B5E00AB6873 /* social */,
 				1B0FB8EE150613AD0056F14E /* email */,
 			);
@@ -663,12 +662,13 @@
 			path = social;
 			sourceTree = "<group>";
 		};
-		7E0461C7170C1B6B00AB6873 /* twitter */ = {
+		7E0461C7170C1B6B00AB6873 /* twitter_iOS5 */ = {
 			isa = PBXGroup;
 			children = (
 				7E0461C8170C1B6B00AB6873 /* SCTwitterPoster.h */,
 				7E0461C9170C1B6B00AB6873 /* SCTwitterPoster.m */,
 			);
+			name = twitter_iOS5;
 			path = twitter;
 			sourceTree = "<group>";
 		};
@@ -882,7 +882,6 @@
 				7EA15BAE170AFF26003FC13C /* SCBaseSocialPoster.m in Sources */,
 				7EE49FD7170B0F85004288E1 /* SCSocialFactory.m in Sources */,
 				7E0461C6170C1B5E00AB6873 /* SCSocialFrameworkPoster.m in Sources */,
-				7E0461CD170C1B6B00AB6873 /* SCTwitterPoster.m in Sources */,
 				7E0461D3170C1BA000AB6873 /* SCBaseSocialPoster+ServiceType.m in Sources */,
 				7E0461D5170C1BAC00AB6873 /* JDWSocialNetworkPlugin.m in Sources */,
 				7E0461DD170C1E1700AB6873 /* SCSocialNetworkPluginError.m in Sources */,

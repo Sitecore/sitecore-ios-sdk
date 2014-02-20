@@ -1,11 +1,11 @@
 #import "SCChecklistField.h"
 
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 #import "SCItemSourcePOD.h"
 
 #define IS_CACHE_ALLOW_CYCLIC_RETAIN 1
 
-@interface SCExtendedApiContext (SCChecklistField)
+@interface SCExtendedApiSession (SCChecklistField)
 
 -(JFFAsyncOperation)itemLoaderForItemId:( NSString* )itemId_
                              itemSource:(id<SCItemSource>)itemSource;
@@ -50,7 +50,7 @@
 -(JFFAsyncOperation)fieldValueLoader
 {
     NSString* rawValue_ = self.rawValue;
-    SCExtendedApiContext* apiContext_ = self.apiContext;
+    SCExtendedApiSession* apiSession_ = self.apiSession;
     return ^JFFCancelAsyncOperation( JFFAsyncOperationProgressHandler progressCallback_
                                     , JFFCancelAsyncOperationHandler cancelCallback_
                                     , JFFDidFinishAsyncOperationHandler doneCallback_ )
@@ -58,7 +58,7 @@
         NSArray* itemsIds_ = [ rawValue_ componentsSeparatedByString: @"|" ];
         NSArray* itemsLoaders_ = [ itemsIds_ map: ^id( id itemId_ )
         {
-            return [ apiContext_ itemLoaderForItemId: itemId_
+            return [ apiSession_ itemLoaderForItemId: itemId_
                                           itemSource: self.itemSource ];
         } ];
         JFFAsyncOperation loader_ = failOnFirstErrorGroupOfAsyncOperationsArray( itemsLoaders_ );

@@ -7,7 +7,7 @@
 @implementation SCItemRecordsPage (JsonParser)
 
 +(JFFAsyncOperationBinder)itemRecordsWithResponseData:( NSData* )responseData_
-                                           apiContext:( SCExtendedApiContext* )apiContext_
+                                           apiSession:( SCExtendedApiSession* )apiSession_
                                    forRequestedSource:( id<SCItemSource> )requestedSource_
 {
     return ^JFFAsyncOperation( id json_ )
@@ -35,7 +35,7 @@
 
             JFFAsyncOperation loader_ = [ itemsJson_ asyncMap: ^JFFAsyncOperation( id object_ )
             {
-                return [ SCItemRecord itemRecordWithApiContext: apiContext_
+                return [ SCItemRecord itemRecordWithApiSession: apiSession_
                                             forRequestedSource: requestedSource_]( object_ );
             } ];
 

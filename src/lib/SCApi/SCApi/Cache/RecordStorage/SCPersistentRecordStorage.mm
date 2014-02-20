@@ -1,6 +1,6 @@
 #import "SCPersistentRecordStorage.h"
 
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 #import "SCItemAndFields.h"
 
 #import "SCItemRecord+SCItemSource.h"
@@ -14,7 +14,7 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
 
 @interface SCPersistentRecordStorage()
 
-@property ( nonatomic, weak ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, weak ) SCExtendedApiSession* apiSession;
 
 @end
 
@@ -39,7 +39,7 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
     return nil;
 }
 
--(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiSession
                        itemSource:( SCItemSourcePOD* )itemSource
                      readDatabase:( id<ESReadOnlyDbWrapper> )readDb
                     writeDatabase:( id<ESWritableDbWrapper, ESTransactionsWrapper> )writeDb
@@ -51,7 +51,7 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
         return nil;
     }
     
-    self.apiContext = apiContext;
+    self.apiSession = apiSession;
     self->_itemKeyColumnName = itemKeyColumnName;
     self->_readDb  = readDb;
     self->_writeDb = writeDb;
@@ -250,13 +250,13 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
 -(void)restoreRelationsForRestoredEntity:( SCItemAndFields* )entity
 {
     // @adk - ensure ARC does not deallocate context while recovering items
-    SCExtendedApiContext* context = self->_apiContext;
+    SCExtendedApiSession* context = self->_apiSession;
     
     SCItemRecord* item = entity.cachedItemRecord;
     {
         item.itemSource = self.itemSourcePOD;
-        item.apiContext = self.apiContext;
-        item.mainApiContext = context.mainContext;
+        item.apiSession = self.apiSession;
+        item.mainApiSession = context.mainContext;
     }
     
     item.fieldsByName = entity.cachedItemFieldsByName;
@@ -265,7 +265,7 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
     {
         NSParameterAssert( [ field isMemberOfClass: [ SCCachedFieldRecord class ] ]);
         field.itemRecord = item;
-        field.apiContext = context;
+        field.apiSession = context;
 
         // @adk : hotfix for nil "field.itemRecord" case
         {

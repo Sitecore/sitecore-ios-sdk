@@ -1,4 +1,4 @@
-@interface PersistentCacheSchemeTest : SenTestCase
+@interface PersistentCacheSchemeTest : XCTestCase
 @end
 
 @implementation PersistentCacheSchemeTest
@@ -87,22 +87,22 @@ static NSString* const SETTINGS_TABLE = @"Settings";
 
 -(void)testStorageHasItemsTable
 {
-    STAssertTrue( [ self->_storeById.readDb tableExists: ITEMS_TABLE ], @"No 'items' table" );
+    XCTAssertTrue( [ self->_storeById.readDb tableExists: ITEMS_TABLE ], @"No 'items' table" );
 }
 
 -(void)testStorageHasFieldsTable
 {
-    STAssertTrue( [ self->_storeById.readDb tableExists: FIELDS_TABLE ], @"No 'fields' table" );
+    XCTAssertTrue( [ self->_storeById.readDb tableExists: FIELDS_TABLE ], @"No 'fields' table" );
 }
 
 -(void)testStorageHasSettingsTable
 {
-    STAssertTrue( [ self->_storeById.readDb tableExists: SETTINGS_TABLE ], @"No 'settings' table" );
+    XCTAssertTrue( [ self->_storeById.readDb tableExists: SETTINGS_TABLE ], @"No 'settings' table" );
 }
 
 -(void)testItemsTableHasItemInfoAndTimestamp
 {
-    STAssertTrue
+    XCTAssertTrue
     (
         [ self->_storeById.readDb columnExists: TIMESTAMP_COLUMN
                                        inTable: ITEMS_TABLE ],
@@ -110,7 +110,7 @@ static NSString* const SETTINGS_TABLE = @"Settings";
     );
 
 
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"ItemId"
                                     inTable: ITEMS_TABLE ],
@@ -118,7 +118,7 @@ static NSString* const SETTINGS_TABLE = @"Settings";
      );
     
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"Path"
                                     inTable: ITEMS_TABLE ],
@@ -126,14 +126,14 @@ static NSString* const SETTINGS_TABLE = @"Settings";
      );
     
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"LongId"
                                     inTable: ITEMS_TABLE ],
      @"Timestamp column is missing"
      );
 
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"DisplayName"
                                     inTable: ITEMS_TABLE ],
@@ -143,14 +143,14 @@ static NSString* const SETTINGS_TABLE = @"Settings";
 
 -(void)testItemsTableHasAllFieldsAndAllChildrenFlags
 {
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"IsAllChildrenCached"
                                     inTable: ITEMS_TABLE ],
      @"IsAllChildrenCached column is missing"
      );
 
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"IsAllFieldsCached"
                                     inTable: ITEMS_TABLE ],
@@ -160,7 +160,7 @@ static NSString* const SETTINGS_TABLE = @"Settings";
 
 -(void)testFieldsTableHasFieldDataAndItemId
 {
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"ItemId"
                                     inTable: FIELDS_TABLE ],
@@ -168,7 +168,7 @@ static NSString* const SETTINGS_TABLE = @"Settings";
      );
     
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"fieldId"
                                     inTable: FIELDS_TABLE ],
@@ -176,21 +176,21 @@ static NSString* const SETTINGS_TABLE = @"Settings";
      );
     
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"name"
                                     inTable: FIELDS_TABLE ],
      @"Timestamp column is missing"
      );
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"type"
                                     inTable: FIELDS_TABLE ],
      @"Timestamp column is missing"
      );
     
-    STAssertTrue
+    XCTAssertTrue
     (
      [ self->_storeById.readDb columnExists: @"rawValue"
                                     inTable: FIELDS_TABLE ],
@@ -204,7 +204,7 @@ static NSString* const SETTINGS_TABLE = @"Settings";
     NSArray* indexNames = [ dbSchemeChecker indexNamesForTable: @"Items" ];
     
     NSArray* expectedNames = @[ @"idx_item_path", @"sqlite_autoindex_Items_1" ];
-    STAssertEqualObjects( indexNames, expectedNames, @"index names mismatch" );
+    XCTAssertEqualObjects( indexNames, expectedNames, @"index names mismatch" );
 }
 
 -(void)testFieldIdAndItemIdAreIndexedForFieldsTable
@@ -213,13 +213,13 @@ static NSString* const SETTINGS_TABLE = @"Settings";
     NSArray* indexNames = [ dbSchemeChecker indexNamesForTable: @"Fields" ];
     
     NSArray* expectedNames = @[ @"idx_fld_fieldId", @"idx_fld_itemId", @"sqlite_autoindex_Fields_1" ];
-    STAssertEqualObjects( indexNames, expectedNames, @"index names mismatch" );
+    XCTAssertEqualObjects( indexNames, expectedNames, @"index names mismatch" );
 }
 
 -(void)testVersionTableContainsCacheVersion
 {
     NSString* version = [ self->_storeById.readDb selectStringScalar: @"SELECT [CacheDbVersion] FROM [Settings] LIMIT 1" ];
-    STAssertEqualObjects( version, self->_cacheSettings.cacheDbVersion, @"cache version mismatch" );
+    XCTAssertEqualObjects( version, self->_cacheSettings.cacheDbVersion, @"cache version mismatch" );
 }
 
 -(void)testVersionTableContainsSessionInfo
@@ -227,8 +227,8 @@ static NSString* const SETTINGS_TABLE = @"Settings";
     NSString* host = [ self->_storeById.readDb selectStringScalar: @"SELECT [Host] FROM [Settings] LIMIT 1" ];
     NSString* user = [ self->_storeById.readDb selectStringScalar: @"SELECT [User] FROM [Settings] LIMIT 1" ];
     
-    STAssertEqualObjects( host, self->_cacheSettings.host    , @"host mismatch" );
-    STAssertEqualObjects( user, self->_cacheSettings.userName, @"user mismatch" );
+    XCTAssertEqualObjects( host, self->_cacheSettings.host    , @"host mismatch" );
+    XCTAssertEqualObjects( user, self->_cacheSettings.userName, @"user mismatch" );
 }
 
 -(void)testVersionTableContainsSourceInfo
@@ -237,9 +237,9 @@ static NSString* const SETTINGS_TABLE = @"Settings";
     NSString* lang = [ self->_storeById.readDb selectStringScalar: @"SELECT [SitecoreLanguage] FROM [Settings] LIMIT 1" ];
     NSString* site = [ self->_storeById.readDb selectStringScalar: @"SELECT [SitecoreSite] FROM [Settings] LIMIT 1" ];
     
-    STAssertEqualObjects( database, self->_defaultSource.database, @"database mismatch" );
-    STAssertEqualObjects( lang    , self->_defaultSource.language, @"lang mismatch"     );
-    STAssertEqualObjects( site    , self->_defaultSource.site    , @"site mismatch"     );
+    XCTAssertEqualObjects( database, self->_defaultSource.database, @"database mismatch" );
+    XCTAssertEqualObjects( lang    , self->_defaultSource.language, @"lang mismatch"     );
+    XCTAssertEqualObjects( site    , self->_defaultSource.site    , @"site mismatch"     );
 }
 
 

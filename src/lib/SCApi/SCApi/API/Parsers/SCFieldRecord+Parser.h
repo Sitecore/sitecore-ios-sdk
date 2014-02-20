@@ -1,11 +1,11 @@
 #import <SCApi/Data/SCFieldRecord.h>
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @interface SCFieldRecord (Parser)
 
 +(id)fieldRecordWithJson:( NSDictionary* )json_
                  fieldId:( NSString* )fieldId_
-              apiContext:( SCExtendedApiContext* )apiContext_;
+              apiSession:( SCExtendedApiSession* )apiSession_;
 
 @end

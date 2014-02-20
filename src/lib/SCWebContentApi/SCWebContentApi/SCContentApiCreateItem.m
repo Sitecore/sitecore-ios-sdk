@@ -56,11 +56,11 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     return imageLoaderForURLString( urlString_, imageCachePeriod_ );
 }
 
--(SCApiContext*)createContext
+-(SCApiSession *)createContext
 {
-    SCApiContext* context_ = [ SCApiContext contextWithHost: self->_location
-                                                      login: self->_login
-                                                   password: self->_password ];
+    SCApiSession * context_ = [SCApiSession sessionWithHost:self->_location
+                                                      login:self->_login
+                                                   password:self->_password];
     context_.defaultDatabase = self->_database;
     context_.defaultSite     = self->_site    ;
     context_.defaultLanguage = self->_language;
@@ -72,9 +72,9 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
 {
     return ^JFFAsyncOperation( id image_ )
     {
-        SCApiContext* context_ = [ self createContext ];
+        SCApiSession * context_ = [ self createContext ];
         
-        SCCreateMediaItemRequest* request_ = [ SCCreateMediaItemRequest new ];
+        SCUploadMediaItemRequest * request_ = [SCUploadMediaItemRequest new];
         request_.itemName     = self->_itemName;
         request_.itemTemplate = @"System/Media/Unversioned/Image";
 
@@ -87,7 +87,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
         request_.folder      = self->_folder;
         request_.fieldNames  = [ NSSet new ];
 
-        return [ context_.extendedApiContext mediaItemCreatorWithRequest: request_ ];
+        return [ context_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
     };
 }
 
@@ -103,12 +103,12 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
 
         SCItem* item_ = itemPtr_;
 
-        SCApiContext* context_ = [ self createContext ];
+        SCApiSession * context_ = [ self createContext ];
         SCEditItemsRequest* request_ = [ SCEditItemsRequest requestWithItemId: item_.itemId ];
 
         request_.fieldsRawValuesByName = self->_fields;
 
-        return [ context_.extendedApiContext editItemsWithRequest: request_ ];
+        return [ context_.extendedApiSession editItemsOperationWithRequest: request_ ];
     };
 }
 

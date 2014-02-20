@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @class SCParams;
 @protocol SCItemSource;
 
@@ -21,15 +21,15 @@
 
  It provides getters for the field's properties and asynchronous loader for the field's value.
 
- Now you can load fields using SCApiContext or SCItem object.
+ Now you can load fields using SCApiSession or SCItem object.
  */
 @interface SCField : NSObject
 
 /**
- The SCApiContext object this field was created/loaded from.
+ The SCApiSession object this field was created/loaded from.
  Can be used to load the necessary data.
  */
-@property(nonatomic,readonly) SCExtendedApiContext *apiContext;
+@property(nonatomic,readonly) SCExtendedApiSession *apiSession;
 /**
  The system field's id.
  */

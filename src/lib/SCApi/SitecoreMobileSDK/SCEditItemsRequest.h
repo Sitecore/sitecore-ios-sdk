@@ -6,14 +6,14 @@
 //  Copyright 2012. Sitecore. All rights reserved.
 //
 
-#import "SitecoreMobileSDK/SCItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
 
 /**
  The SCEditItemsRequest contains the set of params to edit existing items.
- It used for [SCApiContext editItemsWithRequest:] method.
- This class is inherited from SCItemsReaderRequest class whose fields is used to search items to edit.
+ It used for [SCApiSession editItemsOperationWithRequest:] method.
+ This class is inherited from SCReadItemsRequest class whose fields is used to search items to edit.
  */
-@interface SCEditItemsRequest : SCItemsReaderRequest
+@interface SCEditItemsRequest : SCReadItemsRequest
 
 /**
  The dictionary of fields raw values by fields names which will be edited.

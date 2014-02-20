@@ -10,15 +10,6 @@ using namespace ::Utils;
 {
     NSParameterAssert( nil != callback_ );
     
-#ifdef kCFCoreFoundationVersionNumber_iOS_5_1
-    if ( kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_iOS_5_1 )
-    {
-#endif
-        [ self asyncLegacyAddressBookWithOnCreatedBlock: callback_ ];
-        return;
-#ifdef kCFCoreFoundationVersionNumber_iOS_5_1
-    }
-    
     CFErrorRef error_ = NULL;
     ABAddressBookRef result_ = ABAddressBookCreateWithOptions( 0, &error_ );
     ObjcScopedGuard rawBookGuard_( ^() { CFRelease( result_ ); } );
@@ -42,19 +33,6 @@ using namespace ::Utils;
 
     rawBookGuard_.Release();
     ABAddressBookRequestAccessWithCompletion( result_, onAddressBookAccess_ );
-#endif
-}
-
-
-
-+(void)asyncLegacyAddressBookWithOnCreatedBlock:( SCAddressBookOnCreated )callback_
-{
-    NSParameterAssert( nil != callback_ );
-
-    ABAddressBookRef result_ = ::ABAddressBookCreate();
-    SCAddressBook* bookWrapper_ = [ [ SCAddressBook alloc ] initWithRawBook: result_ ];
-
-    callback_( bookWrapper_, kABAuthorizationStatusAuthorized, nil );
 }
 
 +(NSString*)bookStatusToString:( ABAuthorizationStatus) status_

@@ -1,12 +1,12 @@
 #import "SCItemRecord.h"
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @protocol SCItemSource;
 
 
 @interface SCItemRecord (Parser)
 
-+(JFFAsyncOperationBinder)itemRecordWithApiContext:( SCExtendedApiContext* )apiContext_
++(JFFAsyncOperationBinder)itemRecordWithApiSession:( SCExtendedApiSession* )apiSession_
                                 forRequestedSource:( id<SCItemSource> )requestedSource_;
 
 @end

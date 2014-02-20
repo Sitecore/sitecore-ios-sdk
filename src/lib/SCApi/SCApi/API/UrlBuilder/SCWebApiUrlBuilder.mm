@@ -1,17 +1,17 @@
 #import "SCWebApiUrlBuilder.h"
 
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 
-#import "SCItemsReaderRequest.h"
-#import "SCItemsReaderRequest+URLWithItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
+#import "SCReadItemsRequest+URLWithItemsReaderRequest.h"
 
 #import "SCEditItemsRequest.h"
 #import "SCCreateItemRequest.h"
-#import "SCItemsReaderRequest.h"
-#import "SCHTMLReaderRequest.h"
+#import "SCReadItemsRequest.h"
+#import "SCGetRenderingHtmlRequest.h"
 
-#import "SCCreateMediaItemRequest.h"
-#import "SCCreateMediaItemRequest+ToItemsReadRequest.h"
+#import "SCUploadMediaItemRequest.h"
+#import "SCUploadMediaItemRequest+ToItemsReadRequest.h"
 
 
 #import "NSString+URLWithItemsReaderRequest.h"

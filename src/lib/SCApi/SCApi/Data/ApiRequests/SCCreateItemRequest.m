@@ -1,19 +1,19 @@
 #import "SCCreateItemRequest.h"
 
-#import "SCExtendedApiContext.h"
-#import "SCItemsReaderRequest+Factory.h"
+#import "SCExtendedApiSession.h"
+#import "SCReadItemsRequest+Factory.h"
 
-@interface SCItemsReaderRequest (SCCreateItemRequest)
+@interface SCReadItemsRequest (SCCreateItemRequest)
 
--(BOOL)isEqualToItemsReaderRequest:( SCItemsReaderRequest* )other_;
+-(BOOL)isEqualToItemsReaderRequest:( SCReadItemsRequest * )other_;
 
 @end
 
 @implementation SCCreateItemRequest
 
--(SCItemsReaderRequest*)itemsReaderRequestWithApiContext:( SCExtendedApiContext* )context_
+-(SCReadItemsRequest *)itemsReaderRequestWithApiSession:( SCExtendedApiSession* )context_
 {
-    SCCreateItemRequest* result_ = (SCCreateItemRequest*)[ super itemsReaderRequestWithApiContext: context_ ];
+    SCCreateItemRequest* result_ = (SCCreateItemRequest*)[ super itemsReaderRequestWithApiSession: context_ ];
 
     result_.scope = SCItemReaderSelfScope;
 

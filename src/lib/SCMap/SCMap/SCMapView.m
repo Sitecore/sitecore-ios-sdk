@@ -220,20 +220,20 @@
 #endif
 
 -(void)addItemsAnnotationsForQuery:( NSString* )query_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_
 {
     [ _logic addItemsAnnotationsForQuery: query_
-                              apiContext: apiContext_
+                              apiSession: apiSession_
                                  handler: handler_ ];
 }
 
 -(void)addItemsAnnotationsWithPath:( NSString* )path_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_
 {
     [ _logic addItemsAnnotationsWithPath: path_
-                              apiContext: apiContext_
+                              apiSession: apiSession_
                                  handler: handler_ ];
 }
 

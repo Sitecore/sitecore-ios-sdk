@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @class SCCreateItemRequest;
-@class SCItemsReaderRequest;
-@class SCCreateMediaItemRequest;
+@class SCReadItemsRequest;
+@class SCUploadMediaItemRequest;
 @class SCParams;
-@class SCHTMLReaderRequest;
+@class SCGetRenderingHtmlRequest;
 
 @interface SCWebApiUrlBuilder : NSObject
 

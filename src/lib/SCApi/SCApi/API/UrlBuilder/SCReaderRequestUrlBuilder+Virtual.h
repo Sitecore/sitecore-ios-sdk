@@ -3,7 +3,7 @@
 
 #import "SCReaderRequestUrlBuilder.h"
 
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 @interface SCReaderRequestUrlBuilder(VirtualMethods)
 

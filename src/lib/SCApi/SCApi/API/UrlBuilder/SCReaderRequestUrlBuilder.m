@@ -2,20 +2,20 @@
 #import "SCAbstractRequestUrlBuilder+Private.h"
 
 #import "SCRestArgsBuilder.h"
-#import "SCItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
 #import "SCWebApiConfig.h"
-#import "SCItemsReaderRequest+URLWithItemsReaderRequest.h"
+#import "SCReadItemsRequest+URLWithItemsReaderRequest.h"
 
 @implementation SCReaderRequestUrlBuilder
 {
 @private
-    SCItemsReaderRequest* _request      ;
+    SCReadItemsRequest * _request      ;
 }
 
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCItemsReaderRequest* )request
+                    request:( SCReadItemsRequest * )request
 {
     self = [ super initWithHost: host
                   webApiVersion: webApiVersion

@@ -11,7 +11,7 @@
 
 #import <MapKit/MKMapView.h>
 
-@class SCApiContext;
+@class SCApiSession;
 
 @interface SCMapView : MKMapView
 
@@ -32,13 +32,13 @@
  Adds annotations with items from query
  */
 - (void)addItemsAnnotationsForQuery:(NSString *)query
-                         apiContext:(SCApiContext *)apiContext
+                         apiSession:(SCApiSession *)apiSession
                             handler:(void(^)(NSError *))handler;
 /**
  Adds annotations with items from path
  */
 - (void)addItemsAnnotationsWithPath:(NSString *)path
-                         apiContext:(SCApiContext *)apiContext
+                         apiSession:(SCApiSession *)apiSession
                             handler:(void(^)(NSError *))handler;
 
 typedef void (^SCMapViewResultHandler)(NSArray *annotations, NSError *error);

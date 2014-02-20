@@ -1,20 +1,20 @@
 #import "SCWebApiUrlBuilder.h"
 
-@interface WebApiUrlBuilrerTest : SenTestCase
+@interface WebApiUrlBuilrerTest : XCTestCase
 @end
 
 @implementation WebApiUrlBuilrerTest
 
 -(void)testUrlBuilderRejectsInit
 {
-    STAssertThrows( [ SCWebApiUrlBuilder new ], @"assert expected" );
+    XCTAssertThrows( [ SCWebApiUrlBuilder new ], @"assert expected" );
 }
 
 -(void)testUrlBuilderRejectsNilVersion
 {
     SCWebApiUrlBuilder* result = nil;
     
-    STAssertThrows
+    XCTAssertThrows
     (
        result = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: nil ],
        @"assert expected"
@@ -25,7 +25,7 @@
 {
     SCWebApiUrlBuilder* result = nil;
     
-    STAssertThrows
+    XCTAssertThrows
     (
        result = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"" ],
        @"assert expected"
@@ -39,13 +39,13 @@
     
     {
         result = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1"];
-        STAssertEqualObjects( result.webApiVersion, @"v1", @"version mismatch" );
+        XCTAssertEqualObjects( result.webApiVersion, @"v1", @"version mismatch" );
     }
 
 
     {
         result = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"achtung"];
-        STAssertEqualObjects( result.webApiVersion, @"achtung", @"version mismatch" );
+        XCTAssertEqualObjects( result.webApiVersion, @"achtung", @"version mismatch" );
     }
 }
 

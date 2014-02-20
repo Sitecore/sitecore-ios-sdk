@@ -1,5 +1,5 @@
 
-@interface PersistentStorageInitializerTest : SenTestCase
+@interface PersistentStorageInitializerTest : XCTestCase
 @end
 
 @implementation PersistentStorageInitializerTest
@@ -97,19 +97,19 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
     
         storeById   = (SCPersistentRecordStorage*)self->_storageNode.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)self->_storageNode.itemRecordByPath;
     }
     
     {
-        STAssertTrue( storeById.shouldCloseReadDb , @"close read db flag mismatch" );
-        STAssertTrue( storeById.shouldCloseWriteDb, @"close write db flag mismatch" );
+        XCTAssertTrue( storeById.shouldCloseReadDb , @"close read db flag mismatch" );
+        XCTAssertTrue( storeById.shouldCloseWriteDb, @"close write db flag mismatch" );
         
-        STAssertTrue( storeByPath.shouldCloseReadDb , @"close read db flag mismatch" );
-        STAssertTrue( storeByPath.shouldCloseWriteDb, @"close write db flag mismatch" );
+        XCTAssertTrue( storeByPath.shouldCloseReadDb , @"close read db flag mismatch" );
+        XCTAssertTrue( storeByPath.shouldCloseWriteDb, @"close write db flag mismatch" );
     }
 }
 
@@ -118,8 +118,8 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)self->_storageNode.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)self->_storageNode.itemRecordByPath;
@@ -127,17 +127,17 @@
 
     
 
-    STAssertNotNil( storeById.readDb , @"read  db is nil" );
-    STAssertNotNil( storeById.writeDb, @"write db is nil" );
+    XCTAssertNotNil( storeById.readDb , @"read  db is nil" );
+    XCTAssertNotNil( storeById.writeDb, @"write db is nil" );
     
-    STAssertNotNil( storeByPath.readDb, @"read  db is nil" );
-    STAssertNil( storeByPath.writeDb  , @"nil write db expected" );
+    XCTAssertNotNil( storeByPath.readDb, @"read  db is nil" );
+    XCTAssertNil( storeByPath.writeDb  , @"nil write db expected" );
     
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wcompare-distinct-pointer-types"
-    STAssertTrue( storeById.readDb == storeByPath.readDb, @"read db mismatch" );
-    STAssertTrue( storeById.readDb == storeById.writeDb , @"write db mismatch" );
+    XCTAssertTrue( storeById.readDb == storeByPath.readDb, @"read db mismatch" );
+    XCTAssertTrue( storeById.readDb == storeById.writeDb , @"write db mismatch" );
 #pragma clang diagnostic pop
     
 }
@@ -147,8 +147,8 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)self->_storageNode.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)self->_storageNode.itemRecordByPath;
@@ -156,7 +156,7 @@
     
     NSString* expectedDbPath = @"/tmp/PersistentStorageInitializerTest/SqliteCache-web-en-default";
 
-    STAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
+    XCTAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
 }
 
 -(void)testCacheDatabaseBuilderAppendsNoLanguageSourceToPath
@@ -166,8 +166,8 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)node.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)node.itemRecordByPath;
@@ -175,7 +175,7 @@
     
     NSString* expectedDbPath = @"/tmp/PersistentStorageInitializerTest/SqliteCache-web-default-default";
     
-    STAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
+    XCTAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
 }
 
 -(void)testCacheDatabaseBuilderAppendsNoDatabaseSourceToPath
@@ -185,8 +185,8 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)node.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)node.itemRecordByPath;
@@ -194,7 +194,7 @@
     
     NSString* expectedDbPath = @"/tmp/PersistentStorageInitializerTest/SqliteCache-default-en-default";
     
-    STAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
+    XCTAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
 }
 
 -(void)testCacheDatabaseBuilderAppendsAllInclusiveSourceToPath
@@ -204,8 +204,8 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ node.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)node.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)node.itemRecordByPath;
@@ -213,7 +213,7 @@
     
     NSString* expectedDbPath = @"/tmp/PersistentStorageInitializerTest/SqliteCache-web-en-_sitecore_shell";
     
-    STAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
+    XCTAssertEqualObjects( [ storeById.readDb databasePath ], expectedDbPath, @"db path mismatch" );
 }
 
 -(void)testCacheDatabaseBuilderOpensDB
@@ -221,14 +221,14 @@
     SCPersistentRecordStorage* storeById   = nil;
     SCPersistentRecordStorage* storeByPath = nil;
     {
-        STAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
-        STAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordById isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
+        XCTAssertTrue( [ self->_storageNode.itemRecordByPath isMemberOfClass: [ SCPersistentRecordStorage class ] ], @"storage class mismatch" );
         
         storeById   = (SCPersistentRecordStorage*)self->_storageNode.itemRecordById  ;
         storeByPath = (SCPersistentRecordStorage*)self->_storageNode.itemRecordByPath;
     }
     
-    STAssertTrue( [ storeById.readDb isOpen ], @"db should have been opened" );
+    XCTAssertTrue( [ storeById.readDb isOpen ], @"db should have been opened" );
 }
 
 

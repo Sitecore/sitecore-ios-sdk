@@ -1,6 +1,6 @@
 #import "NSString+URLWithItemsReaderRequest.h"
 
-@interface SchemeAutocompleteTest : SenTestCase
+@interface SchemeAutocompleteTest : XCTestCase
 @end
 
 @implementation SchemeAutocompleteTest
@@ -10,7 +10,7 @@
     NSString* src = @"http://linux.org.ru";
     NSString* result = [ src scHostWithURLScheme ];
     
-    STAssertEqualObjects( result, src, @"http scheme error" );
+    XCTAssertEqualObjects( result, src, @"http scheme error" );
 }
 
 -(void)testHttpsSchemeIsDetected
@@ -18,7 +18,7 @@
     NSString* src = @"https://github.com";
     NSString* result = [ src scHostWithURLScheme ];
     
-    STAssertEqualObjects( result, src, @"https scheme error" );
+    XCTAssertEqualObjects( result, src, @"https scheme error" );
 }
 
 -(void)testNonHttpSchemeIsDetected
@@ -26,7 +26,7 @@
     NSString* src = @"ftp://gnu.org";
     NSString* result = [ src scHostWithURLScheme ];
     
-    STAssertEqualObjects( result, src, @"non http scheme error" );
+    XCTAssertEqualObjects( result, src, @"non http scheme error" );
 }
 
 -(void)testHttpSchemeIsDefault
@@ -35,7 +35,7 @@
     NSString* result = [ src scHostWithURLScheme ];
     NSString* expected = @"http://sitecore.net";
     
-    STAssertEqualObjects( result, expected, @"auto scheme error" );
+    XCTAssertEqualObjects( result, expected, @"auto scheme error" );
 }
 
 @end

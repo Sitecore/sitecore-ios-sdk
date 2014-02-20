@@ -2,15 +2,15 @@
 #import <Foundation/Foundation.h>
 
 @class SCWebApiConfig;
-@class SCHTMLReaderRequest;
+@class SCGetRenderingHtmlRequest;
 
 @interface SCHTMLRenderingRequestUrlBuilder : SCAbstractRequestUrlBuilder
 
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCHTMLReaderRequest* )request;
+                    request:( SCGetRenderingHtmlRequest * )request;
 
-@property ( nonatomic, readonly ) SCHTMLReaderRequest* request;
+@property ( nonatomic, readonly ) SCGetRenderingHtmlRequest * request;
 
 @end

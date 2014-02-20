@@ -1,4 +1,4 @@
-@interface PersistentStorageTest : SenTestCase
+@interface PersistentStorageTest : XCTestCase
 @end
 
 @implementation PersistentStorageTest
@@ -21,7 +21,7 @@
     SCItemSourcePOD* _itemSource;
     SCItemSourcePOD* _otherSource;
     
-    SCApiContext* _context;
+    SCApiSession * _context;
     
 @private
     SCFieldRecord* _textField;
@@ -63,7 +63,7 @@
         newField.name = @"fff1";
         newField.type = @"Text";
         newField.rawValue = @"Humpty-Dumpty sat on the wall...";
-        newField.apiContext = self->_context.extendedApiContext;
+        newField.apiSession = self->_context.extendedApiSession;
     }
     self->_textField = newField;
     
@@ -73,7 +73,7 @@
         newField.name = @"Avatarko";
         newField.type = @"Image";
         newField.rawValue = @"~/media/Avatarko/1.png";
-        newField.apiContext = self->_context.extendedApiContext;
+        newField.apiSession = self->_context.extendedApiSession;
     }
     self->_imageField = newField;
 
@@ -84,7 +84,7 @@
         newField.name = @"Avatarko";
         newField.type = @"Image";
         newField.rawValue = @"~/media/Avatarko/2.png";
-        newField.apiContext = self->_context.extendedApiContext;
+        newField.apiSession = self->_context.extendedApiSession;
     }
     self->_modifiedImageField = newField;
     
@@ -95,7 +95,7 @@
         newField.name = @"Link to Humpty";
         newField.type = @"Multilist";
         newField.rawValue = @"{F1}";
-        newField.apiContext = self->_context.extendedApiContext;
+        newField.apiSession = self->_context.extendedApiSession;
     }
     self->_multilistField = newField;
     
@@ -105,7 +105,7 @@
         newField.name = @"Renamed Link to Humpty";
         newField.type = @"Multilist";
         newField.rawValue = @"{F1}";
-        newField.apiContext = self->_context.extendedApiContext;
+        newField.apiSession = self->_context.extendedApiSession;
     }
     self->_renamedMultilistField = newField;
 }
@@ -135,12 +135,12 @@
     self->_otherSource = [ self->_itemSource copy ];
     self->_otherSource.database = @"XYZ";
     
-    self->_context = [ [ SCApiContext alloc ] initWithHost: @"http://mock.host/12358" ];
+    self->_context = [ [SCApiSession alloc] initWithHost: @"http://mock.host/12358" ];
     
     self->_builder =
     [ [ SCPersistentStorageBuilder alloc ] initWithDatabasePathBase: self->_databasePath
                                                            settings: self->_cacheSettings ];
-    self->_builder.apiContext = self->_context.extendedApiContext;
+    self->_builder.apiSession = self->_context.extendedApiSession;
     
     self->_storageNode = [ self->_builder newRecordStorageNodeForItemSource: self->_defaultSource ];
     {
@@ -176,7 +176,7 @@
     
     NSString* key = [ record.itemId copy ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage registerItem: nil
               withAllFieldsInCache: NO
@@ -186,7 +186,7 @@
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage registerItem: record
               withAllFieldsInCache: NO
@@ -213,25 +213,25 @@
                            forKey: key ];
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-    STAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: cachedRecord isEqualTo: record ],  @"cached data mismatch" );
-    STAssertTrue( [ SCItemRecordComparator sourceOfItemRecord: cachedRecord isEqualTo: record ],  @"source mismatch" );
+    XCTAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: cachedRecord isEqualTo: record ],  @"cached data mismatch" );
+    XCTAssertTrue( [ SCItemRecordComparator sourceOfItemRecord: cachedRecord isEqualTo: record ],  @"source mismatch" );
     
-    STAssertNotNil( cachedRecord.apiContext    , @"context mismatch" );
-    STAssertNotNil( cachedRecord.mainApiContext, @"context mismatch" );
-    STAssertNil( cachedRecord.fieldsByName, @"no fields expected" );
+    XCTAssertNotNil( cachedRecord.apiSession    , @"context mismatch" );
+    XCTAssertNotNil( cachedRecord.mainApiSession, @"context mismatch" );
+    XCTAssertNil( cachedRecord.fieldsByName, @"no fields expected" );
 
     SCFieldRecord* mockField = [ self->_storage fieldWithName: @"1"
                                                       itemKey: key ];
-    STAssertNil( mockField, @"no fields expected" );
+    XCTAssertNil( mockField, @"no fields expected" );
     
     
     SCItemAndFields* entity = objc_msgSend( self->_storage, @selector(getStoredEntityForItemKey:), key );
-    STAssertTrue( entity.cachedItemRecord != cachedRecord, @"enity item mismatch" );
-    STAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: cachedRecord isEqualTo: entity.cachedItemRecord ],  @"cached data mismatch" );
-    STAssertTrue( [ SCItemRecordComparator sourceOfItemRecord: cachedRecord isEqualTo: entity.cachedItemRecord ],  @"source mismatch" );
-    STAssertTrue( entity.isAllChildItemsCached, @"isAllChildItemsCached mismathc" );
-    STAssertTrue( entity.isAllFieldItemsCached, @"isAllFieldItemsCached mismathc" );
-    STAssertNil( entity.cachedItemFieldsByName, @"cachedItemFieldsByName mismatch" );
+    XCTAssertTrue( entity.cachedItemRecord != cachedRecord, @"enity item mismatch" );
+    XCTAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: cachedRecord isEqualTo: entity.cachedItemRecord ],  @"cached data mismatch" );
+    XCTAssertTrue( [ SCItemRecordComparator sourceOfItemRecord: cachedRecord isEqualTo: entity.cachedItemRecord ],  @"source mismatch" );
+    XCTAssertTrue( entity.isAllChildItemsCached, @"isAllChildItemsCached mismathc" );
+    XCTAssertTrue( entity.isAllFieldItemsCached, @"isAllFieldItemsCached mismathc" );
+    XCTAssertNil( entity.cachedItemFieldsByName, @"cachedItemFieldsByName mismatch" );
 }
 
 
@@ -251,7 +251,7 @@
     
     SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
     
-    STAssertTrue( cachedRecord.itemSource == self->_storage.itemSource, @"source object address mismatch" );
+    XCTAssertTrue( cachedRecord.itemSource == self->_storage.itemSource, @"source object address mismatch" );
 }
 
 
@@ -264,7 +264,7 @@
     
     NSString* key = [ record.itemId copy ];
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage registerItem: record
               withAllFieldsInCache: NO
@@ -295,22 +295,22 @@
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
         
         
-        STAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: record isEqualTo: cachedRecord ], @"cached record mismatch" );
+        XCTAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: record isEqualTo: cachedRecord ], @"cached record mismatch" );
         
         
         NSDictionary* fields = [ self->_storage allFieldsByNameForItemKey: key ];
-        STAssertNil( fields, @"all fields must not be available yet" );
+        XCTAssertNil( fields, @"all fields must not be available yet" );
         
         
         
         SCFieldRecord* cachedField = [ self->_storage fieldWithName: self->_textField.name
                                                             itemKey: key ];
-        STAssertNotNil( cachedField, @"valid field expected" );
-        STAssertEqualObjects( cachedField, self->_textField, @"cached field mismatch" );
+        XCTAssertNotNil( cachedField, @"valid field expected" );
+        XCTAssertEqualObjects( cachedField, self->_textField, @"cached field mismatch" );
 
         // TODO : who owns itemRecord ???
         // @adk
-        STAssertNil( cachedField.itemRecord, @"nil item record expected" );
+        XCTAssertNil( cachedField.itemRecord, @"nil item record expected" );
     }
     
 
@@ -335,9 +335,9 @@
         SCItemAndFields* entity = objc_msgSend( self->_storage, @selector(getStoredEntityForItemKey:), key );
 
         
-        STAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: entity.cachedItemRecord  isEqualTo: freshRecord ], @"cached record mismatch" );
-        STAssertTrue( entity.isAllFieldItemsCached, @"fields flag mismatch" );
-        STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+        XCTAssertTrue( [ SCItemRecordComparator metadataOfItemRecord: entity.cachedItemRecord  isEqualTo: freshRecord ], @"cached record mismatch" );
+        XCTAssertTrue( entity.isAllFieldItemsCached, @"fields flag mismatch" );
+        XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
 
         cachedFields =
         @{
@@ -346,18 +346,18 @@
           self->_textField.name      : self->_textField
         };
 
-        STAssertEqualObjects( cachedFields, entity.cachedItemFieldsByName, @"fields mismatch" );
+        XCTAssertEqualObjects( cachedFields, entity.cachedItemFieldsByName, @"fields mismatch" );
         
         SCFieldRecord* cachedField = [ self->_storage fieldWithName: self->_imageField.name
                                                           itemKey: key ];
-        STAssertNotNil( cachedField, @"no fields expected" );
-        STAssertEqualObjects( cachedField, self->_imageField, @"image field mismatch" );
-        STAssertNil( cachedField.itemRecord, @"nil item record expected" );
+        XCTAssertNotNil( cachedField, @"no fields expected" );
+        XCTAssertEqualObjects( cachedField, self->_imageField, @"image field mismatch" );
+        XCTAssertNil( cachedField.itemRecord, @"nil item record expected" );
         
         cachedField = [ self->_storage fieldWithName: self->_multilistField.name
                                            itemKey: key ];
-        STAssertEqualObjects( cachedField, self->_multilistField, @"multilist field mismatch" );
-        STAssertNil( cachedField.itemRecord, @"nil item record expected" );
+        XCTAssertEqualObjects( cachedField, self->_multilistField, @"multilist field mismatch" );
+        XCTAssertNil( cachedField.itemRecord, @"nil item record expected" );
     }
 }
 
@@ -385,7 +385,7 @@
                                forKey: key ];
         
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: key ];
-        STAssertTrue
+        XCTAssertTrue
         (
             [ SCItemRecordComparator metadataOfItemRecord: record isEqualTo: cachedRecord ]
             , @"cached record mismatch"
@@ -393,7 +393,7 @@
         
         
         NSDictionary* fields = [ self->_storage allFieldsByNameForItemKey: key ];
-        STAssertNil( fields, @"all fields must not be available yet" );
+        XCTAssertNil( fields, @"all fields must not be available yet" );
     }
     
     
@@ -417,12 +417,12 @@
                                forKey: key ];
         
         SCItemAndFields* entity = objc_msgSend( self->_storage, @selector(getStoredEntityForItemKey:), key );
-        STAssertTrue
+        XCTAssertTrue
         (
          [ SCItemRecordComparator metadataOfItemRecord: entity.cachedItemRecord isEqualTo: freshRecord ]
          , @"cached record mismatch"
         );
-        STAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
+        XCTAssertFalse( entity.isAllChildItemsCached, @"childs flag mismatch" );
         
         NSDictionary* expectedMockFields =
         @{
@@ -434,10 +434,10 @@
           self->_renamedMultilistField.name : self->_renamedMultilistField
         };
         
-        STAssertEqualObjects( expectedMockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
+        XCTAssertEqualObjects( expectedMockFields, entity.cachedItemFieldsByName, @"fields mismatch" );
         
         // @adk - need confirmation from product owner
-        STAssertEqualObjects( mockFields, freshRecord.fieldsByName, @"original fields must not change" );
+        XCTAssertEqualObjects( mockFields, freshRecord.fieldsByName, @"original fields must not change" );
         //STAssertEqualObjects( expectedMockFields, freshRecord.fieldsByName, @"fields mismatch" );
     }
 }
@@ -474,7 +474,7 @@
                                forKey: key ];
     }
     NSArray* allRecords = [ self->_storage allStoredRecords ];
-    STAssertTrue( 2 == [ allRecords count ], @"all records count mismatch" );
+    XCTAssertTrue( 2 == [ allRecords count ], @"all records count mismatch" );
     
     
     [ self->_storage unregisterItemForKey: @"{1111}" ];
@@ -482,12 +482,12 @@
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: record.itemId ];
         SCItemRecord* cachedOther = [ self->_storage itemRecordForItemKey: otherRecord.itemId ];
         
-        STAssertNil( cachedRecord, @"deleted record has been returned" );
-        STAssertNotNil( cachedOther, @"another record should not be touched" );
+        XCTAssertNil( cachedRecord, @"deleted record has been returned" );
+        XCTAssertNotNil( cachedOther, @"another record should not be touched" );
         
         
         allRecords = [ self->_storage allStoredRecords ];
-        STAssertTrue( 1 == [ allRecords count ], @"all records count mismatch" );
+        XCTAssertTrue( 1 == [ allRecords count ], @"all records count mismatch" );
     }
 }
 
@@ -522,7 +522,7 @@
                                forKey: key ];
     }
     NSArray* allRecords = [ self->_storage allStoredRecords ];
-    STAssertTrue( 2 == [ allRecords count ], @"all records count mismatch" );
+    XCTAssertTrue( 2 == [ allRecords count ], @"all records count mismatch" );
     
     
     [ self->_storage cleanup ];
@@ -530,12 +530,12 @@
         SCItemRecord* cachedRecord = [ self->_storage itemRecordForItemKey: record.itemId ];
         SCItemRecord* cachedOther = [ self->_storage itemRecordForItemKey: otherRecord.itemId ];
         
-        STAssertNil( cachedRecord, @"deleted record has been returned" );
-        STAssertNil( cachedOther, @"another record should not be touched" );
+        XCTAssertNil( cachedRecord, @"deleted record has been returned" );
+        XCTAssertNil( cachedOther, @"another record should not be touched" );
         
         
         allRecords = [ self->_storage allStoredRecords ];
-        STAssertNil( allRecords, @"all records count mismatch" );
+        XCTAssertNil( allRecords, @"all records count mismatch" );
     }
 }
 
@@ -556,19 +556,19 @@
                                forKey: key ];
     }
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage unregisterItemForKey: nil ],
      @"assert expected"
      );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage itemRecordForItemKey: nil ],
      @"assert expected"
      );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage fieldWithName: @"achtung"
                             itemKey: nil ],
@@ -576,7 +576,7 @@
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage fieldWithName: nil
                             itemKey: @"hola" ],
@@ -584,13 +584,13 @@
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage cachedFieldsByNameForItemKey: nil ],
      @"assert expected"
      );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ self->_storage allFieldsByNameForItemKey: nil ],
      @"assert expected"
@@ -623,16 +623,16 @@
            withAllChildrenInCache: NO
                            forKey: upperCaseRecord.itemId ];
     
-    STAssertTrue( [ [ self->_storeByPath allStoredRecords ] count ] == 1, @"count mismatch" );
+    XCTAssertTrue( [ [ self->_storeByPath allStoredRecords ] count ] == 1, @"count mismatch" );
     
     SCItemRecord* entity = [ [ self->_storeByPath allStoredRecords ] lastObject ];
-    STAssertTrue( [ entity isMemberOfClass: [ SCItemRecord class ] ], @"allStoredRecords item type mismatch" );
-    STAssertEqualObjects( entity.itemId, @"{UPPER case}", @"cached id mismatch" );
+    XCTAssertTrue( [ entity isMemberOfClass: [ SCItemRecord class ] ], @"allStoredRecords item type mismatch" );
+    XCTAssertEqualObjects( entity.itemId, @"{UPPER case}", @"cached id mismatch" );
     
     
     SCItemRecord* result = [ self->_storeByPath itemRecordForItemKey: @"/sitecore/CONTENT/home" ];
-    STAssertNotNil( result, @"record from cache is nil" );
-    STAssertEqualObjects( result.itemId, @"{UPPER case}", @"cached id mismatch" );
+    XCTAssertNotNil( result, @"record from cache is nil" );
+    XCTAssertEqualObjects( result.itemId, @"{UPPER case}", @"cached id mismatch" );
 }
 
 
@@ -664,7 +664,7 @@
                                forKey: key ];
         
         itemsToUpdateAtBackEnd = [ self->_storage changedFieldsForItemId: record.itemId ];
-        STAssertNil( itemsToUpdateAtBackEnd, @"no dirty fields expected" );
+        XCTAssertNil( itemsToUpdateAtBackEnd, @"no dirty fields expected" );
     }
     
     
@@ -679,7 +679,7 @@
     itemsToUpdateAtBackEnd = [ self->_storage changedFieldsForItemId: record.itemId ];
     expectedItemsToUpdateAtBackEnd = @[ self->_multilistField.name, self->_textField.name ];
     
-    STAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"wrong dirty fields list" );
+    XCTAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"wrong dirty fields list" );
 }
 
 
@@ -724,7 +724,7 @@
         itemsToUpdateAtBackEnd = [ self->_storage changedFieldsForItemId: record.itemId ];
         expectedItemsToUpdateAtBackEnd = @[ self->_multilistField.name, self->_textField.name ];
         
-        STAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"wrong dirty fields list" );
+        XCTAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"wrong dirty fields list" );
     }
     
     SCItemRecord* freshRecord = [ SCItemRecord new ];
@@ -749,7 +749,7 @@
     
     itemsToUpdateAtBackEnd = [ self->_storage changedFieldsForItemId: record.itemId ];
     expectedItemsToUpdateAtBackEnd = @[ self->_textField.name ];
-    STAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"fresh items must have no dirty flag. Others should still be dirty" );
+    XCTAssertEqualObjects( itemsToUpdateAtBackEnd, expectedItemsToUpdateAtBackEnd, @"fresh items must have no dirty flag. Others should still be dirty" );
 }
 
 @end

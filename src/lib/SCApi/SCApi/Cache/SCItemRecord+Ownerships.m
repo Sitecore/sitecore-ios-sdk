@@ -4,11 +4,11 @@
 #import "SCItemSourcePOD.h"
 
 #import "SCItemInfo.h"
-#import "SCApiContext.h"
+#import "SCApiSession.h"
 #import "SCItemRecordCacheRW.h"
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 
-@interface SCExtendedApiContext (SCItemRecordOwnerships)
+@interface SCExtendedApiSession (SCItemRecordOwnerships)
 
 @property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
@@ -18,7 +18,7 @@
 
 -(id<SCItemRecordCacheRW>)itemsCache
 {
-    return self.apiContext.itemsCache;
+    return self.apiSession.itemsCache;
 }
 
 -(SCItemRecord*)findNearestParent

@@ -3,22 +3,22 @@
 
 #import "SCWebApiConfig.h"
 
-#import "SCHTMLReaderRequest.h"
+#import "SCGetRenderingHtmlRequest.h"
 
 #import "SCHTMLRenderingRestArgsBuilder.h"
-#import "SCItemsReaderRequest+URLWithItemsReaderRequest.h"
+#import "SCReadItemsRequest+URLWithItemsReaderRequest.h"
 
 
 @implementation SCHTMLRenderingRequestUrlBuilder
 {
 @private
-    SCHTMLReaderRequest* _request;
+    SCGetRenderingHtmlRequest * _request;
 }
 
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCHTMLReaderRequest* )request
+                    request:( SCGetRenderingHtmlRequest * )request
 {
     self = [ super initWithHost: host
                   webApiVersion: webApiVersion

@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7EBF991017B3C13B00A142B7"
-               BuildableName = "SCApiTest.octest"
+               BuildableName = "SCApiTest.xctest"
                BlueprintName = "SCApiTest"
                ReferencedContainer = "container:../SCApi/SCApi.xcodeproj">
             </BuildableReference>

@@ -2,7 +2,7 @@
 
 #import "SCItem.h"
 #import "SCItemInfo.h"
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 
 #import "NSString+ItemPathLogic.h"
 #import "SCItemRecord+Ownerships.h"
@@ -12,16 +12,16 @@
 #import "SCItemRecordCacheRW.h"
 #import "SCItemSourcePOD.h"
 
-@interface SCExtendedApiContext (SCItemRecord)
+@interface SCExtendedApiSession (SCItemRecord)
 
 @property ( nonatomic ) id<SCItemRecordCacheRW> itemsCache;
 
 @end
 
-@interface SCItem (SCApiContextPrivate)
+@interface SCItem (SCApiSessionPrivate)
 
 +(id)itemWithRecord:( SCItemRecord* )record_
-         apiContext:( SCExtendedApiContext* )apiContext_;
+         apiSession:( SCExtendedApiSession* )apiSession_;
 
 @end
 
@@ -107,12 +107,12 @@
         return [ NSArray new ];
     }
 
-    return [ self->_apiContext.itemsCache allChildrenForItemWithItemWithId: self.itemId     itemSource: self.itemSource ];
+    return [ self->_apiSession.itemsCache allChildrenForItemWithItemWithId: self.itemId     itemSource: self.itemSource ];
 }
 
 -(NSArray*)readChildrenRecords
 {
-    return [ self->_apiContext.itemsCache cachedChildrenForItemWithId: self.itemId
+    return [ self->_apiSession.itemsCache cachedChildrenForItemWithId: self.itemId
                                                            itemSource: self.itemSource ];
 }
 
@@ -122,7 +122,7 @@
     if ( !result_ )
     {
         result_ = [ SCItem itemWithRecord: self
-                               apiContext: self->_apiContext ];
+                               apiSession: self->_apiSession ];
         self->_itemRef = result_;
     }
     return result_;
@@ -130,7 +130,7 @@
 
 -(SCItem*)parent
 {
-    SCItemRecord* record_ = [ self->_apiContext.itemsCache itemRecordForItemWithId: self.parentId
+    SCItemRecord* record_ = [ self->_apiSession.itemsCache itemRecordForItemWithId: self.parentId
                                                                         itemSource: self.itemSource ];
     return record_.item;
 }
@@ -147,15 +147,15 @@
     if ( [ self.itemId length ] != 0 )
     {
         [ self removeOwnershipRelations ];
-        [ self->_apiContext.itemsCache didRemovedItemRecord: self ];
+        [ self->_apiSession.itemsCache didRemovedItemRecord: self ];
         self.itemId = nil;
     }
 }
 
--(void)setApiContext:(SCExtendedApiContext *)apiContext
+-(void)setApiSession:(SCExtendedApiSession *)apiSession
 {
-    self->_apiContext = apiContext;
-    self->_mainApiContext = apiContext.mainContext;
+    self->_apiSession = apiSession;
+    self->_mainApiSession = apiSession.mainContext;
 }
 
 @end

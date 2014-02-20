@@ -1,6 +1,6 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface ActionsUrlBuilderTest : SenTestCase
+@interface ActionsUrlBuilderTest : XCTestCase
 
 @end
 
@@ -40,22 +40,22 @@
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-value"
-    STAssertThrows
+    XCTAssertThrows
     (
        [ [SCActionsUrlBuilder alloc ] init ],
        @"assert expected"
     );
 #pragma clang diagnostic pop    
     
-    STAssertNotNil( self->_mobileDevBuilder, @"init failed" );
-    STAssertNotNil( self->_mobileDevBuilder, @"grammar init failed" );
+    XCTAssertNotNil( self->_mobileDevBuilder, @"init failed" );
+    XCTAssertNotNil( self->_mobileDevBuilder, @"grammar init failed" );
 }
 
 -(void)testActionBuilderRejectsNil
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-value"
-    STAssertThrows
+    XCTAssertThrows
     (
      [ [ SCActionsUrlBuilder alloc ] initWithHost: nil
                                     webApiVersion: @"v1"
@@ -63,7 +63,7 @@
      @"assert expected"
      );
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ [ SCActionsUrlBuilder alloc ] initWithHost: @"ololo.net"
                                     webApiVersion: nil
@@ -72,7 +72,7 @@
      );
     
     
-    STAssertThrows
+    XCTAssertThrows
     (
      [ [ SCActionsUrlBuilder alloc ] initWithHost: @"0_o"
                                     webApiVersion: @"v1"
@@ -84,10 +84,10 @@
 
 -(void)testInitArgsAreSavedCorrectly
 {
-    STAssertEqualObjects( self->_mobileDevBuilder.host, @"https://mobiledev1ua1.dk.sitecore.net:89", @"host mismatch" );
-    STAssertEqualObjects( self->_mobileDevBuilder.webApiVersion, @"v1", @"version mismatch" );
+    XCTAssertEqualObjects( self->_mobileDevBuilder.host, @"https://mobiledev1ua1.dk.sitecore.net:89", @"host mismatch" );
+    XCTAssertEqualObjects( self->_mobileDevBuilder.webApiVersion, @"v1", @"version mismatch" );
     
-    STAssertTrue( self->_mobileDevBuilder.restApiConfig == self->_restGrammar, @"rest config mismatch" );
+    XCTAssertTrue( self->_mobileDevBuilder.restApiConfig == self->_restGrammar, @"rest config mismatch" );
 }
 
 -(void)testPublicKey
@@ -95,7 +95,7 @@
     NSString* result = [ self->_mobileDevBuilder urlToGetPublicKey ];
     NSString* expected = @"https://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/-/actions/GetPublicKey";
     
-    STAssertEqualObjects(result, expected, @"public key url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"public key url mismatch" );
 }
 
 -(void)testPublicKey_Autocomplete
@@ -103,7 +103,7 @@
     NSString* result = [ self->_noHttpBuilder urlToGetPublicKey ];
     NSString* expected = @"http://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/-/actions/GetPublicKey";
     
-    STAssertEqualObjects(result, expected, @"public key url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"public key url mismatch" );
 }
 
 -(void)testAuthForWebsite
@@ -111,7 +111,7 @@
     NSString* result = [ self->_mobileDevBuilder urlToCheckCredentialsForSite: nil ];
     NSString* expected = @"https://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/-/actions/authenticate";
     
-    STAssertEqualObjects(result, expected, @"auth url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"auth url mismatch" );
 }
 
 -(void)testAuthForWebsite_Autocomplete
@@ -119,7 +119,7 @@
     NSString* result = [ self->_noHttpBuilder urlToCheckCredentialsForSite: nil ];
     NSString* expected = @"http://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/-/actions/authenticate";
     
-    STAssertEqualObjects(result, expected, @"auth url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"auth url mismatch" );
 }
 
 
@@ -128,7 +128,7 @@
     NSString* result = [ self->_mobileDevBuilder urlToCheckCredentialsForSite: @"/sitecore/shell" ];
     NSString* expected = @"https://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/sitecore/shell/-/actions/authenticate";
     
-    STAssertEqualObjects(result, expected, @"auth url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"auth url mismatch" );
 }
 
 -(void)testAuthForShellSite_Autocomplet
@@ -136,7 +136,7 @@
     NSString* result = [ self->_noHttpBuilder urlToCheckCredentialsForSite: @"/sitecore/shell" ];
     NSString* expected = @"http://mobiledev1ua1.dk.sitecore.net:89/-/item/v1/sitecore/shell/-/actions/authenticate";
     
-    STAssertEqualObjects(result, expected, @"auth url mismatch" );
+    XCTAssertEqualObjects(result, expected, @"auth url mismatch" );
 }
 
 @end

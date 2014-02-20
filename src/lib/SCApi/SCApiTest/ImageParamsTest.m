@@ -1,23 +1,23 @@
-#import "SCFieldImageParams.h"
+#import "SCDownloadMediaOptions.h"
 
 
-@interface ImageParamsTest : SenTestCase
+@interface ImageParamsTest : XCTestCase
 @end
 
 @implementation ImageParamsTest
 
 -(void)testParamsStringCorrectWithEmptyObject
 {
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [SCDownloadMediaOptions new];
 
     NSString *result = objc_msgSend(params, @selector(paramsString));
     
-    STAssertEqualObjects(result, @"", @"wrong param string");
+    XCTAssertEqualObjects(result, @"", @"wrong param string");
 }
 
 -(void)testParamsStringCorrectWithDefaultsValues
 {
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [SCDownloadMediaOptions new];
     
     params.width              = 0;
     params.height             = 0;
@@ -31,13 +31,13 @@
     NSString *result = objc_msgSend(params, @selector(paramsString));
     NSString *expected = @"?w=0&h=0&mw=0&mh=0&sc=0.00";
     
-    STAssertEqualObjects(result, expected, @"wrong param string");
+    XCTAssertEqualObjects(result, expected, @"wrong param string");
 
 }
 
 -(void)testParamsStringCorrectWithFilledValues
 {
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [SCDownloadMediaOptions new];
     
     params.width              = 10;
     params.height             = 10;
@@ -55,48 +55,48 @@
     NSString *result = objc_msgSend(params, @selector(paramsString));
     NSString *expected = @"?w=10&h=10&mw=10&mh=10&la=somelanguage&vs=someversion&db=somedatabase&bc=somecolor&dmc=1&as=1&thn=1&sc=10.00";
     
-    STAssertEqualObjects(result, expected, @"wrong param string");
+    XCTAssertEqualObjects(result, expected, @"wrong param string");
 }
 
 -(void)testParamsStringScaleParamIsCorrect
 {
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [SCDownloadMediaOptions new];
     
     params.scale              = 0.1;
     NSString *result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?sc=0.10", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?sc=0.10", @"wrong param string");
     
     params.scale              = 1.1;
     result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?sc=1.10", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?sc=1.10", @"wrong param string");
     
     params.scale              = 1.11;
     result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?sc=1.11", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?sc=1.11", @"wrong param string");
     
     params.scale              = 1.111;
     result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?sc=1.11", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?sc=1.11", @"wrong param string");
 }
 
 -(void)testParamsStringSizeParams
 {
-    SCFieldImageParams *params = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions *params = [SCDownloadMediaOptions new];
     
     params.height = 1;
     params.width = 1;
     NSString *result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?w=1&h=1", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?w=1&h=1", @"wrong param string");
     
     params.height = 1.1;
     params.width = 1.1;
     result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?w=1&h=1", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?w=1&h=1", @"wrong param string");
     
     params.height = 1.5;
     params.width = 1.5;
     result = objc_msgSend(params, @selector(paramsString));
-    STAssertEqualObjects(result, @"?w=2&h=2", @"wrong param string");
+    XCTAssertEqualObjects(result, @"?w=2&h=2", @"wrong param string");
 }
 
 @end

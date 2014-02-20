@@ -1,7 +1,7 @@
 #import "SCRemoteApi.h"
 
 #import "SCError.h"
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 #import "SCEditItemsRequest.h"
 #import "SCCreateItemRequest.h"
 
@@ -10,7 +10,7 @@
 #import "SCSmartDataLoaders.h"
 
 #import "SCSrvResponseCaches.h"
-#import "SCCreateMediaItemRequest.h"
+#import "SCUploadMediaItemRequest.h"
 
 #import "NSURL+URLWithItemsReaderRequest.h"
 #import "NSData+EditFieldsBodyWithFieldsDict.h"
@@ -31,8 +31,8 @@
 #import "SCReaderRequestUrlBuilder.h"
 #import "SCCreateMediaRequestUrlBuilder.h"
 
-#import "SCItemsReaderRequest+SCItemSource.h"
-#import "SCCreateMediaItemRequest+SCItemSource.h"
+#import "SCReadItemsRequest+SCItemSource.h"
+#import "SCUploadMediaItemRequest+SCItemSource.h"
 
 #import "SCActionsUrlBuilder.h"
 #import "SCWebApiConfig.h"
@@ -85,7 +85,7 @@
     return self;
 }
 
--(JFFAsyncOperation)credentialsCheckerForSite:( NSString* )site
+-(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site
 {
     NSString* strCredentialsCheckerAction = [ self->_actionBuilder urlToCheckCredentialsForSite: site ];
     NSURL* credentialsCheckerAction = [ NSURL URLWithString: strCredentialsCheckerAction ];
@@ -226,8 +226,8 @@
                                      asyncOperation: loader_ ];
 }
 
--(JFFAsyncOperation)itemsReaderWithRequest:( SCItemsReaderRequest* )request_
-                                apiContext:( SCExtendedApiContext* )apiContext_
+-(JFFAsyncOperation)readItemsOperationWithRequest:( SCReadItemsRequest * )request_
+                                apiSession:( SCExtendedApiSession* )apiSession_
 {
     NSLog(@"lifeTimeInCache %f", request_.lifeTimeInCache);
 
@@ -238,7 +238,7 @@
         return [ NSURL URLWithString: result ];
     };
 
-    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiContextAndRequest( apiContext_, request_ );
+    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiSessionAndRequest( apiSession_, request_ );
 
     id< SCDataCache > cache_ = nil;
     if ( !( request_.flags & SCItemReaderRequestIngnoreCache ) )
@@ -262,8 +262,8 @@
                                       , request_.lifeTimeInCache );
 }
 
--(JFFAsyncOperation)itemCreatorWithRequest:( SCCreateItemRequest* )createItemRequest_
-                                apiContext:( SCExtendedApiContext* )apiContext_
+-(JFFAsyncOperation)createItemsOperationWithRequest:( SCCreateItemRequest* )createItemRequest_
+                                apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCItemCreatorUrlBuilder* builder = [ self urlBuilderForCreateItemRequest: createItemRequest_ ];
     NSString* result = [ builder getRequestUrl ];
@@ -280,7 +280,7 @@
 
     JFFAsyncOperationBinder dataLoaderForURL_ = [ self scDataLoaderWithHttpBodyAndURL: httpBody_ ];
 
-    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiContextAndRequest( apiContext_, createItemRequest_ );
+    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiSessionAndRequest( apiSession_, createItemRequest_ );
 
     return scSmartDataLoader( urlBuilder_, dataLoaderForURL_, analyzerForData_ );
 }
@@ -301,7 +301,7 @@
 }
 
 -(JFFAsyncOperation)editItemsLoaderWithRequest:( SCEditItemsRequest* )editItemsRequest_
-                                    apiContext:( SCExtendedApiContext* )apiContext_
+                                    apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCReaderRequestUrlBuilder* builder = [ self urlBuilderForReaderRequest: editItemsRequest_ ];
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
@@ -316,13 +316,13 @@
                                                     url: url_ ];
     };
 
-    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiContextAndRequest( apiContext_, editItemsRequest_ );
+    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiSessionAndRequest( apiSession_, editItemsRequest_ );
 
     return scSmartDataLoader( urlBuilder_, dataLoaderForURL_, analyzerForData_ );
 }
 
--(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCItemsReaderRequest* )removeItemsRequest_
-                                      apiContext:( SCExtendedApiContext* )apiContext_;
+-(JFFAsyncOperation)removeItemsLoaderWithRequest:( SCReadItemsRequest * )removeItemsRequest_
+                                      apiSession:( SCExtendedApiSession* )apiSession_;
 {
     SCReaderRequestUrlBuilder* builder = [ self urlBuilderForReaderRequest: removeItemsRequest_ ];
     
@@ -357,8 +357,8 @@
     return scSmartDataLoader( urlBuilder_, dataLoaderForURL_, analyzerForData_ );
 }
 
--(JFFAsyncOperation)mediaItemCreatorWithRequest:( SCCreateMediaItemRequest* )request_
-                                     apiContext:( SCExtendedApiContext* )apiContext_
+-(JFFAsyncOperation)uploadMediaOperationWithRequest:( SCUploadMediaItemRequest * )request_
+                                     apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCCreateMediaRequestUrlBuilder* builder = [ self urlBuilderForCreateMediaRequest: request_ ];
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
@@ -384,13 +384,13 @@
                                                 headers: headers_ ];
     };
 
-    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiContextAndRequest( apiContext_, request_ );
+    SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiSessionAndRequest( apiSession_, request_ );
 
     return scSmartDataLoader( urlBuilder_, dataLoaderForURL_, analyzerForData_ );
 }
 
--(JFFAsyncOperation)renderingHTMLLoaderForRequest:( SCHTMLReaderRequest* )request_
-                                       apiContext:( SCExtendedApiContext* )apiContext_
+-(JFFAsyncOperation)renderingHTMLLoaderForRequest:( SCGetRenderingHtmlRequest * )request_
+                                       apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCHTMLRenderingRequestUrlBuilder *urlBuilder = [ self urlBuilderForHTMLRenderingRequest: request_ ];
     
@@ -449,7 +449,7 @@
                                          , nil );
 }
 
--(SCHTMLRenderingRequestUrlBuilder*)urlBuilderForHTMLRenderingRequest:( SCHTMLReaderRequest* )request
+-(SCHTMLRenderingRequestUrlBuilder*)urlBuilderForHTMLRenderingRequest:( SCGetRenderingHtmlRequest * )request
 {
     SCHTMLRenderingRequestUrlBuilder* builder =
     [ [ SCHTMLRenderingRequestUrlBuilder alloc ] initWithHost: self->_host
@@ -460,7 +460,7 @@
     return builder;
 }
 
--(SCReaderRequestUrlBuilder*)urlBuilderForReaderRequest:( SCItemsReaderRequest* )request
+-(SCReaderRequestUrlBuilder*)urlBuilderForReaderRequest:( SCReadItemsRequest * )request
 {
     SCReaderRequestUrlBuilder* builder =
     [ [ SCReaderRequestUrlBuilder alloc ] initWithHost: self->_host
@@ -471,7 +471,7 @@
     return builder;
 }
 
--(SCCreateMediaRequestUrlBuilder*)urlBuilderForCreateMediaRequest:( SCCreateMediaItemRequest* )request
+-(SCCreateMediaRequestUrlBuilder*)urlBuilderForCreateMediaRequest:( SCUploadMediaItemRequest * )request
 {
     SCCreateMediaRequestUrlBuilder* builder =
     [ [ SCCreateMediaRequestUrlBuilder alloc ] initWithHost: self->_host

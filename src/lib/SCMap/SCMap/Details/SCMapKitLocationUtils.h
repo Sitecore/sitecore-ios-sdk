@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SCApiContext;
+@class SCApiSession;
 
 JFFAsyncOperationBinder addressDictionaryGeocoder();
 JFFAsyncOperationBinder addressDictionariesGeocoder();
@@ -10,5 +10,5 @@ JFFAsyncOperationBinder addressDictionariesGeocoder();
 JFFAsyncOperation scPlacemarksLoaderWithAddressDict( NSDictionary* addressDictionary_ );
 JFFAsyncOperation addressDictionaryGeocoderLoader( NSDictionary* placeMarkAddressDictionary_ );
 
-JFFAsyncOperation itemAddressesGeocoder( SCApiContext* apiContext_, NSString* query_ );
-JFFAsyncOperation itemAddressesGeocoderWithPath( SCApiContext* apiContext_, NSString* path_ );
+JFFAsyncOperation itemAddressesGeocoder( SCApiSession * apiSession_, NSString* query_ );
+JFFAsyncOperation itemAddressesGeocoderWithPath( SCApiSession * apiSession_, NSString* path_ );

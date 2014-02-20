@@ -1,5 +1,4 @@
 #import "SCSocialFactory.h"
-#import "SCTwitterPoster.h"
 #import "SCSocialFrameworkPoster.h"
 
 #import "SCBaseSocialPoster+ServiceType.h"
@@ -14,7 +13,7 @@ static NSDictionary* classMap = nil;
     ^{
         classMap =
         @{
-            @"twitter"  : [ SCTwitterPoster         class ],
+            @"twitter"  : [ SCSocialFrameworkPoster class ],
             @"facebook" : [ SCSocialFrameworkPoster class ],
             @"weibo"    : [ SCSocialFrameworkPoster class ]
         };

@@ -5,7 +5,7 @@
 #include "JSBlocksDefinitions.h"
 
 @class SCSitecoreCredentials;
-@class SCCreateMediaItemRequest;
+@class SCUploadMediaItemRequest;
 
 #ifdef __cplusplus
 extern "C" {

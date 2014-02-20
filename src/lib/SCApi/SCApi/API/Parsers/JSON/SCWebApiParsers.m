@@ -90,7 +90,7 @@ JFFAsyncOperationBinder deleteItemsJSONResponseParser( NSData* responseData_ )
     };
 }
 
-SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiContextAndRequest( SCExtendedApiContext* apiContext_, id<SCItemSource> requestedSource_ )
+SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiSessionAndRequest( SCExtendedApiSession* apiSession_, id<SCItemSource> requestedSource_ )
 {
     return ^JFFAsyncOperationBinder( NSURL* url_ )
     {
@@ -100,7 +100,7 @@ SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiContextAndRequest( SCExtende
 
             JFFAsyncOperationBinder parseItemsBinder_ =
             [ SCItemRecordsPage itemRecordsWithResponseData: responseData_
-                                                 apiContext: apiContext_
+                                                 apiSession: apiSession_
                                          forRequestedSource: requestedSource_ ];
             return bindSequenceOfAsyncOperations( loader_, parseItemsBinder_, nil );
         };

@@ -4,7 +4,7 @@
 
 +(id)fieldRecordWithJson:( NSDictionary* )json_
                  fieldId:( NSString* )fieldId_
-              apiContext:( SCExtendedApiContext* )apiContext_
+              apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCFieldRecord* result_ = [ self new ];
 
@@ -12,7 +12,7 @@
     result_.name       = json_[ @"Name" ];
     result_.type       = json_[ @"Type" ];
     result_.rawValue   = [ json_[ @"Value" ] stringByTrimmingWhitespaces ];
-    result_.apiContext = apiContext_;
+    result_.apiSession = apiSession_;
 
     return result_;
 }

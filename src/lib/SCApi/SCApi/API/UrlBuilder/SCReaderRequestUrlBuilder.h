@@ -3,7 +3,7 @@
 
 
 @class SCWebApiConfig;
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 
 @interface SCReaderRequestUrlBuilder : SCAbstractRequestUrlBuilder
@@ -11,6 +11,6 @@
 -(instancetype)initWithHost:( NSString* )host
               webApiVersion:( NSString* )webApiVersion
               restApiConfig:( SCWebApiConfig* )restApiConfig
-                    request:( SCItemsReaderRequest* )request;
+                    request:( SCReadItemsRequest * )request;
 
 @end

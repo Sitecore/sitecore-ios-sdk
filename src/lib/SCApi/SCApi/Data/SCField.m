@@ -7,8 +7,8 @@
 
 #import "SCFieldRecord.h"
 #import "SCItemSourcePOD.h"
-#import "SCApiContext.h"
-#import "SCExtendedApiContext+Private.h"
+#import "SCApiSession.h"
+#import "SCExtendedApiSession+Private.h"
 
 #import "SCApiMacro.h"
 
@@ -44,7 +44,7 @@
 }
 
 -(id)initWithFieldRecord:( SCFieldRecord* )fieldRecord_
-              apiContext:( SCExtendedApiContext* )apiContext_
+              apiSession:( SCExtendedApiSession* )apiSession_
 {
     self = [ super init ];
 
@@ -52,17 +52,17 @@
     {
         self.fieldRecord = fieldRecord_;
         self->_rawValue = self.fieldRecord.rawValue;
-        self->_apiContext = apiContext_;
+        self->_apiSession = apiSession_;
     }
 
     return self;
 }
 
 +(id)fieldWithFieldRecord:( SCFieldRecord* )fieldRecord_
-               apiContext:( SCExtendedApiContext* )apiContext_
+               apiSession:( SCExtendedApiSession* )apiSession_
 {
     return [ [ self alloc ] initWithFieldRecord: fieldRecord_
-                                     apiContext: apiContext_ ];
+                                     apiSession: apiSession_ ];
 }
 
 -(id)forwardingTargetForSelector:( SEL )selector_
@@ -157,7 +157,7 @@
 #else
     // Persistent cache
     {
-        id<SCItemRecordCacheRW> cache = self->_apiContext.itemsCache;
+        id<SCItemRecordCacheRW> cache = self->_apiSession.itemsCache;
         [ cache setRawValue: self->_rawValue
                  forFieldId: self->_fieldRecord.fieldId
                      itemId: self->_fieldRecord.itemId

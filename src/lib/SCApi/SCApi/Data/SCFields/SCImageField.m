@@ -1,11 +1,11 @@
 #import "SCImageField.h"
 
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 #import "SCParams.h"
 #import "SCField+Private.h"
-#import "SCExtendedApiContext+Private.h"
+#import "SCExtendedApiSession+Private.h"
 
-@interface SCExtendedApiContext ()
+@interface SCExtendedApiSession ()
 
 -(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_;
 //-(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_
@@ -31,12 +31,12 @@
    return [ self fieldValueLoaderWithParms: nil ];
 }
 
--(JFFAsyncOperation)fieldValueLoaderWithParms:( SCFieldImageParams* )params
+-(JFFAsyncOperation)fieldValueLoaderWithParms:( SCDownloadMediaOptions * )params
 {
     NSString *imagePath_ = self.imagePath;
     if (imagePath_)
     {
-        JFFAsyncOperation loader_ = [ self.apiContext privateImageLoaderForSCMediaPath: imagePath_
+        JFFAsyncOperation loader_ = [ self.apiSession privateImageLoaderForSCMediaPath: imagePath_
                                                                                 params: params ];
         
         return [ self asyncOperationForPropertyWithName: @"fieldValue"

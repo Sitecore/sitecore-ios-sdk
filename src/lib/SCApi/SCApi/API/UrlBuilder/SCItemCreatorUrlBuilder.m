@@ -1,7 +1,7 @@
 #import "SCItemCreatorUrlBuilder.h"
 
 #import "SCCreateItemRequest.h"
-#import "SCItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
 #import "SCWebApiConfig.h"
 #import "SCRestArgsBuilder.h"
 

@@ -4,8 +4,8 @@
 #import "SCItemRecord.h"
 #import "SCItemsPage.h"
 #import "SCItemRecordsPage.h"
-#import "SCItemsReaderRequest.h"
-#import "SCCreateMediaItemRequest.h"
+#import "SCReadItemsRequest.h"
+#import "SCUploadMediaItemRequest.h"
 
 #import "SCWebApiParsers.h"
 

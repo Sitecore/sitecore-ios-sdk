@@ -1,7 +1,7 @@
 #import "SCItemRecord+SCItemSource.h"
 
 #import "SCItemSourcePOD.h"
-#import "SCExtendedApiContext.h"
+#import "SCExtendedApiSession.h"
 
 
 @implementation SCItemRecord (SCItemSource)
@@ -24,7 +24,7 @@
 
 -(SCItemSourcePOD*)getSourceFromContext
 {
-    SCExtendedApiContext* context = self.apiContext;
+    SCExtendedApiSession* context = self.apiSession;
     if ( nil == context )
     {
         return nil;

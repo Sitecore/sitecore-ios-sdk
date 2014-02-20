@@ -220,11 +220,11 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
 }
 
 -(void)addItemsAnnotationsForQuery:( NSString* )query_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_
 {
     handler_ = [ handler_ copy ];
-    itemAddressesGeocoder( apiContext_, query_ )( nil, nil, ^( NSArray* placeMarks_, NSError* error_ )
+    itemAddressesGeocoder( apiSession_, query_ )( nil, nil, ^( NSArray* placeMarks_, NSError* error_ )
     {
         if ( handler_ )
             handler_( error_ );
@@ -394,11 +394,11 @@ static const double DEFAULT_REGION_RADIUS = 10000.;
 }
 
 -(void)addItemsAnnotationsWithPath:( NSString* )path_
-                        apiContext:( SCApiContext* )apiContext_
+                        apiSession:( SCApiSession * )apiSession_
                            handler:( void(^)( NSError* ) )handler_
 {
     handler_ = [ handler_ copy ];
-    itemAddressesGeocoderWithPath( apiContext_, path_ )( nil, nil, ^( NSArray* placeMarks_, NSError* error_ )
+    itemAddressesGeocoderWithPath( apiSession_, path_ )( nil, nil, ^( NSArray* placeMarks_, NSError* error_ )
     {
         if ( handler_ )
             handler_( error_ );

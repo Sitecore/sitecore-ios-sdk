@@ -1,5 +1,5 @@
 #import "SCItemSourcePOD.h"
-#import "SCItemsReaderRequest.h"
+#import "SCReadItemsRequest.h"
 
 @implementation SCItemSourcePOD
 {
@@ -89,7 +89,7 @@
     return result;
 }
 
--(void)fillRequestParameters:( SCItemsReaderRequest * )request
+-(void)fillRequestParameters:( SCReadItemsRequest * )request
 {
     request.language = self->_language;
     request.database = self->_database;

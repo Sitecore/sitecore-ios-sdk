@@ -23,9 +23,9 @@
 
 @end
 
-@interface SCExtendedApiContext (SCMapKitLocationUtils)
+@interface SCExtendedApiSession (SCMapKitLocationUtils)
 
--(JFFAsyncOperation)itemsLoaderWithRequest:( SCItemsReaderRequest* )request_;
+-(JFFAsyncOperation)itemsLoaderWithRequest:( SCReadItemsRequest * )request_;
 
 @end
 
@@ -89,28 +89,28 @@ JFFAsyncOperationBinder addressDictionariesGeocoder()
     };
 }
 
-static JFFAsyncOperation itemsLoaderForQuery( SCApiContext* apiContext_, NSString* query_ )
+static JFFAsyncOperation itemsLoaderForQuery( SCApiSession * apiSession_, NSString* query_ )
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = query_;
     request_.requestType = SCItemReaderRequestQuery;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
-    return [ apiContext_.extendedApiContext itemsLoaderWithRequest: request_ ];
+    return [ apiSession_.extendedApiSession itemsLoaderWithRequest: request_ ];
 }
 
-static JFFAsyncOperation itemsLoaderForPath( SCApiContext* apiContext_, NSString* path_ )
+static JFFAsyncOperation itemsLoaderForPath( SCApiSession * apiSession_, NSString* path_ )
 {
-    SCItemsReaderRequest* request_ = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = path_;
     request_.requestType = SCItemReaderRequestItemPath;
     request_.scope       = SCItemReaderChildrenScope;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
-    return [ apiContext_.extendedApiContext itemsLoaderWithRequest: request_ ];
+    return [ apiSession_.extendedApiSession itemsLoaderWithRequest: request_ ];
 }
 
-static JFFAsyncOperation itemAddressesGeocoderWithLoader( SCApiContext* apiContext_
+static JFFAsyncOperation itemAddressesGeocoderWithLoader( SCApiSession * apiSession_
                                                          , JFFAsyncOperation itemsLoader_ )
 {
     JFFAsyncOperationBinder itemsToAddressDicts_ = ^JFFAsyncOperation( NSArray* items_ )
@@ -131,17 +131,17 @@ static JFFAsyncOperation itemAddressesGeocoderWithLoader( SCApiContext* apiConte
 }
 
 //STODO test
-JFFAsyncOperation itemAddressesGeocoder( SCApiContext* apiContext_, NSString* query_ )
+JFFAsyncOperation itemAddressesGeocoder( SCApiSession * apiSession_, NSString* query_ )
 {
-    JFFAsyncOperation itemsLoader_ = itemsLoaderForQuery( apiContext_, query_ );
-    return itemAddressesGeocoderWithLoader( apiContext_
+    JFFAsyncOperation itemsLoader_ = itemsLoaderForQuery( apiSession_, query_ );
+    return itemAddressesGeocoderWithLoader( apiSession_
                                            , itemsLoader_ );
 }
 
 //STODO test
-JFFAsyncOperation itemAddressesGeocoderWithPath( SCApiContext* apiContext_, NSString* path_ )
+JFFAsyncOperation itemAddressesGeocoderWithPath( SCApiSession * apiSession_, NSString* path_ )
 {
-    JFFAsyncOperation itemsLoader_ = itemsLoaderForPath( apiContext_, path_ );
-    return itemAddressesGeocoderWithLoader( apiContext_
+    JFFAsyncOperation itemsLoader_ = itemsLoaderForPath( apiSession_, path_ );
+    return itemAddressesGeocoderWithLoader( apiSession_
                                            , itemsLoader_ );
 }

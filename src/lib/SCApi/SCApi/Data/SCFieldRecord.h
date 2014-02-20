@@ -2,7 +2,7 @@
 
 @class SCField;
 @class SCItemRecord;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @class SCItemSourcePOD;
 
 @interface SCFieldRecord : NSObject
@@ -12,7 +12,7 @@
 @property ( nonatomic ) NSString* type;
 @property ( nonatomic ) NSString* rawValue;
 
-@property ( nonatomic ) SCExtendedApiContext* apiContext;
+@property ( nonatomic ) SCExtendedApiSession* apiSession;
 @property ( nonatomic, weak   ) SCItemRecord* itemRecord;
 @property ( nonatomic, weak, readonly ) SCField* field;
 @property ( nonatomic, weak ) SCField* fieldRef;

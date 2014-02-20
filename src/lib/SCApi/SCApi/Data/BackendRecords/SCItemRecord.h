@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
-@class SCApiContext;
+@class SCExtendedApiSession;
+@class SCApiSession;
 
 @interface SCItemRecord : NSObject
 
@@ -26,8 +26,8 @@
 @property ( nonatomic, weak ) SCItem* itemRef;
 @property ( nonatomic, weak, readonly ) SCItem* parent;
 @property ( nonatomic, weak, readonly ) SCItem* item;
-@property ( nonatomic ) SCExtendedApiContext* apiContext;
-@property ( nonatomic ) SCApiContext* mainApiContext;
+@property ( nonatomic ) SCExtendedApiSession* apiSession;
+@property ( nonatomic ) SCApiSession * mainApiSession;
 
 +(instancetype)itemRecord;
 +(instancetype)rootRecord;

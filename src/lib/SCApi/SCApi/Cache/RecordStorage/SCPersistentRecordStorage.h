@@ -3,7 +3,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItemSourcePOD;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @protocol ESReadOnlyDbWrapper;
 @protocol ESWritableDbWrapper;
@@ -12,7 +12,7 @@
 
 @interface SCPersistentRecordStorage : SCRecordStorageBase< SCItemRecordStorageRW >
 
--(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiSession
                        itemSource:( SCItemSourcePOD* )itemSource
                      readDatabase:( id<ESReadOnlyDbWrapper> )readDb
                     writeDatabase:( id<ESWritableDbWrapper, ESTransactionsWrapper> )writeDb
@@ -21,7 +21,7 @@
 @property ( nonatomic ) BOOL shouldCloseReadDb ;
 @property ( nonatomic ) BOOL shouldCloseWriteDb;
 
-@property ( nonatomic, readonly, weak ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, readonly, weak ) SCExtendedApiSession* apiSession;
 @property ( nonatomic, readonly ) NSString* itemKeyColumnName;
 @property ( nonatomic, readonly ) id<ESReadOnlyDbWrapper> readDb ;
 @property ( nonatomic, readonly ) id<ESWritableDbWrapper, ESTransactionsWrapper> writeDb;

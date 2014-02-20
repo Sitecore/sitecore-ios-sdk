@@ -11,8 +11,8 @@
 #import <Foundation/Foundation.h>
 
 @class SCField;
-@class SCApiContext;
-@class SCExtendedApiContext;
+@class SCApiSession;
+@class SCExtendedApiSession;
 
 /**
  The SCItem object identifies a Sitecore system item.
@@ -21,17 +21,17 @@
 
  Also it provides methods for asynchronous loading of children items and their fields.
 
- Now you can load items using the only SCApiContext object, and all loaded items has a reference to his API context, which can be used to read a necessary data.
+ Now you can load items using the only SCApiSession object, and all loaded items has a reference to his API session, which can be used to read a necessary data.
 
  SCItem object will be automatically updated with a new data when you read the same item from the backend.
  */
 @interface SCItem : NSObject
 
 /**
- The SCApiContext object this item was created/loaded from.
+ The SCApiSession object this item was created/loaded from.
  Can be used to load the necessary data.
  */
-@property(nonatomic,readonly) SCExtendedApiContext* apiContext;
+@property(nonatomic,readonly) SCExtendedApiSession* apiSession;
 
 /**
  The system item's id.

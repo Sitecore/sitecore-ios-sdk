@@ -46,7 +46,9 @@
 -(void)addSCHookTouchesView
 {
     if ( self.scHookTouchesViewEnabled )
+    {
         return;
+    }
 
     self.scHookTouchesViewEnabled = YES;
 

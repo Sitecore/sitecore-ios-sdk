@@ -1,13 +1,13 @@
 #import "SCGeneralLinkField.h"
 
 #import "SCItem.h"
-#import "SCApiContext.h"
+#import "SCApiSession.h"
 #import "SCError.h"
 #import "SCFieldLinkData+XMLParser.h"
 
 @interface SCFieldLinkData (SCGeneralLinkField)
 
-@property ( nonatomic ) SCExtendedApiContext *apiContext;
+@property ( nonatomic ) SCExtendedApiSession *apiSession;
 
 @end
 
@@ -33,7 +33,7 @@
             self->_linkData = [ SCFieldLinkData new ];
         }
 
-        self->_linkData.apiContext = self.apiContext;
+        self->_linkData.apiSession = self.apiSession;
     }
     return self->_linkData;
 }

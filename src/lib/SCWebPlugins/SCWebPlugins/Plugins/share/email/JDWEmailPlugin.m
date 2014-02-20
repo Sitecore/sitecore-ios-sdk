@@ -105,11 +105,14 @@
     [ self->_emailController dismissViewControllerAnimated: NO
                                                 completion: nil ];
 
+    JFFTimer* timer = [ JFFTimer sharedByThreadTimer ];
+    
     JFFScheduledBlock actionBlock_ = ^( JFFCancelScheduledBlock cancel_ )
     {
         self->_emailController = nil;
     };
-    [ [ JFFTimer sharedByThreadTimer ] addBlock: actionBlock_ duration: 0.2 ];
+    [ timer addBlock: actionBlock_
+            duration: 0.2 ];
 }
 
 -(void)didOpenInWebView:( UIWebView* )webView_

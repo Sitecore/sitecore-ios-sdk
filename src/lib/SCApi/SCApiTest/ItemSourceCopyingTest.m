@@ -1,4 +1,4 @@
-@interface ItemSourceCopyingTest : SenTestCase
+@interface ItemSourceCopyingTest : XCTestCase
 @end
 
 
@@ -25,61 +25,61 @@
     objc_property_t* props = class_copyPropertyList( [ SCItemSourcePOD class ], &propsCount );
     free(props);
     
-    STAssertTrue( 4 == propsCount, @"properties count mismatch" );
+    XCTAssertTrue( 4 == propsCount, @"properties count mismatch" );
 }
 
 -(void)testAllFieldsAreCopied
 {
     SCItemSourcePOD* other = [ self->_testSource copy ];
-    STAssertFalse( other == self->_testSource, @"objects must be different" );
+    XCTAssertFalse( other == self->_testSource, @"objects must be different" );
     
-    STAssertEqualObjects( other, self->_testSource, @"copy must be equal to the original" );
-    STAssertEqualObjects( other.site, self->_testSource.site, @"site mismatch" );
-    STAssertTrue( self->_testSource.hash == other.hash, @"hash mismatch" );
+    XCTAssertEqualObjects( other, self->_testSource, @"copy must be equal to the original" );
+    XCTAssertEqualObjects( other.site, self->_testSource.site, @"site mismatch" );
+    XCTAssertTrue( self->_testSource.hash == other.hash, @"hash mismatch" );
 }
 
 -(void)testSiteFieldIsCompared
 {
     SCItemSourcePOD* other = [ self->_testSource copy ];
-    STAssertFalse( other == self->_testSource, @"objects must be different" );
+    XCTAssertFalse( other == self->_testSource, @"objects must be different" );
     
     other.site = @"shell";
-    STAssertFalse( [ other isEqual: self->_testSource ], @"copy must be equal to the original" );
-    STAssertFalse( [ other.site isEqualToString: self->_testSource.site ], @"site mismatch" );
-    STAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
+    XCTAssertFalse( [ other isEqual: self->_testSource ], @"copy must be equal to the original" );
+    XCTAssertFalse( [ other.site isEqualToString: self->_testSource.site ], @"site mismatch" );
+    XCTAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
 }
 
 -(void)testDatabaseFieldIsComared
 {
     SCItemSourcePOD* other = [ self->_testSource copy ];
-    STAssertFalse( other == self->_testSource, @"objects must be different" );
+    XCTAssertFalse( other == self->_testSource, @"objects must be different" );
     
     other.database = @"core";
-    STAssertFalse( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
-    STAssertFalse( [ other.database isEqualToString: self->_testSource.database ], @"database mismatch" );
-    STAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
+    XCTAssertFalse( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
+    XCTAssertFalse( [ other.database isEqualToString: self->_testSource.database ], @"database mismatch" );
+    XCTAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
 }
 
 -(void)testLanguageFieldIsComared
 {
     SCItemSourcePOD* other = [ self->_testSource copy ];
-    STAssertFalse( other == self->_testSource, @"objects must be different" );
+    XCTAssertFalse( other == self->_testSource, @"objects must be different" );
     
     other.language = @"deutsch";
-    STAssertFalse( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
-    STAssertFalse( [ other.language isEqualToString: self->_testSource.language ], @"language mismatch" );
-    STAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
+    XCTAssertFalse( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
+    XCTAssertFalse( [ other.language isEqualToString: self->_testSource.language ], @"language mismatch" );
+    XCTAssertFalse( self->_testSource.hash == other.hash, @"hash mismatch" );
 }
 
 -(void)testVersionFieldIsNotComared
 {
     SCItemSourcePOD* other = [ self->_testSource copy ];
-    STAssertFalse( other == self->_testSource, @"objects must be different" );
+    XCTAssertFalse( other == self->_testSource, @"objects must be different" );
     
     other.itemVersion = @"222";
-    STAssertTrue( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
-    STAssertFalse( [ other.itemVersion isEqualToString: self->_testSource.itemVersion ], @"version mismatch" );
-    STAssertTrue( self->_testSource.hash == other.hash, @"hash mismatch" );
+    XCTAssertTrue( [ other isEqual: self->_testSource ], @"changed copy must NOT be equal to the original" );
+    XCTAssertFalse( [ other.itemVersion isEqualToString: self->_testSource.itemVersion ], @"version mismatch" );
+    XCTAssertTrue( self->_testSource.hash == other.hash, @"hash mismatch" );
 }
 
 -(void)testSettersConvertToLowerCase
@@ -91,10 +91,10 @@
     itemSrc.language    = @"tHE" ;
     itemSrc.itemVersion = @"kinG";
 
-    STAssertEqualObjects( itemSrc.database    , @"long", @"case mismatch" );
-    STAssertEqualObjects( itemSrc.site        , @"live", @"case mismatch" );
-    STAssertEqualObjects( itemSrc.language    , @"the" , @"case mismatch" );
-    STAssertEqualObjects( itemSrc.itemVersion , @"king", @"case mismatch" );
+    XCTAssertEqualObjects( itemSrc.database    , @"long", @"case mismatch" );
+    XCTAssertEqualObjects( itemSrc.site        , @"live", @"case mismatch" );
+    XCTAssertEqualObjects( itemSrc.language    , @"the" , @"case mismatch" );
+    XCTAssertEqualObjects( itemSrc.itemVersion , @"king", @"case mismatch" );
 }
 
 @end

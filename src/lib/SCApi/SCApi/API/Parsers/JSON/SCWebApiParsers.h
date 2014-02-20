@@ -4,7 +4,7 @@
 
 #include "JSBlocksDefinitions.h"
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @protocol SCItemSource;
 
 
@@ -16,7 +16,7 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ );
 
 JFFAsyncOperationBinder deleteItemsJSONResponseParser( NSData* responseData_ );
 
-SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiContextAndRequest( SCExtendedApiContext* apiContext_,                                    id<SCItemSource> requestedSource_ );
+SCAsyncBinderForURL itemsJSONResponseAnalyzerWithApiSessionAndRequest( SCExtendedApiSession* apiSession_,                                    id<SCItemSource> requestedSource_ );
 
 #ifdef __cplusplus
 }
