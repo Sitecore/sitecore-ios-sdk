@@ -216,7 +216,7 @@
                 };
 
                 SCExtendedAsyncOp loader =
-                [ apiContext_.extendedApiSession itemReaderForItemPath:  SCHomePath
+                [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCHomePath
                                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }

@@ -18,7 +18,7 @@
 
 -(JFFAsyncOperation)fieldValueLoader
 {
-    JFFAsyncOperation loader_ = [ self.apiSession itemReaderWithFieldsNames: [ NSSet new ]
+    JFFAsyncOperation loader_ = [ self.apiSession readItemOperationForFieldsNames: [ NSSet new ]
                                                                      itemId: self.rawValue
                                                                  itemSource: self.itemSource ];
     return [ self asyncOperationForPropertyWithName: @"fieldValue"

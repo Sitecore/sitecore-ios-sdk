@@ -657,7 +657,7 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        [ apiContext_ itemReaderForItemPath: SCCreateItemPath ]( ^( id read_item_result_, NSError* read_error_ )
+        [ apiContext_ readItemOperationForItemPath: SCCreateItemPath ]( ^( id read_item_result_, NSError* read_error_ )
                                                                 {
                                                                     read_item_ = read_item_result_;
                                                                     didFinishCallback_();
@@ -711,7 +711,7 @@
     
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        [ apiContext_ itemReaderForItemPath: SCCreateItemPath ]( ^( id read_item_result_, NSError* read_error_ )
+        [ apiContext_ readItemOperationForItemPath: SCCreateItemPath ]( ^( id read_item_result_, NSError* read_error_ )
         {
             read_item_ = read_item_result_;
             didFinishCallback_();                                                  

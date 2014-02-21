@@ -29,7 +29,7 @@
         apiContext_.defaultSite = @"/sitecore/shell";
 
         //STODO test fields
-        [ apiContext_ itemReaderForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
+        [ apiContext_ readItemOperationForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
         {
             if ( result_ )
             {
@@ -79,7 +79,7 @@
         apiContext_.defaultSite = @"/sitecore/shell";
         
         //STODO test fields
-        [ apiContext_ itemReaderForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
+        [ apiContext_ readItemOperationForItemId: itemId_ ]( ^( SCItem* result_, NSError* error_ )
          {
              if ( result_ )
              {

@@ -21,7 +21,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: nil ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: nil ]( ^( id result_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*) error_;
                     item_ = result_;
@@ -56,7 +56,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderWithFieldsNames:[ NSSet new ]
+                [ apiContext_ readItemOperationForFieldsNames:[ NSSet new ]
                                                itemPath: @"" ]( ^( id result_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*) error_;

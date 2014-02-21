@@ -22,7 +22,7 @@
                 apiContext_ = strongContext_;
                 
                 NSString* path_ = SCAllowedParentPath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -86,7 +86,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -145,7 +145,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -205,7 +205,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -266,7 +266,7 @@
                 apiContext_ = strongContext_;
                 
                 NSString* path_ = SCTestFieldsItemPath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -329,7 +329,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -421,7 +421,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -487,7 +487,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -569,7 +569,7 @@
                 apiContext_ = strongContext_;
                 
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -632,7 +632,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
@@ -716,7 +716,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     item_ = result_;
                     if ( error_ )
@@ -779,7 +779,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
             {
                 item_ = result_;
                 if ( error_ )
@@ -848,7 +848,7 @@
                 apiContext_ = strongContext_;
                 
                 NSString* path_ = SCTestFieldsItemPath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( id result_, NSError* error_ )
                 {
                     item_ = result_;
                     if ( error_ )

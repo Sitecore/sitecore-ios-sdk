@@ -150,7 +150,7 @@
 
  If Sitecore Item Web Api(backend) does not return any item, SCNoItemError error will be returned by SCAsyncOpResult handler.
  */
-- (SCExtendedAsyncOp)itemReaderForItemId:(NSString *)itemId
+- (SCExtendedAsyncOp)readItemOperationForItemId:(NSString *)itemId
                               itemSource:(id<SCItemSource>)itemSource;
 
 /**
@@ -168,7 +168,7 @@
 
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCExtendedAsyncOp)itemReaderForItemPath:(NSString *)path
+- (SCExtendedAsyncOp)readItemOperationForItemPath:(NSString *)path
                                 itemSource:(id<SCItemSource>)itemSource;
 
 /**
@@ -204,7 +204,7 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCExtendedAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCExtendedAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                                         itemId:(NSString *)itemId
                                     itemSource:(id<SCItemSource>)itemSource;
 
@@ -225,7 +225,7 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCExtendedAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames_
+- (SCExtendedAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames_
                                       itemPath:(NSString *)path_
                                     itemSource:(id<SCItemSource>)itemSource;
 

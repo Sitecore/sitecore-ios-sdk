@@ -34,7 +34,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -83,7 +83,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                    itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         };
@@ -133,7 +133,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -184,7 +184,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -235,7 +235,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -284,7 +284,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -339,7 +339,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: path_
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: path_
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }

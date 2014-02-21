@@ -247,7 +247,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderForItemPath: @"/sitecore/content/WrongItem/" ]( ^( id result_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath: @"/sitecore/content/WrongItem/" ]( ^( id result_, NSError* error_ )
             {
                 item_error_ = (SCApiError*) error_;
                 item_ = result_;
@@ -282,7 +282,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}" ]( ^( id result_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}" ]( ^( id result_, NSError* error_ )
             {
                 itemError_ = (SCApiError*) error_;
                 item_ = result_;
@@ -320,7 +320,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderWithFieldsNames: [ NSSet new ]
+            [ apiContext_ readItemOperationForFieldsNames: [ NSSet new ]
                                            itemPath: @"/sitecore/content/WrongItem/" ]( ^( id result_, NSError* error_ )
             {
                 itemError_ = (SCApiError*) error_;
@@ -357,7 +357,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderWithFieldsNames: [ NSSet new ]
+            [ apiContext_ readItemOperationForFieldsNames: [ NSSet new ]
                                              itemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}" ]( ^( id result_, NSError* error_ )
             {
                 item_error_ = (SCApiError*) error_;

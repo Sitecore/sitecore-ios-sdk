@@ -281,7 +281,7 @@
             };
             
             SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: @"/sitecore/content/WrongItem/"
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: @"/sitecore/content/WrongItem/"
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -321,7 +321,7 @@
             };
             
             SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -365,7 +365,7 @@
             };
             
             SCExtendedAsyncOp loader =
-            [ apiContext_.extendedApiSession itemReaderWithFieldsNames: [ NSSet new ]
+            [ apiContext_.extendedApiSession readItemOperationForFieldsNames: [ NSSet new ]
                                                               itemPath: @"/sitecore/content/WrongItem/"
                                                             itemSource: contextSource ];
             loader(nil, nil, doneHandler);
@@ -408,7 +408,7 @@
                 };
                 
                 SCExtendedAsyncOp loader =
-                [ apiContext_.extendedApiSession itemReaderWithFieldsNames: [ NSSet new ]
+                [ apiContext_.extendedApiSession readItemOperationForFieldsNames: [ NSSet new ]
                                                                     itemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAA}"
                                                                 itemSource: contextSource ];
                 loader(nil, nil, doneHandler);

@@ -25,7 +25,7 @@
                 apiContext_ = strongContext_;
 
                 NSString* path_ = SCHidedPath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*)error_;
                     item_ = result_item_;
@@ -69,7 +69,7 @@
             apiContext_ = strongContext_;
 
             NSString* path_ = SCHidedPath;
-            [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
             {
                 item_error_ = (SCApiError*)error_;
                 item_ = result_item_;
@@ -117,7 +117,7 @@
                 apiContext_ = strongContext_;
                 
                 NSString* path_ = SCHidedPath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*)error_;
                     item_ = result_item_;
@@ -167,7 +167,7 @@
             apiContext_ = strongContext_;
             
             NSString* path_ = SCHidedPath;
-            [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
                                                          {
                                                              item_error_ = (SCApiError*)error_;
                                                              item_ = result_item_;
@@ -216,7 +216,7 @@
             apiContext_ = strongContext_;
 
             NSString* path_ = SCHidedPath;
-            [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
             {
                 item_error_ = (SCApiError*)error_;
                 item_ = result_item_;
@@ -260,7 +260,7 @@
                 apiContext_ = strongContext_;
 
                 NSString* path_ = SCHomePath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
                 {
                     item_error_ = (SCApiError*)error_;
                     item_ = result_item_;
@@ -310,7 +310,7 @@
                 apiContext_ = strongContext_;
                 
                 NSString* path_ = SCHomePath;
-                [ apiContext_ itemReaderForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: path_ ]( ^( SCItem* result_item_, NSError* error_ )
                  {
                      item_error_ = (SCApiError*)error_;
                      item_ = result_item_;

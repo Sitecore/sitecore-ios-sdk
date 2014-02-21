@@ -81,7 +81,7 @@
                     SCField* field_ = [ item_ fieldWithName: @"Title" ];
                     isDanishItem_ = [ field_.rawValue isEqualToString: @"Danish" ];
                     apiContext_.defaultLanguage = @"en";
-                    [ apiContext_ itemReaderWithFieldsNames: [ NSSet setWithObject: @"Title" ]
+                    [ apiContext_ readItemOperationForFieldsNames: [ NSSet setWithObject: @"Title" ]
                                                    itemPath: SCLanguageItemPath ]( ^( id en_result_, NSError* error_ )
                     {
                         item_ = en_result_;
@@ -140,7 +140,7 @@
                     }
                     da_item_ = da_result_[ 0 ];
                     apiContext_.defaultLanguage = @"en";
-                    [ apiContext_ itemReaderWithFieldsNames: field_names_
+                    [ apiContext_ readItemOperationForFieldsNames: field_names_
                                                    itemPath: @"/sitecore/content/Language Test/Language Item 2" ]( ^( id en_result_, NSError* error_ )
                     {
                         en_item_ = en_result_;
@@ -201,7 +201,7 @@
                     return;
                 }
                 da_item_ = da_result_[ 0 ];
-                [ apiContext_ itemReaderWithFieldsNames: field_names_
+                [ apiContext_ readItemOperationForFieldsNames: field_names_
                                                itemPath: SCLanguageItemPath ]( ^( id en_result_, NSError* error_ )
                 {
                     en_item_ = en_result_;

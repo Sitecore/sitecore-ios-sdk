@@ -194,58 +194,58 @@
     return asyncOpWithJAsyncOp( [ self.extendedApiSession readItemsOperationWithRequest: request ] );
 }
 
-- (SCAsyncOp)itemReaderForItemId:(NSString *)itemId
+- (SCAsyncOp)readItemOperationForItemId:(NSString *)itemId
 {
-    return asyncOpWithJAsyncOp( [ self.extendedApiSession itemReaderForItemId: itemId
+    return asyncOpWithJAsyncOp( [ self.extendedApiSession readItemOperationForItemId: itemId
                                                                    itemSource: [ self contextSource ] ] );
 }
 
-- (SCAsyncOp)itemReaderForItemPath:(NSString *)path
+- (SCAsyncOp)readItemOperationForItemPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession itemReaderForItemPath: path
+    [ self.extendedApiSession readItemOperationForItemPath: path
                                          itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                                 itemId:(NSString *)itemId
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession itemReaderWithFieldsNames: fieldNames
+    [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
                                                  itemId: itemId
                                              itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                             itemSource:(id<SCItemSource>)itemSource
                                 itemId:(NSString *)itemId
 {
-    SCExtendedAsyncOp result = [ self.extendedApiSession itemReaderWithFieldsNames: fieldNames
+    SCExtendedAsyncOp result = [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
                                                                             itemId: itemId
                                                                         itemSource: itemSource ];
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                               itemPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession itemReaderWithFieldsNames: fieldNames
+    [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
                                                itemPath: path
                                              itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                          itemSourcePOD:(SCItemSourcePOD *)itemSourcePOD
                               itemPath:(NSString *)path
 {
-    SCExtendedAsyncOp result = [ self.extendedApiSession itemReaderWithFieldsNames: fieldNames
+    SCExtendedAsyncOp result = [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
                                                                           itemPath: path
                                                                         itemSource: [ self contextSource ] ];
     return asyncOpWithJAsyncOp( result );

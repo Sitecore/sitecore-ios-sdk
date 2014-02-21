@@ -110,7 +110,7 @@
                 };
                 
                 SCExtendedAsyncOp loader1 =
-                [ apiContext_.extendedApiSession itemReaderWithFieldsNames: [ NSSet setWithObject: @"Title" ]
+                [ apiContext_.extendedApiSession readItemOperationForFieldsNames: [ NSSet setWithObject: @"Title" ]
                                                                   itemPath: SCLanguageItemPath
                                                                 itemSource: srcEnglish ];
                 loader1(nil, nil, doneHandler1);
@@ -176,7 +176,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession itemReaderWithFieldsNames: field_names_
+                SCExtendedAsyncOp loader1 = [ apiContext_.extendedApiSession readItemOperationForFieldsNames: field_names_
                                              itemPath: @"/sitecore/content/Language Test/Language Item 2"
                                              itemSource: srcEnglish ];
                 loader1(nil, nil, doneHandler1);
@@ -245,7 +245,7 @@
                 };
                 
                 SCExtendedAsyncOp loader1 =
-                [ apiContext_.extendedApiSession itemReaderWithFieldsNames: field_names_
+                [ apiContext_.extendedApiSession readItemOperationForFieldsNames: field_names_
                                                                   itemPath: SCLanguageItemPath
                                                                 itemSource: srcEnglish ];
                 loader1(nil, nil, doneHandler1);

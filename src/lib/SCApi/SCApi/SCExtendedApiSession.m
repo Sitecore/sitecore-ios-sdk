@@ -142,18 +142,18 @@
                                      itemId: itemId ];
 }
 
--(SCExtendedAsyncOp)itemReaderForItemId:( NSString* )itemId
+-(SCExtendedAsyncOp)readItemOperationForItemId:( NSString* )itemId
                              itemSource:(id<SCItemSource>)itemSource
 {
-    return [ self itemReaderWithFieldsNames: [ NSSet new ]
+    return [ self readItemOperationForFieldsNames: [ NSSet new ]
                                      itemId: itemId
                                  itemSource: itemSource ];
 }
 
--(SCExtendedAsyncOp)itemReaderForItemPath:( NSString* )path
+-(SCExtendedAsyncOp)readItemOperationForItemPath:( NSString* )path
                                itemSource:(id<SCItemSource>)itemSource
 {
-    return [ self itemReaderWithFieldsNames: [ NSSet new ]
+    return [ self readItemOperationForFieldsNames: [ NSSet new ]
                                    itemPath: path
                                  itemSource: itemSource ];
 }
@@ -171,7 +171,7 @@
     return firstItemFromArrayReader( [ self itemsLoaderWithRequest: request_ ] );
 }
 
--(SCExtendedAsyncOp)itemReaderWithFieldsNames:( NSSet* )fieldNames
+-(SCExtendedAsyncOp)readItemOperationForFieldsNames:( NSSet* )fieldNames
                                        itemId:( NSString* )itemId
                                    itemSource:( id<SCItemSource> )itemSource
 {
@@ -180,7 +180,7 @@
                                      itemId: itemId ];
 }
 
--(SCExtendedAsyncOp)itemReaderWithFieldsNames:( NSSet* )fieldNames_
+-(SCExtendedAsyncOp)readItemOperationForFieldsNames:( NSSet* )fieldNames_
                                      itemPath:( NSString* )path_
                                    itemSource:(id<SCItemSource>)itemSource
 {

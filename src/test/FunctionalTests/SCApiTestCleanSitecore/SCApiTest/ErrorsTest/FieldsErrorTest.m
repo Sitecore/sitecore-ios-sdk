@@ -168,7 +168,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ itemReaderForItemPath:  SCHomePath ]( ^( id result_, NSError* error_ )
+            [ apiContext_ readItemOperationForItemPath:  SCHomePath ]( ^( id result_, NSError* error_ )
             {
                 if ( error_ )
                 {

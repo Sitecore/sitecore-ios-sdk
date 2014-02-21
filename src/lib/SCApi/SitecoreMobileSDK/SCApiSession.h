@@ -187,7 +187,7 @@
  
  If Sitecore Item Web Api(backend) does not return any item, SCNoItemError error will be returned by SCAsyncOpResult handler.
  */
-- (SCAsyncOp)itemReaderForItemId:(NSString *)itemId;
+- (SCAsyncOp)readItemOperationForItemId:(NSString *)itemId;
 
 /**
  Used for the reading item from a backend with a given system item path
@@ -204,7 +204,7 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)itemReaderForItemPath:(NSString *)path;
+- (SCAsyncOp)readItemOperationForItemPath:(NSString *)path;
 
 /**
  Returns SCField object for the given items's ID and field's name if such field was loaded and the item has a field with such name
@@ -244,10 +244,10 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                                 itemId:(NSString *)itemId;
 
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                             itemSource:( id<SCItemSource> )itemSource
                                 itemId:(NSString *)itemId;
 /**
@@ -267,7 +267,7 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)itemReaderWithFieldsNames:(NSSet *)fieldNames
+- (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                               itemPath:(NSString *)path;
 
 /**

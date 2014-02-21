@@ -31,7 +31,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: nil
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: nil
                                                                                        itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -71,7 +71,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderWithFieldsNames:[ NSSet new ]
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForFieldsNames:[ NSSet new ]
                                                                                              itemPath: @""
                                                                                            itemSource: contextSource ];
                 loader(nil, nil, doneHandler);

@@ -42,7 +42,7 @@
                 };
                 
                 SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }
@@ -100,7 +100,7 @@
                 
                 
                 SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession itemReaderForItemPath: SCTestFieldsItemPath
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
                                             itemSource: contextSource ];
                 loader(nil, nil, doneHandler);
             }

@@ -23,7 +23,7 @@
                 apiContext_ = strongContext_;
                 
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ](
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ](
                 ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
@@ -80,7 +80,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAnonymousContext ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ itemReaderForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                [ apiContext_ readItemOperationForItemPath: SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
                 {
                     if ( error_ )
                     {
