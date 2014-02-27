@@ -66,6 +66,8 @@ SCWebViewWrapperDelegate
     _stripeView = [ [ JFFPageSlider alloc ] initWithFrame: self.bounds
                                                  delegate: self ];
     [ self addSubviewAndScale: _stripeView ];
+    
+    [ self->_stripeView reloadData ];
 
     _recognizer = [ [ SCLRSwipeRecognizer alloc ] initWithDelegate: self
                                                               view: (UIWebView*)self ];
@@ -260,19 +262,23 @@ handleMemoryWarningForElementAtIndex:( NSInteger )element_index_
 
 -(void)loadCorrespondPageWithURL:( NSURL* )url_
 {
-    if ( url_ )
+    if ( nil != url_ )
     {
         [ self loadURL: url_ ];
         return;
     }
     
     if ( [ _delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+    {
         [ _delegate webViewDidStartLoad: self ];
+    }
     
     if ( !self.webView.isLoading )
     {
         if ( [ _delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+        {
             [ _delegate webViewDidFinishLoad: self ];
+        }
     }
 }
 
