@@ -52,7 +52,7 @@
     GHAssertTrue( [ result isKindOfClass: [ NSNull class ] ], @"unexpected result class" );
 }
 
--(void)testAuthRequestFailsForNilSite
+-(void)testAuthRequestNotFailsForNilSite
 {
     __block NSNull* result = nil;
     __block NSError* error = nil;
@@ -75,15 +75,10 @@
                                            selector: _cmd ];
     
     // @adk - same behaviour for both anonymous access modes
-    //FIXME: @igk [new webApi] credentials request is not depends on site parameter? Disscuss on meeting
-    GHAssertNil( result, @"[auth failed] : unexpected result" );
-    GHAssertNotNil( error, @"[auth failed] : error expected" );
+    //@igk [new webApi] credentials request is not depends on site parameter? Disscuss on meeting
+    GHAssertNotNil( result, @"[auth failed] : unexpected result" );
+    GHAssertNil( error, @"[auth failed] : error expected" );
     
-    GHAssertTrue( [ error isMemberOfClass: [ SCResponseError class ] ], @"unexpected result class" );
-    SCResponseError* castedError = (SCResponseError*)error;
-    
-    GHAssertTrue( 401 == castedError.statusCode, @"status code mismatch" );
-    GHAssertEqualObjects( castedError.message, @"Access to site is not granted.", @"error message mismatch" );
 }
 
 @end

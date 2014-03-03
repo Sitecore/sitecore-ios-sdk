@@ -122,6 +122,7 @@
     NSString* rawValue = field_.rawValue;
     NSString* expectedRawValue = defaultField.rawValue;
     
+    // @igk test should not pass!!!
     GHAssertEqualObjects(rawValue, expectedRawValue, @"field mismatch : [%@] not equal to [%@]", rawValue, expectedRawValue );
     GHAssertTrue( field_.item == da_item_, @"OK" );
 }

@@ -59,7 +59,7 @@
 -(void)testWrongRequestLanguage
 {
     __weak __block SCApiSession* apiContext_ = nil;
-    __block SCItem* da_item_ = nil;
+    __block SCItem* en_item_ = nil;
     __block SCItem* default_item_ = nil;
     
     @autoreleasepool
@@ -79,14 +79,14 @@
             request_.language = @"xx";
             apiContext_.defaultLanguage = @"da";
             
-            SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* da_result_, NSError* error_ )
+            SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* en_result_, NSError* error_ )
             {
-                if ( [ da_result_ count ] == 0 )
+                if ( [ en_result_ count ] == 0 )
                 {
                     didFinishCallback_();
                     return;
                 }
-                da_item_ = da_result_[ 0 ];
+                en_item_ = en_result_[ 0 ];
                 request_.language = nil;
                 apiContext_.defaultLanguage = nil;
                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
@@ -113,18 +113,19 @@
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
     //Test danish item
-    GHAssertTrue( da_item_ != nil, @"OK" );
-    SCField* field_ = [ da_item_ fieldWithName: @"Title" ];
-    NSLog( @":%@", [ da_item_ fieldWithName: @"Title" ] );
+    GHAssertTrue( en_item_ != nil, @"OK" );
+    SCField* field_ = [ en_item_ fieldWithName: @"Title" ];
+    NSLog( @":%@", [ en_item_ fieldWithName: @"Title" ] );
 
     SCField* defaultField = [ default_item_ fieldWithName: @"Title" ];
     
     // @adk : web API returns default language ("en") #394160
+    // @igk test should not pass!!!
     NSString* rawValue = field_.rawValue;
     NSString* expectedRawValue = defaultField.rawValue;
     GHAssertEqualObjects(rawValue, expectedRawValue, @"field mismatch : [%@] not equal to [%@]", rawValue, expectedRawValue );
     
-    GHAssertTrue( field_.item == da_item_, @"OK" );
+    GHAssertTrue( field_.item == en_item_, @"OK" );
 }
 
 -(void)testLanguageReadNotExistedItems

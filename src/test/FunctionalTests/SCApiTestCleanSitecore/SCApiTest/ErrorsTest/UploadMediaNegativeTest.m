@@ -187,14 +187,17 @@
                                                selector: _cmd ];
     }
     
-    //FIXME: @igk [new webApi] item is not created, it was server side bug, we need fix this test. Disscuss on meeting
-    GHAssertTrue( apiContext_ != nil, @"OK" );
-    GHAssertTrue( media_item_ != nil, @"OK" );
-    GHAssertTrue( response_error_ == nil, @"OK" );
-    BOOL itemHasPrefix = [ [ media_item_ displayName ] hasPrefix: @"Empty Media" ];
-    GHAssertTrue( itemHasPrefix, @"item should has a prefix 'Empty Media'" );
-    GHAssertEqualStrings([ media_item_ itemTemplate ], @"System/Media/Unversioned/File", @"wrong item template path");
-    GHAssertTrue( [ media_item_ readFieldsByName ] != nil, @"OK" );
+    //@igk [new webApi] item without data should not be created
+    
+    GHAssertTrue( apiContext_ == nil, @"OK" );
+    GHAssertTrue( media_item_ == nil, @"OK" );
+    GHAssertTrue( response_error_ != nil, @"OK" );
+   
+    GHAssertTrue( [response_error_ isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+    
+    SCResponseError* castedError = (SCResponseError*)response_error_;
+    GHAssertTrue( 400 == castedError.statusCode, @"status code mismatch" );
+    
 }
 
 -(void)testCreateMediaWithHighData
@@ -472,8 +475,8 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertTrue( [ castedError statusCode ] == 403, @"error code mismatch" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( [ castedError statusCode ] == 400, @"error code mismatch" );
     }
 }
 

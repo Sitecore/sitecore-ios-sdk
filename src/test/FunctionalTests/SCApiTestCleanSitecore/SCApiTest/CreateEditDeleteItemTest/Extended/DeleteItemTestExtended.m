@@ -128,14 +128,24 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertTrue( [deleteError isMemberOfClass: [SCResponseError class] ], @"error class mismatch" );
+       //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)deleteError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        //first item:
+        GHAssertTrue( item_ != nil, @"OK" );
+        GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemToDelete" ], @"OK" );
+        GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        [ self performAsyncRequestOnMainThreadWithBlock: [ self getCleanupBlock ]
-                                               selector: _cmd ];
+        //second item:
+        GHAssertTrue( item2_ != nil, @"OK" );
+        GHAssertTrue( [ [ item2_ displayName ] hasPrefix: @"ChildItem" ], @"OK" );
+        GHAssertTrue( [ [ item2_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
+        
+        //removed items:
+        GHAssertTrue( read_items_count_ == 0, @"OK" );
+        
+        NSLog( @"deleteResponse_: %@", delete_response_ );
+        GHAssertTrue( [ delete_response_ count ] == 1, @"OK" );
     }
     
 }
@@ -262,14 +272,30 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertTrue( [deleteError isMemberOfClass: [SCResponseError class] ], @"error class mismatch" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)deleteError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        //first item:
+        GHAssertTrue( item_ != nil, @"OK" );
+        GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemToDelete" ], @"OK" );
+        GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
         
-        [ self performAsyncRequestOnMainThreadWithBlock: [ self getCleanupBlock ]
-                                               selector: _cmd ];
+        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+        
+        //second item:
+        GHAssertTrue( item_ != nil, @"OK" );
+        GHAssertTrue( [ [ item2_ displayName ] hasPrefix: @"ItemToDelete" ], @"OK" );
+        GHAssertTrue( [ [ item2_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
+        
+        NSLog( @"item2_.readFieldsByName: %@", item2_.readFieldsByName );
+        GHAssertTrue( [ item2_.readFieldsByName count ] == 0, @"OK" );
+        
+        //removed items:
+        GHAssertTrue( read_items_count_ == 0, @"OK" );
+        NSLog( @"deleteResponse_: %@", deleteResponse_ );
+        NSLog( @"deletedItemId_: %@", deletedItemId_ );
+        GHAssertTrue( [ deleteResponse_ containsObject: deletedItemId_ ], @"OK" );
     }
 }
 
@@ -458,14 +484,24 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertTrue( [deleteError isMemberOfClass: [SCResponseError class] ], @"error class mismatch" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        //remove response:
+        GHAssertTrue( readItemsCount_ == 0, @"OK" );
+        NSLog( @"deleteResponse_: %@", deleteResponse_ );
+        GHAssertTrue( [ deleteResponse_ count ] == 3, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)deleteError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        //deleted items
+        item_ = [ apiContext_ itemWithId: request1_
+                                  source: webShellEnglish ];
+        GHAssertNil( item_, @"OK" );
         
-        [ self performAsyncRequestOnMainThreadWithBlock: [ self getCleanupBlock ]
-                                               selector: _cmd ];
+        item2_ = [ apiContext_ itemWithId: request2_
+                                   source: webShellEnglish ];
+        GHAssertNil( item2_, @"OK" );
+        
+        item3_ = [ apiContext_ itemWithId: request3_
+                                   source: webShellEnglish ];
+        GHAssertNil( item3_, @"OK" );
     }
     
 }
@@ -497,8 +533,6 @@
     @autoreleasepool
     {
         __block SCApiSession* strongApiSession_ = nil;
-        
-        
         
         __block NSString* currentPath_ = SCCreateItemPath;
         
@@ -628,15 +662,21 @@
         }
         else
         {
-            //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-            GHAssertFalse( itemsWasRemoved_, @"OK" );
-            GHAssertTrue( [deleteError isMemberOfClass: [SCResponseError class] ], @"error class mismatch" );
+            //@igk [new webApi] admin user has access to the extranet domain
+            GHAssertTrue( itemsWasRemoved_, @"OK" );
+            GHAssertNotNil( weakApiSession_, @"OK" );
             
-            SCResponseError* castedError = (SCResponseError*)deleteError;
-            GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+            item1_ = [ weakApiSession_ itemWithId: itemId1_
+                                           source: webShellEnglish ];
+            GHAssertNil( item1_, @"OK" );
             
-            [ self performAsyncRequestOnMainThreadWithBlock: [ self getCleanupBlock ]
-                                                   selector: _cmd ];
+            item2_ = [ weakApiSession_ itemWithId: itemId2_
+                                           source: webShellEnglish ];
+            GHAssertNil( item2_, @"OK" );
+            
+            item3_ = [ weakApiSession_ itemWithId: itemId3_
+                                           source: webShellEnglish ];
+            GHAssertNil( item3_, @"OK" );
         }
         
         rootItem_ = nil;
@@ -648,7 +688,8 @@
     }
     else
     {
-        GHAssertNotNil( weakApiSession_, @"Non deleted items must hold the context around" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertNil( weakApiSession_, @"Non deleted items must hold the context around" );
     }
 }
 

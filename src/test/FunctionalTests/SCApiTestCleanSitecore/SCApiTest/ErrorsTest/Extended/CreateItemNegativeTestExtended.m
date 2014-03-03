@@ -361,22 +361,7 @@
     
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
-    if ( !IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"unexpecred item object" );
-        GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
-        
-        SCCreateItemError* castedError = (SCCreateItemError*)response_error_;
-        GHAssertTrue( [ castedError.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"error clkass mismatch" );
-        
-        SCResponseError* responseError = (SCResponseError*)castedError.underlyingError;
-        GHAssertTrue( 403 == responseError.statusCode, @"status code mismatch" );
-        
-        return;
-    }
-
-    
+      
     [ self performAsyncRequestOnMainThreadWithBlock: read_block_
                                            selector: _cmd ];
     
@@ -394,6 +379,22 @@
         NSLog( @"[ [ item_ fieldWithName:@'__Source' ] rawValue ] : %@", [ [ item_ fieldWithName: @"__Source" ] rawValue ]  );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
+    }
+    else
+    {
+            //@igk [new webApi] admin user has access to the extranet domain
+            GHAssertTrue( apiContext_ != nil, @"OK" );
+            GHAssertTrue( item_ != nil, @"OK" );
+            GHAssertTrue( response_error_ == nil, @"OK" );
+            GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemInvalidFields" ], @"OK" );
+            GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
+            
+            GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
+            NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+            NSLog( @"[ [ item_ fieldWithName:@'Path' ] rawValue ] : %@", [ [ item_ fieldWithName: @"Path" ] rawValue ]  );
+            NSLog( @"[ [ item_ fieldWithName:@'__Source' ] rawValue ] : %@", [ [ item_ fieldWithName: @"__Source" ] rawValue ]  );
+            GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
+            GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
     }
 }
 
@@ -450,39 +451,24 @@
     }; 
     
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];    
-    if ( !IS_ANONYMOUS_ACCESS_ENABLED)
-    {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"unexpecred item object" );
-        GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
-        
-        SCCreateItemError* castedError = (SCCreateItemError*)response_error_;
-        GHAssertTrue( [ castedError.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"error clkass mismatch" );
-        
-        SCResponseError* responseError = (SCResponseError*)castedError.underlyingError;
-        GHAssertTrue( 403 == responseError.statusCode, @"status code mismatch" );
-        
-        return;
-    }
+                                           selector: _cmd ];
 
     
     [ self performAsyncRequestOnMainThreadWithBlock: read_block_
                                            selector: _cmd ];
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( apiContext_ != nil, @"OK" );
-        GHAssertTrue( item_ != nil, @"OK" );
-        GHAssertTrue( response_error_ == nil, @"OK" );
-        GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemEmptyFields" ], @"OK" );
-        GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
-        
-        GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-        GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"" ], @"OK" );
-        GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"" ], @"OK" );
-    }
+    //@igk [new webApi] admin user has access to the extranet domain
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( item_ != nil, @"OK" );
+    GHAssertTrue( response_error_ == nil, @"OK" );
+    GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemEmptyFields" ], @"OK" );
+    GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
+    
+    GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
+    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+    GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"" ], @"OK" );
+    GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"" ], @"OK" );
+
 }
 
 -(void)testCreateItemWithEmptyFields_Shell
@@ -605,15 +591,15 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"unexpecred item object" );
-        GHAssertTrue( [ response_error_ isMemberOfClass: [ SCCreateItemError class ] ], @"error clkass mismatch" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
+        GHAssertTrue( item_ != nil, @"OK" );
+        GHAssertTrue( response_error_ == nil, @"OK" );
+        GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemNotExistedFields" ], @"OK" );
+        GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        SCCreateItemError* castedError = (SCCreateItemError*)response_error_;
-        GHAssertTrue( [ castedError.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"error clkass mismatch" );
-        
-        SCResponseError* responseError = (SCResponseError*)castedError.underlyingError;
-        GHAssertTrue( 403 == responseError.statusCode, @"status code mismatch" );
+        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
     }
 }
 
@@ -854,7 +840,7 @@
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
         // ALR can be failed for Web API 1.0 because of issue 393416 fixed on CMS 7.1
-        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
+        GHAssertTrue( [ castedError_ isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
     }
     else
     {
@@ -920,21 +906,14 @@
     {
         // ALR can be failed because of issue 397233
         // ALR can be failed for Web API 1.0 because of issue 393416 fixed on CMS 7.1
-        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
+        GHAssertTrue( [ castedError_ isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
         
     }
     else
     {
-        //FIXME: @igk [new webApi] error type should be 403 (no access for extranet\test user to sitecore domain )
-        GHAssertTrue( [ castedError_.underlyingError isMemberOfClass: [ SCResponseError class ] ], @"OK" );
-        
-        SCResponseError* underlyingError = (SCResponseError*)castedError_.underlyingError;
-        GHAssertTrue( underlyingError.statusCode == 403, @"error code mismatch" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( [ castedError_ isMemberOfClass: [ SCCreateItemError class ] ], @"OK" );
     }
 }
-
-
-
-
 
 @end

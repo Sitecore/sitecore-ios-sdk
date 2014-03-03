@@ -309,6 +309,8 @@
         
     };
     
+    __block NSError *readError;
+    
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
@@ -324,6 +326,9 @@
             {
                 media_item_ = nil;
             }
+            
+            readError = read_error_;
+            
             didFinishCallback_();
         };
         
@@ -339,10 +344,10 @@
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
-    //first item:
-    GHAssertTrue( media_item_ != nil, @"OK" );
-    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestNotAMediaItem" ], @"OK" );
-    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/File" ], @"OK" );
+    //@igk media item with nil image data will not be created with new webApi, test should be fixed
+    GHAssertTrue( media_item_ == nil, @"OK" );
+    GHAssertTrue( readError != nil, @"OK" );
+    GHAssertTrue( [ readError isMemberOfClass: [ SCInvalidPathError class ] ], @"wrong error type");
 }
 
 -(void)testCreateMediaItemInCore
@@ -454,6 +459,7 @@
         loader(nil, nil, doneHandler);
     };
     
+    __block NSError *readError;
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
@@ -469,6 +475,9 @@
             {
                 media_item_ = nil;
             }
+            
+            readError = read_error_;
+            
             didFinishCallback_();
         };
         
@@ -485,9 +494,10 @@
     GHAssertTrue( apiContext_ != nil, @"OK" );
     
     //first item:
-    GHAssertTrue( media_item_ != nil, @"OK" );
-    GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestSeveralMediaItems" ], @"OK" );
-    GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
+    //@igk media item with nil image data will not be created with new webApi, test should be fixed
+    GHAssertTrue( media_item_ == nil, @"OK" );
+    GHAssertTrue( readError != nil, @"OK" );
+    GHAssertTrue( [ readError isMemberOfClass: [ SCInvalidPathError class ] ], @"wrong error type");
 }
 
 

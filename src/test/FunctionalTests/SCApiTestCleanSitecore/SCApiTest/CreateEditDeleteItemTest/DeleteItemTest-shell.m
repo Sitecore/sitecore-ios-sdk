@@ -477,4 +477,79 @@
     GHAssertNil( weakApiSession_, @"OK" );
 }
 
+
+-(void)testDeleteItemLoadedWithCustomParamsInRequest_Shell
+{
+    __weak __block SCApiSession* apiContext_ = nil;
+    __block SCItem* item_ = nil;
+    __block NSDictionary* read_fields_ = nil;
+    __block NSError* createError = nil;
+    
+    __block NSNull* outresult = nil;
+    __block NSError* outerror = nil;
+    
+    @autoreleasepool
+    {
+        __block SCApiSession* strongContext_ = nil;
+        
+        
+        
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            strongContext_ = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
+                                                             login: SCWebApiAdminLogin
+                                                          password: SCWebApiAdminPassword ];
+            strongContext_.defaultDatabase = @"web";
+            strongContext_.defaultSite = nil;
+            strongContext_.defaultLanguage = @"en";
+            
+            apiContext_ = strongContext_;
+                        
+            SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: SCCreateItemPath ];
+            
+            request_.itemName     = @"Normal Item";
+            request_.itemTemplate = @"Common/Folder";
+            request_.database = @"master";
+            request_.language = @"ru";
+            
+            NSDictionary* fields_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys: @"__Editor", @"__Editor"
+                                     , nil ];
+            request_.fieldsRawValuesByName = fields_;
+            request_.fieldNames = [ NSSet setWithObjects: @"__Editor", nil ];
+            
+            __block JFFSimpleBlock blockdidFinishCallback_ = didFinishCallback_;
+            
+            [ apiContext_ createItemsOperationWithRequest: request_ ]( ^( id result, NSError* error )
+              {
+                  createError = error;
+                  item_ = result;
+                  NSLog( @"items fields: %@", item_.readFieldsByName );
+                  read_fields_ = item_.readFieldsByName;
+                  
+                  SCAsyncOpResult onRemoveCompleted = ^void( NSNull* blockResult, NSError* blockError )
+                  {
+                      outresult = blockResult;
+                      outerror  = blockError ;
+                      
+                      blockdidFinishCallback_();
+                  };
+                  
+                  SCAsyncOp removeOperation = item_.removeItem;
+                  
+                  removeOperation( onRemoveCompleted );
+                  
+            } );
+        
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
+
+    }
+    
+    GHAssertNotNil( outresult, @"[auth failed] : nil result - %@|%@", [ outerror class ], [ outerror localizedDescription ] );
+    GHAssertNil( outerror, @"[auth failed] : error received  - %@|%@", [ outerror class ], [ outerror localizedDescription ] );
+
+}
+
 @end

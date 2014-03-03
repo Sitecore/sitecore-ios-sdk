@@ -74,16 +74,10 @@
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
     
-    //FIXME: extranet\adminex user shouldn's have access to sitecore domain
+    ////@igk [new webApi] checkCredentials not depends on site parameter
     // @adk - same behaviour for both anonymous access modes
-    GHAssertNil( result, @"[auth failed] : unexpected result" );
-    GHAssertNotNil( error, @"[auth failed] : error expected" );
-    
-    GHAssertTrue( [ error isMemberOfClass: [ SCResponseError class ] ], @"unexpected result class" );
-    SCResponseError* castedError = (SCResponseError*)error;
-    
-    GHAssertTrue( 401 == castedError.statusCode, @"status code mismatch" );
-    GHAssertEqualObjects( castedError.message, @"Access to site is not granted.", @"error message mismatch" );
+    GHAssertNotNil( result, @"[auth failed] : unexpected result" );
+    GHAssertNil( error, @"[auth failed] : error expected" );
 }
 
 

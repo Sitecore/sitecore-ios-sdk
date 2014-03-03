@@ -404,6 +404,10 @@
 		78B0BDDB17BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */; };
 		78B28A5317C747FF00942D26 /* UploadMediaWithoutAccessTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */; };
 		78BDD60717BE15DA00DBEB62 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
+		78D65DC918BCA71500E4A269 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D65DC818BCA71400E4A269 /* testImage.png */; };
+		78D65DCA18BCA71500E4A269 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D65DC818BCA71400E4A269 /* testImage.png */; };
+		78D65DCB18BCA71500E4A269 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D65DC818BCA71400E4A269 /* testImage.png */; };
+		78D65DCC18BCA71500E4A269 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D65DC818BCA71400E4A269 /* testImage.png */; };
 		78F3C23618AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		78F3C23718AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
@@ -694,6 +698,7 @@
 		78B0BDBF17BD0E680013B6DC /* UploadMediaNegativeTestExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaNegativeTestExtended.m; sourceTree = "<group>"; };
 		78B0BDC017BD0E680013B6DC /* ZRemoveAllNegativeTestsExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRemoveAllNegativeTestsExtended.m; sourceTree = "<group>"; };
 		78B28A5017C747FF00942D26 /* UploadMediaWithoutAccessTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadMediaWithoutAccessTest.m; sourceTree = "<group>"; };
+		78D65DC818BCA71400E4A269 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		7E08ACB9170D65AE007413D6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SitecoreAdminAuthTest.m; sourceTree = "<group>"; };
@@ -871,6 +876,7 @@
 		1B925B9114615C7D00C9FC49 = {
 			isa = PBXGroup;
 			children = (
+				78D65DC818BCA71400E4A269 /* testImage.png */,
 				78911DAF17C21CF900C680AE /* Default-568h@2x.png */,
 				258A14F514E537E600DA4DE5 /* auto tests.png */,
 				2560DB5D1532DECA0096DC59 /* large_image.jpg */,
@@ -1383,6 +1389,7 @@
 				2560DB5E1532DECA0096DC59 /* large_image.jpg in Resources */,
 				78A6181617BA142400D43837 /* big.jpg in Resources */,
 				25E177AC1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
+				78D65DC918BCA71500E4A269 /* testImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1390,6 +1397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D65DCA18BCA71500E4A269 /* testImage.png in Resources */,
 				1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */,
 				1BCC934C1511E11B00271BFD /* auth.xml in Resources */,
 				1BCC938C1511E11B00271BFD /* auto tests.png in Resources */,
@@ -1408,6 +1416,7 @@
 				7E18F92217C217B400006465 /* auth.xml in Resources */,
 				7E18F92317C217B400006465 /* auto tests.png in Resources */,
 				7E18F92417C217B400006465 /* large_image.jpg in Resources */,
+				78D65DCB18BCA71500E4A269 /* testImage.png in Resources */,
 				25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1422,6 +1431,7 @@
 				7E18F97E17C217C700006465 /* large_image.jpg in Resources */,
 				78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */,
 				25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
+				78D65DCC18BCA71500E4A269 /* testImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

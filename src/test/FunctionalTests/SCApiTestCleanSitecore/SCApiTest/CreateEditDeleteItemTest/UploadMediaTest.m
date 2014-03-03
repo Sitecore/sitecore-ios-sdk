@@ -141,11 +141,11 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
 
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-
         GHAssertTrue( apiContext_ != nil, @"OK" );
 
         //first item:
@@ -164,13 +164,18 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( media_item_, @"item should not be read" );
+        //@igk [new webApi] admin has access to the extranet domain
+        GHAssertTrue( media_item_ != nil, @"OK" );
+
+        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaWithFields" ], @"OK" );
+        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
+        GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 3, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"10 x 10"], @"OK" );
+        GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"Image Alt"], @"OK" );
+      
+        //FIXME: @igk check why Blob value is nil?
+        GHAssertTrue( [ [ media_item_ fieldWithName: @"Blob" ] fieldValue ] != nil, @"OK" );
     }
 }
 
@@ -296,7 +301,7 @@
         request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestNotAMediaItem";
         request_.itemTemplate  = @"System/Media/Unversioned/File";
-        request_.mediaItemData = nil;
+        request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: request_.fileName ] );;
         request_.fieldNames    = [ NSSet new ];
         request_.contentType   = @"file";
         request_.folder        = SCCreateMediaFolder;
@@ -331,27 +336,32 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
     
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
+        
         
         GHAssertTrue( apiContext_ != nil, @"OK" );
         
         //first item:
         GHAssertTrue( media_item_ != nil, @"OK" );
         GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestNotAMediaItem" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/File" ], @"OK" );
+        //@igk [new webApi] item template changed by server according to the extention of file name
+        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( media_item_, @"item should not be read" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        //first item:
+        GHAssertTrue( media_item_ != nil, @"OK" );
+        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestNotAMediaItem" ], @"OK" );
+        //@igk [new webApi] item template changed by server according to the extention of file name
+        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
+
     }
 }
 
@@ -421,13 +431,14 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( media_item_, @"item should not be read" );
+        //@igk [new webApi] admin has access to the extranet domain
+        GHAssertNil( createError, @"error class mismatch" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertTrue( media_item_ != nil, @"OK" );
+        GHAssertTrue( [ [ media_item_ displayName ] isEqualToString: @"TestCoreMediaItem" ], @"OK" );
+        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
     }
 }
 
@@ -447,7 +458,7 @@
     {
         SCUploadMediaItemRequest* request_ = [ SCUploadMediaItemRequest new ];
         
-        request_.fileName      = @"File name (Alt)";
+        request_.fileName      = @"auto tests.png";
         request_.itemName      = @"TestSeveralMediaItems";
         request_.itemTemplate  = @"System/Media/Unversioned/Image";
         request_.mediaItemData = UIImagePNGRepresentation( [ UIImage imageNamed: request_.fileName ] );
@@ -491,11 +502,12 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
     
+    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
+                                           selector: _cmd ];
+    
     if ( IS_ANONYMOUS_ACCESS_ENABLED )
     {
-        [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                               selector: _cmd ];
-        
+
         GHAssertTrue( apiContext_ != nil, @"OK" );
         
         //first item:
@@ -505,13 +517,13 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( media_item_, @"item should not be read" );
+        //@igk [new webApi] admin has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
-        
-        SCResponseError* castedError = (SCResponseError*)createError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        //first item:
+        GHAssertTrue( media_item_ != nil, @"OK" );
+        GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestSeveralMediaItems" ], @"OK" );
+        GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
     }
 }
 

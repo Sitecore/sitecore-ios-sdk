@@ -74,16 +74,19 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"item created without proper permissions" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
-        SCCreateItemError* castedCreateError = (SCCreateItemError*)createError;
+        GHAssertTrue( item_ != nil, @"OK" );
         
-        GHAssertTrue( [ castedCreateError.underlyingError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        BOOL displayNameOk = [ [ item_ displayName ] hasPrefix: @"Normal Item" ];
+        GHAssertTrue( displayNameOk, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)castedCreateError.underlyingError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertEqualStrings( [ item_ itemTemplate ], @"Common/Folder", @"template mismatch" );
+        GHAssertTrue( [ read_fields_ count ] == 1, @"OK" );
+        
+        id editorValue = [ [ read_fields_ objectForKey: @"__Editor" ] rawValue ];
+        GHAssertEqualStrings( editorValue, @"__Editor", @"editorValue mismatch" );
     }
 }
 
@@ -148,16 +151,17 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"item created without proper permissions" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
-        SCCreateItemError* castedCreateError = (SCCreateItemError*)createError;
+        GHAssertTrue( item_ != nil, @"OK" );
         
-        GHAssertTrue( [ castedCreateError.underlyingError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        GHAssertEqualStrings( [ item_ displayName ], @"Item Without Fields", @"display name mismatch %@", [ item_ displayName ] );
         
-        SCResponseError* castedError = (SCResponseError*)castedCreateError.underlyingError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertEqualStrings( [ item_ itemTemplate ], @"Common/Folder", @"itemTemplate name mismatch %@", [ item_ itemTemplate ] );
+        
+        
+        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
     }
 
 }
@@ -226,16 +230,19 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"item created without proper permissions" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
-        SCCreateItemError* castedCreateError = (SCCreateItemError*)createError;
+        GHAssertTrue( item_ != nil, @"OK" );
         
-        GHAssertTrue( [ castedCreateError.underlyingError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        BOOL displayNameOk = [ [ item_ displayName ] hasPrefix: @"device_name" ];
+        GHAssertTrue( displayNameOk, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)castedCreateError.underlyingError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertEqualStrings([ item_ itemTemplate ], @"System/Layout/Device", @"itemTemplate mismatch" );
+        NSLog( @"read_fields_: %@", read_fields_);
+        GHAssertTrue( [ read_fields_ count ] == 1, @"OK" );
+        
+        GHAssertEqualStrings( [ [ read_fields_ objectForKey: @"__Display name" ] rawValue ], @"device_name", @"raw display name mismatch" );
     }
 }
 
@@ -304,16 +311,18 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"item created without proper permissions" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
+        GHAssertTrue( item_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
-        SCCreateItemError* castedCreateError = (SCCreateItemError*)createError;
+        BOOL displayNameOk = [ [ item_ displayName ] hasPrefix: @"Folder Display Name" ];
+        GHAssertTrue( displayNameOk, @"OK" );
         
-        GHAssertTrue( [ castedCreateError.underlyingError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        GHAssertEqualStrings( [ item_ itemTemplate ], @"Common/Folder", @"template mismatch" );
         
-        SCResponseError* castedError = (SCResponseError*)castedCreateError.underlyingError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        NSLog( @"items field value: %@", [ [ read_fields_ objectForKey: @"__Display name" ] rawValue ] );
+        GHAssertTrue( [ read_fields_ count ] == 1, @"OK" );
+        GHAssertEqualStrings( [ [ read_fields_ objectForKey: @"__Display name" ] rawValue ], @"Folder Display Name", @"raw display name mismatch" );
     }
 }
 
@@ -387,16 +396,20 @@
     }
     else
     {
-        //FIXME: @igk [new webApi] sitecore/admin should became extranet/anonymous, access error expected
-        GHAssertNil( item_, @"item created without proper permissions" );
+        //@igk [new webApi] admin user has access to the extranet domain
+        GHAssertTrue( apiContext_ != nil, @"OK" );
         
-        GHAssertTrue( [createError isMemberOfClass: [ SCCreateItemError class] ], @"error class mismatch" );
-        SCCreateItemError* castedCreateError = (SCCreateItemError*)createError;
+        GHAssertTrue( item_ != nil, @"OK" );
         
-        GHAssertTrue( [ castedCreateError.underlyingError isMemberOfClass: [ SCResponseError class] ], @"error class mismatch" );
+        BOOL displayNameOk = [ [ item_ displayName ] hasPrefix: @"Layout Item" ];
+        GHAssertTrue( displayNameOk, @"OK" );
         
-        SCResponseError* castedError = (SCResponseError*)castedCreateError.underlyingError;
-        GHAssertTrue( 403 == castedError.statusCode, @"status code mismatch" );
+        GHAssertEqualStrings( [ item_ itemTemplate ], @"System/Layout/Layout", @"OK" );
+        
+        NSLog( @"items field value: %@", [ [ readFields_ objectForKey: @"Path" ] fieldValue ] );
+        NSLog( @"item_.readFieldsByName: %@", readFields_ );
+        GHAssertTrue( [ readFields_ count ] == 1, @"OK" );
+        GHAssertEqualStrings( [ [ readFields_ objectForKey: @"Path" ] fieldValue ], @"/xsl/test_layout.aspx", @"OK" );
     }
 }
 
