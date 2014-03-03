@@ -11,7 +11,7 @@
     result_ = [ result_ itemsReaderRequestWithApiSession: apiSession_ ];
     result_.fieldNames = [ self.fieldNames copy ];
     result_.request = [ @"/sitecore/Media Library" stringByAppendingPathComponent: self.folder ];
-    result_.requestType = SCItemReaderRequestItemPath;
+    result_.requestType = SCReadItemRequestItemPath;
 
     return result_;
 }

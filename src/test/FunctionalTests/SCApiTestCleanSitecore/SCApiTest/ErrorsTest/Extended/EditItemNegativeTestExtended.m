@@ -40,7 +40,7 @@
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -138,7 +138,7 @@
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", nil ] ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
 
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {

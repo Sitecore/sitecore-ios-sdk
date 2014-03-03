@@ -1,6 +1,6 @@
 #import "SCAsyncTestCase.h"
 
-static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderParentScope;
+static SCReadItemScopeType scope_ = SCReadItemChildrenScope | SCReadItemParentScope;
 
 @interface ReadItemsCPTestAuth : SCAsyncTestCase
 @end
@@ -24,7 +24,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
-        request_.flags = SCItemReaderRequestIngnoreCache;
+        request_.flags = SCReadItemRequestIngnoreCache;
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
         {
             items_ = result_items_;
@@ -92,7 +92,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
         
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: [ NSSet new ] ];
-        request_.flags = SCItemReaderRequestIngnoreCache;
+        request_.flags = SCReadItemRequestIngnoreCache;
         request_.scope = scope_;
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
         {
@@ -167,7 +167,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                                 fieldsNames: [ NSSet new ] ];
                 request_.scope = scope_;
-                request_.flags = SCItemReaderRequestIngnoreCache;
+                request_.flags = SCReadItemRequestIngnoreCache;
                 
                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
                  {

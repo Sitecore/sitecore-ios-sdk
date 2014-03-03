@@ -23,14 +23,14 @@ static NSString* media_path_    = @"/sitecore/media library/Test Data/Negative M
 
         apiContext_.defaultDatabase = @"master";
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: master_path_ ];
-        request_.scope = SCItemReaderChildrenScope;
+        request_.scope = SCReadItemChildrenScope;
         
         SCDidFinishAsyncOperationHandler doneHandler =^( id response_, NSError* error_ )
         {
             deleteResponse_ = [ NSString stringWithFormat:@"%@", response_ ];
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: master_path_ ];
-            item_request_.scope = SCItemReaderChildrenScope;
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
+            item_request_.scope = SCReadItemChildrenScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
             
             SCDidFinishAsyncOperationHandler doneHandler1 = ^( NSArray* read_items_, NSError* read_error_ )
             {
@@ -56,7 +56,7 @@ static NSString* media_path_    = @"/sitecore/media library/Test Data/Negative M
         apiContext_.defaultDatabase = @"master";
         SCReadItemsRequest* request_ = 
         [ SCReadItemsRequest requestWithItemPath: @"/sitecore/system/Settings/Workflow/Test Data/Create Edit Delete Tests" ];
-        request_.scope = SCItemReaderChildrenScope;
+        request_.scope = SCReadItemChildrenScope;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( id response_, NSError* error_ )
         {

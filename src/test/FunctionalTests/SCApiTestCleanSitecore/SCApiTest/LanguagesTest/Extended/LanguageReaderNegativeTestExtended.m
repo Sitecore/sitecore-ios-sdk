@@ -120,7 +120,7 @@
     SCField* defaultField = [ default_item_ fieldWithName: @"Title" ];
     
     // @adk : web API returns default language ("en") #394160
-    // @igk test should not pass!!!
+    //FIXME: @igk test should not pass!!!
     NSString* rawValue = field_.rawValue;
     NSString* expectedRawValue = defaultField.rawValue;
     GHAssertEqualObjects(rawValue, expectedRawValue, @"field mismatch : [%@] not equal to [%@]", rawValue, expectedRawValue );
@@ -153,7 +153,7 @@
              apiContext_ = strongContext_;
              
              SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-             request_.requestType = SCItemReaderRequestQuery;
+             request_.requestType = SCReadItemRequestQuery;
              request_.request = SCHomePath;
              request_.language = @"da";
              request_.fieldNames = field_names_;

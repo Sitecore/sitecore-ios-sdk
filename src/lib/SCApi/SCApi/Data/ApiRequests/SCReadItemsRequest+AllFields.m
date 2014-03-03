@@ -12,11 +12,11 @@
 
 -(NSUInteger)indexOfFirstChildItemInResponse
 {
-    SCItemReaderScopeType myScope = self.scope;
+    SCReadItemScopeType myScope = self.scope;
     
     NSUInteger firstChildIndex_ =
-        ( SCItemReaderSelfScope   & myScope  ? 1 : 0 ) +
-        ( SCItemReaderParentScope & myScope  ? 1 : 0 );
+        ( SCReadItemSelfScope   & myScope  ? 1 : 0 ) +
+        ( SCReadItemParentScope & myScope  ? 1 : 0 );
     
     return firstChildIndex_;
 }

@@ -5,7 +5,6 @@
 
 @implementation ReadImageWithParamsTest
 
-
 -(void)testCreateAndReadImageWithPAramsAndCacheDapendFromParams
 {
     __block SCApiSession* apiContext_;
@@ -53,7 +52,7 @@
             params.width = 10.f;
             params.height = 10.f;
             
-            [ apiContext_ imageLoaderForSCMediaPath: /*MEDIA_ITEM_PATH*/ media_item_.path
+            [ apiContext_ uploadOperationForSCMediaPath: /*MEDIA_ITEM_PATH*/ media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
             {
                 readedImage = image;
@@ -79,7 +78,7 @@
             params.width = 15.f;
             params.height = 15.f;
             
-            [ apiContext_ imageLoaderForSCMediaPath: media_item_.path
+            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
             {
               readedImage = image;
@@ -147,7 +146,7 @@
             SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.scale = 2.f;
             
-            [ apiContext_ imageLoaderForSCMediaPath: media_item_.path
+            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
               {
                   readedImage = image;
@@ -213,7 +212,7 @@
             SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.displayAsThumbnail = YES;
             
-            [ apiContext_ imageLoaderForSCMediaPath: media_item_.path
+            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
               {
                   readedImage = image;
@@ -233,6 +232,85 @@
     GHAssertTrue( readedImage.size.height == 150.f , @"OK" );
     GHAssertTrue( readedImage.size.width == 150.f , @"OK" );
     
+}
+
+-(void)testImageLoaderFromFieldUsesSourceOfItem
+{
+    __block SCApiSession* apiContext_ = nil;
+    
+    __block SCItem * mediaItem = nil;
+    __block UIImage* image     = nil;
+    __block NSError* error     = nil;
+    
+    apiContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+    apiContext_.defaultDatabase = @"web";
+    
+    SCItemSourcePOD* itemSource = [ SCItemSourcePOD new ];
+    {
+        itemSource.database = @"master"                  ;
+        itemSource.site     = apiContext_.defaultSite    ;
+        itemSource.language = apiContext_.defaultLanguage;
+    }
+    
+    static NSString* const IMAGE_FIELD_NAME = @"Image";
+    static NSString* const TEXT_FIELD_NAME  = @"Text" ;
+
+//    static NSString* const IMAGE_FIELD_NAME = @"image";
+//    static NSString* const TEXT_FIELD_NAME = @"text";
+
+    
+    NSArray* fields =
+    @[
+      TEXT_FIELD_NAME ,
+      IMAGE_FIELD_NAME
+      ];
+    SCReadItemsRequest* request =
+    [ SCReadItemsRequest requestWithItemPath: @"/sitecore/content/FieldsTest/Mouse"
+                                 fieldsNames: [ NSSet setWithArray: fields ] ];
+    {
+        request.database = @"master";
+        request.site     = apiContext_.defaultSite;
+        request.language = apiContext_.defaultLanguage;
+    }
+    
+    void (^GetItemBlock)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        SCAsyncOp itemLoader = [ apiContext_ readItemsOperationWithRequest: request ];
+        itemLoader( ^void( NSArray* blockItems, NSError* blockError )
+        {
+            mediaItem = [ blockItems lastObject ];
+            error     = blockError;
+
+            didFinishCallback_();
+        } );
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: GetItemBlock
+                                           selector: _cmd ];
+
+    GHAssertNil   ( error    , @"error loading item" );
+    GHAssertNotNil( mediaItem, @"error loading item" );
+
+    /////////////////
+    SCField* imageField = [ mediaItem fieldWithName: IMAGE_FIELD_NAME ];
+
+    
+    void (^GetImageBlock)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        SCAsyncOp imageLoader = [ imageField fieldValueReader ];
+        imageLoader( ^void( UIImage* blockImage, NSError* blockError )
+        {
+            image = blockImage;
+            error = blockError;
+            didFinishCallback_();
+        } );
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: GetImageBlock
+                                           selector: _cmd ];
+    
+    GHAssertNil( error, @"unexpected error" );
+    GHAssertNotNil( image, @"where is my image ???" );
 }
 
 @end

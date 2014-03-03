@@ -42,7 +42,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -123,7 +123,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", @"media", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -215,7 +215,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -245,7 +245,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -318,7 +318,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -400,7 +400,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -484,7 +484,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )

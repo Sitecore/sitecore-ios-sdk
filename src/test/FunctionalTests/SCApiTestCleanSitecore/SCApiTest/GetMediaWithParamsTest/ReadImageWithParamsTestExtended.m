@@ -62,7 +62,7 @@
                 
             };
 
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession imageLoaderForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
                                                                    imageParams: params ];
             loader(nil, nil, doneHandler);
         
@@ -132,7 +132,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession imageLoaderForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
                                                                    imageParams: params ];
             loader(nil, nil, doneHandler);
         };
@@ -201,7 +201,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession imageLoaderForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
                                                                    imageParams: params ];
             
             loader(nil, nil, doneHandler);
@@ -219,6 +219,87 @@
     GHAssertTrue( readedImage.size.height == 150.f , @"OK" );
     GHAssertTrue( readedImage.size.width == 150.f , @"OK" );
     
+}
+
+-(void)testImageLoaderFromFieldUsesSourceOfItem
+{
+    SCApiSession* legacySession = nil;
+    SCExtendedApiSession* apiContext = nil;
+    
+    __block SCItem * mediaItem = nil;
+    __block UIImage* image     = nil;
+    __block NSError* error     = nil;
+    
+    legacySession = [ TestingRequestFactory getNewAdminContextWithShell ];
+    apiContext = legacySession.extendedApiSession;
+    apiContext.defaultDatabase = @"web";
+    
+    SCItemSourcePOD* itemSource = [ SCItemSourcePOD new ];
+    {
+        itemSource.database = @"master"                  ;
+        itemSource.site     = apiContext.defaultSite    ;
+        itemSource.language = apiContext.defaultLanguage;
+    }
+    
+    static NSString* const IMAGE_FIELD_NAME = @"Image";
+    static NSString* const TEXT_FIELD_NAME  = @"Text" ;
+    
+    //    static NSString* const IMAGE_FIELD_NAME = @"image";
+    //    static NSString* const TEXT_FIELD_NAME = @"text";
+    
+    
+    NSArray* fields =
+    @[
+      TEXT_FIELD_NAME ,
+      IMAGE_FIELD_NAME
+      ];
+    SCReadItemsRequest* request =
+    [ SCReadItemsRequest requestWithItemPath: @"/sitecore/content/FieldsTest/Mouse"
+                                 fieldsNames: [ NSSet setWithArray: fields ] ];
+    {
+        request.database = @"master";
+        request.site     = apiContext.defaultSite;
+        request.language = apiContext.defaultLanguage;
+    }
+    
+    void (^GetItemBlock)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        SCExtendedAsyncOp itemLoader = [ apiContext readItemsOperationWithRequest: request ];
+        itemLoader( nil, nil, ^void( NSArray* blockItems, NSError* blockError )
+       {
+           mediaItem = [ blockItems lastObject ];
+           error     = blockError;
+           
+           didFinishCallback_();
+       } );
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: GetItemBlock
+                                           selector: _cmd ];
+    
+    GHAssertNil   ( error    , @"error loading item" );
+    GHAssertNotNil( mediaItem, @"error loading item" );
+    
+    /////////////////
+    SCField* imageField = [ mediaItem fieldWithName: IMAGE_FIELD_NAME ];
+    
+    
+    void (^GetImageBlock)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        SCExtendedAsyncOp imageLoader = [ imageField extendedFieldValueReader ];
+        imageLoader( nil, nil, ^void( UIImage* blockImage, NSError* blockError )
+        {
+            image = blockImage;
+            error = blockError;
+            didFinishCallback_();
+        } );
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: GetImageBlock
+                                           selector: _cmd ];
+    
+    GHAssertNil( error, @"unexpected error" );
+    GHAssertNotNil( image, @"where is my image ???" );
 }
 
 @end

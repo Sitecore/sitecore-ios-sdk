@@ -470,8 +470,8 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.scope = SCItemReaderChildrenScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.scope = SCReadItemChildrenScope;
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* readItems_, NSError* read_error_ )
             {

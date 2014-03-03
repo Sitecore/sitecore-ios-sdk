@@ -175,7 +175,7 @@
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
-                                                                              scope: SCItemReaderChildrenScope ];
+                                                                              scope: SCReadItemChildrenScope ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             products_children_items_ = items_;
@@ -221,7 +221,7 @@
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
-                                                                            scope: SCItemReaderChildrenScope ];
+                                                                            scope: SCReadItemChildrenScope ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             children_items_ = items_;
@@ -265,7 +265,7 @@
 
       SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                       fieldsNames: fieldsNames_ 
-                                                                            scope: SCItemReaderChildrenScope ];
+                                                                            scope: SCReadItemChildrenScope ];
       [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
       {
          products_children_items_ = items_;
@@ -310,7 +310,7 @@
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
-                                                                              scope: SCItemReaderParentScope ];
+                                                                              scope: SCReadItemParentScope ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
@@ -361,7 +361,7 @@
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
-                                                                            scope: SCItemReaderParentScope ];
+                                                                            scope: SCReadItemParentScope ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
@@ -412,7 +412,7 @@
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
-                                                                              scope: SCItemReaderParentScope ];
+                                                                              scope: SCReadItemParentScope ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             test_items_ = items_;
@@ -460,7 +460,7 @@
 
         NSString* path_ = SCHomePath;
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
@@ -523,7 +523,7 @@
         NSString* itemId_   = SCHomeID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
@@ -583,7 +583,7 @@
         NSString* path_ = SCHomePath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
@@ -645,7 +645,7 @@
 
         NSString* path_ = SCAllowedParentPath;
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemParentScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
@@ -720,7 +720,7 @@
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemParentScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
@@ -796,7 +796,7 @@
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderSelfScope | SCItemReaderParentScope );
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)( SCReadItemSelfScope | SCReadItemParentScope );
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
@@ -868,7 +868,7 @@
 
         NSString* path_ = SCAllowedParentPath;
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)( SCItemReaderParentScope | SCItemReaderChildrenScope );
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)( SCReadItemParentScope | SCReadItemChildrenScope );
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
@@ -941,7 +941,7 @@
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemParentScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
@@ -1012,7 +1012,7 @@
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderParentScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemParentScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];
@@ -1081,7 +1081,7 @@
 
         NSString* path_ = SCAllowedParentPath;
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemParentScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil 
                                                                               scope: scope_ ];
@@ -1160,7 +1160,7 @@
         NSString* itemId_ = SCAllowedParentID;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", nil ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemParentScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: itemId_
                                                                       fieldsNames: fieldsNames_ 
                                                                             scope: scope_ ];
@@ -1242,7 +1242,7 @@
         NSString* path_ = SCAllowedParentPath;
         NSSet* fieldsNames_ = [ NSSet new ];
 
-        SCItemReaderScopeType scope_ = (SCItemReaderScopeType)(SCItemReaderSelfScope | SCItemReaderParentScope | SCItemReaderChildrenScope);
+        SCReadItemScopeType scope_ = (SCReadItemScopeType)(SCReadItemSelfScope | SCReadItemParentScope | SCReadItemChildrenScope);
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: fieldsNames_ 
                                                                               scope: scope_ ];

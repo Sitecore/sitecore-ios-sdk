@@ -22,11 +22,11 @@
 
 /**
  Specifies the set of the items which will be loaded.
- Possible values are: SCItemReaderSelfScope (self), SCItemReaderParentScope (parent) and SCItemReaderChildrenScope (children). By default, self is used.
+ Possible values are: SCReadItemSelfScope (self), SCReadItemParentScope (parent) and SCReadItemChildrenScope (children). By default, self is used.
  The order of the result items will be: first is the parent item, then the self item and the children items at last.
- This argument is ignored when [SCReadItemsRequest requestType] is SCItemReaderRequestQuery
+ This argument is ignored when [SCReadItemsRequest requestType] is SCReadItemRequestQuery
  */
-@property(nonatomic) SCItemReaderScopeType scope;
+@property(nonatomic) SCReadItemScopeType scope;
 
 /**
  Request string of the items.
@@ -34,19 +34,19 @@
  
  If [SCReadItemsRequest requestType] is
  
- - SCItemReaderRequestItemId   - request is the item's id, example: "{C3713481-AF86-4E33-9BE9-D53EFE03E518}"
+ - SCReadItemRequestItemId   - request is the item's id, example: "{C3713481-AF86-4E33-9BE9-D53EFE03E518}"
  
- - SCItemReaderRequestItemPath - request is the item's path, example: "/sitecore/content"
+ - SCReadItemRequestItemPath - request is the item's path, example: "/sitecore/content"
  
- - SCItemReaderRequestQuery    - request is the Sitecore query, example: "/sitecore/content/nicam/child::*[@@templatename='Site Section']"
+ - SCReadItemRequestQuery    - request is the Sitecore query, example: "/sitecore/content/nicam/child::*[@@templatename='Site Section']"
  */
 @property(nonatomic,strong) NSString *request;
 
 /**
  Specifies the type of [SCReadItemsRequest request] option, see [SCReadItemsRequest request] for details.
- If [SCReadItemsRequest requestType] is a SCItemReaderRequestQuery, it is a similar to [SCReadItemsRequest flags] is setted to SCItemReaderRequestIngnoreCache.
+ If [SCReadItemsRequest requestType] is a SCReadItemRequestQuery, it is a similar to [SCReadItemsRequest flags] is setted to SCReadItemRequestIngnoreCache.
  */
-@property(nonatomic) SCItemReaderRequestType requestType;
+@property(nonatomic) SCReadItemRequestType requestType;
 
 /**
  The set of the field's names which will be read with each item. Each field's name in the set should be a string.
@@ -57,11 +57,11 @@
 /**
  Additional request flags:
  
- - SCItemReaderRequestIngnoreCache - means that the request will ignore loaded items, and the request to backend will be performed.
+ - SCReadItemRequestIngnoreCache - means that the request will ignore loaded items, and the request to backend will be performed.
  
- - SCItemReaderRequestReadFieldsValues - for each field specified in fieldNames set - [SCField fieldValue] will be loaded before you've got a result with the items.
+ - SCReadItemRequestReadFieldsValues - for each field specified in fieldNames set - [SCField fieldValue] will be loaded before you've got a result with the items.
  */
-@property(nonatomic) SCItemReaderRequestFlags flags;
+@property(nonatomic) SCReadItemRequestFlags flags;
 
 /**
  The number of paged, used only if [SCReadItemsRequest pageSize] is specified. Indexing starts from zero.
@@ -82,11 +82,11 @@
  This method is usefull for loading one item by the item's id.
  Creates SCReadItemsRequest object with following fields:
  
- [SCReadItemsRequest scope]   is equal to SCItemReaderSelfScope
+ [SCReadItemsRequest scope]   is equal to SCReadItemSelfScope
  
  [SCReadItemsRequest request] is equal to itemId argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemId
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemId
  
  [SCReadItemsRequest fieldNames] is equal to empty set
  
@@ -106,11 +106,11 @@
  This method is usefull for loading one item by the item's id.
  Creates SCReadItemsRequest object with following fields:
  
- [SCReadItemsRequest scope]   is equal to SCItemReaderSelfScope
+ [SCReadItemsRequest scope]   is equal to SCReadItemSelfScope
  
  [SCReadItemsRequest request] is equal to itemId argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemId
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemId
  
  [SCReadItemsRequest fieldNames] is equal to fieldNames argument
  
@@ -136,7 +136,7 @@
  
  [SCReadItemsRequest request] is equal to itemId argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemId
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemId
  
  [SCReadItemsRequest fieldNames] is equal to fieldNames argument
  
@@ -154,17 +154,17 @@
  */
 + (id)requestWithItemId:(NSString *)itemId
             fieldsNames:(NSSet *)fieldNames
-                  scope:(SCItemReaderScopeType)scope;
+                  scope:(SCReadItemScopeType)scope;
 
 /**
  This method is usefull for loading one item by the item's id.
  Creates SCReadItemsRequest object with following fields:
  
- [SCReadItemsRequest scope]   is equal to SCItemReaderSelfScope
+ [SCReadItemsRequest scope]   is equal to SCReadItemSelfScope
  
  [SCReadItemsRequest request] is equal to itemPath argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemId
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemId
  
  [SCReadItemsRequest fieldNames] is equal to empty set
  
@@ -184,11 +184,11 @@
  This method is usefull for loading one item by the item's path.
  Creates SCReadItemsRequest object with following fields:
  
- [SCReadItemsRequest scope]   is equal to SCItemReaderSelfScope
+ [SCReadItemsRequest scope]   is equal to SCReadItemSelfScope
  
  [SCReadItemsRequest request] is equal to itemPath argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemPath
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemPath
  
  [SCReadItemsRequest fieldNames] is equal to fieldNames argument
  
@@ -214,7 +214,7 @@
  
  [SCReadItemsRequest request] is equal to itemPath argument
  
- [SCReadItemsRequest requestType] is equal to SCItemReaderRequestItemPath
+ [SCReadItemsRequest requestType] is equal to SCReadItemRequestItemPath
  
  [SCReadItemsRequest fieldNames] is equal to fieldNames argument
  
@@ -232,6 +232,6 @@
  */
 + (id)requestWithItemPath:(NSString *)itemPath
               fieldsNames:(NSSet *)fieldNames
-                    scope:(SCItemReaderScopeType)scope;
+                    scope:(SCReadItemScopeType)scope;
 
 @end

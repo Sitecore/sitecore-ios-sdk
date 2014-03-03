@@ -18,8 +18,8 @@
         apiContext_ = strongContext_;
 
         SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-        request_.requestType = SCItemReaderRequestItemPath;
-        request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+        request_.requestType = SCReadItemRequestItemPath;
+        request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
         request_.request     = SCHomePath;
         request_.fieldNames  = nil;
         request_.pageSize    = 2;

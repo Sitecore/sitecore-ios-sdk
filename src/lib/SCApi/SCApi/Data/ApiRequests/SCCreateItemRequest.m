@@ -15,7 +15,7 @@
 {
     SCCreateItemRequest* result_ = (SCCreateItemRequest*)[ super itemsReaderRequestWithApiSession: context_ ];
 
-    result_.scope = SCItemReaderSelfScope;
+    result_.scope = SCReadItemSelfScope;
 
     return result_;
 }

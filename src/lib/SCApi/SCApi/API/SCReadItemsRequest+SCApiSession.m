@@ -26,7 +26,7 @@
 
 -(JFFAsyncOperation)asyncOpWithFieldsForAsyncOp:( JFFAsyncOperation )loader_
 {
-    BOOL isReadFieldsFlagSet = ( self.flags & SCItemReaderRequestReadFieldsValues );
+    BOOL isReadFieldsFlagSet = ( self.flags & SCReadItemRequestReadFieldsValues );
     if ( !isReadFieldsFlagSet )
     {
         return loader_;
@@ -50,7 +50,7 @@
 {
     loader_ = [ loader_ copy ];
 
-    if ( self.requestType == SCItemReaderRequestItemId )
+    if ( self.requestType == SCReadItemRequestItemId )
     {
         JFFAsyncOperationBinder binder_ = ^JFFAsyncOperation( NSArray* ids_ )
         {
@@ -60,7 +60,7 @@
         loader_ = asyncOpWithValidIds( binder_, ids_ );
     }
 
-    if ( self.requestType == SCItemReaderRequestItemPath )
+    if ( self.requestType == SCReadItemRequestItemPath )
     {
         JFFAsyncOperationBinder binder_ = ^JFFAsyncOperation( NSString* newPath_ )
         {

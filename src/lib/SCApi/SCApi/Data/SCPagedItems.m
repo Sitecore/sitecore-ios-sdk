@@ -46,7 +46,7 @@
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = query_;
-    request_.requestType = SCItemReaderRequestQuery;
+    request_.requestType = SCReadItemRequestQuery;
     request_.pageSize    = pageSize_;
     request_.fieldNames  = [ NSSet new ];
 

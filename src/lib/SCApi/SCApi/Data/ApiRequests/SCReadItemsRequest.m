@@ -5,9 +5,9 @@
 @implementation SCReadItemsRequest
 
 -(id)initWithRequest:( NSString* )request_
-         requestType:( SCItemReaderRequestType )requestType_
+         requestType:( SCReadItemRequestType )requestType_
          fieldsNames:( NSSet* )fieldNames
-               scope:( SCItemReaderScopeType )scope
+               scope:( SCReadItemScopeType )scope
 {
     self = [ super init ];
 
@@ -26,7 +26,7 @@
 {
     NSString* request_ = self->_request ?: @"";
 
-    return self.requestType == SCItemReaderRequestItemPath
+    return self.requestType == SCReadItemRequestItemPath
         ? [ request_ lowercaseString ]
         : request_;
 }
@@ -37,19 +37,19 @@
     NSParameterAssert( nil != itemId );
     
     return [ [ self alloc ] initWithRequest: itemId
-                                requestType: SCItemReaderRequestItemId
+                                requestType: SCReadItemRequestItemId
                                 fieldsNames: fieldNames
-                                      scope: SCItemReaderSelfScope ];
+                                      scope: SCReadItemSelfScope ];
 }
 
 +(id)requestWithItemId:( NSString* )itemId
            fieldsNames:( NSSet* )fieldNames
-                 scope:( SCItemReaderScopeType )scope
+                 scope:( SCReadItemScopeType )scope
 {
     NSParameterAssert( nil != itemId );
     
     return [ [ self alloc ] initWithRequest: itemId
-                                requestType: SCItemReaderRequestItemId
+                                requestType: SCReadItemRequestItemId
                                 fieldsNames: fieldNames
                                       scope: scope ];
 }
@@ -58,17 +58,17 @@
              fieldsNames:( NSSet* )fieldNames
 {
     return [ [ self alloc ] initWithRequest: itemPath
-                                requestType: SCItemReaderRequestItemPath
+                                requestType: SCReadItemRequestItemPath
                                 fieldsNames: fieldNames
-                                      scope: SCItemReaderSelfScope ];
+                                      scope: SCReadItemSelfScope ];
 }
 
 +(id)requestWithItemPath:( NSString* )itemPath
              fieldsNames:( NSSet* )fieldNames
-                   scope:( SCItemReaderScopeType )scope
+                   scope:( SCReadItemScopeType )scope
 {
     return [ [ self alloc ] initWithRequest: itemPath
-                                requestType: SCItemReaderRequestItemPath
+                                requestType: SCReadItemRequestItemPath
                                 fieldsNames: fieldNames
                                       scope: scope ];
 }
@@ -87,11 +87,11 @@
                         fieldsNames: [ NSSet new ] ];
 }
 
--(SCItemReaderScopeType)scope
+-(SCReadItemScopeType)scope
 {
     if ( 0 == self->_scope )
     {
-        return SCItemReaderSelfScope;
+        return SCReadItemSelfScope;
     }
     
     return self->_scope;

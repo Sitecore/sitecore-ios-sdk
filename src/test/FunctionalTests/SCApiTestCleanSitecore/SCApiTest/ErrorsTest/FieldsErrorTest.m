@@ -21,7 +21,7 @@
             apiContext_ = strongContext_;
 
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
+            request_.requestType = SCReadItemRequestItemPath;
             request_.request     = SCHomePath;
             request_.pageSize    = 2;
 
@@ -73,7 +73,7 @@
         NSSet* fields_ = [ NSSet setWithObjects: @"WrongField1", @"WrongField2", nil ];
         SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.request = @"/sitecore/content/Home/descendant-or-self::*[@@templatename='Sample Item']";
-        request_.requestType = SCItemReaderRequestQuery;
+        request_.requestType = SCReadItemRequestQuery;
         request_.fieldNames = [ NSSet set ];
         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_, NSError* error_ )
         {

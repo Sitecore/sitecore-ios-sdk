@@ -197,13 +197,13 @@
     return loader_;
 }
 
--(SCExtendedAsyncOp)childrenReaderWithItemPath:( NSString* )path_
+-(SCExtendedAsyncOp)readChildrenOperationForItemPath:( NSString* )path_
                                     itemSource:(id<SCItemSource>)itemSource
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = path_;
-    request_.requestType = SCItemReaderRequestItemPath;
-    request_.scope       = SCItemReaderChildrenScope;
+    request_.requestType = SCReadItemRequestItemPath;
+    request_.scope       = SCReadItemChildrenScope;
     request_.fieldNames  = [ NSSet new ];
     
     SCItemSourcePOD* plainSource = [ itemSource toPlainStructure ];
@@ -212,13 +212,13 @@
     return [ self readItemsOperationWithRequest: request_ ];
 }
 
--(SCExtendedAsyncOp)childrenReaderWithItemId:( NSString* )itemId_
+-(SCExtendedAsyncOp)readChildrenOperationForItemId:( NSString* )itemId_
                                   itemSource:(id<SCItemSource>)itemSource
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = itemId_;
-    request_.requestType = SCItemReaderRequestItemId;
-    request_.scope       = SCItemReaderChildrenScope;
+    request_.requestType = SCReadItemRequestItemId;
+    request_.scope       = SCReadItemChildrenScope;
     request_.fieldNames  = [ NSSet new ];
     
     SCItemSourcePOD* plainSource = [ itemSource toPlainStructure ];
@@ -250,7 +250,7 @@
     params.database =  params.database ? : self.defaultDatabase;
     params.language =  params.language ? : self.defaultLanguage;
 
-    return [ self->_api imageLoaderForSCMediaPath: path_
+    return [ self->_api uploadOperationForSCMediaPath: path_
                                     cacheLifeTime: self.defaultImagesLifeTimeInCache
                                            params: params ];
 }
@@ -260,13 +260,13 @@
     return [ self privateImageLoaderForSCMediaPath: path_ params: nil ];
 }
 
--(SCExtendedAsyncOp)imageLoaderForSCMediaPath:( NSString* )path_
+-(SCExtendedAsyncOp)uploadOperationForSCMediaPath:( NSString* )path_
 {
-    return [ self imageLoaderForSCMediaPath: path_
+    return [ self uploadOperationForSCMediaPath: path_
                          imageParams: nil ];
 }
 
--(SCExtendedAsyncOp)imageLoaderForSCMediaPath:( NSString* )path_
+-(SCExtendedAsyncOp)uploadOperationForSCMediaPath:( NSString* )path_
                            imageParams:( SCDownloadMediaOptions * )params_
 {
     return [ self privateImageLoaderForSCMediaPath: path_
@@ -434,7 +434,7 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
     return [ self->_api checkCredentialsOperationForSite: site ];
 }
 
--(SCExtendedAsyncOp)systemLanguagesReader
+-(SCExtendedAsyncOp)readSystemLanguagesOperation
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest systemLanguagesItemsReader];
     request_ = [ request_ itemsReaderRequestWithApiSession: self ];
@@ -470,7 +470,7 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
 
 }
 
--(SCExtendedAsyncOp)renderingHTMLLoaderForRenderingWithId:( NSString* )renderingId_
+-(SCExtendedAsyncOp)getRenderingHtmlOperationForRenderingWithId:( NSString* )renderingId_
                                                  sourceId:( NSString* )sourceId_
 {
     

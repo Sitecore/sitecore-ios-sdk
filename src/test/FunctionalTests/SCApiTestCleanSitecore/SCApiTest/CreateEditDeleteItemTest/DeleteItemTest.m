@@ -44,7 +44,7 @@
             request_.site = @"/sitecore/shell";
             request_.itemName     = @"ItemToDelete";
             request_.itemTemplate = @"System/Layout/Layout";
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             NSDictionary* fields_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys: @"{239F9CF4-E5A0-44E0-B342-0F32CD4C6D8B}", @"__Source", nil ];
             request_.fieldsRawValuesByName = fields_;
 
@@ -65,8 +65,8 @@
         void (^delete_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2Id ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.scope = SCItemReaderParentScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.scope = SCReadItemParentScope;
             [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
             {
                 deleteError = read_error_;
@@ -79,8 +79,8 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2Id ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.scope = SCItemReaderParentScope | SCItemReaderSelfScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.scope = SCReadItemParentScope | SCReadItemSelfScope;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 read_items_count_ = [ read_items_ count ];
@@ -171,7 +171,7 @@
             request_.site = @"/sitecore/shell";
             request_.itemName     = @"ItemToDelete";
             request_.itemTemplate = @"System/Layout/Renderings/Xsl Rendering";
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             NSDictionary* fields_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys: @"__Editor", @"__Editor", nil ];
             request_.fieldsRawValuesByName = fields_;
 
@@ -192,8 +192,8 @@
         {
             deletedItemId_ = item_.itemId;
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.scope = SCReadItemSelfScope | SCReadItemChildrenScope;
             [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
             {
                 deleteError = read_error_;
@@ -206,8 +206,8 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item2Id ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.scope = SCItemReaderParentScope | SCItemReaderSelfScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.scope = SCReadItemParentScope | SCReadItemSelfScope;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 read_items_count_ = [ read_items_ count ];
@@ -316,7 +316,7 @@
             __block SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: SCCreateItemPath ];
             request_.itemName     = @"ItemToDelete";
             request_.itemTemplate = @"System/Layout/Renderings/Xsl Rendering";
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             NSDictionary* fields_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys: @"/xsl/sample rendering.xslt", @"__Editor", nil ];
             request_.fieldsRawValuesByName = fields_;
             request_.site = @"/sitecore/shell";
@@ -353,9 +353,9 @@
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest new ];
             item_request_.request = 
                 [ rootItem_.path stringByAppendingString: @"/parent::*/descendant::*[@@key='itemtodelete']" ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
-            item_request_.requestType = SCItemReaderRequestQuery;
-            item_request_.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
+            item_request_.requestType = SCReadItemRequestQuery;
+            item_request_.scope = SCReadItemSelfScope | SCReadItemChildrenScope;
             [ apiContext_ deleteItemsOperationWithRequest: item_request_ ]( ^( id response_, NSError* read_error_ )
             {
                 deleteResponse_ = response_;
@@ -376,8 +376,8 @@
             
             apiContext_.defaultDatabase = @"web";
             SCReadItemsRequest* itemRequest_ = [ SCReadItemsRequest requestWithItemPath: request2_ ];
-            itemRequest_.flags = SCItemReaderRequestIngnoreCache;
-            itemRequest_.scope = SCItemReaderParentScope | SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            itemRequest_.flags = SCReadItemRequestIngnoreCache;
+            itemRequest_.scope = SCReadItemParentScope | SCReadItemSelfScope | SCReadItemChildrenScope;
             [ apiContext_ readItemsOperationWithRequest: itemRequest_ ]( ^( NSArray* readItems_, NSError* read_error_ )
             {
                 readItemsCount_ = [ readItems_ count ];

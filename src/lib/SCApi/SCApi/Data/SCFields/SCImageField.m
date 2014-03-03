@@ -5,6 +5,8 @@
 #import "SCField+Private.h"
 #import "SCExtendedApiSession+Private.h"
 
+#import "SCDownloadMediaOptions.h"
+
 @interface SCExtendedApiSession ()
 
 -(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_;
@@ -28,13 +30,14 @@
 
 -(JFFAsyncOperation)fieldValueLoader
 {
-   return [ self fieldValueLoaderWithParms: nil ];
+   SCDownloadMediaOptions* resizingOptions = [ self defaultResizingOptions ];
+   return [ self fieldValueLoaderWithParms: resizingOptions ];
 }
 
 -(JFFAsyncOperation)fieldValueLoaderWithParms:( SCDownloadMediaOptions * )params
 {
     NSString *imagePath_ = self.imagePath;
-    if (imagePath_)
+    if ( nil != imagePath_)
     {
         JFFAsyncOperation loader_ = [ self.apiSession privateImageLoaderForSCMediaPath: imagePath_
                                                                                 params: params ];
@@ -63,9 +66,22 @@
     return nil;
 }
 
+-(SCDownloadMediaOptions*)defaultResizingOptions
+{
+    id<SCItemSource> itemSource = self.itemSource;
+    SCDownloadMediaOptions* resizingOptions = [ SCDownloadMediaOptions new ];
+    {
+        resizingOptions.database = [ itemSource database ];
+        resizingOptions.language = [ itemSource language ];
+    }
+
+    return resizingOptions;
+}
+
 -(SCAsyncOp)fieldValueReader
 {
-    return [ self fieldValueReaderWithImageParams: nil ];
+    SCDownloadMediaOptions* resizingOptions = [ self defaultResizingOptions ];
+    return [ self fieldValueReaderWithImageParams: resizingOptions ];
 }
 
 -(SCAsyncOp)fieldValueReaderWithImageParams:( SCParams* )params;

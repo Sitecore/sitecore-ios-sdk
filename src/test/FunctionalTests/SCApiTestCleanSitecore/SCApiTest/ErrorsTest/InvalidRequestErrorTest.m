@@ -142,7 +142,7 @@
             SCReadItemsRequest* request_ = [SCReadItemsRequest new ];
             request_.request = path_;
             request_.fieldNames = [ NSSet new ];
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* resultItems_, NSError* resultError_ )
             {
                 items_ = resultItems_;

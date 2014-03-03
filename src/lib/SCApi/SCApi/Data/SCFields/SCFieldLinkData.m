@@ -87,13 +87,13 @@
 //TOFO: @igk merge imageReader and extendedImageReader
 -(SCAsyncOp)imageReader
 {
-    return asyncOpWithJAsyncOp( [ self.apiSession imageLoaderForSCMediaPath: self.url
+    return asyncOpWithJAsyncOp( [ self.apiSession uploadOperationForSCMediaPath: self.url
                                                                 imageParams: nil ] );
 }
 
 -(SCExtendedAsyncOp)extendedImageReader
 {
-    return [ self.apiSession imageLoaderForSCMediaPath: self.url
+    return [ self.apiSession uploadOperationForSCMediaPath: self.url
                                            imageParams: nil ];
 }
 

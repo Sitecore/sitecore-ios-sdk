@@ -330,8 +330,8 @@
 
 -(void)testAllChildFlagIs_NOT_SetForSelfScope
 {
-    self->_homeRequest.scope = SCItemReaderSelfScope ;    
-    self->_homeRequest.requestType = SCItemReaderRequestItemPath;
+    self->_homeRequest.scope = SCReadItemSelfScope ;    
+    self->_homeRequest.requestType = SCReadItemRequestItemPath;
     self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"Display Name" ] ];
     
     self->_homeRecord.itemSource = self->_srcMaster;
@@ -363,12 +363,12 @@
 -(void)testAllChildFlagIs_NOT_SetForQuery_IgnoringScope
 {
     self->_homeRequest.scope =
-    SCItemReaderParentScope   |
-    SCItemReaderSelfScope     |
-    SCItemReaderChildrenScope ;
+    SCReadItemParentScope   |
+    SCReadItemSelfScope     |
+    SCReadItemChildrenScope ;
 
     
-    self->_homeRequest.requestType = SCItemReaderRequestQuery;
+    self->_homeRequest.requestType = SCReadItemRequestQuery;
     self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"Display Name" ] ];
     
     self->_homeRecord.itemSource = self->_srcMaster;
@@ -399,8 +399,8 @@
 
 -(void)testAllFieldsFlagIsSetForNilFieldNamesRequest
 {
-    self->_homeRequest.scope = SCItemReaderSelfScope;
-    self->_homeRequest.requestType = SCItemReaderRequestItemId;
+    self->_homeRequest.scope = SCReadItemSelfScope;
+    self->_homeRequest.requestType = SCReadItemRequestItemId;
     self->_homeRequest.fieldNames = nil;
     
     self->_homeRecord.itemSource = self->_srcMaster;
@@ -431,8 +431,8 @@
 
 -(void)testAllChildFlagIs_NOT_SetForParentScope
 {
-    self->_homeRequest.scope = SCItemReaderParentScope ;
-    self->_homeRequest.requestType = SCItemReaderRequestItemPath;
+    self->_homeRequest.scope = SCReadItemParentScope ;
+    self->_homeRequest.requestType = SCReadItemRequestItemPath;
     self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"Display Name" ] ];
 
     self->_homeRecord.itemSource = self->_srcMaster;
@@ -457,8 +457,8 @@
 
 -(void)testFakeParentItemIsCreatedForChildScopeOnly
 {
-    self->_homeRequest.scope = SCItemReaderChildrenScope;
-    self->_homeRequest.requestType = SCItemReaderRequestItemPath;
+    self->_homeRequest.scope = SCReadItemChildrenScope;
+    self->_homeRequest.requestType = SCReadItemRequestItemPath;
     self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"Display Name" ] ];
     
     self->_homeRecord.itemSource = self->_srcMaster;
@@ -510,8 +510,8 @@
 
 -(void)testFakeParentItemIsCreatedForChildParentScope
 {
-    self->_homeRequest.scope = SCItemReaderChildrenScope | SCItemReaderParentScope;
-    self->_homeRequest.requestType = SCItemReaderRequestItemPath;
+    self->_homeRequest.scope = SCReadItemChildrenScope | SCReadItemParentScope;
+    self->_homeRequest.requestType = SCReadItemRequestItemPath;
     self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"Display Name" ] ];
     
     self->_sitecoreContent.itemSource = self->_srcMaster;
@@ -684,19 +684,19 @@
         self->_otherRecord.itemSource = self->_srcWeb;
     
         self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"stub" ] ];
-        self->_homeRequest.scope = SCItemReaderSelfScope;
+        self->_homeRequest.scope = SCReadItemSelfScope;
         [ self->_cache cacheResponseItems: @[ self->_sitecoreContent ]
                                forRequest: self->_homeRequest
                                apiSession: self->_context ];
 
         
-        self->_homeRequest.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+        self->_homeRequest.scope = SCReadItemSelfScope | SCReadItemChildrenScope;
         [ self->_cache cacheResponseItems: @[ self->_homeRecord, self->_otherRecord ]
                                forRequest: self->_homeRequest
                                apiSession: self->_context ];
 
     
-        self->_homeRequest.scope = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+        self->_homeRequest.scope = SCReadItemSelfScope | SCReadItemChildrenScope;
         [ self->_cache cacheResponseItems: @[ self->_record ]
                                forRequest: self->_homeRequest
                                apiSession: self->_context ];
@@ -825,13 +825,13 @@
         
         self->_homeRequest.fieldNames = [ NSSet setWithArray: @[ @"stub" ] ];
 
-        self->_homeRequest.scope = SCItemReaderSelfScope;
+        self->_homeRequest.scope = SCReadItemSelfScope;
         [ self->_cache cacheResponseItems: @[ self->_homeRecord ]
                                forRequest: self->_homeRequest
                                apiSession: self->_context ];
         
         
-        self->_homeRequest.scope = SCItemReaderChildrenScope;
+        self->_homeRequest.scope = SCReadItemChildrenScope;
         [ self->_cache cacheResponseItems: @[ self->_record ]
                                forRequest: self->_homeRequest
                                apiSession: self->_context ];

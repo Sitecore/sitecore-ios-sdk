@@ -110,7 +110,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession childrenReaderWithItemPath: @"./["
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readChildrenOperationForItemPath: @"./["
                                                                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
 
@@ -143,10 +143,10 @@
             apiContext_ = strongContext_;
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
             request_.request     = @"./[.//";
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
@@ -193,10 +193,10 @@
             apiContext_ = strongContext_;
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
             request_.request     = nil;
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
@@ -243,8 +243,8 @@
  
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = nil;
-            request_.scope = SCItemReaderChildrenScope;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.scope = SCReadItemChildrenScope;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames = [ NSSet new ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
@@ -288,8 +288,8 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"";
-            request_.scope = SCItemReaderSelfScope;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.scope = SCReadItemSelfScope;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames = nil;
             SCDidFinishAsyncOperationHandler doneHandler = ^( id result_, NSError* error_ )
             {
@@ -336,7 +336,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession imageLoaderForSCMediaPath:  @"~/media/Images/wrong_image"
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath:  @"~/media/Images/wrong_image"
                                                                                           imageParams: nil ];
                 loader(nil, nil, doneHandler);
             }

@@ -170,7 +170,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", @"__Display name", nil ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
-            request_.flags = SCItemReaderRequestIngnoreCache;
+            request_.flags = SCReadItemRequestIngnoreCache;
             
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
@@ -268,7 +268,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Display name", nil ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
-            request_.flags = SCItemReaderRequestIngnoreCache;
+            request_.flags = SCReadItemRequestIngnoreCache;
 
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
@@ -361,7 +361,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"__Editor", nil ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
-            request_.flags = SCItemReaderRequestIngnoreCache;
+            request_.flags = SCReadItemRequestIngnoreCache;
             
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
@@ -524,7 +524,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                             fieldsNames: fieldNames_ ];
-            request_.scope = static_cast<SCItemReaderScopeType>( SCItemReaderSelfScope | SCItemReaderChildrenScope );
+            request_.scope = static_cast<SCReadItemScopeType>( SCReadItemSelfScope | SCReadItemChildrenScope );
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )
@@ -563,8 +563,8 @@ static NSInteger asyncSaveItemInvocationCount = 0;
             NSSet* fieldNames_  = [ NSSet setWithObjects: @"Dictionary", @"Iso", @"__Display name", nil ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemId: edited_item_.itemId
                                                                           fieldsNames: fieldNames_ ];
-            request_.flags = SCItemReaderRequestIngnoreCache;
-            request_.scope = static_cast<SCItemReaderScopeType>( SCItemReaderSelfScope | SCItemReaderChildrenScope );
+            request_.flags = SCReadItemRequestIngnoreCache;
+            request_.scope = static_cast<SCReadItemScopeType>( SCReadItemSelfScope | SCReadItemChildrenScope );
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 if ( [ items_ count ] > 0 )

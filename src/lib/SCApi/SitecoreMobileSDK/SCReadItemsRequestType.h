@@ -6,9 +6,9 @@
  */
 typedef enum
 {
-    SCItemReaderRequestItemId,
-    SCItemReaderRequestItemPath,
-    SCItemReaderRequestQuery
-} SCItemReaderRequestType;
+    SCReadItemRequestItemId,
+    SCReadItemRequestItemPath,
+    SCReadItemRequestQuery
+} SCReadItemRequestType;
 
 #endif //SCAPI_ITEM_READER_REQUEST_TYPE_H_INCULDED

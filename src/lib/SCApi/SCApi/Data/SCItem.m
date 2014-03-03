@@ -218,7 +218,7 @@
 {
     SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:self.itemId
                                                              fieldsNames:[NSSet new]
-                                                                   scope:SCItemReaderChildrenScope];
+                                                                   scope:SCReadItemChildrenScope];
     [ self->_itemSourcePOD fillRequestParameters: request ];
     
     return [ _apiSession readItemsOperationWithRequest: request ];

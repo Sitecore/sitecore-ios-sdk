@@ -91,7 +91,7 @@
 
 /**
  The Sitecore system languages, by default is nil.
- To read Sitecore system languages call -[SCApiSession systemLanguagesReader] method.
+ To read Sitecore system languages call -[SCApiSession readSystemLanguagesOperation] method.
  */
 @property(nonatomic) NSSet *systemLanguages;
 
@@ -118,7 +118,7 @@
  Used to load Sitecore system languages from the backend.
  @return SCExtendedAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSSet of strings or nil if error happens.
  */
-- (SCExtendedAsyncOp)systemLanguagesReader;
+- (SCExtendedAsyncOp)readSystemLanguagesOperation;
 
 /**
  Used to load items from the backend according to the properties of SCReadItemsRequest object
@@ -262,7 +262,7 @@
  @param itemId system item's id, -[SCItem itemId] can be used.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItem objects or nil if error happens.
  */
-- (SCExtendedAsyncOp)childrenReaderWithItemId:(NSString *)itemId
+- (SCExtendedAsyncOp)readChildrenOperationForItemId:(NSString *)itemId
                                    itemSource:(id<SCItemSource>)itemSource;
 
 /**
@@ -278,7 +278,7 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCExtendedAsyncOp)childrenReaderWithItemPath:(NSString *)path
+- (SCExtendedAsyncOp)readChildrenOperationForItemPath:(NSString *)path
                                      itemSource:(id<SCItemSource>)itemSource;
 
 
@@ -287,7 +287,7 @@
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCExtendedAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
+- (SCExtendedAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
                                    imageParams:( SCDownloadMediaOptions * )params;
 
 
@@ -303,7 +303,7 @@
  @param sourceId - item's id for render using rendering with renderingId
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
 */
-- (SCExtendedAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
+- (SCExtendedAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
                                                   sourceId:(NSString *)sourceId;
 
 /**

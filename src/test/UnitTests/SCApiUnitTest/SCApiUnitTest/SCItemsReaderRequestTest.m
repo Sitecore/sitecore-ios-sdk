@@ -7,7 +7,7 @@
 
 @implementation SCReadItemsRequestTest
 
--(NSString*)scopeURLParamWithScope:( SCItemReaderScopeType )scope_
+-(NSString*)scopeURLParamWithScope:( SCReadItemScopeType )scope_
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
@@ -25,7 +25,7 @@
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
-    request_.requestType = SCItemReaderRequestItemPath;
+    request_.requestType = SCReadItemRequestItemPath;
     request_.request = path_;
 
     NSURL* url_ = [ NSURL URLWithItemsReaderRequest: request_
@@ -38,7 +38,7 @@
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
-    request_.requestType = SCItemReaderRequestItemId;
+    request_.requestType = SCReadItemRequestItemId;
     request_.request = itemId_;
 
     NSURL* url_ = [ NSURL URLWithItemsReaderRequest: request_
@@ -53,7 +53,7 @@
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
-    request_.requestType = SCItemReaderRequestQuery;
+    request_.requestType = SCReadItemRequestQuery;
     request_.request     = query_;
 
     NSURL* url_ = [ NSURL URLWithItemsReaderRequest: request_
@@ -66,34 +66,34 @@
 
 -(void)testScopeParam
 {
-    SCItemReaderScopeType scope_ = SCItemReaderSelfScope;
+    SCReadItemScopeType scope_ = SCReadItemSelfScope;
     NSString* scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"s" isEqualToString: scopeStr_ ], @"OK" );
 
     scopeStr_ = [ self scopeURLParamWithScope: 0 ];
     GHAssertTrue( [ @"s" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderChildrenScope;
+    scope_ = SCReadItemChildrenScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"c" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderParentScope;
+    scope_ = SCReadItemParentScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"p" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+    scope_ = SCReadItemSelfScope | SCReadItemChildrenScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"s|c" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderSelfScope | SCItemReaderParentScope;
+    scope_ = SCReadItemSelfScope | SCReadItemParentScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"p|s" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderChildrenScope | SCItemReaderParentScope;
+    scope_ = SCReadItemChildrenScope | SCReadItemParentScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"p|c" isEqualToString: scopeStr_ ], @"OK" );
 
-    scope_ = SCItemReaderSelfScope | SCItemReaderChildrenScope | SCItemReaderParentScope;
+    scope_ = SCReadItemSelfScope | SCReadItemChildrenScope | SCReadItemParentScope;
     scopeStr_ = [ self scopeURLParamWithScope: scope_ ];
     GHAssertTrue( [ @"p|s|c" isEqualToString: scopeStr_ ], @"OK" );
 }
@@ -145,8 +145,8 @@
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
     request_.request = @"/path";
-    request_.scope = SCItemReaderChildrenScope;
-    request_.requestType = SCItemReaderRequestItemPath;
+    request_.scope = SCReadItemChildrenScope;
+    request_.requestType = SCReadItemRequestItemPath;
     request_.fieldNames = [ NSSet setWithObjects: @"f1", @"f2", nil ];
     request_.flags = 0;
     request_.page = 1;
@@ -184,8 +184,8 @@
     SCCreateItemRequest* request_ = [ SCCreateItemRequest new ];
     
     request_.request = @"/path";
-    request_.requestType = SCItemReaderRequestItemPath;
-    request_.scope = SCItemReaderChildrenScope;
+    request_.requestType = SCReadItemRequestItemPath;
+    request_.scope = SCReadItemChildrenScope;
     request_.fieldNames = [ NSSet new ];
     request_.flags = 0;
     request_.page = 1;
@@ -233,8 +233,8 @@
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
     request_.request = @"/path";
-    request_.requestType = SCItemReaderRequestItemPath;
-    request_.scope = SCItemReaderChildrenScope;
+    request_.requestType = SCReadItemRequestItemPath;
+    request_.scope = SCReadItemChildrenScope;
     request_.fieldNames = nil;
     request_.flags      = 0;
     request_.page       = 1;

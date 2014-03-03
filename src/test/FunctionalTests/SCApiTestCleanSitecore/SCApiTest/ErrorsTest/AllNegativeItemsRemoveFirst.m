@@ -19,7 +19,7 @@
         apiContext_.defaultDatabase = @"master";
         SCReadItemsRequest* request_ =
         [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
-        request_.scope = SCItemReaderChildrenScope;
+        request_.scope = SCReadItemChildrenScope;
         [ apiContext_ deleteItemsOperationWithRequest: request_ ]( ^( id response_, NSError* error_ )
         {
             request_.request = SCCreateMediaPath;

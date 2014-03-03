@@ -1,6 +1,6 @@
 #import "SCAsyncTestCase.h"
 
-static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
+static SCReadItemScopeType scope_ = SCReadItemChildrenScope;
 
 @interface ReadItemsCTestAuth : SCAsyncTestCase
 @end
@@ -156,7 +156,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope;
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.fieldNames = field_names_;
             request_.request = path_;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.scope = scope_;
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {

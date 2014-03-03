@@ -22,7 +22,7 @@
             NSSet* field_names_ = [ NSSet setWithObjects: @"Normal Text", nil];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCTestFieldsItemPath
                                                                             fieldsNames: field_names_ ];
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
                 items_ = result_items_;

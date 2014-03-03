@@ -24,7 +24,7 @@
                 apiContext_ = strongContext_;
                 apiContext_.defaultSite = @"/sitecore/shell";
                 
-                [ apiContext_ systemLanguagesReader ]( ^( NSSet *languages_, NSError *error_ )
+                [ apiContext_ readSystemLanguagesOperation ]( ^( NSSet *languages_, NSError *error_ )
                 {
                     resultLanguages_ = languages_;
                     didFinishCallback_();

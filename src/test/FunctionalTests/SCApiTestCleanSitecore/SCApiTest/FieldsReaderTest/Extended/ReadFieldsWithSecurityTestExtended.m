@@ -136,7 +136,7 @@
             
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request = SCTestFieldsItemPath;
-                request_.requestType = SCItemReaderRequestQuery;
+                request_.requestType = SCReadItemRequestQuery;
                 request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Normal Text", nil ];
 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -203,9 +203,9 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames = [ NSSet setWithObjects: @"Text", @"Image", nil ];
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -273,9 +273,9 @@
                 
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request     = path_;
-                request_.requestType = SCItemReaderRequestQuery;
+                request_.requestType = SCReadItemRequestQuery;
                 request_.fieldNames  = fields_;
-                request_.flags       = SCItemReaderRequestReadFieldsValues;
+                request_.flags       = SCReadItemRequestReadFieldsValues;
                 
                 SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
                 {

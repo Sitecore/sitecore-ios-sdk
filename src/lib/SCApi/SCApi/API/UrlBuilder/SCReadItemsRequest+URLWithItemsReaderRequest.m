@@ -7,7 +7,7 @@
 
 -(NSString*)pathURLParam
 {
-    BOOL isPathRequest = ( self.requestType == SCItemReaderRequestItemPath );
+    BOOL isPathRequest = ( self.requestType == SCReadItemRequestItemPath );
     BOOL isRequestExist = ( nil != self.request );
     
     NSString* result = @"";
@@ -23,14 +23,14 @@
 -(NSString*)itemIdURLParam
 {
     NSString* request_ = [ ( self.request ?: @"" ) stringByEncodingURLFormat ];
-    return ( self.requestType == SCItemReaderRequestItemId )
+    return ( self.requestType == SCReadItemRequestItemId )
     ? [ [ NSString alloc ] initWithFormat: @"sc_itemid=%@", request_ ]
     : @"";
 }
 
 -(NSString*)scopeURLParam
 {
-    if ( self.requestType == SCItemReaderRequestQuery )
+    if ( self.requestType == SCReadItemRequestQuery )
         return @"";
     
     NSArray* scopes_ = @[ @"p"
@@ -50,7 +50,7 @@
 
 -(NSString*)queryURLParam
 {
-    if ( self.requestType != SCItemReaderRequestQuery )
+    if ( self.requestType != SCReadItemRequestQuery )
         return @"";
     
     NSString* request_ = [ self.request ?: @"" stringByEncodingURLFormat ];

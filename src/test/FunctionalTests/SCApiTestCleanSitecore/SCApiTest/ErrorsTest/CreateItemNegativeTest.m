@@ -35,8 +35,8 @@
     {
         
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: path_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
-        item_request_.scope = SCItemReaderChildrenScope;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
+        item_request_.scope = SCReadItemChildrenScope;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* readItems_, NSError* read_error_ )
         {
             readItemsCount_ = [ readItems_ count ];
@@ -251,7 +251,7 @@
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                                fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+            item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
                   {
                       if ( [ read_items_ count ] > 0 )
@@ -317,7 +317,7 @@
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId 
                                                                            fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
         {
             if ( [ read_items_ count ] > 0 )
@@ -414,7 +414,7 @@
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                                fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+            item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 if ( [ read_items_ count ] > 0 )
@@ -508,7 +508,7 @@
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: item_.itemId
                                                                                fieldsNames: [ NSSet setWithObjects: @"Path", @"__Source", nil ] ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+            item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
               if ( [ read_items_ count ] > 0 )

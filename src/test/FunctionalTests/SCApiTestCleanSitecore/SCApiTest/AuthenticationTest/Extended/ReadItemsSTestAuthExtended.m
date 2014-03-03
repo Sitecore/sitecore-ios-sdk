@@ -1,6 +1,6 @@
 #import "SCAsyncTestCase.h"
 
-static SCItemReaderScopeType scope_ = SCItemReaderSelfScope;
+static SCReadItemScopeType scope_ = SCReadItemSelfScope;
 NSString* not_allowed_path_ext = @"/sitecore/content/home/Not_Allowed_Parent";
 NSString* allowed_path_ext = @"/sitecore/content/home/Allowed_Parent";
 
@@ -238,7 +238,7 @@ NSString* allowed_path_ext = @"/sitecore/content/home/Allowed_Parent";
         SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
         request_.scope       = scope_;
         request_.fieldNames  = [ NSSet new ];
-        request_.requestType = SCItemReaderRequestQuery;
+        request_.requestType = SCReadItemRequestQuery;
         request_.request = @"/sitecore/content/descendant::*[@@key='allowed_parent']";
         SCDidFinishAsyncOperationHandler doneHandler1 = ^( NSArray* result_items_, NSError* error_ )
         {

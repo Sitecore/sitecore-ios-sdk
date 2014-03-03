@@ -1,6 +1,6 @@
 #import "SCAsyncTestCase.h"
 
-static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderChildrenScope | SCItemReaderParentScope;
+static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemChildrenScope | SCReadItemParentScope;
 
 @interface ReadItemsSCPTestAuthExtended : SCAsyncTestCase
 @end

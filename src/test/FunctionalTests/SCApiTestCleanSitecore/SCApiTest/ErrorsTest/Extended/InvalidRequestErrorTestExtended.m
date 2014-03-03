@@ -144,7 +144,7 @@
             SCReadItemsRequest* request_ = [SCReadItemsRequest new ];
             request_.request = path_;
             request_.fieldNames = [ NSSet new ];
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* resultItems_, NSError* result_error_ )
             {
                 items_ = resultItems_;

@@ -41,7 +41,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -127,7 +127,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", @"Blob", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -204,7 +204,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         item_request_.site = @"/sitecore/shell";
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -238,7 +238,7 @@
         NSSet* field_names_ = [ NSSet setWithObjects: @"Dimensions", @"Alt", nil ];
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemId: media_item_.itemId 
                                                                            fieldsNames: field_names_ ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        item_request_.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         
         SCDidFinishAsyncOperationHandler donaHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -314,7 +314,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -384,7 +384,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {
@@ -463,7 +463,7 @@
     void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-        item_request_.flags = SCItemReaderRequestIngnoreCache;
+        item_request_.flags = SCReadItemRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* read_items_, NSError* read_error_ )
         {

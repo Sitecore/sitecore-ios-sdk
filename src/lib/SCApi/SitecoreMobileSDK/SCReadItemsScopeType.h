@@ -2,9 +2,9 @@
 #define SCAPI_ITEM_READER_SCOPE_TYPE_H_INCULDED
 
 typedef enum {
-    SCItemReaderParentScope   = 1 << 0,
-    SCItemReaderSelfScope     = 1 << 1,
-    SCItemReaderChildrenScope = 1 << 2
-} SCItemReaderScopeType;
+    SCReadItemParentScope   = 1 << 0,
+    SCReadItemSelfScope     = 1 << 1,
+    SCReadItemChildrenScope = 1 << 2
+} SCReadItemScopeType;
 
 #endif //SCAPI_ITEM_READER_SCOPE_TYPE_H_INCULDED

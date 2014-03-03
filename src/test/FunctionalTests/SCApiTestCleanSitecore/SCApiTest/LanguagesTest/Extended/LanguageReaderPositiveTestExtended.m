@@ -49,7 +49,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession systemLanguagesReader ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readSystemLanguagesOperation ];
             loader(nil, nil, doneHandler);
         }
 

@@ -21,10 +21,10 @@
             apiContext_ = strongContext_;
 
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope = SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope = SCReadItemChildrenScope;
             request_.request = SCHomePath;
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             request_.fieldNames = [ NSSet setWithObjects: @"Normal Text", nil ];
             request_.pageSize = 2;
 
@@ -98,10 +98,10 @@
        apiContext_ = strongContext_;
       
       SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-      request_.requestType = SCItemReaderRequestItemPath;
-      request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+      request_.requestType = SCReadItemRequestItemPath;
+      request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
       request_.request     = SCHomePath;
-      request_.flags       = SCItemReaderRequestReadFieldsValues;
+      request_.flags       = SCReadItemRequestReadFieldsValues;
       request_.fieldNames  = nil;
       request_.pageSize    = 2;
 
@@ -170,7 +170,7 @@
         apiContext_ = strongContext_;
         
         SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-        request_.requestType = SCItemReaderRequestQuery;
+        request_.requestType = SCReadItemRequestQuery;
         request_.request = @"/sitecore/content/home/descendant-or-self::*[@@templatename='Sample Item']";
         request_.fieldNames = [ NSSet set ];
         request_.pageSize = 2;

@@ -202,15 +202,15 @@
     return [ self scDataLoaderWithHttpBodyAndURL: nil ];
 }
 
--(JFFAsyncOperation)imageLoaderForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
 {
-    return [ self imageLoaderForSCMediaPath: path_
+    return [ self uploadOperationForSCMediaPath: path_
                               cacheLifeTime: cacheLifeTime_
                                      params: nil ];
 }
 
--(JFFAsyncOperation)imageLoaderForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
                                        params:( SCParams* )params_
 {
@@ -241,7 +241,7 @@
     SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiSessionAndRequest( apiSession_, request_ );
 
     id< SCDataCache > cache_ = nil;
-    if ( !( request_.flags & SCItemReaderRequestIngnoreCache ) )
+    if ( !( request_.flags & SCReadItemRequestIngnoreCache ) )
     {
         cache_ = [ SCSrvResponseCachesFactory sharedSrvResponseCache ];
     }

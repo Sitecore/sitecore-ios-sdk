@@ -22,8 +22,8 @@
             apiContext_ = strongContext_;
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope       = SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope       = SCReadItemChildrenScope;
             request_.request     = @"/sitecore/content/WrongItem/";
             request_.pageSize    = 2;
 
@@ -63,8 +63,8 @@
         apiContext_ = strongContext_;
         
         SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-        request_.requestType = SCItemReaderRequestItemId;
-        request_.scope       = SCItemReaderChildrenScope;
+        request_.requestType = SCReadItemRequestItemId;
+        request_.scope       = SCReadItemChildrenScope;
         request_.request     = @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}";
         request_.pageSize    = 1;
         
@@ -103,8 +103,8 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/Home/WrongItem/*[@@templatename='WrongTemplate']";
-            request_.scope = SCItemReaderChildrenScope;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.scope = SCReadItemChildrenScope;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames = [ NSSet new ];
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
@@ -143,7 +143,7 @@
             SCReadItemsRequest* request_ = 
             [ SCReadItemsRequest requestWithItemPath: @"/sitecore/content/WrongItem/"
                                            fieldsNames: nil
-                                                 scope: SCItemReaderSelfScope ];
+                                                 scope: SCReadItemSelfScope ];
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 products_items_ = items_;
@@ -181,7 +181,7 @@
             SCReadItemsRequest* request_ = 
             [ SCReadItemsRequest requestWithItemId: @"{AAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA}"
                                          fieldsNames: [ NSSet new ]
-                                               scope: SCItemReaderParentScope ];
+                                               scope: SCReadItemParentScope ];
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
             {
                 products_items_ = items_;

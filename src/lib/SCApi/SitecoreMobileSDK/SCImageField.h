@@ -19,7 +19,7 @@
 @interface SCImageField : SCField
 
 /**
- The path to the Sitecore media item's image. Can be used to read an image, see [SCApiSession imageLoaderForSCMediaPath:] or [SCImageField fieldValueReader]
+ The path to the Sitecore media item's image. Can be used to read an image, see [SCApiSession uploadOperationForSCMediaPath:] or [SCImageField fieldValueReader]
  */
 @property(nonatomic) NSString *imagePath;
 

@@ -41,7 +41,7 @@
         void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: media_item_.path ];
-            item_request_.flags = SCItemReaderRequestIngnoreCache;
+            item_request_.flags = SCReadItemRequestIngnoreCache;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 if ( [ read_items_ count ] > 0 )
@@ -94,7 +94,7 @@
         {
             SCReadItemsRequest* item_request_ = [ SCReadItemsRequest requestWithItemPath: @"/sitecore/Media Library/Images/test image" ];
             item_request_.fieldNames = nil;
-            item_request_.flags = SCItemReaderRequestReadFieldsValues | SCItemReaderRequestIngnoreCache;
+            item_request_.flags = SCReadItemRequestReadFieldsValues | SCReadItemRequestIngnoreCache;
             [ apiContext_ readItemsOperationWithRequest: item_request_ ]( ^( NSArray* read_items_, NSError* read_error_ )
             {
                 if ( read_error_ )

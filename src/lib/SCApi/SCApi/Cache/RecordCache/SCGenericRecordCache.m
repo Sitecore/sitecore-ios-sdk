@@ -302,8 +302,8 @@ static JFFPredicateBlock ITEMS_WITHOUT_CACHE_STUBS = ^BOOL(SCItemRecord* blockIt
     
 
     BOOL isAllFieldsStored          = request.isAllFieldsRequested;
-    BOOL isChildScopeRequested      = ( SCItemReaderChildrenScope & request.scope );
-    BOOL isRequestCanHaveParentItem = ( SCItemReaderRequestQuery != request.requestType );
+    BOOL isChildScopeRequested      = ( SCReadItemChildrenScope & request.scope );
+    BOOL isRequestCanHaveParentItem = ( SCReadItemRequestQuery != request.requestType );
     
     SCItemRecord* parentRecord = nil;
     if ( isChildScopeRequested && isRequestCanHaveParentItem )

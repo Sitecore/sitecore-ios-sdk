@@ -1,6 +1,6 @@
 #import "SCAsyncTestCase.h"
 
-static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderParentScope;
+static SCReadItemScopeType scope_ = SCReadItemChildrenScope | SCReadItemParentScope;
 
 @interface ReadItemsCPTestAuthExtended : SCAsyncTestCase
 @end
@@ -24,7 +24,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: nil ];
         request_.scope = scope_;
-        request_.flags = SCItemReaderRequestIngnoreCache;
+        request_.flags = SCReadItemRequestIngnoreCache;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* result_items_, NSError* error_ )
         {
@@ -94,7 +94,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
         
         SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                         fieldsNames: [ NSSet new ] ];
-        request_.flags = SCItemReaderRequestIngnoreCache;
+        request_.flags = SCReadItemRequestIngnoreCache;
         request_.scope = scope_;
         
         SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* result_items_, NSError* error_ )
@@ -175,7 +175,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderChildrenScope | SCItemReaderPa
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: path_
                                                                                 fieldsNames: [ NSSet new ] ];
                 request_.scope = scope_;
-                request_.flags = SCItemReaderRequestIngnoreCache;
+                request_.flags = SCReadItemRequestIngnoreCache;
             
                 SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* result_items_, NSError* error_ )
                 {

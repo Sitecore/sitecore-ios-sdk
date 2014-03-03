@@ -7,7 +7,7 @@
 +(SCReadItemsRequest*)removeAllTestItemsFromWebAsSitecoreAdmin
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
-    request_.scope = SCItemReaderChildrenScope;
+    request_.scope = SCReadItemChildrenScope;
     request_.site = @"/sitecore/shell";
     request_.database = @"web";
     
@@ -36,7 +36,7 @@
 +(SCReadItemsRequest*)removeAllTestItemsFromMasterAsSitecoreAdmin
 {
     SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCCreateItemPath ];
-    request_.scope = SCItemReaderChildrenScope;
+    request_.scope = SCReadItemChildrenScope;
     request_.site = @"/sitecore/shell";
     request_.database = @"master";
     

@@ -184,9 +184,9 @@
     return asyncOpWithJAsyncOp( [ self.extendedApiSession checkCredentialsOperationForSite: site ] );
 }
 
-- (SCAsyncOp)systemLanguagesReader
+- (SCAsyncOp)readSystemLanguagesOperation
 {
-    return asyncOpWithJAsyncOp( [ self.extendedApiSession systemLanguagesReader ] );
+    return asyncOpWithJAsyncOp( [ self.extendedApiSession readSystemLanguagesOperation ] );
 }
 
 - (SCAsyncOp)readItemsOperationWithRequest:(SCReadItemsRequest *)request
@@ -271,36 +271,36 @@
     return asyncOpWithJAsyncOp( [ self.extendedApiSession uploadMediaOperationWithRequest: createMediaItemRequest ] );
 }
 
-- (SCAsyncOp)childrenReaderWithItemId:(NSString *)itemId
+- (SCAsyncOp)readChildrenOperationForItemId:(NSString *)itemId
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession childrenReaderWithItemId: itemId
+    [ self.extendedApiSession readChildrenOperationForItemId: itemId
                                             itemSource: [ self contextSource ] ];
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)childrenReaderWithItemPath:(NSString *)path
+- (SCAsyncOp)readChildrenOperationForItemPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession childrenReaderWithItemPath: path
+    [ self.extendedApiSession readChildrenOperationForItemPath: path
                                               itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
+- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession imageLoaderForSCMediaPath: path
+    [ self.extendedApiSession uploadOperationForSCMediaPath: path
                                             imageParams: nil ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
+- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
                            imageParams:( SCDownloadMediaOptions * )params
 {
-    SCExtendedAsyncOp result = [ self.extendedApiSession imageLoaderForSCMediaPath: path
+    SCExtendedAsyncOp result = [ self.extendedApiSession uploadOperationForSCMediaPath: path
                                                                        imageParams: params ];
     return asyncOpWithJAsyncOp( result );
 }
@@ -312,7 +312,7 @@
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
+- (SCAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
                                           sourceId:(NSString *)sourceId
 {
     SCGetRenderingHtmlRequest * request = [SCGetRenderingHtmlRequest new];

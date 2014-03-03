@@ -27,7 +27,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"CheckListField"
                                     , @"MultiListField"
                                     , @"CheckBoxField"
@@ -131,7 +131,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"TreeListField"
                                     , @"DateField"
                                     , @"DateTimeField"
@@ -227,14 +227,14 @@
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
 
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"CheckListField"
                                     , @"MultiListField"
                                     , @"CheckBoxField"
                                     , @"Image"
                                     , @"Normal Text"
                                     , nil ];
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.flags = SCReadItemRequestReadFieldsValues;
  
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -344,9 +344,9 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = path_;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = fields_;
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -429,7 +429,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldLinkNormal", @"GeneralLinkFieldLinkEmpty", nil ];
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -515,7 +515,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldExtLinkInvalid", nil ];
 
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -585,7 +585,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldMediaNormal", nil ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -670,7 +670,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldJavascript", nil ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -741,7 +741,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldAnchor", nil ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -812,7 +812,7 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = SCTestFieldsItemPath;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet setWithObjects: @"GeneralLinkFieldEmail", nil ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )

@@ -89,7 +89,7 @@
             strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
             apiContext_ = strongContext_;
             
-            [ apiContext_ childrenReaderWithItemPath: @"./[" ]( ^( id result_, NSError* error_ )
+            [ apiContext_ readChildrenOperationForItemPath: @"./[" ]( ^( id result_, NSError* error_ )
             {
                 item_error_ = (SCApiError*) error_;
                 items_ = result_;
@@ -124,10 +124,10 @@
             apiContext_ = strongContext_;
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
             request_.request     = @"./[.//";
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
@@ -170,10 +170,10 @@
             apiContext_ = strongContext_;
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-            request_.requestType = SCItemReaderRequestItemPath;
-            request_.scope       = SCItemReaderSelfScope | SCItemReaderChildrenScope;
+            request_.requestType = SCReadItemRequestItemPath;
+            request_.scope       = SCReadItemSelfScope | SCReadItemChildrenScope;
             request_.request     = nil;
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
             request_.fieldNames  = nil;
             request_.pageSize    = 50;
             
@@ -215,8 +215,8 @@
                 
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
                 request_.request = nil;
-                request_.scope = SCItemReaderChildrenScope;
-                request_.requestType = SCItemReaderRequestQuery;
+                request_.scope = SCReadItemChildrenScope;
+                request_.requestType = SCReadItemRequestQuery;
                 request_.fieldNames = [ NSSet new ];
                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
                 {
@@ -257,8 +257,8 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"";
-            request_.scope = SCItemReaderSelfScope;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.scope = SCReadItemSelfScope;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames = nil;
             [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* result_items_, NSError* error_ )
             {
@@ -295,7 +295,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ imageLoaderForSCMediaPath:  @"~/media/Images/wrong_image" ]( ^( id result_, NSError* error_ )
+                [ apiContext_ uploadOperationForSCMediaPath:  @"~/media/Images/wrong_image" ]( ^( id result_, NSError* error_ )
                 {
                     value_ = result_;
                     value_error_ = (SCApiError*)error_;

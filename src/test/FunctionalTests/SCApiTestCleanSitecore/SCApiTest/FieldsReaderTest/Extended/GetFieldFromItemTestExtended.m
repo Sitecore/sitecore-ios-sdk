@@ -527,7 +527,7 @@
             };
             
             SCExtendedAsyncOp loader =
-            [ apiContext_.extendedApiSession imageLoaderForSCMediaPath: @"~/media/Images/test image"
+            [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: @"~/media/Images/test image"
                                                            imageParams: nil ];
             loader(nil, nil, doneHandler);
             

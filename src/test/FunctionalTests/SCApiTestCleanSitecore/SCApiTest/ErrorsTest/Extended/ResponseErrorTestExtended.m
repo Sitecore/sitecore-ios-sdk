@@ -23,8 +23,8 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = @"[./22@>";
-            request_.scope       = SCItemReaderParentScope;
-            request_.requestType = SCItemReaderRequestQuery;
+            request_.scope       = SCReadItemParentScope;
+            request_.requestType = SCReadItemRequestQuery;
             request_.fieldNames  = [ NSSet new ];
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
@@ -70,9 +70,9 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request     = @"/sitecore/content/descendant::*/child::*/descendant::*/child::*/descendant::*";
-            request_.scope       = SCItemReaderParentScope;
-            request_.requestType = SCItemReaderRequestQuery;
-            request_.flags       = SCItemReaderRequestReadFieldsValues;
+            request_.scope       = SCReadItemParentScope;
+            request_.requestType = SCReadItemRequestQuery;
+            request_.flags       = SCReadItemRequestReadFieldsValues;
             request_.fieldNames = nil;
             if( !apiContext_ )
             {
@@ -120,9 +120,9 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/home/WrongItem/*";
-            request_.scope = SCItemReaderSelfScope;
-            request_.requestType = SCItemReaderRequestQuery;
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.scope = SCReadItemSelfScope;
+            request_.requestType = SCReadItemRequestQuery;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             request_.fieldNames = nil;
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {
@@ -162,9 +162,9 @@
             
             SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
             request_.request = @"/sitecore/content/nicam/products/*[@@@template='WrongTemplate']";
-            request_.scope = SCItemReaderSelfScope;
-            request_.requestType = SCItemReaderRequestQuery;
-            request_.flags = SCItemReaderRequestReadFieldsValues;
+            request_.scope = SCReadItemSelfScope;
+            request_.requestType = SCReadItemRequestQuery;
+            request_.flags = SCReadItemRequestReadFieldsValues;
             request_.fieldNames = nil;
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* items_, NSError* error_ )
             {

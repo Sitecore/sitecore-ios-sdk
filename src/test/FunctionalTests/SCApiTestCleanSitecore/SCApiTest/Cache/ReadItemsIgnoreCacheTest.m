@@ -49,7 +49,7 @@
         
         SCReadItemsRequest* request = [ SCReadItemsRequest new ];
         request.request = SCHomePath;
-        request.requestType = SCItemReaderRequestItemPath;
+        request.requestType = SCReadItemRequestItemPath;
         request.fieldNames = [ NSSet new ];
         
         [ context readItemsOperationWithRequest: request ]( ^( id result, NSError* error )
@@ -101,9 +101,9 @@
         
         SCReadItemsRequest* request = [ SCReadItemsRequest new ];
         request.request = @"/sitecore/content/home/child::*";
-        request.requestType = SCItemReaderRequestQuery;
+        request.requestType = SCReadItemRequestQuery;
         request.fieldNames  = [ NSSet new ];
-        request.flags = SCItemReaderRequestIngnoreCache;
+        request.flags = SCReadItemRequestIngnoreCache;
         
         [ context readItemsOperationWithRequest: request ]( ^( NSArray* result, NSError* error )
         {

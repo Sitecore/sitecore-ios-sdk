@@ -76,9 +76,10 @@
                 
                 NSSet* fields_ = [ NSSet setWithObject: @"Title" ];
                 SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
-                                                                                fieldsNames: fields_ ];
+                                                                            fieldsNames: fields_ ];
                 request_.language = @"xx";
                 apiContext_.defaultLanguage = @"da";
+                
                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* da_result_, NSError* error_ )
                 {
                     if ( [ da_result_ count ] == 0 )
@@ -122,7 +123,7 @@
     NSString* rawValue = field_.rawValue;
     NSString* expectedRawValue = defaultField.rawValue;
     
-    // @igk test should not pass!!!
+    //FIXME: @igk test should not pass!!!
     GHAssertEqualObjects(rawValue, expectedRawValue, @"field mismatch : [%@] not equal to [%@]", rawValue, expectedRawValue );
     GHAssertTrue( field_.item == da_item_, @"OK" );
 }
@@ -155,7 +156,7 @@
                  
                  
                  SCReadItemsRequest* request_ = [ SCReadItemsRequest new ];
-                 request_.requestType = SCItemReaderRequestQuery;
+                 request_.requestType = SCReadItemRequestQuery;
                  request_.request = SCHomePath;
                  request_.language = @"da";
                  request_.fieldNames = field_names_;
