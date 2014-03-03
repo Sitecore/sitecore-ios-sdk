@@ -45,10 +45,7 @@
                 SCItemSourcePOD* itemSource = [ SCItemSourcePOD new ];
                 {
                     itemSource.database = json_[ @"Database" ];
-                    itemSource.database =
-                    
                     itemSource.language    = json_[ @"Language" ];
-                    itemSource.database    = json_[ @"Database" ];
                     itemSource.site        = [ requestedSource_ site ];
                     itemSource.itemVersion = [ json_[ @"Version" ] stringValue ];
                 }

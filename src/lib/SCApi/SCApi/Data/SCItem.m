@@ -95,13 +95,40 @@
         self->_mainApiSession = apiSession_.mainContext;
         
         self->_itemSourcePOD = [ SCItemSourcePOD new ];
-        self->_itemSourcePOD.language = apiSession_.defaultLanguage;
-        self->_itemSourcePOD.database = apiSession_.defaultDatabase;
-        self->_itemSourcePOD.site = apiSession_.defaultSite;
-        self->_itemSourcePOD.itemVersion = apiSession_.defaultItemVersion;
+        
+        [ self fillPodWithRecord: record_
+                      apiSession: apiSession_ ];
     }
 
     return self;
+}
+
+-(void)fillPodWithRecord:( SCItemRecord* )record_
+              apiSession:( SCExtendedApiSession* )apiSession_
+{
+    self->_itemSourcePOD.database = record_.itemSource.database;
+    if ( self->_itemSourcePOD.database == nil)
+    {
+        self->_itemSourcePOD.database = apiSession_.defaultDatabase;
+    }
+    
+    self->_itemSourcePOD.language = record_.itemSource.language;
+    if ( self->_itemSourcePOD.language == nil)
+    {
+        self->_itemSourcePOD.language = apiSession_.defaultLanguage;
+    }
+    
+    self->_itemSourcePOD.site = record_.itemSource.site;
+    if ( self->_itemSourcePOD.site == nil)
+    {
+        self->_itemSourcePOD.site = apiSession_.defaultSite;
+    }
+    
+    self->_itemSourcePOD.itemVersion = record_.itemSource.itemVersion;
+    if ( self->_itemSourcePOD.itemVersion == nil)
+    {
+        self->_itemSourcePOD.itemVersion = apiSession_.defaultItemVersion;
+    }
 }
 
 +(id)itemWithRecord:( SCItemRecord* )record_
