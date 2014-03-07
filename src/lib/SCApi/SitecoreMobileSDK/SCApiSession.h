@@ -107,6 +107,16 @@
  */
 @property(nonatomic) NSString *defaultDatabase;
 
+
+/**
+ Media library root folder in the content tree.
+ By default it is "/sitecore/Media Library".
+ 
+ Note : it must match the web.config settings on the back end.
+ */
+@property(nonatomic) NSString *mediaLibraryPath;
+
+
 /**
  The version used to request Sitecore items, default is "nil" which means the latest version will be retrieved.
  */

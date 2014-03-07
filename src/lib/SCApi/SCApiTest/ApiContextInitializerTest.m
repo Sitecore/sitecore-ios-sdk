@@ -8,7 +8,7 @@
 
 -(void)testContextAndExtendedContextHaveSameApiObject
 {
-    SCApiSession * context = [ [SCApiSession alloc] initWithHost: @"localhost" ];
+    SCApiSession * context = [ [ SCApiSession alloc] initWithHost: @"localhost" ];
     XCTAssertNotNil( context.extendedApiSession, @"extended context must not be nil" );
     
     

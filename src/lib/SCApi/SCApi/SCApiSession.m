@@ -26,6 +26,7 @@
 
 @dynamic itemsCache;
 @dynamic api;
+@dynamic mediaLibraryPath;
 
 +(id)sessionWithHost:( NSString* )host_
                login:( NSString* )login_
@@ -124,6 +125,11 @@
     self.extendedApiSession.defaultItemVersion = defaultItemVersion;
 }
 
+-(void)setMediaLibraryPath:(NSString *)mediaLibraryPath
+{
+    [ self->_extendedApiSession setMediaLibraryPath: mediaLibraryPath ];
+}
+
 -(void)setDefaultLifeTimeInCache:(NSTimeInterval)defaultLifeTimeInCache
 {
     self.extendedApiSession.defaultLifeTimeInCache = defaultLifeTimeInCache;
@@ -157,6 +163,11 @@
 -(NSString *)defaultItemVersion
 {
     return self.extendedApiSession.defaultItemVersion;
+}
+
+-(NSString*)mediaLibraryPath
+{
+    return [ self->_extendedApiSession mediaLibraryPath ];
 }
 
 -(NSTimeInterval)defaultLifeTimeInCache

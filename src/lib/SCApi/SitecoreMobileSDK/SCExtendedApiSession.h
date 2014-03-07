@@ -80,6 +80,14 @@
 @property(nonatomic) NSString *defaultItemVersion;
 
 /**
+ Media library root folder in the content tree.
+ By default it is "/sitecore/Media Library".
+ 
+ Note : it must match the web.config settings on the back end.
+ */
+@property(nonatomic) NSString *mediaLibraryPath;
+
+/**
  The default life time in cache after which object in cache becames old. Default value is ten minutes
 */
 @property(nonatomic) NSTimeInterval defaultLifeTimeInCache;

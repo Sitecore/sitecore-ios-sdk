@@ -12,15 +12,15 @@
     #import "SCActionsUrlBuilder.h"
 
     #import "SCRichTextField.h"
-    #import "SCApiContext+Init.h"
+    #import "SCApiSession+Init.h"
 
     #import "SCItemRecordPropertyFactory.h"
     #import "SCItemStorageKinds.h"
 
     #import "SCRemoteApi.h"
-    #import "SCExtendedApiContext.h"
-    #import "SCExtendedApiContext+Init.h"
-    #import "SCExtendedApiContext+Private.h"
+    #import "SCExtendedApiSession.h"
+    #import "SCExtendedApiSession+Init.h"
+    #import "SCExtendedApiSession+Private.h"
 
     #import "SCGenericRecordCache+PrivateFields.h"
 
@@ -47,7 +47,7 @@
     #import <ESDatabaseWrapper/ESDatabaseWrapper.h>
     #import <FMDatabase.h>
 
-    #import <SenTestingKit/SenTestingKit.h>
+    #import <XCTest/XCTest.h>
 
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>

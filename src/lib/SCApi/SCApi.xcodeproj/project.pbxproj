@@ -204,6 +204,7 @@
 		7E7E47FC17C75769009FDA67 /* SCMutableItemRecordCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7E47FA17C75769009FDA67 /* SCMutableItemRecordCache.h */; };
 		7E7E47FF17C757A5009FDA67 /* SCGenericRecordCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7E47FD17C757A5009FDA67 /* SCGenericRecordCache.h */; };
 		7E7E480017C757A5009FDA67 /* SCGenericRecordCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E47FE17C757A5009FDA67 /* SCGenericRecordCache.m */; };
+		7E833E3018CA08F5001DF23C /* SessionMediaRootTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E833E2F18CA08F5001DF23C /* SessionMediaRootTest.m */; };
 		7E85871217CE48200086F1A5 /* 1-HomeWithFields.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E85871117CE48200086F1A5 /* 1-HomeWithFields.json */; };
 		7E8868B71709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E8868B51709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h */; };
 		7E8868B81709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8868B61709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m */; };
@@ -892,6 +893,7 @@
 		7E7E47FA17C75769009FDA67 /* SCMutableItemRecordCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCMutableItemRecordCache.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7E7E47FD17C757A5009FDA67 /* SCGenericRecordCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGenericRecordCache.h; sourceTree = "<group>"; };
 		7E7E47FE17C757A5009FDA67 /* SCGenericRecordCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCGenericRecordCache.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7E833E2F18CA08F5001DF23C /* SessionMediaRootTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMediaRootTest.m; sourceTree = "<group>"; };
 		7E85871117CE48200086F1A5 /* 1-HomeWithFields.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1-HomeWithFields.json"; sourceTree = "<group>"; };
 		7E8868B51709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SCTriggeringError+PrivateConstructor.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7E8868B61709DD8300CCE3B9 /* SCTriggeringError+PrivateConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCTriggeringError+PrivateConstructor.m"; sourceTree = "<group>"; };
@@ -1743,6 +1745,7 @@
 				7E888FFB1803257000A9238D /* PersistentCacheSchemeTest.m */,
 				7E340BE8180448CE0053832D /* WriteToPersistentStorageTest.m */,
 				7E3F1368180570E30046C172 /* PersistentStorageTest.m */,
+				7E833E2F18CA08F5001DF23C /* SessionMediaRootTest.m */,
 				7EBF991817B3C13B00A142B7 /* Supporting Files */,
 			);
 			path = SCApiTest;
@@ -2495,6 +2498,7 @@
 				7EA861301807F4620067C155 /* SchemeAutocompleteTest.m in Sources */,
 				7EA8613B1807F4620067C155 /* PersistentStorageInitializerTest.m in Sources */,
 				7EA861351807F4620067C155 /* ItemRecordCacheTest.m in Sources */,
+				7E833E3018CA08F5001DF23C /* SessionMediaRootTest.m in Sources */,
 				7EA8613E1807F4620067C155 /* PersistentStorageTest.m in Sources */,
 				7EA8612F1807F4620067C155 /* VersionResolverTest.m in Sources */,
 				7EA8613A1807F4620067C155 /* ActionsUrlBuilderTest.m in Sources */,
@@ -2811,8 +2815,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\\\"",
-					"/Volumes/untitled/projects/lib-third-party",
+					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -2846,8 +2850,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\\\"",
-					"/Volumes/untitled/projects/lib-third-party",
+					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2876,8 +2880,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\\\"",
-					"/Volumes/untitled/projects/lib-third-party",
+					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
