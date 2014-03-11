@@ -27,6 +27,11 @@
 -(NSString*)host;
 -(NSString*)login;
 
+
+@property ( nonatomic ) NSString* mediaLibraryPath;
++(NSString*)defaultMediaLibraryPath;
+
+
 -(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site;
 
 -(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_

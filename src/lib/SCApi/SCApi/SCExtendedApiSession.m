@@ -45,13 +45,10 @@
 @implementation SCExtendedApiSession
 {
     id _memoryWarningObserver;
-    
-    NSLocale* _posixLocale;
-    dispatch_once_t _posixLocaleToken;
 }
 
 @dynamic host;
-@synthesize mediaLibraryPath = _mediaLibraryPath;
+@dynamic mediaLibraryPath;
 
 -(void)dealloc
 {
@@ -85,39 +82,19 @@
     return _defaultDatabase;
 }
 
--(NSLocale*)lazyPosixLocale
-{
-    dispatch_once( &self->_posixLocaleToken, ^void()
-    {
-        self->_posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
-    });
-    
-    return self->_posixLocale;
-}
-
 -(void)setMediaLibraryPath:(NSString *)mediaLibraryPath
 {
-    NSParameterAssert( nil == self->_mediaLibraryPath );
-    
-    NSLocale* posixLocale = [ self lazyPosixLocale ];
-    NSString* newPath = [ mediaLibraryPath uppercaseStringWithLocale: posixLocale ];
-    
-    self->_mediaLibraryPath = newPath;
+    [ self->_api setMediaLibraryPath: mediaLibraryPath ];
 }
 
 -(NSString*)mediaLibraryPath
 {
-    if ( nil == self->_mediaLibraryPath )
-    {
-        return [ [ self class ] defaultMediaLibraryPath ];
-    }
-
-    return self->_mediaLibraryPath;
+    return [ self->_api mediaLibraryPath ];
 }
 
 +(NSString*)defaultMediaLibraryPath
 {
-    return @"/SITECORE/MEDIA LIBRARY";
+    return [ SCRemoteApi defaultMediaLibraryPath ];
 }
 
 -(NSTimeInterval)defaultLifeTimeInCache

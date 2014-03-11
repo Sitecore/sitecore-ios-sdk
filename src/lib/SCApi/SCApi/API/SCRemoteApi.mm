@@ -55,7 +55,13 @@
     
     SCWebApiUrlBuilder* _urlBuilder;
     SCActionsUrlBuilder* _actionBuilder;
+
+    NSLocale* _posixLocale;
+    dispatch_once_t _posixLocaleToken;
 }
+
+@synthesize mediaLibraryPath = _mediaLibraryPath;
+
 
 -(id)initWithHost:( NSString* )host_
             login:( NSString* )login_
@@ -83,6 +89,42 @@
     }
 
     return self;
+}
+
+
+-(NSLocale*)lazyPosixLocale
+{
+    dispatch_once( &self->_posixLocaleToken, ^void()
+    {
+        self->_posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    });
+    
+    return self->_posixLocale;
+}
+
+-(void)setMediaLibraryPath:(NSString *)mediaLibraryPath
+{
+    NSParameterAssert( nil == self->_mediaLibraryPath );
+    
+    NSLocale* posixLocale = [ self lazyPosixLocale ];
+    NSString* newPath = [ mediaLibraryPath uppercaseStringWithLocale: posixLocale ];
+    
+    self->_mediaLibraryPath = newPath;
+}
+
+-(NSString*)mediaLibraryPath
+{
+    if ( nil == self->_mediaLibraryPath )
+    {
+        return [ [ self class ] defaultMediaLibraryPath ];
+    }
+    
+    return self->_mediaLibraryPath;
+}
+
++(NSString*)defaultMediaLibraryPath
+{
+    return @"/SITECORE/MEDIA LIBRARY";
 }
 
 -(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site
@@ -216,6 +258,7 @@
 {
     NSString* url_ = [ self->_urlBuilder urlStringForMediaItemAtPath: path_
                                                                 host: self->_host
+                                                           mediaRoot: self.mediaLibraryPath
                                                         resizeParams: params_ ];
 
     JFFAsyncOperation loader_ = imageLoaderForURLString( url_, cacheLifeTime_ );
