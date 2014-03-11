@@ -56,12 +56,15 @@
 
 -(NSString*)urlStringForMediaItemAtPath:( NSString* )itemPath
                                    host:( NSString* )host
+                              mediaRoot:( NSString* )mediaRoot
                            resizeParams:( SCParams* )params
 {
     NSParameterAssert( [ host hasSymbols ] );
     
     
-    NSString* relativePath = [ itemPath stringWithCutPrefix: @"/sitecore/media library" ];
+    NSString* relativePath = [ itemPath stringWithCutPrefix: mediaRoot ];
+    
+//    NSString* relativePath = [ itemPath stringWithCutPrefix: @"/sitecore/media library" ];
     {
         BOOL isValidRelativePath = [ relativePath hasSymbols ];
         NSParameterAssert( isValidRelativePath );

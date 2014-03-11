@@ -9,12 +9,17 @@
 
 @interface SCWebApiUrlBuilder : NSObject
 
+/**
+ A designated initializer.
+ 
+ @param webApiVersion It is used to avoid data duplication and initialize other URL builders
+*/
 -(instancetype)initWithVersion:( NSString* )webApiVersion;
-
 @property ( nonatomic, readonly ) NSString* webApiVersion;
 
 -(NSString*)urlStringForMediaItemAtPath:( NSString* )itemPath
                                    host:( NSString* )host
+                              mediaRoot:( NSString* )mediaRoot
                            resizeParams:( SCParams* )params;
 
 
