@@ -96,7 +96,7 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
     NSString* result =
     [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                       host: @"test.host"
-                                 mediaRoot: LEGACY_MEDIA_ROOT
+                                 mediaRoot: DEFAULT_MEDIA_ROOT
                               resizeParams: nil ];
 
     NSString* expected = @"http://test.host/~/media/1.png.ashx";
@@ -125,7 +125,7 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
         result =
         [ builder  urlStringForMediaItemAtPath: @"/sitecore/media library/1.png"
                                           host: @"https://test.host"
-                                     mediaRoot: LEGACY_MEDIA_ROOT
+                                     mediaRoot: DEFAULT_MEDIA_ROOT
                                   resizeParams: [SCDownloadMediaOptions new] ];
         
         expected = @"https://test.host/~/media/1.png.ashx";
