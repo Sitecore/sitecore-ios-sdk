@@ -4,8 +4,8 @@
 @interface MediaUrlBuilderTest : XCTestCase
 @end
 
-static NSString* const LEGACY_MEDIA_ROOT = @"/sitecore/media library";
-static NSString* const DEFAULT_MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
+static NSString* const LEGACY_MEDIA_ROOT = @"/sitecore/Media Library";
+static NSString* const DEFAULT_MEDIA_ROOT = @"/sitecore/media library";
 
 @implementation MediaUrlBuilderTest
 
