@@ -60,11 +60,26 @@
                            resizeParams:( SCParams* )params
 {
     NSParameterAssert( [ host hasSymbols ] );
+    NSString* relativePath = itemPath;
+    
+
+    NSRange itemPathFullRange = { 0, [ itemPath length ] };
+    NSLocale* posixLocale = [ NSLocale localeWithLocaleIdentifier: @"en_US_POSIX" ];
+    NSRange mediaRootRange = [ itemPath rangeOfString: mediaRoot
+                                              options: NSCaseInsensitiveSearch
+                                                range: itemPathFullRange
+                                               locale: posixLocale ];
+    if ( 0 == mediaRootRange.location )
+    {
+        NSUInteger afterRootMedia = NSMaxRange( mediaRootRange );
+        relativePath = [ itemPath substringFromIndex: afterRootMedia ];
+    }
+    else
+    {
+        NSLog(@"root media not found");
+    }
     
     
-    NSString* relativePath = [ itemPath stringWithCutPrefix: mediaRoot ];
-    
-//    NSString* relativePath = [ itemPath stringWithCutPrefix: @"/sitecore/media library" ];
     {
         BOOL isValidRelativePath = [ relativePath hasSymbols ];
         NSParameterAssert( isValidRelativePath );

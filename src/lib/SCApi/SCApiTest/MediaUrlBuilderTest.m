@@ -181,4 +181,29 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
     }
 }
 
+-(void)testMediaRootIsCaseInsensitive
+{
+    NSString* mediaRoot = @"/MEDIAxyz";
+    
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    NSString* result = nil;
+    NSString* expected = nil;
+    
+    
+    {
+        SCDownloadMediaOptions * resize = [ SCDownloadMediaOptions new ];
+        resize.height = 480;
+        resize.width  = 640;
+        
+        result =
+        [ builder  urlStringForMediaItemAtPath: @"/mediaXYZ/1.png"
+                                          host: @"https://test.host"
+                                     mediaRoot: mediaRoot
+                                  resizeParams: resize ];
+        
+        expected = @"https://test.host/~/media/1.png.ashx?w=640&h=480";
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+    }
+}
+
 @end
