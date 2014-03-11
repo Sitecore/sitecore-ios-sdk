@@ -280,6 +280,7 @@
 		7EDB118216F1F74B0088824E /* SCCacheDBAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB118016F1F74B0088824E /* SCCacheDBAdaptor.m */; };
 		7EE32DF717B555BA00788DDA /* SCAbstractRequestUrlBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE32DF517B555BA00788DDA /* SCAbstractRequestUrlBuilder.h */; };
 		7EE32DF817B555BA00788DDA /* SCAbstractRequestUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE32DF617B555BA00788DDA /* SCAbstractRequestUrlBuilder.m */; };
+		7EE3794618CF1739006AB057 /* UploadRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3794518CF1739006AB057 /* UploadRequestTest.m */; };
 		7EEC3B57180C3CDE008471B3 /* SCCachedFieldRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EEC3B55180C3CDE008471B3 /* SCCachedFieldRecord.h */; };
 		7EEC3B58180C3CDE008471B3 /* SCCachedFieldRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC3B56180C3CDE008471B3 /* SCCachedFieldRecord.m */; };
 		7EFD47C117BE6D720087581D /* SCItemSourcePOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD47BF17BE6D720087581D /* SCItemSourcePOD.m */; };
@@ -973,6 +974,7 @@
 		7EE32DF517B555BA00788DDA /* SCAbstractRequestUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAbstractRequestUrlBuilder.h; sourceTree = "<group>"; };
 		7EE32DF617B555BA00788DDA /* SCAbstractRequestUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAbstractRequestUrlBuilder.m; sourceTree = "<group>"; };
 		7EE32DF917B5583300788DDA /* SCAbstractRequestUrlBuilder+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCAbstractRequestUrlBuilder+Private.h"; sourceTree = "<group>"; };
+		7EE3794518CF1739006AB057 /* UploadRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadRequestTest.m; sourceTree = "<group>"; };
 		7EEBADB1180C52230049127D /* SCApiMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCApiMacro.h; sourceTree = "<group>"; };
 		7EEC3B55180C3CDE008471B3 /* SCCachedFieldRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCachedFieldRecord.h; sourceTree = "<group>"; };
 		7EEC3B56180C3CDE008471B3 /* SCCachedFieldRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCachedFieldRecord.m; sourceTree = "<group>"; };
@@ -1746,6 +1748,7 @@
 				7E340BE8180448CE0053832D /* WriteToPersistentStorageTest.m */,
 				7E3F1368180570E30046C172 /* PersistentStorageTest.m */,
 				7E833E2F18CA08F5001DF23C /* SessionMediaRootTest.m */,
+				7EE3794518CF1739006AB057 /* UploadRequestTest.m */,
 				7EBF991817B3C13B00A142B7 /* Supporting Files */,
 			);
 			path = SCApiTest;
@@ -2492,6 +2495,7 @@
 				7EA861391807F4620067C155 /* RichTextFieldTest.m in Sources */,
 				7EA861321807F4620067C155 /* RenderingHtmlTest.m in Sources */,
 				7EA8612D1807F4620067C155 /* ImageParamsTest.m in Sources */,
+				7EE3794618CF1739006AB057 /* UploadRequestTest.m in Sources */,
 				7EA861371807F4620067C155 /* ObjcLanguageTest.m in Sources */,
 				7EA8612E1807F4620067C155 /* WebApiUrlBuilrerTest.m in Sources */,
 				7EA861341807F4620067C155 /* ItemRecordStorageTest.m in Sources */,
