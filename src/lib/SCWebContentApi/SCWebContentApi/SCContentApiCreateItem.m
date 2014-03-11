@@ -21,6 +21,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSString    * _site              ;
     NSString    * _language          ;
     NSString    * _folder            ;
+    NSString    * _mediaRoot         ;
     NSString    * _itemName          ;
     NSURL       * _imageUrl          ;
     CGFloat       _compressionQuality;
@@ -58,12 +59,13 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
 
 -(SCApiSession *)createContext
 {
-    SCApiSession * context_ = [SCApiSession sessionWithHost:self->_location
-                                                      login:self->_login
-                                                   password:self->_password];
-    context_.defaultDatabase = self->_database;
-    context_.defaultSite     = self->_site    ;
-    context_.defaultLanguage = self->_language;
+    SCApiSession * context_ = [ SCApiSession sessionWithHost: self->_location
+                                                       login: self->_login
+                                                    password: self->_password ];
+    context_.defaultDatabase  = self->_database;
+    context_.defaultSite      = self->_site    ;
+    context_.defaultLanguage  = self->_language;
+    context_.mediaLibraryPath = self->_mediaRoot;
     
     return context_;
 }
@@ -74,7 +76,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     {
         SCApiSession * context_ = [ self createContext ];
         
-        SCUploadMediaItemRequest * request_ = [SCUploadMediaItemRequest new];
+        SCUploadMediaItemRequest * request_ = [ SCUploadMediaItemRequest new ];
         request_.itemName     = self->_itemName;
         request_.itemTemplate = @"System/Media/Unversioned/Image";
 
@@ -171,14 +173,15 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSString* imagePath_ = [ args_ firstValueIfExsistsForKey: @"imageUrl" ];
 
 
-    self->_location = [ args_ firstValueIfExsistsForKey: @"location" ];
-    self->_login    = [ args_ firstValueIfExsistsForKey: @"login"    ];
-    self->_password = [ args_ firstValueIfExsistsForKey: @"password" ];
-    self->_database = [ args_ firstValueIfExsistsForKey: @"database" ];
-    self->_site     = [ args_ firstValueIfExsistsForKey: @"site"     ];
-    self->_language = [ args_ firstValueIfExsistsForKey: @"language" ];
-    self->_folder   = [ args_ firstValueIfExsistsForKey: @"path"     ];
-    self->_itemName = [ args_ firstValueIfExsistsForKey: @"itemName" ];
+    self->_location  = [ args_ firstValueIfExsistsForKey: @"location"         ];
+    self->_login     = [ args_ firstValueIfExsistsForKey: @"login"            ];
+    self->_password  = [ args_ firstValueIfExsistsForKey: @"password"         ];
+    self->_database  = [ args_ firstValueIfExsistsForKey: @"database"         ];
+    self->_site      = [ args_ firstValueIfExsistsForKey: @"site"             ];
+    self->_language  = [ args_ firstValueIfExsistsForKey: @"language"         ];
+    self->_folder    = [ args_ firstValueIfExsistsForKey: @"path"             ];
+    self->_mediaRoot = [ args_ firstValueIfExsistsForKey: @"mediaLibraryPath" ];
+    self->_itemName  = [ args_ firstValueIfExsistsForKey: @"itemName"         ];
 
 
     [ self setCompressionQualityForArgs: args_ ];

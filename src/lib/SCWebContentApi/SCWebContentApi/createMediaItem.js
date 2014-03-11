@@ -54,8 +54,15 @@ scmobile.contentapi._construct = function()
         {
             createArgs = createArgs + '&fields=' + encodeURIComponent( JSON.stringify(mediaItemInfo.fields) );
         }
-        
 
+        if ( mediaItemInfo.mediaLibraryPath != undefined )
+        {
+            createArgs = createArgs + '&mediaLibraryPath=' + encodeURIComponent( mediaItemInfo.mediaLibraryPath );
+        }
+        
+        
+        
+        
         var protocolAndHost_ = window.location.protocol + '//' + window.location.host;
         createArgs = createArgs + '&location=' + encodeURIComponent( protocolAndHost_ );
 
