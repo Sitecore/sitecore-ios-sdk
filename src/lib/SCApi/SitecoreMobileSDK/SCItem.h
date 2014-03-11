@@ -76,7 +76,7 @@
 /**
  The system item's children, it is nil if not all children was loaded for the item. If you want to get available children items - use readChildren property instead.
 
- All item's children can be loaded using -[SCItem childrenReader] method
+ All item's children can be loaded using -[SCItem readChildrenOperation] method
  */
 @property(nonatomic,readonly) NSArray *allChildren;
 
@@ -86,16 +86,14 @@
 @property(nonatomic,readonly) NSArray *readChildren;
 
 /**
- The system item's fields, it is nil if not all fields was loaded for the item. If you want to get available item's fields - use readFieldsByName property instead.
-
- Item's fields can be loaded using -[SCItem fieldValueReaderForFieldName:] method
- */
-@property(nonatomic,readonly) NSDictionary *allFieldsByName;
-
-/**
  Only loaded item's fields.
  */
-@property(nonatomic,readonly) NSDictionary *readFieldsByName;
+@property(nonatomic,readonly) NSArray *readFields;
+
+/**
+ All item's fields.
+ */
+@property(nonatomic,readonly) NSArray *allFields;
 
 /**
  Returns SCField object for the given field's name if such field was loaded and the item has a field with such name
@@ -112,21 +110,21 @@
 - (id)fieldValueWithName:(NSString *)fieldName;
 
 /**
- Used to load the field's value, see [SCField fieldValue] and [SCField fieldValueReader]
+ Used to load the field's value, see [SCField fieldValue] and [SCField readFieldValueOperation]
  @param fieldName the name of the item's field name, see [SCField name]
- @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result depends on type of SCField, see [SCField fieldValueReader] for details.
+ @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result depends on type of SCField, see [SCField readFieldValueOperation] for details.
  */
-- (SCAsyncOp)fieldValueReaderForFieldName:(NSString *)fieldName;
-- (SCExtendedAsyncOp)extendedFieldValueReaderForFieldName:( NSString* )fieldName;
+- (SCAsyncOp)readFieldValueOperationForFieldName:(NSString *)fieldName;
+- (SCExtendedAsyncOp)readFieldValueExtendedOperationForFieldName:( NSString* )fieldName;
 
 /**
- Used to load the fields and the field's values of the item, see [SCField fieldValue] and [SCField fieldValueReader] for details.
+ Used to load the fields and the field's values of the item, see [SCField fieldValue] and [SCField readFieldValueOperation] for details.
  @param fieldNames the set of the field's names which will be read with the field's values. Each field's name of the set should be a string.
  To read all fields choose nil or the empty set if you don't need to read any field
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSDictionary of field's values by field's names or SCApiError if error happens.
  */
-- (SCAsyncOp)fieldsValuesReaderForFieldsNames:(NSSet *)fieldNames;
-- (SCExtendedAsyncOp)extendedFieldsValuesReaderForFieldsNames:( NSSet* )fieldsNames_;
+- (SCAsyncOp)readFieldsValuesOperationForFieldsNames:(NSSet *)fieldNames;
+- (SCExtendedAsyncOp)readFieldsValuesExtendedOperationForFieldsNames:( NSSet* )fieldsNames_;
 
 /**
  Used to load item's fields, see [SCItem readFieldsByName]
@@ -141,8 +139,8 @@
  Used to load all item's children, see -[SCItem allChildren]
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItem objects or SCApiError if error happens.
  */
-- (SCAsyncOp)childrenReader;
-- (SCExtendedAsyncOp)extendedChildrenReader;
+- (SCAsyncOp)readChildrenOperation;
+- (SCExtendedAsyncOp)readChildrenExtendedOperation;
 
 /**
  Used to save all item's changed fields

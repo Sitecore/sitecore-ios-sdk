@@ -149,12 +149,12 @@
     return bindSequenceOfAsyncOperations( pageLoader_, parsePagesBinder_, nil );
 }
 
--(SCAsyncOp)itemsTotalCountReader
+-(SCAsyncOp)readItemsTotalCountOperation
 {
-    return asyncOpWithJAsyncOp( [ self extendedItemsTotalCountReader ] );
+    return asyncOpWithJAsyncOp( [ self readItemsTotalCountExtendedOperation ] );
 }
 
--(SCExtendedAsyncOp)extendedItemsTotalCountReader
+-(SCExtendedAsyncOp)readItemsTotalCountExtendedOperation
 {
     JFFAsyncOperation loader_ = [ self itemLoaderForIndex: 0 ];
     loader_ = asyncOperationWithChangedResult( loader_, ^id( id result_ ) { return _totalItemsCount; } );
@@ -162,12 +162,12 @@
 }
 
 
--(SCAsyncOp)itemReaderForIndex:( NSUInteger )index_
+-(SCAsyncOp)readItemOperationForIndex:( NSUInteger )index_
 {
     return asyncOpWithJAsyncOp( [ self itemLoaderForIndex: index_ ] );
 }
 
--(SCExtendedAsyncOp)extendedItemReaderForIndex:( NSUInteger )index_
+-(SCExtendedAsyncOp)readItemExtendedOperationForIndex:( NSUInteger )index_
 {
     return [ self itemLoaderForIndex: index_ ];
 }

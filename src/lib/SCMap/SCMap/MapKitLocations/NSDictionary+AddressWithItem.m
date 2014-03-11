@@ -8,7 +8,7 @@
 
 -(SCAsyncOp)placeMarkValue
 {
-    return [ self fieldValueReader ];
+    return [ self readFieldValueOperation ];
 }
 
 @end
@@ -41,8 +41,17 @@
 {
     NSMutableDictionary* result_ = [ NSMutableDictionary new ];
 
-    NSDictionary* fields_ = [ item_ readFieldsByName ];
+    NSDictionary* fields_;
 
+    if ( [ item_ respondsToSelector:@selector(readFieldsByName) ])
+    {
+        fields_ = [ item_ performSelector:@selector(readFieldsByName) ];
+    }
+    else
+    {
+        NSAssert( YES, @"Unexpected item type");
+    }
+    
     NSDictionary* addressKeyByFieldName_ = @{
         @"Street"  : (__bridge id)kABPersonAddressStreetKey ,
         @"City"    : (__bridge id)kABPersonAddressCityKey   ,

@@ -74,7 +74,7 @@
         {
             SCImageView* imageView_ = [ SCImageView new ];
             imageView_.bounds = CGRectMake( 0.f, 0.f, buttonSize_, buttonSize_ );
-            [ imageView_ setImageReader: _iconReader ];
+            [ imageView_ setReadImageOperation: _iconReader ];
 
             pinView_.leftCalloutAccessoryView = imageView_;
         }

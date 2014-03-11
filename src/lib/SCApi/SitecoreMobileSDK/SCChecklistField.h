@@ -20,10 +20,10 @@
  Used for loading the array of items in checklist.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItems objects or nil if error happens.
  */
-- (SCAsyncOp)fieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
 
 /**
- The value of the field. [SCChecklistField fieldValue] is NSArray object. It is nil by default, so use [SCChecklistField fieldValueReader] to load NSArray of items. SCChecklistField object does not own loaded items to avoid retain cycles.
+ The value of the field. [SCChecklistField fieldValue] is NSArray object. It is nil by default, so use [SCChecklistField readFieldValueOperation] to load NSArray of items. SCChecklistField object does not own loaded items to avoid retain cycles.
  */
 @property(nonatomic,readonly) id fieldValue;
 

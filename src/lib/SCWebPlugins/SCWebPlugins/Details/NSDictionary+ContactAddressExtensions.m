@@ -6,7 +6,7 @@
 #import <AddressBook/AddressBook.h>
 
 //STODO remove
-SCAsyncOp imageReaderForURLString( NSString* urlString_
+SCAsyncOp readImageOperationForURLString( NSString* urlString_
                                   , NSTimeInterval cacheLifeTime_ );
 
 @implementation NSDictionary (ContactAddressExtensions)
@@ -58,7 +58,7 @@ SCAsyncOp imageReaderForURLString( NSString* urlString_
         if ( [ @"PlacemarkIconReader" isEqualToString: key_ ] )
         {
             static NSTimeInterval oneDayInSeconds_ = 60*60*24.;
-            return imageReaderForURLString( object_, oneDayInSeconds_ );
+            return readImageOperationForURLString( object_, oneDayInSeconds_ );
         }
         return object_;
     } ];

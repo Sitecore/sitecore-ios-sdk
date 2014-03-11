@@ -33,7 +33,7 @@
 @end
 
 /**
- The SCNoFieldError error may happens when some field does not exist, see [SCItem fieldsValuesReaderForFieldsNames:] method for details
+ The SCNoFieldError error may happens when some field does not exist, see [SCItem readFieldsValuesOperationForFieldsNames:] method for details
  */
 @interface SCNoFieldError : SCApiError
 @end

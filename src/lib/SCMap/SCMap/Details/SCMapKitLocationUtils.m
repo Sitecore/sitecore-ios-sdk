@@ -93,7 +93,7 @@ static JFFAsyncOperation itemsLoaderForQuery( SCApiSession * apiSession_, NSStri
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = query_;
-    request_.requestType = SCItemReaderRequestQuery;
+    request_.requestType = SCReadItemRequestQuery;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
     return [ apiSession_.extendedApiSession itemsLoaderWithRequest: request_ ];
@@ -103,8 +103,8 @@ static JFFAsyncOperation itemsLoaderForPath( SCApiSession * apiSession_, NSStrin
 {
     SCReadItemsRequest * request_ = [SCReadItemsRequest new];
     request_.request     = path_;
-    request_.requestType = SCItemReaderRequestItemPath;
-    request_.scope       = SCItemReaderChildrenScope;
+    request_.requestType = SCReadItemRequestItemPath;
+    request_.scope       = SCReadItemChildrenScope;
     request_.fieldNames  = [ NSSet itemAddressFieldsNames ];
 
     return [ apiSession_.extendedApiSession itemsLoaderWithRequest: request_ ];

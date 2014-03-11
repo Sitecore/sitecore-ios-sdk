@@ -84,14 +84,14 @@
 
 @synthesize itemId;
 
-//TOFO: @igk merge imageReader and extendedImageReader
--(SCAsyncOp)imageReader
+//TOFO: @igk merge readImageOperation and readImageExtendedOperation
+-(SCAsyncOp)readImageOperation
 {
     return asyncOpWithJAsyncOp( [ self.apiSession uploadOperationForSCMediaPath: self.url
                                                                 imageParams: nil ] );
 }
 
--(SCExtendedAsyncOp)extendedImageReader
+-(SCExtendedAsyncOp)readImageExtendedOperation
 {
     return [ self.apiSession uploadOperationForSCMediaPath: self.url
                                            imageParams: nil ];

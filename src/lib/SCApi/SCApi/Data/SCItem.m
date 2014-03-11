@@ -72,8 +72,6 @@
 , itemId
 , itemTemplate
 , longID
-, allFieldsByName
-, readFieldsByName
 , language
 , lazyFieldNamesToChange;
 
@@ -180,7 +178,9 @@
 
 -(SCField*)fieldWithName:( NSString* )fieldName_
 {
-    SCFieldRecord* fieldRecord = [ self->_apiSession.itemsCache fieldWithName: fieldName_
+    NSLocale* posixLocale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    NSString *uppercaseFieldName = [ fieldName_ uppercaseStringWithLocale:posixLocale_ ];
+    SCFieldRecord* fieldRecord = [ self->_apiSession.itemsCache fieldWithName: uppercaseFieldName
                                                                        itemId: self->_record.itemId
                                                                    itemSource: self->_record.itemSource ];
     
@@ -209,12 +209,12 @@
                                                            itemSource: self->_record.itemSource ];
 }
 
--(SCAsyncOp)childrenReader
+-(SCAsyncOp)readChildrenOperation
 {
-    return asyncOpWithJAsyncOp( [ self extendedChildrenReader ] );
+    return asyncOpWithJAsyncOp( [ self readChildrenExtendedOperation ] );
 }
 
--(SCExtendedAsyncOp)extendedChildrenReader
+-(SCExtendedAsyncOp)readChildrenExtendedOperation
 {
     SCReadItemsRequest * request = [SCReadItemsRequest requestWithItemId:self.itemId
                                                              fieldsNames:[NSSet new]
@@ -255,40 +255,51 @@
 
 -(JFFAsyncOperation)fieldsValuesLoaderForFieldsNames:( NSSet* )fieldsNames_
 {
-    JFFAsyncOperation loader_ = [ self fieldsLoaderForFieldsNames: fieldsNames_ ];
+    NSLocale* posixLocale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    NSMutableSet *fieldsUpperNames_ = [ NSMutableSet new ];
+    for ( NSString *elem in fieldsNames_ )
+    {
+        [ fieldsUpperNames_ addObject:[ elem uppercaseStringWithLocale: posixLocale_ ] ];
+    }
+                              
+    
+    JFFAsyncOperation loader_ = [ self fieldsLoaderForFieldsNames: fieldsUpperNames_ ];
 
     NSDictionary*(^fieldsGetter_)(void) = ^NSDictionary*()
     {
         return self.readFieldsByName;
     };
 
-    JFFAsyncOperationBinder readFieldsValuesDict_ = fieldsByNameToFieldsValuesByName( fieldsNames_, fieldsGetter_ );
+    JFFAsyncOperationBinder readFieldsValuesDict_ = fieldsByNameToFieldsValuesByName( fieldsUpperNames_, fieldsGetter_ );
 
     return bindSequenceOfAsyncOperations( loader_
                                          , readFieldsValuesDict_
                                          , nil );
 }
 
--(SCAsyncOp)fieldsValuesReaderForFieldsNames:( NSSet* )fieldsNames_
+-(SCAsyncOp)readFieldsValuesOperationForFieldsNames:( NSSet* )fieldsNames_
 {
     // loader - reader mismatch
-    return asyncOpWithJAsyncOp( [ self extendedFieldsValuesReaderForFieldsNames: fieldsNames_ ] );
+    return asyncOpWithJAsyncOp( [ self readFieldsValuesExtendedOperationForFieldsNames: fieldsNames_ ] );
 }
 
 
--(SCExtendedAsyncOp)extendedFieldsValuesReaderForFieldsNames:( NSSet* )fieldsNames_
+-(SCExtendedAsyncOp)readFieldsValuesExtendedOperationForFieldsNames:( NSSet* )fieldsNames_
 {
     return [ self fieldsValuesLoaderForFieldsNames: fieldsNames_ ];
 }
 
 
--(SCAsyncOp)fieldValueReaderForFieldName:( NSString* )fieldName_
+-(SCAsyncOp)readFieldValueOperationForFieldName:( NSString* )fieldName_
 {
-    return asyncOpWithJAsyncOp( [self extendedFieldValueReaderForFieldName: fieldName_ ] );
+    return asyncOpWithJAsyncOp( [self readFieldValueExtendedOperationForFieldName: fieldName_ ] );
 }
 
--(SCExtendedAsyncOp)extendedFieldValueReaderForFieldName:( NSString* )fieldName_
+-(SCExtendedAsyncOp)readFieldValueExtendedOperationForFieldName:( NSString* )fieldName_
 {
+    NSLocale* posixLocale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    fieldName_ = [ fieldName_ uppercaseStringWithLocale:posixLocale_ ];
+    
     NSSet* fieldsNames_ = [ NSSet setWithObject: fieldName_ ];
     JFFAsyncOperation loader_ = [ self fieldsValuesLoaderForFieldsNames: fieldsNames_ ];
     
@@ -326,6 +337,15 @@
     } ];
 }
 
+-(NSArray*)readFields
+{
+    return [ [ self readFieldsByName ] allKeys ];
+}
+
+-(NSArray*)allFields
+{
+    return [ [ self allFieldsByName ] allKeys ];
+}
 
 #pragma mark -
 #pragma mark SaveItem

@@ -20,10 +20,10 @@
  Used for loading the selected item in droplink.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is SCItem object or nil if error happens.
  */
-- (SCAsyncOp)fieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
 
 /**
- The value of the field. [SCDroplinkField fieldValue] is SCItem object. It is nil by default, so use [SCDroplinkField fieldValueReader] to load selected item. SCDroplinkField object does not own loaded item to avoid retain cycles.
+ The value of the field. [SCDroplinkField fieldValue] is SCItem object. It is nil by default, so use [SCDroplinkField readFieldValueOperation] to load selected item. SCDroplinkField object does not own loaded item to avoid retain cycles.
  */
 @property(nonatomic,readonly) id fieldValue;
 

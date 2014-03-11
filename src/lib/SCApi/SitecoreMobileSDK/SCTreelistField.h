@@ -20,10 +20,10 @@
  Used for loading the array of items in treelist.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItems objects or nil if error happens.
  */
-- (SCAsyncOp)fieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
 
 /**
- The value of the field. [SCTreelistField fieldValue] is NSArray object. It is nil by default, so use [SCTreelistField fieldValueReader] to load NSArray of items. SCTreelistField object does not own loaded items to avoid retain cycles.
+ The value of the field. [SCTreelistField fieldValue] is NSArray object. It is nil by default, so use [SCTreelistField readFieldValueOperation] to load NSArray of items. SCTreelistField object does not own loaded items to avoid retain cycles.
  */
 @property(nonatomic,readonly) id fieldValue;
 

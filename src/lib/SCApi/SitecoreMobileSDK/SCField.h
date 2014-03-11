@@ -67,9 +67,9 @@
  Used for the loading field value.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is [SCField rawValue] by default but can be different for other fields types.
 
- See SCField inheritor class: [SCImageField fieldValueReader] for details.
+ See SCField inheritor class: [SCImageField readFieldValueOperation] for details.
  */
-- (SCAsyncOp)fieldValueReader;
-- (SCExtendedAsyncOp)extendedFieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
+- (SCExtendedAsyncOp)readFieldValueExtendedOperation;
 
 @end
