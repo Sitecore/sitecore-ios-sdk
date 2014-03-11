@@ -53,7 +53,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemParentScope;
     SCItem* self_item_ = items_[ 0 ];
     //test item relations
     {    
-        GHAssertTrue( self_item_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_.readChildren == nil, @"OK" );
         GHAssertTrue( self_item_.parent == nil, @"OK" );
     }
@@ -66,7 +66,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemParentScope;
     
     //test item relations
     {
-        GHAssertTrue( self_item_auth_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_auth_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_auth_.readChildren == nil, @"OK" );
         GHAssertTrue( parent_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ parent_item_.readChildren count ] == 1, @"OK" );
@@ -130,7 +130,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemParentScope;
     
     //test item relations
     {
-        GHAssertTrue( self_item_auth_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_auth_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_auth_.readChildren == nil, @"OK" );
         GHAssertTrue( parent_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ parent_item_.readChildren count ] == 1, @"OK" );
@@ -198,7 +198,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemParentScope;
     
     //test item relations
     {
-        GHAssertTrue( self_item_auth_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_auth_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_auth_.readChildren == nil, @"OK" );
         GHAssertTrue( parent_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ parent_item_.readChildren count ] == 1, @"OK" );

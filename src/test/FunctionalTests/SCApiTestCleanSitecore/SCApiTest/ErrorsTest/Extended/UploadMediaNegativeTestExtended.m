@@ -253,7 +253,7 @@
     BOOL namePrefix = [ [ media_item_ displayName ] hasPrefix: @"Large Image" ];
     GHAssertTrue( namePrefix, @"item name shoud has prefix 'Large Image'" );
     GHAssertEqualStrings([ media_item_ itemTemplate ], @"System/Media/Unversioned/Jpeg", @"wrong item template path");
-    GHAssertTrue( [ media_item_ readFieldsByName ] != nil, @"OK" );
+    GHAssertTrue( [ media_item_ readFields ] != nil, @"OK" );
 
 }
 

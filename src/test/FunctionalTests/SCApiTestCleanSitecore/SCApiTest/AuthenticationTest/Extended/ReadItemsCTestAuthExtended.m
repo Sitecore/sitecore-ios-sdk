@@ -68,9 +68,9 @@ static SCReadItemScopeType scope_ = SCReadItemChildrenScope;
         GHAssertTrue( [ item_auth_.displayName isEqualToString: @"Allowed_Item" ], @"OK" );
         
         GHAssertTrue( item_auth_.allChildren == nil, @"OK" );
-        GHAssertTrue( item_auth_.allFieldsByName != nil, @"OK" );
-        GHAssertTrue( [ item_auth_.readFieldsByName count ] == 
-                     [ item_auth_.allFieldsByName count ], @"OK" );
+        GHAssertTrue( item_auth_.allFields != nil, @"OK" );
+        GHAssertTrue( [ item_auth_.readFields count ] == 
+                     [ item_auth_.allFields count ], @"OK" );
     }
 }
 
@@ -132,8 +132,8 @@ static SCReadItemScopeType scope_ = SCReadItemChildrenScope;
         item_ = items_auth_[ 0 ];
         GHAssertTrue( item_.parent == nil, @"OK" );
         GHAssertTrue( item_.readChildren == nil, @"OK" );
-        GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
+        GHAssertTrue( item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == 1, @"OK" );
         GHAssertTrue( [ [ [ item_ fieldWithName: @"Title" ] rawValue ] isEqualToString: @"Allowed_Item" ], @"OK" );
     }
     

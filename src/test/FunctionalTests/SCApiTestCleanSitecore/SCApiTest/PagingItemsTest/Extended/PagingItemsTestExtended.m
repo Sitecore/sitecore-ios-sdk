@@ -45,12 +45,12 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader1 = [ pagedItems_ extendedItemReaderForIndex: 2 ];
+                SCExtendedAsyncOp loader1 = [ pagedItems_ readItemExtendedOperationForIndex: 2 ];
                 loader1(nil, nil, doneHandler1);
                 
             };
             
-            SCExtendedAsyncOp loader = [ pagedItems_ extendedItemsTotalCountReader ];
+            SCExtendedAsyncOp loader = [ pagedItems_ readItemsTotalCountExtendedOperation ];
             loader(nil, nil, doneHandler);
         };
 
@@ -117,11 +117,11 @@
                didFinishCallback_();
            };
            
-           SCExtendedAsyncOp loader1 = [ pagedItems_ extendedItemReaderForIndex: 0 ];
+           SCExtendedAsyncOp loader1 = [ pagedItems_ readItemExtendedOperationForIndex: 0 ];
            loader1(nil, nil, doneHandler1);
        };
        
-       SCExtendedAsyncOp loader = [ pagedItems_ extendedItemsTotalCountReader ];
+       SCExtendedAsyncOp loader = [ pagedItems_ readItemsTotalCountExtendedOperation ];
        loader(nil, nil, doneHandler);
    };
 
@@ -137,8 +137,8 @@
    SCItem* parent_ = [ pagedItems_ itemForIndex: 0 ];
    NSLog( @"parent_.displayName: %@", parent_.displayName );
    GHAssertTrue( [ parent_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-   GHAssertTrue( parent_.allFieldsByName != nil, @"OK" );
-   GHAssertTrue( [ parent_.allFieldsByName count ] == [ parent_.readFieldsByName count ], @"OK" );
+   GHAssertTrue( parent_.allFields != nil, @"OK" );
+   GHAssertTrue( [ parent_.allFields count ] == [ parent_.readFields count ], @"OK" );
 
    GHAssertTrue( [ parent_.readChildren count ] == 1, @"OK" );
    GHAssertTrue( parent_.parent == nil, @"OK" );
@@ -148,8 +148,8 @@
    GHAssertTrue( child_.parent  == parent_, @"OK" );
    GHAssertTrue( child_.readChildren == nil, @"OK" );
 
-   GHAssertTrue( child_.allFieldsByName != nil, @"OK" );
-   GHAssertTrue( [ child_.allFieldsByName count ] == [ child_.readFieldsByName count ], @"OK" );
+   GHAssertTrue( child_.allFields != nil, @"OK" );
+   GHAssertTrue( [ child_.allFields count ] == [ child_.readFields count ], @"OK" );
    
    GHAssertTrue( [ pagedItems_ itemForIndex: 2 ] == nil, @"OK" );   
 }
@@ -192,11 +192,11 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ pagedItems_ extendedItemReaderForIndex: 1 ];
+            SCExtendedAsyncOp loader1 = [ pagedItems_ readItemExtendedOperationForIndex: 1 ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ pagedItems_ extendedItemsTotalCountReader ];
+        SCExtendedAsyncOp loader = [ pagedItems_ readItemsTotalCountExtendedOperation ];
         loader(nil, nil, doneHandler);
     };
 
@@ -216,8 +216,8 @@
    
     GHAssertTrue( item_.parent  != nil, @"OK" );
     GHAssertTrue( item_.readChildren  == nil, @"OK" );
-    NSLog( @"%@:", [ item_ readFieldsByName] );
-    GHAssertTrue( [[ item_ readFieldsByName] count ] == 0, @"OK" );
+    NSLog( @"%@:", [ item_ readFields] );
+    GHAssertTrue( [[ item_ readFields] count ] == 0, @"OK" );
 }
 
 @end

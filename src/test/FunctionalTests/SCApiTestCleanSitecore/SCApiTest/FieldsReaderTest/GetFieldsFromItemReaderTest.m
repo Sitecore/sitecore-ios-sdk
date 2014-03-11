@@ -260,7 +260,7 @@
     GHAssertTrue( [ result_items_ count ] == 1, @"OK" );
     SCItem* item_ = result_items_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == 5, @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == 5, @"OK" );
     // Checklist test
     GHAssertTrue( checklist_field_ != nil, @"OK" );
     GHAssertTrue( [ [ checklist_field_ rawValue ] isEqualToString: SCAllowedParentID ], @"OK" );
@@ -372,7 +372,7 @@
     GHAssertTrue( [ resultItems_ count ] == 1, @"OK" );
     SCItem* item_ = resultItems_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == [ fields_ count ], @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == [ fields_ count ], @"OK" );
     // droplink_empty test
     GHAssertTrue( droplinkEmptyField_ != nil, @"OK" );
     GHAssertTrue( [ [ droplinkEmptyField_ rawValue ] isEqualToString: @"" ], @"OK" );
@@ -589,7 +589,7 @@
                     didFinishCallback_();
                     return;
                 }
-                [ (SCMediaFieldLinkData*)[ field_normal_ linkData ] imageReader ]( ^( id result_, NSError* error_ )
+                [ (SCMediaFieldLinkData*)[ field_normal_ linkData ] readImageOperation ]( ^( id result_, NSError* error_ )
                 {
                     media_value_normal_ = result_;
                     didFinishCallback_();
@@ -873,10 +873,10 @@
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
     //fields test
-    GHAssertTrue( [ item_ readFieldsByName ] != nil, @"OK" );
-    NSLog( @"fields: %@", [ item_ readFieldsByName ] );
+    GHAssertTrue( [ item_ readFields ] != nil, @"OK" );
+    NSLog( @"fields: %@", [ item_ readFields ] );
 
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == 19, @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == 19, @"OK" );
     SCField* field_ = [ item_ fieldWithName: @"__Display name" ];
     GHAssertTrue( field_ == nil, @"OK" );
     

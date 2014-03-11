@@ -43,7 +43,7 @@
                         }
                         
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -105,7 +105,7 @@
                         }
 
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -163,7 +163,7 @@
                         }
 
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -223,7 +223,7 @@
                         }
 
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -284,7 +284,7 @@
                         }
                         
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -347,7 +347,7 @@
                             return;
                         }
                         
-                        [ checklist_field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ checklist_field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             checklist_values_ = [ checklist_field_ fieldValue ];
                             if ( !multilist_field_ )
@@ -357,7 +357,7 @@
                             }
                             
                             apiContext_.defaultSite = nil;
-                            [ multilist_field_ fieldValueReader  ]( ^( id result_, NSError* error_ )
+                            [ multilist_field_ readFieldValueOperation  ]( ^( id result_, NSError* error_ )
                             {
                                 multilist_values_ = [ multilist_field_ fieldValue ];
                                 didFinishCallback_();
@@ -439,7 +439,7 @@
                         }
 
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             values_ = [ field_ fieldValue ];
                             didFinishCallback_();                       
@@ -507,14 +507,14 @@
                         }
                         
                         apiContext_.defaultSite = nil;
-                        [ checklist_field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ checklist_field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             if ( !multilist_field_ )
                             {
                                 didFinishCallback_();
                                 return;
                             }
-                            [ multilist_field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                            [ multilist_field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                             {
                                 didFinishCallback_();
                             } );
@@ -587,7 +587,7 @@
                         }
                         
                         apiContext_.defaultSite = nil;
-                        [ field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             didFinishCallback_();
                         } );
@@ -651,7 +651,7 @@
                         }
                         
                         apiContext_.defaultSite = nil;
-                        [ droplink_field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                        [ droplink_field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                         {
                             droplink_value_ = [ droplink_field_ fieldValue ];
                             if ( !droptree_field_ )
@@ -659,7 +659,7 @@
                                 didFinishCallback_();
                                 return;
                             }
-                            [ droptree_field_ fieldValueReader ]( ^( id result_, NSError* error_ )
+                            [ droptree_field_ readFieldValueOperation ]( ^( id result_, NSError* error_ )
                             {
                                 droptree_value_ = [ droptree_field_ fieldValue ];
                                 didFinishCallback_();
@@ -798,7 +798,7 @@
                     }
                     
                     apiContext_.defaultSite = nil;
-                    [ field_ fieldValueReader ]( ^( id field_result_, NSError* error_ )
+                    [ field_ readFieldValueOperation ]( ^( id field_result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldExtLinkInvalid" ];
                         didFinishCallback_();

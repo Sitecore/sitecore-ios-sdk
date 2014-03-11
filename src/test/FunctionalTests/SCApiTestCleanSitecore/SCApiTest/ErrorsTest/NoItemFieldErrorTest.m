@@ -30,14 +30,14 @@
         
         pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                       request: request_ ];
-        [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
+        [ pagedItems_ readItemOperationForIndex: 0 ]( ^( id result_, NSError* error_ )
         {
             if ( error_ )
             {
                 didFinishCallback_();
                 return;
             }
-            [ result_ fieldValueReaderForFieldName: @"WrongField" ]( ^( id result_, NSError* error_ )
+            [ result_ readFieldValueOperationForFieldName: @"WrongField" ]( ^( id result_, NSError* error_ )
             {
                 field_error_ = (SCApiError*) error_;
                 didFinishCallback_();
@@ -136,7 +136,7 @@
              }
              products_items_ = items_;
              SCItem* item_ = products_items_[ 0 ];
-             [ item_ fieldsValuesReaderForFieldsNames: fields_ ]( ^( id result_
+             [ item_ readFieldsValuesOperationForFieldsNames: fields_ ]( ^( id result_
                                                                     , NSError* error_ )
              {
                  result_fields_ = result_;

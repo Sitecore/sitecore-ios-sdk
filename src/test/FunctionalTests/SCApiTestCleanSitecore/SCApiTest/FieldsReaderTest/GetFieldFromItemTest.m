@@ -31,7 +31,7 @@
                     }
                     
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldValueReaderForFieldName: @"Image" ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldValueOperationForFieldName: @"Image" ]( ^( id result_, NSError* error_ )
                     {
                         fieldValue_ = [ item_ fieldValueWithName: @"Image" ];
                         didFinishCallback_();
@@ -342,13 +342,14 @@
                         return;
                     }
                     item_ = result_;
-                    NSSet* fieldNames_ = [ NSSet setWithObjects: @"MultiListField", @"CheckListField", nil ];
+                    //TODO: @igk fix uppercase
+                    NSSet* fieldNames_ = [ NSSet setWithObjects: @"MULTILISTFIELD", @"CHECKLISTFIELD", nil ];
                     apiContext_.defaultSite = nil;
 
-                    [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsValuesOperationForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
                     {
-                        checklistValue_ = [ item_ fieldValueWithName: @"CheckListField" ];
-                        multilistValue_ = [ item_ fieldValueWithName: @"MultiListField" ];
+                        checklistValue_ = [ result_ objectForKey: @"CHECKLISTFIELD" ];
+                        multilistValue_ = [ result_ objectForKey: @"MULTILISTFIELD" ];
                         didFinishCallback_();
                     } );
                 } );
@@ -406,10 +407,11 @@
                     NSSet* fieldNames_ = [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ];
                     apiContext_.defaultSite = nil;
                     
-                    [ item_ fieldsValuesReaderForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsValuesOperationForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
                     {
                         droplink_value_ = [ item_ fieldValueWithName: @"DropLinkFieldEmpty" ];
                         droptree_value_ = [ item_ fieldValueWithName: @"DropTreeFieldNormal" ];
+
                         didFinishCallback_();
                     } );
                 } );
@@ -502,7 +504,7 @@
                         }
 
                         SCMediaFieldLinkData* linkData_ = (SCMediaFieldLinkData*)[ field_ linkData ];
-                        [ linkData_ imageReader ]( ^( id result_, NSError* error_ )
+                        [ linkData_ readImageOperation ]( ^( id result_, NSError* error_ )
                         {
                             mediaValue_ = result_;
                             didFinishCallback_();
@@ -811,7 +813,7 @@
                     NSSet* fields_ = [ NSSet setWithObject: @"__Display name" ];
                     apiContext_.defaultSite = nil;
                     
-                    [ item_ fieldsValuesReaderForFieldsNames:fields_]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsValuesOperationForFieldsNames:fields_]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName:  @"__Display name" ];
                         didFinishCallback_();
@@ -834,6 +836,62 @@
     NSString* fieldValue = [ field_ rawValue ];
     GHAssertEqualObjects( fieldValue, @"Test Fields", @"OK" );
 
+}
+
+-(void)testFieldIsCaseInsensitive
+{
+    __weak __block SCApiSession* apiContext_ = nil;
+    __block SCItem* item_ = nil;
+    
+    @autoreleasepool
+    {
+        __block SCApiSession* strongContext_ = nil;
+        void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+        {
+            @autoreleasepool
+            {
+                strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
+                apiContext_ = strongContext_;
+                
+                [ apiContext_ readItemOperationForItemPath:  SCTestFieldsItemPath ]( ^( id result_, NSError* error_ )
+                {
+                    if ( error_ )
+                    {
+                        didFinishCallback_();
+                        return;
+                    }
+                    item_ = result_;
+                    //TODO: @igk fix uppercase
+                    NSSet* fieldNames_ = [ NSSet setWithObjects: @"MULTILISTFIELD", nil ];
+                    apiContext_.defaultSite = nil;
+                    
+                    [ item_ readFieldsValuesOperationForFieldsNames: fieldNames_ ]( ^( id result_, NSError* error_ )
+                                                                            {
+                                                            
+                                                                                didFinishCallback_();
+                                                                            } );
+                } );
+            }
+        };
+        
+        [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                               selector: _cmd ];
+    }
+    
+    id multilistValueUPCase_ = [ item_ fieldWithName: @"MULTILISTFIELD" ];
+    id multilistValueLOWCase_ = [ item_ fieldWithName: @"multilistfield" ];
+    id multilistValueRandomCase_ = [ item_ fieldWithName: @"MulTIlistFIeld" ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( item_ != nil, @"OK" );
+ 
+    GHAssertTrue( multilistValueUPCase_ != nil, @"OK" );
+    GHAssertTrue( multilistValueLOWCase_ != nil, @"OK" );
+    GHAssertTrue( multilistValueRandomCase_ != nil, @"OK" );
+    
+    
+    GHAssertTrue( multilistValueUPCase_ == multilistValueLOWCase_, @"OK" );
+    GHAssertTrue( multilistValueLOWCase_ == multilistValueRandomCase_, @"OK" );
 }
 
 @end

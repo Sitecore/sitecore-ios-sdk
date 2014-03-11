@@ -47,8 +47,8 @@
                 if ( [ items_ count ] != 0 )
                 {
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
-                    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                    SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Editor" ];
+                    NSLog( @"item_.readFields: %@", item_.readFields );
+                    SCField* field_ = [ item_ fieldWithName: @"__Editor" ];
                     field_.rawValue = @"Text2";
                     
                     SCDidFinishAsyncOperationHandler donaHandler = ^( SCItem* editedItem_, NSError* error_ )
@@ -85,7 +85,7 @@
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
 
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ edited_item_.readFields count ] == 1, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Editor" ] rawValue ] isEqualToString: @"Text2" ], @"OK" );
 }
 
@@ -129,10 +129,10 @@
                 if ( [ items_ count ] != 0 )
                 {
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
-                    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                    SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Editor" ];
+                    NSLog( @"item_.readFields: %@", item_.readFields );
+                    SCField* field_ = [ item_ fieldWithName: @"__Editor" ];
                     field_.rawValue = @"Text22__";
-                    SCField* field2_ = [ item_.readFieldsByName objectForKey: @"__Display name" ];
+                    SCField* field2_ = [ item_ fieldWithName: @"__Display name" ];
                     field2_.rawValue = @"urla22__";
                     [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
@@ -190,7 +190,7 @@
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
     
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 2, @"OK" );
+    GHAssertTrue( [ edited_item_.readFields count ] == 2, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] isEqualToString: @"Text22__" ], @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Display name" ] rawValue ] isEqualToString: @"urla22__" ], @"OK" );
 }
@@ -237,8 +237,8 @@
                 if ( [ items_ count ] != 0 )
                 {
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
-                    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                    SCField* field3_ = [ item_.readFieldsByName objectForKey: @"__Display name" ];
+                    NSLog( @"item_.readFields: %@", item_.readFields );
+                    SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                     field3_.rawValue = @"Display_name";
                     [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
@@ -266,7 +266,7 @@
             {
                 if ( [ items_ count ] > 0 )
                 {
-                    NSLog( @"items fields: %@", [ [ items_ objectAtIndex: 0 ] readFieldsByName ] );
+                    NSLog( @"items fields: %@", [ [ items_ objectAtIndex: 0 ] readFields ] );
                     edited_item_ = [ items_ objectAtIndex: 0 ];
                     didFinishCallback_();
                 }
@@ -296,8 +296,8 @@
     GHAssertTrue( edited_item_ != nil, @"OK" );
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"System/Language" ], @"OK" );
     
-    NSLog( @"items fields: %@", [ edited_item_ readFieldsByName ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
+    NSLog( @"items fields: %@", [ edited_item_ readFields ] );
+    GHAssertTrue( [ edited_item_.readFields count ] == 1, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Display name" ] rawValue ] isEqualToString: @"Display_name" ], @"OK" );
 }
 
@@ -341,8 +341,8 @@
                 if ( [ items_ count ] != 0 )
                 {
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
-                    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                    SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Editor" ];
+                    NSLog( @"item_.readFields: %@", item_.readFields );
+                    SCField* field_ = [ item_ fieldWithName: @"__Editor" ];
                     field_.rawValue = @"Text2";
                     edited_item_ = item_;
                     didFinishCallback_();
@@ -399,7 +399,7 @@
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
     
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ edited_item_.readFields count ] == 1, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] isEqualToString: @"" ], @"OK" );
     
 }
@@ -445,8 +445,8 @@
                 if ( [ items_ count ] != 0 )
                 {
                     SCItem* item_ = [ items_ objectAtIndex: 0 ];
-                    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                    SCField* field_ = [ item_.readFieldsByName objectForKey: @"__Display name" ];
+                    NSLog( @"item_.readFields: %@", item_.readFields );
+                    SCField* field_ = [ item_ fieldWithName: @"__Display name" ];
                     field_.rawValue = @"Text2";
                     [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
@@ -480,7 +480,7 @@
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"Common/Folder" ], @"OK" );
     
     NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Display name" ] fieldValue ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ edited_item_.readFields count ] == 1, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"__Display name" ] fieldValue ] isEqualToString: @"Text2" ], @"OK" );
     
 }
@@ -547,12 +547,12 @@
                     {
                         SCItem* item_ = curr_item_;
                         item_ = [ items_ objectAtIndex: 0 ];
-                        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-                        SCField* field_ = [ item_.readFieldsByName objectForKey: @"Dictionary" ];
+                        NSLog( @"item_.readFields: %@", item_.readFields );
+                        SCField* field_ = [ item_ fieldWithName: @"Dictionary" ];
                         field_.rawValue = @"en-US.tdf";
-                        SCField* field2_ = [ item_.readFieldsByName objectForKey: @"Iso" ];
+                        SCField* field2_ = [ item_ fieldWithName: @"Iso" ];
                         field2_.rawValue = @"en";
-                        SCField* field3_ = [ item_.readFieldsByName objectForKey: @"__Display name" ];
+                        SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                         field3_.rawValue = @"__Display name new";
                         [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
                                            {
@@ -618,8 +618,8 @@
     GHAssertTrue( [ [ edited_item_ displayName ] hasPrefix: @"__Display name new" ], @"OK" );
     GHAssertTrue( [ [ edited_item_ itemTemplate ] isEqualToString: @"System/Language" ], @"OK" );
     
-    NSLog( @"items fields: %@", [ edited_item_ readFieldsByName ] );
-    GHAssertTrue( [ edited_item_.readFieldsByName count ] == 3, @"OK" );
+    NSLog( @"items fields: %@", [ edited_item_ readFields ] );
+    GHAssertTrue( [ edited_item_.readFields count ] == 3, @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"Dictionary" ] fieldValue ] isEqualToString: @"en-US.tdf" ], @"OK" );
     GHAssertTrue( [ [ [ edited_item_ fieldWithName: @"Iso" ] rawValue ] isEqualToString: @"en" ], @"OK" );
 }

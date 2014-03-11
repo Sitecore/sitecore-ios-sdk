@@ -37,7 +37,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader1 = [ result_item_ extendedFieldValueReaderForFieldName: @"Text" ];
+                    SCExtendedAsyncOp loader1 = [ result_item_ readFieldValueExtendedOperationForFieldName: @"Text" ];
                     loader1(nil, nil, doneHandler1);
                 };
                 
@@ -168,7 +168,7 @@
     SCItem* item_ = result_items_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
     // Fields test
-    GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ item_.readFields count ] == 1, @"OK" );
     // Allow field test
     GHAssertTrue( allow_field_ != nil, @"OK" );
     GHAssertTrue( [ [ allow_field_ rawValue ] isEqualToString: @"Normal Text" ], @"OK" );
@@ -236,7 +236,7 @@
     SCItem* item_ = result_items_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
     // Fields test
-    GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
+    GHAssertTrue( [ item_.readFields count ] == 1, @"OK" );
     // Allow field test
     GHAssertTrue( allow_field_ != nil, @"OK" );
     GHAssertTrue( [ allow_field_ rawValue ] != nil , @"OK" );
@@ -309,7 +309,7 @@
     GHAssertTrue( [ resultItems_ count ] == 1, @"OK" );
     SCItem* item_ = resultItems_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == [ fields_ count ], @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == [ fields_ count ], @"OK" );
     // field test
     GHAssertTrue( field_ != nil, @"OK" );
     NSLog(@"%@", [ field_ fieldValue  ] );

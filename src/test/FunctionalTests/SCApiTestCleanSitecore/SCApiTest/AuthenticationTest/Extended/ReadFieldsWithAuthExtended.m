@@ -38,7 +38,7 @@
                                            selector: _cmd ];
     }
     NSLog( @"items_: %@", items_ );
-    NSLog( @"items_fields_: %@", [ items_[ 0 ] readFieldsByName ]);
+    NSLog( @"items_fields_: %@", [ items_[ 0 ] readFields ]);
     GHAssertTrue( apiContext_ != nil, @"OK" );
 
     //test get item with auth
@@ -53,7 +53,7 @@
         NSLog( @"item_children: %@", [ item_ allChildren ] );
         GHAssertTrue( [ item_.allChildren count ]      == 0, @"OK" );
         GHAssertTrue( [ item_.readChildren count ]     == 0, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == 1, @"OK" );
         GHAssertTrue( [ [ item_ fieldWithName: @"Normal Text" ] rawValue ] != nil, @"OK" );
     }
 }

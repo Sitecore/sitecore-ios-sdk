@@ -60,12 +60,12 @@
                 return;
             }
             SCItem* item = result[ 0 ];
-            SCAsyncOp childrenReader = [ item childrenReader ];
+            SCAsyncOp readChildrenOperation = [ item readChildrenOperation ];
             
 
             
             //load children here
-            childrenReader( ^( id result, NSError *error )
+            readChildrenOperation( ^( id result, NSError *error )
            {
                if ( error )
                {
@@ -76,7 +76,7 @@
 
                [ mock_ enableMock ];
                weakSelf.connectionOpenCounter = 0;
-               childrenReader( ^( id result, NSError *error )
+               readChildrenOperation( ^( id result, NSError *error )
                {
                    didFinishCallback_();
                } );

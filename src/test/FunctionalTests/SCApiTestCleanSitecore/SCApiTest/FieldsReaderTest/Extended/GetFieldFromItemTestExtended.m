@@ -39,7 +39,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldValueReaderForFieldName: @"Image" ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldValueExtendedOperationForFieldName: @"Image" ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -404,15 +404,15 @@
                     multilistValue_ = [ item_ fieldValueWithName: @"MultiListField" ];
                     didFinishCallback_();
                 };
-                //fieldsValuesReaderForFieldsNames
+                //readFieldsValuesOperationForFieldsNames
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsValuesReaderForFieldsNames: fieldNames_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsValuesExtendedOperationForFieldsNames: fieldNames_ ];
                 loader1(nil, nil, doneHandler1);
 
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
-                                        itemSource: contextSource ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
+                                                                                          itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -476,13 +476,13 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsValuesReaderForFieldsNames: fieldNames_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsValuesExtendedOperationForFieldsNames: fieldNames_ ];
                 loader1(nil, nil, doneHandler1);
                 
             };
             
             SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
-                                        itemSource: contextSource ];
+                                                                                          itemSource: contextSource ];
             loader(nil, nil, doneHandler);
             
             
@@ -589,7 +589,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ linkData_ extendedImageReader ];
+                    SCExtendedAsyncOp loader2 = [ linkData_ readImageExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -598,7 +598,7 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -672,7 +672,7 @@
             };
             
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
                                         itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
@@ -740,8 +740,8 @@
             };
             
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
-                                        itemSource: contextSource ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
+                                                                                          itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
     };
@@ -808,8 +808,8 @@
                 loader1(nil, nil, doneHandler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
-                                        itemSource: contextSource];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
+                                                                                          itemSource: contextSource];
             loader( nil, nil, doneHandler);
         }
     };
@@ -877,8 +877,8 @@
                 loader1(nil, nil, doneHAndler1);
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath:  SCTestFieldsItemPath
-                                        itemSource: contextSource ];
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemOperationForItemPath: SCTestFieldsItemPath
+                                                                                          itemSource: contextSource ];
             loader(nil, nil, doneHandler);
         }
     };

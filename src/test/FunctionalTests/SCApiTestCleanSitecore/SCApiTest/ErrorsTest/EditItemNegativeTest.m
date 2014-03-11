@@ -137,8 +137,8 @@
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"EditItemFields" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
     
-    GHAssertTrue( [ item_.readFieldsByName count ] >= 1, @"OK" );
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+    GHAssertTrue( [ item_.readFields count ] >= 1, @"OK" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
     NSLog( @"[ [ item_ fieldWithName:@'Path' ] rawValue ] : %@", [ [ item_ fieldWithName: @"Path" ] rawValue ]  );
     GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"This is SPARTA!!!" ], @"OK" );
 }

@@ -133,7 +133,7 @@
             
             pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
-            [ pagedItems_ itemReaderForIndex: 0 ]( ^( id result_, NSError* error_ )
+            [ pagedItems_ readItemOperationForIndex: 0 ]( ^( id result_, NSError* error_ )
             {
                 item_ = result_;
                 item_error_ = (SCApiError*)error_;
@@ -179,7 +179,7 @@
             
             pagedItems_ = [ SCPagedItems pagedItemsWithApiSession: apiContext_
                                                           request: request_ ];
-            [ pagedItems_ itemsTotalCountReader ]( ^( id result_, NSError* error_ )
+            [ pagedItems_ readItemsTotalCountOperation ]( ^( id result_, NSError* error_ )
             {
                 items_count_ = result_;
                 item_error_ = (SCApiError*)error_;

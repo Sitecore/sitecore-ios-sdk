@@ -50,7 +50,7 @@
                     };
 
                     apiContext_.defaultSite = nil;
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                     
                 };
@@ -127,7 +127,7 @@
                     };
                     
                     apiContext_.defaultSite = nil;
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -199,7 +199,7 @@
                     };
                     
                     apiContext_.defaultSite = nil;
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -271,7 +271,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2( nil, nil, doneHandler2);
                 };
                 
@@ -346,7 +346,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -434,11 +434,11 @@
                             didFinishCallback_();
                         };
                         
-                        SCExtendedAsyncOp loader3 = [ multilist_field_ extendedFieldValueReader ];
+                        SCExtendedAsyncOp loader3 = [ multilist_field_ readFieldValueExtendedOperation ];
                         loader3(nil, nil, doneHandler3);
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ checklist_field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ checklist_field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -533,7 +533,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 
@@ -626,11 +626,11 @@
                                 didFinishCallback_();
                             };
                             
-                            SCExtendedAsyncOp loader3 = [ multilist_field_ extendedFieldValueReader ];
+                            SCExtendedAsyncOp loader3 = [ multilist_field_ readFieldValueExtendedOperation ];
                             loader3(nil, nil, doneHandler3);
                         };
                         
-                        SCExtendedAsyncOp loader2 = [ checklist_field_ extendedFieldValueReader ];
+                        SCExtendedAsyncOp loader2 = [ checklist_field_ readFieldValueExtendedOperation ];
                         loader2(nil, nil, doneHandler2);
                     };
                     
@@ -716,7 +716,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                     
                 };
@@ -806,11 +806,11 @@
                             didFinishCallback_();
                         };
                         
-                        SCExtendedAsyncOp loader3 = [ droptree_field_ extendedFieldValueReader ];
+                        SCExtendedAsyncOp loader3 = [ droptree_field_ readFieldValueExtendedOperation ];
                         loader3(nil, nil, doneHandler3);
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ droplink_field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ droplink_field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHAndler2);
                 };
                 
@@ -970,7 +970,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader2 = [ field_ extendedFieldValueReader ];
+                    SCExtendedAsyncOp loader2 = [ field_ readFieldValueExtendedOperation ];
                     loader2(nil, nil, doneHandler2);
                 };
                 

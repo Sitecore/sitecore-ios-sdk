@@ -268,7 +268,7 @@
     GHAssertTrue( [ result_items_ count ] == 1, @"OK" );
     SCItem* item_ = result_items_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == 5, @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == 5, @"OK" );
     // Checklist test
     GHAssertTrue( checklist_field_ != nil, @"OK" );
     GHAssertTrue( [ [ checklist_field_ rawValue ] isEqualToString: SCAllowedParentID ], @"OK" );
@@ -382,7 +382,7 @@
     GHAssertTrue( [ resultItems_ count ] == 1, @"OK" );
     SCItem* item_ = resultItems_[ 0 ];
     GHAssertTrue( item_ != nil, @"OK" );
-    GHAssertTrue( [ [ item_ readFieldsByName ] count ] == [ fields_ count ], @"OK" );
+    GHAssertTrue( [ [ item_ readFields ] count ] == [ fields_ count ], @"OK" );
     // droplink_empty test
     GHAssertTrue( droplinkEmptyField_ != nil, @"OK" );
     GHAssertTrue( [ [ droplinkEmptyField_ rawValue ] isEqualToString: @"" ], @"OK" );
@@ -609,7 +609,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader1 = [ (SCMediaFieldLinkData*)[ field_normal_ linkData ] extendedImageReader ];
+                SCExtendedAsyncOp loader1 = [ (SCMediaFieldLinkData*)[ field_normal_ linkData ] readImageExtendedOperation ];
                 loader1(nil, nil, doneHandler1);
             };
             
