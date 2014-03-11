@@ -34,7 +34,7 @@
     XCTAssertNotNil( self->_legacySession, @"session initialization error" );
     XCTAssertNotNil( self->_apiSession   , @"session initialization error" );
     
-    NSString* expectedDefaultPath = @"/SITECORE/MEDIA LIBRARY";
+    NSString* expectedDefaultPath = @"/sitecore/media library";
     
     XCTAssertEqualObjects( expectedDefaultPath, [ SCExtendedApiSession defaultMediaLibraryPath ], @"default path mismatch" );
     XCTAssertEqualObjects( expectedDefaultPath, [ SCApiSession         defaultMediaLibraryPath ], @"default path mismatch" );
@@ -45,8 +45,8 @@
 
 -(void)testMediaLibraryPathIsSetForBothSessions_FromLegacySession
 {
-    NSString* expectedDefaultPath = @"/SITECORE/MEDIA LIBRARY";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedDefaultPath = @"/sitecore/media library";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_legacySession.mediaLibraryPath = expectedNewPath;
     
@@ -59,8 +59,8 @@
 
 -(void)testMediaLibraryPathIsSetForBothSessions_FromExtendedSession
 {
-    NSString* expectedDefaultPath = @"/SITECORE/MEDIA LIBRARY";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedDefaultPath = @"/sitecore/media library";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_apiSession.mediaLibraryPath = expectedNewPath;
     
@@ -71,12 +71,12 @@
     XCTAssertEqualObjects( expectedDefaultPath, [ SCApiSession         defaultMediaLibraryPath ], @"default path mismatch" );
 }
 
--(void)testMediaLibraryPathIsStoredInUpperCase_FromLegacySession
+-(void)testMediaLibraryPathIsStoredInLowerCase_FromLegacySession
 {
-    NSString* expectedDefaultPath = @"/SITECORE/MEDIA LIBRARY";
+    NSString* expectedDefaultPath = @"/sitecore/media library";
     
-    NSString* newPath             = @"/sitecore/Content/xYZ/Media Library";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* newPath             = @"/sitecore/Content/XYZ/MEDIA Library";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_legacySession.mediaLibraryPath = newPath;
     
@@ -91,7 +91,7 @@
 -(void)testMediaPathIsAssignedOnce_FromExtendedSession
 {
     NSString* newPath             = @"/sitecore/Content/abc/Media";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_apiSession.mediaLibraryPath = expectedNewPath;
     XCTAssertThrows( self->_apiSession.mediaLibraryPath = newPath, @"assert expected" );
@@ -100,7 +100,7 @@
 -(void)testMediaPathIsAssignedOnce_FromLegacySession
 {
     NSString* newPath             = @"/sitecore/Content/abc/Media";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_legacySession.mediaLibraryPath = expectedNewPath;
     XCTAssertThrows( self->_legacySession.mediaLibraryPath = newPath, @"assert expected" );
@@ -109,7 +109,7 @@
 -(void)testMediaPathIsAssignedOnce_Mix1
 {
     NSString* newPath             = @"/sitecore/Content/abc/Media";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_apiSession.mediaLibraryPath = expectedNewPath;
     XCTAssertThrows( self->_legacySession.mediaLibraryPath = newPath, @"assert expected" );
@@ -118,7 +118,7 @@
 -(void)testMediaPathIsAssignedOnce_Mix2
 {
     NSString* newPath             = @"/sitecore/Content/abc/Media";
-    NSString* expectedNewPath     = @"/SITECORE/CONTENT/XYZ/MEDIA LIBRARY";
+    NSString* expectedNewPath     = @"/sitecore/content/xyz/media library";
     
     self->_legacySession.mediaLibraryPath = expectedNewPath;
     XCTAssertThrows( self->_apiSession.mediaLibraryPath = newPath, @"assert expected" );

@@ -81,7 +81,7 @@
 
 /**
  Media library root folder in the content tree.
- By default it is "/sitecore/Media Library".
+ By default it is "/sitecore/media library".
  
  Note : it must match the web.config settings on the back end.
  */
@@ -90,7 +90,7 @@
 
 /**
  Default media library root folder in the content tree.
- @return "/SITECORE/MEDIA LIBRARY"
+ @return "/sitecore/media library"
  */
 +(NSString*)defaultMediaLibraryPath;
 

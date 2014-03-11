@@ -107,7 +107,7 @@
     NSParameterAssert( nil == self->_mediaLibraryPath );
     
     NSLocale* posixLocale = [ self lazyPosixLocale ];
-    NSString* newPath = [ mediaLibraryPath uppercaseStringWithLocale: posixLocale ];
+    NSString* newPath = [ mediaLibraryPath lowercaseStringWithLocale: posixLocale ];
     
     self->_mediaLibraryPath = newPath;
 }
@@ -124,7 +124,7 @@
 
 +(NSString*)defaultMediaLibraryPath
 {
-    return @"/SITECORE/MEDIA LIBRARY";
+    return @"/sitecore/media library";
 }
 
 -(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site
