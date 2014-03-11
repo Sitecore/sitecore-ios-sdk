@@ -39,7 +39,7 @@
 
 +(NSString*)testPort
 {
-    return @"722";
+    return @"7200";
 }
 
 +(NSString*)testHostSuffix

@@ -20,6 +20,7 @@ function testCreateMediaItem()
             createItemInfo.database   = 'web';
             createItemInfo.path       = 'Test Data';
             createItemInfo.itemName   = 'mediaItem name';
+            createItemInfo.mediaLibraryPath = '/sitecore/Media Library';
 
             createItemInfo.fields     = { Alt: 'test test' };
 
@@ -64,6 +65,7 @@ function testCreateLargeMediaItem()
             createItemInfo.database   = 'core';
             createItemInfo.path       = 'Test Data';
             createItemInfo.itemName   = 'largeMediaItem name';
+            createItemInfo.mediaLibraryPath = '/sitecore/Media Library';
             
             createItemInfo.fields     = { Alt: ' _!', Title: 'Title' };
             
