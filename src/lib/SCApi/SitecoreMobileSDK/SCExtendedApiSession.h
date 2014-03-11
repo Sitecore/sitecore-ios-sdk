@@ -87,6 +87,14 @@
  */
 @property(nonatomic) NSString *mediaLibraryPath;
 
+
+/**
+ Default media library root folder in the content tree.
+ @return "/SITECORE/MEDIA LIBRARY"
+ */
++(NSString*)defaultMediaLibraryPath;
+
+
 /**
  The default life time in cache after which object in cache becames old. Default value is ten minutes
 */

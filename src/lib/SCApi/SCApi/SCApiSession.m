@@ -170,6 +170,11 @@
     return [ self->_extendedApiSession mediaLibraryPath ];
 }
 
++(NSString*)defaultMediaLibraryPath
+{
+    return [ SCExtendedApiSession defaultMediaLibraryPath ];
+}
+
 -(NSTimeInterval)defaultLifeTimeInCache
 {
     return self.extendedApiSession.defaultLifeTimeInCache;

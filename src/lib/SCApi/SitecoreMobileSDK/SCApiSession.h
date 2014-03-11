@@ -116,6 +116,12 @@
  */
 @property(nonatomic) NSString *mediaLibraryPath;
 
+/**
+ Default media library root folder in the content tree.
+ @return "/SITECORE/MEDIA LIBRARY"
+ */
++(NSString*)defaultMediaLibraryPath;
+
 
 /**
  The version used to request Sitecore items, default is "nil" which means the latest version will be retrieved.
