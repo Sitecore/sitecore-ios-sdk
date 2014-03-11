@@ -401,7 +401,7 @@
 }
 
 -(JFFAsyncOperation)uploadMediaOperationWithRequest:( SCUploadMediaItemRequest * )request_
-                                     apiSession:( SCExtendedApiSession* )apiSession_
+                                         apiSession:( SCExtendedApiSession* )apiSession_
 {
     SCCreateMediaRequestUrlBuilder* builder = [ self urlBuilderForCreateMediaRequest: request_ ];
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
@@ -518,6 +518,7 @@
 {
     SCCreateMediaRequestUrlBuilder* builder =
     [ [ SCCreateMediaRequestUrlBuilder alloc ] initWithHost: self->_host
+                                           mediaLibraryRoot: self.mediaLibraryPath
                                               webApiVersion: self->_urlBuilder.webApiVersion
                                               restApiConfig: [ SCWebApiConfig webApiV1Config ]
                                                     request: request ];

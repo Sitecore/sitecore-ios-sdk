@@ -14,7 +14,9 @@
 @implementation SCCreateMediaRequestUrlBuilder
 {
 @private
-    SCUploadMediaItemRequest * _request;
+    SCUploadMediaItemRequest * _request         ;
+    NSString                 * _mediaLibraryRoot;
+    NSLocale                 * _posixLocale     ;
 }
 
 -(instancetype)initWithHost:( NSString* )host
@@ -22,6 +24,22 @@
               restApiConfig:( SCWebApiConfig* )restApiConfig
                     request:( SCUploadMediaItemRequest * )request
 {
+    [ self doesNotRecognizeSelector: _cmd ];
+    return nil;
+}
+
+-(instancetype)initWithHost:( NSString* )host
+           mediaLibraryRoot:( NSString* )mediaLibraryRoot
+              webApiVersion:( NSString* )webApiVersion
+              restApiConfig:( SCWebApiConfig* )restApiConfig
+                    request:( SCUploadMediaItemRequest * )request
+{
+    NSParameterAssert( nil != host );
+    NSParameterAssert( nil != mediaLibraryRoot );
+    NSParameterAssert( nil != webApiVersion );
+    NSParameterAssert( nil != restApiConfig );
+    NSParameterAssert( nil != request );
+    
     self = [ super initWithHost: host
                   webApiVersion: webApiVersion
                   restApiConfig: restApiConfig
@@ -32,6 +50,8 @@
     }
     
     self->_request = request;
+    self->_mediaLibraryRoot = mediaLibraryRoot;
+    self->_posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
     
     return self;
 }
@@ -41,8 +61,9 @@
 {
     NSMutableString* result = [ self result ];
     
-    NSString* mediaPath = [ @"/sitecore/Media Library" stringByAppendingPathComponent: self->_request.folder ];
-    NSString* encodedMediaPath = [ mediaPath stringByEncodingURLFormat ];
+    NSString* mediaPath = [ self->_mediaLibraryRoot stringByAppendingPathComponent: self->_request.folder ];
+    NSString* lowerCaseMediaPath = [ mediaPath lowercaseStringWithLocale: self->_posixLocale ];
+    NSString* encodedMediaPath = [ lowerCaseMediaPath stringByEncodingURLFormat ];
     
     [ result appendString: encodedMediaPath ];
 }
