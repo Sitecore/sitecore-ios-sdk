@@ -2839,7 +2839,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party/ios-openssl/lib",
 					"../../lib-third-party",
 				);
 				ONLY_ACTIVE_ARCH = YES;
@@ -2874,7 +2874,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party/ios-openssl/lib",
 					"../../lib-third-party",
 				);
 				ONLY_ACTIVE_ARCH = YES;
@@ -2904,7 +2904,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
+					"../../lib-third-party/ios-openssl/lib",
 					"../../lib-third-party",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
