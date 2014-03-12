@@ -9,6 +9,7 @@
 
 #import "SCEditItemsRequest.h"
 #import "SCReadItemsRequest.h"
+#import "SCDownloadMediaOptions.h"
 
 #import "SCApiUtils.h"
 
@@ -501,5 +502,112 @@
 }
 
 //STODO!! add children item and etc
+
+#pragma mark -
+#pragma mark Media Extensions
+-(NSLocale*)posixLocale
+{
+    static NSLocale* posixLocale = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken, ^void()
+    {
+      posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    } );
+    
+    return posixLocale;
+}
+
+-(BOOL)isFolder
+{
+    NSString* itemTemplate = [ self.itemTemplate uppercaseStringWithLocale: [ self posixLocale ] ];
+    
+    NSArray* folderTemplates =
+    @[
+      @"SYSTEM/MEDIA/MEDIA FOLDER",
+      @"COMMON/FOLDER"
+      ];
+    
+    NSSet* folderTemplateSet = [ NSSet setWithArray: folderTemplates ];
+    return [ folderTemplateSet containsObject: itemTemplate ];
+}
+
+-(BOOL)isImage
+{
+    NSString* itemTemplate = [ self.itemTemplate uppercaseStringWithLocale: [ self posixLocale ] ];
+    NSArray* imageTemplates =
+    @[
+      @"SYSTEM/MEDIA/UNVERSIONED/IMAGE",
+      @"SYSTEM/MEDIA/UNVERSIONED/JPEG" ,
+      @"SYSTEM/MEDIA/VERSIONED/JPEG"
+    ];
+    NSSet* imageTemplatesSet = [ NSSet setWithArray: imageTemplates ];
+    
+    return [ imageTemplatesSet containsObject: itemTemplate ];
+}
+
+-(BOOL)isMediaImage
+{
+    BOOL result =
+    [ self isMediaItem ] &&
+    [ self isImage ];
+    
+    return result;
+}
+
+-(BOOL)isMediaItem
+{
+    NSString* path = [ self.path lowercaseStringWithLocale: [ self posixLocale ] ];
+    NSString* mediaRoot = self.apiSession.mediaLibraryPath;
+    
+    BOOL result = ( [ path hasPrefix: mediaRoot ] );
+    return result;
+}
+
+-(NSString*)mediaPath
+{
+    if ( ! [ self isMediaItem ] )
+    {
+        return nil;
+    }
+    
+    NSString* mediaPath = [ self.path substringFromIndex: [ self.apiSession.mediaLibraryPath length ] ];
+    return mediaPath;
+}
+
+-(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCDownloadMediaOptions* )options
+{
+    if ( [ self isMediaItem ] )
+    {
+        if ( nil == options )
+        {
+            options = [ SCDownloadMediaOptions new ];
+        }
+        
+        SCItemSourcePOD* recordSource = [ self recordItemSource ];
+        {
+            options.database = recordSource.database;
+            options.language = recordSource.language;
+            options.version  = recordSource.itemVersion;
+        }
+        
+        
+        NSString* mediaPath = [ self mediaPath ];
+        
+        return [ self.apiSession uploadOperationForSCMediaPath: mediaPath
+                                                   imageParams: options ];
+        
+    }
+    else
+    {
+        return nil;
+    }
+}
+
+-(SCItemSourcePOD*)recordItemSource
+{
+    return [ self.record getSource ];
+}
+
 
 @end
