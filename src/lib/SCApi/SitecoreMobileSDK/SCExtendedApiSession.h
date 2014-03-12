@@ -295,7 +295,7 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCExtendedAsyncOp)readChildrenOperationForItemPath:(NSString *)path
-                                     itemSource:(id<SCItemSource>)itemSource;
+                                           itemSource:(id<SCItemSource>)itemSource;
 
 
 /**
@@ -304,7 +304,7 @@
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 - (SCExtendedAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
-                                   imageParams:( SCDownloadMediaOptions * )params;
+                                       imageParams:( SCDownloadMediaOptions * )params;
 
 
 /**
@@ -320,7 +320,7 @@
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
 */
 - (SCExtendedAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
-                                                  sourceId:(NSString *)sourceId;
+                                                        sourceId:(NSString *)sourceId;
 
 /**
   Used to trigger a goal or a campain with the given request
