@@ -614,8 +614,8 @@
         
         NSString* mediaPath = [ self mediaPath ];
         
-        return [ self.apiSession uploadOperationForSCMediaPath: mediaPath
-                                                   imageParams: options ];
+        return [ self.apiSession downloadResourceOperationForMediaPath: mediaPath
+                                                           imageParams: options ];
         
     }
     else
