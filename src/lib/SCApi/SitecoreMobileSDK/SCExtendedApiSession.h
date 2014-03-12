@@ -303,8 +303,8 @@
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCExtendedAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
-                                       imageParams:( SCDownloadMediaOptions * )params;
+- (SCExtendedAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
+                                               imageParams:( SCDownloadMediaOptions * )params;
 
 
 /**

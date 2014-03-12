@@ -34,10 +34,10 @@
 
 -(JFFAsyncOperation)checkCredentialsOperationForSite:( NSString* )site;
 
--(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)downloadResourceOperationForMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_;
 
--(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)downloadResourceOperationForMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
                                        params:( SCParams* )params_;
 

@@ -295,7 +295,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ uploadOperationForSCMediaPath:  @"~/media/Images/wrong_image" ]( ^( id result_, NSError* error_ )
+                [ apiContext_ downloadResourceOperationForMediaPath: @"~/media/Images/wrong_image" ]( ^( id result_, NSError* error_ )
                 {
                     value_ = result_;
                     value_error_ = (SCApiError*)error_;

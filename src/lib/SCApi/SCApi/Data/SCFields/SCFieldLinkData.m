@@ -87,13 +87,13 @@
 //TOFO: @igk merge readImageOperation and readImageExtendedOperation
 -(SCAsyncOp)readImageOperation
 {
-    return asyncOpWithJAsyncOp( [ self.apiSession uploadOperationForSCMediaPath: self.url
+    return asyncOpWithJAsyncOp( [ self.apiSession downloadResourceOperationForMediaPath: self.url
                                                                 imageParams: nil ] );
 }
 
 -(SCExtendedAsyncOp)readImageExtendedOperation
 {
-    return [ self.apiSession uploadOperationForSCMediaPath: self.url
+    return [ self.apiSession downloadResourceOperationForMediaPath: self.url
                                            imageParams: nil ];
 }
 

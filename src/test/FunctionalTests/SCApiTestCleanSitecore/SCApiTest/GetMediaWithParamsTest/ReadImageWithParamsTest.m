@@ -52,7 +52,7 @@
             params.width = 10.f;
             params.height = 10.f;
             
-            [ apiContext_ uploadOperationForSCMediaPath: /*MEDIA_ITEM_PATH*/ media_item_.path
+            [ apiContext_ downloadResourceOperationForMediaPath: /*MEDIA_ITEM_PATH*/ media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
             {
                 readedImage = image;
@@ -78,7 +78,7 @@
             params.width = 15.f;
             params.height = 15.f;
             
-            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
+            [ apiContext_ downloadResourceOperationForMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
             {
               readedImage = image;
@@ -146,7 +146,7 @@
             SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.scale = 2.f;
             
-            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
+            [ apiContext_ downloadResourceOperationForMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
               {
                   readedImage = image;
@@ -212,7 +212,7 @@
             SCDownloadMediaOptions *params = [ SCDownloadMediaOptions new ];
             params.displayAsThumbnail = YES;
             
-            [ apiContext_ uploadOperationForSCMediaPath: media_item_.path
+            [ apiContext_ downloadResourceOperationForMediaPath: media_item_.path
                                         imageParams: params ]( ^( UIImage* image, NSError* read_error_ )
               {
                   readedImage = image;

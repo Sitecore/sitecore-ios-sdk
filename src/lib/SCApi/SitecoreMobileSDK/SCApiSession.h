@@ -261,7 +261,7 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                                itemId:(NSString *)itemId;
+                                      itemId:(NSString *)itemId;
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                             itemSource:( id<SCItemSource> )itemSource
@@ -284,7 +284,7 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                              itemPath:(NSString *)path;
+                                    itemPath:(NSString *)path;
 
 /**
  Used to create item according to the properties of SCCreateItemRequest object
@@ -341,15 +341,15 @@
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path;
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path;
 
 /**
  Used to load image with the image path, see [SCImageField imagePath] with additional parameters.
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
-                               imageParams:( SCDownloadMediaOptions * )params;
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
+                                       imageParams:( SCDownloadMediaOptions * )params;
 
 /**
  Used to request rendering HTML for rendering with request
@@ -364,7 +364,7 @@
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
  */
 - (SCAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
-                                          sourceId:(NSString *)sourceId;
+                                                sourceId:(NSString *)sourceId;
 
 /**
  Used to trigger a goal or a campain with the given request
