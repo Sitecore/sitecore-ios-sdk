@@ -39,8 +39,7 @@
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    self->_methodToHookSelector = @selector( uploadOperationForSCMediaPath:imageParams: );
-//    self->_methodToHookSelector = @selector( imageLoaderForSCMediaPath:imageParams: );
+    self->_methodToHookSelector = @selector( downloadResourceOperationForMediaPath:imageParams: );
 #pragma clang diagnostic pop
     
     
