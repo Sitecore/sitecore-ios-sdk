@@ -202,15 +202,15 @@
     return [ self scDataLoaderWithHttpBodyAndURL: nil ];
 }
 
--(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)downloadResourceOperationForMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
 {
-    return [ self uploadOperationForSCMediaPath: path_
+    return [ self downloadResourceOperationForMediaPath: path_
                               cacheLifeTime: cacheLifeTime_
                                      params: nil ];
 }
 
--(JFFAsyncOperation)uploadOperationForSCMediaPath:( NSString* )path_
+-(JFFAsyncOperation)downloadResourceOperationForMediaPath:( NSString* )path_
                                 cacheLifeTime:( NSTimeInterval )cacheLifeTime_
                                        params:( SCParams* )params_
 {

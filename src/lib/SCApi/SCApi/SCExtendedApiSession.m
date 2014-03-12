@@ -250,7 +250,7 @@
     params.database =  params.database ? : self.defaultDatabase;
     params.language =  params.language ? : self.defaultLanguage;
 
-    return [ self->_api uploadOperationForSCMediaPath: path_
+    return [ self->_api downloadResourceOperationForMediaPath: path_
                                     cacheLifeTime: self.defaultImagesLifeTimeInCache
                                            params: params ];
 }
@@ -260,13 +260,13 @@
     return [ self privateImageLoaderForSCMediaPath: path_ params: nil ];
 }
 
--(SCExtendedAsyncOp)uploadOperationForSCMediaPath:( NSString* )path_
+-(SCExtendedAsyncOp)downloadResourceOperationForMediaPath:( NSString* )path_
 {
-    return [ self uploadOperationForSCMediaPath: path_
+    return [ self downloadResourceOperationForMediaPath: path_
                          imageParams: nil ];
 }
 
--(SCExtendedAsyncOp)uploadOperationForSCMediaPath:( NSString* )path_
+-(SCExtendedAsyncOp)downloadResourceOperationForMediaPath:( NSString* )path_
                            imageParams:( SCDownloadMediaOptions * )params_
 {
     return [ self privateImageLoaderForSCMediaPath: path_

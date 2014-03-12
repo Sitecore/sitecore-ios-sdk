@@ -336,7 +336,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath:  @"~/media/Images/wrong_image"
+                SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession downloadResourceOperationForMediaPath:  @"~/media/Images/wrong_image"
                                                                                           imageParams: nil ];
                 loader(nil, nil, doneHandler);
             }

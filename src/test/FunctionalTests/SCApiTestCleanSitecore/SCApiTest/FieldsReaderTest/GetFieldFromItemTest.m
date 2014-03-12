@@ -449,7 +449,7 @@
                 strongContext_ = [ TestingRequestFactory getNewAdminContextWithShell ];
                 apiContext_ = strongContext_;
                 
-                [ apiContext_ uploadOperationForSCMediaPath:  @"~/media/Images/test image" ]( ^( id result_, NSError* error_ )
+                [ apiContext_ downloadResourceOperationForMediaPath:  @"~/media/Images/test image" ]( ^( id result_, NSError* error_ )
                 {
                     value_ = result_;
                     didFinishCallback_();

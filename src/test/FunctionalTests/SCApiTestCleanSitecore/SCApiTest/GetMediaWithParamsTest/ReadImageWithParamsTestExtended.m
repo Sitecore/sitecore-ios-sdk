@@ -62,7 +62,7 @@
                 
             };
 
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession downloadResourceOperationForMediaPath: media_item_.path
                                                                    imageParams: params ];
             loader(nil, nil, doneHandler);
         
@@ -132,7 +132,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession downloadResourceOperationForMediaPath: media_item_.path
                                                                    imageParams: params ];
             loader(nil, nil, doneHandler);
         };
@@ -201,7 +201,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadOperationForSCMediaPath: media_item_.path
+            SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession downloadResourceOperationForMediaPath: media_item_.path
                                                                    imageParams: params ];
             
             loader(nil, nil, doneHandler);

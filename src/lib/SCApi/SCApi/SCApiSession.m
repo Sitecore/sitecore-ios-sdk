@@ -197,57 +197,57 @@
 - (SCAsyncOp)readItemOperationForItemId:(NSString *)itemId
 {
     return asyncOpWithJAsyncOp( [ self.extendedApiSession readItemOperationForItemId: itemId
-                                                                   itemSource: [ self contextSource ] ] );
+                                                                          itemSource: [ self contextSource ] ] );
 }
 
 - (SCAsyncOp)readItemOperationForItemPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession readItemOperationForItemPath: path
-                                         itemSource: [ self contextSource ] ];
+                                                itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                                itemId:(NSString *)itemId
+                                      itemId:(NSString *)itemId
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
-                                                 itemId: itemId
-                                             itemSource: [ self contextSource ] ];
+                                                       itemId: itemId
+                                                   itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                            itemSource:(id<SCItemSource>)itemSource
-                                itemId:(NSString *)itemId
+                                  itemSource:(id<SCItemSource>)itemSource
+                                      itemId:(NSString *)itemId
 {
     SCExtendedAsyncOp result = [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
-                                                                            itemId: itemId
-                                                                        itemSource: itemSource ];
+                                                                                  itemId: itemId
+                                                                              itemSource: itemSource ];
     return asyncOpWithJAsyncOp( result );
 }
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                              itemPath:(NSString *)path
+                                    itemPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
-                                               itemPath: path
-                                             itemSource: [ self contextSource ] ];
+                                                     itemPath: path
+                                                   itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                         itemSourcePOD:(SCItemSourcePOD *)itemSourcePOD
-                              itemPath:(NSString *)path
+                               itemSourcePOD:(SCItemSourcePOD *)itemSourcePOD
+                                    itemPath:(NSString *)path
 {
     SCExtendedAsyncOp result = [ self.extendedApiSession readItemOperationForFieldsNames: fieldNames
-                                                                          itemPath: path
-                                                                        itemSource: [ self contextSource ] ];
+                                                                                itemPath: path
+                                                                              itemSource: [ self contextSource ] ];
     return asyncOpWithJAsyncOp( result );
 }
 
@@ -275,7 +275,7 @@
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession readChildrenOperationForItemId: itemId
-                                            itemSource: [ self contextSource ] ];
+                                                  itemSource: [ self contextSource ] ];
     return asyncOpWithJAsyncOp( result );
 }
 
@@ -283,25 +283,25 @@
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession readChildrenOperationForItemPath: path
-                                              itemSource: [ self contextSource ] ];
+                                                    itemSource: [ self contextSource ] ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
 {
     SCExtendedAsyncOp result =
-    [ self.extendedApiSession uploadOperationForSCMediaPath: path
-                                            imageParams: nil ];
+    [ self.extendedApiSession downloadResourceOperationForMediaPath: path
+                                                imageParams: nil ];
     
     return asyncOpWithJAsyncOp( result );
 }
 
-- (SCAsyncOp)uploadOperationForSCMediaPath:(NSString *)path
-                           imageParams:( SCDownloadMediaOptions * )params
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
+                               imageParams:( SCDownloadMediaOptions * )params
 {
-    SCExtendedAsyncOp result = [ self.extendedApiSession uploadOperationForSCMediaPath: path
-                                                                       imageParams: params ];
+    SCExtendedAsyncOp result = [ self.extendedApiSession downloadResourceOperationForMediaPath: path
+                                                                           imageParams: params ];
     return asyncOpWithJAsyncOp( result );
 }
 
@@ -313,7 +313,7 @@
 }
 
 - (SCAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
-                                          sourceId:(NSString *)sourceId
+                                                sourceId:(NSString *)sourceId
 {
     SCGetRenderingHtmlRequest * request = [SCGetRenderingHtmlRequest new];
     request.renderingId = renderingId;
