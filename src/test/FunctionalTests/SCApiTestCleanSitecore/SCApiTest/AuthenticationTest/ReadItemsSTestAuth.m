@@ -62,9 +62,9 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
         GHAssertTrue( item_.allChildren == nil, @"OK" );
         GHAssertTrue( item_.readChildren == nil, @"OK" );
 
-        GHAssertTrue( item_.allFieldsByName != nil, @"OK" );
-        GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == SCAllFieldsCount, @"OK" );
+        GHAssertTrue( item_.allFields != nil, @"OK" );
+        GHAssertTrue( [ item_.allFields count ] == [ item_.readFields count ], @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == SCAllFieldsCount, @"OK" );
     }
     
     //test get item without auth
@@ -125,8 +125,8 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
         GHAssertTrue( item_.allChildren == nil, @"OK" );
         GHAssertTrue( item_.readChildren == nil, @"OK" );
         
-        GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == 1, @"OK" );
+        GHAssertTrue( item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == 1, @"OK" );
         GHAssertTrue( [ [ [ item_ fieldWithName: @"Title" ] rawValue ] isEqualToString: @"Allowed_Parent" ], @"OK" );
     }
     
@@ -190,8 +190,8 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
         GHAssertTrue( item_.allChildren == nil, @"OK" );
         GHAssertTrue( item_.readChildren == nil, @"OK" );
         
-        GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
     }
     
     //test get item parent
@@ -241,8 +241,8 @@ NSString* allowed_path_ = @"/sitecore/content/home/Allowed_Parent";
         GHAssertTrue( item_.parent == nil, @"OK" );
         GHAssertTrue( [ item_.displayName isEqualToString: @"Allowed_Parent" ], @"OK" );
     
-        GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
     }
 }
 

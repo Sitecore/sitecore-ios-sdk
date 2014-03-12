@@ -140,7 +140,7 @@ JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
     return loader_;
 }
 
-SCAsyncOp imageReaderForURLString( NSString* urlString_
+SCAsyncOp readImageOperationForURLString( NSString* urlString_
                                   , NSTimeInterval cacheLifeTime_ )
 {
     JFFAsyncOperation loader_ = imageLoaderForURLString( urlString_

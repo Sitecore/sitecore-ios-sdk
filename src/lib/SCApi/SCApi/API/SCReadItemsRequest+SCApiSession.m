@@ -10,6 +10,8 @@
 
 #import "SCApiAnalizers.h"
 
+#import "SCItem+Private.h"
+
 @interface SCField (SCReadItemsRequestCategory)
 
 -(JFFAsyncOperation)fieldValueLoader;

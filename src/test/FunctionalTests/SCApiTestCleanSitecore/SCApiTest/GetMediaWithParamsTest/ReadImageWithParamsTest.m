@@ -297,7 +297,7 @@
     
     void (^GetImageBlock)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCAsyncOp imageLoader = [ imageField fieldValueReader ];
+        SCAsyncOp imageLoader = [ imageField readFieldValueOperation ];
         imageLoader( ^void( UIImage* blockImage, NSError* blockError )
         {
             image = blockImage;

@@ -82,17 +82,17 @@
     return nil;
 }
 
--(SCAsyncOp)fieldValueReader
+-(SCAsyncOp)readFieldValueOperation
 {
     return asyncOpWithJAsyncOp( [ self fieldValueLoader ] );
 }
 
--(SCExtendedAsyncOp)extendedFieldValueReader
+-(SCExtendedAsyncOp)readFieldValueExtendedOperation
 {
     return [ self fieldValueLoader ];
 }
 
--(SCAsyncOp)fieldValueReaderWithParams:( SCParams* )params
+-(SCAsyncOp)readFieldValueOperationWithParams:( SCParams* )params
 {
     return asyncOpWithJAsyncOp( [ self fieldValueLoaderWithParms: params ] );
 }

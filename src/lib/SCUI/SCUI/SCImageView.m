@@ -22,7 +22,7 @@
     } ];
 }
 
--(void)setImageReader:( SCAsyncOp )reader_
+-(void)setReadImageOperation:( SCAsyncOp )reader_
 {
     self.image = nil;
 

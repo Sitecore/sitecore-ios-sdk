@@ -68,9 +68,9 @@
     };
 }
 
--(SCAsyncOp)fieldValueReader
+-(SCAsyncOp)readFieldValueOperation
 {
-    return [ super fieldValueReader ];
+    return [ super readFieldValueOperation ];
 }
 
 @end

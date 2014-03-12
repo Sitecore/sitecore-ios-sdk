@@ -221,16 +221,16 @@
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemToDelete" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
 
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-    GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
+    GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
 
     //second item:
     GHAssertTrue( item_ != nil, @"OK" );
     GHAssertTrue( [ [ item2_ displayName ] hasPrefix: @"ItemToDelete" ], @"OK" );
     GHAssertTrue( [ [ item2_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
 
-    NSLog( @"item2_.readFieldsByName: %@", item2_.readFieldsByName );
-    GHAssertTrue( [ item2_.readFieldsByName count ] == 0, @"OK" );
+    NSLog( @"item2_.readFields: %@", item2_.readFields );
+    GHAssertTrue( [ item2_.readFields count ] == 0, @"OK" );
 
     //removed items:
     GHAssertTrue( read_items_count_ == 0, @"OK" );

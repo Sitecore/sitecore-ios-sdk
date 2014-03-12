@@ -101,9 +101,9 @@
             media_item_ = item_;
             if ( item_ != nil ) 
             {
-                SCField* field_ = [ item_.readFieldsByName objectForKey: @"Alt" ];
+                SCField* field_ = [ item_ fieldWithName: @"Alt" ];
                 field_.rawValue = @"Image Alt";
-                SCField* field2_ = [ item_.readFieldsByName objectForKey: @"Dimensions" ];
+                SCField* field2_ = [ item_ fieldWithName: @"Dimensions" ];
                 field2_.rawValue = @"10 x 10";
 
                 [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
@@ -153,8 +153,8 @@
         NSLog(@"displayName: %@", [ media_item_ displayName ] );
         GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaWithFields" ], @"OK" );
         GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 3, @"OK" );
-        NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFieldsByName ]);
+        GHAssertTrue( [ [ media_item_ readFields ] count ] == 3, @"OK" );
+        NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFields ]);
         NSLog(@"Dimensions: %@", [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] );
         GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"10 x 10"], @"OK" );
         GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"Image Alt"], @"OK" );
@@ -169,7 +169,7 @@
 
         GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestMediaWithFields" ], @"OK" );
         GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-        GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 3, @"OK" );
+        GHAssertTrue( [ [ media_item_ readFields ] count ] == 3, @"OK" );
         
         GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"10 x 10"], @"OK" );
         GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"Image Alt"], @"OK" );
@@ -277,8 +277,8 @@
     GHAssertTrue( media_item_ != nil, @"OK" );
     GHAssertTrue( [ [ media_item_ displayName ] hasPrefix: @"TestAndEditMedia" ], @"OK" );
     GHAssertTrue( [ [ media_item_ itemTemplate ] isEqualToString: @"System/Media/Unversioned/Image" ], @"OK" );
-    GHAssertTrue( [ [ media_item_ readFieldsByName ] count ] == 2, @"OK" );
-    NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFieldsByName ]);
+    GHAssertTrue( [ [ media_item_ readFields ] count ] == 2, @"OK" );
+    NSLog(@"[ media_item_ readFieldsByName ]: %@", [ media_item_ readFields ]);
     GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Dimensions" ] rawValue ] isEqualToString: @"5 x 5"], @"OK" );
     GHAssertTrue( [ [ [ media_item_ fieldWithName: @"Alt" ] rawValue ] isEqualToString: @"La-la-la"], @"OK" );
 }

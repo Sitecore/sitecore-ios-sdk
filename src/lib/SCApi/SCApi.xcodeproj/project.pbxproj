@@ -26,7 +26,7 @@
 		1B24574415245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B24574215245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h */; };
 		1B24574515245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B24574315245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m */; };
 		1B245873152472E600FBB6C2 /* SCWebApiParsers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B245871152472E600FBB6C2 /* SCWebApiParsers.h */; };
-		1B245874152472E600FBB6C2 /* SCWebApiParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B245872152472E600FBB6C2 /* SCWebApiParsers.m */; };
+		1B245874152472E600FBB6C2 /* SCWebApiParsers.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B245872152472E600FBB6C2 /* SCWebApiParsers.mm */; };
 		1B2458C115247F2800FBB6C2 /* SCUploadMediaItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2458BF15247F2800FBB6C2 /* SCUploadMediaItemRequest.m */; };
 		1B363FD6152AE0B9006FBE6E /* SCApiAnalizers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B363FD4152AE0B9006FBE6E /* SCApiAnalizers.h */; };
 		1B363FD7152AE0B9006FBE6E /* SCApiAnalizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */; };
@@ -144,6 +144,9 @@
 		78BDD65417BE4E9C00DBEB62 /* SCApiSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BDD65317BE4E9C00DBEB62 /* SCApiSession.h */; };
 		78BDD65717BE51FD00DBEB62 /* SCExtendedApiSession+Init.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BDD65517BE51FD00DBEB62 /* SCExtendedApiSession+Init.h */; };
 		78BDD65817BE51FD00DBEB62 /* SCExtendedApiSession+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BDD65617BE51FD00DBEB62 /* SCExtendedApiSession+Init.m */; };
+		78CB055718C75CD8000F120C /* SCItem+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CB055518C75CD8000F120C /* SCItem+Private.h */; };
+		78CB055818C75CD8000F120C /* SCItem+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CB055618C75CD8000F120C /* SCItem+Private.m */; };
+		78CB055918C75CD8000F120C /* SCItem+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CB055618C75CD8000F120C /* SCItem+Private.m */; };
 		7E0D7168185741C8008410DC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7167185741C8008410DC /* XCTest.framework */; };
 		7E11ED3517E2FA330027B6C6 /* 2-RichTextField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E11ED1C17E2F8980027B6C6 /* 2-RichTextField.json */; };
 		7E11ED3A17E2FC370027B6C6 /* SCRichTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E11ED3817E2FC370027B6C6 /* SCRichTextField.m */; };
@@ -674,9 +677,9 @@
 		1B054DFA1521CDE8008E4B9E /* SCReadItemsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCReadItemsRequest.h; path = ../../../SitecoreMobileSDK/SCReadItemsRequest.h; sourceTree = "<group>"; };
 		1B054DFB1521CDFE008E4B9E /* SCEditItemsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCEditItemsRequest.h; path = ../../../SitecoreMobileSDK/SCEditItemsRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B054DFC1521CE17008E4B9E /* SCCreateItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCCreateItemRequest.h; path = ../../../SitecoreMobileSDK/SCCreateItemRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1B0E58E614E5420D008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTreelistField.h; sourceTree = "<group>"; };
-		1B0E58E714E5420D008EE5F9 /* SCTreelistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTreelistField.m; sourceTree = "<group>"; };
-		1B0E58F214E542BA008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTreelistField.h; sourceTree = "<group>"; };
+		1B0E58E614E5420D008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCTreelistField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1B0E58E714E5420D008EE5F9 /* SCTreelistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCTreelistField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B0E58F214E542BA008EE5F9 /* SCTreelistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCTreelistField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B155F9814C852CF004A4C99 /* SCItemIdPathAndLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemIdPathAndLanguage.h; sourceTree = "<group>"; };
 		1B155F9914C852CF004A4C99 /* SCItemIdPathAndLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemIdPathAndLanguage.m; sourceTree = "<group>"; };
 		1B195B6B15248DF700E80FFB /* SCUploadMediaItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCUploadMediaItemRequest.h; path = ../../../SitecoreMobileSDK/SCUploadMediaItemRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -685,17 +688,17 @@
 		1B1C0B8A152D8F3900ECF555 /* SCSrvResponseCaches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSrvResponseCaches.h; sourceTree = "<group>"; };
 		1B1C0B8B152D8F3900ECF555 /* SCSrvResponseCaches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSrvResponseCaches.m; sourceTree = "<group>"; };
 		1B1FF3CE14FE528D000BB3F1 /* SCDroplinkField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCDroplinkField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1B1FF41214FE5B3E000BB3F1 /* SCDroplinkField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDroplinkField.h; path = ../../../SitecoreMobileSDK/SCDroplinkField.h; sourceTree = "<group>"; };
+		1B1FF41214FE5B3E000BB3F1 /* SCDroplinkField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCDroplinkField.h; path = ../../../SitecoreMobileSDK/SCDroplinkField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B24238B152ED2E200147927 /* SCFieldRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCFieldRecord.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B24238C152ED2E200147927 /* SCFieldRecord.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = SCFieldRecord.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B24574215245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FieldsRawFaluesByName.h"; sourceTree = "<group>"; };
 		1B24574315245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FieldsRawFaluesByName.m"; sourceTree = "<group>"; };
 		1B245871152472E600FBB6C2 /* SCWebApiParsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCWebApiParsers.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1B245872152472E600FBB6C2 /* SCWebApiParsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCWebApiParsers.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B245872152472E600FBB6C2 /* SCWebApiParsers.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = SCWebApiParsers.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B2458BF15247F2800FBB6C2 /* SCUploadMediaItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUploadMediaItemRequest.m; sourceTree = "<group>"; };
 		1B28D66F14FF662400673110 /* SCFieldLinkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCFieldLinkData.h; path = ../../../SitecoreMobileSDK/SCFieldLinkData.h; sourceTree = "<group>"; };
 		1B28D67814FF665B00673110 /* SCGeneralLinkField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCGeneralLinkField.h; path = ../../../SitecoreMobileSDK/SCGeneralLinkField.h; sourceTree = "<group>"; };
-		1B28D6B714FF75D700673110 /* SCDroptreeField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDroptreeField.h; path = ../../../SitecoreMobileSDK/SCDroptreeField.h; sourceTree = "<group>"; };
+		1B28D6B714FF75D700673110 /* SCDroptreeField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCDroptreeField.h; path = ../../../SitecoreMobileSDK/SCDroptreeField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B363FD4152AE0B9006FBE6E /* SCApiAnalizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApiAnalizers.h; sourceTree = "<group>"; };
 		1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApiAnalizers.m; sourceTree = "<group>"; };
 		1B363FDC152AE346006FBE6E /* SCReadItemsRequest+SystemLanguages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCReadItemsRequest+SystemLanguages.h"; sourceTree = "<group>"; };
@@ -708,7 +711,7 @@
 		1B576FF9147E4B810064903A /* SCField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCField.h; path = ../../SitecoreMobileSDK/SCField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B577104147E7DA60064903A /* SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCError.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B577107147E7E310064903A /* SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCError.h; path = ../SitecoreMobileSDK/SCError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1B597D9114FE5E7C00B10F1E /* SCDroptreeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDroptreeField.m; sourceTree = "<group>"; };
+		1B597D9114FE5E7C00B10F1E /* SCDroptreeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCDroptreeField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B597D9D14FE6B0900B10F1E /* SCFieldLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCFieldLinkData.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B597DA114FE6CF900B10F1E /* SCGeneralLinkField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCGeneralLinkField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1B597DA514FE73C900B10F1E /* SCFieldLinkData+XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCFieldLinkData+XMLParser.h"; sourceTree = "<group>"; };
@@ -741,7 +744,7 @@
 		1B8D3F0B1523638A00CAF9C3 /* NSString+IsSCPathValid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsSCPathValid.m"; sourceTree = "<group>"; };
 		1B9F7F09152B1CE300B68ED4 /* JSBlocksDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBlocksDefinitions.h; sourceTree = "<group>"; };
 		1BAB6F25149A3929003AB332 /* SCReadItemsRequest+SCApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCReadItemsRequest+SCApiSession.h"; sourceTree = "<group>"; };
-		1BAB6F26149A3929003AB332 /* SCReadItemsRequest+SCApiSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCReadItemsRequest+SCApiSession.m"; sourceTree = "<group>"; };
+		1BAB6F26149A3929003AB332 /* SCReadItemsRequest+SCApiSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "SCReadItemsRequest+SCApiSession.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1BB2928014B5F6DE00244765 /* SCDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDateField.m; sourceTree = "<group>"; };
 		1BB2928C14B5F74000244765 /* SCDateTimeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDateTimeField.m; sourceTree = "<group>"; };
 		1BB2928F14B5F77000244765 /* SCDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDateField.h; path = ../../../SitecoreMobileSDK/SCDateField.h; sourceTree = "<group>"; };
@@ -758,7 +761,7 @@
 		1BC086FE147BBDD60066CFB3 /* SCApi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCApi-Prefix.pch"; sourceTree = "<group>"; };
 		1BC08790147BC6860066CFB3 /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCApi.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BC0879D147BC8070066CFB3 /* SCItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BC087A0147BC81A0066CFB3 /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItem.h; path = ../../SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; };
+		1BC087A0147BC81A0066CFB3 /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCItem.h; path = ../../SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BC087DA147BCB6C0066CFB3 /* SCItemRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCItemRecord.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BC087DB147BCB6C0066CFB3 /* SCItemRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCItemRecord.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1BC087F8147BD2CF0066CFB3 /* SCRemoteApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCRemoteApi.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -776,11 +779,11 @@
 		1BF7F5F7152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+EditFieldsBodyWithFieldsDict.h"; sourceTree = "<group>"; };
 		1BF7F5F8152EDE080048E6EF /* NSData+EditFieldsBodyWithFieldsDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+EditFieldsBodyWithFieldsDict.m"; sourceTree = "<group>"; };
 		1BF90C0D14B5E159000D0CF2 /* SCChecklistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCChecklistField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BF90C1014B5E24B000D0CF2 /* SCChecklistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCChecklistField.h; path = ../../../SitecoreMobileSDK/SCChecklistField.h; sourceTree = "<group>"; };
+		1BF90C1014B5E24B000D0CF2 /* SCChecklistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCChecklistField.h; path = ../../../SitecoreMobileSDK/SCChecklistField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BF90C1314B5E27C000D0CF2 /* SCImageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCImageField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BF90C1614B5E28A000D0CF2 /* SCImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageField.h; path = ../../../SitecoreMobileSDK/SCImageField.h; sourceTree = "<group>"; };
-		1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMultilistField.m; sourceTree = "<group>"; };
-		1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMultilistField.h; path = ../../../SitecoreMobileSDK/SCMultilistField.h; sourceTree = "<group>"; };
+		1BF90C1614B5E28A000D0CF2 /* SCImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCImageField.h; path = ../../../SitecoreMobileSDK/SCImageField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1BF90C1914B5E3E2000D0CF2 /* SCMultilistField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCMultilistField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1BF90C1C14B5E41D000D0CF2 /* SCMultilistField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCMultilistField.h; path = ../../../SitecoreMobileSDK/SCMultilistField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		656409BF15A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCSitecoreCredentials+XMLParser.h"; sourceTree = "<group>"; };
 		656409C015A9CB4A0062F28D /* SCSitecoreCredentials+XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCSitecoreCredentials+XMLParser.m"; sourceTree = "<group>"; };
 		656409C315A9CB750062F28D /* SCSitecoreCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSitecoreCredentials.h; sourceTree = "<group>"; };
@@ -803,7 +806,7 @@
 		78B07C3417B4DCCA00EEB890 /* SCParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCParams.m; sourceTree = "<group>"; };
 		78B07C3617B4DF6000EEB890 /* SCParams+UrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCParams+UrlBuilder.h"; sourceTree = "<group>"; };
 		78B07C3717B4DF6000EEB890 /* SCParams+UrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCParams+UrlBuilder.m"; sourceTree = "<group>"; };
-		78B07D2917B4F39C00EEB890 /* SCField+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCField+Private.h"; sourceTree = "<group>"; };
+		78B07D2917B4F39C00EEB890 /* SCField+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SCField+Private.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78B07DEF17B506CD00EEB890 /* ImageParamsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageParamsTest.m; sourceTree = "<group>"; };
 		78B087CB17FDAF6700176E17 /* SCGetRenderingHtmlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGetRenderingHtmlRequest.m; sourceTree = "<group>"; };
 		78B0880417FDBC5C00176E17 /* SCBaseItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBaseItemRequest.m; sourceTree = "<group>"; };
@@ -817,6 +820,8 @@
 		78BDD65317BE4E9C00DBEB62 /* SCApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCApiSession.h; path = SitecoreMobileSDK/SCApiSession.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78BDD65517BE51FD00DBEB62 /* SCExtendedApiSession+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCExtendedApiSession+Init.h"; sourceTree = "<group>"; };
 		78BDD65617BE51FD00DBEB62 /* SCExtendedApiSession+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCExtendedApiSession+Init.m"; sourceTree = "<group>"; };
+		78CB055518C75CD8000F120C /* SCItem+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SCItem+Private.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		78CB055618C75CD8000F120C /* SCItem+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "SCItem+Private.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7E0D7167185741C8008410DC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7E11ED1C17E2F8980027B6C6 /* 2-RichTextField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2-RichTextField.json"; sourceTree = "<group>"; };
 		7E11ED3817E2FC370027B6C6 /* SCRichTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCRichTextField.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1066,7 +1071,7 @@
 			isa = PBXGroup;
 			children = (
 				1B245871152472E600FBB6C2 /* SCWebApiParsers.h */,
-				1B245872152472E600FBB6C2 /* SCWebApiParsers.m */,
+				1B245872152472E600FBB6C2 /* SCWebApiParsers.mm */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -1322,6 +1327,8 @@
 				1B363FD5152AE0B9006FBE6E /* SCApiAnalizers.m */,
 				1B9F7F09152B1CE300B68ED4 /* JSBlocksDefinitions.h */,
 				7E17DD5617EC3C7C001B9D7E /* SCApiDefines.h */,
+				78CB055518C75CD8000F120C /* SCItem+Private.h */,
+				78CB055618C75CD8000F120C /* SCItem+Private.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1825,6 +1832,7 @@
 				1BC087FA147BD2CF0066CFB3 /* SCRemoteApi.h in Headers */,
 				1BC08800147BE1FB0066CFB3 /* SCItemRecord+Parser.h in Headers */,
 				1B459569147BF8A2003E3479 /* NSString+ItemPathLogic.h in Headers */,
+				78CB055718C75CD8000F120C /* SCItem+Private.h in Headers */,
 				1B576FFA147E4B810064903A /* SCField.h in Headers */,
 				1B577108147E7E310064903A /* SCError.h in Headers */,
 				1B7AC480148FC60200DDD31D /* SCReadItemsScopeType.h in Headers */,
@@ -2426,7 +2434,7 @@
 				1B4AD5D415234FBC00DCBEC7 /* SCReadItemsRequest+Factory.m in Sources */,
 				1B8D3F0D1523638A00CAF9C3 /* NSString+IsSCPathValid.m in Sources */,
 				1B24574515245F0A00FBB6C2 /* NSDictionary+FieldsRawFaluesByName.m in Sources */,
-				1B245874152472E600FBB6C2 /* SCWebApiParsers.m in Sources */,
+				1B245874152472E600FBB6C2 /* SCWebApiParsers.mm in Sources */,
 				1B2458C115247F2800FBB6C2 /* SCUploadMediaItemRequest.m in Sources */,
 				7E1A8B451802F037003C815C /* SCPersistentRecordStorage.mm in Sources */,
 				1B195B70152490B700E80FFB /* NSString+MultipartFormDataBoundary.m in Sources */,
@@ -2443,6 +2451,7 @@
 				656409C615A9CB750062F28D /* SCSitecoreCredentials.mm in Sources */,
 				7E4DD23F17C4FB070019FEC5 /* SCItemAndFields.m in Sources */,
 				7EDB118216F1F74B0088824E /* SCCacheDBAdaptor.m in Sources */,
+				78CB055818C75CD8000F120C /* SCItem+Private.m in Sources */,
 				789826F417046B5000E9DC58 /* SCTriggeringRequest.m in Sources */,
 				789826F817046B7100E9DC58 /* SCPageEventTriggeringRequest.m in Sources */,
 				789826FC17046B7F00E9DC58 /* SCCampaignTriggeringRequest.m in Sources */,
@@ -2509,6 +2518,7 @@
 				7EA8612E1807F4620067C155 /* WebApiUrlBuilrerTest.m in Sources */,
 				7EA861341807F4620067C155 /* ItemRecordStorageTest.m in Sources */,
 				7EA861301807F4620067C155 /* SchemeAutocompleteTest.m in Sources */,
+				78CB055918C75CD8000F120C /* SCItem+Private.m in Sources */,
 				7EA8613B1807F4620067C155 /* PersistentStorageInitializerTest.m in Sources */,
 				7EA861351807F4620067C155 /* ItemRecordCacheTest.m in Sources */,
 				7E833E3018CA08F5001DF23C /* SessionMediaRootTest.m in Sources */,

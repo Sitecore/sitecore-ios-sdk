@@ -67,7 +67,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemChildrenScop
     //test item relations
     {
         self_item_ = items_[ 0 ];  
-        GHAssertTrue( self_item_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_.allChildren != nil, @"OK" );
         GHAssertTrue( self_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ self_item_.readChildren count ] == 1, @"OK" );
@@ -84,7 +84,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemChildrenScop
                                                                  itemSource: adminSource ];
     //test item relations
     {    
-        GHAssertTrue( self_item_auth_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_auth_.allFields != nil, @"OK" );
         GHAssertTrue( self_item_auth_.allChildren != nil, @"OK" );
         GHAssertTrue( self_item_auth_.readChildren != nil, @"OK" );
         GHAssertTrue( [ self_item_auth_.allChildren count ] == 2, @"OK" );
@@ -160,7 +160,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemChildrenScop
                                                                  itemSource: contextSource ];
     //test item relations
     {    
-        GHAssertTrue( self_item_auth_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( self_item_auth_.allFields == nil, @"OK" );
         GHAssertTrue( self_item_auth_.allChildren != nil, @"OK" );
         GHAssertTrue( self_item_auth_.readChildren != nil, @"OK" );
         GHAssertTrue( [ self_item_auth_.allChildren count ] == 2, @"OK" );
@@ -229,7 +229,7 @@ static SCReadItemScopeType scope_ = SCReadItemSelfScope | SCReadItemChildrenScop
     GHAssertTrue( items_auth_ != nil, @"OK" );
     GHAssertTrue( [ items_auth_ count ] == 1, @"OK" );
     SCItem* self_item_auth_ = items_auth_[ 0 ];     
-    GHAssertTrue( self_item_auth_.allFieldsByName == nil, @"OK" );
+    GHAssertTrue( self_item_auth_.allFields == nil, @"OK" );
     GHAssertTrue( [ self_item_auth_.displayName isEqualToString: @"Not_Allowed_Parent" ], @"OK" );
 }
 

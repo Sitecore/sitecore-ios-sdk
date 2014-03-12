@@ -70,8 +70,8 @@
 
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)itemsTotalCountReader;
-- (SCExtendedAsyncOp)extendedItemsTotalCountReader;
+- (SCAsyncOp)readItemsTotalCountOperation;
+- (SCExtendedAsyncOp)readItemsTotalCountExtendedOperation;
 
 /**
  Used to load item for the given index.
@@ -84,7 +84,7 @@
 
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)itemReaderForIndex:(NSUInteger)index;
-- (SCExtendedAsyncOp)extendedItemReaderForIndex:(NSUInteger)index;
+- (SCAsyncOp)readItemOperationForIndex:(NSUInteger)index;
+- (SCExtendedAsyncOp)readItemExtendedOperationForIndex:(NSUInteger)index;
 
 @end

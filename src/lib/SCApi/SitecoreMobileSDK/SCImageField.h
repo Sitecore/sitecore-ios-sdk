@@ -19,7 +19,7 @@
 @interface SCImageField : SCField
 
 /**
- The path to the Sitecore media item's image. Can be used to read an image, see [SCApiSession uploadOperationForSCMediaPath:] or [SCImageField fieldValueReader]
+ The path to the Sitecore media item's image. Can be used to read an image, see [SCApiSession uploadOperationForSCMediaPath:] or [SCImageField readFieldValueOperation]
  */
 @property(nonatomic) NSString *imagePath;
 
@@ -27,16 +27,16 @@
  Used for loading the field value which is a UIImage object.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCAsyncOp)fieldValueReader;
+- (SCAsyncOp)readFieldValueOperation;
 
 /**
 Used for loading the field value which is a UIImage object with additional parameters.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
--(SCAsyncOp)fieldValueReaderWithImageParams:( SCDownloadMediaOptions * )params;
+-(SCAsyncOp)readFieldValueOperationWithImageParams:( SCDownloadMediaOptions * )params;
 
 /**
- The value of the field. [SCImageField fieldValue] is UIImage object. It is nil by default, so use [SCImageField fieldValueReader] to load UIImage of this field.
+ The value of the field. [SCImageField fieldValue] is UIImage object. It is nil by default, so use [SCImageField readFieldValueOperation] to load UIImage of this field.
  */
 @property(nonatomic,readonly) id fieldValue;
 

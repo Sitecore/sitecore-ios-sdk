@@ -136,7 +136,7 @@ static SCReadItemScopeType scope_ = SCReadItemChildrenScope | SCReadItemParentSc
      //test item relations
      for (SCItem* item_ in items_ )
      { 
-         GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+         GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
          GHAssertTrue( item_.readChildren == nil, @"OK" );
          GHAssertTrue( item_.parent == nil, @"OK" );
      }
@@ -147,7 +147,7 @@ static SCReadItemScopeType scope_ = SCReadItemChildrenScope | SCReadItemParentSc
     //test item relations
     for (SCItem* item_ in items_auth_ )
     {    
-        GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( item_.allFields == nil, @"OK" );
         GHAssertTrue( item_.readChildren == nil, @"OK" );
         GHAssertTrue( item_.parent == nil, @"OK" );
     }

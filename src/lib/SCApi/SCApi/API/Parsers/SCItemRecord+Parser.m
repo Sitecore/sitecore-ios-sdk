@@ -59,6 +59,7 @@
             //parse fields
             {
                 NSDictionary* fields_ = json_[ @"Fields" ];
+                fields_ = [ self convertFieldNamesToUppercase: fields_ ];
                 JFFAsyncOperation loader_ = [ fields_ asyncMap: ^JFFAsyncOperation( id fieldId_, id json_ )
                 {
                     id result_ = [ SCFieldRecord fieldRecordWithJson: json_
@@ -75,6 +76,32 @@
             return JFFStubCancelAsyncOperationBlock;
         };
     };
+}
+
++(NSDictionary *)convertFieldNamesToUppercase:(NSDictionary *)fields
+{
+    NSMutableDictionary *mutableFields = [ NSMutableDictionary dictionaryWithDictionary:fields ];
+    NSArray *keys = [ mutableFields allKeys ];
+    
+    for ( NSString  *key in keys )
+    {
+        NSDictionary *elem = [ fields objectForKey: key ];
+        NSMutableDictionary *mutableElem = [ NSMutableDictionary dictionaryWithDictionary: elem ];
+        
+        if ([mutableElem isKindOfClass:[NSDictionary class]])
+        {
+            NSString *nameParamValue = [ elem valueForKey:@"Name" ];
+            
+            NSLocale* posixLocale_ = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+            NSString *upperNameParamValue = [ nameParamValue uppercaseStringWithLocale:posixLocale_ ];
+            [ mutableElem setValue: upperNameParamValue
+                            forKey: @"Name" ];
+        }
+        [ mutableFields setObject: mutableElem
+                           forKey: key ];
+    }
+    
+    return mutableFields;
 }
 
 @end

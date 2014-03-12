@@ -64,9 +64,9 @@ static SCReadItemScopeType scope_ = SCReadItemParentScope;
         GHAssertTrue( [ item_auth_.displayName isEqualToString: @"Not_Allowed_Parent" ], @"OK" );
         
         GHAssertTrue( item_auth_.allChildren == nil, @"OK" );
-        GHAssertTrue( item_auth_.allFieldsByName != nil, @"OK" );
-        GHAssertTrue( [ item_auth_.readFieldsByName count ] ==
-                     [ item_auth_.allFieldsByName count ], @"OK" );
+        GHAssertTrue( item_auth_.allFields != nil, @"OK" );
+        GHAssertTrue( [ item_auth_.readFields count ] ==
+                     [ item_auth_.allFields count ], @"OK" );
     }
 
 }
@@ -128,7 +128,7 @@ static SCReadItemScopeType scope_ = SCReadItemParentScope;
         GHAssertTrue( item_auth_.parent == nil, @"OK" );
         GHAssertTrue( [ item_auth_.displayName isEqualToString: @"Allowed_Parent" ], @"OK" );
         GHAssertTrue( item_auth_.allChildren == nil, @"OK" );
-        GHAssertTrue( item_auth_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( item_auth_.allFields != nil, @"OK" );
     }
 
 }

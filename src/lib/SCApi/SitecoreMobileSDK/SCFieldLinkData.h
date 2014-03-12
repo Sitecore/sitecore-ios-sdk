@@ -54,8 +54,8 @@
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 
--(SCAsyncOp)imageReader;
--(SCExtendedAsyncOp)extendedImageReader;
+-(SCAsyncOp)readImageOperation;
+-(SCExtendedAsyncOp)readImageExtendedOperation;
 
 @end
 

@@ -2,6 +2,6 @@
 
 @interface SCField (Private)
 
--(SCAsyncOp)fieldValueReaderWithParams:( SCParams* )params;
+-(SCAsyncOp)readFieldValueOperationWithParams:( SCParams* )params;
 
 @end

@@ -44,11 +44,11 @@
                 did_finish_callback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ result_ extendedFieldValueReaderForFieldName: @"WrongField" ];
+            SCExtendedAsyncOp loader1 = [ result_ readFieldValueExtendedOperationForFieldName: @"WrongField" ];
             loader1(nil, nil, doneHandler1);
         };
         
-        SCExtendedAsyncOp loader = [ pagedItems_ extendedItemReaderForIndex: 0 ];
+        SCExtendedAsyncOp loader = [ pagedItems_ readItemExtendedOperationForIndex: 0 ];
         loader(nil, nil, doneHandler);
     };
 

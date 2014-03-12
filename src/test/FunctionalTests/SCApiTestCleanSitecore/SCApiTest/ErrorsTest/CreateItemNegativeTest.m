@@ -274,8 +274,8 @@
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemInvalidFields" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
     
-    GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+    GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
     NSLog( @"[ [ item_ fieldWithName:@'Path' ] rawValue ] : %@", [ [ item_ fieldWithName: @"Path" ] rawValue ]  );
     NSLog( @"[ [ item_ fieldWithName:@'__Source' ] rawValue ] : %@", [ [ item_ fieldWithName: @"__Source" ] rawValue ]  );
     GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
@@ -340,8 +340,8 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemInvalidFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+        NSLog( @"item_.readFields: %@", item_.readFields );
         NSLog( @"[ [ item_ fieldWithName:@'Path' ] rawValue ] : %@", [ [ item_ fieldWithName: @"Path" ] rawValue ]  );
         NSLog( @"[ [ item_ fieldWithName:@'__Source' ] rawValue ] : %@", [ [ item_ fieldWithName: @"__Source" ] rawValue ]  );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
@@ -356,8 +356,8 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemInvalidFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+        NSLog( @"item_.readFields: %@", item_.readFields );
         NSLog( @"[ [ item_ fieldWithName:@'Path' ] rawValue ] : %@", [ [ item_ fieldWithName: @"Path" ] rawValue ]  );
         NSLog( @"[ [ item_ fieldWithName:@'__Source' ] rawValue ] : %@", [ [ item_ fieldWithName: @"__Source" ] rawValue ]  );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"< =^@__$^= >" ], @"OK" );
@@ -443,8 +443,8 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemEmptyFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+        NSLog( @"item_.readFields: %@", item_.readFields );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"" ], @"OK" );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"" ], @"OK" );
     }
@@ -457,8 +457,8 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemEmptyFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+        NSLog( @"item_.readFields: %@", item_.readFields );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"" ], @"OK" );
         GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"" ], @"OK" );
     }
@@ -535,8 +535,8 @@
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemEmptyFields" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
     
-    GHAssertTrue( [ item_.readFieldsByName count ] == 2, @"OK" );
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+    GHAssertTrue( [ item_.readFields count ] == 2, @"OK" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
     GHAssertTrue( [ [ [ item_ fieldWithName:@"Path" ] rawValue ] isEqualToString: @"" ], @"OK" );
     GHAssertTrue( [ [ [ item_ fieldWithName:@"__Source" ] rawValue ] isEqualToString: @"" ], @"OK" );
 }
@@ -583,8 +583,8 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemNotExistedFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
-        NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+        GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
+        NSLog( @"item_.readFields: %@", item_.readFields );
     }
     else
     {
@@ -595,7 +595,7 @@
         GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemNotExistedFields" ], @"OK" );
         GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
         
-        GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );;
+        GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );;
     }
 }
 
@@ -640,8 +640,8 @@
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemNotExistedFields" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Layout" ], @"OK" );
     
-    GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
+    GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
 }
 
 -(void)testCreateItemWithoutCreatePermission_Shell

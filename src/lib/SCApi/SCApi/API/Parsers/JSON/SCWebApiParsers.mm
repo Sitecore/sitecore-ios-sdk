@@ -49,7 +49,7 @@ JFFAsyncOperation webApiJSONAnalyzer( NSURL* url_, NSData* data_ )
             {
                 SCResponseError* srvError_ = [ SCResponseError new ];
 
-                srvError_.statusCode = [ json_[ @"statusCode" ] integerValue ];
+                srvError_.statusCode = static_cast< NSUInteger >( [ json_[ @"statusCode" ] integerValue ] ) ;
                 srvError_.message = errorJson_[ @"message" ];
                 srvError_.type    = errorJson_[ @"type"    ];
                 srvError_.method  = errorJson_[ @"method"  ];

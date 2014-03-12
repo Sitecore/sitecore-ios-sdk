@@ -54,10 +54,10 @@
 
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-    GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
-    NSLog( @"[ test_item_.allFieldsByName count ]: %lu", (unsigned long)[ test_item_.allFieldsByName count ]);
-    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-    GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+    GHAssertTrue( test_item_.allFields != nil, @"OK" );
+    NSLog( @"[ test_item_.allFields count ]: %lu", (unsigned long)[ test_item_.allFields count ]);
+    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+    GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
 
     SCExtendedApiSession* exContext = apiContext_.extendedApiSession;
     return [ exContext itemWithPath: @"/sitecore"
@@ -107,14 +107,14 @@
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
         GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
     }
     GHAssertTrue( test_item_ != nil, @"OK" );
 
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-    if (test_item_.allFieldsByName == nil )
+    if (test_item_.allFields == nil )
     {
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
 
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
@@ -162,8 +162,8 @@
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
         GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
     }
 
     GHAssertTrue( test_item_ != nil, @"OK" );
@@ -218,9 +218,9 @@
         {
             GHAssertTrue( item_.parent == nil, @"OK" );
         }
-        GHAssertTrue( [ item_.readFieldsByName count ] != 0, @"OK" );
-        GHAssertTrue( [ item_.allFieldsByName    count ] != 0, @"OK" );
-        GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
+        GHAssertTrue( [ item_.readFields count ] != 0, @"OK" );
+        GHAssertTrue( [ item_.allFields count ] != 0, @"OK" );
+        GHAssertTrue( [ item_.allFields count ] == [ item_.readFields count ], @"OK" );;
     }
     
     SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
@@ -269,7 +269,7 @@
         if ( rootItem_ == nil )
         {
             GHAssertTrue( item_.parent == nil, @"OK" );
-            GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( item_.allFields == nil, @"OK" );
         }
     }
     
@@ -319,8 +319,8 @@
       if ( rootItem_ == nil )
       {
          GHAssertTrue( item_.parent == nil, @"OK" );
-         GHAssertTrue( item_.allFieldsByName    == nil, @"OK" );
-         GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+         GHAssertTrue( item_.allFields    == nil, @"OK" );
+         GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
       }
    }
     
@@ -376,10 +376,10 @@
 
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
 
-    GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
+    GHAssertTrue( test_item_.allFields != nil, @"OK" );
 
-    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-    GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+    GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
     
     SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
@@ -428,14 +428,14 @@
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
         GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
     }
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-    if ( test_item_.allFieldsByName == nil )
+    if ( test_item_.allFields == nil )
     {
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
     
     SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
@@ -486,8 +486,8 @@
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
         GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
     }
 
     GHAssertTrue( test_item_ != nil, @"OK" );
@@ -546,10 +546,10 @@
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
 
-    GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
+    GHAssertTrue( test_item_.allFields != nil, @"OK" );
 
-    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-    GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+    GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+    GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
 
     GHAssertTrue( [ test_item_.allChildren count ] == SCAllChildrenCount, @"OK" );
     GHAssertTrue( [ test_item_.readChildren count ] == [ test_item_.allChildren count ], @"OK" );
@@ -557,9 +557,9 @@
     for ( SCItem* item_ in test_item_.allChildren )
     {
         GHAssertTrue( item_.parent == test_item_, @"OK" );
-        GHAssertTrue( [ item_.readFieldsByName count ] != 0, @"OK" );
-        GHAssertTrue( [ item_.allFieldsByName count ] != 0, @"OK" );
-        GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
+        GHAssertTrue( [ item_.readFields count ] != 0, @"OK" );
+        GHAssertTrue( [ item_.allFields count ] != 0, @"OK" );
+        GHAssertTrue( [ item_.allFields count ] == [ item_.readFields count ], @"OK" );;
     }
     
     SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
@@ -610,15 +610,15 @@
     if ( rootItem_ == nil )
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
     }
 
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-    if ( test_item_.allFieldsByName == nil )
+    if ( test_item_.allFields == nil )
     {
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
     GHAssertTrue( [ test_item_.allChildren count ] == SCAllChildrenCount, @"OK" );
     GHAssertTrue( [ test_item_.readChildren count ] == [ test_item_.allChildren count ], @"OK" );
@@ -676,8 +676,8 @@
     if ( rootItem_ == nil )
     {
         GHAssertTrue( test_item_.parent == nil, @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( test_item_.allFields == nil, @"OK" );
+        GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
     }
     GHAssertTrue( test_item_ != nil, @"OK" );
     GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
@@ -690,8 +690,8 @@
         GHAssertTrue( item_.parent == test_item_, @"OK" );
         if ( rootItem_ == nil )
         {
-            GHAssertTrue( item_.allFieldsByName    == nil, @"OK" );
-            GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( item_.allFields    == nil, @"OK" );
+            GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
         }
     }
     
@@ -755,9 +755,9 @@
         GHAssertTrue( [ test_item_.readChildren count ] >= 1, @"OK" );
 
         GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
-        GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
-        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-        GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( test_item_.allFields != nil, @"OK" );
+        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+        GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
     }
 
     //test self item
@@ -771,9 +771,9 @@
         {
             GHAssertTrue( child_item_.allChildren == nil, @"OK" );
             GHAssertTrue( child_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( child_item_.allFieldsByName != nil, @"OK" );
+            GHAssertTrue( child_item_.allFields != nil, @"OK" );
         }
-        GHAssertTrue( [ child_item_.allFieldsByName count ] == [ child_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( [ child_item_.allFields count ] == [ child_item_.readFields count ], @"OK" );
     }
     
     SCItemSourcePOD* contextSource = [ apiContext_.extendedApiSession contextSource ];
@@ -832,14 +832,14 @@
         {
             GHAssertTrue( test_item_.parent == nil, @"OK" );
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
             GHAssertTrue( [ test_item_.readChildren count ] == 1, @"OK" );
         }
 
         GHAssertTrue( test_item_ != nil, @"OK" );
         GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
 
     //test self item
@@ -856,10 +856,10 @@
         {
             GHAssertTrue( self_item_.allChildren == nil, @"OK" );
             GHAssertTrue( self_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( self_item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( self_item_.allFields == nil, @"OK" );
         }
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ self_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ self_item_.readFields count ], @"OK" );
     }
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
                                               itemSource: contextSource ];
@@ -917,8 +917,8 @@
             GHAssertTrue( test_item_.parent == nil, @"OK" );
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
             GHAssertTrue( [ test_item_.readChildren count ] == 1, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-            GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
+            GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
         }
 
         GHAssertTrue( [ test_item_.displayName isEqualToString: SCHomeDisplayName ], @"OK" );
@@ -937,8 +937,8 @@
             GHAssertTrue( child_item_.parent == test_item_, @"OK" );
             GHAssertTrue( child_item_.allChildren == nil, @"OK" );
             GHAssertTrue( child_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( child_item_.allFieldsByName == nil, @"OK" );
-            GHAssertTrue( [ child_item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( child_item_.allFields == nil, @"OK" );
+            GHAssertTrue( [ child_item_.readFields count ] == 0, @"OK" );
         }
     }
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
@@ -995,11 +995,11 @@
         {
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
             GHAssertTrue( test_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
+            GHAssertTrue( test_item_.allFields != nil, @"OK" );
         }
 
-        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-        GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+        GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
     }
 
     //test childs
@@ -1074,10 +1074,10 @@
         {
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
             GHAssertTrue( test_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
         }
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
 
     {
@@ -1091,9 +1091,9 @@
                 GHAssertTrue( item_.parent == nil, @"OK" );
                 GHAssertTrue( item_.allChildren == nil, @"OK" );
                 GHAssertTrue( item_.readChildren == nil, @"OK" );
-                GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
+                GHAssertTrue( item_.allFields == nil, @"OK" );
             }
-            GHAssertTrue( 1 <= [ item_.readFieldsByName count ], @"OK" );
+            GHAssertTrue( 1 <= [ item_.readFields count ], @"OK" );
         }
     }
 
@@ -1151,8 +1151,8 @@
         {
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
             GHAssertTrue( test_item_.readChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-            GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
+            GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
         }
     }
 
@@ -1167,7 +1167,7 @@
                 GHAssertTrue( item_.parent == nil, @"OK" );
                 GHAssertTrue( item_.allChildren == nil, @"OK" );
                 GHAssertTrue( item_.readChildren == nil, @"OK" );
-                GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
+                GHAssertTrue( item_.allFields == nil, @"OK" );
             }
         }
     }
@@ -1230,10 +1230,10 @@
             GHAssertTrue( test_item_.parent == nil, @"OK" );
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
         }
-        GHAssertTrue( test_item_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( test_item_.allFields != nil, @"OK" );
 
-        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFieldsByName count ], @"OK" );
-        GHAssertTrue( [ test_item_.allFieldsByName count ] == [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( SCAllFieldsCount == [ test_item_.allFields count ], @"OK" );
+        GHAssertTrue( [ test_item_.allFields count ] == [ test_item_.readFields count ], @"OK" );
     }
 
     //test self with children item
@@ -1245,19 +1245,19 @@
 
         GHAssertTrue( self_item_.parent == test_item_, @"OK" );
         GHAssertTrue( [ self_item_.displayName isEqualToString: @"Allowed_Parent" ], @"OK" );
-        GHAssertTrue( self_item_.allFieldsByName != nil, @"OK" );
+        GHAssertTrue( self_item_.allFields != nil, @"OK" );
 
-        GHAssertTrue( 2 <= [ self_item_.allFieldsByName count ], @"OK" );
-        GHAssertTrue( [ self_item_.allFieldsByName count ] == [ self_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 2 <= [ self_item_.allFields count ], @"OK" );
+        GHAssertTrue( [ self_item_.allFields count ] == [ self_item_.readFields count ], @"OK" );
 
         GHAssertTrue( [ self_item_.allChildren count ] == 2, @"OK" );
 
         for ( SCItem* item_ in self_item_.allChildren )
         {
             GHAssertTrue( item_.parent == self_item_, @"OK" );
-            GHAssertTrue( [ item_.readFieldsByName count ] != 0, @"OK" );
-            GHAssertTrue( [ item_.allFieldsByName    count ] != 0, @"OK" );
-            GHAssertTrue( [ item_.allFieldsByName count ] == [ item_.readFieldsByName count ], @"OK" );;
+            GHAssertTrue( [ item_.readFields count ] != 0, @"OK" );
+            GHAssertTrue( [ item_.allFields    count ] != 0, @"OK" );
+            GHAssertTrue( [ item_.allFields count ] == [ item_.readFields count ], @"OK" );;
         }
     }
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
@@ -1316,10 +1316,10 @@
         {
             GHAssertTrue( test_item_.parent == nil, @"OK" );
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
         }
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ test_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ test_item_.readFields count ], @"OK" );
     }
 
     //test self with children item
@@ -1332,10 +1332,10 @@
         GHAssertTrue( [ self_item_.displayName isEqualToString: @"Allowed_Parent" ], @"OK" );
         if ( rootItem_ == nil )
         {
-            GHAssertTrue( self_item_.allFieldsByName == nil, @"OK" );
+            GHAssertTrue( self_item_.allFields == nil, @"OK" );
         }
         // STODO: If Cache: allFieldsByName != nil
-        GHAssertTrue( 1 <= [ self_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( 1 <= [ self_item_.readFields count ], @"OK" );
 
         GHAssertTrue( [ self_item_.allChildren count ] == 2, @"OK" );
 
@@ -1344,10 +1344,10 @@
             GHAssertTrue( item_.parent == self_item_, @"OK" );
             if ( rootItem_ == nil )
             {
-                GHAssertTrue( item_.allFieldsByName == nil, @"OK" );
+                GHAssertTrue( item_.allFields == nil, @"OK" );
             }
             // STODO: If Cache: allFieldsByName != nil
-            GHAssertTrue( 1 <= [ item_.readFieldsByName count ], @"OK" );
+            GHAssertTrue( 1 <= [ item_.readFields count ], @"OK" );
         }
     }
     return [ apiContext_.extendedApiSession itemWithPath: @"/sitecore"
@@ -1407,8 +1407,8 @@
         {
             GHAssertTrue( test_item_.parent == nil, @"OK" );
             GHAssertTrue( test_item_.allChildren == nil, @"OK" );
-            GHAssertTrue( test_item_.allFieldsByName == nil, @"OK" );
-            GHAssertTrue( [ test_item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( test_item_.allFields == nil, @"OK" );
+            GHAssertTrue( [ test_item_.readFields count ] == 0, @"OK" );
         }
     }
 
@@ -1422,8 +1422,8 @@
         GHAssertTrue( [ self_item_.displayName isEqualToString: @"Allowed_Parent" ], @"OK" );
         if ( rootItem_ == nil )
         {
-            GHAssertTrue( self_item_.allFieldsByName == nil, @"OK" );
-            GHAssertTrue( [ self_item_.readFieldsByName count ] == 0, @"OK" );
+            GHAssertTrue( self_item_.allFields == nil, @"OK" );
+            GHAssertTrue( [ self_item_.readFields count ] == 0, @"OK" );
         }
         GHAssertTrue( [ self_item_.allChildren count ] == 2, @"OK" );
 
@@ -1432,8 +1432,8 @@
             GHAssertTrue( item_.parent == self_item_, @"OK" );
             if ( rootItem_ == nil )
             {
-                GHAssertTrue( item_.allFieldsByName  == nil, @"OK" );
-                GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
+                GHAssertTrue( item_.allFields  == nil, @"OK" );
+                GHAssertTrue( [ item_.readFields count ] == 0, @"OK" );
             }
         }
     }

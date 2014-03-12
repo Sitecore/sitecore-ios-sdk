@@ -189,8 +189,8 @@
     GHAssertTrue( item_ != nil, @"OK" );
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"ItemToDelete shell" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
-    NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
-    GHAssertNil( item_.readFieldsByName, @"No Fields expected for deleted item" );
+    NSLog( @"item_.readFields: %@", item_.readFields );
+    GHAssertNil( item_.readFields, @"No Fields expected for deleted item" );
 
 
     //second item:
@@ -198,8 +198,8 @@
     GHAssertTrue( [ [ item2_ displayName ] hasPrefix: @"ItemToDelete shell" ], @"OK" );
     GHAssertTrue( [ [ item2_ itemTemplate ] isEqualToString: @"System/Layout/Renderings/Xsl Rendering" ], @"OK" );
 
-    NSLog( @"item2_.readFieldsByName: %@", item2_.readFieldsByName );
-    GHAssertNil( item2_.readFieldsByName, @"No Fields expected for deleted item" );
+    NSLog( @"item2_.readFields: %@", item2_.readFields );
+    GHAssertNil( item2_.readFields, @"No Fields expected for deleted item" );
 
     //removed items:
     GHAssertTrue( read_items_count_ == 0, @"OK" );
@@ -482,7 +482,7 @@
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
-    __block NSDictionary* read_fields_ = nil;
+    __block NSArray* read_fields_ = nil;
     __block NSError* createError = nil;
     
     __block NSNull* outresult = nil;
@@ -523,8 +523,8 @@
               {
                   createError = error;
                   item_ = result;
-                  NSLog( @"items fields: %@", item_.readFieldsByName );
-                  read_fields_ = item_.readFieldsByName;
+                  NSLog( @"items fields: %@", item_.readFields );
+                  read_fields_ = item_.readFields;
                   
                   SCAsyncOpResult onRemoveCompleted = ^void( NSNull* blockResult, NSError* blockError )
                   {

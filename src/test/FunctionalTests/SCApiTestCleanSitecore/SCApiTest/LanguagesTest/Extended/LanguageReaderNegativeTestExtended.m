@@ -59,8 +59,9 @@
 -(void)testWrongRequestLanguage
 {
     __weak __block SCApiSession* apiContext_ = nil;
-    __block SCItem* en_item_ = nil;
-    __block SCItem* default_item_ = nil;
+
+    __block SCItem* default_result_after_en = nil;
+    __block SCItem* default_result_after_da = nil;
     
     @autoreleasepool
     {
@@ -76,8 +77,8 @@
             NSSet* fields_ = [ NSSet setWithObject: @"Title" ];
             SCReadItemsRequest* request_ = [ SCReadItemsRequest requestWithItemPath: SCLanguageItemPath
                                                                             fieldsNames: fields_ ];
-            request_.language = @"xx";
-            apiContext_.defaultLanguage = @"da";
+            request_.language = @"en";
+            apiContext_.defaultLanguage = @"en";
             
             SCDidFinishAsyncOperationHandler doneHandler = ^( NSArray* en_result_, NSError* error_ )
             {
@@ -86,9 +87,10 @@
                     didFinishCallback_();
                     return;
                 }
-                en_item_ = en_result_[ 0 ];
-                request_.language = nil;
-                apiContext_.defaultLanguage = nil;
+                
+                request_.language = @"xx";
+                apiContext_.defaultLanguage = @"xx";
+                
                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
                  {
                      if ( [ default_result_ count ] == 0 )
@@ -97,8 +99,37 @@
                          return;
                      }
                      
-                     default_item_ = default_result_[0];
-                     didFinishCallback_();
+                     default_result_after_en = default_result_[0];
+                    
+                     request_.language = @"da";
+                     apiContext_.defaultLanguage = @"da";
+                     
+                         [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
+                         {
+                             if ( [ default_result_ count ] == 0 )
+                             {
+                                 didFinishCallback_();
+                                 return;
+                             }
+                             
+                             request_.language = @"xx";
+                             apiContext_.defaultLanguage = @"xx";
+                             
+                                 [ apiContext_ readItemsOperationWithRequest: request_ ]( ^( NSArray* default_result_, NSError* error_ )
+                                 {
+                                     if ( [ default_result_ count ] == 0 )
+                                     {
+                                         didFinishCallback_();
+                                         return;
+                                     }
+                                     
+                                     default_result_after_da = default_result_[0];
+                                     
+                                     didFinishCallback_();
+                                     
+                                 } );
+                             
+                         } );
                  } );
             };
             
@@ -113,19 +144,19 @@
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
     //Test danish item
-    GHAssertTrue( en_item_ != nil, @"OK" );
-    SCField* field_ = [ en_item_ fieldWithName: @"Title" ];
-    NSLog( @":%@", [ en_item_ fieldWithName: @"Title" ] );
-
-    SCField* defaultField = [ default_item_ fieldWithName: @"Title" ];
+    GHAssertTrue( default_result_after_en != nil, @"OK" );
+    
+    SCField* field_ater_en = [ default_result_after_en fieldWithName: @"Title" ];
+    SCField* field_ater_da = [ default_result_after_da fieldWithName: @"Title" ];
     
     // @adk : web API returns default language ("en") #394160
-    //FIXME: @igk test should not pass!!!
-    NSString* rawValue = field_.rawValue;
-    NSString* expectedRawValue = defaultField.rawValue;
-    GHAssertEqualObjects(rawValue, expectedRawValue, @"field mismatch : [%@] not equal to [%@]", rawValue, expectedRawValue );
+    //FIXME: @igk test should not pass!!!  rawValue_en rawValue_da - has random value!!!!!!
+    NSString* rawValue_en = field_ater_en.rawValue;
+    NSString* rawValue_da = field_ater_da.rawValue;
     
-    GHAssertTrue( field_.item == en_item_, @"OK" );
+    GHAssertEqualObjects(rawValue_en, rawValue_da, @"field mismatch : [%@] not equal to [%@]", rawValue_en, rawValue_da );
+    
+    GHAssertTrue( field_ater_en.item == default_result_after_en, @"OK" );
 }
 
 -(void)testLanguageReadNotExistedItems

@@ -160,7 +160,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ pagedItems_ extendedItemReaderForIndex:0 ];
+            SCExtendedAsyncOp loader = [ pagedItems_ readItemExtendedOperationForIndex:0 ];
             loader(nil, nil, doneHandler);
         };
         
@@ -210,7 +210,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader = [ pagedItems_ extendedItemsTotalCountReader ];
+            SCExtendedAsyncOp loader = [ pagedItems_ readItemsTotalCountExtendedOperation ];
             loader(nil, nil, doneHandler);
         };
         

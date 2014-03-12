@@ -6,6 +6,6 @@
 
 @interface SCImageView : UIImageView
 
-- (void)setImageReader:(SCAsyncOp)path;
+- (void)setReadImageOperation:(SCAsyncOp)path;
 
 @end

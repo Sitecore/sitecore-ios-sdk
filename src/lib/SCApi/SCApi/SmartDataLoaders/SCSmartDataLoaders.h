@@ -21,7 +21,7 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
 
 JFFAsyncOperation imageLoaderForURLString( NSString* urlString_
                                           , NSTimeInterval cacheLifeTime_ );
-SCAsyncOp imageReaderForURLString( NSString* urlString_
+SCAsyncOp readImageOperationForURLString( NSString* urlString_
                                   , NSTimeInterval cacheLifeTime_ );
 #ifdef __cplusplus
 }

@@ -78,15 +78,15 @@
     return resizingOptions;
 }
 
--(SCAsyncOp)fieldValueReader
+-(SCAsyncOp)readFieldValueOperation
 {
     SCDownloadMediaOptions* resizingOptions = [ self defaultResizingOptions ];
-    return [ self fieldValueReaderWithImageParams: resizingOptions ];
+    return [ self readFieldValueOperationWithImageParams: resizingOptions ];
 }
 
--(SCAsyncOp)fieldValueReaderWithImageParams:( SCParams* )params;
+-(SCAsyncOp)readFieldValueOperationWithImageParams:( SCParams* )params;
 {
-    return [ super fieldValueReaderWithParams: params ];
+    return [ super readFieldValueOperationWithParams: params ];
 }
 
 @end
