@@ -9,6 +9,8 @@
 #endif
 
 #ifdef __OBJC__
+
+    // this project : stubs and mocks
     #import "SCTestPath.h"
     #import "SCGlobalSettings.h"
     #import "SCTestUsers.h"
@@ -16,23 +18,27 @@
     #import "TestingRequestFactory.h"
     #import "SCAsyncTestCase.h"
 
+    //  private API
     #import <SCApi/Cache/RecordCache/SCItemRecordCacheRW.h>
-    #import <SCApi/API/ItemSource/SCItemsReaderRequest+SCItemSource.h>
-    #import <SitecoreMobileSDK/SCItemSourcePOD.h>
-    #import <SCApi/SCExtendedApiContext+Private.h>
-    #import <SCApi/SCApiContext+Init.h>
+    #import <SCApi/API/ItemSource/SCReadItemsRequest+SCItemSource.h>
+    #import <SCApi/SCExtendedApiSession+Private.h>
+    #import <SCApi/SCApiSession+Init.h>
 
+    // public API
     #import <SitecoreMobileSDK/SCApi.h>
 
+    // third-party
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFNetwork/Mock/JNConnectionMock.h>
 
     #import <JFFUtils/JFFUtils.h>
     #import <JFFUtils/NSObject/NSObject+RuntimeExtensions.h>
 
-    #import <SitecoreMobileSDK/SCApi.h>
 
+    // unit testing
     #import <GHUnitIOS/GHUnit.h>
+
+    // apple
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 

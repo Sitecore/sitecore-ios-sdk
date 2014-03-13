@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0D82C21519CD8100EC4A92 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D82B31519CD3C00EC4A92 /* libSCAllMobileSDKLibs.a */; };
-		1B0D82C31519CD9C00EC4A92 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
-		1B0D82C41519CDB400EC4A92 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
 		1B11671C14C6C5F6000AD289 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
 		1B11671D14C6C5F6000AD289 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
 		1B11671E14C6C5F6000AD289 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
@@ -35,16 +32,7 @@
 		1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
 		1BCC930C1511E11B00271BFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
 		1BCC930E1511E11B00271BFD /* SCGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AC4B11491036300DDD31D /* SCGlobalSettings.m */; };
-		1BCC93361511E11B00271BFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
-		1BCC93371511E11B00271BFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
-		1BCC93381511E11B00271BFD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
 		1BCC93391511E11B00271BFD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
-		1BCC933B1511E11B00271BFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
-		1BCC933C1511E11B00271BFD /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
-		1BCC933D1511E11B00271BFD /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
-		1BCC933E1511E11B00271BFD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
-		1BCC933F1511E11B00271BFD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
-		1BCC93401511E11B00271BFD /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
 		1BCC93411511E11B00271BFD /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
 		1BCC93421511E11B00271BFD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBF1461611B00C9FC49 /* CFNetwork.framework */; };
 		1BCC93431511E11B00271BFD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBD1461611200C9FC49 /* libsqlite3.dylib */; };
@@ -58,7 +46,6 @@
 		1BD6A9D11518CAA100D2FC84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
 		1BD6A9D31518CAC300D2FC84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
 		1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
-		1BF4D970156680F6007D8CBF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
 		2545B3D91803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
 		2545B3DA1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
 		2545B3DB1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
@@ -119,10 +106,8 @@
 		2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AAAC17F42D0F00252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
-		2598AAAD17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
-		2598AAB017F42D1300252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
 		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
@@ -413,7 +398,6 @@
 		78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		78F3C23918AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E17DDFA17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
 		7E17DDFB17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
 		7E17DDFC17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
@@ -531,7 +515,6 @@
 		7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
-		7E72CB0117FC02710081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
 		7E80E6A817EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
@@ -543,6 +526,8 @@
 		7E80E6B017EC823200E1921A /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
 		7E80E6B117EC823200E1921A /* ShellUserAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A617EC823200E1921A /* ShellUserAuthTest.m */; };
 		7EB739D617BBA40F00406C59 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
+		7ED7F3AB18D1E050009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */; };
+		7ED7F3AC18D1E1CB009BFBCE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -553,19 +538,40 @@
 			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
-		1B0D82C01519CD4900EC4A92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
-			remoteInfo = SCAllMobileSDKLibs;
-		};
 		7E18F92D17C217C700006465 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
+		};
+		7ED7F3A318D1E02C009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F1C418D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F3A518D1E02C009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F20918D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7ED7F3A718D1E02C009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F28E18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
+		};
+		7ED7F3A918D1E030009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F1C318D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -764,26 +770,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E72CB0117FC02710081F306 /* QuartzCore.framework in Frameworks */,
-				2598AAB017F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
-				7E08ACBB170D65B8007413D6 /* Social.framework in Frameworks */,
-				1BF4D970156680F6007D8CBF /* libc++.dylib in Frameworks */,
+				7ED7F3AC18D1E1CB009BFBCE /* libc++.dylib in Frameworks */,
+				7ED7F3AB18D1E050009BFBCE /* libMobileSDK-Core.a in Frameworks */,
 				1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */,
-				1B0D82C41519CDB400EC4A92 /* CoreLocation.framework in Frameworks */,
-				1B0D82C31519CD9C00EC4A92 /* MapKit.framework in Frameworks */,
-				1B0D82C21519CD8100EC4A92 /* libSCAllMobileSDKLibs.a in Frameworks */,
-				1BCC93361511E11B00271BFD /* AVFoundation.framework in Frameworks */,
 				78F3C23718AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
-				1BCC93371511E11B00271BFD /* CoreMedia.framework in Frameworks */,
-				1BCC93381511E11B00271BFD /* CoreVideo.framework in Frameworks */,
 				1BCC93391511E11B00271BFD /* libiconv.dylib in Frameworks */,
-				1BCC933B1511E11B00271BFD /* AudioToolbox.framework in Frameworks */,
-				2598AAAD17F42D1000252AA4 /* EventKit.framework in Frameworks */,
-				1BCC933C1511E11B00271BFD /* AddressBook.framework in Frameworks */,
-				1BCC933D1511E11B00271BFD /* AddressBookUI.framework in Frameworks */,
-				1BCC933E1511E11B00271BFD /* CoreMotion.framework in Frameworks */,
-				1BCC933F1511E11B00271BFD /* MessageUI.framework in Frameworks */,
-				1BCC93401511E11B00271BFD /* Twitter.framework in Frameworks */,
 				1BCC93411511E11B00271BFD /* libxml2.dylib in Frameworks */,
 				1BCC93421511E11B00271BFD /* CFNetwork.framework in Frameworks */,
 				1BCC93431511E11B00271BFD /* libsqlite3.dylib in Frameworks */,
@@ -869,6 +860,9 @@
 			isa = PBXGroup;
 			children = (
 				1B0D82B31519CD3C00EC4A92 /* libSCAllMobileSDKLibs.a */,
+				7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */,
+				7ED7F3A618D1E02C009BFBCE /* libMobileSDK-JavaScript.a */,
+				7ED7F3A818D1E02C009BFBCE /* libMobileSDK-UI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1282,7 +1276,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1B0D82C11519CD4900EC4A92 /* PBXTargetDependency */,
+				7ED7F3AA18D1E030009BFBCE /* PBXTargetDependency */,
 			);
 			name = SCApiTestLibs;
 			productName = SCApiTest;
@@ -1374,6 +1368,27 @@
 			fileType = archive.ar;
 			path = libSCAllMobileSDKLibs.a;
 			remoteRef = 1B0D82B21519CD3C00EC4A92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-Core.a";
+			remoteRef = 7ED7F3A318D1E02C009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F3A618D1E02C009BFBCE /* libMobileSDK-JavaScript.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-JavaScript.a";
+			remoteRef = 7ED7F3A518D1E02C009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F3A818D1E02C009BFBCE /* libMobileSDK-UI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-UI.a";
+			remoteRef = 7ED7F3A718D1E02C009BFBCE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1928,15 +1943,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B0D82C11519CD4900EC4A92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SCAllMobileSDKLibs;
-			targetProxy = 1B0D82C01519CD4900EC4A92 /* PBXContainerItemProxy */;
-		};
 		7E18F92C17C217C700006465 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SCAllMobileSDKLibs;
 			targetProxy = 7E18F92D17C217C700006465 /* PBXContainerItemProxy */;
+		};
+		7ED7F3AA18D1E030009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-Core";
+			targetProxy = 7ED7F3A918D1E030009BFBCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
