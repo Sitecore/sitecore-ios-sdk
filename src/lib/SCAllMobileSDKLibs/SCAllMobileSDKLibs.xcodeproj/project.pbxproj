@@ -37,6 +37,41 @@
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
+		7ED7F1C518D1AFCA009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
+		7ED7F1CA18D1AFCA009BFBCE /* MobileSDK_Core.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7ED7F1C918D1AFCA009BFBCE /* MobileSDK_Core.h */; };
+		7ED7F1CC18D1AFCA009BFBCE /* MobileSDK_Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7F1CB18D1AFCA009BFBCE /* MobileSDK_Core.m */; };
+		7ED7F20A18D1AFE9009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
+		7ED7F20F18D1AFE9009BFBCE /* MobileSDK_JavaScript.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7ED7F20E18D1AFE9009BFBCE /* MobileSDK_JavaScript.h */; };
+		7ED7F21118D1AFE9009BFBCE /* MobileSDK_JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7F21018D1AFE9009BFBCE /* MobileSDK_JavaScript.m */; };
+		7ED7F24918D1B177009BFBCE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094015A9B9D80062F28D /* libcrypto.a */; };
+		7ED7F24A18D1B17F009BFBCE /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564094115A9B9D80062F28D /* libssl.a */; };
+		7ED7F24B18D1B188009BFBCE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33956315663E5100E935E9 /* libc++.dylib */; };
+		7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
+		7ED7F24D18D1B1D4009BFBCE /* libESDatabaseWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */; };
+		7ED7F24E18D1B1D4009BFBCE /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
+		7ED7F24F18D1B1D4009BFBCE /* libiFeatureAvailability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */; };
+		7ED7F25018D1B1D4009BFBCE /* libJFFAsyncOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E29A1518CFF200437842 /* libJFFAsyncOperations.a */; };
+		7ED7F25118D1B1D4009BFBCE /* libJFFCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 061722F7152AE05500549265 /* libJFFCache.a */; };
+		7ED7F25218D1B1D4009BFBCE /* libJFFNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2861518CFD600437842 /* libJFFNetwork.a */; };
+		7ED7F25318D1B1D4009BFBCE /* libJFFRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E3074E1531E64200E0B781 /* libJFFRestKit.a */; };
+		7ED7F25418D1B1D4009BFBCE /* libJFFScheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2771518CFC800437842 /* libJFFScheduler.a */; };
+		7ED7F25518D1B1D4009BFBCE /* libJFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E2621518CFB600437842 /* libJFFUtils.a */; };
+		7ED7F25618D1B1D4009BFBCE /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
+		7ED7F25718D1B1D4009BFBCE /* libSCApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF1F1518C78A00EEA9BA /* libSCApi.a */; };
+		7ED7F25818D1B1D4009BFBCE /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
+		7ED7F25918D1B1D4009BFBCE /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
+		7ED7F28F18D1B20D009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
+		7ED7F29418D1B20D009BFBCE /* MobileSDK_UI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7ED7F29318D1B20D009BFBCE /* MobileSDK_UI.h */; };
+		7ED7F29618D1B20D009BFBCE /* MobileSDK_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7F29518D1B20D009BFBCE /* MobileSDK_UI.m */; };
+		7ED7F2CA18D1B41E009BFBCE /* libJFFUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E26D1518CFBF00437842 /* libJFFUI.a */; };
+		7ED7F2CD18D1B6A0009BFBCE /* libSCQRCodeReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067FCFFE151B215B00BA7F32 /* libSCQRCodeReader.a */; };
+		7ED7F2D018D1B6E2009BFBCE /* libSCUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF0C1518C75600EEA9BA /* libSCUI.a */; };
+		7ED7F2DB18D1B7B3009BFBCE /* libSCDevice2Web.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3E6DBD1554132900B3509B /* libSCDevice2Web.a */; };
+		7ED7F2DD18D1B7B3009BFBCE /* libSCWebContentApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B363FD0153D55B000E46215 /* libSCWebContentApi.a */; };
+		7ED7F2DE18D1B7B3009BFBCE /* libSCWebPlugins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AB2B1518CD0400D2FC84 /* libSCWebPlugins.a */; };
+		7ED7F2DF18D1B7B3009BFBCE /* libSCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D850B1519D3C600EC4A92 /* libSCWebView.a */; };
+		7ED7F2E218D1D4C5009BFBCE /* libSCMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DDB31518C5EB00EEA9BA /* libSCMap.a */; };
+		7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -411,13 +446,6 @@
 			remoteGlobalIDString = CE444A1C1608609100DD85B0;
 			remoteInfo = JFFUtilsTest;
 		};
-		7E16FBB416EF169500031889 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7ED3CB1516E6387B00E5A00F;
-			remoteInfo = "JFFUtilsTest-CI";
-		};
 		7E16FBF016EF1D8200031889 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */;
@@ -459,13 +487,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7EBF991117B3C13B00A142B7;
 			remoteInfo = SCApiTest;
-		};
-		7E340A8F1803F6170053832D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7EA5B60F17B8DA1D008F3A2A;
-			remoteInfo = "SCApiTest-CI";
 		};
 		7E340A9E1803F61D0053832D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -523,13 +544,6 @@
 			remoteGlobalIDString = 7E8B6C5815388BD500435EDA;
 			remoteInfo = ObjcScopedGuardTests;
 		};
-		7E84E60815E25ED300FB8E36 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E8B6C8715388E9400435EDA;
-			remoteInfo = "ObjcScopedGuardTests-CI";
-		};
 		7E84E61415E25EE600FB8E36 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */;
@@ -550,6 +564,174 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1B0E82391563882000825E3C;
 			remoteInfo = TouchXMLiOS;
+		};
+		7ED7F1EE18D1AFCB009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C043A4A181E9D8200246A88;
+			remoteInfo = JFFRestKitTests;
+		};
+		7ED7F22B18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E307461531E64200E0B781 /* JFFRestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B7ABA80152D973A005DD4CA;
+			remoteInfo = JFFRestKit;
+		};
+		7ED7F22D18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 061722EF152AE05400549265 /* JFFCache.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 65168476144F4ECD0014670E;
+			remoteInfo = JFFCache;
+		};
+		7ED7F22F18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2941518CFF100437842 /* JFFAsyncOperations.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFAsyncOperations;
+		};
+		7ED7F23118D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E27C1518CFD600437842 /* JFFNetwork.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5AE6DA13F3E6C600EB6143;
+			remoteInfo = JFFNetwork;
+		};
+		7ED7F23318D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2701518CFC800437842 /* JFFScheduler.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFScheduler;
+		};
+		7ED7F23518D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E25B1518CFB600437842 /* JFFUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFUtils;
+		};
+		7ED7F23718D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D85831519D44200EC4A92 /* SCUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B3EDAE8148637D200BA6680;
+			remoteInfo = SCUtils;
+		};
+		7ED7F23918D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DF1A1518C78A00EEA9BA /* SCApi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC086F6147BBDD60066CFB3;
+			remoteInfo = SCApi;
+		};
+		7ED7F23B18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A701803F6170053832D /* fmdb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4290EE12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+		7ED7F23D18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E6A36BC160084F000F4CE84;
+			remoteInfo = ESDatabaseWrapper;
+		};
+		7ED7F23F18D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E0461F8170C236B00AB6873 /* iFeatureAvailability.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E0461E6170C231600AB6873;
+			remoteInfo = iFeatureAvailability;
+		};
+		7ED7F24118D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53A0190514E27A720007DC05;
+			remoteInfo = AmberFoundation;
+		};
+		7ED7F24318D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E8B6C4715388BD500435EDA;
+			remoteInfo = ObjcScopedGuard;
+		};
+		7ED7F24518D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E25B3B715860D2600469187;
+			remoteInfo = TouchXmlHelper;
+		};
+		7ED7F24718D1B13A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0E82391563882000825E3C;
+			remoteInfo = TouchXMLiOS;
+		};
+		7ED7F2C818D1B416009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0688E2671518CFBF00437842 /* JFFUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = JFFUI;
+		};
+		7ED7F2CB18D1B654009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 067FCFF2151B215A00BA7F32 /* SCQRCodeReader.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06BF62BA150F42D100281999;
+			remoteInfo = SCQRCodeReader;
+		};
+		7ED7F2CE18D1B6DD009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DEFD1518C75500EEA9BA /* SCUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B835A83142C9EA900FC004C;
+			remoteInfo = SCUI;
+		};
+		7ED7F2D118D1B7A0009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AB251518CD0400D2FC84 /* SCWebPlugins.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BFEAFF914E40DF50039CEBB;
+			remoteInfo = SCWebPlugins;
+		};
+		7ED7F2D518D1B7A0009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D84F81519D3C500EC4A92 /* SCWebView.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BBCA9561510C35900199B37;
+			remoteInfo = SCWebView;
+		};
+		7ED7F2D718D1B7A0009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B3E6DB41554132900B3509B /* SCDevice2Web.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC8B12E14443874001BC787;
+			remoteInfo = SCDevice2Web;
+		};
+		7ED7F2D918D1B7A0009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B363FB9153D55B000E46215 /* SCWebContentApi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B363F3D153D556800E46215;
+			remoteInfo = SCWebContentApi;
+		};
+		7ED7F2E018D1D4C1009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B33DDAA1518C5EB00EEA9BA /* SCMap.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BE4CEA5150F3CBD007259C2;
+			remoteInfo = SCMap;
 		};
 		7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -580,6 +762,39 @@
 			remoteInfo = TouchXmlHelper;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7ED7F1C218D1AFCA009BFBCE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7ED7F1CA18D1AFCA009BFBCE /* MobileSDK_Core.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F20718D1AFE9009BFBCE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7ED7F20F18D1AFE9009BFBCE /* MobileSDK_JavaScript.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F28C18D1B20D009BFBCE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7ED7F29418D1B20D009BFBCE /* MobileSDK_UI.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		061722EF152AE05400549265 /* JFFCache.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFCache.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/JFFCache/JFFCache.xcodeproj"; sourceTree = "<group>"; };
@@ -613,6 +828,29 @@
 		7E340A9A1803F61D0053832D /* ESDatabaseWrapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ESDatabaseWrapper.xcodeproj; path = "../../lib-third-party/ESDatabaseWrapper/ESDatabaseWrapper.xcodeproj"; sourceTree = "<group>"; };
 		7E3A5C3E15E67C7A008BA4D9 /* AmberFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AmberFoundation.xcodeproj; path = "../../lib-third-party/AmberFramework-lite/AmberFoundation/AmberFoundation.xcodeproj"; sourceTree = "<group>"; };
 		7E84E5EE15E25ED200FB8E36 /* ObjcScopedGuard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjcScopedGuard.xcodeproj; path = "../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj"; sourceTree = "<group>"; };
+		7ED7F1C418D1AFCA009BFBCE /* libMobileSDK-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMobileSDK-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED7F1C818D1AFCA009BFBCE /* MobileSDK-Core-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSDK-Core-Prefix.pch"; sourceTree = "<group>"; };
+		7ED7F1C918D1AFCA009BFBCE /* MobileSDK_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileSDK_Core.h; sourceTree = "<group>"; };
+		7ED7F1CB18D1AFCA009BFBCE /* MobileSDK_Core.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_Core.m; sourceTree = "<group>"; };
+		7ED7F1D218D1AFCA009BFBCE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7ED7F1D518D1AFCA009BFBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7ED7F1DC18D1AFCB009BFBCE /* MobileSDK-CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSDK-CoreTests-Info.plist"; sourceTree = "<group>"; };
+		7ED7F1DE18D1AFCB009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ED7F1E018D1AFCB009BFBCE /* MobileSDK_CoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_CoreTests.m; sourceTree = "<group>"; };
+		7ED7F20918D1AFE9009BFBCE /* libMobileSDK-JavaScript.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMobileSDK-JavaScript.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED7F20D18D1AFE9009BFBCE /* MobileSDK-JavaScript-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSDK-JavaScript-Prefix.pch"; sourceTree = "<group>"; };
+		7ED7F20E18D1AFE9009BFBCE /* MobileSDK_JavaScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileSDK_JavaScript.h; sourceTree = "<group>"; };
+		7ED7F21018D1AFE9009BFBCE /* MobileSDK_JavaScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_JavaScript.m; sourceTree = "<group>"; };
+		7ED7F21F18D1AFE9009BFBCE /* MobileSDK-JavaScriptTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSDK-JavaScriptTests-Info.plist"; sourceTree = "<group>"; };
+		7ED7F22118D1AFE9009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ED7F22318D1AFE9009BFBCE /* MobileSDK_JavaScriptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_JavaScriptTests.m; sourceTree = "<group>"; };
+		7ED7F28E18D1B20D009BFBCE /* libMobileSDK-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMobileSDK-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED7F29218D1B20D009BFBCE /* MobileSDK-UI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSDK-UI-Prefix.pch"; sourceTree = "<group>"; };
+		7ED7F29318D1B20D009BFBCE /* MobileSDK_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileSDK_UI.h; sourceTree = "<group>"; };
+		7ED7F29518D1B20D009BFBCE /* MobileSDK_UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_UI.m; sourceTree = "<group>"; };
+		7ED7F2A418D1B20D009BFBCE /* MobileSDK-UITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSDK-UITests-Info.plist"; sourceTree = "<group>"; };
+		7ED7F2A618D1B20D009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ED7F2A818D1B20D009BFBCE /* MobileSDK_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_UITests.m; sourceTree = "<group>"; };
 		7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXML.xcodeproj; path = "../../lib-third-party/TouchXML/TouchXML.xcodeproj"; sourceTree = "<group>"; };
 		7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TouchXmlHelper.xcodeproj; path = "../../lib-third-party/JFFLibrary/lib/TouchXmlHelper/TouchXmlHelper.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -654,6 +892,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7ED7F1C118D1AFCA009BFBCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */,
+				7ED7F2CA18D1B41E009BFBCE /* libJFFUI.a in Frameworks */,
+				7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */,
+				7ED7F24D18D1B1D4009BFBCE /* libESDatabaseWrapper.a in Frameworks */,
+				7ED7F24E18D1B1D4009BFBCE /* libFMDB.a in Frameworks */,
+				7ED7F24F18D1B1D4009BFBCE /* libiFeatureAvailability.a in Frameworks */,
+				7ED7F25018D1B1D4009BFBCE /* libJFFAsyncOperations.a in Frameworks */,
+				7ED7F25118D1B1D4009BFBCE /* libJFFCache.a in Frameworks */,
+				7ED7F25218D1B1D4009BFBCE /* libJFFNetwork.a in Frameworks */,
+				7ED7F25318D1B1D4009BFBCE /* libJFFRestKit.a in Frameworks */,
+				7ED7F25418D1B1D4009BFBCE /* libJFFScheduler.a in Frameworks */,
+				7ED7F25518D1B1D4009BFBCE /* libJFFUtils.a in Frameworks */,
+				7ED7F25618D1B1D4009BFBCE /* libObjcScopedGuard.a in Frameworks */,
+				7ED7F25718D1B1D4009BFBCE /* libSCApi.a in Frameworks */,
+				7ED7F25818D1B1D4009BFBCE /* libTouchXmlHelper.a in Frameworks */,
+				7ED7F25918D1B1D4009BFBCE /* libTouchXMLiOS.a in Frameworks */,
+				7ED7F1C518D1AFCA009BFBCE /* Foundation.framework in Frameworks */,
+				7ED7F24B18D1B188009BFBCE /* libc++.dylib in Frameworks */,
+				7ED7F24918D1B177009BFBCE /* libcrypto.a in Frameworks */,
+				7ED7F24A18D1B17F009BFBCE /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F20618D1AFE9009BFBCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F2DB18D1B7B3009BFBCE /* libSCDevice2Web.a in Frameworks */,
+				7ED7F2DD18D1B7B3009BFBCE /* libSCWebContentApi.a in Frameworks */,
+				7ED7F2DE18D1B7B3009BFBCE /* libSCWebPlugins.a in Frameworks */,
+				7ED7F2DF18D1B7B3009BFBCE /* libSCWebView.a in Frameworks */,
+				7ED7F20A18D1AFE9009BFBCE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F28B18D1B20D009BFBCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F2E218D1D4C5009BFBCE /* libSCMap.a in Frameworks */,
+				7ED7F2D018D1B6E2009BFBCE /* libSCUI.a in Frameworks */,
+				7ED7F2CD18D1B6A0009BFBCE /* libSCQRCodeReader.a in Frameworks */,
+				7ED7F28F18D1B20D009BFBCE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -680,8 +968,7 @@
 				0688E2641518CFB600437842 /* libJFFUtilsMacOS.a */,
 				0688E2661518CFB600437842 /* libJFFUtils-clang.a */,
 				1BC8A32C151B7E3E00A4AC26 /* JFFUtilsFW.framework */,
-				7E16FBB316EF169500031889 /* JFFUtilsTest.octest */,
-				7E16FBB516EF169500031889 /* JFFUtilsTest-CI.octest */,
+				7E16FBB316EF169500031889 /* JFFUtilsTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -747,6 +1034,12 @@
 			isa = PBXGroup;
 			children = (
 				1B33DD941518C5BC00EEA9BA /* SCAllMobileSDKLibs */,
+				7ED7F1C618D1AFCA009BFBCE /* MobileSDK-Core */,
+				7ED7F1DA18D1AFCA009BFBCE /* MobileSDK-CoreTests */,
+				7ED7F20B18D1AFE9009BFBCE /* MobileSDK-JavaScript */,
+				7ED7F21D18D1AFE9009BFBCE /* MobileSDK-JavaScriptTests */,
+				7ED7F29018D1B20D009BFBCE /* MobileSDK-UI */,
+				7ED7F2A218D1B20D009BFBCE /* MobileSDK-UITests */,
 				1B33DD911518C5BC00EEA9BA /* Frameworks */,
 				1B33DDA81518C5D500EEA9BA /* Dependencies */,
 				1B33DD901518C5BC00EEA9BA /* Products */,
@@ -757,6 +1050,9 @@
 			isa = PBXGroup;
 			children = (
 				1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */,
+				7ED7F1C418D1AFCA009BFBCE /* libMobileSDK-Core.a */,
+				7ED7F20918D1AFE9009BFBCE /* libMobileSDK-JavaScript.a */,
+				7ED7F28E18D1B20D009BFBCE /* libMobileSDK-UI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -768,6 +1064,8 @@
 				6564094115A9B9D80062F28D /* libssl.a */,
 				1B33956315663E5100E935E9 /* libc++.dylib */,
 				1B33DD921518C5BC00EEA9BA /* Foundation.framework */,
+				7ED7F1D218D1AFCA009BFBCE /* XCTest.framework */,
+				7ED7F1D518D1AFCA009BFBCE /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -821,8 +1119,7 @@
 			isa = PBXGroup;
 			children = (
 				1B33DF1F1518C78A00EEA9BA /* libSCApi.a */,
-				7E340A8E1803F6170053832D /* SCApiTest.octest */,
-				7E340A901803F6170053832D /* SCApiTest copy.octest */,
+				7E340A8E1803F6170053832D /* SCApiTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -859,6 +1156,7 @@
 			isa = PBXGroup;
 			children = (
 				65E3074E1531E64200E0B781 /* libJFFRestKit.a */,
+				7ED7F1EF18D1AFCB009BFBCE /* JFFRestKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -963,10 +1261,117 @@
 			isa = PBXGroup;
 			children = (
 				7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */,
-				7E84E60715E25ED300FB8E36 /* ObjcScopedGuardTests.octest */,
-				7E84E60915E25ED300FB8E36 /* ObjcScopedGuardTests copy.octest */,
+				7E84E60715E25ED300FB8E36 /* ObjcScopedGuardTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED7F1C618D1AFCA009BFBCE /* MobileSDK-Core */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F1C918D1AFCA009BFBCE /* MobileSDK_Core.h */,
+				7ED7F1CB18D1AFCA009BFBCE /* MobileSDK_Core.m */,
+				7ED7F1C718D1AFCA009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-Core";
+			sourceTree = "<group>";
+		};
+		7ED7F1C718D1AFCA009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F1C818D1AFCA009BFBCE /* MobileSDK-Core-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F1DA18D1AFCA009BFBCE /* MobileSDK-CoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F1E018D1AFCB009BFBCE /* MobileSDK_CoreTests.m */,
+				7ED7F1DB18D1AFCB009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-CoreTests";
+			sourceTree = "<group>";
+		};
+		7ED7F1DB18D1AFCB009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F1DC18D1AFCB009BFBCE /* MobileSDK-CoreTests-Info.plist */,
+				7ED7F1DD18D1AFCB009BFBCE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F20B18D1AFE9009BFBCE /* MobileSDK-JavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F20E18D1AFE9009BFBCE /* MobileSDK_JavaScript.h */,
+				7ED7F21018D1AFE9009BFBCE /* MobileSDK_JavaScript.m */,
+				7ED7F20C18D1AFE9009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-JavaScript";
+			sourceTree = "<group>";
+		};
+		7ED7F20C18D1AFE9009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F20D18D1AFE9009BFBCE /* MobileSDK-JavaScript-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F21D18D1AFE9009BFBCE /* MobileSDK-JavaScriptTests */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F22318D1AFE9009BFBCE /* MobileSDK_JavaScriptTests.m */,
+				7ED7F21E18D1AFE9009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-JavaScriptTests";
+			sourceTree = "<group>";
+		};
+		7ED7F21E18D1AFE9009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F21F18D1AFE9009BFBCE /* MobileSDK-JavaScriptTests-Info.plist */,
+				7ED7F22018D1AFE9009BFBCE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F29018D1B20D009BFBCE /* MobileSDK-UI */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F29318D1B20D009BFBCE /* MobileSDK_UI.h */,
+				7ED7F29518D1B20D009BFBCE /* MobileSDK_UI.m */,
+				7ED7F29118D1B20D009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-UI";
+			sourceTree = "<group>";
+		};
+		7ED7F29118D1B20D009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F29218D1B20D009BFBCE /* MobileSDK-UI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F2A218D1B20D009BFBCE /* MobileSDK-UITests */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F2A818D1B20D009BFBCE /* MobileSDK_UITests.m */,
+				7ED7F2A318D1B20D009BFBCE /* Supporting Files */,
+			);
+			path = "MobileSDK-UITests";
+			sourceTree = "<group>";
+		};
+		7ED7F2A318D1B20D009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F2A418D1B20D009BFBCE /* MobileSDK-UITests-Info.plist */,
+				7ED7F2A518D1B20D009BFBCE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7EECFDA415863CA4004D3D9B /* Products */ = {
@@ -1040,6 +1445,80 @@
 			name = SCAllMobileSDKLibs;
 			productName = SCAllMobileSDKLibs;
 			productReference = 1B33DD8F1518C5BC00EEA9BA /* libSCAllMobileSDKLibs.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7ED7F1C318D1AFCA009BFBCE /* MobileSDK-Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED7F20318D1AFCB009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-Core" */;
+			buildPhases = (
+				7ED7F1C018D1AFCA009BFBCE /* Sources */,
+				7ED7F1C118D1AFCA009BFBCE /* Frameworks */,
+				7ED7F1C218D1AFCA009BFBCE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED7F2C918D1B416009BFBCE /* PBXTargetDependency */,
+				7ED7F22C18D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F22E18D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23018D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23218D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23418D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23618D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23818D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23A18D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23C18D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F23E18D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F24018D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F24218D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F24418D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F24618D1B13A009BFBCE /* PBXTargetDependency */,
+				7ED7F24818D1B13A009BFBCE /* PBXTargetDependency */,
+			);
+			name = "MobileSDK-Core";
+			productName = "MobileSDK-Core";
+			productReference = 7ED7F1C418D1AFCA009BFBCE /* libMobileSDK-Core.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7ED7F20818D1AFE9009BFBCE /* MobileSDK-JavaScript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED7F22518D1AFE9009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-JavaScript" */;
+			buildPhases = (
+				7ED7F20518D1AFE9009BFBCE /* Sources */,
+				7ED7F20618D1AFE9009BFBCE /* Frameworks */,
+				7ED7F20718D1AFE9009BFBCE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED7F2D218D1B7A0009BFBCE /* PBXTargetDependency */,
+				7ED7F2D618D1B7A0009BFBCE /* PBXTargetDependency */,
+				7ED7F2D818D1B7A0009BFBCE /* PBXTargetDependency */,
+				7ED7F2DA18D1B7A0009BFBCE /* PBXTargetDependency */,
+			);
+			name = "MobileSDK-JavaScript";
+			productName = "MobileSDK-JavaScript";
+			productReference = 7ED7F20918D1AFE9009BFBCE /* libMobileSDK-JavaScript.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7ED7F28D18D1B20D009BFBCE /* MobileSDK-UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED7F2AA18D1B20D009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-UI" */;
+			buildPhases = (
+				7ED7F28A18D1B20D009BFBCE /* Sources */,
+				7ED7F28B18D1B20D009BFBCE /* Frameworks */,
+				7ED7F28C18D1B20D009BFBCE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ED7F2E118D1D4C1009BFBCE /* PBXTargetDependency */,
+				7ED7F2CF18D1B6DD009BFBCE /* PBXTargetDependency */,
+				7ED7F2CC18D1B654009BFBCE /* PBXTargetDependency */,
+			);
+			name = "MobileSDK-UI";
+			productName = "MobileSDK-UI";
+			productReference = 7ED7F28E18D1B20D009BFBCE /* libMobileSDK-UI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1165,6 +1644,9 @@
 			projectRoot = "";
 			targets = (
 				1B33DD8E1518C5BC00EEA9BA /* SCAllMobileSDKLibs */,
+				7ED7F1C318D1AFCA009BFBCE /* MobileSDK-Core */,
+				7ED7F20818D1AFE9009BFBCE /* MobileSDK-JavaScript */,
+				7ED7F28D18D1B20D009BFBCE /* MobileSDK-UI */,
 			);
 		};
 /* End PBXProject section */
@@ -1415,18 +1897,11 @@
 			remoteRef = 7E16FBA116EF169500031889 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7E16FBB316EF169500031889 /* JFFUtilsTest.octest */ = {
+		7E16FBB316EF169500031889 /* JFFUtilsTest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = JFFUtilsTest.octest;
+			path = JFFUtilsTest.xctest;
 			remoteRef = 7E16FBB216EF169500031889 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7E16FBB516EF169500031889 /* JFFUtilsTest-CI.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "JFFUtilsTest-CI.octest";
-			remoteRef = 7E16FBB416EF169500031889 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */ = {
@@ -1450,18 +1925,11 @@
 			remoteRef = 7E340A791803F6170053832D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7E340A8E1803F6170053832D /* SCApiTest.octest */ = {
+		7E340A8E1803F6170053832D /* SCApiTest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SCApiTest.octest;
+			path = SCApiTest.xctest;
 			remoteRef = 7E340A8D1803F6170053832D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7E340A901803F6170053832D /* SCApiTest copy.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SCApiTest copy.octest";
-			remoteRef = 7E340A8F1803F6170053832D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */ = {
@@ -1492,18 +1960,18 @@
 			remoteRef = 7E84E60415E25ED300FB8E36 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7E84E60715E25ED300FB8E36 /* ObjcScopedGuardTests.octest */ = {
+		7E84E60715E25ED300FB8E36 /* ObjcScopedGuardTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = ObjcScopedGuardTests.octest;
+			path = ObjcScopedGuardTests.xctest;
 			remoteRef = 7E84E60615E25ED300FB8E36 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7E84E60915E25ED300FB8E36 /* ObjcScopedGuardTests copy.octest */ = {
+		7ED7F1EF18D1AFCB009BFBCE /* JFFRestKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "ObjcScopedGuardTests copy.octest";
-			remoteRef = 7E84E60815E25ED300FB8E36 /* PBXContainerItemProxy */;
+			path = JFFRestKitTests.xctest;
+			remoteRef = 7ED7F1EE18D1AFCB009BFBCE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7EECFDBD15863CA4004D3D9B /* TouchXML_UnitTests.octest */ = {
@@ -1542,6 +2010,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B33DD991518C5BC00EEA9BA /* SCAllMobileSDKLibs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F1C018D1AFCA009BFBCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F1CC18D1AFCA009BFBCE /* MobileSDK_Core.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F20518D1AFE9009BFBCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F21118D1AFE9009BFBCE /* MobileSDK_JavaScript.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F28A18D1B20D009BFBCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F29618D1B20D009BFBCE /* MobileSDK_UI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1673,7 +2165,149 @@
 			name = TouchXMLiOS;
 			targetProxy = 7ED1CAA21586427F00EED5EA /* PBXContainerItemProxy */;
 		};
+		7ED7F22C18D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFRestKit;
+			targetProxy = 7ED7F22B18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F22E18D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFCache;
+			targetProxy = 7ED7F22D18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23018D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFAsyncOperations;
+			targetProxy = 7ED7F22F18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23218D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFNetwork;
+			targetProxy = 7ED7F23118D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23418D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFScheduler;
+			targetProxy = 7ED7F23318D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23618D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFUtils;
+			targetProxy = 7ED7F23518D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23818D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCUtils;
+			targetProxy = 7ED7F23718D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23A18D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCApi;
+			targetProxy = 7ED7F23918D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23C18D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			targetProxy = 7ED7F23B18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F23E18D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ESDatabaseWrapper;
+			targetProxy = 7ED7F23D18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F24018D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iFeatureAvailability;
+			targetProxy = 7ED7F23F18D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F24218D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AmberFoundation;
+			targetProxy = 7ED7F24118D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F24418D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjcScopedGuard;
+			targetProxy = 7ED7F24318D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F24618D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TouchXmlHelper;
+			targetProxy = 7ED7F24518D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F24818D1B13A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TouchXMLiOS;
+			targetProxy = 7ED7F24718D1B13A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2C918D1B416009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JFFUI;
+			targetProxy = 7ED7F2C818D1B416009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2CC18D1B654009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCQRCodeReader;
+			targetProxy = 7ED7F2CB18D1B654009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2CF18D1B6DD009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCUI;
+			targetProxy = 7ED7F2CE18D1B6DD009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2D218D1B7A0009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebPlugins;
+			targetProxy = 7ED7F2D118D1B7A0009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2D618D1B7A0009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebView;
+			targetProxy = 7ED7F2D518D1B7A0009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2D818D1B7A0009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCDevice2Web;
+			targetProxy = 7ED7F2D718D1B7A0009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2DA18D1B7A0009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCWebContentApi;
+			targetProxy = 7ED7F2D918D1B7A0009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F2E118D1D4C1009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCMap;
+			targetProxy = 7ED7F2E018D1D4C1009BFBCE /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7ED7F1DD18D1AFCB009BFBCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED7F1DE18D1AFCB009BFBCE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7ED7F22018D1AFE9009BFBCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED7F22118D1AFE9009BFBCE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7ED7F2A518D1B20D009BFBCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED7F2A618D1B20D009BFBCE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1B33DD9A1518C5BC00EEA9BA /* Debug */ = {
@@ -1694,6 +2328,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1709,6 +2347,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1723,10 +2365,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1743,10 +2381,191 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../lib-third-party/ios-openssl/lib\"",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7ED7F1E218D1AFCB009BFBCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_Core.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-Core/MobileSDK-Core-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/lib-third-party/ios-openssl/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7ED7F1E318D1AFCB009BFBCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_Core.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-Core/MobileSDK-Core-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/lib-third-party/ios-openssl/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7ED7F22618D1AFE9009BFBCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_JavaScript.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-JavaScript/MobileSDK-JavaScript-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7ED7F22718D1AFE9009BFBCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_JavaScript.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-JavaScript/MobileSDK-JavaScript-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7ED7F2AB18D1B20D009BFBCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_UI.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-UI/MobileSDK-UI-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7ED7F2AC18D1B20D009BFBCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/MobileSDK_UI.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileSDK-UI/MobileSDK-UI-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1769,6 +2588,33 @@
 			buildConfigurations = (
 				1B33DD9D1518C5BC00EEA9BA /* Debug */,
 				1B33DD9E1518C5BC00EEA9BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED7F20318D1AFCB009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED7F1E218D1AFCB009BFBCE /* Debug */,
+				7ED7F1E318D1AFCB009BFBCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED7F22518D1AFE9009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-JavaScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED7F22618D1AFE9009BFBCE /* Debug */,
+				7ED7F22718D1AFE9009BFBCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED7F2AA18D1B20D009BFBCE /* Build configuration list for PBXNativeTarget "MobileSDK-UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED7F2AB18D1B20D009BFBCE /* Debug */,
+				7ED7F2AC18D1B20D009BFBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
