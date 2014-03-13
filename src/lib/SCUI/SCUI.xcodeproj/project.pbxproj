@@ -12,12 +12,12 @@
 		1B1854021469685100572BB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1854011469685100572BB3 /* CoreMotion.framework */; };
 		1B68C478144C65DB005CC74B /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C477144C65DB005CC74B /* SCUI.h */; };
 		1B68C47A144C6613005CC74B /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C479144C6613005CC74B /* SCImageView.h */; };
-		1B68C47E144C66DC005CC74B /* SCWebViewURLPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */; };
 		1B835A88142C9EA900FC004C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B835A87142C9EA900FC004C /* Foundation.framework */; };
 		1B835B2F142CA3F900FC004C /* SCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B835B2D142CA3F900FC004C /* SCImageView.m */; };
 		1BA676B1144C22A600B14D49 /* SCCacheURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA676AF144C22A600B14D49 /* SCCacheURLProtocol.m */; };
 		1BA676C4144C427000B14D49 /* SCWebViewURLPreloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */; };
 		1BEF7BC114582D1700445F3B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEF7BC014582D1700445F3B /* CoreFoundation.framework */; };
+		7ED7F33B18D1DE0D009BFBCE /* SCWebViewURLPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33A18D1DE0D009BFBCE /* SCWebViewURLPreloader.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +37,8 @@
 		1B0DD67A146D4F9B00E5DC1C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1B0ED9E91473D02800EE2BD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1B1854011469685100572BB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		1B68C477144C65DB005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUI.h; sourceTree = "<group>"; };
-		1B68C479144C6613005CC74B /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
-		1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebViewURLPreloader.h; path = ../SitecoreMobileSDK/SCWebViewURLPreloader.h; sourceTree = "<group>"; };
+		1B68C477144C65DB005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUI.h; path = SitecoreMobileUI/SCUI.h; sourceTree = "<group>"; };
+		1B68C479144C6613005CC74B /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../SitecoreMobileUI/SCImageView.h; sourceTree = "<group>"; };
 		1B835A84142C9EA900FC004C /* libSCUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B835A87142C9EA900FC004C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B835A8B142C9EA900FC004C /* SCUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCUI-Prefix.pch"; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewURLPreloader.m; sourceTree = "<group>"; };
 		1BEF7BBF14582D1700445F3B /* BuildJS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildJS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEF7BC014582D1700445F3B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7ED7F33A18D1DE0D009BFBCE /* SCWebViewURLPreloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebViewURLPreloader.h; path = SitecoreMobileUI/SCWebViewURLPreloader.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 				1BA676AB144C218900B14D49 /* Private */,
 				1B68C479144C6613005CC74B /* SCImageView.h */,
 				1B835B2D142CA3F900FC004C /* SCImageView.m */,
-				1B68C47D144C66DC005CC74B /* SCWebViewURLPreloader.h */,
+				7ED7F33A18D1DE0D009BFBCE /* SCWebViewURLPreloader.h */,
 				1BA676C2144C427000B14D49 /* SCWebViewURLPreloader.m */,
 				1B835A8A142C9EA900FC004C /* Supporting Files */,
 			);
@@ -152,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B68C478144C65DB005CC74B /* SCUI.h in Headers */,
+				7ED7F33B18D1DE0D009BFBCE /* SCWebViewURLPreloader.h in Headers */,
 				1B68C47A144C6613005CC74B /* SCImageView.h in Headers */,
-				1B68C47E144C66DC005CC74B /* SCWebViewURLPreloader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

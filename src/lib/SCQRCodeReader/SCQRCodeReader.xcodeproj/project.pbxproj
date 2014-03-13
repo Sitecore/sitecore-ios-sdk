@@ -46,8 +46,9 @@
 		06BF62ED150F445300281999 /* SCQRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReader.h; sourceTree = "<group>"; };
 		06BF62F0150F456A00281999 /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = "../../lib-third-party/ZXing/iphone/ZXingWidget/ZXingWidget.xcodeproj"; sourceTree = "<group>"; };
 		06BF630A150F460B00281999 /* SCQRCodeReaderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCQRCodeReaderView.mm; sourceTree = "<group>"; };
-		06BF630F150F468F00281999 /* SCQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCQRCodeReaderView.h; path = SitecoreMobileSDK/SCQRCodeReaderView.h; sourceTree = SOURCE_ROOT; };
-		06BF6310150F468F00281999 /* SCQRCodeReaderViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCQRCodeReaderViewDelegate.h; path = SitecoreMobileSDK/SCQRCodeReaderViewDelegate.h; sourceTree = SOURCE_ROOT; };
+		06BF630F150F468F00281999 /* SCQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCQRCodeReaderView.h; path = SitecoreMobileUI/SCQRCodeReaderView.h; sourceTree = SOURCE_ROOT; };
+		06BF6310150F468F00281999 /* SCQRCodeReaderViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCQRCodeReaderViewDelegate.h; path = SitecoreMobileUI/SCQRCodeReaderViewDelegate.h; sourceTree = SOURCE_ROOT; };
+		7ED7F32F18D1D9D6009BFBCE /* SCQRCodeReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCQRCodeReader.h; path = SitecoreMobileUI/SCQRCodeReader.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		06BF62C0150F42D100281999 /* SCQRCodeReader */ = {
 			isa = PBXGroup;
 			children = (
+				7ED7F32F18D1D9D6009BFBCE /* SCQRCodeReader.h */,
 				06BF630F150F468F00281999 /* SCQRCodeReaderView.h */,
 				06BF630A150F460B00281999 /* SCQRCodeReaderView.mm */,
 				06BF6310150F468F00281999 /* SCQRCodeReaderViewDelegate.h */,
