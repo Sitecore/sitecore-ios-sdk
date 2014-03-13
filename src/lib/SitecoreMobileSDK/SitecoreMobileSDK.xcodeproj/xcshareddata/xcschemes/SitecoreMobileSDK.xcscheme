@@ -53,7 +53,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E8B6C5715388BD500435EDA"
-               BuildableName = "ObjcScopedGuardTests.octest"
+               BuildableName = "ObjcScopedGuardTests.xctest"
                BlueprintName = "ObjcScopedGuardTests"
                ReferencedContainer = "container:../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj">
             </BuildableReference>
