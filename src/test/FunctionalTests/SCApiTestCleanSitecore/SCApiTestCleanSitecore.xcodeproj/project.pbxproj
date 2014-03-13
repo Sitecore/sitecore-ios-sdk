@@ -105,9 +105,7 @@
 		258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
-		2598AAAC17F42D0F00252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
-		2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
 		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
@@ -481,22 +479,9 @@
 		7E18F95B17C217C700006465 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
 		7E18F95F17C217C700006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
 		7E18F96017C217C700006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
-		7E18F96217C217C700006465 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E18F96317C217C700006465 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
 		7E18F96417C217C700006465 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
-		7E18F96517C217C700006465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
-		7E18F96617C217C700006465 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
-		7E18F96717C217C700006465 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D82B31519CD3C00EC4A92 /* libSCAllMobileSDKLibs.a */; };
-		7E18F96817C217C700006465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
-		7E18F96917C217C700006465 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
-		7E18F96A17C217C700006465 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
 		7E18F96B17C217C700006465 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
-		7E18F96C17C217C700006465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
-		7E18F96D17C217C700006465 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
-		7E18F96E17C217C700006465 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
-		7E18F96F17C217C700006465 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
-		7E18F97017C217C700006465 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
-		7E18F97117C217C700006465 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
 		7E18F97217C217C700006465 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
 		7E18F97317C217C700006465 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBF1461611B00C9FC49 /* CFNetwork.framework */; };
 		7E18F97417C217C700006465 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBD1461611200C9FC49 /* libsqlite3.dylib */; };
@@ -513,7 +498,6 @@
 		7E286C6317EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E286C6417EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
-		7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
@@ -528,6 +512,7 @@
 		7EB739D617BBA40F00406C59 /* TestingRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB739D517BBA40F00406C59 /* TestingRequestFactory.m */; };
 		7ED7F3AB18D1E050009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */; };
 		7ED7F3AC18D1E1CB009BFBCE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
+		7ED7F3CB18D1E76C009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -536,13 +521,6 @@
 			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
-			remoteInfo = SCAllMobileSDKLibs;
-		};
-		7E18F92D17C217C700006465 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
 		7ED7F3A318D1E02C009BFBCE /* PBXContainerItemProxy */ = {
@@ -567,6 +545,13 @@
 			remoteInfo = "MobileSDK-UI";
 		};
 		7ED7F3A918D1E030009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F1C318D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F3C918D1E762009BFBCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
@@ -823,26 +808,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E72CAFF17FC02670081F306 /* QuartzCore.framework in Frameworks */,
-				2598AAAF17F42D1300252AA4 /* EventKitUI.framework in Frameworks */,
-				7E18F96217C217C700006465 /* Social.framework in Frameworks */,
+				7ED7F3CB18D1E76C009BFBCE /* libMobileSDK-Core.a in Frameworks */,
 				7E18F96317C217C700006465 /* libc++.dylib in Frameworks */,
 				7E18F96417C217C700006465 /* libstdc++.dylib in Frameworks */,
-				7E18F96517C217C700006465 /* CoreLocation.framework in Frameworks */,
-				7E18F96617C217C700006465 /* MapKit.framework in Frameworks */,
-				7E18F96717C217C700006465 /* libSCAllMobileSDKLibs.a in Frameworks */,
-				7E18F96817C217C700006465 /* AVFoundation.framework in Frameworks */,
 				78F3C23918AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
-				7E18F96917C217C700006465 /* CoreMedia.framework in Frameworks */,
-				7E18F96A17C217C700006465 /* CoreVideo.framework in Frameworks */,
 				7E18F96B17C217C700006465 /* libiconv.dylib in Frameworks */,
-				7E18F96C17C217C700006465 /* AudioToolbox.framework in Frameworks */,
-				2598AAAC17F42D0F00252AA4 /* EventKit.framework in Frameworks */,
-				7E18F96D17C217C700006465 /* AddressBook.framework in Frameworks */,
-				7E18F96E17C217C700006465 /* AddressBookUI.framework in Frameworks */,
-				7E18F96F17C217C700006465 /* CoreMotion.framework in Frameworks */,
-				7E18F97017C217C700006465 /* MessageUI.framework in Frameworks */,
-				7E18F97117C217C700006465 /* Twitter.framework in Frameworks */,
 				7E18F97217C217C700006465 /* libxml2.dylib in Frameworks */,
 				7E18F97317C217C700006465 /* CFNetwork.framework in Frameworks */,
 				7E18F97417C217C700006465 /* libsqlite3.dylib in Frameworks */,
@@ -1313,7 +1283,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7E18F92C17C217C700006465 /* PBXTargetDependency */,
+				7ED7F3CA18D1E762009BFBCE /* PBXTargetDependency */,
 			);
 			name = "SCApiTestLibs-NoAnonymous";
 			productName = SCApiTest;
@@ -1943,15 +1913,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E18F92C17C217C700006465 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SCAllMobileSDKLibs;
-			targetProxy = 7E18F92D17C217C700006465 /* PBXContainerItemProxy */;
-		};
 		7ED7F3AA18D1E030009BFBCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MobileSDK-Core";
 			targetProxy = 7ED7F3A918D1E030009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F3CA18D1E762009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-Core";
+			targetProxy = 7ED7F3C918D1E762009BFBCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
