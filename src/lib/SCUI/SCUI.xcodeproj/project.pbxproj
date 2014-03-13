@@ -151,8 +151,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B68C478144C65DB005CC74B /* SCUI.h in Headers */,
 				7ED7F33B18D1DE0D009BFBCE /* SCWebViewURLPreloader.h in Headers */,
+				1B68C478144C65DB005CC74B /* SCUI.h in Headers */,
 				1B68C47A144C6613005CC74B /* SCImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
