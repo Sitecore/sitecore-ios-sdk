@@ -15,7 +15,6 @@
 		1B0BFBE61561316500853028 /* WebViewAccelerometerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A38971476A095007D8C10 /* WebViewAccelerometerTest.m */; };
 		1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */; };
 		1B104CD914838D960025FDDA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B104CD814838D960025FDDA /* AddressBookUI.framework */; };
-		1B154B3C151A3D70005C28F2 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D83B61519D11600EC4A92 /* libSCAllMobileSDKLibs.a */; };
 		1B2122F61560FB67008779F9 /* WebViewMediaItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2122F51560FB67008779F9 /* WebViewMediaItemsTest.m */; };
 		1B3A369414766A33007D8C10 /* alert_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A369314766A33007D8C10 /* alert_tests.js */; };
 		1B3A37BB1476828E007D8C10 /* SCAlerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A36D71476706D007D8C10 /* SCAlerPlugin.m */; };
@@ -111,6 +110,9 @@
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7ED7F43E18D1E890009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43318D1E871009BFBCE /* libMobileSDK-Core.a */; };
+		7ED7F43F18D1E890009BFBCE /* libMobileSDK-JavaScript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43518D1E871009BFBCE /* libMobileSDK-JavaScript.a */; };
+		7ED7F44018D1E890009BFBCE /* libMobileSDK-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43718D1E871009BFBCE /* libMobileSDK-UI.a */; };
 		7EFC0A4A182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */; };
 		7EFC0A4B182CE17E00E3FD6A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */; };
 /* End PBXBuildFile section */
@@ -144,12 +146,47 @@
 			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
-		1B154B3A151A3D67005C28F2 /* PBXContainerItemProxy */ = {
+		7ED7F43218D1E871009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F1C418D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F43418D1E871009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F20918D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7ED7F43618D1E871009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F28E18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
+		};
+		7ED7F43818D1E87A009BFBCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
-			remoteInfo = SCAllMobileSDKLibs;
+			remoteGlobalIDString = 7ED7F1C318D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F43A18D1E87A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F20818D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7ED7F43C18D1E87A009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F28D18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -224,13 +261,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED7F43E18D1E890009BFBCE /* libMobileSDK-Core.a in Frameworks */,
+				7ED7F43F18D1E890009BFBCE /* libMobileSDK-JavaScript.a in Frameworks */,
+				7ED7F44018D1E890009BFBCE /* libMobileSDK-UI.a in Frameworks */,
 				7E72CA6517FBF89F0081F306 /* QuartzCore.framework in Frameworks */,
 				7E36C06417FAFE2F000E3083 /* EventKit.framework in Frameworks */,
 				7E36C06517FAFE2F000E3083 /* EventKitUI.framework in Frameworks */,
 				7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */,
 				1BD5614E157F8137002BA8B0 /* libc++.dylib in Frameworks */,
 				1B0BFBDF15612F1F00853028 /* libJFFTestTools.a in Frameworks */,
-				1B154B3C151A3D70005C28F2 /* libSCAllMobileSDKLibs.a in Frameworks */,
 				1BB95DB61512174F00B4F9B2 /* MapKit.framework in Frameworks */,
 				1BAFB7211511E8B30007A91D /* AVFoundation.framework in Frameworks */,
 				1BAFB7221511E8B30007A91D /* CoreMedia.framework in Frameworks */,
@@ -305,6 +344,9 @@
 			isa = PBXGroup;
 			children = (
 				1B0D83B61519D11600EC4A92 /* libSCAllMobileSDKLibs.a */,
+				7ED7F43318D1E871009BFBCE /* libMobileSDK-Core.a */,
+				7ED7F43518D1E871009BFBCE /* libMobileSDK-JavaScript.a */,
+				7ED7F43718D1E871009BFBCE /* libMobileSDK-UI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,8 +499,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				7ED7F43918D1E87A009BFBCE /* PBXTargetDependency */,
+				7ED7F43B18D1E87A009BFBCE /* PBXTargetDependency */,
+				7ED7F43D18D1E87A009BFBCE /* PBXTargetDependency */,
 				1B0BFBDE15612F0E00853028 /* PBXTargetDependency */,
-				1B154B3B151A3D67005C28F2 /* PBXTargetDependency */,
 			);
 			name = SCContactsTestLibs;
 			productName = SCContactsTest;
@@ -533,6 +577,27 @@
 			fileType = archive.ar;
 			path = libSCAllMobileSDKLibs.a;
 			remoteRef = 1B0D83B51519D11600EC4A92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F43318D1E871009BFBCE /* libMobileSDK-Core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-Core.a";
+			remoteRef = 7ED7F43218D1E871009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F43518D1E871009BFBCE /* libMobileSDK-JavaScript.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-JavaScript.a";
+			remoteRef = 7ED7F43418D1E871009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F43718D1E871009BFBCE /* libMobileSDK-UI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-UI.a";
+			remoteRef = 7ED7F43618D1E871009BFBCE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -663,10 +728,20 @@
 			name = JFFTestTools;
 			targetProxy = 1B0BFBE015612F2300853028 /* PBXContainerItemProxy */;
 		};
-		1B154B3B151A3D67005C28F2 /* PBXTargetDependency */ = {
+		7ED7F43918D1E87A009BFBCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SCAllMobileSDKLibs;
-			targetProxy = 1B154B3A151A3D67005C28F2 /* PBXContainerItemProxy */;
+			name = "MobileSDK-Core";
+			targetProxy = 7ED7F43818D1E87A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F43B18D1E87A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-JavaScript";
+			targetProxy = 7ED7F43A18D1E87A009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F43D18D1E87A009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-UI";
+			targetProxy = 7ED7F43C18D1E87A009BFBCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
