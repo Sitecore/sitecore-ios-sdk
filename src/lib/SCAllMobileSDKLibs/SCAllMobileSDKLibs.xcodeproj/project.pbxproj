@@ -72,6 +72,8 @@
 		7ED7F2DF18D1B7B3009BFBCE /* libSCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D850B1519D3C600EC4A92 /* libSCWebView.a */; };
 		7ED7F2E218D1D4C5009BFBCE /* libSCMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DDB31518C5EB00EEA9BA /* libSCMap.a */; };
 		7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
+		7ED7F45E18D1ED6A009BFBCE /* libCocoaHTTPServerCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */; };
+		7ED7F46118D1EE2B009BFBCE /* libDeviceUniqueIdentifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -733,6 +735,20 @@
 			remoteGlobalIDString = 1BE4CEA5150F3CBD007259C2;
 			remoteInfo = SCMap;
 		};
+		7ED7F44118D1ED63009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FB9C16EF169500031889 /* cocoahttpserver.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A1AB8613ED46B700CFDFD0;
+			remoteInfo = "CocoaHTTPServerCore-iOS";
+		};
+		7ED7F45F18D1EE24009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E16FC2316EF1F3900031889;
+			remoteInfo = DeviceUniqueIdentifier;
+		};
 		7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
@@ -896,6 +912,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED7F46118D1EE2B009BFBCE /* libDeviceUniqueIdentifier.a in Frameworks */,
 				7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */,
 				7ED7F2CA18D1B41E009BFBCE /* libJFFUI.a in Frameworks */,
 				7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */,
@@ -923,6 +940,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED7F45E18D1ED6A009BFBCE /* libCocoaHTTPServerCore-iOS.a in Frameworks */,
 				7ED7F2DB18D1B7B3009BFBCE /* libSCDevice2Web.a in Frameworks */,
 				7ED7F2DD18D1B7B3009BFBCE /* libSCWebContentApi.a in Frameworks */,
 				7ED7F2DE18D1B7B3009BFBCE /* libSCWebPlugins.a in Frameworks */,
@@ -1458,6 +1476,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7ED7F46018D1EE24009BFBCE /* PBXTargetDependency */,
 				7ED7F2C918D1B416009BFBCE /* PBXTargetDependency */,
 				7ED7F22C18D1B13A009BFBCE /* PBXTargetDependency */,
 				7ED7F22E18D1B13A009BFBCE /* PBXTargetDependency */,
@@ -1491,6 +1510,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7ED7F44218D1ED63009BFBCE /* PBXTargetDependency */,
 				7ED7F2D218D1B7A0009BFBCE /* PBXTargetDependency */,
 				7ED7F2D618D1B7A0009BFBCE /* PBXTargetDependency */,
 				7ED7F2D818D1B7A0009BFBCE /* PBXTargetDependency */,
@@ -2279,6 +2299,16 @@
 			isa = PBXTargetDependency;
 			name = SCMap;
 			targetProxy = 7ED7F2E018D1D4C1009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F44218D1ED63009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CocoaHTTPServerCore-iOS";
+			targetProxy = 7ED7F44118D1ED63009BFBCE /* PBXContainerItemProxy */;
+		};
+		7ED7F46018D1EE24009BFBCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DeviceUniqueIdentifier;
+			targetProxy = 7ED7F45F18D1EE24009BFBCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
