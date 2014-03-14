@@ -90,8 +90,6 @@
 		2565FFC317F32185009366E9 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */; };
 		258A14F614E537E600DA4DE5 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
 		258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
-		2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
-		2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
 		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
 		2598AB1317F42DBE00252AA4 /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
@@ -432,21 +430,8 @@
 		7E18F90417C217B400006465 /* CreateItemPositiveTest-shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E480BA717BCB9130096CBC3 /* CreateItemPositiveTest-shell.m */; };
 		7E18F90517C217B400006465 /* SCTestUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CC17C2157700006465 /* SCTestUsers.m */; };
 		7E18F90617C217B400006465 /* SCTestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8D017C2163300006465 /* SCTestPath.m */; };
-		7E18F90817C217B400006465 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E18F90917C217B400006465 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		7E18F90A17C217B400006465 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
-		7E18F90B17C217B400006465 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
-		7E18F90C17C217B400006465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
-		7E18F90D17C217B400006465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
-		7E18F90E17C217B400006465 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
-		7E18F90F17C217B400006465 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
-		7E18F91017C217B400006465 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
-		7E18F91117C217B400006465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
-		7E18F91217C217B400006465 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
-		7E18F91317C217B400006465 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
-		7E18F91417C217B400006465 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
-		7E18F91517C217B400006465 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
-		7E18F91617C217B400006465 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
 		7E18F91717C217B400006465 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
 		7E18F91817C217B400006465 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBF1461611B00C9FC49 /* CFNetwork.framework */; };
 		7E18F91917C217B400006465 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBD1461611200C9FC49 /* libsqlite3.dylib */; };
@@ -482,7 +467,6 @@
 		7E286C6317EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E286C6417EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
-		7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
 		7E80E6A817EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
 		7E80E6A917EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
@@ -742,30 +726,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */,
-				2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */,
-				2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */,
-				7E18F90817C217B400006465 /* Social.framework in Frameworks */,
+				78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
+				25E177AA1806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
 				7E18F90917C217B400006465 /* libstdc++.dylib in Frameworks */,
 				7E18F90A17C217B400006465 /* libc++.dylib in Frameworks */,
-				7E18F90B17C217B400006465 /* MapKit.framework in Frameworks */,
-				7E18F90C17C217B400006465 /* CoreLocation.framework in Frameworks */,
-				7E18F90D17C217B400006465 /* AVFoundation.framework in Frameworks */,
-				78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
-				7E18F90E17C217B400006465 /* CoreMedia.framework in Frameworks */,
-				7E18F90F17C217B400006465 /* CoreVideo.framework in Frameworks */,
-				7E18F91017C217B400006465 /* libiconv.dylib in Frameworks */,
-				25E177AA1806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
-				7E18F91117C217B400006465 /* AudioToolbox.framework in Frameworks */,
-				7E18F91217C217B400006465 /* AddressBook.framework in Frameworks */,
-				7E18F91317C217B400006465 /* AddressBookUI.framework in Frameworks */,
-				7E18F91417C217B400006465 /* CoreMotion.framework in Frameworks */,
-				7E18F91517C217B400006465 /* MessageUI.framework in Frameworks */,
-				7E18F91617C217B400006465 /* Twitter.framework in Frameworks */,
 				7E18F91717C217B400006465 /* libxml2.dylib in Frameworks */,
-				7E18F91817C217B400006465 /* CFNetwork.framework in Frameworks */,
 				7E18F91917C217B400006465 /* libsqlite3.dylib in Frameworks */,
 				7E18F91A17C217B400006465 /* libz.dylib in Frameworks */,
+				7E18F91817C217B400006465 /* CFNetwork.framework in Frameworks */,
 				7E18F91B17C217B400006465 /* UIKit.framework in Frameworks */,
 				7E18F91C17C217B400006465 /* Foundation.framework in Frameworks */,
 				7E18F91D17C217B400006465 /* CoreGraphics.framework in Frameworks */,
@@ -2011,12 +1979,13 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -2036,7 +2005,7 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
@@ -2151,12 +2120,13 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -2196,12 +2166,13 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "SCApiTest-NoAnonymous";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2241,12 +2212,13 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "SCApiTest-NoAnonymous";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2264,7 +2236,7 @@
 					"$(inherited)",
 					../../../frameworks,
 					../../../deployment,
-					/Volumes/Sitecore/Sources/src/test/FunctionalTests/SCApiTestCleanSitecore,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
