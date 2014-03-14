@@ -7,17 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B11671C14C6C5F6000AD289 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671714C6C5F6000AD289 /* AddressBook.framework */; };
-		1B11671D14C6C5F6000AD289 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671814C6C5F6000AD289 /* AddressBookUI.framework */; };
-		1B11671E14C6C5F6000AD289 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671914C6C5F6000AD289 /* CoreMotion.framework */; };
-		1B11671F14C6C5F6000AD289 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671A14C6C5F6000AD289 /* MessageUI.framework */; };
-		1B11672014C6C5F6000AD289 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11671B14C6C5F6000AD289 /* Twitter.framework */; };
-		1B11672214C6C60F000AD289 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11672114C6C60F000AD289 /* AudioToolbox.framework */; };
 		1B33953715663B0B00E935E9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
 		1B7AC4B21491036300DDD31D /* SCGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AC4B11491036300DDD31D /* SCGlobalSettings.m */; };
 		1B925BA114615C7D00C9FC49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA014615C7D00C9FC49 /* UIKit.framework */; };
 		1B925BA314615C7D00C9FC49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA214615C7D00C9FC49 /* Foundation.framework */; };
-		1B925BA514615C7D00C9FC49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
 		1B925BAB14615C7E00C9FC49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		1B925BAD14615C7E00C9FC49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
 		1B925CBC1461610900C9FC49 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CBB1461610900C9FC49 /* libz.dylib */; };
@@ -26,10 +19,6 @@
 		1B925CC21461612900C9FC49 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925CC11461612900C9FC49 /* libxml2.dylib */; };
 		1B925D6D14616E6B00C9FC49 /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
 		1B925D9D146197FF00C9FC49 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
-		1BBCABEF1510E87600199B37 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEB1510E87600199B37 /* AVFoundation.framework */; };
-		1BBCABF01510E87600199B37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEC1510E87600199B37 /* CoreMedia.framework */; };
-		1BBCABF11510E87600199B37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABED1510E87600199B37 /* CoreVideo.framework */; };
-		1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
 		1BCC930C1511E11B00271BFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
 		1BCC930E1511E11B00271BFD /* SCGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AC4B11491036300DDD31D /* SCGlobalSettings.m */; };
 		1BCC93391511E11B00271BFD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBCABEE1510E87600199B37 /* libiconv.dylib */; };
@@ -43,8 +32,6 @@
 		1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		1BCC934C1511E11B00271BFD /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
 		1BCC938C1511E11B00271BFD /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
-		1BD6A9D11518CAA100D2FC84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D01518CAA100D2FC84 /* CoreLocation.framework */; };
-		1BD6A9D31518CAC300D2FC84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
 		1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		2545B3D91803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
 		2545B3DA1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
@@ -105,8 +92,6 @@
 		258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		2598AAAA17F42CD900252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
 		2598AAAB17F42CD900252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
-		2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA817F42CD900252AA4 /* EventKit.framework */; };
-		2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2598AAA917F42CD900252AA4 /* EventKitUI.framework */; };
 		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
 		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
 		2598AB1317F42DBE00252AA4 /* CreateItemPositiveTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6184717BA581A00D43837 /* CreateItemPositiveTestExtended.m */; };
@@ -395,7 +380,6 @@
 		78F3C23718AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		78F3C23818AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
 		78F3C23918AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3C23518AA81D0009BF646 /* GHUnitIOS.framework */; };
-		7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E08ACB9170D65AE007413D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E17DDFA17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
 		7E17DDFB17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
 		7E17DDFC17EC495E001B9D7E /* SitecoreAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17DDF917EC495E001B9D7E /* SitecoreAdminAuthTest.m */; };
@@ -499,7 +483,6 @@
 		7E286C6417EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E286C6517EC91780022F621 /* BadCredentialsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E286C6217EC91780022F621 /* BadCredentialsAuthTest.m */; };
 		7E72CB0017FC026B0081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
-		7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E72CAFE17FC02670081F306 /* QuartzCore.framework */; };
 		7E80E6A717EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
 		7E80E6A817EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
 		7E80E6A917EC823200E1921A /* ExtranetAdminAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E80E6A417EC823200E1921A /* ExtranetAdminAuthTest.m */; };
@@ -513,6 +496,7 @@
 		7ED7F3AB18D1E050009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */; };
 		7ED7F3AC18D1E1CB009BFBCE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
 		7ED7F3CB18D1E76C009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F3A418D1E02C009BFBCE /* libMobileSDK-Core.a */; };
+		7EE8011218D30EE800BF37BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -721,33 +705,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E72CB0217FC02750081F306 /* QuartzCore.framework in Frameworks */,
-				2598AAB117F42D1400252AA4 /* EventKitUI.framework in Frameworks */,
-				7E08ACBA170D65AE007413D6 /* Social.framework in Frameworks */,
+				78F3C23618AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
+				25E177A91806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
+				1B925CC01461611B00C9FC49 /* CFNetwork.framework in Frameworks */,
 				258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */,
 				1B33953715663B0B00E935E9 /* libc++.dylib in Frameworks */,
-				1BD6A9D31518CAC300D2FC84 /* MapKit.framework in Frameworks */,
-				1BD6A9D11518CAA100D2FC84 /* CoreLocation.framework in Frameworks */,
-				1BBCABEF1510E87600199B37 /* AVFoundation.framework in Frameworks */,
-				1BBCABF01510E87600199B37 /* CoreMedia.framework in Frameworks */,
-				78F3C23618AA81D1009BF646 /* GHUnitIOS.framework in Frameworks */,
-				1BBCABF11510E87600199B37 /* CoreVideo.framework in Frameworks */,
-				1BBCABF21510E87600199B37 /* libiconv.dylib in Frameworks */,
-				1B11672214C6C60F000AD289 /* AudioToolbox.framework in Frameworks */,
-				25E177A91806C9EF00201DC6 /* SitecoreMobileSDK.framework in Frameworks */,
-				1B11671C14C6C5F6000AD289 /* AddressBook.framework in Frameworks */,
-				2598AAAE17F42D1000252AA4 /* EventKit.framework in Frameworks */,
-				1B11671D14C6C5F6000AD289 /* AddressBookUI.framework in Frameworks */,
-				1B11671E14C6C5F6000AD289 /* CoreMotion.framework in Frameworks */,
-				1B11671F14C6C5F6000AD289 /* MessageUI.framework in Frameworks */,
-				1B11672014C6C5F6000AD289 /* Twitter.framework in Frameworks */,
 				1B925CC21461612900C9FC49 /* libxml2.dylib in Frameworks */,
-				1B925CC01461611B00C9FC49 /* CFNetwork.framework in Frameworks */,
 				1B925CBE1461611200C9FC49 /* libsqlite3.dylib in Frameworks */,
 				1B925CBC1461610900C9FC49 /* libz.dylib in Frameworks */,
+				7EE8011218D30EE800BF37BA /* CoreGraphics.framework in Frameworks */,
 				1B925BA114615C7D00C9FC49 /* UIKit.framework in Frameworks */,
 				1B925BA314615C7D00C9FC49 /* Foundation.framework in Frameworks */,
-				1B925BA514615C7D00C9FC49 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2049,6 +2017,10 @@
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
@@ -2070,6 +2042,10 @@
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
@@ -2181,6 +2157,10 @@
 				GCC_PREFIX_HEADER = "SCApiTest/SCApiTest-Prefix.pch";
 				INFOPLIST_FILE = "SCApiTest/SCApiTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/usr/include/libxml2 ../../lib-third-party/TouchXML/Source ../../lib/SCApi";
