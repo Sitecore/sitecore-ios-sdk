@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 #
 # ocunit2junit.rb was written by Christian Hedin <christian.hedin@jayway.com>
 # Version: 0.1 - 30/01 2010
@@ -19,7 +19,8 @@
 #
 #
 # Where to put the XML-files from your unit tests
-TEST_REPORTS_FOLDER = "test-reports"
+TEST_REPORTS_FOLDER = ENV['TEST_REPORTS_FOLDER'] || "test-reports"
+SUPPORT_KIWI = true
 #
 #
 # Don't edit below this line
@@ -38,7 +39,7 @@ class ReportParser
     @exit_code = 0
     
     FileUtils.rm_rf(TEST_REPORTS_FOLDER)
-    FileUtils.mkdir(TEST_REPORTS_FOLDER)
+    FileUtils.mkdir_p(TEST_REPORTS_FOLDER)
     parse_input
   end
 
@@ -46,12 +47,24 @@ class ReportParser
   
   def parse_input
     @piped_input.each do |piped_row|
+      if piped_row.respond_to?("encode!")
+        temporary_encoding = (RUBY_VERSION == '1.9.2') ? 'UTF-8' : 'UTF-16'
+        piped_row.encode!(temporary_encoding, 'UTF-8', :invalid => :replace, :replace => '')
+        piped_row.encode!('UTF-8', temporary_encoding)
+      end
       puts piped_row
+      
+      description_results = piped_row.scan(/\s\'(.+)\'\s/)
+      if description_results and description_results[0] and description_results[0]
+        description = description_results[0][0]
+      end
+      
       case piped_row
         
         when /Test Suite '(\S+)'.*started at\s+(.*)/
           t = Time.parse($2.to_s)
           handle_start_test_suite(t)
+          @last_description = nil
 
         when /Test Suite '(\S+)'.*finished at\s+(.*)./
           t = Time.parse($2.to_s)
@@ -59,30 +72,35 @@ class ReportParser
 
         when /Test Case '-\[\S+\s+(\S+)\]' started./
           test_case = $1
+          @last_description = nil
 
         when /Test Case '-\[\S+\s+(\S+)\]' passed \((.*) seconds\)/
-          test_case = $1
+          test_case = get_test_case_name($1, @last_description)
           test_case_duration = $2.to_f
           handle_test_passed(test_case,test_case_duration)
 
         when /(.*): error: -\[(\S+) (\S+)\] : (.*)/
           error_location = $1
           test_suite = $2
-          test_case = $3
           error_message = $4
-          handle_test_error(test_suite,test_case,error_message,error_location)
-    
+	        test_case = get_test_case_name($3, description)
+	        handle_test_error(test_suite,test_case,error_message,error_location)
+	        
         when /Test Case '-\[\S+ (\S+)\]' failed \((\S+) seconds\)/
-          test_case = $1
+          test_case = get_test_case_name($1, @last_description)
           test_case_duration = $2.to_f
           handle_test_failed(test_case,test_case_duration)
-    
+	        
         when /failed with exit code (\d+)/
           @exit_code = $1.to_i
           
         when
           /BUILD FAILED/
           @exit_code = -1;
+      end
+      
+      unless description.nil?
+        @last_description = description
       end
     end
   end
@@ -150,12 +168,30 @@ class ReportParser
     @total_failed_test_cases +=1
     @tests_results[test_case] = test_case_duration
   end
+
+  def get_test_case_name(test_case, description)
+    # Kiwi 1.x
+    if SUPPORT_KIWI and test_case == "example" and !description.nil?
+      description
+    # Kiwi 2.x
+    elsif SUPPORT_KIWI && test_case =~ /(.+_)+(Should.+)(_.+)*/
+      test_case.gsub(/([A-Z])([A-Z][a-z]+)/, ' \1 \2')
+               .gsub(/([A-Z][a-z]+)/, ' \1')
+               .gsub(/([A-Z][A-Z]+)/, ' \1')
+               .gsub(/([^A-Za-z ]+)/, ' \1')
+               .gsub(/\s+/, ' ')
+               .split(" _ ")[1..-1].join(", ")
+               .downcase.capitalize
+    else
+      test_case
+    end
+  end
  
 end
 
 #Main
 #piped_input = File.open("tests_fail.txt") # for debugging this script
-piped_input = ARGF.read
+piped_input = ARGF.readlines
 
 report = ReportParser.new(piped_input)
 

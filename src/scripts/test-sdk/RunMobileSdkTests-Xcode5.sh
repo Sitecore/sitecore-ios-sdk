@@ -18,8 +18,11 @@ REPORT_DIR=$PROJECT_ROOT/deployment/test-results
 
 IOS_VERSION=7.0
 CONFIGURATION=Coverage
+
 KILL_SIMULATOR=$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh
 TEST_CONVERTER=ocunit2junit.rb
+GCOVR=$SCRIPTS_ROOT_DIR/coverage/gcovr
+
 TEST_WORKSPACE=MobileSDK-UnitTests.xcworkspace
 DEVICE=iPad
 
@@ -32,7 +35,7 @@ cd "$PROJECT_ROOT/lib/SCAllMobileSDKLibs"
 TMP_REPORT_DIR=$PWD/test-reports
 WORKSPACE_DIR=$PWD
 
-
+    echo "=====[BEGIN] SCApi-SenTest====="
     /bin/bash "$KILL_SIMULATOR"
     xcodebuild test \
         -scheme SCApi-SenTest \
@@ -43,9 +46,10 @@ WORKSPACE_DIR=$PWD
     cd "$TMP_REPORT_DIR"
     cp -v  *.xml "$REPORT_DIR"
     cd "$WORKSPACE_DIR"
+    echo "=====[END] SCApi-SenTest====="
 
 
-
+    echo "=====[BEGIN] JFFUtils-SenTest====="
     /bin/bash "$KILL_SIMULATOR"
     xcodebuild test \
         -scheme JFFUtils-SenTest \
@@ -56,10 +60,11 @@ WORKSPACE_DIR=$PWD
     cd "$TMP_REPORT_DIR"
     cp -v  *.xml "$REPORT_DIR"
     cd "$WORKSPACE_DIR"
+	echo "=====[END] JFFUtils-SenTest====="
 
 
 
-
+    echo "=====[BEGIN] ObjcScopedGuard-SenTest====="
     /bin/bash "$KILL_SIMULATOR"
     xcodebuild test \
         -scheme ObjcScopedGuard-SenTest \
@@ -70,6 +75,7 @@ WORKSPACE_DIR=$PWD
     cd "$TMP_REPORT_DIR"
     cp -v  *.xml "$REPORT_DIR"
     cd "$WORKSPACE_DIR"
+	echo "=====[END] ObjcScopedGuard-SenTest====="
 
 
 
@@ -90,3 +96,21 @@ WORKSPACE_DIR=$PWD
 
 /bin/bash "$KILL_SIMULATOR"
 cd "$LAUNCH_DIR"
+
+
+################  COVERAGE
+echo "---Collecting coverage reports---"
+
+cd "$PROJECT_ROOT"
+    echo "$GCOVR $PWD --root=$PWD --xml > $PWD/Coverage.xml"
+	echo "$GCOVR $PWD --root=$PWD       > $PWD/Coverage.txt"
+
+	$GCOVR "$PWD" --root="$PWD" --xml | tee "$PWD/Coverage.xml"
+	$GCOVR "$PWD" --root="$PWD"       | tee "$PWD/Coverage.txt"
+cd "$LAUNCH_DIR"
+
+echo "---Done---"
+exit 0
+##################################
+
+

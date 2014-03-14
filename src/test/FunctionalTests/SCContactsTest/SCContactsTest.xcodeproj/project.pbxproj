@@ -168,7 +168,7 @@
 		1B3CDF2C1561124E00949EA6 /* SCTestServerDomainHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTestServerDomainHook.m; sourceTree = "<group>"; };
 		1B3CDF33156118E500949EA6 /* NSURLRequest+isTestDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+isTestDomain.h"; sourceTree = "<group>"; };
 		1B3CDF34156118E500949EA6 /* NSURLRequest+isTestDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+isTestDomain.m"; sourceTree = "<group>"; };
-		1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCContactsTest copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BAFB7411511E8B30007A91D /* SCContactsTestLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCContactsTestLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB95DB51512174F00B4F9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1BBCABF81510E9BD00199B37 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1BBCABF91510E9BD00199B37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -351,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				25913CAA146D57920099177E /* SCContactsTest.app */,
-				1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */,
+				1BAFB7411511E8B30007A91D /* SCContactsTestLibs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 			);
 			name = SCContactsTestLibs;
 			productName = SCContactsTest;
-			productReference = 1BAFB7411511E8B30007A91D /* SCContactsTest copy.app */;
+			productReference = 1BAFB7411511E8B30007A91D /* SCContactsTestLibs.app */;
 			productType = "com.apple.product-type.application";
 		};
 		25913CA9146D57920099177E /* SCContactsTest */ = {
@@ -697,7 +697,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "SCContactsTest copy";
+				PRODUCT_NAME = SCContactsTestLibs;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -718,7 +718,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "SCContactsTest copy";
+				PRODUCT_NAME = SCContactsTestLibs;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -927,7 +927,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "SCContactsTest copy";
+				PRODUCT_NAME = SCContactsTestLibs;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

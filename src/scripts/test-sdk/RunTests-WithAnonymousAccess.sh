@@ -15,7 +15,7 @@ cd "$LAUNCH_DIR"
 
 
 #IOS_VERSION=5.1
-CONFIGURATION=Debug
+CONFIGURATION=Coverage
 
 OLD_XCODE_PATH=$(xcode-select -print-path)
 #latest stable xcode
