@@ -110,6 +110,8 @@
 		7EA15B9F170AD9DB003FC13C /* social_test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA15B9D170AD9C4003FC13C /* social_test.js */; };
 		7EA3AD8D170B1CD200E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7EA3AD8E170B1CD700E53489 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3AD8C170B1CD200E53489 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7EC48E2718D33B6700D87566 /* SitecoreMobileJavaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC48E2518D33B6700D87566 /* SitecoreMobileJavaScript.framework */; };
+		7EC48E2818D33B6700D87566 /* SitecoreMobileUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC48E2618D33B6700D87566 /* SitecoreMobileUI.framework */; };
 		7ED7F43E18D1E890009BFBCE /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43318D1E871009BFBCE /* libMobileSDK-Core.a */; };
 		7ED7F43F18D1E890009BFBCE /* libMobileSDK-JavaScript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43518D1E871009BFBCE /* libMobileSDK-JavaScript.a */; };
 		7ED7F44018D1E890009BFBCE /* libMobileSDK-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F43718D1E871009BFBCE /* libMobileSDK-UI.a */; };
@@ -253,6 +255,8 @@
 		7EA15B9D170AD9C4003FC13C /* social_test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = social_test.js; sourceTree = "<group>"; };
 		7EA15BA1170ADAF5003FC13C /* SocialPluginsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialPluginsTest.m; sourceTree = "<group>"; };
 		7EA3AD8C170B1CD200E53489 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7EC48E2518D33B6700D87566 /* SitecoreMobileJavaScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileJavaScript.framework; path = ../../../deployment/SitecoreMobileJavaScript.framework; sourceTree = "<group>"; };
+		7EC48E2618D33B6700D87566 /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileUI.framework; path = ../../../deployment/SitecoreMobileUI.framework; sourceTree = "<group>"; };
 		7EFC0A49182CE17E00E3FD6A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +302,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC48E2818D33B6700D87566 /* SitecoreMobileUI.framework in Frameworks */,
+				1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */,
+				7EC48E2718D33B6700D87566 /* SitecoreMobileJavaScript.framework in Frameworks */,
 				7E72CA6417FBF8990081F306 /* QuartzCore.framework in Frameworks */,
 				7E36C06617FAFE37000E3083 /* EventKit.framework in Frameworks */,
 				7E36C06717FAFE37000E3083 /* EventKitUI.framework in Frameworks */,
@@ -325,7 +332,6 @@
 				25913CAF146D57920099177E /* UIKit.framework in Frameworks */,
 				25913CB1146D57920099177E /* Foundation.framework in Frameworks */,
 				25913CB3146D57920099177E /* CoreGraphics.framework in Frameworks */,
-				1B0D84C31519D38C00EC4A92 /* SitecoreMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +413,6 @@
 				7E36C06317FAFE2F000E3083 /* EventKitUI.framework */,
 				7EA3AD8C170B1CD200E53489 /* Social.framework */,
 				1BD5614D157F8137002BA8B0 /* libc++.dylib */,
-				1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */,
 				1BB95DB51512174F00B4F9B2 /* MapKit.framework */,
 				1BBCABF81510E9BD00199B37 /* AVFoundation.framework */,
 				1BBCABF91510E9BD00199B37 /* CoreMedia.framework */,
@@ -478,6 +483,9 @@
 		6568491F1472F9DC0064CDE4 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				7EC48E2518D33B6700D87566 /* SitecoreMobileJavaScript.framework */,
+				7EC48E2618D33B6700D87566 /* SitecoreMobileUI.framework */,
+				1B0D84C21519D38C00EC4A92 /* SitecoreMobileSDK.framework */,
 				1B0BFBD415612BD300853028 /* JFFTestTools.xcodeproj */,
 				1B0D83701519D11500EC4A92 /* SCAllMobileSDKLibs.xcodeproj */,
 			);
@@ -888,10 +896,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -908,6 +918,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
@@ -973,10 +984,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
 				INFOPLIST_FILE = "SCContactsTest/SCContactsTest-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
