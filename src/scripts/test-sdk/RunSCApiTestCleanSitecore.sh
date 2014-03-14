@@ -23,7 +23,8 @@ cd ../../
 cd "$LAUNCH_DIR"
 
 
-GCOVR=$SCRIPTS_ROOT_DIR/coverage/gcovr
+#GCOVR=$SCRIPTS_ROOT_DIR/coverage/gcovr
+GCOVR=gcovr
 TEST_SUITE_ROOT=$PROJECT_ROOT/test/FunctionalTests/$APP_NAME
 cd "$TEST_SUITE_ROOT"
 	pwd
