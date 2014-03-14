@@ -21,6 +21,13 @@
 		7EC4903718D35C5E00D87566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC4901918D35C5E00D87566 /* UIKit.framework */; };
 		7EC4903F18D35C5E00D87566 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC4903D18D35C5E00D87566 /* InfoPlist.strings */; };
 		7EC4904118D35C5E00D87566 /* MobileSdkCoreDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4904018D35C5E00D87566 /* MobileSdkCoreDemoTests.m */; };
+		7EC490CD18D35D8900D87566 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490CC18D35D8900D87566 /* SitecoreMobileSDK.framework */; };
+		7EC490D018D35E6A00D87566 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490CE18D35E6A00D87566 /* libc++.dylib */; };
+		7EC490D118D35E6A00D87566 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490CF18D35E6A00D87566 /* libstdc++.dylib */; };
+		7EC490D318D35E6F00D87566 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490D218D35E6F00D87566 /* libxml2.dylib */; };
+		7EC490D518D35E7300D87566 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490D418D35E7300D87566 /* libz.dylib */; };
+		7EC490D718D35E7D00D87566 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490D618D35E7D00D87566 /* libsqlite3.dylib */; };
+		7EC490D918D35E9700D87566 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC490D818D35E9700D87566 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		7EC4903C18D35C5E00D87566 /* MobileSdkCoreDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSdkCoreDemoTests-Info.plist"; sourceTree = "<group>"; };
 		7EC4903E18D35C5E00D87566 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC4904018D35C5E00D87566 /* MobileSdkCoreDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSdkCoreDemoTests.m; sourceTree = "<group>"; };
+		7EC490CC18D35D8900D87566 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		7EC490CE18D35E6A00D87566 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7EC490CF18D35E6A00D87566 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7EC490D218D35E6F00D87566 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7EC490D418D35E7300D87566 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7EC490D618D35E7D00D87566 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7EC490D818D35E9700D87566 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC490CD18D35D8900D87566 /* SitecoreMobileSDK.framework in Frameworks */,
+				7EC490D718D35E7D00D87566 /* libsqlite3.dylib in Frameworks */,
+				7EC490D518D35E7300D87566 /* libz.dylib in Frameworks */,
+				7EC490D318D35E6F00D87566 /* libxml2.dylib in Frameworks */,
+				7EC490D018D35E6A00D87566 /* libc++.dylib in Frameworks */,
+				7EC490D118D35E6A00D87566 /* libstdc++.dylib in Frameworks */,
+				7EC490D918D35E9700D87566 /* CFNetwork.framework in Frameworks */,
 				7EC4901818D35C5E00D87566 /* CoreGraphics.framework in Frameworks */,
 				7EC4901A18D35C5E00D87566 /* UIKit.framework in Frameworks */,
 				7EC4901618D35C5E00D87566 /* Foundation.framework in Frameworks */,
@@ -82,6 +103,7 @@
 		7EC4900918D35C5E00D87566 = {
 			isa = PBXGroup;
 			children = (
+				7EC490CC18D35D8900D87566 /* SitecoreMobileSDK.framework */,
 				7EC4901B18D35C5E00D87566 /* MobileSdkCoreDemo */,
 				7EC4903A18D35C5E00D87566 /* MobileSdkCoreDemoTests */,
 				7EC4901418D35C5E00D87566 /* Frameworks */,
@@ -101,6 +123,12 @@
 		7EC4901418D35C5E00D87566 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EC490D818D35E9700D87566 /* CFNetwork.framework */,
+				7EC490D618D35E7D00D87566 /* libsqlite3.dylib */,
+				7EC490D418D35E7300D87566 /* libz.dylib */,
+				7EC490D218D35E6F00D87566 /* libxml2.dylib */,
+				7EC490CE18D35E6A00D87566 /* libc++.dylib */,
+				7EC490CF18D35E6A00D87566 /* libstdc++.dylib */,
 				7EC4901518D35C5E00D87566 /* Foundation.framework */,
 				7EC4901718D35C5E00D87566 /* CoreGraphics.framework */,
 				7EC4901918D35C5E00D87566 /* UIKit.framework */,
@@ -337,6 +365,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -369,6 +398,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -379,6 +409,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../deployment,
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
 				INFOPLIST_FILE = "MobileSdkCoreDemo/MobileSdkCoreDemo-Info.plist";
@@ -392,6 +427,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../deployment,
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
 				INFOPLIST_FILE = "MobileSdkCoreDemo/MobileSdkCoreDemo-Info.plist";
@@ -461,6 +501,7 @@
 				7EC4904618D35C5E00D87566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EC4904718D35C5E00D87566 /* Build configuration list for PBXNativeTarget "MobileSdkCoreDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +510,7 @@
 				7EC4904918D35C5E00D87566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
