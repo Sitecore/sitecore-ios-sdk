@@ -940,6 +940,7 @@
 					"../../lib-third-party",
 					../SCApi,
 					"../../lib-third-party/iFeatureAvailability",
+					"../../lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
@@ -973,6 +974,7 @@
 					"../../lib-third-party",
 					../SCApi,
 					"../../lib-third-party/iFeatureAvailability",
+					"../../lib-third-party/UIDevice-with-UniqueIdentifier-for-iOS-5",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;

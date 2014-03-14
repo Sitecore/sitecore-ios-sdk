@@ -7,6 +7,8 @@
 
 #include "pathToAllPluginsJavascripts.h"
 
+#import <UIDevice-with-UniqueIdentifier-for-iOS-5/UIDevice+IdentifierAddition.h>
+
 //STODO remove
 @interface SCWebSocketServer : NSObject
 
@@ -22,12 +24,6 @@
 
 @end
 
-//STODO remove
-@interface UIDevice(Private_SCWebViewPlugins)
-
-- (NSString *) uniqueDeviceIdentifier;
-
-@end
 
 @interface NSString (SCWebViewPlugins)
 @end
