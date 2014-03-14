@@ -37,6 +37,7 @@
 		7E3C909918D3158D000CF507 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
 		7E3C909A18D31596000CF507 /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
+		7EC48E7718D33FA100D87566 /* libDeviceUniqueIdentifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
 		7ED7F1C518D1AFCA009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
@@ -73,7 +74,6 @@
 		7ED7F2E218D1D4C5009BFBCE /* libSCMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DDB31518C5EB00EEA9BA /* libSCMap.a */; };
 		7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D85951519D44300EC4A92 /* libSCUtils.a */; };
 		7ED7F45E18D1ED6A009BFBCE /* libCocoaHTTPServerCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FBA216EF169500031889 /* libCocoaHTTPServerCore-iOS.a */; };
-		7ED7F46118D1EE2B009BFBCE /* libDeviceUniqueIdentifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E16FC4116EF229100031889 /* libDeviceUniqueIdentifier.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -553,6 +553,13 @@
 			remoteGlobalIDString = 7E8B6C4715388BD500435EDA;
 			remoteInfo = ObjcScopedGuard;
 		};
+		7EC48E7518D33F9C00D87566 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E16FC2316EF1F3900031889;
+			remoteInfo = DeviceUniqueIdentifier;
+		};
 		7ED1CAA01586427F00EED5EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EECFDC315863CB6004D3D9B /* TouchXmlHelper.xcodeproj */;
@@ -742,13 +749,6 @@
 			remoteGlobalIDString = C7A1AB8613ED46B700CFDFD0;
 			remoteInfo = "CocoaHTTPServerCore-iOS";
 		};
-		7ED7F45F18D1EE24009BFBCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E16FC3C16EF229100031889 /* DeviceUniqueIdentifier.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E16FC2316EF1F3900031889;
-			remoteInfo = DeviceUniqueIdentifier;
-		};
 		7EECFDBC15863CA4004D3D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EECFDA315863CA4004D3D9B /* TouchXML.xcodeproj */;
@@ -914,7 +914,6 @@
 			files = (
 				7E3C909A18D31596000CF507 /* libTouchXMLiOS.a in Frameworks */,
 				7E3C909918D3158D000CF507 /* libFMDB.a in Frameworks */,
-				7ED7F46118D1EE2B009BFBCE /* libDeviceUniqueIdentifier.a in Frameworks */,
 				7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */,
 				7ED7F2CA18D1B41E009BFBCE /* libJFFUI.a in Frameworks */,
 				7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */,
@@ -940,6 +939,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC48E7718D33FA100D87566 /* libDeviceUniqueIdentifier.a in Frameworks */,
 				7ED7F45E18D1ED6A009BFBCE /* libCocoaHTTPServerCore-iOS.a in Frameworks */,
 				7ED7F2DB18D1B7B3009BFBCE /* libSCDevice2Web.a in Frameworks */,
 				7ED7F2DD18D1B7B3009BFBCE /* libSCWebContentApi.a in Frameworks */,
@@ -1476,7 +1476,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7ED7F46018D1EE24009BFBCE /* PBXTargetDependency */,
 				7ED7F2C918D1B416009BFBCE /* PBXTargetDependency */,
 				7ED7F22C18D1B13A009BFBCE /* PBXTargetDependency */,
 				7ED7F22E18D1B13A009BFBCE /* PBXTargetDependency */,
@@ -1510,6 +1509,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7EC48E7618D33F9C00D87566 /* PBXTargetDependency */,
 				7ED7F44218D1ED63009BFBCE /* PBXTargetDependency */,
 				7ED7F2D218D1B7A0009BFBCE /* PBXTargetDependency */,
 				7ED7F2D618D1B7A0009BFBCE /* PBXTargetDependency */,
@@ -2175,6 +2175,11 @@
 			name = ObjcScopedGuard;
 			targetProxy = 7E84E61415E25EE600FB8E36 /* PBXContainerItemProxy */;
 		};
+		7EC48E7618D33F9C00D87566 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DeviceUniqueIdentifier;
+			targetProxy = 7EC48E7518D33F9C00D87566 /* PBXContainerItemProxy */;
+		};
 		7ED1CAA11586427F00EED5EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TouchXmlHelper;
@@ -2304,11 +2309,6 @@
 			isa = PBXTargetDependency;
 			name = "CocoaHTTPServerCore-iOS";
 			targetProxy = 7ED7F44118D1ED63009BFBCE /* PBXContainerItemProxy */;
-		};
-		7ED7F46018D1EE24009BFBCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DeviceUniqueIdentifier;
-			targetProxy = 7ED7F45F18D1EE24009BFBCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
