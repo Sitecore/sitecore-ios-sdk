@@ -77,7 +77,7 @@
 		7EA321921821093E0003433D /* SC_MKDirectionsResponseProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKDirectionsResponseProtocol.h; sourceTree = "<group>"; };
 		7EBC91011821327E00BCBFA0 /* SC_MKMapCameraProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKMapCameraProtocol.h; sourceTree = "<group>"; };
 		7EBC9102182137EB00BCBFA0 /* SC_MKPolylineRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKPolylineRendererProtocol.h; sourceTree = "<group>"; };
-		7ED7F33C18D1DE71009BFBCE /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = SitecoreMobileUI/SCMapView.h; sourceTree = SOURCE_ROOT; };
+		7ED7F33C18D1DE71009BFBCE /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = SitecoreMobileUI/SCMapView.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
