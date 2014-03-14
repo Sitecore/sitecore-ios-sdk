@@ -19,7 +19,7 @@
     #import <SCApi/Cache/RecordCache/SCItemRecordCacheRW.h>
     #import <SCApi/API/ItemSource/SCReadItemsRequest+SCItemSource.h>
     #import <SitecoreMobileSDK/SCItemSourcePOD.h>
-    #import <SCApi/SCExtendedApiContext+Private.h>
+    #import <SCApi/SCExtendedApiSession+Private.h>
     #import <SCApi/SCApiContext+Init.h>
 
     #import <SitecoreMobileSDK/SCApi.h>
