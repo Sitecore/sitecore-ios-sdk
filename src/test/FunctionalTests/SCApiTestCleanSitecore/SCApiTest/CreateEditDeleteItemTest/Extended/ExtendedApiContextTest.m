@@ -41,7 +41,9 @@
         SCAsyncOperationProgressHandler progressCallback = ^(id<SCUploadProgress> progressInfo)
         {
             if ([progressInfo isKindOfClass:[JFFNetworkUploadProgressCallback class]])
+            {
                 NSLog(@"-=== progress: %.2f%%", (progressInfo.progress.floatValue * 100));
+            }
         };
         
         SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession uploadMediaOperationWithRequest: request_ ];
