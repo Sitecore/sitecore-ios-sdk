@@ -21,10 +21,8 @@
 		1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA414863A8600BA6680 /* SCUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B586040151B77D300A06A9B /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B58603F151B77D300A06A9B /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B5144C67AF005CC74B /* SCApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B6144C67AF005CC74B /* SCItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4C4144C67C2005CC74B /* SCUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B74CFA914A8965E004D8B39 /* SCPagedItems.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB030B81546C51B00439B66 /* SCUploadMediaItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB030B51546C51B00439B66 /* SCUploadMediaItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932314B7354800244765 /* SCCheckboxField.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,11 +31,6 @@
 		1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932614B7354800244765 /* SCDateTimeField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932D14B7354800244765 /* SCImageField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932714B7354800244765 /* SCImageField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932814B7354800244765 /* SCMultilistField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9B91510C45000199B37 /* SCWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C41510C53100199B37 /* SCWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB014A1E38D00DD0960 /* SCApiSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAA14A1E38D00DD0960 /* SCApiSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAB14A1E38D00DD0960 /* SCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB214A1E38D00DD0960 /* SCReadItemsRequestFlags.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAC14A1E38D00DD0960 /* SCReadItemsRequestFlags.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,11 +38,7 @@
 		1BC48BB414A1E38D00DD0960 /* SCReadItemsScopeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAE14A1E38D00DD0960 /* SCReadItemsScopeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB514A1E38D00DD0960 /* SCReadItemsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAF14A1E38D00DD0960 /* SCReadItemsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */; };
-		1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BED0568144ED9C500B8DC2A /* SCField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0567144ED9C500B8DC2A /* SCField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0569144ED9E400B8DC2A /* SCImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781F4B321806D03A00035AC3 /* SCBaseItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781F4B361806D1A400035AC3 /* SCGetRenderingHtmlRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,7 +52,7 @@
 		7E59469A17E71F0700653196 /* SCAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FD17E72A1500653196 /* SCItemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FB17E72A0D00653196 /* SCItemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FE17E72A1700653196 /* SCItemSourcePOD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB4A18165563002AF8FB /* SCRichTextField.h */; };
+		7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB4A18165563002AF8FB /* SCRichTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2D172164BD00C5A80C /* SCTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2A172164BD00C5A80C /* SCTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2E172164BD00C5A80C /* SCPageEventTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2B172164BD00C5A80C /* SCPageEventTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +60,22 @@
 		7EC342A018D1AAB000158FF6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC3429E18D1AAB000158FF6 /* InfoPlist.strings */; };
 		7ED7F2BC18D1B36C009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC3429918D1AAB000158FF6 /* Foundation.framework */; };
 		7ED7F2C218D1B36C009BFBCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7F2C018D1B36C009BFBCE /* InfoPlist.strings */; };
+		7EE8009518D3063100BF37BA /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009418D3063100BF37BA /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009918D3073000BF37BA /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C41510C53100199B37 /* SCWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009A18D3073000BF37BA /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009B18D3073000BF37BA /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009C18D3073000BF37BA /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9B91510C45000199B37 /* SCWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009D18D3073000BF37BA /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009E18D3074D00BF37BA /* SCQRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009F18D3074D00BF37BA /* SCQRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A018D3074D00BF37BA /* SCQRCodeReaderViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A118D3074D00BF37BA /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009618D306A200BF37BA /* SCImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A218D3074D00BF37BA /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009718D306A200BF37BA /* SCUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A318D3074D00BF37BA /* SCWebViewURLPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A618D307E500BF37BA /* libMobileSDK-JavaScript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F28118D1B1F1009BFBCE /* libMobileSDK-JavaScript.a */; };
+		7EE800A918D307F100BF37BA /* libMobileSDK-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F2B218D1B21D009BFBCE /* libMobileSDK-UI.a */; };
+		7EE800AA18D3084800BF37BA /* EmptyFileForJustToAvoidError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */; };
+		7EE800AB18D3084B00BF37BA /* EmptyFileForJustToAvoidError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,20 @@
 			remoteGlobalIDString = 7ED7F28E18D1B20D009BFBCE;
 			remoteInfo = "MobileSDK-UI";
 		};
+		7EE800A418D307DE00BF37BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F20818D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7EE800A718D307EC00BF37BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F28D18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -130,10 +149,8 @@
 		1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCArrayHelperBlocks.h; sourceTree = "<group>"; };
 		1B3EDBA414863A8600BA6680 /* SCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUtils.h; sourceTree = "<group>"; };
 		1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpDefinitions.h; sourceTree = "<group>"; };
-		1B58603F151B77D300A06A9B /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCMapView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B68C4B5144C67AF005CC74B /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCApi.h; path = ../../SCApi/SitecoreMobileSDK/SCApi.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B68C4B6144C67AF005CC74B /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItem.h; path = ../../SCApi/SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; };
-		1B68C4C4144C67C2005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUI.h; path = ../../SCUI/SitecoreMobileSDK/SCUI.h; sourceTree = "<group>"; };
 		1B74CFA914A8965E004D8B39 /* SCPagedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCPagedItems.h; path = ../../SCApi/SitecoreMobileSDK/SCPagedItems.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B74D1BD14A9EEA0004D8B39 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		1BB030B51546C51B00439B66 /* SCUploadMediaItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCUploadMediaItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCUploadMediaItemRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -159,16 +176,15 @@
 		1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderView.h; sourceTree = "<group>"; };
 		1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderViewDelegate.h; sourceTree = "<group>"; };
 		1BED0567144ED9C500B8DC2A /* SCField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCField.h; path = ../../SCApi/SitecoreMobileSDK/SCField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1BED0569144ED9E400B8DC2A /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../../SCUI/SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
 		1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileSDK.h; sourceTree = "<group>"; };
-		781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGetRenderingHtmlRequest.h; path = ../SCApi/SitecoreMobileSDK/SCGetRenderingHtmlRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
+		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
+		781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGetRenderingHtmlRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCGetRenderingHtmlRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78701B7817D756FD00CA9D2F /* SCExtendedOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCExtendedOperations.h; path = ../../SCUtils/SitecoreMobileSDK/SCExtendedOperations.h; sourceTree = "<group>"; };
 		788DE11217D774A500AB3D8C /* SCExtendedApiSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCExtendedApiSession.h; path = ../../SCApi/SitecoreMobileSDK/SCExtendedApiSession.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		788DE11417D774E300AB3D8C /* SCDownloadMediaOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDownloadMediaOptions.h; path = ../../SCApi/SitecoreMobileSDK/SCDownloadMediaOptions.h; sourceTree = "<group>"; };
 		788DE11517D774E300AB3D8C /* SCParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCParams.h; path = ../../SCApi/SitecoreMobileSDK/SCParams.h; sourceTree = "<group>"; };
-		78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUploadProgress.h; path = ../SCUtils/SitecoreMobileSDK/SCUploadProgress.h; sourceTree = "<group>"; };
+		78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUploadProgress.h; path = ../../SCUtils/SitecoreMobileSDK/SCUploadProgress.h; sourceTree = "<group>"; };
 		7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCExtendedAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 		7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebApiVersion.h; path = ../../SCApi/SitecoreMobileSDK/SCWebApiVersion.h; sourceTree = "<group>"; };
 		7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
@@ -194,6 +210,10 @@
 		7ED7F2BF18D1B36C009BFBCE /* SitecoreMobileUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileUI-Info.plist"; sourceTree = "<group>"; };
 		7ED7F2C118D1B36C009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7ED7F2C318D1B36C009BFBCE /* SitecoreMobileUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SitecoreMobileUI-Prefix.pch"; sourceTree = "<group>"; };
+		7EE8009418D3063100BF37BA /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = ../SitecoreMobileUI/SCMapView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7EE8009618D306A200BF37BA /* SCImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCImageView.h; sourceTree = "<group>"; };
+		7EE8009718D306A200BF37BA /* SCUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCUI.h; sourceTree = "<group>"; };
+		7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCWebViewURLPreloader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE800A618D307E500BF37BA /* libMobileSDK-JavaScript.a in Frameworks */,
 				7EC3429A18D1AAB000158FF6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE800A918D307F100BF37BA /* libMobileSDK-UI.a in Frameworks */,
 				7ED7F2BC18D1B36C009BFBCE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,10 +249,6 @@
 		1B13992F1446E84E0015C191 = {
 			isa = PBXGroup;
 			children = (
-				78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */,
-				781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */,
-				781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */,
-				781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */,
 				1B13993F1446E84F0015C191 /* SitecoreMobileSDK */,
 				1B13994B1446E8640015C191 /* Dependencies */,
 				7EC3429B18D1AAB000158FF6 /* SitecoreMobileJavaScript */,
@@ -304,15 +322,19 @@
 		1B58603E151B77D300A06A9B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				1B58603F151B77D300A06A9B /* SCMapView.h */,
+				7EE8009418D3063100BF37BA /* SCMapView.h */,
 			);
 			name = Map;
-			path = ../../SCMap/SitecoreMobileSDK;
+			path = ../../SCMap/SitecoreMobileUI;
 			sourceTree = "<group>";
 		};
 		1B68C4C1144C67B4005CC74B /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */,
+				781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */,
+				781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */,
+				781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */,
 				7E96BB4A18165563002AF8FB /* SCRichTextField.h */,
 				7E5946FB17E72A0D00653196 /* SCItemSource.h */,
 				7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */,
@@ -356,10 +378,12 @@
 		1B68C4CC144C67C5005CC74B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1BED0569144ED9E400B8DC2A /* SCImageView.h */,
-				1B68C4C4144C67C2005CC74B /* SCUI.h */,
+				7EE8009618D306A200BF37BA /* SCImageView.h */,
+				7EE8009718D306A200BF37BA /* SCUI.h */,
+				7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */,
 			);
 			name = UI;
+			path = ../../SCUI/SitecoreMobileUI;
 			sourceTree = "<group>";
 		};
 		1B74D1BC14A9EE87004D8B39 /* doc */ = {
@@ -380,7 +404,7 @@
 				1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */,
 			);
 			name = WebView;
-			path = ../../SCWebView/SitecoreMobileSDK;
+			path = ../../SCWebView/SitecoreMobileJavaScript;
 			sourceTree = "<group>";
 		};
 		1BD6AA291518CAE100D2FC84 /* Products */ = {
@@ -402,7 +426,7 @@
 				1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */,
 			);
 			name = QRCodeReader;
-			path = ../../SCQRCodeReader/SitecoreMobileSDK;
+			path = ../../SCQRCodeReader/SitecoreMobileUI;
 			sourceTree = "<group>";
 		};
 		7EC3429818D1AAAF00158FF6 /* Frameworks */ = {
@@ -503,34 +527,24 @@
 				7EB71F2E172164BD00C5A80C /* SCPageEventTriggeringRequest.h in Headers */,
 				7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */,
 				1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */,
-				1B586040151B77D300A06A9B /* SCMapView.h in Headers */,
 				1BED0568144ED9C500B8DC2A /* SCField.h in Headers */,
 				1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */,
-				1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */,
 				1B0E58AC14E52B3B008EE5F9 /* SCColorPickerField.h in Headers */,
 				1B2457DB1524625B00FBB6C2 /* SCCreateItemRequest.h in Headers */,
 				1B2457DC1524625B00FBB6C2 /* SCEditItemsRequest.h in Headers */,
-				1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */,
 				1BB2932A14B7354800244765 /* SCChecklistField.h in Headers */,
 				1BB2932B14B7354800244765 /* SCDateField.h in Headers */,
-				1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */,
-				1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */,
-				1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */,
 				1B28D6B414FF756200673110 /* SCDroplinkField.h in Headers */,
 				1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */,
 				1B0E592D14E543DA008EE5F9 /* SCTreelistField.h in Headers */,
 				1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */,
 				1BB2932D14B7354800244765 /* SCImageField.h in Headers */,
 				1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */,
-				1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */,
 				1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */,
 				1BC48BB214A1E38D00DD0960 /* SCReadItemsRequestFlags.h in Headers */,
 				1B28D6B514FF756200673110 /* SCFieldLinkData.h in Headers */,
 				1B28D6B614FF756200673110 /* SCGeneralLinkField.h in Headers */,
 				1BC48BB414A1E38D00DD0960 /* SCReadItemsScopeType.h in Headers */,
-				1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */,
-				1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */,
-				1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */,
 				1BB030B81546C51B00439B66 /* SCUploadMediaItemRequest.h in Headers */,
 				1BC48BB514A1E38D00DD0960 /* SCReadItemsRequest.h in Headers */,
 				1BC48BB314A1E38D00DD0960 /* SCReadItemsRequestType.h in Headers */,
@@ -540,7 +554,6 @@
 				788DE11317D774A500AB3D8C /* SCExtendedApiSession.h in Headers */,
 				1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */,
 				1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */,
-				7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */,
 				78701B7917D756FD00CA9D2F /* SCExtendedOperations.h in Headers */,
 				78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */,
 				788DE11617D774E300AB3D8C /* SCDownloadMediaOptions.h in Headers */,
@@ -548,8 +561,8 @@
 				1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */,
 				1B3EDBA514863A8600BA6680 /* NSArray+SCBlocksAdditions.h in Headers */,
 				1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */,
+				7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */,
 				1B28D6C114FF761800673110 /* SCDroptreeField.h in Headers */,
-				1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */,
 				1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +571,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE8009918D3073000BF37BA /* SCWebBrowser.h in Headers */,
+				7EE8009A18D3073000BF37BA /* SCWebBrowserDelegate.h in Headers */,
+				7EE8009B18D3073000BF37BA /* SCWebBrowserToolbar.h in Headers */,
+				7EE8009C18D3073000BF37BA /* SCWebView.h in Headers */,
+				7EE8009D18D3073000BF37BA /* SCWebViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +583,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE8009518D3063100BF37BA /* SCMapView.h in Headers */,
+				7EE8009E18D3074D00BF37BA /* SCQRCodeReader.h in Headers */,
+				7EE8009F18D3074D00BF37BA /* SCQRCodeReaderView.h in Headers */,
+				7EE800A018D3074D00BF37BA /* SCQRCodeReaderViewDelegate.h in Headers */,
+				7EE800A118D3074D00BF37BA /* SCImageView.h in Headers */,
+				7EE800A218D3074D00BF37BA /* SCUI.h in Headers */,
+				7EE800A318D3074D00BF37BA /* SCWebViewURLPreloader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +632,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7EE800A518D307DE00BF37BA /* PBXTargetDependency */,
 			);
 			name = SitecoreMobileJavaScript;
 			productName = SitecoreMobileJavaScript;
@@ -627,6 +653,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7EE800A818D307EC00BF37BA /* PBXTargetDependency */,
 			);
 			name = SitecoreMobileUI;
 			productName = SitecoreMobileUI;
@@ -847,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE800AB18D3084B00BF37BA /* EmptyFileForJustToAvoidError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +882,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE800AA18D3084800BF37BA /* EmptyFileForJustToAvoidError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +893,16 @@
 			isa = PBXTargetDependency;
 			name = SCAllMobileSDKLibs;
 			targetProxy = 1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */;
+		};
+		7EE800A518D307DE00BF37BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-JavaScript";
+			targetProxy = 7EE800A418D307DE00BF37BA /* PBXContainerItemProxy */;
+		};
+		7EE800A818D307EC00BF37BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-UI";
+			targetProxy = 7EE800A718D307EC00BF37BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -969,10 +1008,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -999,10 +1034,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1058,10 +1089,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1330,6 +1357,7 @@
 				7ED7F2C718D1B36C009BFBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
