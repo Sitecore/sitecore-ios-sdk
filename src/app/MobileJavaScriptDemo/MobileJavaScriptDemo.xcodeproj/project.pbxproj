@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E5C358218D36A05005D90AE /* SitecoreMobileJavaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C357F18D36A05005D90AE /* SitecoreMobileJavaScript.framework */; };
+		7E5C358318D36A05005D90AE /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358018D36A05005D90AE /* SitecoreMobileSDK.framework */; };
+		7E5C358418D36A05005D90AE /* SitecoreMobileUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358118D36A05005D90AE /* SitecoreMobileUI.framework */; };
+		7E5C358718D36A72005D90AE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358518D36A72005D90AE /* libc++.dylib */; };
+		7E5C358818D36A72005D90AE /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358618D36A72005D90AE /* libstdc++.dylib */; };
+		7E5C358A18D36A77005D90AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358918D36A77005D90AE /* libsqlite3.dylib */; };
+		7E5C358C18D36A7B005D90AE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358B18D36A7B005D90AE /* libxml2.dylib */; };
+		7E5C358E18D36A80005D90AE /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358D18D36A80005D90AE /* libiconv.dylib */; };
+		7E5C359018D36A98005D90AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C358F18D36A98005D90AE /* libz.dylib */; };
+		7E5C359218D36A9D005D90AE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359118D36A9D005D90AE /* CFNetwork.framework */; };
+		7E5C359418D36AAB005D90AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359318D36AAB005D90AE /* Social.framework */; };
+		7E5C359718D36AB0005D90AE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359518D36AB0005D90AE /* AddressBook.framework */; };
+		7E5C359818D36AB0005D90AE /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359618D36AB0005D90AE /* AddressBookUI.framework */; };
+		7E5C359A18D36AB5005D90AE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359918D36AB5005D90AE /* MessageUI.framework */; };
+		7E5C359D18D36AC8005D90AE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359B18D36AC8005D90AE /* EventKit.framework */; };
+		7E5C359E18D36AC8005D90AE /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359C18D36AC8005D90AE /* EventKitUI.framework */; };
+		7E5C35A018D36ADB005D90AE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C359F18D36ADB005D90AE /* CoreMotion.framework */; };
+		7E5C35A218D36ADF005D90AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35A118D36ADF005D90AE /* CoreLocation.framework */; };
+		7E5C35A418D36AE3005D90AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35A318D36AE3005D90AE /* MapKit.framework */; };
+		7E5C35A718D36B0A005D90AE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35A518D36B0A005D90AE /* AudioToolbox.framework */; };
+		7E5C35A818D36B0A005D90AE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35A618D36B0A005D90AE /* CoreAudio.framework */; };
+		7E5C35AB18D36B18005D90AE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35A918D36B18005D90AE /* CoreMedia.framework */; };
+		7E5C35AC18D36B18005D90AE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5C35AA18D36B18005D90AE /* CoreVideo.framework */; };
 		7EC4905718D35C8700D87566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC4905618D35C8700D87566 /* Foundation.framework */; };
 		7EC4905918D35C8700D87566 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC4905818D35C8700D87566 /* CoreGraphics.framework */; };
 		7EC4905B18D35C8700D87566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC4905A18D35C8700D87566 /* UIKit.framework */; };
@@ -34,6 +57,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E5C357F18D36A05005D90AE /* SitecoreMobileJavaScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileJavaScript.framework; path = ../../deployment/SitecoreMobileJavaScript.framework; sourceTree = "<group>"; };
+		7E5C358018D36A05005D90AE /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		7E5C358118D36A05005D90AE /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileUI.framework; path = ../../deployment/SitecoreMobileUI.framework; sourceTree = "<group>"; };
+		7E5C358518D36A72005D90AE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7E5C358618D36A72005D90AE /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7E5C358918D36A77005D90AE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7E5C358B18D36A7B005D90AE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7E5C358D18D36A80005D90AE /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		7E5C358F18D36A98005D90AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7E5C359118D36A9D005D90AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7E5C359318D36AAB005D90AE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7E5C359518D36AB0005D90AE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		7E5C359618D36AB0005D90AE /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		7E5C359918D36AB5005D90AE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		7E5C359B18D36AC8005D90AE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E5C359C18D36AC8005D90AE /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		7E5C359F18D36ADB005D90AE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7E5C35A118D36ADF005D90AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7E5C35A318D36AE3005D90AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7E5C35A518D36B0A005D90AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7E5C35A618D36B0A005D90AE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		7E5C35A918D36B18005D90AE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7E5C35AA18D36B18005D90AE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7EC4905318D35C8700D87566 /* MobileJavaScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileJavaScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC4905618D35C8700D87566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EC4905818D35C8700D87566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,9 +106,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5C35AB18D36B18005D90AE /* CoreMedia.framework in Frameworks */,
+				7E5C35AC18D36B18005D90AE /* CoreVideo.framework in Frameworks */,
+				7E5C35A718D36B0A005D90AE /* AudioToolbox.framework in Frameworks */,
+				7E5C35A818D36B0A005D90AE /* CoreAudio.framework in Frameworks */,
+				7E5C35A418D36AE3005D90AE /* MapKit.framework in Frameworks */,
+				7E5C35A218D36ADF005D90AE /* CoreLocation.framework in Frameworks */,
+				7E5C35A018D36ADB005D90AE /* CoreMotion.framework in Frameworks */,
+				7E5C359D18D36AC8005D90AE /* EventKit.framework in Frameworks */,
+				7E5C359E18D36AC8005D90AE /* EventKitUI.framework in Frameworks */,
+				7E5C359A18D36AB5005D90AE /* MessageUI.framework in Frameworks */,
+				7E5C359718D36AB0005D90AE /* AddressBook.framework in Frameworks */,
+				7E5C359818D36AB0005D90AE /* AddressBookUI.framework in Frameworks */,
+				7E5C359418D36AAB005D90AE /* Social.framework in Frameworks */,
+				7E5C359218D36A9D005D90AE /* CFNetwork.framework in Frameworks */,
+				7E5C359018D36A98005D90AE /* libz.dylib in Frameworks */,
+				7E5C358E18D36A80005D90AE /* libiconv.dylib in Frameworks */,
+				7E5C358C18D36A7B005D90AE /* libxml2.dylib in Frameworks */,
+				7E5C358A18D36A77005D90AE /* libsqlite3.dylib in Frameworks */,
+				7E5C358718D36A72005D90AE /* libc++.dylib in Frameworks */,
+				7E5C358818D36A72005D90AE /* libstdc++.dylib in Frameworks */,
 				7EC4905918D35C8700D87566 /* CoreGraphics.framework in Frameworks */,
 				7EC4905B18D35C8700D87566 /* UIKit.framework in Frameworks */,
 				7EC4905718D35C8700D87566 /* Foundation.framework in Frameworks */,
+				7E5C358318D36A05005D90AE /* SitecoreMobileSDK.framework in Frameworks */,
+				7E5C358418D36A05005D90AE /* SitecoreMobileUI.framework in Frameworks */,
+				7E5C358218D36A05005D90AE /* SitecoreMobileJavaScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +151,9 @@
 		7EC4904A18D35C8700D87566 = {
 			isa = PBXGroup;
 			children = (
+				7E5C357F18D36A05005D90AE /* SitecoreMobileJavaScript.framework */,
+				7E5C358018D36A05005D90AE /* SitecoreMobileSDK.framework */,
+				7E5C358118D36A05005D90AE /* SitecoreMobileUI.framework */,
 				7EC4905C18D35C8700D87566 /* MobileJavaScriptDemo */,
 				7EC4907B18D35C8700D87566 /* MobileJavaScriptDemoTests */,
 				7EC4905518D35C8700D87566 /* Frameworks */,
@@ -101,6 +173,26 @@
 		7EC4905518D35C8700D87566 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E5C35A918D36B18005D90AE /* CoreMedia.framework */,
+				7E5C35AA18D36B18005D90AE /* CoreVideo.framework */,
+				7E5C35A518D36B0A005D90AE /* AudioToolbox.framework */,
+				7E5C35A618D36B0A005D90AE /* CoreAudio.framework */,
+				7E5C35A318D36AE3005D90AE /* MapKit.framework */,
+				7E5C35A118D36ADF005D90AE /* CoreLocation.framework */,
+				7E5C359F18D36ADB005D90AE /* CoreMotion.framework */,
+				7E5C359B18D36AC8005D90AE /* EventKit.framework */,
+				7E5C359C18D36AC8005D90AE /* EventKitUI.framework */,
+				7E5C359918D36AB5005D90AE /* MessageUI.framework */,
+				7E5C359518D36AB0005D90AE /* AddressBook.framework */,
+				7E5C359618D36AB0005D90AE /* AddressBookUI.framework */,
+				7E5C359318D36AAB005D90AE /* Social.framework */,
+				7E5C359118D36A9D005D90AE /* CFNetwork.framework */,
+				7E5C358F18D36A98005D90AE /* libz.dylib */,
+				7E5C358D18D36A80005D90AE /* libiconv.dylib */,
+				7E5C358B18D36A7B005D90AE /* libxml2.dylib */,
+				7E5C358918D36A77005D90AE /* libsqlite3.dylib */,
+				7E5C358518D36A72005D90AE /* libc++.dylib */,
+				7E5C358618D36A72005D90AE /* libstdc++.dylib */,
 				7EC4905618D35C8700D87566 /* Foundation.framework */,
 				7EC4905818D35C8700D87566 /* CoreGraphics.framework */,
 				7EC4905A18D35C8700D87566 /* UIKit.framework */,
@@ -337,6 +429,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -369,6 +462,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -379,6 +473,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileJavaScriptDemo/MobileJavaScriptDemo-Prefix.pch";
 				INFOPLIST_FILE = "MobileJavaScriptDemo/MobileJavaScriptDemo-Info.plist";
@@ -392,6 +490,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileJavaScriptDemo/MobileJavaScriptDemo-Prefix.pch";
 				INFOPLIST_FILE = "MobileJavaScriptDemo/MobileJavaScriptDemo-Info.plist";
@@ -461,6 +563,7 @@
 				7EC4908718D35C8700D87566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EC4908818D35C8700D87566 /* Build configuration list for PBXNativeTarget "MobileJavaScriptDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +572,7 @@
 				7EC4908A18D35C8700D87566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
