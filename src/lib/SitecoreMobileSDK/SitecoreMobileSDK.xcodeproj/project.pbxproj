@@ -37,7 +37,6 @@
 		1BC48BB314A1E38D00DD0960 /* SCReadItemsRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAD14A1E38D00DD0960 /* SCReadItemsRequestType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB414A1E38D00DD0960 /* SCReadItemsScopeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAE14A1E38D00DD0960 /* SCReadItemsScopeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB514A1E38D00DD0960 /* SCReadItemsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAF14A1E38D00DD0960 /* SCReadItemsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */; };
 		1BED0568144ED9C500B8DC2A /* SCField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0567144ED9C500B8DC2A /* SCField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781F4B321806D03A00035AC3 /* SCBaseItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +48,7 @@
 		78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E1792EB17E7424D007AABFD /* SCExtendedAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E2579D217B276E000FEFFDE /* SCWebApiVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E4D462918D31B1400EE502F /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F27F18D1B1F1009BFBCE /* libMobileSDK-Core.a */; };
 		7E59469A17E71F0700653196 /* SCAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FD17E72A1500653196 /* SCItemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FB17E72A0D00653196 /* SCItemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FE17E72A1700653196 /* SCItemSourcePOD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,12 +86,12 @@
 			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
-		1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */ = {
+		7E4D462718D31B0A00EE502F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
-			remoteInfo = SCAllMobileSDKLibs;
+			remoteGlobalIDString = 7ED7F1C318D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
 		};
 		7ED7F27E18D1B1F1009BFBCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -221,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */,
+				7E4D462918D31B1400EE502F /* libMobileSDK-Core.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +610,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */,
+				7E4D462818D31B0A00EE502F /* PBXTargetDependency */,
 			);
 			name = SitecoreMobileSDK;
 			productName = SitecoreMobileSDK;
@@ -889,10 +889,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */ = {
+		7E4D462818D31B0A00EE502F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SCAllMobileSDKLibs;
-			targetProxy = 1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */;
+			name = "MobileSDK-Core";
+			targetProxy = 7E4D462718D31B0A00EE502F /* PBXContainerItemProxy */;
 		};
 		7EE800A518D307DE00BF37BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

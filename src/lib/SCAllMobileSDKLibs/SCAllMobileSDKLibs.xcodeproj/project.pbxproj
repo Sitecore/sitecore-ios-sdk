@@ -34,6 +34,8 @@
 		7E340AA01803F62A0053832D /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
 		7E340AA11803F62E0053832D /* libESDatabaseWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */; };
 		7E3A5C6515E67C91008BA4D9 /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
+		7E3C909918D3158D000CF507 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
+		7E3C909A18D31596000CF507 /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
 		7E84E61615E25EF000FB8E36 /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED1CABC1586428800EED5EA /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
 		7ED1CABD1586428800EED5EA /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
@@ -48,7 +50,6 @@
 		7ED7F24B18D1B188009BFBCE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33956315663E5100E935E9 /* libc++.dylib */; };
 		7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3A5C4715E67C7B008BA4D9 /* libAmberFoundation.a */; };
 		7ED7F24D18D1B1D4009BFBCE /* libESDatabaseWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A9F1803F61D0053832D /* libESDatabaseWrapper.a */; };
-		7ED7F24E18D1B1D4009BFBCE /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E340A7A1803F6170053832D /* libFMDB.a */; };
 		7ED7F24F18D1B1D4009BFBCE /* libiFeatureAvailability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0461FF170C236B00AB6873 /* libiFeatureAvailability.a */; };
 		7ED7F25018D1B1D4009BFBCE /* libJFFAsyncOperations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688E29A1518CFF200437842 /* libJFFAsyncOperations.a */; };
 		7ED7F25118D1B1D4009BFBCE /* libJFFCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 061722F7152AE05500549265 /* libJFFCache.a */; };
@@ -59,7 +60,6 @@
 		7ED7F25618D1B1D4009BFBCE /* libObjcScopedGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84E60515E25ED300FB8E36 /* libObjcScopedGuard.a */; };
 		7ED7F25718D1B1D4009BFBCE /* libSCApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DF1F1518C78A00EEA9BA /* libSCApi.a */; };
 		7ED7F25818D1B1D4009BFBCE /* libTouchXmlHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC815863CB6004D3D9B /* libTouchXmlHelper.a */; };
-		7ED7F25918D1B1D4009BFBCE /* libTouchXMLiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EECFDC115863CA4004D3D9B /* libTouchXMLiOS.a */; };
 		7ED7F28F18D1B20D009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33DD921518C5BC00EEA9BA /* Foundation.framework */; };
 		7ED7F29418D1B20D009BFBCE /* MobileSDK_UI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7ED7F29318D1B20D009BFBCE /* MobileSDK_UI.h */; };
 		7ED7F29618D1B20D009BFBCE /* MobileSDK_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7F29518D1B20D009BFBCE /* MobileSDK_UI.m */; };
@@ -912,12 +912,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3C909A18D31596000CF507 /* libTouchXMLiOS.a in Frameworks */,
+				7E3C909918D3158D000CF507 /* libFMDB.a in Frameworks */,
 				7ED7F46118D1EE2B009BFBCE /* libDeviceUniqueIdentifier.a in Frameworks */,
 				7ED7F3C818D1E310009BFBCE /* libSCUtils.a in Frameworks */,
 				7ED7F2CA18D1B41E009BFBCE /* libJFFUI.a in Frameworks */,
 				7ED7F24C18D1B1D4009BFBCE /* libAmberFoundation.a in Frameworks */,
 				7ED7F24D18D1B1D4009BFBCE /* libESDatabaseWrapper.a in Frameworks */,
-				7ED7F24E18D1B1D4009BFBCE /* libFMDB.a in Frameworks */,
 				7ED7F24F18D1B1D4009BFBCE /* libiFeatureAvailability.a in Frameworks */,
 				7ED7F25018D1B1D4009BFBCE /* libJFFAsyncOperations.a in Frameworks */,
 				7ED7F25118D1B1D4009BFBCE /* libJFFCache.a in Frameworks */,
@@ -928,7 +929,6 @@
 				7ED7F25618D1B1D4009BFBCE /* libObjcScopedGuard.a in Frameworks */,
 				7ED7F25718D1B1D4009BFBCE /* libSCApi.a in Frameworks */,
 				7ED7F25818D1B1D4009BFBCE /* libTouchXmlHelper.a in Frameworks */,
-				7ED7F25918D1B1D4009BFBCE /* libTouchXMLiOS.a in Frameworks */,
 				7ED7F1C518D1AFCA009BFBCE /* Foundation.framework in Frameworks */,
 				7ED7F24B18D1B188009BFBCE /* libc++.dylib in Frameworks */,
 				7ED7F24918D1B177009BFBCE /* libcrypto.a in Frameworks */,
