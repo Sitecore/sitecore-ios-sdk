@@ -896,7 +896,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
-					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+					../../../deployment,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
@@ -918,7 +918,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
-					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+					../../../deployment,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
@@ -984,7 +984,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../../frameworks,
-					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
+					../../../deployment,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCContactsTest/SCContactsTest-Prefix.pch";
