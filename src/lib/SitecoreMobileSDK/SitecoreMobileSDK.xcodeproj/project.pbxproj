@@ -58,6 +58,8 @@
 		7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EC3429A18D1AAB000158FF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC3429918D1AAB000158FF6 /* Foundation.framework */; };
 		7EC342A018D1AAB000158FF6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC3429E18D1AAB000158FF6 /* InfoPlist.strings */; };
+		7EC4915818D362A400D87566 /* SitecoreMobileJavaScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EC4915A18D362AE00D87566 /* SitecoreMobileUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED7F2BC18D1B36C009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC3429918D1AAB000158FF6 /* Foundation.framework */; };
 		7ED7F2C218D1B36C009BFBCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7F2C018D1B36C009BFBCE /* InfoPlist.strings */; };
 		7EE8009518D3063100BF37BA /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009418D3063100BF37BA /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -198,14 +200,10 @@
 		7EC3429D18D1AAB000158FF6 /* SitecoreMobileJavaScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileJavaScript-Info.plist"; sourceTree = "<group>"; };
 		7EC3429F18D1AAB000158FF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC342A118D1AAB000158FF6 /* SitecoreMobileJavaScript-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SitecoreMobileJavaScript-Prefix.pch"; sourceTree = "<group>"; };
-		7ED7F26218D1B1F1009BFBCE /* MobileSDK-UI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSDK-UI-Prefix.pch"; sourceTree = "<group>"; };
-		7ED7F26318D1B1F1009BFBCE /* MobileSDK_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileSDK_UI.h; sourceTree = "<group>"; };
-		7ED7F26518D1B1F1009BFBCE /* MobileSDK_UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_UI.m; sourceTree = "<group>"; };
+		7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileJavaScript.h; sourceTree = "<group>"; };
+		7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileUI.h; sourceTree = "<group>"; };
 		7ED7F26C18D1B1F1009BFBCE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7ED7F26F18D1B1F1009BFBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7ED7F27618D1B1F1009BFBCE /* MobileSDK-UITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSDK-UITests-Info.plist"; sourceTree = "<group>"; };
-		7ED7F27818D1B1F1009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7ED7F27A18D1B1F1009BFBCE /* MobileSDK_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSDK_UITests.m; sourceTree = "<group>"; };
 		7ED7F2BB18D1B36C009BFBCE /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = SitecoreMobileUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED7F2BF18D1B36C009BFBCE /* SitecoreMobileUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileUI-Info.plist"; sourceTree = "<group>"; };
 		7ED7F2C118D1B36C009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -252,8 +250,6 @@
 				1B13993F1446E84F0015C191 /* SitecoreMobileSDK */,
 				1B13994B1446E8640015C191 /* Dependencies */,
 				7EC3429B18D1AAB000158FF6 /* SitecoreMobileJavaScript */,
-				7ED7F26018D1B1F1009BFBCE /* MobileSDK-UI */,
-				7ED7F27418D1B1F1009BFBCE /* MobileSDK-UITests */,
 				7ED7F2BD18D1B36C009BFBCE /* SitecoreMobileUI */,
 				7EC3429818D1AAAF00158FF6 /* Frameworks */,
 				1B13993E1446E84F0015C191 /* Products */,
@@ -442,6 +438,7 @@
 		7EC3429B18D1AAB000158FF6 /* SitecoreMobileJavaScript */ = {
 			isa = PBXGroup;
 			children = (
+				7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */,
 				7EC3429C18D1AAB000158FF6 /* Supporting Files */,
 			);
 			path = SitecoreMobileJavaScript;
@@ -457,45 +454,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7ED7F26018D1B1F1009BFBCE /* MobileSDK-UI */ = {
-			isa = PBXGroup;
-			children = (
-				7ED7F26318D1B1F1009BFBCE /* MobileSDK_UI.h */,
-				7ED7F26518D1B1F1009BFBCE /* MobileSDK_UI.m */,
-				7ED7F26118D1B1F1009BFBCE /* Supporting Files */,
-			);
-			path = "MobileSDK-UI";
-			sourceTree = "<group>";
-		};
-		7ED7F26118D1B1F1009BFBCE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7ED7F26218D1B1F1009BFBCE /* MobileSDK-UI-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7ED7F27418D1B1F1009BFBCE /* MobileSDK-UITests */ = {
-			isa = PBXGroup;
-			children = (
-				7ED7F27A18D1B1F1009BFBCE /* MobileSDK_UITests.m */,
-				7ED7F27518D1B1F1009BFBCE /* Supporting Files */,
-			);
-			path = "MobileSDK-UITests";
-			sourceTree = "<group>";
-		};
-		7ED7F27518D1B1F1009BFBCE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7ED7F27618D1B1F1009BFBCE /* MobileSDK-UITests-Info.plist */,
-				7ED7F27718D1B1F1009BFBCE /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		7ED7F2BD18D1B36C009BFBCE /* SitecoreMobileUI */ = {
 			isa = PBXGroup;
 			children = (
+				7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */,
 				7ED7F2BE18D1B36C009BFBCE /* Supporting Files */,
 			);
 			path = SitecoreMobileUI;
@@ -576,6 +538,7 @@
 				7EE8009B18D3073000BF37BA /* SCWebBrowserToolbar.h in Headers */,
 				7EE8009C18D3073000BF37BA /* SCWebView.h in Headers */,
 				7EE8009D18D3073000BF37BA /* SCWebViewDelegate.h in Headers */,
+				7EC4915818D362A400D87566 /* SitecoreMobileJavaScript.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +552,7 @@
 				7EE800A018D3074D00BF37BA /* SCQRCodeReaderViewDelegate.h in Headers */,
 				7EE800A118D3074D00BF37BA /* SCImageView.h in Headers */,
 				7EE800A218D3074D00BF37BA /* SCUI.h in Headers */,
+				7EC4915A18D362AE00D87566 /* SitecoreMobileUI.h in Headers */,
 				7EE800A318D3074D00BF37BA /* SCWebViewURLPreloader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -919,14 +883,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7EC3429F18D1AAB000158FF6 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		7ED7F27718D1B1F1009BFBCE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7ED7F27818D1B1F1009BFBCE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
