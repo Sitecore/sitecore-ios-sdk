@@ -17,7 +17,7 @@
     #import "SCAsyncTestCase.h"
 
     #import <SCApi/Cache/RecordCache/SCItemRecordCacheRW.h>
-    #import <SCApi/API/ItemSource/SCItemsReaderRequest+SCItemSource.h>
+    #import <SCApi/API/ItemSource/SCReadItemsRequest+SCItemSource.h>
     #import <SitecoreMobileSDK/SCItemSourcePOD.h>
     #import <SCApi/SCExtendedApiContext+Private.h>
     #import <SCApi/SCApiContext+Init.h>
