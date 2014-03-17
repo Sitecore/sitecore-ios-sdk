@@ -95,6 +95,11 @@
     if ( isMediaHookAvailable )
     {
         result = [ result stringByAppendingFormat: @"/%@", itemPath ];
+        
+        if ( !isExtensionAvailable )
+        {
+            result = [ result stringByAppendingString: ASHX_EXTENSION ];
+        }
     }
     else
     {
@@ -122,13 +127,8 @@
         }
 
         result = [ result stringByAppendingString: relativePath ];
-    }
-
-    if ( !isExtensionAvailable )
-    {
         result = [ result stringByAppendingString: ASHX_EXTENSION ];
     }
-
 
 
     NSString *paramsString = [ params paramsString ];
