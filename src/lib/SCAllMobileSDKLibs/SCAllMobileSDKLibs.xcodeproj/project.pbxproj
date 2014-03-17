@@ -2444,7 +2444,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/untitled/github/sitecore-ios-sdk/src/lib-third-party/ios-openssl/lib",
+					"../../lib-third-party/ios-openssl/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2476,7 +2476,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/untitled/github/sitecore-ios-sdk/src/lib-third-party/ios-openssl/lib",
+					"../../lib-third-party/ios-openssl/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
