@@ -206,4 +206,19 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/sitecore/media library";
     }
 }
 
+
+-(void)testPreBuiltMediaPathIsRecognizedCorrectly
+{
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    
+    NSString* result =
+    [ builder  urlStringForMediaItemAtPath: @"~/media/1.png"
+                                      host: @"test.host"
+                                 mediaRoot: DEFAULT_MEDIA_ROOT
+                              resizeParams: nil ];
+    
+    NSString* expected = @"http://test.host/~/media/1.png.ashx";
+    XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+}
+
 @end
