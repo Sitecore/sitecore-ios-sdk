@@ -308,7 +308,7 @@
 {
     SCExtendedAsyncOp result =
     [ self.extendedApiSession downloadResourceOperationForMediaPath: path
-                                                imageParams: nil ];
+                                                        imageParams: nil ];
     
     return asyncOpWithJAsyncOp( result );
 }
@@ -317,7 +317,7 @@
                                imageParams:( SCDownloadMediaOptions * )params
 {
     SCExtendedAsyncOp result = [ self.extendedApiSession downloadResourceOperationForMediaPath: path
-                                                                           imageParams: params ];
+                                                                                   imageParams: params ];
     return asyncOpWithJAsyncOp( result );
 }
 

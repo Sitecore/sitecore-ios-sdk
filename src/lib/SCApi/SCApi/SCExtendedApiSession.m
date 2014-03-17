@@ -267,8 +267,8 @@
     params.language =  params.language ? : self.defaultLanguage;
 
     return [ self->_api downloadResourceOperationForMediaPath: path_
-                                    cacheLifeTime: self.defaultImagesLifeTimeInCache
-                                           params: params ];
+                                                cacheLifeTime: self.defaultImagesLifeTimeInCache
+                                                       params: params ];
 }
 
 -(JFFAsyncOperation)privateImageLoaderForSCMediaPath:( NSString* )path_
