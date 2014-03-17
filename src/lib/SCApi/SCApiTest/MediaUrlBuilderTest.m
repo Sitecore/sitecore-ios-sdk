@@ -260,4 +260,26 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/sitecore/media library";
     }
 }
 
+
+-(void)testSpacesAreProperlyEscaped
+{
+    NSString* mediaRoot = @"/MEDIAxyz";
+    
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    NSString* result = nil;
+    NSString* expected = nil;
+    
+    
+    {
+        result =
+        [ builder  urlStringForMediaItemAtPath: @"~/media/Images/test image"
+                                          host: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+                                     mediaRoot: mediaRoot
+                                  resizeParams: nil ];
+        
+        expected = @"http://mobiledev1ua1.dk.sitecore.net:7200/~/media/Images/test%20image.ashx";
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+    }
+}
+
 @end

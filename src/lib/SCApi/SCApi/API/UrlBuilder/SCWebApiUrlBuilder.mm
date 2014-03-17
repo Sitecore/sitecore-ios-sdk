@@ -65,7 +65,6 @@
     NSParameterAssert( [ itemPath hasSymbols ] );
     NSParameterAssert( [ host     hasSymbols ] );
     
-    
     NSString* relativePath = itemPath;
 
     host = [ host scHostWithURLScheme ];
@@ -94,7 +93,8 @@
     
     if ( isMediaHookAvailable )
     {
-        result = [ result stringByAppendingFormat: @"/%@", itemPath ];
+        relativePath = [ itemPath stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
+        result = [ result stringByAppendingFormat: @"/%@", relativePath ];
         
         if ( !isExtensionAvailable )
         {
@@ -126,6 +126,7 @@
             NSParameterAssert( isValidRelativePath );
         }
 
+        relativePath = [ relativePath stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
         result = [ result stringByAppendingString: relativePath ];
         result = [ result stringByAppendingString: ASHX_EXTENSION ];
     }
