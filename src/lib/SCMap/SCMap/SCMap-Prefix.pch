@@ -3,22 +3,31 @@
 //
 
 #ifdef __OBJC__
+
+    // this library project (SitecoreMobileUI)
     #import "SC_MKPolylineRendererProtocol.h"
     #import "SC_MKMapCameraProtocol.h"
     #import "SC_MKDirectionsProtocol.h"
     #import "SC_MKDirectionsRequestProtocol.h"
     #import "SC_MKDirectionsResponseProtocol.h"
 
+    // other parts of SitecoreMobileUI
+    #import <SitecoreMobileUI/SCImageView.h>
+
+    // SitecoreMobileSDK
+    #import <SitecoreMobileSDK/SCApi.h>
+
+    // third-party
     #import <JFFNetwork/JFFNetwork.h>
     #import <JFFAsyncOperations/JFFAsyncOperations.h>
     #import <JFFUI/JFFUI.h>
     #import <JFFUtils/JFFUtils.h>
     #import <JFFAsyncOperations/JFFAsyncOperations.h>
-    #import <SitecoreMobileSDK/SCImageView.h>
-    #import <SitecoreMobileSDK/SCApi.h>
 
     #import <iFeatureAvailability/iFeatureAvailability.h>
 
+
+    // apple
     #import <MapKit/MapKit.h>
     #import <Foundation/Foundation.h>
 #endif

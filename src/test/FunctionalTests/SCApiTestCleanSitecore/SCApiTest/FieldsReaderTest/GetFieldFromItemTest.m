@@ -438,6 +438,7 @@
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block id value_ = nil;
+    __block NSError* receivedError = nil;
 
     @autoreleasepool
     {
@@ -452,6 +453,8 @@
                 [ apiContext_ downloadResourceOperationForMediaPath:  @"~/media/Images/test image" ]( ^( id result_, NSError* error_ )
                 {
                     value_ = result_;
+                    receivedError = error_;
+                    
                     didFinishCallback_();
                 } );
             }
@@ -462,8 +465,10 @@
     }
     
     //GHAssertTrue( apiContext_ != nil, @"OK" );
-    GHAssertTrue( value_ != nil, @"OK" );
+    GHAssertNotNil( value_, @"OK" );
     GHAssertTrue( [ value_ isKindOfClass: [ UIImage class ] ] == TRUE, @"OK" );
+    
+    GHAssertNil( receivedError, @"media download error" );
 }
 
 -(void)testGeneralLinkMediaNormal

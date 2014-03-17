@@ -1,4 +1,4 @@
-#import <SitecoreMobileSDK/SCWebBrowserToolbar.h>
+#import <SitecoreMobileJavaScript/SCWebBrowserToolbar.h>
 
 #import <UIKit/UIKit.h>
 

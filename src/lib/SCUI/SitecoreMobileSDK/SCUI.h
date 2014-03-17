@@ -1,2 +1,0 @@
-
-#import <SitecoreMobileSDK/SCImageView.h>

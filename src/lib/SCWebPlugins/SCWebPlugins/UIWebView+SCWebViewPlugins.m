@@ -7,6 +7,10 @@
 
 #include "pathToAllPluginsJavascripts.h"
 
+#import <UIDevice-with-UniqueIdentifier-for-iOS-5/UIDevice+IdentifierAddition.h>
+#import <UIDevice-with-UniqueIdentifier-for-iOS-5/DeviceIdentifierAdditionImpl.h>
+
+
 //STODO remove
 @interface SCWebSocketServer : NSObject
 
@@ -22,12 +26,6 @@
 
 @end
 
-//STODO remove
-@interface UIDevice(Private_SCWebViewPlugins)
-
-- (NSString *) uniqueDeviceIdentifier;
-
-@end
 
 @interface NSString (SCWebViewPlugins)
 @end
@@ -69,9 +67,15 @@
 
 
     {
-        NSString *deviceName = [ [ UIDevice currentDevice ] name ];
-        NSString *deviceId = [ [ UIDevice currentDevice ] uniqueDeviceIdentifier ];
-        NSString *systemVersion = [ [ UIDevice currentDevice ] systemVersion ];
+        UIDevice* currentDevice = [ UIDevice currentDevice ];
+        
+        NSString *deviceName = [ currentDevice name ];
+        NSString *systemVersion = [ currentDevice systemVersion ];
+
+        // @adk : not using category to avoid linker conflicts and runtime crashes
+        NSString *deviceId = [ DeviceIdentifierAdditionImpl uniqueIdentifierForDevice: currentDevice ];
+        
+
         int port = [ SCWebSocketServer port ];
         
         NSString *js_ = [ self getInjectionScriptWithDeviceName: deviceName

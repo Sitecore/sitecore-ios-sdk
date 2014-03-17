@@ -21,10 +21,8 @@
 		1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBA414863A8600BA6680 /* SCUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B586040151B77D300A06A9B /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B58603F151B77D300A06A9B /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B5144C67AF005CC74B /* SCApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4B6144C67AF005CC74B /* SCItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B68C4C4144C67C2005CC74B /* SCUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B74CFA914A8965E004D8B39 /* SCPagedItems.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB030B81546C51B00439B66 /* SCUploadMediaItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB030B51546C51B00439B66 /* SCUploadMediaItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932314B7354800244765 /* SCCheckboxField.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,23 +31,13 @@
 		1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932614B7354800244765 /* SCDateTimeField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932D14B7354800244765 /* SCImageField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932714B7354800244765 /* SCImageField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BB2932814B7354800244765 /* SCMultilistField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9B91510C45000199B37 /* SCWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C41510C53100199B37 /* SCWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB014A1E38D00DD0960 /* SCApiSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAA14A1E38D00DD0960 /* SCApiSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAB14A1E38D00DD0960 /* SCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB214A1E38D00DD0960 /* SCReadItemsRequestFlags.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAC14A1E38D00DD0960 /* SCReadItemsRequestFlags.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB314A1E38D00DD0960 /* SCReadItemsRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAD14A1E38D00DD0960 /* SCReadItemsRequestType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB414A1E38D00DD0960 /* SCReadItemsScopeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAE14A1E38D00DD0960 /* SCReadItemsScopeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BC48BB514A1E38D00DD0960 /* SCReadItemsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC48BAF14A1E38D00DD0960 /* SCReadItemsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */; };
-		1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BED0568144ED9C500B8DC2A /* SCField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0567144ED9C500B8DC2A /* SCField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED0569144ED9E400B8DC2A /* SCImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781F4B321806D03A00035AC3 /* SCBaseItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		781F4B361806D1A400035AC3 /* SCGetRenderingHtmlRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,13 +48,36 @@
 		78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E1792EB17E7424D007AABFD /* SCExtendedAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E2579D217B276E000FEFFDE /* SCWebApiVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E4D462918D31B1400EE502F /* libMobileSDK-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F27F18D1B1F1009BFBCE /* libMobileSDK-Core.a */; };
 		7E59469A17E71F0700653196 /* SCAsyncOpRelationsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FD17E72A1500653196 /* SCItemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FB17E72A0D00653196 /* SCItemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E5946FE17E72A1700653196 /* SCItemSourcePOD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB4A18165563002AF8FB /* SCRichTextField.h */; };
+		7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E96BB4A18165563002AF8FB /* SCRichTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2D172164BD00C5A80C /* SCTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2A172164BD00C5A80C /* SCTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2E172164BD00C5A80C /* SCPageEventTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2B172164BD00C5A80C /* SCPageEventTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EC3429A18D1AAB000158FF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC3429918D1AAB000158FF6 /* Foundation.framework */; };
+		7EC342A018D1AAB000158FF6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC3429E18D1AAB000158FF6 /* InfoPlist.strings */; };
+		7EC4915818D362A400D87566 /* SitecoreMobileJavaScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EC4915A18D362AE00D87566 /* SitecoreMobileUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ED7F2BC18D1B36C009BFBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC3429918D1AAB000158FF6 /* Foundation.framework */; };
+		7ED7F2C218D1B36C009BFBCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7F2C018D1B36C009BFBCE /* InfoPlist.strings */; };
+		7EE8009518D3063100BF37BA /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009418D3063100BF37BA /* SCMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009918D3073000BF37BA /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C41510C53100199B37 /* SCWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009A18D3073000BF37BA /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C51510C53100199B37 /* SCWebBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009B18D3073000BF37BA /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9C61510C53100199B37 /* SCWebBrowserToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009C18D3073000BF37BA /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9B91510C45000199B37 /* SCWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009D18D3073000BF37BA /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009E18D3074D00BF37BA /* SCQRCodeReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04A150F65F7007259C2 /* SCQRCodeReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE8009F18D3074D00BF37BA /* SCQRCodeReaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A018D3074D00BF37BA /* SCQRCodeReaderViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A118D3074D00BF37BA /* SCImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009618D306A200BF37BA /* SCImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A218D3074D00BF37BA /* SCUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009718D306A200BF37BA /* SCUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A318D3074D00BF37BA /* SCWebViewURLPreloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE800A618D307E500BF37BA /* libMobileSDK-JavaScript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F28118D1B1F1009BFBCE /* libMobileSDK-JavaScript.a */; };
+		7EE800A918D307F100BF37BA /* libMobileSDK-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7F2B218D1B21D009BFBCE /* libMobileSDK-UI.a */; };
+		7EE800AA18D3084800BF37BA /* EmptyFileForJustToAvoidError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */; };
+		7EE800AB18D3084B00BF37BA /* EmptyFileForJustToAvoidError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1399911446E92C0015C191 /* EmptyFileForJustToAvoidError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +88,47 @@
 			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
 			remoteInfo = SCAllMobileSDKLibs;
 		};
-		1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */ = {
+		7E4D462718D31B0A00EE502F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
-			remoteInfo = SCAllMobileSDKLibs;
+			remoteGlobalIDString = 7ED7F1C318D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F27E18D1B1F1009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F1C418D1AFCA009BFBCE;
+			remoteInfo = "MobileSDK-Core";
+		};
+		7ED7F28018D1B1F1009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F20918D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7ED7F2B118D1B21D009BFBCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7ED7F28E18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
+		};
+		7EE800A418D307DE00BF37BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F20818D1AFE9009BFBCE;
+			remoteInfo = "MobileSDK-JavaScript";
+		};
+		7EE800A718D307EC00BF37BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD6AA281518CAE100D2FC84 /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED7F28D18D1B20D009BFBCE;
+			remoteInfo = "MobileSDK-UI";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -105,10 +151,8 @@
 		1B3EDBA314863A8600BA6680 /* SCArrayHelperBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCArrayHelperBlocks.h; sourceTree = "<group>"; };
 		1B3EDBA414863A8600BA6680 /* SCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUtils.h; sourceTree = "<group>"; };
 		1B3EDBAD14863B7500BA6680 /* SCAsyncOpDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpDefinitions.h; sourceTree = "<group>"; };
-		1B58603F151B77D300A06A9B /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCMapView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B68C4B5144C67AF005CC74B /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCApi.h; path = ../../SCApi/SitecoreMobileSDK/SCApi.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B68C4B6144C67AF005CC74B /* SCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCItem.h; path = ../../SCApi/SitecoreMobileSDK/SCItem.h; sourceTree = "<group>"; };
-		1B68C4C4144C67C2005CC74B /* SCUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUI.h; path = ../../SCUI/SitecoreMobileSDK/SCUI.h; sourceTree = "<group>"; };
 		1B74CFA914A8965E004D8B39 /* SCPagedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCPagedItems.h; path = ../../SCApi/SitecoreMobileSDK/SCPagedItems.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B74D1BD14A9EEA0004D8B39 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		1BB030B51546C51B00439B66 /* SCUploadMediaItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCUploadMediaItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCUploadMediaItemRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -134,16 +178,15 @@
 		1BE4D04B150F65F7007259C2 /* SCQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderView.h; sourceTree = "<group>"; };
 		1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCQRCodeReaderViewDelegate.h; sourceTree = "<group>"; };
 		1BED0567144ED9C500B8DC2A /* SCField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCField.h; path = ../../SCApi/SitecoreMobileSDK/SCField.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1BED0569144ED9E400B8DC2A /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCImageView.h; path = ../../SCUI/SitecoreMobileSDK/SCImageView.h; sourceTree = "<group>"; };
 		1BED056D144ED9FE00B8DC2A /* SitecoreMobileSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileSDK.h; sourceTree = "<group>"; };
-		781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
-		781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGetRenderingHtmlRequest.h; path = ../SCApi/SitecoreMobileSDK/SCGetRenderingHtmlRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
+		781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCBaseItemRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCBaseItemRequest.h; sourceTree = "<group>"; };
+		781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGetRenderingHtmlRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCGetRenderingHtmlRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78701B7817D756FD00CA9D2F /* SCExtendedOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCExtendedOperations.h; path = ../../SCUtils/SitecoreMobileSDK/SCExtendedOperations.h; sourceTree = "<group>"; };
 		788DE11217D774A500AB3D8C /* SCExtendedApiSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCExtendedApiSession.h; path = ../../SCApi/SitecoreMobileSDK/SCExtendedApiSession.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		788DE11417D774E300AB3D8C /* SCDownloadMediaOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCDownloadMediaOptions.h; path = ../../SCApi/SitecoreMobileSDK/SCDownloadMediaOptions.h; sourceTree = "<group>"; };
 		788DE11517D774E300AB3D8C /* SCParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCParams.h; path = ../../SCApi/SitecoreMobileSDK/SCParams.h; sourceTree = "<group>"; };
-		78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUploadProgress.h; path = ../SCUtils/SitecoreMobileSDK/SCUploadProgress.h; sourceTree = "<group>"; };
+		78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUploadProgress.h; path = ../../SCUtils/SitecoreMobileSDK/SCUploadProgress.h; sourceTree = "<group>"; };
 		7E1792EA17E74245007AABFD /* SCExtendedAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCExtendedAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
 		7E2579D117B276E000FEFFDE /* SCWebApiVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebApiVersion.h; path = ../../SCApi/SitecoreMobileSDK/SCWebApiVersion.h; sourceTree = "<group>"; };
 		7E59469917E71EFB00653196 /* SCAsyncOpRelationsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAsyncOpRelationsBuilder.h; sourceTree = "<group>"; };
@@ -153,6 +196,22 @@
 		7EB71F2A172164BD00C5A80C /* SCTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCTriggeringRequest.h; sourceTree = "<group>"; };
 		7EB71F2B172164BD00C5A80C /* SCPageEventTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCPageEventTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCPageEventTriggeringRequest.h; sourceTree = "<group>"; };
 		7EB71F2C172164BD00C5A80C /* SCCampaignTriggeringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCampaignTriggeringRequest.h; path = ../../SCApi/SitecoreMobileSDK/SCCampaignTriggeringRequest.h; sourceTree = "<group>"; };
+		7EC3429918D1AAB000158FF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EC3429D18D1AAB000158FF6 /* SitecoreMobileJavaScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileJavaScript-Info.plist"; sourceTree = "<group>"; };
+		7EC3429F18D1AAB000158FF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EC342A118D1AAB000158FF6 /* SitecoreMobileJavaScript-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SitecoreMobileJavaScript-Prefix.pch"; sourceTree = "<group>"; };
+		7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileJavaScript.h; sourceTree = "<group>"; };
+		7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitecoreMobileUI.h; sourceTree = "<group>"; };
+		7ED7F26C18D1B1F1009BFBCE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7ED7F26F18D1B1F1009BFBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7ED7F2BB18D1B36C009BFBCE /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = SitecoreMobileUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED7F2BF18D1B36C009BFBCE /* SitecoreMobileUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SitecoreMobileUI-Info.plist"; sourceTree = "<group>"; };
+		7ED7F2C118D1B36C009BFBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7ED7F2C318D1B36C009BFBCE /* SitecoreMobileUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SitecoreMobileUI-Prefix.pch"; sourceTree = "<group>"; };
+		7EE8009418D3063100BF37BA /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = ../SitecoreMobileUI/SCMapView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7EE8009618D306A200BF37BA /* SCImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCImageView.h; sourceTree = "<group>"; };
+		7EE8009718D306A200BF37BA /* SCUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCUI.h; sourceTree = "<group>"; };
+		7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCWebViewURLPreloader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +219,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD6AA7B1518CAF000D2FC84 /* libSCAllMobileSDKLibs.a in Frameworks */,
+				7E4D462918D31B1400EE502F /* libMobileSDK-Core.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC3429218D1AAAF00158FF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE800A618D307E500BF37BA /* libMobileSDK-JavaScript.a in Frameworks */,
+				7EC3429A18D1AAB000158FF6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F2B518D1B36C009BFBCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE800A918D307F100BF37BA /* libMobileSDK-UI.a in Frameworks */,
+				7ED7F2BC18D1B36C009BFBCE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,12 +247,11 @@
 		1B13992F1446E84E0015C191 = {
 			isa = PBXGroup;
 			children = (
-				78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */,
-				781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */,
-				781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */,
-				781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */,
 				1B13993F1446E84F0015C191 /* SitecoreMobileSDK */,
 				1B13994B1446E8640015C191 /* Dependencies */,
+				7EC3429B18D1AAB000158FF6 /* SitecoreMobileJavaScript */,
+				7ED7F2BD18D1B36C009BFBCE /* SitecoreMobileUI */,
+				7EC3429818D1AAAF00158FF6 /* Frameworks */,
 				1B13993E1446E84F0015C191 /* Products */,
 				1B74D1BC14A9EE87004D8B39 /* doc */,
 			);
@@ -185,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				1B13993D1446E84F0015C191 /* SitecoreMobileSDK.framework */,
+				7ED7F2BB18D1B36C009BFBCE /* SitecoreMobileUI.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,15 +318,19 @@
 		1B58603E151B77D300A06A9B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				1B58603F151B77D300A06A9B /* SCMapView.h */,
+				7EE8009418D3063100BF37BA /* SCMapView.h */,
 			);
 			name = Map;
-			path = ../../SCMap/SitecoreMobileSDK;
+			path = ../../SCMap/SitecoreMobileUI;
 			sourceTree = "<group>";
 		};
 		1B68C4C1144C67B4005CC74B /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				78B0B0CA18151CA80091D1F3 /* SCUploadProgress.h */,
+				781F4B351806D1A400035AC3 /* SCGetRenderingHtmlRequest.h */,
+				781F4B311806D03A00035AC3 /* SCBaseItemRequest.h */,
+				781F4B2F1806D02400035AC3 /* SCBaseItemRequest.h */,
 				7E96BB4A18165563002AF8FB /* SCRichTextField.h */,
 				7E5946FB17E72A0D00653196 /* SCItemSource.h */,
 				7E5946FC17E72A0D00653196 /* SCItemSourcePOD.h */,
@@ -293,10 +374,12 @@
 		1B68C4CC144C67C5005CC74B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1BED0569144ED9E400B8DC2A /* SCImageView.h */,
-				1B68C4C4144C67C2005CC74B /* SCUI.h */,
+				7EE8009618D306A200BF37BA /* SCImageView.h */,
+				7EE8009718D306A200BF37BA /* SCUI.h */,
+				7EE8009818D306A200BF37BA /* SCWebViewURLPreloader.h */,
 			);
 			name = UI;
+			path = ../../SCUI/SitecoreMobileUI;
 			sourceTree = "<group>";
 		};
 		1B74D1BC14A9EE87004D8B39 /* doc */ = {
@@ -317,13 +400,16 @@
 				1BBCA9BA1510C45000199B37 /* SCWebViewDelegate.h */,
 			);
 			name = WebView;
-			path = ../../SCWebView/SitecoreMobileSDK;
+			path = ../../SCWebView/SitecoreMobileJavaScript;
 			sourceTree = "<group>";
 		};
 		1BD6AA291518CAE100D2FC84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1BD6AA6D1518CAE200D2FC84 /* libSCAllMobileSDKLibs.a */,
+				7ED7F27F18D1B1F1009BFBCE /* libMobileSDK-Core.a */,
+				7ED7F28118D1B1F1009BFBCE /* libMobileSDK-JavaScript.a */,
+				7ED7F2B218D1B21D009BFBCE /* libMobileSDK-UI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,7 +422,55 @@
 				1BE4D04C150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h */,
 			);
 			name = QRCodeReader;
-			path = ../../SCQRCodeReader/SitecoreMobileSDK;
+			path = ../../SCQRCodeReader/SitecoreMobileUI;
+			sourceTree = "<group>";
+		};
+		7EC3429818D1AAAF00158FF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EC3429918D1AAB000158FF6 /* Foundation.framework */,
+				7ED7F26C18D1B1F1009BFBCE /* XCTest.framework */,
+				7ED7F26F18D1B1F1009BFBCE /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EC3429B18D1AAB000158FF6 /* SitecoreMobileJavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4915718D362A400D87566 /* SitecoreMobileJavaScript.h */,
+				7EC3429C18D1AAB000158FF6 /* Supporting Files */,
+			);
+			path = SitecoreMobileJavaScript;
+			sourceTree = "<group>";
+		};
+		7EC3429C18D1AAB000158FF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EC3429D18D1AAB000158FF6 /* SitecoreMobileJavaScript-Info.plist */,
+				7EC3429E18D1AAB000158FF6 /* InfoPlist.strings */,
+				7EC342A118D1AAB000158FF6 /* SitecoreMobileJavaScript-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7ED7F2BD18D1B36C009BFBCE /* SitecoreMobileUI */ = {
+			isa = PBXGroup;
+			children = (
+				7EC4915918D362AE00D87566 /* SitecoreMobileUI.h */,
+				7ED7F2BE18D1B36C009BFBCE /* Supporting Files */,
+			);
+			path = SitecoreMobileUI;
+			sourceTree = "<group>";
+		};
+		7ED7F2BE18D1B36C009BFBCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7F2BF18D1B36C009BFBCE /* SitecoreMobileUI-Info.plist */,
+				7ED7F2C018D1B36C009BFBCE /* InfoPlist.strings */,
+				7ED7F2C318D1B36C009BFBCE /* SitecoreMobileUI-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,34 +489,24 @@
 				7EB71F2E172164BD00C5A80C /* SCPageEventTriggeringRequest.h in Headers */,
 				7EB71F2F172164BD00C5A80C /* SCCampaignTriggeringRequest.h in Headers */,
 				1B68C4BB144C67AF005CC74B /* SCApi.h in Headers */,
-				1B586040151B77D300A06A9B /* SCMapView.h in Headers */,
 				1BED0568144ED9C500B8DC2A /* SCField.h in Headers */,
 				1BB2932914B7354800244765 /* SCCheckboxField.h in Headers */,
-				1BBCA9BB1510C45000199B37 /* SCWebView.h in Headers */,
 				1B0E58AC14E52B3B008EE5F9 /* SCColorPickerField.h in Headers */,
 				1B2457DB1524625B00FBB6C2 /* SCCreateItemRequest.h in Headers */,
 				1B2457DC1524625B00FBB6C2 /* SCEditItemsRequest.h in Headers */,
-				1BBCA9BC1510C45000199B37 /* SCWebViewDelegate.h in Headers */,
 				1BB2932A14B7354800244765 /* SCChecklistField.h in Headers */,
 				1BB2932B14B7354800244765 /* SCDateField.h in Headers */,
-				1BBCA9C71510C53100199B37 /* SCWebBrowser.h in Headers */,
-				1BBCA9C81510C53100199B37 /* SCWebBrowserDelegate.h in Headers */,
-				1BBCA9C91510C53100199B37 /* SCWebBrowserToolbar.h in Headers */,
 				1B28D6B414FF756200673110 /* SCDroplinkField.h in Headers */,
 				1BB2932C14B7354800244765 /* SCDateTimeField.h in Headers */,
 				1B0E592D14E543DA008EE5F9 /* SCTreelistField.h in Headers */,
 				1BB2932E14B7354800244765 /* SCMultilistField.h in Headers */,
 				1BB2932D14B7354800244765 /* SCImageField.h in Headers */,
 				1B74CFAA14A8965E004D8B39 /* SCPagedItems.h in Headers */,
-				1BED056B144ED9E400B8DC2A /* SCImageView.h in Headers */,
 				1BC48BB114A1E38D00DD0960 /* SCError.h in Headers */,
 				1BC48BB214A1E38D00DD0960 /* SCReadItemsRequestFlags.h in Headers */,
 				1B28D6B514FF756200673110 /* SCFieldLinkData.h in Headers */,
 				1B28D6B614FF756200673110 /* SCGeneralLinkField.h in Headers */,
 				1BC48BB414A1E38D00DD0960 /* SCReadItemsScopeType.h in Headers */,
-				1BE4D04D150F65F7007259C2 /* SCQRCodeReader.h in Headers */,
-				1BE4D04E150F65F7007259C2 /* SCQRCodeReaderView.h in Headers */,
-				1BE4D04F150F65F7007259C2 /* SCQRCodeReaderViewDelegate.h in Headers */,
 				1BB030B81546C51B00439B66 /* SCUploadMediaItemRequest.h in Headers */,
 				1BC48BB514A1E38D00DD0960 /* SCReadItemsRequest.h in Headers */,
 				1BC48BB314A1E38D00DD0960 /* SCReadItemsRequestType.h in Headers */,
@@ -392,7 +516,6 @@
 				788DE11317D774A500AB3D8C /* SCExtendedApiSession.h in Headers */,
 				1BED056E144ED9FE00B8DC2A /* SitecoreMobileSDK.h in Headers */,
 				1B3EDBAE14863B7500BA6680 /* SCAsyncOpDefinitions.h in Headers */,
-				7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */,
 				78701B7917D756FD00CA9D2F /* SCExtendedOperations.h in Headers */,
 				78B0B0CB18151CA80091D1F3 /* SCUploadProgress.h in Headers */,
 				788DE11617D774E300AB3D8C /* SCDownloadMediaOptions.h in Headers */,
@@ -400,9 +523,37 @@
 				1B68C4BC144C67AF005CC74B /* SCItem.h in Headers */,
 				1B3EDBA514863A8600BA6680 /* NSArray+SCBlocksAdditions.h in Headers */,
 				1B3EDBA614863A8600BA6680 /* SCArrayHelperBlocks.h in Headers */,
+				7E96BB4B18165563002AF8FB /* SCRichTextField.h in Headers */,
 				1B28D6C114FF761800673110 /* SCDroptreeField.h in Headers */,
-				1B68C4C9144C67C2005CC74B /* SCUI.h in Headers */,
 				1B3EDBA714863A8600BA6680 /* SCUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC3429318D1AAAF00158FF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE8009918D3073000BF37BA /* SCWebBrowser.h in Headers */,
+				7EE8009A18D3073000BF37BA /* SCWebBrowserDelegate.h in Headers */,
+				7EE8009B18D3073000BF37BA /* SCWebBrowserToolbar.h in Headers */,
+				7EE8009C18D3073000BF37BA /* SCWebView.h in Headers */,
+				7EE8009D18D3073000BF37BA /* SCWebViewDelegate.h in Headers */,
+				7EC4915818D362A400D87566 /* SitecoreMobileJavaScript.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F2B618D1B36C009BFBCE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE8009518D3063100BF37BA /* SCMapView.h in Headers */,
+				7EE8009E18D3074D00BF37BA /* SCQRCodeReader.h in Headers */,
+				7EE8009F18D3074D00BF37BA /* SCQRCodeReaderView.h in Headers */,
+				7EE800A018D3074D00BF37BA /* SCQRCodeReaderViewDelegate.h in Headers */,
+				7EE800A118D3074D00BF37BA /* SCImageView.h in Headers */,
+				7EE800A218D3074D00BF37BA /* SCUI.h in Headers */,
+				7EC4915A18D362AE00D87566 /* SitecoreMobileUI.h in Headers */,
+				7EE800A318D3074D00BF37BA /* SCWebViewURLPreloader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,12 +574,55 @@
 			buildRules = (
 			);
 			dependencies = (
-				1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */,
+				7E4D462818D31B0A00EE502F /* PBXTargetDependency */,
 			);
 			name = SitecoreMobileSDK;
 			productName = SitecoreMobileSDK;
 			productReference = 1B13993D1446E84F0015C191 /* SitecoreMobileSDK.framework */;
 			productType = "com.apple.product-type.bundle";
+		};
+		7EC3429718D1AAAF00158FF6 /* SitecoreMobileJavaScript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EC342A518D1AAB000158FF6 /* Build configuration list for PBXNativeTarget "SitecoreMobileJavaScript" */;
+			buildPhases = (
+				7EC3429018D1AAAF00158FF6 /* ShellScript */,
+				7EC3429118D1AAAF00158FF6 /* Sources */,
+				7EC3429218D1AAAF00158FF6 /* Frameworks */,
+				7EC3429318D1AAAF00158FF6 /* Headers */,
+				7EC3429418D1AAAF00158FF6 /* Resources */,
+				7EC3429518D1AAAF00158FF6 /* ShellScript */,
+				7EC3429618D1AAAF00158FF6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EE800A518D307DE00BF37BA /* PBXTargetDependency */,
+			);
+			name = SitecoreMobileJavaScript;
+			productName = SitecoreMobileJavaScript;
+			productType = "com.apple.product-type.framework.static";
+		};
+		7ED7F2BA18D1B36C009BFBCE /* SitecoreMobileUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ED7F2C418D1B36C009BFBCE /* Build configuration list for PBXNativeTarget "SitecoreMobileUI" */;
+			buildPhases = (
+				7ED7F2B318D1B36C009BFBCE /* ShellScript */,
+				7ED7F2B418D1B36C009BFBCE /* Sources */,
+				7ED7F2B518D1B36C009BFBCE /* Frameworks */,
+				7ED7F2B618D1B36C009BFBCE /* Headers */,
+				7ED7F2B718D1B36C009BFBCE /* Resources */,
+				7ED7F2B818D1B36C009BFBCE /* ShellScript */,
+				7ED7F2B918D1B36C009BFBCE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EE800A818D307EC00BF37BA /* PBXTargetDependency */,
+			);
+			name = SitecoreMobileUI;
+			productName = SitecoreMobileUI;
+			productReference = 7ED7F2BB18D1B36C009BFBCE /* SitecoreMobileUI.framework */;
+			productType = "com.apple.product-type.framework.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -457,6 +651,8 @@
 			projectRoot = "";
 			targets = (
 				1B13993C1446E84F0015C191 /* SitecoreMobileSDK */,
+				7EC3429718D1AAAF00158FF6 /* SitecoreMobileJavaScript */,
+				7ED7F2BA18D1B36C009BFBCE /* SitecoreMobileUI */,
 			);
 		};
 /* End PBXProject section */
@@ -469,6 +665,27 @@
 			remoteRef = 1BD6AA6C1518CAE200D2FC84 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7ED7F27F18D1B1F1009BFBCE /* libMobileSDK-Core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-Core.a";
+			remoteRef = 7ED7F27E18D1B1F1009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F28118D1B1F1009BFBCE /* libMobileSDK-JavaScript.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-JavaScript.a";
+			remoteRef = 7ED7F28018D1B1F1009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED7F2B218D1B21D009BFBCE /* libMobileSDK-UI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMobileSDK-UI.a";
+			remoteRef = 7ED7F2B118D1B21D009BFBCE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -477,6 +694,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1399441446E84F0015C191 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC3429418D1AAAF00158FF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC342A018D1AAB000158FF6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F2B718D1B36C009BFBCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED7F2C218D1B36C009BFBCE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +742,87 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sf \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n# echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n# echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n\n####################custom##############\nTHIS_DIR=$PWD\n\ncd \"${PROJECT_DIR}\"\ncd ../../\nMOBILE_SDK_DIR=$PWD\ncd \"$THIS_DIR\"\n\nDEPLOYMENT_DIR=${MOBILE_SDK_DIR}/deployment\nif [ ! -d \"${DEPLOYMENT_DIR}\" ]; then\n   mkdir -p \"${DEPLOYMENT_DIR}\"\nfi\n\necho '------copy frameworks to deployment folder------'\n# copy frameworks to deployment folder\necho 'Cleaning *.embeddedframework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\necho 'Cleaning *.framework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\necho 'Copying *.framework ...'\n# echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\n#cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nexit 0";
 		};
+		7EC3429018D1AAAF00158FF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n  ([[ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]] || \\\n    ([[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n     [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n     [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n    )\n  )\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nif [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7EC3429518D1AAAF00158FF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n  if [ -n \"$FIND_OPTS\" ]; then\n    FIND_OPTS=\"$FIND_OPTS -o\"\n  fi\n  FIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\n  for ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\n    PUBLIC_HEADER=$(basename $ORIG_HEADER)\n    RELATIVE_PATH=$(dirname $ORIG_HEADER)\n    if [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\n      mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n      mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\n    fi\n  done\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7EC3429618D1AAAF00158FF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\n    echo \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n    # Make sure the other platform gets built\n    \n    echo \"Build other platform\"\n    \n    echo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    \n    \n    # Build the fat static library binary\n    \n    echo \"Create universal static library\"\n    \n    echo \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \n    echo mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n    # Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n    \n    echo \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n    \n    echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n\n####################custom##############\nTHIS_DIR=$PWD\n\ncd \"${PROJECT_DIR}\"\ncd ../../\nMOBILE_SDK_DIR=$PWD\ncd \"$THIS_DIR\"\n\nDEPLOYMENT_DIR=${MOBILE_SDK_DIR}/deployment\nif [ ! -d \"${DEPLOYMENT_DIR}\" ]; then\nmkdir -p \"${DEPLOYMENT_DIR}\"\nfi\n\necho '------copy frameworks to deployment folder------'\n# copy frameworks to deployment folder\necho 'Cleaning *.embeddedframework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\necho 'Cleaning *.framework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\necho 'Copying *.framework ...'\n# echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\n#cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nexit 0\n";
+			showEnvVarsInLog = 0;
+		};
+		7ED7F2B318D1B36C009BFBCE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n  ([[ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]] || \\\n    ([[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n     [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n     [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n    )\n  )\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nif [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nfi\n";
+		};
+		7ED7F2B818D1B36C009BFBCE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n  if [ -n \"$FIND_OPTS\" ]; then\n    FIND_OPTS=\"$FIND_OPTS -o\"\n  fi\n  FIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\n  for ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\n    PUBLIC_HEADER=$(basename $ORIG_HEADER)\n    RELATIVE_PATH=$(dirname $ORIG_HEADER)\n    if [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\n      mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n      mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\n    fi\n  done\nfi\n";
+		};
+		7ED7F2B918D1B36C009BFBCE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\n    echo \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n    # Make sure the other platform gets built\n    \n    echo \"Build other platform\"\n    \n    echo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    \n    \n    # Build the fat static library binary\n    \n    echo \"Create universal static library\"\n    \n    echo \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \n    echo mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n    # Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n    \n    echo \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n    \n    echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n\n####################custom##############\nTHIS_DIR=$PWD\n\ncd \"${PROJECT_DIR}\"\ncd ../../\nMOBILE_SDK_DIR=$PWD\ncd \"$THIS_DIR\"\n\nDEPLOYMENT_DIR=${MOBILE_SDK_DIR}/deployment\nif [ ! -d \"${DEPLOYMENT_DIR}\" ]; then\nmkdir -p \"${DEPLOYMENT_DIR}\"\nfi\n\necho '------copy frameworks to deployment folder------'\n# copy frameworks to deployment folder\necho 'Cleaning *.embeddedframework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\necho 'Cleaning *.framework ...'\nrm -rf \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\necho 'Copying *.framework ...'\n# echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.framework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.framework\"\n\n#cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${DEPLOYMENT_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nexit 0\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -520,13 +834,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EC3429118D1AAAF00158FF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE800AB18D3084B00BF37BA /* EmptyFileForJustToAvoidError.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7ED7F2B418D1B36C009BFBCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE800AA18D3084800BF37BA /* EmptyFileForJustToAvoidError.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1BD6AA7A1518CAE900D2FC84 /* PBXTargetDependency */ = {
+		7E4D462818D31B0A00EE502F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SCAllMobileSDKLibs;
-			targetProxy = 1BD6AA791518CAE900D2FC84 /* PBXContainerItemProxy */;
+			name = "MobileSDK-Core";
+			targetProxy = 7E4D462718D31B0A00EE502F /* PBXContainerItemProxy */;
+		};
+		7EE800A518D307DE00BF37BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-JavaScript";
+			targetProxy = 7EE800A418D307DE00BF37BA /* PBXContainerItemProxy */;
+		};
+		7EE800A818D307EC00BF37BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MobileSDK-UI";
+			targetProxy = 7EE800A718D307EC00BF37BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,6 +875,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B1399431446E84F0015C191 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7EC3429E18D1AAB000158FF6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EC3429F18D1AAB000158FF6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7ED7F2C018D1B36C009BFBCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED7F2C118D1B36C009BFBCE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -608,10 +964,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,10 +990,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -697,10 +1045,6 @@
 				INFOPLIST_FILE = "SitecoreMobileSDK/SitecoreMobileSDK-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/SitecoreMobileSDK-bafolvediodkkufgwmmxmddtfmvv/Build/Products/Debug-iphoneos\"",
-				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -710,6 +1054,212 @@
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Coverage;
+		};
+		7EC342A218D1AAB000158FF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		7EC342A318D1AAB000158FF6 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Coverage;
+		};
+		7EC342A418D1AAB000158FF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileJavaScript/SitecoreMobileJavaScript-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		7ED7F2C518D1B36C009BFBCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileUI/SitecoreMobileUI-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileUI/SitecoreMobileUI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		7ED7F2C618D1B36C009BFBCE /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileUI/SitecoreMobileUI-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileUI/SitecoreMobileUI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Coverage;
+		};
+		7ED7F2C718D1B36C009BFBCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SitecoreMobileUI/SitecoreMobileUI-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SitecoreMobileUI/SitecoreMobileUI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -730,6 +1280,26 @@
 				1B1399491446E84F0015C191 /* Debug */,
 				7EB54B5917E085E200E919AE /* Coverage */,
 				1B13994A1446E84F0015C191 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EC342A518D1AAB000158FF6 /* Build configuration list for PBXNativeTarget "SitecoreMobileJavaScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EC342A218D1AAB000158FF6 /* Debug */,
+				7EC342A318D1AAB000158FF6 /* Coverage */,
+				7EC342A418D1AAB000158FF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ED7F2C418D1B36C009BFBCE /* Build configuration list for PBXNativeTarget "SitecoreMobileUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ED7F2C518D1B36C009BFBCE /* Debug */,
+				7ED7F2C618D1B36C009BFBCE /* Coverage */,
+				7ED7F2C718D1B36C009BFBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -24,7 +24,6 @@
 		1BE4CEAA150F3CBE007259C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE4CEA9150F3CBE007259C2 /* Foundation.framework */; };
 		1BE4CEB0150F3CBE007259C2 /* SCMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4CEAF150F3CBE007259C2 /* SCMap.m */; };
 		1BE4CF87150F4416007259C2 /* SCMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4CF85150F4416007259C2 /* SCMapView.m */; };
-		1BE4CFCF150F5DA1007259C2 /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4CFCE150F5D9B007259C2 /* SCMapView.h */; };
 		1BE4D129150F82C0007259C2 /* SCMapViewLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D127150F82C0007259C2 /* SCMapViewLogic.h */; };
 		1BE4D12A150F82C0007259C2 /* SCMapViewLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE4D128150F82C0007259C2 /* SCMapViewLogic.m */; };
 		1BE4D131150F900F007259C2 /* SCPlacemark.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE4D12F150F900F007259C2 /* SCPlacemark.h */; };
@@ -37,6 +36,7 @@
 		7E936AC21702DC2000879849 /* JFFAsyncOperationGeocoderDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E936AC01702DC2000879849 /* JFFAsyncOperationGeocoderDict.m */; };
 		7E936AC51702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E936AC31702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.h */; };
 		7E936AC61702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E936AC41702DC2E00879849 /* JFFAsyncOperationGeocoderAddress.m */; };
+		7ED7F33D18D1DE71009BFBCE /* SCMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33C18D1DE71009BFBCE /* SCMapView.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +60,6 @@
 		1BE4CEAE150F3CBE007259C2 /* SCMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMap.h; sourceTree = "<group>"; };
 		1BE4CEAF150F3CBE007259C2 /* SCMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMap.m; sourceTree = "<group>"; };
 		1BE4CF85150F4416007259C2 /* SCMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCMapView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BE4CFCE150F5D9B007259C2 /* SCMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCMapView.h; path = ../SitecoreMobileSDK/SCMapView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BE4D127150F82C0007259C2 /* SCMapViewLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SCMapViewLogic.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BE4D128150F82C0007259C2 /* SCMapViewLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SCMapViewLogic.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1BE4D12F150F900F007259C2 /* SCPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlacemark.h; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		7EA321921821093E0003433D /* SC_MKDirectionsResponseProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKDirectionsResponseProtocol.h; sourceTree = "<group>"; };
 		7EBC91011821327E00BCBFA0 /* SC_MKMapCameraProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKMapCameraProtocol.h; sourceTree = "<group>"; };
 		7EBC9102182137EB00BCBFA0 /* SC_MKPolylineRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SC_MKPolylineRendererProtocol.h; sourceTree = "<group>"; };
+		7ED7F33C18D1DE71009BFBCE /* SCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCMapView.h; path = SitecoreMobileUI/SCMapView.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 				7EA3218E182108980003433D /* MapKitProtocols */,
 				1BE4CEAE150F3CBE007259C2 /* SCMap.h */,
 				1BE4CEAF150F3CBE007259C2 /* SCMap.m */,
-				1BE4CFCE150F5D9B007259C2 /* SCMapView.h */,
+				7ED7F33C18D1DE71009BFBCE /* SCMapView.h */,
 				1BE4CF85150F4416007259C2 /* SCMapView.m */,
 				1BBCA9461510C19000199B37 /* SCMapViewController.h */,
 				1BBCA9471510C19000199B37 /* SCMapViewController.m */,
@@ -239,13 +239,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BE4CFCF150F5DA1007259C2 /* SCMapView.h in Headers */,
 				06BF6409150F89C400281999 /* SCGoogleAPI.h in Headers */,
 				06BF642C150F943D00281999 /* SCTwoPointsRoute.h in Headers */,
 				1BE4D129150F82C0007259C2 /* SCMapViewLogic.h in Headers */,
 				1BE4D131150F900F007259C2 /* SCPlacemark.h in Headers */,
 				1BE4D135150F928B007259C2 /* SCMapKitLocationUtils.h in Headers */,
 				1BBCA9481510C19000199B37 /* SCMapViewController.h in Headers */,
+				7ED7F33D18D1DE71009BFBCE /* SCMapView.h in Headers */,
 				062CA94A151333FD0053A66E /* SCGestureRecognizer.h in Headers */,
 				1B33DD6C1518C0D100EEA9BA /* NSDictionary+AddressWithItem.h in Headers */,
 				1B33DD701518C14A00EEA9BA /* NSDictionary+ContacAddressBuilder.h in Headers */,

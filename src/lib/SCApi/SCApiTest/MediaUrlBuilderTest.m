@@ -206,4 +206,80 @@ static NSString* const DEFAULT_MEDIA_ROOT = @"/sitecore/media library";
     }
 }
 
+
+-(void)testPreBuiltMediaPathIsRecognizedCorrectly
+{
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    
+    NSString* result =
+    [ builder  urlStringForMediaItemAtPath: @"~/media/1.png"
+                                      host: @"test.host"
+                                 mediaRoot: DEFAULT_MEDIA_ROOT
+                              resizeParams: nil ];
+    
+    NSString* expected = @"http://test.host/~/media/1.png.ashx";
+    XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+}
+
+-(void)testPreBuiltMediaPathWithExtensionIsRecognizedCorrectly
+{
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    
+    NSString* result =
+    [ builder  urlStringForMediaItemAtPath: @"~/media/1.png.ashx"
+                                      host: @"test.host"
+                                 mediaRoot: DEFAULT_MEDIA_ROOT
+                              resizeParams: nil ];
+    
+    NSString* expected = @"http://test.host/~/media/1.png.ashx";
+    XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+}
+
+-(void)testAshxExtensionIsNotIgnoredWithoutHook
+{
+    NSString* mediaRoot = @"/MEDIAxyz";
+    
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    NSString* result = nil;
+    NSString* expected = nil;
+    
+    
+    {
+        SCDownloadMediaOptions * resize = [ SCDownloadMediaOptions new ];
+        resize.height = 480;
+        resize.width  = 640;
+        
+        result =
+        [ builder  urlStringForMediaItemAtPath: @"/mediaXYZ/1.png.ashx"
+                                          host: @"https://test.host"
+                                     mediaRoot: mediaRoot
+                                  resizeParams: resize ];
+        
+        expected = @"https://test.host/~/media/1.png.ashx.ashx?w=640&h=480";
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+    }
+}
+
+
+-(void)testSpacesAreProperlyEscaped
+{
+    NSString* mediaRoot = @"/MEDIAxyz";
+    
+    SCWebApiUrlBuilder* builder = [ [ SCWebApiUrlBuilder alloc ] initWithVersion: @"v1" ];
+    NSString* result = nil;
+    NSString* expected = nil;
+    
+    
+    {
+        result =
+        [ builder  urlStringForMediaItemAtPath: @"~/media/Images/test image"
+                                          host: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+                                     mediaRoot: mediaRoot
+                                  resizeParams: nil ];
+        
+        expected = @"http://mobiledev1ua1.dk.sitecore.net:7200/~/media/Images/test%20image.ashx";
+        XCTAssertEqualObjects( result, expected, @"media url mismatch" );
+    }
+}
+
 @end

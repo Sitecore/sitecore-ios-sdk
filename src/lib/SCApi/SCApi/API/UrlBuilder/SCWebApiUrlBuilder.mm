@@ -54,46 +54,89 @@
     return self;
 }
 
+
+
+//    NSString* result = [ NSString stringWithFormat: @"%@/~/media%@.ashx%@", host, relativePath, paramsString ];
 -(NSString*)urlStringForMediaItemAtPath:( NSString* )itemPath
                                    host:( NSString* )host
                               mediaRoot:( NSString* )mediaRoot
                            resizeParams:( SCParams* )params
 {
-    NSParameterAssert( [ host hasSymbols ] );
-    NSString* relativePath = itemPath;
+    NSParameterAssert( [ itemPath hasSymbols ] );
+    NSParameterAssert( [ host     hasSymbols ] );
     
+    NSString* relativePath = itemPath;
 
+    host = [ host scHostWithURLScheme ];
+    NSString* result = host;
+    
+    
     NSRange itemPathFullRange = { 0, [ itemPath length ] };
     NSLocale* posixLocale = [ NSLocale localeWithLocaleIdentifier: @"en_US_POSIX" ];
-    NSRange mediaRootRange = [ itemPath rangeOfString: mediaRoot
+    
+    
+    static NSString* const MEDIA_HOOK = @"~/media";
+    NSRange mediaHookRange = [ itemPath rangeOfString: MEDIA_HOOK
                                               options: NSCaseInsensitiveSearch
                                                 range: itemPathFullRange
                                                locale: posixLocale ];
-    if ( 0 == mediaRootRange.location )
+    BOOL isMediaHookAvailable = ( 0 == mediaHookRange.location );
+    
+    
+    static NSString* const ASHX_EXTENSION = @".ashx";
+    NSRange extensionRange = [ itemPath rangeOfString: ASHX_EXTENSION
+                                              options: NSCaseInsensitiveSearch
+                                                range: itemPathFullRange
+                                               locale: posixLocale ];
+    BOOL isExtensionAvailable = ( NSNotFound != extensionRange.location );
+    
+    
+    if ( isMediaHookAvailable )
     {
-        NSUInteger afterRootMedia = NSMaxRange( mediaRootRange );
-        relativePath = [ itemPath substringFromIndex: afterRootMedia ];
+        relativePath = [ itemPath stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
+        result = [ result stringByAppendingFormat: @"/%@", relativePath ];
+        
+        if ( !isExtensionAvailable )
+        {
+            result = [ result stringByAppendingString: ASHX_EXTENSION ];
+        }
     }
     else
     {
-        NSLog(@"root media not found");
-    }
-    
-    
-    {
-        BOOL isValidRelativePath = [ relativePath hasSymbols ];
-        NSParameterAssert( isValidRelativePath );
+        result = [ result stringByAppendingFormat: @"/%@", MEDIA_HOOK ];
+        
+        
+        NSRange mediaRootRange = [ itemPath rangeOfString: mediaRoot
+                                                  options: NSCaseInsensitiveSearch
+                                                    range: itemPathFullRange
+                                                   locale: posixLocale ];
+        if ( 0 == mediaRootRange.location )
+        {
+            NSUInteger afterRootMedia = NSMaxRange( mediaRootRange );
+            relativePath = [ itemPath substringFromIndex: afterRootMedia ];
+        }
+        else
+        {
+            NSLog(@"root media not found");
+        }
+        
+        
+        {
+            BOOL isValidRelativePath = [ relativePath hasSymbols ];
+            NSParameterAssert( isValidRelativePath );
+        }
+
+        relativePath = [ relativePath stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding ];
+        result = [ result stringByAppendingString: relativePath ];
+        result = [ result stringByAppendingString: ASHX_EXTENSION ];
     }
 
+
     NSString *paramsString = [ params paramsString ];
-    if ( !paramsString )
+    if ( nil != paramsString )
     {
-        paramsString = @"";
+        result = [ result stringByAppendingString: paramsString ];
     }
-    
-    host = [ host scHostWithURLScheme ];
-    
-    NSString* result = [ NSString stringWithFormat: @"%@/~/media%@.ashx%@", host, relativePath, paramsString ];
 
     return result;
 }

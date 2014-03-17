@@ -9,15 +9,26 @@
 #endif
 
 #ifdef __OBJC__
+    // this project : stubs and mocks
     #import "TestHostConfig.h"
     #import "SCAsyncTestCase.h"
 
-    #import <JFFNetwork/JFFNetwork.h>
+    // core
+    #import <SitecoreMobileJavaScript/SitecoreMobileJavaScript.h>
+    #import <SitecoreMobileUI/SitecoreMobileUI.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+
+
+    // third-party
+    #import <JFFNetwork/JFFNetwork.h>
+
     #import <JFFUtils/JFFUtils.h>
     #import <JFFUI/JFFUI.h>
 
+    // unit test
     #import <GHUnitIOS/GHUnit.h>
+
+    // apple
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif

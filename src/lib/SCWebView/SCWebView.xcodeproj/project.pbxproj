@@ -21,6 +21,11 @@
 		1BBCA9E11510C62400199B37 /* SCLRSwipeRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCA9DF1510C62400199B37 /* SCLRSwipeRecognizer.m */; };
 		1BBCA9E51510C65200199B37 /* SCWebViewSwipes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBCA9E31510C65200199B37 /* SCWebViewSwipes.h */; };
 		1BBCA9E61510C65200199B37 /* SCWebViewSwipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCA9E41510C65200199B37 /* SCWebViewSwipes.m */; };
+		7ED7F33518D1DC54009BFBCE /* SCWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33018D1DC54009BFBCE /* SCWebBrowser.h */; };
+		7ED7F33618D1DC54009BFBCE /* SCWebBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33118D1DC54009BFBCE /* SCWebBrowserDelegate.h */; };
+		7ED7F33718D1DC54009BFBCE /* SCWebBrowserToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33218D1DC54009BFBCE /* SCWebBrowserToolbar.h */; };
+		7ED7F33818D1DC54009BFBCE /* SCWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33318D1DC54009BFBCE /* SCWebView.h */; };
+		7ED7F33918D1DC54009BFBCE /* SCWebViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED7F33418D1DC54009BFBCE /* SCWebViewDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +33,7 @@
 		1BBCA95A1510C35900199B37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BBCA95E1510C35900199B37 /* SCWebView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCWebView-Prefix.pch"; sourceTree = "<group>"; };
 		1BBCA9601510C35900199B37 /* SCWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCWebView.m; sourceTree = "<group>"; };
-		1BBCA9B21510C3E700199B37 /* SCWebViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebViewDelegate.h; path = SitecoreMobileSDK/SCWebViewDelegate.h; sourceTree = SOURCE_ROOT; };
-		1BBCA9B31510C40400199B37 /* SCWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebView.h; path = ../SitecoreMobileSDK/SCWebView.h; sourceTree = "<group>"; };
-		1BBCA9BD1510C49500199B37 /* SCWebBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebBrowser.h; path = ../SitecoreMobileSDK/SCWebBrowser.h; sourceTree = "<group>"; };
-		1BBCA9BE1510C4A200199B37 /* SCWebBrowserDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebBrowserDelegate.h; path = ../SitecoreMobileSDK/SCWebBrowserDelegate.h; sourceTree = "<group>"; };
 		1BBCA9C01510C4CA00199B37 /* SCWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebBrowser.m; sourceTree = "<group>"; };
-		1BBCA9C31510C4EA00199B37 /* SCWebBrowserToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCWebBrowserToolbar.h; path = ../SitecoreMobileSDK/SCWebBrowserToolbar.h; sourceTree = "<group>"; };
 		1BBCA9CB1510C58200199B37 /* SCNavigationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationHeader.h; sourceTree = "<group>"; };
 		1BBCA9CC1510C58200199B37 /* SCNavigationHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationHeader.m; sourceTree = "<group>"; };
 		1BBCA9D01510C5BD00199B37 /* SCWebViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewWrapper.h; sourceTree = "<group>"; };
@@ -46,6 +46,11 @@
 		1BBCA9E21510C63D00199B37 /* SCLRSwipeRecognizerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLRSwipeRecognizerDelegate.h; sourceTree = "<group>"; };
 		1BBCA9E31510C65200199B37 /* SCWebViewSwipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewSwipes.h; sourceTree = "<group>"; };
 		1BBCA9E41510C65200199B37 /* SCWebViewSwipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewSwipes.m; sourceTree = "<group>"; };
+		7ED7F33018D1DC54009BFBCE /* SCWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebBrowser.h; path = SitecoreMobileJavaScript/SCWebBrowser.h; sourceTree = SOURCE_ROOT; };
+		7ED7F33118D1DC54009BFBCE /* SCWebBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebBrowserDelegate.h; path = SitecoreMobileJavaScript/SCWebBrowserDelegate.h; sourceTree = SOURCE_ROOT; };
+		7ED7F33218D1DC54009BFBCE /* SCWebBrowserToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebBrowserToolbar.h; path = SitecoreMobileJavaScript/SCWebBrowserToolbar.h; sourceTree = SOURCE_ROOT; };
+		7ED7F33318D1DC54009BFBCE /* SCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebView.h; path = SitecoreMobileJavaScript/SCWebView.h; sourceTree = SOURCE_ROOT; };
+		7ED7F33418D1DC54009BFBCE /* SCWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCWebViewDelegate.h; path = SitecoreMobileJavaScript/SCWebViewDelegate.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				1BBCA9CA1510C56E00199B37 /* Details */,
-				1BBCA9C31510C4EA00199B37 /* SCWebBrowserToolbar.h */,
-				1BBCA9BD1510C49500199B37 /* SCWebBrowser.h */,
 				1BBCA9C01510C4CA00199B37 /* SCWebBrowser.m */,
-				1BBCA9BE1510C4A200199B37 /* SCWebBrowserDelegate.h */,
-				1BBCA9B31510C40400199B37 /* SCWebView.h */,
 				1BBCA9601510C35900199B37 /* SCWebView.m */,
-				1BBCA9B21510C3E700199B37 /* SCWebViewDelegate.h */,
+				7ED7F33018D1DC54009BFBCE /* SCWebBrowser.h */,
+				7ED7F33118D1DC54009BFBCE /* SCWebBrowserDelegate.h */,
+				7ED7F33218D1DC54009BFBCE /* SCWebBrowserToolbar.h */,
+				7ED7F33318D1DC54009BFBCE /* SCWebView.h */,
+				7ED7F33418D1DC54009BFBCE /* SCWebViewDelegate.h */,
 				1BBCA95D1510C35900199B37 /* Supporting Files */,
 			);
 			path = SCWebView;
@@ -169,10 +174,15 @@
 			files = (
 				1BBCA9CD1510C58200199B37 /* SCNavigationHeader.h in Headers */,
 				1BBCA9D21510C5BD00199B37 /* SCWebViewWrapper.h in Headers */,
+				7ED7F33918D1DC54009BFBCE /* SCWebViewDelegate.h in Headers */,
 				1BBCA9D61510C5D200199B37 /* SCWebViewWrapperDelegate.h in Headers */,
 				1BBCA9DC1510C60600199B37 /* SCWebViewDeviceEvents.h in Headers */,
+				7ED7F33518D1DC54009BFBCE /* SCWebBrowser.h in Headers */,
 				1BBCA9E01510C62400199B37 /* SCLRSwipeRecognizer.h in Headers */,
+				7ED7F33818D1DC54009BFBCE /* SCWebView.h in Headers */,
 				1BBCA9E51510C65200199B37 /* SCWebViewSwipes.h in Headers */,
+				7ED7F33718D1DC54009BFBCE /* SCWebBrowserToolbar.h in Headers */,
+				7ED7F33618D1DC54009BFBCE /* SCWebBrowserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
