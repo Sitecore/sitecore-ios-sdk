@@ -1,3 +1,25 @@
+# Version 1.3
+
+## New features:
+* Mobile SDK for iOS was splitted into 3 parts: UI, JavaScript, HTTP.
+
+* Sample application was extended with new features
+
+* Global consistency fix with android SDK, most of API was reviewed.
+
+* Items browser UI component was implemented
+
+* Added posibility to specify custom path for media library
+
+
+## Issues resolved:
+
+* Field names are case insensitive now
+* removeItem method fixed for case, when database was changed in APISession
+* Fixed crash on 64 bit architecture
+
+----------------------
+
 # Version 1.2
 
 ## New features:
