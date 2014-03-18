@@ -76,7 +76,7 @@
                         return;
                     }
                     NSSet* fields_ = [ NSSet setWithObject: @"CheckBoxField" ];
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"CheckBoxField" ];
                         field_value_ = [ item_ fieldValueWithName: @"CheckBoxField" ];
@@ -135,7 +135,7 @@
                     NSSet* fields_ = [ NSSet setWithObjects: @"DateField", @"DateTimeField", nil ];
                     apiContext_.defaultSite = nil;
                     
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         dateField_     = [ item_ fieldWithName: @"DateField" ];
                         dateValue_     = [ item_ fieldValueWithName: @"DateField" ];
@@ -204,7 +204,7 @@
                     item_ = result_;
                     
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"MultiListField" ];
                         field_value_ = [ item_ fieldValueWithName: @"MultiListField" ];
@@ -255,7 +255,7 @@
                     item_ = result_;
                     
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"TreeListField" ];
                         fieldValue_ = [ item_ fieldValueWithName: @"TreeListField" ];
@@ -499,7 +499,7 @@
                     }
                     NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldMediaNormal" ] ;
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldMediaNormal" ];
                         if ( ![ field_ linkData ] )
@@ -574,7 +574,7 @@
                     }
                     
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ]( ^( id field_result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ]( ^( id field_result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldLinkEmpty" ];
                         didFinishCallback_();
@@ -633,7 +633,7 @@
                     apiContext_.defaultSite = nil;
                     
                     
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ]( ^( id field_result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ]( ^( id field_result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldExtLinkInvalid" ];
                         didFinishCallback_();
@@ -693,7 +693,7 @@
                     NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldEmail" ];
                     apiContext_.defaultSite = nil;
                     
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id field_result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldEmail" ];
                         didFinishCallback_();
@@ -754,7 +754,7 @@
                     NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldJavascript" ];
                     apiContext_.defaultSite = @"/sitecore/shell";
                     
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldJavascript" ];
                         didFinishCallback_();

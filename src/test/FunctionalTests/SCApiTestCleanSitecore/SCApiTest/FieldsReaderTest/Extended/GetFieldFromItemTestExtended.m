@@ -96,7 +96,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -164,7 +164,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -240,7 +240,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"MultiListField" ] ];
                 loader1(nil, nil, doneHandler1);
                 
             };
@@ -301,7 +301,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"TreeListField" ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -594,7 +594,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -666,7 +666,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldLinkEmpty" ] ];
                 loader1(nil, nil, doneHandler1);
                 
             };
@@ -734,7 +734,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ] ];
                 
                 loader1(nil, nil, doneHandler1);
             };
@@ -804,7 +804,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -873,7 +873,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHAndler1);
             };
             

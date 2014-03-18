@@ -68,7 +68,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                     NSLog( @"item_.readFields: %@", item_.readFields );
                     SCField* field_ = [ item_ fieldWithName: @"__Editor" ];
                     field_.rawValue = @"Text2";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                     {
                         edited_item_ = editedItem_;
                         NSLog( @"items field value: %@", [ [ edited_item_ fieldWithName: @"__Editor" ] fieldValue ] );
@@ -153,7 +153,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                     field_.rawValue = @"Text22__";
                     SCField* field2_ = [ item_ fieldWithName: @"__Display name" ];
                     field2_.rawValue = @"urla22__";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                     {
                         edited_item_ = editedItem_;
                         didFinishCallback_();
@@ -251,7 +251,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                     NSLog( @"item_.readFields: %@", item_.readFields );
                     SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                     field3_.rawValue = @"Display_name";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                     {
                         edited_item_ = editedItem_;
                         didFinishCallback_();
@@ -442,7 +442,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                     NSLog( @"item_.readFields: %@", item_.readFields );
                     SCField* field_ = [ item_ fieldWithName: @"__Display name" ];
                     field_.rawValue = @"Text2";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                     {
                         edited_item_ = editedItem_;
                         didFinishCallback_();
@@ -541,7 +541,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                         field2_.rawValue = @"en";
                         SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                         field3_.rawValue = @"__Display name new";
-                        [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                        [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                         {
                             i++;
                             edited_item_ = editedItem_;
@@ -684,7 +684,7 @@ static NSInteger asyncSaveItemInvocationCount = 0;
                      originalItemField = field_.rawValue;
                      
                      // @adk : no editing is performed before saving
-                     [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                     [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                     {
                         edited_item_ = editedItem_;
                         savedItemField = [ [ edited_item_ fieldWithName: @"__Editor" ]  rawValue ];

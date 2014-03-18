@@ -49,14 +49,14 @@
 @property ( nonatomic ) NSString* queryString;
 @property ( nonatomic ) NSString* itemId;
 
--(SCAsyncOp)itemReader;
+-(SCAsyncOp)readItemOperation;
 
 @end
 
 
 @implementation SCInternalFieldLinkData
 
--(SCAsyncOp)itemReader
+-(SCAsyncOp)readItemOperation
 {
     //TODO: igk !!!! need itemSourcePOD here
     return asyncOpWithJAsyncOp( [ self.apiSession itemLoaderWithFieldsNames: [ NSSet new ]

@@ -244,12 +244,12 @@
     return bindSequenceOfAsyncOperations( loader_, binder_, nil );
 }
 
--(SCAsyncOp)fieldsReaderForFieldsNames:( NSSet* )fieldNames_
+-(SCAsyncOp)readFieldsOperationForFieldsNames:( NSSet* )fieldNames_
 {
     return asyncOpWithJAsyncOp( [ self fieldsLoaderForFieldsNames: fieldNames_ ] );
 }
 
--(SCExtendedAsyncOp)extendedFieldsReaderForFieldsNames:( NSSet* )fieldNames_
+-(SCExtendedAsyncOp)readFieldsExtendedOperationForFieldsNames:( NSSet* )fieldNames_
 {
     return [ self fieldsLoaderForFieldsNames: fieldNames_ ];
 }
@@ -350,10 +350,10 @@
 
 #pragma mark -
 #pragma mark SaveItem
--(SCAsyncOp)saveItem
+-(SCAsyncOp)saveItemOperation
 {
-    SCExtendedAsyncOp extendedSaveItem = [ self extendedSaveItem ];
-    SCAsyncOp result = [ SCAsyncOpRelationsBuilder operationFromExtendedOperation: extendedSaveItem ];
+    SCExtendedAsyncOp saveItemExtendedOperation = [ self saveItemExtendedOperation ];
+    SCAsyncOp result = [ SCAsyncOpRelationsBuilder operationFromExtendedOperation: saveItemExtendedOperation ];
     
     return result;
 }
@@ -389,7 +389,7 @@
 #endif
 }
 
--(SCExtendedAsyncOp)extendedSaveItem
+-(SCExtendedAsyncOp)saveItemExtendedOperation
 {
     SCExtendedAsyncOp result = bindSequenceOfAsyncOperationsArray( [ self asyncChangedFieldNames ], @[ [ self saveItemBinder ] ] );
     
@@ -433,13 +433,13 @@
 
 #pragma mark -
 #pragma mark RemoveItem
--(SCAsyncOp)removeItem
+-(SCAsyncOp)removeItemOperation
 {
-    SCExtendedAsyncOp result = [ self extendedRemoveItem ];
+    SCExtendedAsyncOp result = [ self removeItemExtendedOperation ];
     return [ SCAsyncOpRelationsBuilder operationFromExtendedOperation: result ];
 }
 
--(SCExtendedAsyncOp)extendedRemoveItem
+-(SCExtendedAsyncOp)removeItemExtendedOperation
 {
     SCExtendedAsyncOp removeOp = bindSequenceOfAsyncOperationsArray( [ self asyncItemId ], @[ [ self removeItemBinder ] ] );
 
@@ -595,7 +595,7 @@
     return mediaPath;
 }
 
--(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCDownloadMediaOptions* )options
+-(SCExtendedAsyncOp)downloadMediaExtendedOperationWithOptions:( SCDownloadMediaOptions* )options
 {
     if ( [ self isMediaItem ] )
     {

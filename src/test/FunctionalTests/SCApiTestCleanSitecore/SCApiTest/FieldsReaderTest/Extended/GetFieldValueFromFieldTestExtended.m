@@ -56,7 +56,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -132,7 +132,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -204,7 +204,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"CheckBoxField" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"CheckBoxField" ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -276,7 +276,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"DateField" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"DateField" ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -351,7 +351,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObject: @"DateTimeField" ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObject: @"DateTimeField" ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -443,7 +443,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObjects: @"CheckListField", @"MultiListField", nil ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObjects: @"CheckListField", @"MultiListField", nil ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -538,7 +538,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -635,7 +635,7 @@
                     };
                     
                     apiContext_.defaultSite = nil;
-                    SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                    SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                     loader1(nil, nil, doneHandler1);
                 };
                 
@@ -722,7 +722,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -815,7 +815,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -889,7 +889,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: [ NSSet setWithObjects: @"GeneralLinkFieldLinkNormal", nil ] ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: [ NSSet setWithObjects: @"GeneralLinkFieldLinkNormal", nil ] ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -975,7 +975,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             
@@ -1045,7 +1045,7 @@
                 };
                 
                 apiContext_.defaultSite = nil;
-                SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                 loader1(nil, nil, doneHandler1);
             };
             

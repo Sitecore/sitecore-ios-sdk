@@ -100,27 +100,27 @@
                                             didFinishCallback_();
                                         };
                                         
-                                        SCExtendedAsyncOp loader6 = [item_ extendedSaveItem];
+                                        SCExtendedAsyncOp loader6 = [item_ saveItemExtendedOperation];
                                         loader6(nil, nil, doneHandler6);
                                     };
                                     
-                                    SCExtendedAsyncOp loader5 = [item_ extendedSaveItem];
+                                    SCExtendedAsyncOp loader5 = [item_ saveItemExtendedOperation];
                                     loader5(nil, nil, doneHandler5);
                                 };
                                
-                               SCExtendedAsyncOp loader4 = [item_ extendedSaveItem];
+                               SCExtendedAsyncOp loader4 = [item_ saveItemExtendedOperation];
                                loader4(nil, nil, doneHandler4);
                            };
                           
-                        SCExtendedAsyncOp loader3 = [item_ extendedSaveItem];
+                        SCExtendedAsyncOp loader3 = [item_ saveItemExtendedOperation];
                           loader3(nil, nil, doneHandler3);
                       };
                      
-                     SCExtendedAsyncOp loader2 = [item_ extendedSaveItem];
+                     SCExtendedAsyncOp loader2 = [item_ saveItemExtendedOperation];
                      loader2(nil, nil, doneHandler2);
                  };
                 
-                SCExtendedAsyncOp loader1 = [item_ extendedSaveItem];
+                SCExtendedAsyncOp loader1 = [item_ saveItemExtendedOperation];
                 loader1(nil, nil, doneHandler1);
             }
             else
@@ -186,7 +186,7 @@
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCItem* phantom_item_ = [ SCItem new ];
-        [ phantom_item_ saveItem ]( ^( id result_, NSError* error_ )
+        [ phantom_item_ saveItemOperation ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -260,7 +260,7 @@
                     didFinishCallback_();
                 };
                 
-                SCExtendedAsyncOp loader1 = [ item_to_edit_ extendedSaveItem ];
+                SCExtendedAsyncOp loader1 = [ item_to_edit_ saveItemExtendedOperation ];
                 loader1(nil, nil, doneHandler1);
             }
             else

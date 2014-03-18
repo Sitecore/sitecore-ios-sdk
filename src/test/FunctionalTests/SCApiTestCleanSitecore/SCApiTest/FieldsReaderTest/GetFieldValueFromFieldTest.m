@@ -33,7 +33,7 @@
                     item_ = result_;
                     NSSet* fields_ = [ NSSet setWithObject: @"Title" ];
                     
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"Title" ];
                         if ( !field_ )
@@ -95,7 +95,7 @@
                     }
                     item_ = result_;
                     NSSet* fields_ = [ NSSet setWithObject: @"Image" ];
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"Image" ];
                         if ( !field_ )
@@ -153,7 +153,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"CheckBoxField" ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"CheckBoxField" ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"CheckBoxField" ];
                         if ( !field_ )
@@ -213,7 +213,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"DateField" ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"DateField" ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"DateField" ];
                         if ( !field_ )
@@ -274,7 +274,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObject: @"DateTimeField" ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObject: @"DateTimeField" ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"DateTimeField" ];
                         if ( !field_ )
@@ -337,7 +337,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObjects: @"CheckListField", @"MultiListField", nil ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObjects: @"CheckListField", @"MultiListField", nil ] ]( ^( id result_, NSError* error_ )
                     {
                         checklist_field_ = [ item_ fieldWithName: @"CheckListField" ];
                         multilist_field_ = [ item_ fieldWithName: @"MultiListField" ];
@@ -429,7 +429,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"TreeListField" ];
                         if ( !field_ )
@@ -496,7 +496,7 @@
                     }
                     item_ = result_;
                     NSSet* fields_ = [ NSSet setWithObjects: @"CheckListField", @"MultiListField", nil ];
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         checklist_field_ = [ item_ fieldWithName: @"CheckListField" ];
                         multilist_field_ = [ item_ fieldWithName: @"MultiListField" ];
@@ -577,7 +577,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObjects: @"TreeListField", nil ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = [ item_ fieldWithName: @"TreeListField" ];
                         if ( !field_ )
@@ -640,7 +640,7 @@
                         return;
                     }
                     item_ = result_;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObjects: @"DropLinkFieldEmpty", @"DropTreeFieldNormal", nil ] ]( ^( id result_, NSError* error_ )
                     {
                         droplink_field_ = [ item_ fieldWithName: @"DropLinkFieldEmpty" ];
                         droptree_field_ = [ item_ fieldWithName: @"DropTreeFieldNormal" ];
@@ -726,7 +726,7 @@
                     }
                     
                     apiContext_.defaultSite = nil;
-                    [ item_ fieldsReaderForFieldsNames: [ NSSet setWithObjects: @"GeneralLinkFieldLinkNormal", nil ] ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: [ NSSet setWithObjects: @"GeneralLinkFieldLinkNormal", nil ] ]( ^( id result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldLinkNormal" ];
                         didFinishCallback_();
@@ -788,7 +788,7 @@
                     return;
                 }
                 NSSet* fields_ = [ NSSet setWithObject: @"GeneralLinkFieldExtLinkInvalid" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                 {
                     field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldExtLinkInvalid" ];
                     if ( !field_ )
@@ -860,7 +860,7 @@
                     NSSet* fields_ = [ NSSet setWithObjects: @"GeneralLinkFieldAnchor", nil ];
                     apiContext_.defaultSite = nil;
                     
-                    [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                    [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                     {
                         field_ = (SCGeneralLinkField*)[ item_ fieldWithName: @"GeneralLinkFieldAnchor" ];
                         didFinishCallback_();

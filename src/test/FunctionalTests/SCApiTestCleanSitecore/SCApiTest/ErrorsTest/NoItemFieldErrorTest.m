@@ -89,7 +89,7 @@
                  return;
              }
              products_items_ = items_;
-             [ products_items_[ 0 ] fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+             [ products_items_[ 0 ] readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
              {
                  result_fields_ = result_;
                  didFinishCallback_();

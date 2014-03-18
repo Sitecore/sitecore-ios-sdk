@@ -35,7 +35,7 @@
  Used for loading the linked item.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is SCItem object or nil if error happens.
  */
--(SCAsyncOp)itemReader;
+-(SCAsyncOp)readItemOperation;
 
 @end
 

@@ -179,10 +179,10 @@
 {
     SCDownloadMediaOptions* resizingOptions = [ SCDownloadMediaOptions new ];
     
-    XCTAssertNil   ( [ self->_rootItem                mediaLoaderWithOptions: resizingOptions ], @"_rootItem       misamatch"          );
-    XCTAssertNotNil( [ self->_mediaImageItem          mediaLoaderWithOptions: resizingOptions ], @"_mediaImageItem misamatch"          );
-    XCTAssertNil   ( [ self->_mediaItemOutsideLibrary mediaLoaderWithOptions: resizingOptions ], @"_mediaItemOutsideLibrary misamatch" );
-    XCTAssertNotNil( [ self->_folderItemInsideLibrary mediaLoaderWithOptions: resizingOptions ], @"_folderItemInsideLibrary misamatch" );
+    XCTAssertNil   ( [ self->_rootItem                downloadMediaExtendedOperationWithOptions: resizingOptions ], @"_rootItem       misamatch"          );
+    XCTAssertNotNil( [ self->_mediaImageItem          downloadMediaExtendedOperationWithOptions: resizingOptions ], @"_mediaImageItem misamatch"          );
+    XCTAssertNil   ( [ self->_mediaItemOutsideLibrary downloadMediaExtendedOperationWithOptions: resizingOptions ], @"_mediaItemOutsideLibrary misamatch" );
+    XCTAssertNotNil( [ self->_folderItemInsideLibrary downloadMediaExtendedOperationWithOptions: resizingOptions ], @"_folderItemInsideLibrary misamatch" );
 }
 
 -(void)testItemsLoaderSetsItemSourceToResizingParams
@@ -207,7 +207,7 @@
 
     [ hook enableHook ];
     {
-        [ self->_mediaImageItem mediaLoaderWithOptions: nil ];
+        [ self->_mediaImageItem downloadMediaExtendedOperationWithOptions: nil ];
     }
     [ hook disableHook ];
     

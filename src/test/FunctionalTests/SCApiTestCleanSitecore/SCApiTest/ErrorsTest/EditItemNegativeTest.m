@@ -45,7 +45,7 @@
                 item_ = read_items_[ 0 ];
                 SCField* fld_ = [ item_ fieldWithName: @"Path" ];
                 fld_.rawValue = @"This is SPARTA!!!";
-                [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                 {
                     if (read_error_)
                     {
@@ -53,7 +53,7 @@
                         didFinishCallback_();
                         return;
                     }
-                    [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                    [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                     {
                         if (read_error_)
                         {
@@ -61,7 +61,7 @@
                             didFinishCallback_();
                             return;
                         }
-                        [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                        [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                         {
                             if (read_error_)
                             {
@@ -69,7 +69,7 @@
                                 didFinishCallback_();
                                 return;
                             }
-                            [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                            [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                             {
                                 if (read_error_)
                                 {
@@ -77,7 +77,7 @@
                                     didFinishCallback_();
                                     return;
                                 }
-                                [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                                [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                                 {
                                     if (read_error_)
                                     {
@@ -85,7 +85,7 @@
                                         didFinishCallback_();
                                         return;
                                     }
-                                    [item_ saveItem]( ^( id save_result, NSError* read_error_ )
+                                    [item_ saveItemOperation]( ^( id save_result, NSError* read_error_ )
                                     {
                                         didFinishCallback_();
                                     });
@@ -157,7 +157,7 @@
     void (^edit_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         SCItem* phantom_item_ = [ SCItem new ];
-        [ phantom_item_ saveItem ]( ^( id result_, NSError* error_ )
+        [ phantom_item_ saveItemOperation ]( ^( id result_, NSError* error_ )
         {
             item_ = result_;
             response_error_ = error_;
@@ -219,7 +219,7 @@
                 read_item_ = read_items_result_[ 0 ];
                 SCField* field_ = [ item_to_edit_ fieldWithName: @"Path" ];
                 field_.rawValue = @"New value";
-                [ item_to_edit_ saveItem ]( ^( id edit_item_result_, NSError* error_ )
+                [ item_to_edit_ saveItemOperation ]( ^( id edit_item_result_, NSError* error_ )
                 {
                     item_ = edit_item_result_;
                     response_error_ = (SCApiError*)error_;
