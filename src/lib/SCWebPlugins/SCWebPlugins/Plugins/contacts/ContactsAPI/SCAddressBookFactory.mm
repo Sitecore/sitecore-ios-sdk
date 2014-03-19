@@ -12,7 +12,15 @@ using namespace ::Utils;
     
     CFErrorRef error_ = NULL;
     ABAddressBookRef result_ = ABAddressBookCreateWithOptions( 0, &error_ );
-    ObjcScopedGuard rawBookGuard_( ^() { CFRelease( result_ ); } );
+    ObjcScopedGuard rawBookGuard_( ^()
+    {
+        callback_( nil, ::ABAddressBookGetAuthorizationStatus(), (__bridge NSError*)error_ );
+
+        if ( NULL != result_ )
+        {
+            CFRelease( result_ );
+        }
+    } );
 
     
     if ( NULL != error_ )
