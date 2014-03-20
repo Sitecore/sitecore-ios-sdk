@@ -86,8 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC4912418D3621E00D87566 /* AddressBookUI.framework in Frameworks */,
-				7EC4912218D3619D00D87566 /* AddressBook.framework in Frameworks */,
 				7EC490DB18D3600400D87566 /* SitecoreMobileUI.framework in Frameworks */,
 				7EC490DD18D3600C00D87566 /* SitecoreMobileSDK.framework in Frameworks */,
 				7EC490E918D3606B00D87566 /* libsqlite3.dylib in Frameworks */,
@@ -96,6 +94,8 @@
 				7EC490E018D3604B00D87566 /* libc++.dylib in Frameworks */,
 				7EC490E118D3604B00D87566 /* libstdc++.dylib in Frameworks */,
 				7EC490EF18D3613E00D87566 /* libiconv.dylib in Frameworks */,
+				7EC4912418D3621E00D87566 /* AddressBookUI.framework in Frameworks */,
+				7EC4912218D3619D00D87566 /* AddressBook.framework in Frameworks */,
 				7EC490ED18D3611E00D87566 /* CoreLocation.framework in Frameworks */,
 				7EC490EB18D360FB00D87566 /* MapKit.framework in Frameworks */,
 				7EC490E318D3605000D87566 /* CFNetwork.framework in Frameworks */,
