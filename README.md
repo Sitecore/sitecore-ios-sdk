@@ -27,7 +27,12 @@ The Sitecore Mobile SDK consists of three primary modules. They are
 The frameworks have some dependencies between each other. The dependencies are described in the following diagram :
 ![Framework Dependencies](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk2.0/resources-readme/FrameworkDependencies.png)
 
-Other extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
+ 
+# Licence
+```
+SITECORE SHARED SOURCE LICENSE
+```
+## Items Browser ComponentOther extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
 
 * The Items Browser component [repository](8])* **“Sitecore Items Browser Component 1.0 for iOS”** documentation
 
@@ -41,11 +46,7 @@ The Sitecore Mobile SDK consists of three primary modules. They are
  * [Sitecore Item Web API module page on SDN][2]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
- 
-# Licence
-```
-SITECORE SHARED SOURCE LICENSE
-```
+
 
  [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
