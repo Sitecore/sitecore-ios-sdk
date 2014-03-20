@@ -35,12 +35,15 @@ Creates a new NSArray containing the values returned by the block.
  
  For example,
  
+```
  NSArray* tree = @[ @[ @1, @2 ], @[ @3, @4 ]  ] ];
  NSArray result = [ tree flatten: ^NSArray*( id element )
  {
     return element;
  } ];
  // returns @[ @1, @2, @3, @4 ]
+```
+
  */
 - (NSArray*)flatten:(SCFlattenBlock)block;
 

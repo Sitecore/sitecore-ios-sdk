@@ -24,13 +24,19 @@
 @property(nonatomic) NSString *imagePath;
 
 /**
- Used for loading the field value which is a UIImage object.
+ Used for loading the field value which is a UIImage object. The image is taken for the same database and language the item has. If you need other image source, please consider [SCImageField readFieldValueOperationWithImageParams:] method.
+
+
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 - (SCAsyncOp)readFieldValueOperation;
 
 /**
 Used for loading the field value which is a UIImage object with additional parameters.
+
+@param params Options to process the media file before sending from the back end. The most frequent usage is resizing images to reduce the download size.
+See SCDownloadMediaOptions class reference for details. You can also specify the database and language of the item to download.
+
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 -(SCAsyncOp)readFieldValueOperationWithImageParams:( SCDownloadMediaOptions * )params;

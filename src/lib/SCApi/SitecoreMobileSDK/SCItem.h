@@ -128,9 +128,11 @@
 - (SCExtendedAsyncOp)readFieldsValuesExtendedOperationForFieldsNames:( NSSet* )fieldsNames_;
 
 /**
- Used to load item's fields, see [SCItem readFieldsByName]
+ Used to load item's fields. They can be later accessed using the [SCItem fieldWithName:] method.
+ 
  @param fieldNames the set of the field's names which will be read for the item. Each field's name in the set should be a string.
  To read all fields choose nil or the empty set if you don't need to read any field
+ 
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSDictionary of SCField objects by field's names or SCApiError if error happens.
  */
 - (SCAsyncOp)readFieldsOperationForFieldsNames:(NSSet *)fieldNames;
