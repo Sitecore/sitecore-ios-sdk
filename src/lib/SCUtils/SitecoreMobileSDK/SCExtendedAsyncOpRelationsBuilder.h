@@ -2,6 +2,8 @@
 #import <SitecoreMobileSDK/SCExtendedOperations.h>
 
 
+/**
+*/
 @interface SCExtendedAsyncOpRelationsBuilder : NSObject
 
 /**
@@ -14,7 +16,7 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)sequence:( NSArray* )operations_;
++(SCExtendedAsyncOp)sequence:( NSArray* )operations;
 
 
 /**
@@ -24,7 +26,7 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations_;
++(SCExtendedAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations;
 
 
 /**
@@ -37,7 +39,7 @@
  
  @return a single SCExtendedAsyncOp as a combination
  
- 
+ ```
  [ SCExtendedAsyncOpRelationsBuilder group: @[a, b, c, d, e] ]( nil, nil,
  void^( NSArray* result, NSError* error )
  {
@@ -46,9 +48,9 @@
  // and result == nil
  // error is non determined. It may be either c.error or e.error
  } );
- 
+ ```
  */
-+(SCExtendedAsyncOp)group:( NSArray* )operations_;
++(SCExtendedAsyncOp)group:( NSArray* )operations;
 
 
 /**
@@ -60,7 +62,7 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)stopOnFirstErrorInGroup:( NSArray* )operations_;
++(SCExtendedAsyncOp)stopOnFirstErrorInGroup:( NSArray* )operations;
 
 
 
