@@ -32,14 +32,17 @@ The Sitecore Mobile SDK consists of three primary modules. They are
 ```
 SITECORE SHARED SOURCE LICENSE
 ```
+
+## This repository contains:
+ * Source code of the Sitecore SDK for iOS framework
+ * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
+
+
 ## Items Browser ComponentOther extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
 
 * The Items Browser component [repository](8])* **“Sitecore Items Browser Component 1.0 for iOS”** documentation
 
 
-### This repository contains:
- * Source code of the Sitecore SDK for iOS framework
- * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
 
 ## Further Information
  * [Product page on SDN][1]
