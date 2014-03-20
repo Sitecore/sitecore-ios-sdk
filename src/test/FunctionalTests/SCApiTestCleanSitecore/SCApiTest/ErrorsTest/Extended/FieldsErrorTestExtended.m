@@ -100,7 +100,7 @@
                 did_finish_callback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ items_[ 0 ] extendedFieldsReaderForFieldsNames: fields_ ];
+            SCExtendedAsyncOp loader1 = [ items_[ 0 ] readFieldsExtendedOperationForFieldsNames: fields_ ];
             loader1(nil, nil, donaHandler1);
             
         };
@@ -155,7 +155,7 @@
                 did_finish_callback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ result_items_[ 0 ] extendedFieldsReaderForFieldsNames: fields_ ];
+            SCExtendedAsyncOp loader1 = [ result_items_[ 0 ] readFieldsExtendedOperationForFieldsNames: fields_ ];
             loader1(nil, nil, donaHandler1);
             
         };
@@ -211,7 +211,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                    SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                     loader1(nil, nil, doneHandler1);
                 };
 

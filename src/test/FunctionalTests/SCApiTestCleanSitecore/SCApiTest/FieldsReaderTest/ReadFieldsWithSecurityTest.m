@@ -89,7 +89,7 @@
                     }
                     result_item_ = result_;
                     NSSet* fields_ = [ NSSet setWithObject: @"Text" ];
-                    [ result_item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result, NSError* error_ )
+                    [ result_item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result, NSError* error_ )
                     {
                         deny_field_ = [ result_item_ fieldWithName: @"Text" ];
                         didFinishCallback_();

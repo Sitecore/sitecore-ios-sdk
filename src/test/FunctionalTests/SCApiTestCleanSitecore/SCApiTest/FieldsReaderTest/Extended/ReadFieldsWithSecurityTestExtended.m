@@ -94,7 +94,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader1 = [ result_item_ extendedFieldsReaderForFieldsNames: fields_ ];
+                    SCExtendedAsyncOp loader1 = [ result_item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
                     loader1(nil, nil, doneHandler1);
                 };
                 

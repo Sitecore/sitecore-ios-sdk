@@ -83,7 +83,7 @@
                 did_finish_callback_();
                 return;
             }
-            SCAsyncOp asyncOp_ = [ items_[ 0 ] fieldsReaderForFieldsNames: fields_ ];
+            SCAsyncOp asyncOp_ = [ items_[ 0 ] readFieldsOperationForFieldsNames: fields_ ];
             asyncOp_( ^( id result_, NSError* error_ )
             {
                 result_fields_ = result_;
@@ -177,7 +177,7 @@
                 }
                 item_ = result_;
                 NSSet* fields_ = [ NSSet setWithObject: @"WrongField" ];
-                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                [ item_ readFieldsOperationForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
                 {
                     fields_result_ = result_;
                     didFinishCallback_();

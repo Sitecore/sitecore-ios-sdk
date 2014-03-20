@@ -102,7 +102,7 @@
                 SCField* field2_ = [ item_ fieldWithName: @"Dimensions" ];
                 field2_.rawValue = @"10 x 10";
 
-                [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                 {
                     didFinishCallback_();
                 } );
@@ -203,7 +203,7 @@
                 SCField* field2_ = [ media_item_ fieldWithName: @"Alt" ];
                 field2_.rawValue = @"La-la-la";
                 
-                [ media_item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                [ media_item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                 {
                     didFinishCallback_();
                 } );

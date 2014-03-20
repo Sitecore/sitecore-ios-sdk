@@ -133,8 +133,8 @@
  To read all fields choose nil or the empty set if you don't need to read any field
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSDictionary of SCField objects by field's names or SCApiError if error happens.
  */
-- (SCAsyncOp)fieldsReaderForFieldsNames:(NSSet *)fieldNames;
-- (SCExtendedAsyncOp)extendedFieldsReaderForFieldsNames:( NSSet* )fieldNames;
+- (SCAsyncOp)readFieldsOperationForFieldsNames:(NSSet *)fieldNames;
+- (SCExtendedAsyncOp)readFieldsExtendedOperationForFieldsNames:( NSSet* )fieldNames;
 
 /**
  Used to load all item's children, see -[SCItem allChildren]
@@ -147,15 +147,15 @@
  Used to save all item's changed fields
  @return SCAsyncOp block. Call it to save item. The SCAsyncOpResult handler's result is SCItem object or SCApiError if error happens.
  */
-- (SCAsyncOp)saveItem;
-- (SCExtendedAsyncOp)extendedSaveItem;
+- (SCAsyncOp)saveItemOperation;
+- (SCExtendedAsyncOp)saveItemExtendedOperation;
 
 /**
  Used to remove given item
  @return SCAsyncOp block. Call it to remove item. The SCAsyncOpResult handler's result is NSNumber object( always equal to "1" ) or SCApiError if error happens.
  */
-- (SCAsyncOp)removeItem;
-- (SCExtendedAsyncOp)extendedRemoveItem;
+- (SCAsyncOp)removeItemOperation;
+- (SCExtendedAsyncOp)removeItemExtendedOperation;
 
 
 #pragma mark -
@@ -223,7 +223,7 @@
  |        NO       | nil         |
  -------------------------------
  */
--(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCDownloadMediaOptions* )options;
+-(SCExtendedAsyncOp)downloadMediaExtendedOperationWithOptions:( SCDownloadMediaOptions* )options;
 
 
 /**

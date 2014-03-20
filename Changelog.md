@@ -1,13 +1,16 @@
-# Version 1.3
+# Version 2.0
 
 ## New features:
-* Mobile SDK for iOS was splitted into 3 parts: UI, JavaScript, HTTP.
+* Mobile SDK for iOS has been split into 3 parts: 
+	* SitecoreMobileSDK
+	* SitecoreMobileJavaScript
+	* SitecoreMobileUI
 
-* Sample application was extended with new features
+* Sample application has been extended with new features
 
-* Global consistency fix with android SDK, most of API was reviewed.
+* Public API classes and methods have been renamed for consistency with android SDK
 
-* Items browser UI component was implemented
+* Items browser UI component has been implemented
 
 * Added posibility to specify custom path for media library
 

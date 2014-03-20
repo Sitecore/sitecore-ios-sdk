@@ -62,7 +62,7 @@
  
  It can be expressed this an example: [SCApiSession sessionWithHost: someHost] == [SCApiSession sessionWithHost: someHost] returns TRUE.
  
- But SCApiSession object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiSession object - it will be released.
+ But SCApiSession object is not a "singleton", if you have no any SCItem, SCField object in memory and any other entity does not retain SCApiSession object - it will be released.
  
  @param host the host of Sitecore Item Web Api, example: "http://mobilesdk.sc-demo.net:80"
  @return existing SCApiSession object for the given host or new created one if it doesn't exist
@@ -78,7 +78,7 @@
  
  It can be expressed this an example: [SCApiSession sessionWithHost: someHost] == [SCApiSession sessionWithHost: someHost] returns TRUE.
  
- But SCApiSession object is not a "singleton", if you have no any SCItem, SCField and SCReader object in memory and any other entity does not retain SCApiSession object - it will be released.
+ But SCApiSession object is not a "singleton", if you have no any SCItem, SCField object in memory and any other entity does not retain SCApiSession object - it will be released.
  
  @param host the host of Sitecore Item Web Api. For example: "http://mobilesdk.sc-demo.net:80"
  @param login the login of user to the Sitecore site

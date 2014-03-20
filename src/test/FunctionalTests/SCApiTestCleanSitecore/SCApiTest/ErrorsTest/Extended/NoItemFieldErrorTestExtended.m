@@ -99,7 +99,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ products_items_[ 0 ] extendedFieldsReaderForFieldsNames: fields_ ];
+            SCExtendedAsyncOp loader1 = [ products_items_[ 0 ] readFieldsExtendedOperationForFieldsNames: fields_ ];
             loader1(nil, nil, doneHandler1);
         };
         
@@ -152,7 +152,7 @@
                 didFinishCallback_();
             };
             
-            SCExtendedAsyncOp loader1 = [ item_ extendedFieldsReaderForFieldsNames: fields_ ];
+            SCExtendedAsyncOp loader1 = [ item_ readFieldsExtendedOperationForFieldsNames: fields_ ];
             loader1(nil, nil, doneHandler1);
         };
         

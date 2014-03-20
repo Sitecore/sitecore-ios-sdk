@@ -534,7 +534,7 @@
                       blockdidFinishCallback_();
                   };
                   
-                  SCAsyncOp removeOperation = item_.removeItem;
+                  SCAsyncOp removeOperation = item_.removeItemOperation;
                   
                   removeOperation( onRemoveCompleted );
                   

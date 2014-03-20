@@ -58,7 +58,7 @@
                         didFinishCallback_();
                     };
                     
-                    SCExtendedAsyncOp loader = [ item_ extendedSaveItem ];
+                    SCExtendedAsyncOp loader = [ item_ saveItemExtendedOperation ];
                     loader(nil, nil, donaHandler);
                 }
                 else
@@ -134,7 +134,7 @@
                     field_.rawValue = @"Text22__";
                     SCField* field2_ = [ item_ fieldWithName: @"__Display name" ];
                     field2_.rawValue = @"urla22__";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
                                            edited_item_ = editedItem_;
                                            didFinishCallback_();
@@ -240,7 +240,7 @@
                     NSLog( @"item_.readFields: %@", item_.readFields );
                     SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                     field3_.rawValue = @"Display_name";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
                                            edited_item_ = editedItem_;
                                            didFinishCallback_();
@@ -448,7 +448,7 @@
                     NSLog( @"item_.readFields: %@", item_.readFields );
                     SCField* field_ = [ item_ fieldWithName: @"__Display name" ];
                     field_.rawValue = @"Text2";
-                    [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                    [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                                        {
                                            edited_item_ = editedItem_;
                                            didFinishCallback_();
@@ -554,7 +554,7 @@
                         field2_.rawValue = @"en";
                         SCField* field3_ = [ item_ fieldWithName: @"__Display name" ];
                         field3_.rawValue = @"__Display name new";
-                        [ item_ saveItem ]( ^( SCItem* editedItem_, NSError* error_ )
+                        [ item_ saveItemOperation ]( ^( SCItem* editedItem_, NSError* error_ )
                                            {
                                                i++;
                                                edited_item_ = editedItem_;

@@ -33,7 +33,7 @@
         {
             if ( result_ )
             {
-                [ result_ removeItem ]( nil );
+                [ result_ removeItemOperation ]( nil );
             }
             failDescription_ = [ error_ description ];
 
@@ -83,7 +83,7 @@
          {
              if ( result_ )
              {
-                 [ result_ removeItem ]( nil );
+                 [ result_ removeItemOperation ]( nil );
                  failDescription_ = [ error_ description ];
              }
              [ self notify: kGHUnitWaitStatusSuccess forSelector: _cmd ];
