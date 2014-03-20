@@ -16,7 +16,7 @@ Sitecore Mobile SDK is a framework that is designed to help the developer produc
 
 The applications powered by this SDK support both IOS 6 and IOS 7, and can request content from Sitecore efficiently and securely via Sitecore Item Web API RESTful web service.
 
-As a part of the most recent update (SDK 1.2 for IOS) we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found on github insert github hyperlink here
+As a part of the most recent update (SDK 1.2 for IOS) we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found in a corresponding [github repository]([6])
 
 Documentation, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][3]
 
