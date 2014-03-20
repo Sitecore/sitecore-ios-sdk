@@ -21,6 +21,17 @@ You can also download a sample application that can be used as a starting point 
 Documentation, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][3]
 
 
+## Framework Structure
+The Sitecore Mobile SDK consists of three primary modules. They are
+* **SitecoreMobileSDK.framework** – a set of core classes that interact with the [SitecoreItem Web Api]([2]) service.* **SitecoreMobileJavaScript.framework** – a library that allows using native features of iOS in mobile optimized Sitecore renderings. It contains an **enhanced web view** and **web plug-ins**.* **SitecoreMobileUI.framework** – UI extensions on top of **SitecoreMobileSDK.framework**. It contains a map view capable of building path and a self-loading image view.
+The frameworks have some dependencies between each other. The dependencies are described in the following diagram :
+![Framework Dependencies](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk2.0/resources-readme/FrameworkDependencies.png)
+
+Other extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
+
+* The Items Browser component [repository](8])* **“Sitecore Items Browser Component 1.0 for iOS”** documentation
+
+
 ### This repository contains:
  * Source code of the Sitecore SDK for iOS framework
  * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
@@ -42,3 +53,4 @@ SITECORE SHARED SOURCE LICENSE
  [5]: http://sitecore.github.io/sitecore-ios-sdk/
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
+ [8]: https://github.com/sitecore/scitemsbrowser-ios
