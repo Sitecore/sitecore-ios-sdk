@@ -1,4 +1,4 @@
-Sitecore Mobile SDK 1.2 for iOS
+Sitecore Mobile SDK 2.0 for iOS
 ======================================
 
 Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both Objective-C and JavaScriptAPI that enable developers to rapidly develop applications utilising their existing IOS or web development skill sets. The SDK includes the following features:
@@ -14,9 +14,9 @@ Sitecore Mobile SDK is a framework that is designed to help the developer produc
  * Mapping integration (with both Apple Maps and Google Maps)
 
 
-The applications powered by this SDK support both IOS 6 and IOS 7, and can request content from Sitecore efficiently and securely via Sitecore Item Web API RESTful web service.
+The applications powered by this SDK support both **iOS 6** and **iOS 7**, and can request content from Sitecore efficiently and securely via [Sitecore Item Web API]([2]) RESTful web service.
 
-As a part of the most recent update (SDK 1.2 for IOS) we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found on github insert github hyperlink here
+You can also download a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found in a corresponding [github repository]([6])
 
 Documentation, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][3]
 
