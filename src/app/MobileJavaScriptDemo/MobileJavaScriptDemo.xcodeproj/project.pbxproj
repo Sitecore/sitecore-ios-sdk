@@ -106,6 +106,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5C358318D36A05005D90AE /* SitecoreMobileSDK.framework in Frameworks */,
+				7E5C358418D36A05005D90AE /* SitecoreMobileUI.framework in Frameworks */,
+				7E5C358218D36A05005D90AE /* SitecoreMobileJavaScript.framework in Frameworks */,
+				7E5C359018D36A98005D90AE /* libz.dylib in Frameworks */,
+				7E5C358E18D36A80005D90AE /* libiconv.dylib in Frameworks */,
+				7E5C358C18D36A7B005D90AE /* libxml2.dylib in Frameworks */,
+				7E5C358A18D36A77005D90AE /* libsqlite3.dylib in Frameworks */,
+				7E5C358718D36A72005D90AE /* libc++.dylib in Frameworks */,
+				7E5C358818D36A72005D90AE /* libstdc++.dylib in Frameworks */,
 				7E5C35AB18D36B18005D90AE /* CoreMedia.framework in Frameworks */,
 				7E5C35AC18D36B18005D90AE /* CoreVideo.framework in Frameworks */,
 				7E5C35A718D36B0A005D90AE /* AudioToolbox.framework in Frameworks */,
@@ -120,18 +129,9 @@
 				7E5C359818D36AB0005D90AE /* AddressBookUI.framework in Frameworks */,
 				7E5C359418D36AAB005D90AE /* Social.framework in Frameworks */,
 				7E5C359218D36A9D005D90AE /* CFNetwork.framework in Frameworks */,
-				7E5C359018D36A98005D90AE /* libz.dylib in Frameworks */,
-				7E5C358E18D36A80005D90AE /* libiconv.dylib in Frameworks */,
-				7E5C358C18D36A7B005D90AE /* libxml2.dylib in Frameworks */,
-				7E5C358A18D36A77005D90AE /* libsqlite3.dylib in Frameworks */,
-				7E5C358718D36A72005D90AE /* libc++.dylib in Frameworks */,
-				7E5C358818D36A72005D90AE /* libstdc++.dylib in Frameworks */,
 				7EC4905918D35C8700D87566 /* CoreGraphics.framework in Frameworks */,
 				7EC4905B18D35C8700D87566 /* UIKit.framework in Frameworks */,
 				7EC4905718D35C8700D87566 /* Foundation.framework in Frameworks */,
-				7E5C358318D36A05005D90AE /* SitecoreMobileSDK.framework in Frameworks */,
-				7E5C358418D36A05005D90AE /* SitecoreMobileUI.framework in Frameworks */,
-				7E5C358218D36A05005D90AE /* SitecoreMobileJavaScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
