@@ -228,7 +228,7 @@
  Used to check if a user with given name and password exists on the instance.
  The callback gets NSNull on success and nil on error.
  
- @param - name of the site, set up on the instance. Site name must start with a slash. For example, @"/sitecore/shell". Pass "nil" for the default site.
+ @param site name of the site, set up on the instance. Site name must start with a slash. For example, @"/sitecore/shell". Pass "nil" for the default site.
  
  @return SCAsyncOp block. Call it to get the expected result.
  */
@@ -507,15 +507,25 @@
                                        imageParams:( SCDownloadMediaOptions * )params;
 
 /**
- Used to request rendering HTML for rendering with request
+ Used to request rendering HTML.
+ 
+ @param request contains the information about
+ 
+ * rendering item id
+ * rendering datasource item id
+ * source of both the rendering and the datasource. See SCItemSource protocol for more details
+ 
+  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
  */
 - (SCAsyncOp)getRenderingHtmlOperationWithRequest:(SCGetRenderingHtmlRequest *)request;
 
 /**
  Used to request rendering HTML for rendering with pointed id and item id presented using rendering.
- Usd defauld language and database of SCApiSession
+ Uses defauld language and database of SCApiSession
+ 
  @param renderingId - id of rendering which you want to request
  @param sourceId - item's id for render using rendering with renderingId
+ 
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
  */
 - (SCAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
