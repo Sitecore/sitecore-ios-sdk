@@ -35,15 +35,15 @@
  
  All methods of this class can be divided into two general types.
  
- First type  - Asynchronous methods which used to load data from the backend. All such methods returns a block with SCAsyncOp type as a result.
+ * asynchronous methods that load data from the backend. All such methods returns a block with SCExtendedAsyncOp type as a result.
  
- Second type - synchronous "getters" methods, which can be used for accessing loaded Items and Fields which are still in the memory.
+ * synchronous "getters" methods. They are used for accessing loaded Items and Fields which are still in the memory cache.
  
- SCApiSession object does not owns loaded items and fields, so they will be immediately released if you does not owns them.
+ SCExtendedApiSession object does not own loaded items and fields. However, they stay in memory cache as long as possible (until the memory warning occurs). You should keep a strong reference to the objects you need to make sure they survive the memory warning.
  
  Items ( SCItem objects ) owns their descendant items and fields ( SCField objects ).
  
- All methods of this class is not thread safe and they should be called exceptionally from one thread (main thread suggested)
+ All methods of this class are not thread safe and they should be called exceptionally from one thread (main thread suggested)
  */
 @interface SCApiSession : NSObject
 

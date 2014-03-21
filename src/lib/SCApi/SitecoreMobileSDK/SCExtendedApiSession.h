@@ -34,22 +34,25 @@
 
 
 /**
- The SCApiSession object provides support to perform the loading of system Items and their Fields from the backend.
+ The SCExtendedApiSession object provides support to perform the loading of system Items and their Fields from the backend.
 
  All methods of this class can be divided into two general types.
 
- First type  - Asynchronous methods which used to load data from the backend. All such methods returns a block with SCAsyncOp type as a result.
+ * asynchronous methods that load data from the backend. All such methods returns a block with SCExtendedAsyncOp type as a result.
 
- Second type - synchronous "getters" methods, which can be used for accessing loaded Items and Fields which are still in the memory.
+ * synchronous "getters" methods. They are used for accessing loaded Items and Fields which are still in the memory cache.
 
- SCApiSession object does not owns loaded items and fields, so they will be immediately released if you does not owns them.
+ SCExtendedApiSession object does not own loaded items and fields. However, they stay in memory cache as long as possible (until the memory warning occurs). You should keep a strong reference to the objects you need to make sure they survive the memory warning.
 
  Items ( SCItem objects ) owns their descendant items and fields ( SCField objects ).
 
- All methods of this class is not thread safe and they should be called exceptionally from one thread (main thread suggested)
+ All methods of this class are not thread safe and they should be called exceptionally from one thread (main thread suggested)
  */
 @interface SCExtendedApiSession : NSObject
 
+/**
+ An instance of the SCApiSession
+ */
 @property ( nonatomic, readonly, weak) SCApiSession *mainContext;
 
 
@@ -221,8 +224,8 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCExtendedAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                                        itemId:(NSString *)itemId
-                                    itemSource:(id<SCItemSource>)itemSource;
+                                              itemId:(NSString *)itemId
+                                          itemSource:(id<SCItemSource>)itemSource;
 
 /**
  Used to load item with fields by the system item id.
@@ -242,8 +245,8 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCExtendedAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames_
-                                      itemPath:(NSString *)path_
-                                    itemSource:(id<SCItemSource>)itemSource;
+                                            itemPath:(NSString *)path_
+                                          itemSource:(id<SCItemSource>)itemSource;
 
 /**
  Used to create item according to the properties of SCCreateItemRequest object
