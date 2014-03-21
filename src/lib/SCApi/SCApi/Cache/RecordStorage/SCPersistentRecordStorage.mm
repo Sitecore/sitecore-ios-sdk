@@ -256,7 +256,7 @@ static NSString* const SQL_INSERT_VALUE_SEPARATOR = @",\n   ";
     {
         item.itemSource = self.itemSourcePOD;
         item.apiSession = self.apiSession;
-        item.mainApiSession = context.mainContext;
+        item.mainApiSession = context.mainSession;
     }
     
     item.fieldsByName = entity.cachedItemFieldsByName;

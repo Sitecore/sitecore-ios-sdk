@@ -59,7 +59,7 @@
  
  @return nil - if the object was created directly. The SCApiSession instance otherwise.
  */
-@property ( nonatomic, readonly, weak) SCApiSession *mainContext;
+@property ( nonatomic, readonly, weak) SCApiSession *mainSession;
 
 
 /**
