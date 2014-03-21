@@ -20,22 +20,30 @@
 @interface SCMapView (SitecoreAPI)
 
 /**
- Active area radius
+ Active area radius.
  */
 @property(nonatomic) CLLocationDistance regionRadius;
 /**
- Set YES to draw route to nearest address
+ Specify YES to draw route to nearest address.
  */
 @property(nonatomic) BOOL drawRouteToNearestAddress;
 
 /**
- Adds annotations with items from query
+ Adds annotations with items from query.
+  
+ @param query the querry to receive set of items based on the "Mobile Address" template.
+ @param apiSession obejct of SCApiSession type
+ @param handler result handler
  */
 - (void)addItemsAnnotationsForQuery:(NSString *)query
                          apiSession:(SCApiSession *)apiSession
                             handler:(void(^)(NSError *))handler;
 /**
- Adds annotations with items from path
+ Adds annotations with items from path.
+ 
+ @param path the path to items based on the "Mobile Address" template.
+ @param apiSession obejct of SCApiSession type
+ @param handler result handler
  */
 - (void)addItemsAnnotationsWithPath:(NSString *)path
                          apiSession:(SCApiSession *)apiSession
@@ -43,11 +51,19 @@
 
 typedef void (^SCMapViewResultHandler)(NSArray *annotations, NSError *error);
 /**
- Tells that the annotations was loaded
+ Handler to catch the result of annotations loading process.
  */
 @property(nonatomic,copy) SCMapViewResultHandler didLoadedAnnotationsHandler;
 
+/**
+ MKMapCamera object. The camera used for determining the appearance of the map.
+ */
 -(void)setCamera:(id)camera;
+
+/**
+ MKMapCamera object. The camera used for determining the appearance of the map.
+  @param animated Specify YES if you want the change in viewing angle to be animated or NO if you want the map to reflect the changes without animations.
+ */
 -(void)setCamera:(id)camera
         animated:(BOOL)animated;
 
