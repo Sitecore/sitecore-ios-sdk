@@ -91,7 +91,7 @@
     {
         self->_record     = record_;
         self->_apiSession = apiSession_;
-        self->_mainApiSession = apiSession_.mainContext;
+        self->_mainApiSession = apiSession_.mainSession;
         
         self->_itemSourcePOD = [ SCItemSourcePOD new ];
         

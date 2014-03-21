@@ -155,7 +155,7 @@
 -(void)setApiSession:(SCExtendedApiSession *)apiSession
 {
     self->_apiSession = apiSession;
-    self->_mainApiSession = apiSession.mainContext;
+    self->_mainApiSession = apiSession.mainSession;
 }
 
 @end

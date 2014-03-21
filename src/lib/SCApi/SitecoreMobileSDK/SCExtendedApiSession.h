@@ -53,7 +53,7 @@
 /**
  An instance of the SCApiSession
  */
-@property ( nonatomic, readonly, weak) SCApiSession *mainContext;
+@property ( nonatomic, readonly, weak) SCApiSession *mainSession;
 
 
 /**
