@@ -456,7 +456,9 @@
 
 /**
  Used to create media item according to the properties of SCUploadMediaItemRequest object
+ 
  @param createMediaItemRequest SCUploadMediaItemRequest object which provides a bunch of options to create media item
+ 
  @return SCAsyncOp block. Call it to create media item. The SCAsyncOpResult handler's result is SCItem object or nil if error happens.
  */
 - (SCAsyncOp)uploadMediaOperationWithRequest:(SCUploadMediaItemRequest *)createMediaItemRequest;
@@ -485,14 +487,20 @@
 
 /**
  Used to load image with the image path, see [SCImageField imagePath].
+ 
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
+ 
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 - (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path;
 
 /**
  Used to load image with the image path, see [SCImageField imagePath] with additional parameters.
+ 
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
+ @param params Options for image processing on the server side before downloading. The most frequent use case is resizing images. For more details see SCDownloadMediaOptions class.
+ 
+ 
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
 - (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
