@@ -18,7 +18,7 @@
 
 @interface SCExtendedApiSession (MainContext)
 
-@property ( nonatomic, weak ) SCApiSession *mainContext;
+@property ( nonatomic, weak ) SCApiSession *mainSession;
 
 @end
 
@@ -42,7 +42,7 @@
                                                                                 notificationCenter: notificationCenter ];
         
         self.extendedApiSession = extendedContext;
-        self.extendedApiSession.mainContext = self;
+        self.extendedApiSession.mainSession = self;
     }
 
     return self;
