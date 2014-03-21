@@ -513,7 +513,7 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
     return self->_api;
 }
 
--(void)setMainContext:(SCApiSession *)mainSession
+-(void)setMainSession:(SCApiSession *)mainSession
 {
     self->_mainSession = mainSession;
 }
