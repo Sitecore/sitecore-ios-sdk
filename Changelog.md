@@ -8,7 +8,8 @@
 
 * Sample application has been extended with new features
 
-* Public API classes and methods have been renamed for consistency with android SDK
+* Public API classes and methods have been renamed for consistency with android SDK.
+Full list of renaming can be found at the [Renaming.md](<https://github.com/Sitecore/sitecore-ios-sdk/blob/sdk2.0/Renaming.md>) file.
 
 * Items browser UI component has been implemented
 
