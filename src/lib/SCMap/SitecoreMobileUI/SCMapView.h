@@ -22,10 +22,6 @@
 @interface SCMapView : MKMapView
 @end
 
-/**
- A subclass of MKMapView. It has all features of its parent class and allows using pathfinding features while targeting iOS6.
- Note : on iOS 6 pathfinding implementation is based on google services. For more information please consider http://code.google.com/apis/maps/iphone/terms.html
- */
 @interface SCMapView (SitecoreAPI)
 
 /**
