@@ -6,9 +6,22 @@
  */
 @interface SCApiError : NSError
 
--(id)initWithDescription:( NSString* )description_;
--(id)initWithDescription:( NSString* )description_
-                    code:( NSInteger )code_;
+/**
+ Constructs an error object with the sitecore SDK domain and default code.
+ 
+ @param description A string to be stored in NSLocalizedDescriptionKey of -[NSError userInfo]
+ */
+-(instancetype)initWithDescription:( NSString* )description;
+
+
+/**
+ Constructs an error object with the sitecore SDK domain.
+ 
+ @param description A string to be stored in NSLocalizedDescriptionKey of -[NSError userInfo]
+ @param code The error code for the error.
+ */
+-(instancetype)initWithDescription:( NSString* )description
+                              code:( NSInteger )code;
 
 
 /**
@@ -109,7 +122,7 @@
 @end
 
 /**
- The SCNotImageFound error may happens if SCApi can not process the server response as image, you can inspect response using -[SCNotImageFound responseData] property
+ The SCNotImageFound error may happens if SCApi can not process the server response as image, you can inspect response using -[SCInvalidResponseFormatError responseData] property
  */
 @interface SCNotImageFound : SCInvalidResponseFormatError
 @end
