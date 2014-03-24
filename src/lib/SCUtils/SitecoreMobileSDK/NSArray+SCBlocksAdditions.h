@@ -19,7 +19,7 @@
 /**
    Creates a new NSArray of length N containing the values returned by the block.
  
-   @param size  - size of the new array
+   @param N  - size of the new array
    @param block - a block that builds new objects to fill array with
  
    @return - a new NSArray instance
