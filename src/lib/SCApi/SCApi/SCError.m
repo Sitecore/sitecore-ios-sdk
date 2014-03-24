@@ -18,30 +18,32 @@
     return errorDomain_;
 }
 
--(id)initWithDescription:( NSString* )description_ code:( NSInteger )code_
+-(instancetype)initWithDescription:( NSString* )description_
+                              code:( NSInteger )code_
 {
     NSDictionary* userInfo_ = @{ NSLocalizedDescriptionKey : description_ };
     return [ super initWithDomain: [ [ self class ] errorDomain ] code: code_
                          userInfo: userInfo_ ];
 }
 
--(id)initWithDescription:( NSString* )description_
+-(instancetype)initWithDescription:( NSString* )description_
 {
-    return [ self initWithDescription: description_ code: 0 ];
+    return [ self initWithDescription: description_
+                                 code: 0 ];
 }
 
--(id)init
+-(instancetype)init
 {
     NSString* description_ = [ [ NSString alloc ] initWithFormat: @"%@", [ self class ] ];
     return [ self initWithDescription: description_ ];
 }
 
-+(id)errorWithDescription:( NSString* )description_ code:( NSInteger )code_
++(instancetype)errorWithDescription:( NSString* )description_ code:( NSInteger )code_
 {
     return [ [ self alloc ] initWithDescription: description_ code: code_ ];
 }
 
-+(id)errorWithDescription:( NSString* )description_
++(instancetype)errorWithDescription:( NSString* )description_
 {
     return [ [ self alloc ] initWithDescription: description_ ];
 }
