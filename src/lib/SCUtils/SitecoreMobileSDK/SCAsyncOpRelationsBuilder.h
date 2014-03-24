@@ -4,7 +4,13 @@
 #import <Foundation/Foundation.h>
 
 
-
+/**
+ This class contains some methods to control the flow of asynchronous operations of SCAsyncOp type.
+ With its help the user can avoid the "callback hell" problem and reduce the depth of asycnhronous calls.
+ 
+ To control the flow of SCExtendedAsyncOp operations please consider the SCAsyncOpRelationsBuilder class.
+ Alternatively, you can convert the operation using the +[SCAsyncOpRelationsBuilder operationFromExtendedOperation:] class.
+*/
 @interface SCAsyncOpRelationsBuilder : NSObject
 
 
@@ -12,9 +18,12 @@
  Converts an extended operation to a simplified one by currying progress and cancel callbacks.
  
  @param extendedOperation - an operation with progress, cancel and completion callbacks.
+ 
  @return - an operation with completion callback only.
  */
 +(SCAsyncOp)operationFromExtendedOperation:( SCExtendedAsyncOp )extendedOperation;
+
+
 
 /**
  Converts operations array to a single operation. The operations will be executed one after another.
@@ -29,6 +38,7 @@
 +(SCAsyncOp)sequence:( NSArray* )operations;
 
 
+
 /**
  Executes operations in array one after another until one of them succeeds.
  
@@ -37,6 +47,7 @@
  @return a single SCAsyncOp as a combination
  */
 +(SCAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations;
+
 
 
 /**
@@ -61,6 +72,7 @@
  
  */
 +(SCAsyncOp)group:( NSArray* )operations;
+
 
 
 /**
