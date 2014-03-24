@@ -58,7 +58,8 @@
  @param string The content for the main page.
  @param baseURL The base URL for the content. It will be prepended to all relative hyperlinks.
  */
-- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
+- (void)loadHTMLString:(NSString *)string
+               baseURL:(NSURL *)baseURL;
 
 
 /**
@@ -145,6 +146,10 @@ textEncodingName:(NSString *)textEncodingName
 
 /**
  This method is an alias to -[UIWebView stringByEvaluatingJavaScriptFromString:] method.
+ 
+ @param script A string that contains the JavaScript code to execute.
+ 
+ @return The result of running script or nil if it fails.
  */
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
 

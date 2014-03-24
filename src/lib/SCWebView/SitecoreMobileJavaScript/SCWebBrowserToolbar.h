@@ -43,6 +43,11 @@
 
 @end
 
+
+
+/**
+ The SCWebBrowserToolbarDelegate protocol defines methods that a delegate of the SCWebBrowserToolbar must implement to react on navigation events.
+ */
 @protocol SCWebBrowserToolbarDelegate <NSObject>
 
 @required
