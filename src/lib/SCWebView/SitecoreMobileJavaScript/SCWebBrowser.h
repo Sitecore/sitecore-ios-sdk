@@ -13,7 +13,7 @@
 /**
  SCWebBrowser has simple navigation view with back and forward buttons and activity indicator and if you need to provide own custom navigator view, please pass UIView object which conforms to SCWebBrowserToolbar protocol.
  
- @param navigator a custom control that lets the user go back and forward through web pages displayed in the SCWebBrowser. See SCWebBrowserToolbar and SCWebBrowserToolbarDelegate protocols for more details.
+ @param toolbar a custom control that lets the user go back and forward through web pages displayed in the SCWebBrowser. See SCWebBrowserToolbar and SCWebBrowserToolbarDelegate protocols for more details.
  */
 -(void)setCustomToollbarView:(UIView< SCWebBrowserToolbar >*)toolbar;
 
@@ -47,25 +47,41 @@
 
 /**
  This method is an alias to -[UIWebView loadRequest:] method.
+ 
+ @param request A URL request identifying the location of the content to load.
  */
 - (void)loadRequest:(NSURLRequest *)request;
 
 /**
  This method is an alias to -[UIWebView loadHTMLString:baseURL:] method.
+ 
+ @param string The content for the main page.
+ @param baseURL The base URL for the content. It will be prepended to all relative hyperlinks.
  */
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
 
 
 /**
- This method is an alias to -[UIWebView loadURL:] method.
+ This method is an alias to -[UIWebView loadRequest:] method.
+ It constructs the request from the URL and loads it in the corresponding UIWebView.
+ 
+ @param url URL of the web page to display
  */
 - (void)loadURL:(NSURL *)url;
 
 
 /**
  This method is an alias to -[UIWebView loadData:MIMEType:textEncodingName:baseURL:] method.
+ 
+ @param data The content for the main page.
+ @param MIMEType The MIME type of the content.
+ @param textEncodingName The IANA encoding name as in utf-8 or utf-16.
+ @param baseURL The base URL for the content.
  */
-- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;
+- (void)loadData:(NSData *)data
+        MIMEType:(NSString *)MIMEType
+textEncodingName:(NSString *)textEncodingName
+         baseURL:(NSURL *)baseURL;
 
 
 /**
