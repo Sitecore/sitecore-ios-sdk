@@ -12,7 +12,7 @@
 @protocol SCWebBrowserToolbarDelegate;
 
 /**
- The SCWebBrowserToolbar protocol provides interface for [SCWebBrowser setCustomNavigatorView:] method's argument.
+ The SCWebBrowserToolbar protocol provides interface for [SCWebBrowser setCustomToollbarView:] method's argument.
  
  SCWebBrowser has simple navigator view and if you need to provide own custom navigator view, please pass UIView object which conforms to SCWebBrowserToolbar protocol.
  */
@@ -20,7 +20,7 @@
 
 @optional
 /**
- You custom navigator view will be provided with delegate object when you set it using [SCWebBrowser setCustomNavigatorView:] method.
+ You custom navigator view will be provided with delegate object when you set it using [SCWebBrowser setCustomToollbarView:] method.
  
  SCWebBrowserToolbarDelegate delegate object can be used to load the previous or next location in the back-forward list, see [UIWebView goBack] for details.
  */
@@ -43,6 +43,11 @@
 
 @end
 
+
+
+/**
+ The SCWebBrowserToolbarDelegate protocol defines methods that a delegate of the SCWebBrowserToolbar must implement to react on navigation events.
+ */
 @protocol SCWebBrowserToolbarDelegate <NSObject>
 
 @required
