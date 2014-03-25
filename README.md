@@ -54,7 +54,7 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
 
 
 ## Further Information
- * [Product page on SDN][1]
+ * [Product page on SDN][1][
  * [Sitecore Item Web API module page on SDN][2]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
@@ -63,7 +63,7 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
- [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx
+ [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS/Documentation.aspx
  [5]: http://sitecore.github.io/sitecore-ios-sdk/v2.0/
