@@ -54,7 +54,7 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
 
 
 ## Further Information
- * [Product page on SDN][1][
+ * [Product page on SDN][1]
  * [Sitecore Item Web API module page on SDN][2]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
