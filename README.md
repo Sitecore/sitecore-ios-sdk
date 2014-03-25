@@ -66,7 +66,7 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
  [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS/Documentation.aspx
- [5]: http://sitecore.github.io/sitecore-ios-sdk/
+ [5]: http://sitecore.github.io/sitecore-ios-sdk/v2.0/
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
  [8]: https://github.com/sitecore/scitemsbrowser-ios
