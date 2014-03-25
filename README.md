@@ -14,16 +14,16 @@ Sitecore Mobile SDK is a framework that is designed to help the developer produc
  * Mapping integration (with both Apple Maps and Google Maps)
 
 
-The applications powered by this SDK support both **iOS 6** and **iOS 7**, and can request content from Sitecore efficiently and securely via [Sitecore Item Web API]([2]) RESTful web service.
+The applications powered by this SDK support both **iOS 6** and **iOS 7**, and can request content from Sitecore efficiently and securely via [Sitecore Item Web API][2] RESTful web service.
 
-You can also download a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found in a corresponding [github repository]([6])
+You can also download a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available. This project can be found in a corresponding [github repository][6]
 
 Documentation, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][3]
 
 
 ## Framework Structure
 The Sitecore Mobile SDK consists of three primary modules. They are
-* **SitecoreMobileSDK.framework** – a set of core classes that interact with the [SitecoreItem Web Api]([2]) service.* **SitecoreMobileJavaScript.framework** – a library that allows using native features of iOS in mobile optimized Sitecore renderings. It contains an **enhanced web view** and **web plug-ins**.* **SitecoreMobileUI.framework** – UI extensions on top of **SitecoreMobileSDK.framework**. It contains a map view capable of building path and a self-loading image view.
+* **SitecoreMobileSDK.framework** – a set of core classes that interact with the [SitecoreItem Web Api][2] service.* **SitecoreMobileJavaScript.framework** – a library that allows using native features of iOS in mobile optimized Sitecore renderings. It contains an **enhanced web view** and **web plug-ins**.* **SitecoreMobileUI.framework** – UI extensions on top of **SitecoreMobileSDK.framework**. It contains a map view capable of building path and a self-loading image view.
 The frameworks have some dependencies between each other. The dependencies are described in the following diagram :
 ![Framework Dependencies](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk2.0/resources-readme/FrameworkDependencies.png)
 
@@ -38,9 +38,9 @@ SITECORE SHARED SOURCE LICENSE
  * Binaries of the Sitecore SDK for iOS framework in [releases section][7]
 
 
-## Items Browser ComponentOther extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
+## Items Browser ComponentOther extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component][8]. For more details see
 
-* The Items Browser component [repository](8])* **“Sitecore Items Browser Component 1.0 for iOS”** documentation
+* The Items Browser component [repository](8]* **“Sitecore Items Browser Component 1.0 for iOS”** documentation
 
 
 
