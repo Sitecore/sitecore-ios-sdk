@@ -32,11 +32,43 @@ The Sitecore Mobile SDK consists of three primary modules. They are
 The frameworks have some dependencies between each other. The dependencies are described in the following diagram :
 ![Framework Dependencies](https://github.com/Sitecore/sitecore-ios-sdk/raw/sdk2.0/resources-readme/FrameworkDependencies.png)
 
+
+## The SDK includes the following features:
+
+### Objective-C API to Access data from Sitecore CMS
+
+* Authentication
+* CRUD operations on items
+* Access item fields and properties
+* Upload media items
+* Getting html rendering of an item
+
  
-# Licence
-```
-SITECORE SHARED SOURCE LICENSE
-```
+
+### JavaScript API
+ * Show native alert
+ * Left-Right swipe navigation
+ * Accelerometer
+ * Device information
+ * Access to camera and media library
+ * Share to social networks
+ * Send emails
+ * Access to the device address book
+ * Mapping integration
+ * Create calendar events
+ * Upload media files to the Sitecore media library
+
+
+### UI components
+ * [Items Browser component][8] for browsing through content tree with customizable UI
+ * QR Code reader
+ * MapView with pathfinding features for **iOS 6**
+ * Self-loading UIImageView category
+
+As a part of the release we have created a sample application that can be used as a starting point to understand the Mobile SDK for iOS and the features available.  This project can be found [on Github][4]
+
+
+
 
 ## This repository contains:
  * Source code of the Sitecore SDK for iOS framework
@@ -58,6 +90,13 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
  * [Sitecore Item Web API module page on SDN][2]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
+
+
+ 
+# Licence
+```
+SITECORE SHARED SOURCE LICENSE
+```
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
