@@ -48,7 +48,7 @@ SITECORE SHARED SOURCE LICENSE
 ## Items Browser Component
 Other extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
 
-* The Items Browser component [repository]([8])
+* The Items Browser component [repository]( [8] )
 * **“Sitecore Items Browser Component 1.0 for iOS”** documentation
 
 
@@ -60,6 +60,9 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
  * [Sample App – SDK for IOS][6]
 
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+
  [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS/Documentation.aspx
@@ -68,5 +71,3 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
  [8]: https://github.com/sitecore/scitemsbrowser-ios
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
