@@ -46,9 +46,9 @@ SITECORE SHARED SOURCE LICENSE
 
 
 ## Items Browser Component
-Other extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component]([8]). For more details see
+Other extensions and components can be built on top of the Sitecore Mobile SDK for iOS. For example, we have a separate framework for the [Items Browser component](https://github.com/sitecore/scitemsbrowser-ios). For more details see
 
-* The Items Browser component [repository]( [8] )
+* The Items Browser component [repository](https://github.com/sitecore/scitemsbrowser-ios)
 * **“Sitecore Items Browser Component 1.0 for iOS”** documentation
 
 
