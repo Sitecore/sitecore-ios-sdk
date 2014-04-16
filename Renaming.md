@@ -24,7 +24,6 @@ triggerLoaderForRequest          		| triggerOperationWithRequest
 itemReaderForItemId				 		| readItemOperationForItemId
 itemReaderForItemPath			 		| readItemOperationForItemPath
 itemReaderWithFieldsNames		 		| readItemOperationForFieldsNames
-itemReaderForItemPath 					| readItemOperationForPath:
 itemReaderForItemId 					| readItemOperationForItemId
 itemReaderWithFieldsNames				| readItemOperationForFieldsNames
 childrenReaderWithItemId 				| readChildrenOperationForItemId
@@ -49,7 +48,7 @@ fieldsReaderForFieldsNames 				| readFieldsOperationForFieldsNames
 saveItem 								| saveItemOperation
 removeItem 								| removeItemOperation
 itemReader 								| readItemOperation
-extendedFieldsReaderForFieldsNames 		| readFieldsExtendedOperationForFieldsNames
+extendedFieldsReaderForFieldsNames 	| readFieldsExtendedOperationForFieldsNames
 extendedSaveItem  						| saveItemExtendedOperation
 extendedRemoveItem  					| removeItemExtendedOperation
 mediaLoaderWithOptions  				| downloadMediaExtendedOperationWithOptions
