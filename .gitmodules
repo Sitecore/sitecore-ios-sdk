@@ -28,3 +28,6 @@
 [submodule "src/lib-third-party/cocoahttpserver"]
 	path = src/lib-third-party/cocoahttpserver
 	url = https://github.com/Sitecore/CocoaHTTPServer.git
+[submodule "src/lib-third-party/ios-openssl"]
+	path = src/lib-third-party/ios-openssl
+	url = https://github.com/sitecore-ios-opensource/ios-openssl.git
