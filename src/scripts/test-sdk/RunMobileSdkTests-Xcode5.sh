@@ -16,7 +16,7 @@ cd "$LAUNCH_DIR"
 
 REPORT_DIR=$PROJECT_ROOT/deployment/test-results
 
-IOS_VERSION=7.0
+IOS_VERSION=7.1
 CONFIGURATION=Coverage
 
 KILL_SIMULATOR=$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh

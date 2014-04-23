@@ -42,7 +42,7 @@ cd "$TEST_SUITE_ROOT"
 BUILT_PRODUCTS_DIR=$( cat /tmp/SCApiTestLibsBuild/PRODUCT_DIR.txt )
 cd "$BUILT_PRODUCTS_DIR/$CONFIGURATION-iphonesimulator"
 	/bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
-	    iphonesim launch "$PWD/SCApiTestLibs.app" $IOS_VERSION 
+	    ios-sim launch "$PWD/SCApiTestLibs.app" --sdk $IOS_VERSION 
 	/bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
 cd "$TEST_SUITE_ROOT"
 

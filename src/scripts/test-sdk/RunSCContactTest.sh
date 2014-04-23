@@ -37,7 +37,7 @@ fi
 BUILT_PRODUCTS_DIR=$( cat /tmp/${TARGET_NAME}Build/PRODUCT_DIR.txt )
 cd "$BUILT_PRODUCTS_DIR/$CONFIGURATION-iphonesimulator"
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
-    iphonesim launch "$PWD/${TARGET_NAME}.app" $IOS_VERSION 
+    ios-sim launch "$PWD/${TARGET_NAME}.app" --sdk $IOS_VERSION 
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
 
 cd "$LAUNCH_DIR"
