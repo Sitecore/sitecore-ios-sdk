@@ -16,6 +16,8 @@ cd "$LAUNCH_DIR"
 
 #IOS_VERSION=5.1
 CONFIGURATION=Coverage
+LAUNCH_SIMULATOR_WITHOUT_APP="/usr/local/bin/ios-sim start"
+
 
 OLD_XCODE_PATH=$(xcode-select -print-path)
 #latest stable xcode
@@ -26,6 +28,7 @@ rm -rf "$PROJECT_ROOT/deployment"
 mkdir -p "$PROJECT_ROOT/deployment/test-results"
 
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/CleanTestReports.sh"
+	$LAUNCH_SIMULATOR_WITHOUT_APP
     /bin/bash "$PWD/RunSCApiTestCleanSitecore.sh" "$IOS_VERSION" "$CONFIGURATION"
     if [ "$?" -ne "0" ]; then 
        echo "[!!! ERROR !!!] : RunSCApiTestCleanSitecore.sh failed"

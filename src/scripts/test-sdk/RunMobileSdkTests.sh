@@ -15,6 +15,7 @@ cd "$LAUNCH_DIR"
 
 
 GCOVR=$SCRIPTS_ROOT_DIR/coverage/gcovr
+LAUNCH_SIMULATOR_WITHOUT_APP="/usr/local/bin/ios-sim start"
 
 
 #IOS_VERSION=5.1
@@ -28,6 +29,7 @@ rm -rf "$PROJECT_ROOT/deployment"
 mkdir -p "$PROJECT_ROOT/deployment/test-results"
 
 /bin/bash "$SCRIPTS_ROOT_DIR/simulator/CleanTestReports.sh"
+	$LAUNCH_SIMULATOR_WITHOUT_APP
     /bin/bash "$PWD/RunSCContactTest.sh" "$IOS_VERSION" "$CONFIGURATION"
     if [ "$?" -ne "0" ]; then 
        echo "[!!! ERROR !!!] : RunSCContactTest.sh failed"

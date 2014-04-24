@@ -23,6 +23,18 @@ cd ../../
     PROJECT_ROOT=$PWD
 cd "$LAUNCH_DIR"
 
+
+
+KILL_SIMULATOR=$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh
+LAUNCH_SIMULATOR="/usr/local/bin/ios-sim launch"
+if [ -n "$IOS_VERSION" ]; then
+    LAUNCH_SIMULATOR_IOS_VERSION="--sdk $IOS_VERSION"
+else
+	LAUNCH_SIMULATOR_IOS_VERSION=""
+fi
+
+
+
 cd "$PROJECT_ROOT/test/FunctionalTests/$APP_NAME"
 pwd
 
@@ -36,8 +48,8 @@ fi
 
 BUILT_PRODUCTS_DIR=$( cat /tmp/${TARGET_NAME}Build/PRODUCT_DIR.txt )
 cd "$BUILT_PRODUCTS_DIR/$CONFIGURATION-iphonesimulator"
-/bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
-    ios-sim launch "$PWD/${TARGET_NAME}.app" --sdk $IOS_VERSION 
-/bin/bash "$SCRIPTS_ROOT_DIR/simulator/KillSimulator.sh"
+/bin/bash "$KILL_SIMULATOR"
+    $LAUNCH_SIMULATOR "$PWD/$APP_NAME.app" $LAUNCH_SIMULATOR_IOS_VERSION
+/bin/bash "$KILL_SIMULATOR"
 
 cd "$LAUNCH_DIR"
