@@ -206,22 +206,7 @@
     [ self performAsyncRequestOnMainThreadWithBlock: create_block_
                                            selector: _cmd ];
 
-    if ( !IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertNil( rendering_, @"rendering should be nil" );
-        GHAssertTrue( [ error isMemberOfClass: [ SCNetworkError class] ], @"error class mismatch" );
-        
-        SCNetworkError* castedError = (SCNetworkError*)error;
-        GHAssertTrue( [ [castedError underlyingError] isMemberOfClass: [ JHttpError class] ], @"underlying error class mismatch" );
-        JHttpError* httpError = (JHttpError*)[ castedError underlyingError ];
-
-        GHAssertTrue( 403 == httpError.code, @"error code mismatch" );
-        
-    }
-    else
-    {
-        GHAssertNotNil( rendering_, @"rendering must be returned according to " );
-    }
+    GHAssertNotNil( rendering_, @"rendering must be returned" );
 }
 
 @end

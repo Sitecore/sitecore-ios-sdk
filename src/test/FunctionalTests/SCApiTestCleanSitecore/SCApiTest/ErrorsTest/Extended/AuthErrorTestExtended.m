@@ -5,7 +5,7 @@
 
 @implementation AuthErrorTestExtended
 
--(void)testReadItemWithAuthWithWrongLoginPwd
+-(void)testReadItemWithAllowAnonymousWithWrongLoginPwd
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
@@ -47,17 +47,12 @@
     GHAssertTrue( apiContext_ == nil, @"OK" );
     GHAssertTrue( item_ == nil, @"OK" );
     GHAssertTrue( item_error_ != nil, @"OK" );
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
-    }
-    else
-    {
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] == TRUE, @"OK" );
-    }
+    
+    GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
+
 }
 
--(void)testReadItemWithAuthWithEmptyLoginPwd
+-(void)testReadItemWithAllowAnonymousWithEmptyLoginPwd
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_        = nil;
@@ -96,17 +91,11 @@
     GHAssertTrue( item_ == nil, @"OK" );
     GHAssertTrue( item_error_ != nil, @"OK" );
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
-    }
-    else
-    {
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] == TRUE, @"OK" );
-    }
+    GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
+
 }
 
--(void)testReadItemWithAuthWithInvalidLogin
+-(void)testReadItemWithAllowAnonymousWithInvalidLogin
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
@@ -147,17 +136,11 @@
     GHAssertTrue( apiContext_ == nil, @"OK" );
     GHAssertTrue( item_ == nil, @"OK" );
     GHAssertTrue( item_error_ != nil, @"OK" );
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
-    }
-    else
-    {
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] == TRUE, @"OK" );
-    }
+    GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
+
 }
 
--(void)testReadItemWithAuthWithInvalidPwd
+-(void)testReadItemWithAllowAnonymousWithInvalidPwd
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
@@ -198,17 +181,11 @@
     GHAssertTrue( apiContext_ == nil, @"OK" );
     GHAssertTrue( item_ == nil, @"OK" );
     GHAssertTrue( item_error_ != nil, @"OK" );
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
-    }
-    else
-    {
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] == TRUE, @"OK" );
-    }
+    GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
+
 }
 
--(void)testReadItemWithAuthWithWrongPwd
+-(void)testReadItemWithAllowAnonymousWithWrongPwd
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
@@ -249,17 +226,11 @@
     GHAssertTrue( apiContext_ == nil, @"OK" );
     GHAssertTrue( item_ == nil, @"OK" );
     GHAssertTrue( item_error_ != nil, @"OK" );
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
-    }
-    else
-    {
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] == TRUE, @"OK" );
-    }
+    GHAssertTrue( [ item_error_ isKindOfClass: [ SCNoItemError class ] ] == TRUE, @"OK" );
+
 }
 
--(void)testReadItemWithAuthWithoutAuth
+-(void)testReadItemAsAnonymous
 {
     __weak __block SCApiSession* apiContext_ = nil;
     __block SCItem* item_ = nil;
@@ -294,21 +265,10 @@
                                                selector: _cmd ];
     }
     
-    if ( IS_ANONYMOUS_ACCESS_ENABLED )
-    {
-        GHAssertTrue( apiContext_ != nil, @"OK" );
-        GHAssertTrue( item_ != nil, @"OK" );
-        GHAssertTrue( item_error_ == nil, @"OK" );
-    }
-    else
-    {
-        GHAssertNil( apiContext_, @"no context expected" );
-        GHAssertNil( item_, @"no item expected" );
-        
-        GHAssertTrue( [ item_error_ isMemberOfClass: [ SCResponseError class ] ] , @"error class mismatch" );
-        SCResponseError* castedError = (SCResponseError*)item_error_;
-        GHAssertTrue( castedError.statusCode == 401, @"status code mismatch" );
-    }
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( item_ != nil, @"OK" );
+    GHAssertTrue( item_error_ == nil, @"OK" );
+
 }
 
 -(void)testReadItemWithAuthWithRightLoginPwd_Shell

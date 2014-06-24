@@ -18,5 +18,6 @@ typedef void (^CLEANUP_BLOCK)(JFFSimpleBlock);
 
 +(SCApiSession*)getNewAnonymousContext;
 +(SCApiSession*)getNewAdminContextWithShell;
++(SCApiSession*)getNewAdminContextWithWeb;
 
 @end

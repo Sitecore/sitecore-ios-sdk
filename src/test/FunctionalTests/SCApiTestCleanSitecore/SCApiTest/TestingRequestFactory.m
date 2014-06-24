@@ -107,4 +107,16 @@
     return result;
 }
 
++(SCApiSession*)getNewAdminContextWithWeb
+{
+    SCApiSession* result = nil;
+    result = [ [ SCApiSession alloc ] initWithHost: SCWebApiHostName
+                                             login: SCExtranetAdminLogin
+                                          password: SCExtranetAdminPassword
+                                           version: SCWebApiV1 ];
+    result.defaultSite = nil;
+    
+    return result;
+}
+
 @end
