@@ -42,9 +42,8 @@
     
     GHAssertTrue( apiContext_ == nil, @"Should be nil" );
     GHAssertTrue( resultLanguages_ != nil, @"OK" );
-    GHAssertTrue( [ resultLanguages_ count ] == 2, @"OK" );
+    GHAssertTrue( [ resultLanguages_ count ] == 1, @"OK" );
     GHAssertTrue( [ resultLanguages_ containsObject: @"en" ] == TRUE, @"OK" );
-    GHAssertTrue( [ resultLanguages_ containsObject: @"da" ] == TRUE, @"OK" );
 }
 
 -(void)testContextDefaultLanguageSameItem
