@@ -90,7 +90,7 @@ Other extensions and components can be built on top of the Sitecore Mobile SDK f
  * [Sitecore Item Web API module page on SDN][2]
  * [API documentation on Github][5]
  * [Sample App – SDK for IOS][6]
-
+ * [CocoaPods][9]
 
  
 # Licence
@@ -109,4 +109,4 @@ SITECORE SHARED SOURCE LICENSE
  [6]: https://github.com/Sitecore/sitecore-ios-sdk-sample
  [7]: https://github.com/Sitecore/sitecore-ios-sdk/releases
  [8]: https://github.com/sitecore/scitemsbrowser-ios
-
+ [9]: http://cocoapods.org/?q=sitecore
