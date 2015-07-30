@@ -80,13 +80,6 @@
 			remoteGlobalIDString = CE444A1C1608609100DD85B0;
 			remoteInfo = JFFUtilsTest;
 		};
-		7E55C6DE17E8AA02001BBDAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E55C6C617E8AA02001BBDAE /* JFFUtils.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7ED3CB1516E6387B00E5A00F;
-			remoteInfo = "JFFUtilsTest-CI";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -203,8 +196,7 @@
 				7E55C6D717E8AA02001BBDAE /* libJFFUtilsMacOS.a */,
 				7E55C6D917E8AA02001BBDAE /* libJFFUtils-clang.a */,
 				7E55C6DB17E8AA02001BBDAE /* JFFUtilsFW.framework */,
-				7E55C6DD17E8AA02001BBDAE /* JFFUtilsTest.octest */,
-				7E55C6DF17E8AA02001BBDAE /* JFFUtilsTest-CI.octest */,
+				7E55C6DD17E8AA02001BBDAE /* JFFUtilsTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,18 +325,11 @@
 			remoteRef = 7E55C6DA17E8AA02001BBDAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7E55C6DD17E8AA02001BBDAE /* JFFUtilsTest.octest */ = {
+		7E55C6DD17E8AA02001BBDAE /* JFFUtilsTest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = JFFUtilsTest.octest;
+			path = JFFUtilsTest.xctest;
 			remoteRef = 7E55C6DC17E8AA02001BBDAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7E55C6DF17E8AA02001BBDAE /* JFFUtilsTest-CI.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "JFFUtilsTest-CI.octest";
-			remoteRef = 7E55C6DE17E8AA02001BBDAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -368,9 +353,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -390,7 +379,10 @@
 					../SCApi,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 			};
 			name = Debug;
 		};
@@ -398,9 +390,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -413,7 +409,10 @@
 					../SCApi,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

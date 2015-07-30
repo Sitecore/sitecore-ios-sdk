@@ -211,8 +211,9 @@
             else 
             {
                 media_item_ = nil;
+                didFinishCallback_();
             }
-            didFinishCallback_();                                                  
+            
         } );
         
     };
@@ -232,8 +233,10 @@
             else 
             {
                 media_item_ = nil;
+                
             }
-            didFinishCallback_();                                                  
+            didFinishCallback_();
+            
         } );
     };
     

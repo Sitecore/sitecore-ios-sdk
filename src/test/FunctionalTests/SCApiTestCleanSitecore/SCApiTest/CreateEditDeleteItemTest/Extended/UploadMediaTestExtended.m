@@ -224,8 +224,9 @@
             else
             {
                 media_item_ = nil;
+                didFinishCallback_();
             }
-            didFinishCallback_();
+            
         };
         
         SCExtendedAsyncOp loader = [ apiContext_.extendedApiSession readItemsOperationWithRequest: item_request_ ];

@@ -27,7 +27,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E8B6C5715388BD500435EDA"
-               BuildableName = "ObjcScopedGuardTests.octest"
+               BuildableName = "ObjcScopedGuardTests.xctest"
                BlueprintName = "ObjcScopedGuardTests"
                ReferencedContainer = "container:../../lib-third-party/ObjcScopedGuard/ObjcScopedGuard/ObjcScopedGuard.xcodeproj">
             </BuildableReference>
@@ -53,6 +53,8 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -62,6 +64,7 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>

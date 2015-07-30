@@ -7,6 +7,7 @@
 @end
 
 @implementation SCTriggerDmsCampaignPlugin
+@dynamic delegate;
 
 +(NSString*)pluginJavascript
 {

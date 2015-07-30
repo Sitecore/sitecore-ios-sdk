@@ -268,7 +268,7 @@
 			name = SCWebContentApiTests;
 			productName = SCWebContentApiTests;
 			productReference = 1B363F4E153D556800E46215 /* SCWebContentApiTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		1B364045153D5B4700E46215 /* BuildJS */ = {
 			isa = PBXNativeTarget;
@@ -422,9 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -443,7 +447,10 @@
 					"../../lib-third-party/JFFLibrary/lib",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 			};
 			name = Debug;
 		};
@@ -451,9 +458,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -465,7 +476,10 @@
 					"../../lib-third-party/JFFLibrary/lib",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -26,7 +26,9 @@
 +(NSString*)languageParamWithLanguage:( NSString* )language
 {
     return [ self urlEncodedValue: language
-                       forRestKey: @"sc_lang" ];
+                       forRestKey: @"language" ];
+//    return [ self urlEncodedValue: language
+//                       forRestKey: @"sc_lang" ];
 }
 
 +(NSString*)templateParam:( NSString* )templateName
