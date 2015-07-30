@@ -182,4 +182,5 @@
 @end
 
 @implementation SCTriggeringError
+@dynamic underlyingError;
 @end

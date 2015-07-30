@@ -31,7 +31,7 @@
 		1BCC93471511E11B00271BFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
 		1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		1BCC934C1511E11B00271BFD /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
-		1BCC938C1511E11B00271BFD /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		1BCC938C1511E11B00271BFD /* auto tests.old.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.old.png */; };
 		1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		2545B3D91803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
 		2545B3DA1803F4E60062481B /* ReadImageWithParamsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545B3D71803F4E60062481B /* ReadImageWithParamsTest.m */; };
@@ -88,7 +88,7 @@
 		2565FFC117F32185009366E9 /* ReadItemsIgnoreCacheTestExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BD9F17BCFEAC0013B6DC /* ReadItemsIgnoreCacheTestExtended.m */; };
 		2565FFC217F32185009366E9 /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 258E626D163A9A5000BCDCA6 /* ReadItemsCacheTest.mm */; };
 		2565FFC317F32185009366E9 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258E626E163A9A5000BCDCA6 /* ReadItemsIgnoreCacheTest.m */; };
-		258A14F614E537E600DA4DE5 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		258A14F614E537E600DA4DE5 /* auto tests.old.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.old.png */; };
 		258EFED21594959F00EE89EF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		2598AB1017F42DBE00252AA4 /* AFisrtRemoveAllExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B0BA9F17BB70DF00ED739A /* AFisrtRemoveAllExtended.m */; };
 		2598AB1117F42DBE00252AA4 /* ExtendedApiContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ABFEBA17BA706C001EA3BF /* ExtendedApiContextTest.m */; };
@@ -134,6 +134,10 @@
 		25E177AD1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
 		25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
 		25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */; };
+		786153341B68E14700BF4BED /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 786153331B68E14700BF4BED /* auto tests.png */; };
+		786153351B68E14700BF4BED /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 786153331B68E14700BF4BED /* auto tests.png */; };
+		786153361B68E14700BF4BED /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 786153331B68E14700BF4BED /* auto tests.png */; };
+		786153371B68E14700BF4BED /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 786153331B68E14700BF4BED /* auto tests.png */; };
 		78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
 		78769DB717B51D5500E5836B /* MultipleItemsTriggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2FE58172665E60011AD5D /* MultipleItemsTriggerTest.m */; };
 		78911DB017C21CF900C680AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78911DAF17C21CF900C680AE /* Default-568h@2x.png */; };
@@ -441,7 +445,7 @@
 		7E18F91D17C217B400006465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
 		7E18F92117C217B400006465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		7E18F92217C217B400006465 /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
-		7E18F92317C217B400006465 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		7E18F92317C217B400006465 /* auto tests.old.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.old.png */; };
 		7E18F92417C217B400006465 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		7E18F92F17C217C700006465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925BAC14615C7E00C9FC49 /* main.m */; };
 		7E18F93017C217C700006465 /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B925D9C146197FF00C9FC49 /* SCAsyncTestCase.m */; };
@@ -460,7 +464,7 @@
 		7E18F97817C217C700006465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B925BA414615C7D00C9FC49 /* CoreGraphics.framework */; };
 		7E18F97B17C217C700006465 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B925BA914615C7E00C9FC49 /* InfoPlist.strings */; };
 		7E18F97C17C217C700006465 /* auth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B925D6C14616E6B00C9FC49 /* auth.xml */; };
-		7E18F97D17C217C700006465 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
+		7E18F97D17C217C700006465 /* auto tests.old.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.old.png */; };
 		7E18F97E17C217C700006465 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		7E18F98517C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */; };
 		7E18F98617C2180400006465 /* SCGlobalSettings-NoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18F8CA17C20CCC00006465 /* SCGlobalSettings-NoAccess.m */; };
@@ -582,7 +586,7 @@
 		25696AAE163187EC00D5D4FC /* ReadItemsSPTestAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsSPTestAuth.m; sourceTree = "<group>"; };
 		25696AAF163187EC00D5D4FC /* ReadItemsSTestAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsSTestAuth.m; sourceTree = "<group>"; };
 		2589D3611529F46D0010E0B9 /* DeleteAllItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAllItems.m; sourceTree = "<group>"; };
-		258A14F514E537E600DA4DE5 /* auto tests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto tests.png"; sourceTree = "<group>"; };
+		258A14F514E537E600DA4DE5 /* auto tests.old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto tests.old.png"; sourceTree = "<group>"; };
 		258D2CE21636AA6B00F87911 /* GetFieldFromItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldFromItemTest.m; sourceTree = "<group>"; };
 		258D2CE31636AA6B00F87911 /* GetFieldsFromItemReaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldsFromItemReaderTest.m; sourceTree = "<group>"; };
 		258D2CE41636AA6B00F87911 /* GetFieldValueFromFieldTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldValueFromFieldTest.m; sourceTree = "<group>"; };
@@ -611,6 +615,7 @@
 		25A56EF216396BDA00738376 /* LanguageReaderPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTest.m; sourceTree = "<group>"; };
 		25E177A81806C9EF00201DC6 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = ../../../deployment/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		25E177AB1806CAB200201DC6 /* SCApiTest copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SCApiTest copy-Info.plist"; sourceTree = "<group>"; };
+		786153331B68E14700BF4BED /* auto tests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto tests.png"; sourceTree = "<group>"; };
 		78911DAF17C21CF900C680AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78A4D591170580F70035D5DA /* TriggeringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriggeringTest.m; sourceTree = "<group>"; };
 		78A6181517BA142400D43837 /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
@@ -778,7 +783,8 @@
 			children = (
 				78D65DC818BCA71400E4A269 /* testImage.png */,
 				78911DAF17C21CF900C680AE /* Default-568h@2x.png */,
-				258A14F514E537E600DA4DE5 /* auto tests.png */,
+				786153331B68E14700BF4BED /* auto tests.png */,
+				258A14F514E537E600DA4DE5 /* auto tests.old.png */,
 				2560DB5D1532DECA0096DC59 /* large_image.jpg */,
 				78A6181517BA142400D43837 /* big.jpg */,
 				1B925D5114616AA400C9FC49 /* HttpServer */,
@@ -1305,8 +1311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B925BAB14615C7E00C9FC49 /* InfoPlist.strings in Resources */,
+				786153341B68E14700BF4BED /* auto tests.png in Resources */,
 				1B925D6D14616E6B00C9FC49 /* auth.xml in Resources */,
-				258A14F614E537E600DA4DE5 /* auto tests.png in Resources */,
+				258A14F614E537E600DA4DE5 /* auto tests.old.png in Resources */,
 				2560DB5E1532DECA0096DC59 /* large_image.jpg in Resources */,
 				78A6181617BA142400D43837 /* big.jpg in Resources */,
 				25E177AC1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
@@ -1318,10 +1325,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786153351B68E14700BF4BED /* auto tests.png in Resources */,
 				78D65DCA18BCA71500E4A269 /* testImage.png in Resources */,
 				1BCC934B1511E11B00271BFD /* InfoPlist.strings in Resources */,
 				1BCC934C1511E11B00271BFD /* auth.xml in Resources */,
-				1BCC938C1511E11B00271BFD /* auto tests.png in Resources */,
+				1BCC938C1511E11B00271BFD /* auto tests.old.png in Resources */,
 				25E177AD1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
 				2560DB5F1532DECA0096DC59 /* large_image.jpg in Resources */,
 				78A6181717BA142400D43837 /* big.jpg in Resources */,
@@ -1334,8 +1342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E18F92117C217B400006465 /* InfoPlist.strings in Resources */,
+				786153361B68E14700BF4BED /* auto tests.png in Resources */,
 				7E18F92217C217B400006465 /* auth.xml in Resources */,
-				7E18F92317C217B400006465 /* auto tests.png in Resources */,
+				7E18F92317C217B400006465 /* auto tests.old.png in Resources */,
 				7E18F92417C217B400006465 /* large_image.jpg in Resources */,
 				78D65DCB18BCA71500E4A269 /* testImage.png in Resources */,
 				25E177AE1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,
@@ -1347,8 +1356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E18F97B17C217C700006465 /* InfoPlist.strings in Resources */,
+				786153371B68E14700BF4BED /* auto tests.png in Resources */,
 				7E18F97C17C217C700006465 /* auth.xml in Resources */,
-				7E18F97D17C217C700006465 /* auto tests.png in Resources */,
+				7E18F97D17C217C700006465 /* auto tests.old.png in Resources */,
 				7E18F97E17C217C700006465 /* large_image.jpg in Resources */,
 				78701A8617D7468D00CA9D2F /* Default-568h@2x.png in Resources */,
 				25E177AF1806CAB200201DC6 /* SCApiTest copy-Info.plist in Resources */,

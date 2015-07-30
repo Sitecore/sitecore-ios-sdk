@@ -281,8 +281,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -301,6 +305,7 @@
 					../SCApi,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				REZ_SEARCH_PATHS = (
 					../SCUtils,
 					../SCMonad,
@@ -308,6 +313,8 @@
 					../SCApi,
 				);
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 			};
 			name = Debug;
 		};
@@ -315,8 +322,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				COPY_PHASE_STRIP = YES;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -328,6 +339,7 @@
 					../SCApi,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				REZ_SEARCH_PATHS = (
 					../SCUtils,
 					../SCMonad,
@@ -335,6 +347,8 @@
 					../SCApi,
 				);
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
