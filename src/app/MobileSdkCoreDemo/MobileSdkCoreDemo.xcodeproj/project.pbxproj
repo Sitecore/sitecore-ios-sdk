@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		786033A61B70B3FE0094F91B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7EC4901218D35C5E00D87566 /* MobileSdkCoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSdkCoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC4901518D35C5E00D87566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EC4901718D35C5E00D87566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,7 +49,6 @@
 		7EC4901D18D35C5E00D87566 /* MobileSdkCoreDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileSdkCoreDemo-Info.plist"; sourceTree = "<group>"; };
 		7EC4901F18D35C5E00D87566 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC4902118D35C5E00D87566 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7EC4902318D35C5E00D87566 /* MobileSdkCoreDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSdkCoreDemo-Prefix.pch"; sourceTree = "<group>"; };
 		7EC4902418D35C5E00D87566 /* CDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDAppDelegate.h; sourceTree = "<group>"; };
 		7EC4902518D35C5E00D87566 /* CDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDAppDelegate.m; sourceTree = "<group>"; };
 		7EC4902818D35C5E00D87566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				7EC4901D18D35C5E00D87566 /* MobileSdkCoreDemo-Info.plist */,
 				7EC4901E18D35C5E00D87566 /* InfoPlist.strings */,
 				7EC4902118D35C5E00D87566 /* main.m */,
-				7EC4902318D35C5E00D87566 /* MobileSdkCoreDemo-Prefix.pch */,
+				786033A61B70B3FE0094F91B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -414,8 +414,8 @@
 					../../deployment,
 					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = MobileSdkCoreDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "MobileSdkCoreDemo/MobileSdkCoreDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -432,8 +432,8 @@
 					../../deployment,
 					"/Volumes/untitled/github/sitecore-ios-sdk/src/deployment",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = MobileSdkCoreDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "MobileSdkCoreDemo/MobileSdkCoreDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -450,8 +450,8 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -473,8 +473,8 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileSdkCoreDemo/MobileSdkCoreDemo-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "MobileSdkCoreDemoTests/MobileSdkCoreDemoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

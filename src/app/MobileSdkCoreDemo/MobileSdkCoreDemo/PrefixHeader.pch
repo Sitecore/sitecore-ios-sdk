@@ -1,0 +1,13 @@
+
+#ifndef MobileSdkCoreDemo_PrefixHeader_pch
+#define MobileSdkCoreDemo_PrefixHeader_pch
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+#endif
+
+#endif
