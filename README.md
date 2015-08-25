@@ -1,4 +1,4 @@
-Sitecore Mobile SDK 2.0 for iOS
+Sitecore Mobile SDK 2.1 for iOS
 ======================================
 
 Sitecore Mobile SDK is a framework that is designed to help the developer produce iOS based applications that use and serve content that is managed by Sitecore. The framework offers both Objective-C and JavaScriptAPI that enable developers to rapidly develop applications utilising their existing IOS or web development skill sets. The SDK includes the following features:
